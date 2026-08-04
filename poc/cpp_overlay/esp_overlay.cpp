@@ -43,15 +43,14 @@ constexpr int kToggleControlsHotkey = 1;
 constexpr COLORREF kTransparentColor = RGB(0, 0, 0);
 constexpr double kDefaultAimFovHeightFraction = 0.20;
 constexpr double kAimWorldHeadHeightFraction = 0.84;
-constexpr double kAimDeadzonePixels = 0.80;
+// Stop issuing integer mouse corrections for sub-pixel bone/camera noise.
+constexpr double kAimDeadzonePixels = 2.50;
 constexpr double kAimFineControlWindowPixels = 18.0;
-constexpr double kAimFineGain = 0.96;
-constexpr double kAimCoarseGain = 1.00;
+constexpr double kAimFineGain = 0.58;
+constexpr double kAimCoarseGain = 0.82;
 // The exporter is sampled at 120 Hz.  One command per fresh sample prevents
 // duplicate corrections from fighting each other between camera frames.
 constexpr double kAimMinInputIntervalSeconds = 0.0085;
-constexpr double kAimSameSnapshotMinIntervalSeconds = 0.018;
-constexpr double kAimSameSnapshotMovementPixels = 1.50;
 constexpr double kAimMaxRelativeVelocity = 14.0;
 constexpr double kAimSnapshotLeadSeconds = 0.025;
 constexpr double kAimMaxSnapshotLeadSeconds = 0.085;
@@ -68,16 +67,16 @@ constexpr double kAimMaxBallisticLeadScreenPixels = 240.0;
 constexpr double kAimLatencyCompensationSeconds = 0.026;
 constexpr double kAimMaxLatencyCompensationSeconds = 0.052;
 constexpr double kAimMaxLatencyCompensationMeters = 0.85;
-constexpr double kAimMinLatencyCompensationSpeed = 0.35;
+constexpr double kAimMinLatencyCompensationSpeed = 1.20;
 // Preserve the selected target through short entity/visibility gaps.
 constexpr double kAimLockRetentionSeconds = 0.75;
 constexpr double kAimLockVisibilityGraceSeconds = 0.18;
 constexpr LONG kAimMaxCalibratedMouseDelta = 4000;
 constexpr LONG kAimMaxHipMouseStep = 720;
 constexpr LONG kAimMaxScopedMouseStep = 520;
-constexpr double kAimVerticalGain = 0.84;
-constexpr double kAimScopedVerticalGain = 0.74;
-constexpr double kAimVerticalDeadzonePixels = 1.25;
+constexpr double kAimVerticalGain = 0.50;
+constexpr double kAimScopedVerticalGain = 0.42;
+constexpr double kAimVerticalDeadzonePixels = 3.00;
 constexpr LONG kAimMaxHipVerticalStep = 320;
 constexpr LONG kAimMaxScopedVerticalStep = 200;
 constexpr double kDefaultHipRadiansPerRawMouse = -0.00135;
@@ -271,8 +270,6 @@ double g_aimResidualRawX = 0.0;
 double g_aimResidualRawY = 0.0;
 double g_lastAimInputTime = 0.0;
 double g_lastAimSnapshotTimestamp = 0.0;
-POINT g_lastAimPoint = {};
-bool g_hasLastAimPoint = false;
 double g_lastAimTargetSwitchTime = 0.0;
 double g_lastAimTriggerWriteTime = 0.0;
 bool g_lastAimTriggerState = false;
@@ -1367,6 +1364,11 @@ bool BuildBallisticAimPoint(const Snapshot& snapshot, const Target& target,
         !std::isfinite(relativeVelocity.z)) {
         relativeVelocity = {};
     }
+    const double relativeSpeed = Length(relativeVelocity);
+    if (!std::isfinite(relativeSpeed) ||
+        relativeSpeed < kAimMinLatencyCompensationSpeed) {
+        return false;
+    }
     // Keep the vertical target component authoritative.  Only projectile drop
     // supplies a vertical offset; this avoids reintroducing jump/crouch sway.
     relativeVelocity.y = 0.0;
@@ -1411,8 +1413,6 @@ void ClearAimLock() {
     g_aimResidualRawY = 0.0;
     g_lastAimInputTime = 0.0;
     g_lastAimSnapshotTimestamp = 0.0;
-    g_lastAimPoint = {};
-    g_hasLastAimPoint = false;
     g_lastAimTargetSwitchTime = 0.0;
 }
 
@@ -1810,17 +1810,15 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
         std::abs(rawY) > kAimMaxCalibratedMouseDelta) {
         return false;
     }
-    if (rawX * g_aimResidualRawX < 0.0) {
-        g_aimResidualRawX = 0.0;
-    }
-    if (rawY * g_aimResidualRawY < 0.0) {
-        g_aimResidualRawY = 0.0;
-    }
-    const double commandRawX = rawX * gain + g_aimResidualRawX;
+    // Do not carry fractional input into the next frame.  The residual
+    // integrator turns one-pixel rounding into alternating left/right or
+    // up/down commands when the authoritative head moves by a fraction of a
+    // pixel.
+    const double commandRawX = rawX * gain;
     const double verticalGain = IsScopedFov(snapshot.fov)
         ? kAimScopedVerticalGain
         : kAimVerticalGain;
-    const double commandRawY = rawY * gain * verticalGain + g_aimResidualRawY;
+    const double commandRawY = rawY * gain * verticalGain;
     const LONG maxHorizontalStep = IsScopedFov(snapshot.fov)
         ? kAimMaxScopedMouseStep
         : kAimMaxHipMouseStep;
@@ -1835,12 +1833,8 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
                                           static_cast<double>(maxVerticalStep));
     *deltaX = static_cast<LONG>(std::lround(clampedRawX));
     *deltaY = static_cast<LONG>(std::lround(clampedRawY));
-    g_aimResidualRawX = (std::abs(commandRawX) <= static_cast<double>(maxHorizontalStep))
-        ? commandRawX - static_cast<double>(*deltaX)
-        : 0.0;
-    g_aimResidualRawY = (std::abs(commandRawY) <= static_cast<double>(maxVerticalStep))
-        ? commandRawY - static_cast<double>(*deltaY)
-        : 0.0;
+    g_aimResidualRawX = 0.0;
+    g_aimResidualRawY = 0.0;
     return true;
 }
 
@@ -2190,7 +2184,6 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         g_aimResidualRawY = 0.0;
         g_lastAimInputTime = 0.0;
         g_lastAimSnapshotTimestamp = 0.0;
-        g_hasLastAimPoint = false;
         return;
     }
     // Aim input itself changes camera angles.  Exclude it (and the next few
@@ -2212,24 +2205,12 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         return;
     }
 
-    // The exporter can be slower than the render loop.  Permit a follow-up
-    // only when the projected head actually moved; a stationary point still
-    // gets one correction, so this does not recreate the old oscillation.
-    const bool sameSnapshot =
-        snapshot.timestamp <= g_lastAimSnapshotTimestamp + 0.000001;
-    if (sameSnapshot) {
-        if (now - g_lastAimInputTime < kAimSameSnapshotMinIntervalSeconds) {
-            return;
-        }
-        if (g_hasLastAimPoint && std::hypot(
-                static_cast<double>(aimPoint.x - g_lastAimPoint.x),
-                static_cast<double>(aimPoint.y - g_lastAimPoint.y)) <
-            kAimSameSnapshotMovementPixels) {
-            return;
-        }
+    // A camera frame is the acknowledgement boundary for the previous mouse
+    // command.  Never apply another command from the same frame: doing so
+    // feeds stale error back into the game and produces visible oscillation.
+    if (snapshot.timestamp <= g_lastAimSnapshotTimestamp + 0.000001) {
+        return;
     }
-    const bool freshSnapshot = !sameSnapshot;
-
     const double centerX = static_cast<double>(client.right - client.left) * 0.5;
     const double centerY = static_cast<double>(client.bottom - client.top) * 0.5;
     const double remainingX = static_cast<double>(aimPoint.x) - centerX;
@@ -2237,8 +2218,6 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     const double remainingDistance = std::hypot(remainingX, remainingY);
     if (remainingDistance <= kAimDeadzonePixels) {
         g_lastAimSnapshotTimestamp = snapshot.timestamp;
-        g_lastAimPoint = aimPoint;
-        g_hasLastAimPoint = true;
         g_aimResidualRawX = 0.0;
         g_aimResidualRawY = 0.0;
         return;
@@ -2256,17 +2235,8 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         deltaY = remainingY >= 0.0 ? kAimBootstrapRawMouseDelta : -kAimBootstrapRawMouseDelta;
         bootstrapCalibration = true;
     }
-    // A repeated read of the same camera frame may still contain the previous
-    // synthetic pitch correction.  Never send a second vertical correction
-    // until a new authoritative frame confirms the camera response.
-    if (sameSnapshot) {
-        deltaY = 0;
-        g_aimResidualRawY = 0.0;
-    }
     if (deltaX == 0 && deltaY == 0) {
         g_lastAimSnapshotTimestamp = snapshot.timestamp;
-        g_lastAimPoint = aimPoint;
-        g_hasLastAimPoint = true;
         return;
     }
 
@@ -2277,8 +2247,6 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_MOVE_NOCOALESCE;
     if (SendInput(1, &input, sizeof(input)) == 1) {
         g_lastAimSnapshotTimestamp = snapshot.timestamp;
-        g_lastAimPoint = aimPoint;
-        g_hasLastAimPoint = true;
         g_lastAimInputTime = now;
         g_rawMouseXSinceSnapshot = AddClampedRawMouse(g_rawMouseXSinceSnapshot, deltaX);
         g_rawMouseYSinceSnapshot = AddClampedRawMouse(g_rawMouseYSinceSnapshot, deltaY);
@@ -2289,7 +2257,7 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         const bool needsScopedCalibration = IsScopedFov(snapshot.fov) &&
             (calibration.yawSamples < 8 || calibration.pitchSamples < 8) &&
             std::max(std::abs(deltaX), std::abs(deltaY)) <= 96;
-        if ((bootstrapCalibration || (freshSnapshot && needsScopedCalibration)) &&
+        if ((bootstrapCalibration || needsScopedCalibration) &&
             g_snapshot.valid && !g_aimCalibrationProbe.active) {
             g_aimCalibrationProbe = {true, deltaX, deltaY, g_snapshot.yaw,
                                      g_snapshot.pitch, g_snapshot.fov, g_snapshot.timestamp};
