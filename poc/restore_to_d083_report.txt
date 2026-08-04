@@ -1,0 +1,4 @@
+BACKUP=C:\Users\mista\Documents\Bugbounty\bloodstrike-launcher\poc\restore_to_d083_backup_elevated_20260804_224024
+D0836A5D076FFB48AD8ACFD6E0CE69B2E19F92A856D192D13A2B9AF7370B524B 380416 C:\Users\mista\Desktop\BloodStrikeCTFESP_PoC\BloodStrikeCTFESP.exe
+C9E6208EF86403B54D51251399748E749608610A17AE47173353DE2800C1A8A6 24852 C:\Users\mista\Desktop\BloodStrikeCTFESP_PoC\ctf_native_snapshot_code.py
+B59327F16C2DE610A535F16D0C0B03DA648245961106D3A7F4BE4E9B19AFD7FF 191833 C:\Users\mista\Documents\Bugbounty\bloodstrike-launcher\poc\BloodStrikeCTFESP_upload.zip

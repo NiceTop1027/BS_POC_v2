@@ -1,0 +1,4 @@
+BEGIN
+REQUEST={'gacha_id': 1392, 'times': 1, 'name': 'Warlock Valor', 'draw_type': 'Valor', 'callback_name': 'OnGachaV6Roll', 'before_gold': 99980, 'before_roll_count': 0, 'requested_at': 1785821530.523157}
+REQUEST_DISPATCHED
+END

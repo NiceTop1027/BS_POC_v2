@@ -1,0 +1,31 @@
+BEGIN
+open_pkg engine/common/EntityManager.py => None
+open_patch engine/common/EntityManager.py => None
+exists_pkg engine/common/EntityManager.py => False
+exists_patch engine/common/EntityManager.py => False
+open_pkg Script/Python/engine/common/EntityManager.py => None
+open_patch Script/Python/engine/common/EntityManager.py => None
+exists_pkg Script/Python/engine/common/EntityManager.py => False
+exists_patch Script/Python/engine/common/EntityManager.py => False
+open_pkg Package/Script/Python/engine/common/EntityManager.py => None
+open_patch Package/Script/Python/engine/common/EntityManager.py => None
+exists_pkg Package/Script/Python/engine/common/EntityManager.py => False
+exists_patch Package/Script/Python/engine/common/EntityManager.py => False
+open_pkg gclient/entitylist.py => None
+open_patch gclient/entitylist.py => None
+exists_pkg gclient/entitylist.py => False
+exists_patch gclient/entitylist.py => False
+open_pkg Script/Python/gclient/entitylist.py => None
+open_patch Script/Python/gclient/entitylist.py => None
+exists_pkg Script/Python/gclient/entitylist.py => False
+exists_patch Script/Python/gclient/entitylist.py => False
+loader.get_module_data('common.EntityManager',) FAIL AttributeError("'str' object has no attribute '__spec__'")
+loader.get_relpath('common.EntityManager',) => None
+loader.get_relpath_with_path('common.EntityManager',) FAIL TypeError('get_relpath_with_path() takes exactly 3 positional arguments (2 given)')
+loader.get_module_data('engine/common/EntityManager.py',) FAIL AttributeError("'str' object has no attribute '__spec__'")
+loader.get_relpath('engine/common/EntityManager.py',) => None
+loader.get_relpath_with_path('engine/common/EntityManager.py',) FAIL TypeError('get_relpath_with_path() takes exactly 3 positional arguments (2 given)')
+loader.get_module_data('C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/common/EntityManager.py',) FAIL AttributeError("'str' object has no attribute '__spec__'")
+loader.get_relpath('C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/common/EntityManager.py',) => 'engine/common/EntityManager.py/'
+loader.get_relpath_with_path('C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/common/EntityManager.py',) FAIL TypeError('get_relpath_with_path() takes exactly 3 positional arguments (2 given)')
+END

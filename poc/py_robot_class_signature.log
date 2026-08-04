@@ -1,0 +1,150 @@
+BEGIN 1785808077.903019
+CLASS RobotCombatAvatarShootingRange <class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.RobotCombatAvatarShootingRange'> mro=['RobotCombatAvatarShootingRange', 'CombatAvatarShootingRange', 'CombatAvatar', 'ClientAreaEntity', 'ClientEntity', 'Entity', 'entity', 'object']
+CreateToplogo: repr=<function CombatAvatarToplogo.CreateToplogo at 0x00000259DD96FC10> type=<class 'function'>
+CreateToplogo: sig=<Signature (self, ientity, scene_node_name, cocos_widget, depthEnable=False, auto_distinct=True)>
+CreateToplogo: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=168 argc=6 kwonly=0 vars=('self', 'ientity', 'scene_node_name', 'cocos_widget', 'depthEnable', 'auto_distinct') names=('RemoveToplogo', 'init_toplogo_ui', 'scene_node_class', 'toplogo', 'Create', 'SetOwner', 'InitToplogo', 'toplogo_widget') consts=(True, None)
+CreateToplogo: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      RemoveToplogo + NULL|self
+  0018 CALL                           
+  0020 POP_TOP                        
+  0022 LOAD_CONST                     True
+  0024 LOAD_FAST_BORROW               self
+  0026 STORE_ATTR                     init_toplogo_ui
+  0030 LOAD_FAST_BORROW               self
+  0032 LOAD_ATTR                      scene_node_class + NULL|self
+  0046 LOAD_FAST_BORROW               ientity
+  0048 CALL                           
+  0050 LOAD_FAST_BORROW               self
+  0052 STORE_ATTR                     toplogo
+  005c LOAD_FAST_BORROW               self
+  005e LOAD_ATTR                      toplogo
+  0072 LOAD_ATTR                      Create + NULL|self
+  0086 LOAD_FAST_BORROW_LOAD_FAST_BORROW scene_node_name, cocos_widget
+  0088 LOAD_FAST_BORROW_LOAD_FAST_BORROW depthEnable, auto_distinct
+  008a CALL                           
+  0092 POP_TOP                        
+  0094 LOAD_FAST_BORROW               self
+  0096 LOAD_ATTR                      toplogo
+  00aa LOAD_ATTR                      SetOwner + NULL|self
+  00be LOAD_FAST_BORROW               self
+  00c0 CALL                           
+  00c8 POP_TOP                        
+  00ca LOAD_FAST_BORROW               self
+  00cc LOAD_ATTR                      toplogo
+  00e0 LOAD_ATTR                      InitToplogo + NULL|self
+  00f4 LOAD_FAST_BORROW               self
+  00f6 LOAD_ATTR                      toplogo_widget
+  010a CALL                           
+  0112 POP_TOP                        
+  0114 LOAD_CONST                     None
+  0116 RETURN_VALUE                   
+CreateToplogo: DIS_END
+CreateToplogo: defaults=(False, True)
+EnsureShootingRangeToplogo: repr=<function CombatAvatarShootingRange.EnsureShootingRangeToplogo at 0x00000259E1DF1E80> type=<class 'function'>
+EnsureShootingRangeToplogo: sig=<Signature (self)>
+EnsureShootingRangeToplogo: file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=122 argc=1 kwonly=0 vars=('self',) names=('IsShootingRangeToplogoReady', 'init_toplogo_ui', 'model', 'isValid', 'TryInitToplogo') consts=(True, False)
+EnsureShootingRangeToplogo: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      IsShootingRangeToplogoReady + NULL|self
+  0018 CALL                           
+  0020 TO_BOOL                        
+  0028 POP_JUMP_IF_FALSE              to L1
+  002c NOT_TAKEN                      
+  002e LOAD_CONST                     True
+  0030 RETURN_VALUE                   
+  0032 LOAD_FAST_BORROW               self
+  0034 LOAD_ATTR                      init_toplogo_ui
+  0048 TO_BOOL                        
+  0050 POP_JUMP_IF_FALSE              to L2
+  0054 NOT_TAKEN                      
+  0056 LOAD_CONST                     False
+  0058 RETURN_VALUE                   
+  005a LOAD_FAST_BORROW               self
+  005c LOAD_ATTR                      model
+  0070 TO_BOOL                        
+  0078 POP_JUMP_IF_TRUE               to L3
+  007c NOT_TAKEN                      
+  007e LOAD_CONST                     False
+  0080 RETURN_VALUE                   
+  0082 LOAD_FAST_BORROW               self
+  0084 LOAD_ATTR                      model
+  0098 LOAD_ATTR                      isValid + NULL|self
+  00ac CALL                           
+  00b4 TO_BOOL                        
+  00bc POP_JUMP_IF_TRUE               to L4
+  00c0 NOT_TAKEN                      
+  00c2 LOAD_CONST                     False
+  00c4 RETURN_VALUE                   
+  00c6 LOAD_FAST_BORROW               self
+  00c8 LOAD_ATTR                      TryInitToplogo + NULL|self
+  00dc CALL                           
+  00e4 POP_TOP                        
+  00e6 LOAD_FAST_BORROW               self
+  00e8 LOAD_ATTR                      IsShootingRangeToplogoReady + NULL|self
+  00fc CALL                           
+  0104 RETURN_VALUE                   
+EnsureShootingRangeToplogo: DIS_END
+EnemyTopLogoTimer: repr=<function CombatAvatarToplogo.EnemyTopLogoTimer at 0x00000259DD9ACEB0> type=<class 'function'>
+EnemyTopLogoTimer: sig=<Signature (self)>
+EnemyTopLogoTimer: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=282 argc=1 kwonly=0 vars=('self',) names=('toplogo', 'EnemyTopLogoTimer') consts=(None,)
+EnemyTopLogoTimer: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      toplogo
+  0018 LOAD_ATTR                      EnemyTopLogoTimer + NULL|self
+  002c CALL                           
+  0034 POP_TOP                        
+  0036 LOAD_CONST                     None
+  0038 RETURN_VALUE                   
+EnemyTopLogoTimer: DIS_END
+AddToplogoVisibleTick: repr=<function CombatAvatarToplogo.AddToplogoVisibleTick at 0x00000259DD9AC930> type=<class 'function'>
+AddToplogoVisibleTick: sig=<Signature (self)>
+AddToplogoVisibleTick: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=257 argc=1 kwonly=0 vars=('self',) names=('toplogo', 'AddToplogoVisibleTick') consts=(None,)
+AddTopLogoHiddenReason: repr=<function CombatAvatarToplogo.AddTopLogoHiddenReason at 0x00000259DD96F8A0> type=<class 'function'>
+AddTopLogoHiddenReason: sig=<Signature (self, hidden_reason)>
+AddTopLogoHiddenReason: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=151 argc=2 kwonly=0 vars=('self', 'hidden_reason') names=('toplogo', 'AddHiddenReason') consts=(None,)
+AddTopLogoWidgetHiddenReason: repr=<function CombatAvatarToplogo.AddTopLogoWidgetHiddenReason at 0x00000259DD96FA00> type=<class 'function'>
+AddTopLogoWidgetHiddenReason: sig=<Signature (self, reason, fade_out_time=1)>
+AddTopLogoWidgetHiddenReason: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=157 argc=3 kwonly=0 vars=('self', 'reason', 'fade_out_time') names=('toplogo', 'AddTopLogoWidgetHiddenReason') consts=(None,)
+AddTopLogoWidgetHiddenReason: defaults=(1,)
+HideEnemyTopLogo: repr=<function CombatAvatarMember.HideEnemyTopLogo at 0x00000259DF55A6C0> type=<class 'function'>
+HideEnemyTopLogo: sig=<Signature (self)>
+HideEnemyTopLogo: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=999 argc=1 kwonly=0 vars=('self',) names=('space', 'GetEntity', 'ads_mark_pos_avatars', 'ShowEnemyToplogo') consts=(False, None)
+CanShowEnemyToplogo: repr=<function CombatAvatarMember.CanShowEnemyToplogo at 0x00000259DFC6A560> type=<class 'function'>
+CanShowEnemyToplogo: sig=<Signature (self)>
+CanShowEnemyToplogo: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=575 argc=1 kwonly=0 vars=('self',) names=('HasBuffByKinds',) consts=(1010, (1010, 1028, 1019))
+CanShowEnemyToplogoBar: repr=<function CombatAvatarMember.CanShowEnemyToplogoBar at 0x00000259DFC6A610> type=<class 'function'>
+CanShowEnemyToplogoBar: sig=<Signature (self)>
+CanShowEnemyToplogoBar: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=578 argc=1 kwonly=0 vars=('self',) names=('HasBuffByKinds',) consts=(1010, (1010, 1028, 1019))
+DrawReconDroneMarkFrame: repr=<function CombatAvatarMember.DrawReconDroneMarkFrame at 0x00000259DEF954E0> type=<class 'function'>
+DrawReconDroneMarkFrame: sig=<Signature (self)>
+DrawReconDroneMarkFrame: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=42 argc=1 kwonly=0 vars=('self',) names=('recon_drone_frame_top_logo', 'ReconDroneMarkFrameTopLogo') consts=(None,)
+DestroyReconDroneMarkFrame: repr=<function CombatAvatarMember.DestroyReconDroneMarkFrame at 0x00000259DEF95590> type=<class 'function'>
+DestroyReconDroneMarkFrame: sig=<Signature (self)>
+DestroyReconDroneMarkFrame: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=47 argc=1 kwonly=0 vars=('self',) names=('recon_drone_frame_top_logo', 'Destroy') consts=(None,)
+CLASS PlayerCombatAvatarShootingRange <class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.PlayerCombatAvatarShootingRange'> mro=['PlayerCombatAvatarShootingRange', 'PlayerCombatAvatar', 'CombatAvatar', 'ClientAreaEntity', 'ClientEntity', 'Entity', 'entity', 'object']
+CreateToplogo: getattr FAIL AttributeError("type object 'PlayerCombatAvatarShootingRange' has no attribute 'CreateToplogo'")
+EnsureShootingRangeToplogo: getattr FAIL AttributeError("type object 'PlayerCombatAvatarShootingRange' has no attribute 'EnsureShootingRangeToplogo'")
+EnemyTopLogoTimer: getattr FAIL AttributeError("type object 'PlayerCombatAvatarShootingRange' has no attribute 'EnemyTopLogoTimer'")
+AddToplogoVisibleTick: getattr FAIL AttributeError("type object 'PlayerCombatAvatarShootingRange' has no attribute 'AddToplogoVisibleTick'")
+AddTopLogoHiddenReason: getattr FAIL AttributeError("type object 'PlayerCombatAvatarShootingRange' has no attribute 'AddTopLogoHiddenReason'")
+AddTopLogoWidgetHiddenReason: getattr FAIL AttributeError("type object 'PlayerCombatAvatarShootingRange' has no attribute 'AddTopLogoWidgetHiddenReason'")
+HideEnemyTopLogo: repr=<function CombatAvatarMember.HideEnemyTopLogo at 0x00000259DF55A6C0> type=<class 'function'>
+HideEnemyTopLogo: sig=<Signature (self)>
+HideEnemyTopLogo: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=999 argc=1 kwonly=0 vars=('self',) names=('space', 'GetEntity', 'ads_mark_pos_avatars', 'ShowEnemyToplogo') consts=(False, None)
+CanShowEnemyToplogo: repr=<function CombatAvatarMember.CanShowEnemyToplogo at 0x00000259DFC6A560> type=<class 'function'>
+CanShowEnemyToplogo: sig=<Signature (self)>
+CanShowEnemyToplogo: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=575 argc=1 kwonly=0 vars=('self',) names=('HasBuffByKinds',) consts=(1010, (1010, 1028, 1019))
+CanShowEnemyToplogoBar: repr=<function CombatAvatarMember.CanShowEnemyToplogoBar at 0x00000259DFC6A610> type=<class 'function'>
+CanShowEnemyToplogoBar: sig=<Signature (self)>
+CanShowEnemyToplogoBar: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=578 argc=1 kwonly=0 vars=('self',) names=('HasBuffByKinds',) consts=(1010, (1010, 1028, 1019))
+DrawReconDroneMarkFrame: repr=<function CombatAvatarMember.DrawReconDroneMarkFrame at 0x00000259DEF954E0> type=<class 'function'>
+DrawReconDroneMarkFrame: sig=<Signature (self)>
+DrawReconDroneMarkFrame: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=42 argc=1 kwonly=0 vars=('self',) names=('recon_drone_frame_top_logo', 'ReconDroneMarkFrameTopLogo') consts=(None,)
+DestroyReconDroneMarkFrame: repr=<function CombatAvatarMember.DestroyReconDroneMarkFrame at 0x00000259DEF95590> type=<class 'function'>
+DestroyReconDroneMarkFrame: sig=<Signature (self)>
+DestroyReconDroneMarkFrame: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=47 argc=1 kwonly=0 vars=('self',) names=('recon_drone_frame_top_logo', 'Destroy') consts=(None,)
+END

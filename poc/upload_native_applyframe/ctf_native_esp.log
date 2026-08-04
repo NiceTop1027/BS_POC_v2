@@ -1,0 +1,21 @@
+1785853383.192 snapshot tick=1 targets=0 players=0 bots=0 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=0 weapon=0 velocity=0.000
+1785853383.193 INSTALL_FAILED no timer owner
+1785853384.134 snapshot tick=1 targets=0 players=0 bots=0 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=0 weapon=0 velocity=0.000
+1785853384.134 INSTALL_FAILED no timer owner
+1785853385.143 snapshot tick=1 targets=0 players=0 bots=0 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=0 weapon=0 velocity=0.000
+1785853385.144 INSTALL_FAILED no timer owner
+1785853386.151 snapshot tick=1 targets=0 players=0 bots=0 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=0 weapon=0 velocity=0.000
+1785853386.151 INSTALL_FAILED no timer owner
+1785853387.169 snapshot tick=1 targets=0 players=0 bots=0 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=0 weapon=0 velocity=0.000
+1785853387.169 INSTALL_FAILED no timer owner
+1785853388.158 snapshot tick=1 targets=0 players=0 bots=0 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=0 weapon=0 velocity=0.000
+1785853388.158 INSTALL_FAILED no timer owner
+1785853389.291 snapshot tick=1 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500
+1785853389.304 INSTALL_OK hz=60 timer_id=-3269 apply_frame_ok=True apply_frame_error=''
+1785853397.163 snapshot tick=240 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500
+1785853405.084 snapshot tick=480 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500
+1785853413.005 snapshot tick=720 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500
+1785853420.922 snapshot tick=960 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500
+1785853428.845 snapshot tick=1200 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500
+1785853436.765 snapshot tick=1440 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500
+1785853444.684 snapshot tick=1680 targets=6 players=0 bots=6 culled=0 range=800 native_aim=1 applied=0 lock=None apply_frame_ok=1 source_players=0 source_robots=6 weapon=120 velocity=1725.500

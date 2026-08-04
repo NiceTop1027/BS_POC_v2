@@ -1,0 +1,42 @@
+BEGIN 1785812321.0884511
+input type=<class 'Vector3'> repr=<6.1291, 0.0648, -6.0592>
+input.x=6.129073619842529
+input.y=0.06484121084213257
+input.z=-6.0591912269592285
+output_vector type=<class 'Vector3'> repr=<0.0000, 0.0000, 0.0000>
+output_vector.x=0.0
+output_vector.y=0.0
+output_vector.z=0.0
+camera_module.genv type=<class 'NoneType'> repr=None
+WorldToHud(None) => <218.7496, -18.7723, -2.2584>
+WorldToHud(None).result type=<class 'Vector3'> repr=<218.7496, -18.7723, -2.2584>
+WorldToHud(None).result.x=218.7495574951172
+WorldToHud(None).result.y=-18.772308349609375
+WorldToHud(None).result.z=-2.2583749294281006
+WorldToHud(zero) => <218.7495, -18.7723, -2.2584>
+WorldToHud(zero).result type=<class 'Vector3'> repr=<218.7495, -18.7723, -2.2584>
+WorldToHud(zero).result.x=218.74954223632812
+WorldToHud(zero).result.y=-18.772308349609375
+WorldToHud(zero).result.z=-2.2583749294281006
+WorldToHud(one) => <6.1321, -0.4113, -6.3427>
+WorldToHud(one).result type=<class 'Vector3'> repr=<6.1321, -0.4113, -6.3427>
+WorldToHud(one).result.x=6.132141590118408
+WorldToHud(one).result.y=-0.41134998202323914
+WorldToHud(one).result.z=-6.34274435043335
+WorldToHud(false) => <218.7495, -18.7723, -2.2584>
+WorldToHud(false).result type=<class 'Vector3'> repr=<218.7495, -18.7723, -2.2584>
+WorldToHud(false).result.x=218.74954223632812
+WorldToHud(false).result.y=-18.772308349609375
+WorldToHud(false).result.z=-2.2583749294281006
+WorldToHud(output_vector) => <6.1321, -0.4113, -6.3427>
+WorldToHud(output_vector).result type=<class 'Vector3'> repr=<6.1321, -0.4113, -6.3427>
+WorldToHud(output_vector).result.x=6.132141590118408
+WorldToHud(output_vector).result.y=-0.41134998202323914
+WorldToHud(output_vector).result.z=-6.34274435043335
+EXC
+Traceback (most recent call last):
+  File "<string>", line 163, in _ctf_w2h2_run
+  File "<string>", line 80, in _ctf_w2h2_scan_callers
+AttributeError: 'int' object has no attribute 'co_names'
+
+END

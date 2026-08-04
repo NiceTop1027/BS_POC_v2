@@ -1,0 +1,892 @@
+BEGIN
+CLASS=<class 'gclient.gamesystem.uihall.uimall.mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow'> MRO=(<class 'gclient.gamesystem.uihall.uimall.mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow'>, <class 'gclient.gamesystem.uihall.uimall.mall_box_attribute_window.MallBoxAttributeWindow'>, <class 'gclient.framework.ui.widgets.ui_window.UIWindow'>, <class 'gclient.framework.ui.widgets.ui_node.UINode'>, <class 'object'>)
+FUNCTION MallBoxAttributeDragonNewWindow.GotoRollActivity signature=(self, _) names=('Jump', 'gacha_setting_proto', 'task_gofunc_util')
+DIS MallBoxAttributeDragonNewWindow.GotoRollActivity
+323           RESUME                   0
+
+324           LOAD_CONST               0 ('response_func')
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              CONTAINS_OP              1 (not in)
+              POP_JUMP_IF_TRUE        18 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('response_func_args')
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              CONTAINS_OP              1 (not in)
+              POP_JUMP_IF_FALSE        3 (to L2)
+              NOT_TAKEN
+
+325   L1:     LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+326   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              LOAD_CONST               0 ('response_func')
+              BINARY_OP               26 ([])
+              STORE_FAST               2 (response_func)
+
+327           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              LOAD_CONST               1 ('response_func_args')
+              BINARY_OP               26 ([])
+              STORE_FAST               3 (response_func_args)
+
+328           LOAD_GLOBAL              2 (task_gofunc_util)
+              LOAD_ATTR                4 (Jump)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (response_func)
+              BUILD_LIST               1
+              LOAD_FAST_BORROW         3 (response_func_args)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        3 (to L3)
+              NOT_TAKEN
+              LOAD_FAST                3 (response_func_args)
+              JUMP_FORWARD             1 (to L4)
+      L3:     LOAD_CONST               3 (())
+      L4:     LIST_EXTEND              1
+              CALL_INTRINSIC_1         6 (INTRINSIC_LIST_TO_TUPLE)
+              PUSH_NULL
+              CALL_FUNCTION_EX
+              POP_TOP
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeDragonNewWindow.RefreshPanelRollTimes signature=(self) names=('INVITE_COMBINE_GIFT_TIPS_3', 'avatar', 'count', 'cur_key', 'gacha_mgr', 'gacha_setting_proto', 'genv', 'get', 'has_got', 'img_big_item', 'img_icon', 'item_node', 'lang', 'listview_reward', 'max', 'panel_roll_times', 'str', 'text', 'texture', 'txt_roll_times', 'visible')
+DIS MallBoxAttributeDragonNewWindow.RefreshPanelRollTimes
+442           RESUME                   0
+
+443           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('max_roll_times')
+              CALL                     1
+              TO_BOOL
+              POP_JUMP_IF_FALSE       46 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                4 (listview_reward)
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_ATTR                6 (item_node)
+              LOAD_ATTR                8 (has_got)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       20 (to L2)
+              NOT_TAKEN
+
+444   L1:     LOAD_CONST               1 (False)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               10 (panel_roll_times)
+              STORE_ATTR               6 (visible)
+
+445           LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+446   L2:     LOAD_GLOBAL             14 (genv)
+              LOAD_ATTR               16 (avatar)
+              STORE_FAST               1 (avatar)
+
+447           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (cur_key)
+              LOAD_FAST_BORROW         1 (avatar)
+              LOAD_ATTR               20 (gacha_mgr)
+              CONTAINS_OP              1 (not in)
+              POP_JUMP_IF_FALSE        3 (to L3)
+              NOT_TAKEN
+
+448           LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+449   L3:     LOAD_FAST_BORROW         1 (avatar)
+              LOAD_ATTR               20 (gacha_mgr)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (cur_key)
+              BINARY_OP               26 ([])
+              LOAD_ATTR               22 (count)
+              STORE_FAST               2 (cur_roll)
+
+450           LOAD_CONST               3 (True)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               10 (panel_roll_times)
+              STORE_ATTR               6 (visible)
+
+451           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              LOAD_CONST               0 ('max_roll_times')
+              BINARY_OP               26 ([])
+              STORE_FAST               3 (max_roll_times)
+
+452           LOAD_FAST_BORROW_LOAD_FAST_BORROW 35 (cur_roll, max_roll_times)
+              COMPARE_OP             188 (bool(>=))
+              POP_JUMP_IF_FALSE       20 (to L4)
+              NOT_TAKEN
+
+453           LOAD_CONST               1 (False)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               10 (panel_roll_times)
+              STORE_ATTR               6 (visible)
+
+454           LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+455   L4:     LOAD_GLOBAL             24 (lang)
+              LOAD_ATTR               26 (INVITE_COMBINE_GIFT_TIPS_3)
+              LOAD_GLOBAL             29 (str + NULL)
+              LOAD_GLOBAL             31 (max + NULL)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (max_roll_times, cur_roll)
+              BINARY_OP               10 (-)
+              LOAD_SMALL_INT           0
+              CALL                     2
+              CALL                     1
+              BINARY_OP                6 (%)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               32 (txt_roll_times)
+              STORE_ATTR              17 (text)
+
+456           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                4 (listview_reward)
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_ATTR                6 (item_node)
+              LOAD_ATTR               36 (img_icon)
+              LOAD_ATTR               38 (texture)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               40 (img_big_item)
+              STORE_ATTR              19 (texture)
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeDragonNewWindow.OnBuyGachaSuccessRefreshDiscount signature=(self) names=('RefreshDiscount', 'visible')
+DIS MallBoxAttributeDragonNewWindow.OnBuyGachaSuccessRefreshDiscount
+870           RESUME                   0
+
+872           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (visible)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       19 (to L1)
+              NOT_TAKEN
+
+873           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                3 (RefreshDiscount + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+872   L1:     LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnClickFreeReward signature=(self, _) names=('CallServer', 'avatar', 'cur_key', 'genv')
+DIS MallBoxAttributeWindow.OnClickFreeReward
+476           RESUME                   0
+
+477           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              STORE_FAST               2 (avatar)
+
+478           LOAD_FAST_BORROW         2 (avatar)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+479           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+480   L1:     LOAD_FAST_BORROW         2 (avatar)
+              LOAD_ATTR                5 (CallServer + NULL|self)
+              LOAD_CONST               1 ('GachaGetFreeReward')
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                6 (cur_key)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.PopCameraRollGraph signature=(self) names=('PopCameraRollGraph', 'model_ctrl')
+DIS MallBoxAttributeWindow.PopCameraRollGraph
+ 62           RESUME                   0
+
+ 63           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (model_ctrl)
+              LOAD_ATTR                3 (PopCameraRollGraph + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.BuyConfirm signature=(self, times) names=('GetMoneyDictByGachaSettingData', 'OnBuyConfirm', 'gacha_setting_proto', 'six2', 'values')
+DIS MallBoxAttributeWindow.BuyConfirm
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.ClearTempBuyInfo signature=(self) names=('temp_buy_info',)
+DIS MallBoxAttributeWindow.ClearTempBuyInfo
+137           RESUME                   0
+
+138           LOAD_CONST               0 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               0 (temp_buy_info)
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.InitPanelBuyWithSpecifyCsb signature=(self, panel_parent, node_name) names=('UIText', 'btn_buy_refresh_num', 'csb_btn_buy_single', 'csb_btn_buy_ten', 'need_add_csb', 'panel_buy', 'panel_buy_single', 'panel_buy_ten', 'seek', 'txt_open_buy_single', 'txt_open_buy_ten')
+DIS MallBoxAttributeWindow.InitPanelBuyWithSpecifyCsb
+ 36           RESUME                   0
+
+ 38           LOAD_FAST_BORROW         1 (panel_parent)
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_FAST_BORROW         2 (node_name)
+              CALL                     1
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               1 (panel_buy)
+
+ 39           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (panel_buy)
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               0 ('panel_1')
+              CALL                     1
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               1 ('panel_btn')
+              CALL                     1
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               2 (panel_buy_ten)
+
+ 40           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (panel_buy)
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               2 ('panel_2')
+              CALL                     1
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               1 ('panel_btn')
+              CALL                     1
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               3 (panel_buy_single)
+
+ 41           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (panel_buy)
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               0 ('panel_1')
+              CALL                     1
+              STORE_FAST               3 (panel_buy_ten)
+
+ 42           LOAD_FAST_BORROW         3 (panel_buy_ten)
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               3 ('txt_open')
+              LOAD_GLOBAL              8 (UIText)
+              CALL                     2
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               5 (txt_open_buy_ten)
+
+ 43           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (panel_buy)
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               2 ('panel_2')
+              CALL                     1
+              STORE_FAST               4 (panel_buy_single)
+
+ 44           LOAD_FAST_BORROW         4 (panel_buy_single)
+              LOAD_ATTR                1 (seek + NULL|self)
+              LOAD_CONST               3 ('txt_open')
+              LOAD_GLOBAL              8 (UIText)
+              CALL                     2
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               6 (txt_open_buy_single)
+
+ 45           LOAD_CONST               4 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               7 (csb_btn_buy_ten)
+
+ 46           LOAD_CONST               4 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               8 (csb_btn_buy_single)
+
+ 47           LOAD_CONST               5 (True)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (need_add_csb)
+
+ 48           LOAD_CONST               4 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              10 (btn_buy_refresh_num)
+              LOAD_CONST               4 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnBuy signature=(self, times) names=('BuildData', 'BuyConfirm', 'CheckCanBuyGacha', 'ClearTempBuyInfo', 'GachaPopUpWindow', 'LocalConfig', 'OnBuyConfirm', 'Show', 'avatar', 'cur_key', 'gacha_setting_proto', 'genv', 'get', 'instance', 'mall_gacha_confirm_popup', 'temp_buy_info')
+DIS MallBoxAttributeWindow.OnBuy
+114           RESUME                   0
+
+115           LOAD_GLOBAL              0 (LocalConfig)
+              LOAD_ATTR                2 (mall_gacha_confirm_popup)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                6 (cur_key)
+              LOAD_CONST               0 (True)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE      172 (to L2)
+              NOT_TAKEN
+
+116           LOAD_GLOBAL              8 (GachaPopUpWindow)
+              LOAD_ATTR               10 (BuildData)
+              PUSH_NULL
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               12 (gacha_setting_proto)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               14 (OnBuyConfirm)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (times, self)
+              LOAD_ATTR               16 (ClearTempBuyInfo)
+              CALL                     4
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (temp_buy_info)
+
+117           LOAD_GLOBAL              8 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Show + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (temp_buy_info)
+              CALL                     1
+              POP_TOP
+
+118           LOAD_GLOBAL             24 (genv)
+              LOAD_ATTR               26 (avatar)
+              LOAD_ATTR               29 (CheckCanBuyGacha + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               12 (gacha_setting_proto)
+              LOAD_CONST               1 ('id')
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       10 (to L1)
+              NOT_TAKEN
+
+119           LOAD_CONST               2 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (temp_buy_info)
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+118   L1:     LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+122   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               31 (BuyConfirm + NULL|self)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnBuyConfirm signature=(self, money_info, times) names=('ACTIVITY_EXPIRED_TIPS', 'Close', 'GachaPopUpWindow', 'GetTimeNow', 'IsInLimitTime', 'LocalConfig', 'Notice', '_BuyGacha', 'cur_key', 'gacha_setting_proto', 'get', 'gui', 'instance', 'lang', 'roll_nocycle_skip_anim_dict', 'temp_buy_info', 'time_util')
+DIS MallBoxAttributeWindow.OnBuyConfirm
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnBuyGachaSuccessRefreshPanelBuy signature=(self) names=('RefreshPanelBuy', 'visible')
+DIS MallBoxAttributeWindow.OnBuyGachaSuccessRefreshPanelBuy
+180           RESUME                   0
+
+182           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (visible)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       19 (to L1)
+              NOT_TAKEN
+
+183           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                3 (RefreshPanelBuy + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+182   L1:     LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnBuySingle signature=(self, btn) names=('OnBuy',)
+DIS MallBoxAttributeWindow.OnBuySingle
+200           RESUME                   0
+
+201           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT           1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnBuyTen signature=(self, btn) names=('OnBuy',)
+DIS MallBoxAttributeWindow.OnBuyTen
+104           RESUME                   0
+
+105           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT          10
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnBuyX signature=(self, btn) names=('LocalConfig', 'OnBuy', 'mall_gacha_v6_btn_buy_cur_num')
+DIS MallBoxAttributeWindow.OnBuyX
+ 78           RESUME                   0
+
+ 79           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_GLOBAL              2 (LocalConfig)
+              LOAD_ATTR                4 (mall_gacha_v6_btn_buy_cur_num)
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnUseGachaDiscountCountChangedForPanelBuy signature=(self, gacha_id) names=('RefreshPanelBuy', 'cur_key', 'visible')
+DIS MallBoxAttributeWindow.OnUseGachaDiscountCountChangedForPanelBuy
+185           RESUME                   0
+
+187           LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (gacha_id, self)
+              LOAD_ATTR                0 (cur_key)
+              COMPARE_OP             119 (bool(!=))
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+
+188           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+189   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (visible)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L2)
+              NOT_TAKEN
+
+190           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+191   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (RefreshPanelBuy + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.OnWarehouseItemAddedForPanelBuy signature=(self, item) names=('RefreshPanelBuyByCostItemChanged',)
+DIS MallBoxAttributeWindow.OnWarehouseItemAddedForPanelBuy
+168           RESUME                   0
+
+170           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (RefreshPanelBuyByCostItemChanged + NULL|self)
+              LOAD_FAST_BORROW         1 (item)
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.RefreshGachaBuyText signature=(self, txt_node, gacha_setting_proto, times) names=('GetGachaExtraFreeTimes', 'MALL_BUY_OPEN_N_EXTRA', 'hall_ui_util', 'lang', 'text')
+DIS MallBoxAttributeWindow.RefreshGachaBuyText
+193           RESUME                   0
+
+194           LOAD_GLOBAL              0 (hall_ui_util)
+              LOAD_ATTR                2 (GetGachaExtraFreeTimes)
+              PUSH_NULL
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 35 (gacha_setting_proto, times)
+              CALL                     2
+              STORE_FAST               4 (free_times)
+
+195           LOAD_GLOBAL              4 (lang)
+              LOAD_ATTR                6 (MALL_BUY_OPEN_N_EXTRA)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 52 (times, free_times)
+              BUILD_TUPLE              2
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (txt_node)
+              STORE_ATTR               4 (text)
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.RefreshPanelBuy signature=(self) names=('CreateWidgetFromFile', 'GetGachaDiscountInfoByGachaId', 'LoadDataGacha', 'MallBtnBuyAll', 'OnBuySingle', 'OnBuyTen', 'OnRefreshX', 'RefreshGachaBuyText', 'RefreshPanelBuySingle', 'addChild', 'btn_buy_single', 'btn_buy_single_reddot_offset', 'btn_buy_ten', 'buy_func', 'csb_btn_buy_single', 'csb_btn_buy_ten', 'gacha_setting_proto', 'get', 'getContentSize', 'gui', 'hall_ui_util', 'height', 'need_add_csb', 'panel_buy_single', 'panel_buy_ten', 'removeAllChildren', 'txt_open_buy_ten', 'width')
+DIS MallBoxAttributeWindow.RefreshPanelBuy
+ 50           RESUME                   0
+
+ 52           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               1 (gacha_setting_proto)
+
+ 53           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (need_add_csb)
+              TO_BOOL
+              EXTENDED_ARG             1
+              POP_JUMP_IF_FALSE      402 (to L2)
+              NOT_TAKEN
+
+ 54           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_CONST               0 ('ten_draw_vx')
+              LOAD_CONST               1 ('UIScript/node_shop_btn_buy_gold.csb')
+              CALL                     2
+              STORE_FAST               2 (csb_btn_ten)
+
+ 55           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                6 (csb_btn_buy_ten)
+              LOAD_FAST_BORROW         2 (csb_btn_ten)
+              COMPARE_OP             119 (bool(!=))
+              POP_JUMP_IF_FALSE      132 (to L1)
+              NOT_TAKEN
+
+ 56           LOAD_FAST_BORROW_LOAD_FAST_BORROW 32 (csb_btn_ten, self)
+              STORE_ATTR               3 (csb_btn_buy_ten)
+
+ 57           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                8 (panel_buy_ten)
+              LOAD_ATTR               11 (removeAllChildren + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 58           LOAD_GLOBAL             13 (MallBtnBuyAll + NULL)
+              LOAD_GLOBAL             14 (gui)
+              LOAD_ATTR               17 (CreateWidgetFromFile + NULL|self)
+              LOAD_FAST_BORROW         2 (csb_btn_ten)
+              CALL                     1
+              CALL                     1
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (btn_buy_ten)
+
+ 59           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               20 (OnBuyTen)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (btn_buy_ten)
+              STORE_ATTR              11 (buy_func)
+
+ 60           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                8 (panel_buy_ten)
+              LOAD_ATTR               25 (addChild + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (btn_buy_ten)
+              CALL                     1
+              POP_TOP
+
+ 61   L1:     LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_CONST               2 ('one_draw_vx')
+              LOAD_CONST               3 ('UIScript/node_shop_btn_buy.csb')
+              CALL                     2
+              STORE_FAST               3 (csb_btn_single)
+
+ 62           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               26 (csb_btn_buy_single)
+              LOAD_FAST_BORROW         3 (csb_btn_single)
+              COMPARE_OP             119 (bool(!=))
+              POP_JUMP_IF_FALSE      201 (to L2)
+              NOT_TAKEN
+
+ 63           LOAD_FAST_BORROW_LOAD_FAST_BORROW 48 (csb_btn_single, self)
+              STORE_ATTR              13 (csb_btn_buy_single)
+
+ 64           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               28 (panel_buy_single)
+              LOAD_ATTR               11 (removeAllChildren + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 65           LOAD_GLOBAL             13 (MallBtnBuyAll + NULL)
+              LOAD_GLOBAL             14 (gui)
+              LOAD_ATTR               17 (CreateWidgetFromFile + NULL|self)
+              LOAD_FAST_BORROW         3 (csb_btn_single)
+              CALL                     1
+              CALL                     1
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              15 (btn_buy_single)
+
+ 66           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               32 (OnBuySingle)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (btn_buy_single)
+              STORE_ATTR              11 (buy_func)
+
+ 67           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               28 (panel_buy_single)
+              LOAD_ATTR               25 (addChild + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (btn_buy_single)
+              CALL                     1
+              POP_TOP
+
+ 68           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (btn_buy_single)
+              LOAD_ATTR               35 (getContentSize + NULL|self)
+              CALL                     0
+              STORE_FAST               4 (size)
+
+ 69           LOAD_FAST_BORROW         4 (size)
+              LOAD_ATTR               36 (width)
+              LOAD_SMALL_INT          20
+              BINARY_OP               10 (-)
+              LOAD_FAST_BORROW         4 (size)
+              LOAD_ATTR               38 (height)
+              LOAD_SMALL_INT          20
+              BINARY_OP               10 (-)
+              BUILD_TUPLE              2
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              20 (btn_buy_single_reddot_offset)
+
+ 70   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (btn_buy_ten)
+              LOAD_ATTR               43 (LoadDataGacha + NULL|self)
+              LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_SMALL_INT          10
+
+ 71           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_CONST               4 ('use_special_icon')
+              LOAD_CONST               5 (True)
+              CALL                     2
+
+ 72           LOAD_GLOBAL             44 (hall_ui_util)
+              LOAD_ATTR               46 (GetGachaDiscountInfoByGachaId)
+              PUSH_NULL
+
+ 73           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               6 ('id')
+              BINARY_OP               26 ([])
+              LOAD_SMALL_INT          10
+
+ 72           CALL                     2
+
+ 70           LOAD_CONST               7 (('use_special_icon', 'discount_info'))
+              CALL_KW                  4
+              POP_TOP
+
+ 74           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               49 (RefreshGachaBuyText + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               50 (txt_open_buy_ten)
+              LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_SMALL_INT          10
+              CALL                     3
+              POP_TOP
+
+ 75           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               53 (RefreshPanelBuySingle + NULL|self)
+              CALL                     0
+              POP_TOP
+
+ 76           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               55 (OnRefreshX + NULL|self)
+              LOAD_CONST               8 (None)
+              LOAD_CONST               9 (False)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               8 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.RefreshPanelBuyByCostItemChanged signature=(self, item) names=('IsMoneyCostItem', 'RefreshPanelBuy', 'cdata_util', 'is_destroyed', 'item_id')
+DIS MallBoxAttributeWindow.RefreshPanelBuyByCostItemChanged
+162           RESUME                   0
+
+163           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (is_destroyed)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        3 (to L1)
+              NOT_TAKEN
+
+164           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+165   L1:     LOAD_FAST_BORROW         1 (item)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       66 (to L3)
+              NOT_TAKEN
+              LOAD_GLOBAL              2 (cdata_util)
+              LOAD_ATTR                4 (IsMoneyCostItem)
+              PUSH_NULL
+              LOAD_FAST_BORROW         1 (item)
+              LOAD_ATTR                6 (item_id)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              TO_BOOL
+              POP_JUMP_IF_FALSE       19 (to L2)
+              NOT_TAKEN
+
+166           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                9 (RefreshPanelBuy + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+165   L2:     LOAD_CONST               0 (None)
+              RETURN_VALUE
+      L3:     LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow.RefreshPanelBuySingle signature=(self) names=('GetGachaDiscountInfoByGachaId', 'LoadDataGacha', 'RefreshGachaBuyText', 'btn_buy_single', 'cur_key', 'gacha_setting_proto', 'hall_ui_util', 'txt_open_buy_single')
+DIS MallBoxAttributeWindow.RefreshPanelBuySingle
+203           RESUME                   0
+
+204           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (btn_buy_single)
+              LOAD_ATTR                3 (LoadDataGacha + NULL|self)
+
+205           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                4 (gacha_setting_proto)
+              LOAD_SMALL_INT           1
+              LOAD_GLOBAL              6 (hall_ui_util)
+              LOAD_ATTR                8 (GetGachaDiscountInfoByGachaId)
+              PUSH_NULL
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               10 (cur_key)
+              CALL                     1
+
+204           LOAD_CONST               1 (('discount_info',))
+              CALL_KW                  3
+              POP_TOP
+
+206           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               13 (RefreshGachaBuyText + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               14 (txt_open_buy_single)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                4 (gacha_setting_proto)
+              LOAD_SMALL_INT           1
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+FUNCTION MallBoxAttributeWindow._BuyGacha signature=(self, gacha_setting_proto, times, skip_anim) names=('BuyGacha', 'avatar', 'genv')
+DIS MallBoxAttributeWindow._BuyGacha
+159           RESUME                   0
+
+160           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              LOAD_FAST_LOAD_FAST     35 (times, skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaRoll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+END

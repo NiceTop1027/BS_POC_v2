@@ -1,0 +1,52 @@
+BEGIN
+AddFakeBoardElement repr=<built-in function AddFakeBoardElement>
+AddFakeBoardElement doc=None
+AddFakeBoardElement textsig=None
+AddFakeBoardElement0 repr=<built-in function AddFakeBoardElement0>
+AddFakeBoardElement0 doc=None
+AddFakeBoardElement0 textsig=None
+AddFakeBoardElementWithBone repr=<built-in function AddFakeBoardElementWithBone>
+AddFakeBoardElementWithBone doc=None
+AddFakeBoardElementWithBone textsig=None
+RemoveFakeBoardElement repr=<built-in function RemoveFakeBoardElement>
+RemoveFakeBoardElement doc=None
+RemoveFakeBoardElement textsig='($self, object, /)'
+CreateScreenText repr=<built-in function CreateScreenText>
+CreateScreenText doc=None
+CreateScreenText textsig=None
+UpdateScreenText repr=<built-in function UpdateScreenText>
+UpdateScreenText doc=None
+UpdateScreenText textsig=None
+RemoveScreenText repr=<built-in function RemoveScreenText>
+RemoveScreenText doc=None
+RemoveScreenText textsig='($self, object, /)'
+FakeBoardElementParam doc='FakeBoardElementParam'
+FakeBoardElementParam obj=<FakeBoardElementParam object at 0x00000259E1E10200> dir=['bias', 'biasType', 'bone', 'clone', 'fovDistance', 'key', 'maxScale', 'minScale', 'node', 'normalFov']
+FakeBoardElementParam.bias=<0.0000, 0.0000, 0.0000>
+FakeBoardElementParam.biasType=0
+FakeBoardElementParam.bone=''
+FakeBoardElementParam.clone=<built-in method clone of FakeBoardElementParam object at 0x00000259E1E10200>
+FakeBoardElementParam.fovDistance=25.0
+FakeBoardElementParam.key=''
+FakeBoardElementParam.maxScale=1.0
+FakeBoardElementParam.minScale=0.10000000149011612
+FakeBoardElementParam.node FAIL SystemError('error return without exception set')
+FakeBoardElementParam.normalFov=True
+HarmTextParam doc='HarmTextParam'
+HarmTextParam obj=<HarmTextParam object at 0x00000259E1E10540> dir=['accScale', 'animKey', 'clone', 'color', 'fontIndex', 'fontName', 'fontSize', 'fovDistance', 'harmText', 'localZ', 'offset', 'scale', 'strokeColor', 'type', 'worldPos']
+HarmTextParam.accScale=0.10000000149011612
+HarmTextParam.animKey=0
+HarmTextParam.clone=<built-in method clone of HarmTextParam object at 0x00000259E1E10540>
+HarmTextParam.color=<1.0000, 1.0000, 1.0000>
+HarmTextParam.fontIndex=0
+HarmTextParam.fontName=''
+HarmTextParam.fontSize=0.0
+HarmTextParam.fovDistance=100.0
+HarmTextParam.harmText=''
+HarmTextParam.localZ=0
+HarmTextParam.offset=<0.0000, 0.0000>
+HarmTextParam.scale=1.0
+HarmTextParam.strokeColor=<1.0000, 1.0000, 1.0000>
+HarmTextParam.type=0
+HarmTextParam.worldPos=<0.0000, 0.0000, 0.0000>
+END

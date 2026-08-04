@@ -1,0 +1,834 @@
+BEGIN
+{
+  "gachas": [
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 0.5,
+          "price": 25,
+          "price_ori": 50
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 0.5,
+          "price": 250,
+          "price_ori": 500
+        }
+      },
+      "id": 1367,
+      "roll_count": 0,
+      "setting": {
+        "begin_time": "2026-06-19 00:00:00",
+        "cls_name": "mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow",
+        "cost_count": 50,
+        "cost_id": 4000000020,
+        "draw_type": "Valor",
+        "end_time": "2026-08-13 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120002540,
+        "id": 1367,
+        "level_id": 235,
+        "name": "Penetrator Valor",
+        "real_gacha": 1366
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 40000000203,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 10,
+          "price_ori": 10
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 40000000203,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 100,
+          "price_ori": 100
+        }
+      },
+      "id": 1370,
+      "roll_count": 8,
+      "setting": {
+        "begin_time": "2026-06-15 00:00:00",
+        "cls_name": "mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow",
+        "cost_count": 10,
+        "cost_id": 4000000020,
+        "draw_type": "Stash",
+        "end_time": "2026-08-14 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4100001820,
+        "id": 1370,
+        "level_id": 90,
+        "name": "Gold Stash",
+        "real_gacha": 1220
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 30,
+          "price_ori": 30
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 300,
+          "price_ori": 300
+        }
+      },
+      "id": 1388,
+      "roll_count": 10,
+      "setting": {
+        "begin_time": "2026-07-24 00:00:00",
+        "cls_name": "mall_box_weapon_v6_straight_roll_window.MallBoxWeaponV6StraightRollWindow",
+        "cost_count": 30,
+        "cost_id": 4000000020,
+        "draw_type": "Valor",
+        "end_time": "2026-08-27 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120002840,
+        "id": 1388,
+        "level_id": 246,
+        "name": "Golden Elegy Valor",
+        "real_gacha": 1387
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 50,
+          "price_ori": 50
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 500,
+          "price_ori": 500
+        }
+      },
+      "id": 1390,
+      "roll_count": 10,
+      "setting": {
+        "begin_time": "2026-07-31 00:00:00",
+        "cls_name": "mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow",
+        "cost_count": 50,
+        "cost_id": 4000000020,
+        "draw_type": "Valor",
+        "end_time": "2026-09-10 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120002890,
+        "id": 1390,
+        "level_id": 252,
+        "name": "Fireborn Valor",
+        "real_gacha": 1389
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 0.5,
+          "price": 25,
+          "price_ori": 50
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 0.5,
+          "price": 250,
+          "price_ori": 500
+        }
+      },
+      "id": 1392,
+      "roll_count": 0,
+      "setting": {
+        "begin_time": "2026-07-17 00:00:00",
+        "cls_name": "mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow",
+        "cost_count": 50,
+        "cost_id": 4000000020,
+        "draw_type": "Valor",
+        "end_time": "2026-08-27 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120002930,
+        "id": 1392,
+        "level_id": 248,
+        "name": "Warlock Valor",
+        "real_gacha": 1391
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 30,
+          "price_ori": 30
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 300,
+          "price_ori": 300
+        }
+      },
+      "id": 1394,
+      "roll_count": 10,
+      "setting": {
+        "begin_time": "2026-07-12 00:00:00",
+        "cls_name": "mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponsV6BackStraightRollWindow",
+        "cost_count": 30,
+        "cost_id": 4000000020,
+        "draw_type": "Valor",
+        "end_time": "2026-08-15 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120002950,
+        "id": 1394,
+        "level_id": 110,
+        "name": "FEATURED ETERNAL VALOR",
+        "real_gacha": 1393
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 0.5,
+          "price": 15,
+          "price_ori": 30
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 0.5,
+          "price": 150,
+          "price_ori": 300
+        }
+      },
+      "id": 1396,
+      "roll_count": 0,
+      "setting": {
+        "begin_time": "2026-07-25 00:00:00",
+        "cls_name": "mall_box_hero_v6_roll_window.MallBoxHeroV6StraightRollWindow",
+        "cost_count": 30,
+        "cost_id": 4000000020,
+        "draw_type": "Valor",
+        "end_time": "2026-08-28 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120002970,
+        "id": 1396,
+        "level_id": 245,
+        "name": "Cleopatra Valor",
+        "real_gacha": 1395
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 30,
+          "price_ori": 30
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 16201,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 300,
+          "price_ori": 300
+        }
+      },
+      "id": 1398,
+      "roll_count": 30,
+      "setting": {
+        "begin_time": "2026-07-10 00:00:00",
+        "cls_name": "mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponV6NewAndBackStraightRollWindow",
+        "cost_count": 30,
+        "cost_id": 4000000020,
+        "draw_type": "Valor",
+        "end_time": "2026-08-11 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120003040,
+        "id": 1398,
+        "level_id": 60,
+        "name": "Blight's Embrace Valor",
+        "real_gacha": 1397
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 40000000203,
+          "money_type": 4,
+          "off": 0.52,
+          "price": 12,
+          "price_ori": 25
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 40000000203,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 250,
+          "price_ori": 250
+        }
+      },
+      "id": 1400,
+      "roll_count": 2,
+      "setting": {
+        "begin_time": "2026-07-21 00:00:00",
+        "cls_name": "mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow",
+        "cost_count": 25,
+        "cost_id": 4000000020,
+        "draw_type": "Stash",
+        "end_time": "2026-08-15 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120003090,
+        "id": 1400,
+        "level_id": 247,
+        "name": "Selachian Stash",
+        "real_gacha": 1399
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 40000000203,
+          "money_type": 4,
+          "off": 0.5,
+          "price": 10,
+          "price_ori": 20
+        }
+      },
+      "cost_ten": {
+        "4": {
+          "cost_item_id": 4000000020,
+          "icon": 40000000203,
+          "money_type": 4,
+          "off": 1.0,
+          "price": 200,
+          "price_ori": 200
+        }
+      },
+      "id": 1410,
+      "roll_count": 2,
+      "setting": {
+        "begin_time": "2026-08-03 00:00:01",
+        "cls_name": "mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow",
+        "cost_count": 20,
+        "cost_id": 4000000020,
+        "draw_type": "Stash",
+        "end_time": "2026-08-28 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4120003250,
+        "id": 1410,
+        "level_id": 259,
+        "name": "Mako Stash",
+        "real_gacha": 1409
+      }
+    },
+    {
+      "can_buy_one": true,
+      "cost_one": {
+        "1": {
+          "cost_item_id": 4000000010,
+          "icon": 40000000103,
+          "money_type": 1,
+          "off": 1.0,
+          "price": 300,
+          "price_ori": 300
+        }
+      },
+      "cost_ten": {
+        "1": {
+          "cost_item_id": 4000000010,
+          "icon": 40000000103,
+          "money_type": 1,
+          "off": 1.0,
+          "price": 3000,
+          "price_ori": 3000
+        }
+      },
+      "id": 2019,
+      "roll_count": 49,
+      "setting": {
+        "begin_time": "2026-06-09 00:00:00",
+        "cost_count": 300,
+        "cost_id": 4000000010,
+        "draw_type": "Stash",
+        "end_time": "2026-08-15 23:59:59",
+        "first_cost_count": 1,
+        "first_cost_id": 4100000260,
+        "id": 2019,
+        "name": "Rep Stash"
+      }
+    },
+    {
+      "id": 10237,
+      "setting": null
+    },
+    {
+      "id": 10395,
+      "setting": null
+    },
+    {
+      "id": 4000014,
+      "setting": null
+    }
+  ],
+  "gold": 99980,
+  "groups": {
+    "GetActCacheGachaIds": {
+      "ids": [],
+      "raw": []
+    },
+    "GetActGachaPreSaleIds": {
+      "ids": [
+        10395
+      ],
+      "raw": [
+        10395
+      ]
+    },
+    "GetActNewPlayerGachaIds": {
+      "ids": [
+        10237
+      ],
+      "raw": [
+        10237
+      ]
+    },
+    "GetActRollNoCycleIds": {
+      "ids": [
+        4000014
+      ],
+      "raw": [
+        4000014
+      ]
+    },
+    "GetGachaSettingShelfList": {
+      "ids": [],
+      "raw": [
+        "{'discount_count': 10, 'banner_is_v7': 1, 'discount_tag': 'Great Discount', 'exchange_cost_id': 4120002900, 'lobby_gacha_banner': 16046, 'feature_line_color': (222, 201, 159), 'feature_bg': 11482, 'feature_reward_select_bg': 11526, 'one_draw_icon': 16201, 'flip_rule': 3943, 'feature_icon_color': (156, 156, 156), 'begin_utc_stamp': 1785456000, 'free_reward': (4100000260, 1), 'btn_reward_icon': 90110, 'left_title_csb': 'UIScript/node_og_shop_military_v7_kunai_title.csb', 'end_utc_stamp': 1789084799, 'img_banner_bg': 90429, 'gift_roll_times': {}, 'one_draw_vx': 'UIScript/node_og_shop_military_v7_kunai_btn_one.csb', 'title_icon': 90420, 'model_pos_id': 204, 'exchange_model_pos_key': 206, 'img_exchange_bg': 90422, 'banner': 13273, 'rank': 22000, 'feature_camera_id': 45, 'redeem_csb': 'UIScript/node_og_shop_military_v7_kunai_redeem.csb', 'x_draw_icon': 16201, 'sidebar_banner_color_idx': 3, 'sidebar_bg_icon': 90423, 'begin_time': '2026-07-31 00:00:00', 'allow_roll_times': (1, 5, 10, 50), 'discount_cost': 25, 'sound_bgm': True, 'sound_sp_bnk': 'music_outgame_junxu_tgmj', 'model_btn_bg': 90108, 'is_discount': 1, 'ten_draw_vx': 'UIScript/node_og_shop_military_v7_kunai_btn_ten.csb', 'real_gacha': 1389, 'first_cost_id': 4120002890, 'title_str': 'Fireborn Valor', 'cls_name': 'mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow', 'level_id': 252, 'cost_id': 4000000020, 'date_bg_icon': 90109, 'first_cost_count': 1, 'img_list_reward_bg': 90431, 'sidebar_arrow_icon': 90424, 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'feature_reward_title_bg': 11490, 'draw_type': 'Valor', 'rule': 3735, 'end_time': '2026-09-10 23:59:59', 'sound_sp_state_v': 'tgmj', 'sidebar_banner': 90425, 'feature_name_bg_color': (58, 105, 147), 'small_icon': 11253, 'feature_btn_disable': 11484, 'exchange_money_color': '#FAD255', 'highly_recommended': 1, 'id': 1390, 'is_limited-time': True, 'logic_index': (1,), 'cost_count': 50, 'reward_model_pos_id': 205, 'name': 'Fireborn Valor', 'img_exchange_money': 90421, 'collection_count_color': 'ffe877', 'title_str_color': ((255, 16, 43, 255), (255, 16, 43, 255), (191, 0, 0, 255), (191, 0, 0, 255))}",
+        "{'end_time': '2026-08-27 23:59:59', 'collection_count_color': 'ffe877', 'tran_effect_id': (1494,), 'discount_cost': 25, 'feature_reward_title_bg': 11490, 'discount_tag': 'Great Discount', 'btn_reward_icon': 17574, 'feature_line_color': (222, 201, 159), 'feature_name_bg_color': (58, 105, 147), 'exchange_cost_id': 4120002940, 'begin_utc_stamp': 1784246400, 'first_cost_id': 4120002930, 'gift_roll_times': {}, 'img_weapon_collection_bg': 17570, 'img_weapon_collection_icon': 17571, 'date_bg_icon': 17573, 'img_exchange_money': 17568, 'banner': 13273, 'free_reward': (4100000260, 1), 'discount_count': 30, 'sidebar_banner_color_idx': 8, 'is_discount': 1, 'cost_id': 4000000020, 'lobby_gacha_banner': 16046, 'img_exchange_bg': 17567, 'one_draw_icon': 16201, 'exchange_model_pos_key': 201, 'draw_type': 'Valor', 'reward_model_pos_id': 200, 'draw_icon_png': (17555, 17556, 17557, 17558), 'sidebar_banner': 17564, 'feature_camera_id': 45, 'small_icon': 11253, 'sound_bgm': True, 'sound_sp_state_v': 'xhbm', 'tran_hide_color': ((255, 251, 235, 255), (255, 251, 235, 255), (245, 201, 121, 255), (245, 201, 121, 255)), 'feature_reward_select_bg': 11526, 'img_list_reward_bg': 17572, 'ten_draw_vx': 'UIScript/node_og_shop_military_v7_m700_btn_ten.csb', 'title_str': 'Warlock Valor', 'banner_is_v7': 1, 'allow_roll_times': (1, 5, 10, 50), 'exchange_money_color': '#FAD255', 'cost_count': 50, 'unlock_window_png': (17559, 17560, 17561, 17562, 17563), 'sidebar_bg_icon': 17566, 'left_title_csb': 'UIScript/node_og_shop_military_v7_m700_title.csb', 'feature_bg': 11482, 'model_btn_bg': 90133, 'one_draw_vx': 'UIScript/node_og_shop_military_v7_m700_btn_one.csb', 'level_id': 248, 'collection_count': 50, 'x_draw_icon': 16201, 'rule': 1616, 'flip_rule': 3942, 'cls_name': 'mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow', 'img_banner_bg': 17575, 'end_utc_stamp': 1787875199, 'sidebar_arrow_icon': 17565, 'first_cost_count': 1, 'highly_recommended': 1, 'id': 1392, 'is_limited-time': True, 'title_str_color': ((255, 227, 96, 255), (255, 227, 96, 255), (255, 114, 0, 255), (255, 114, 0, 255)), 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'logic_index': (1,), 'feature_btn_disable': 11484, 'title_icon': 17569, 'model_pos_id': 199, 'redeem_csb': 'UIScript/node_og_shop_military_v7_m700_redeem.csb', 'rank': 22000, 'name': 'Warlock Valor', 'real_gacha': 1391, 'sound_sp_bnk': 'music_outgame_junxu_v7_xhbm', 'begin_time': '2026-07-17 00:00:00', 'feature_icon_color': (156, 156, 156)}",
+        "{'end_time': '2026-08-13 23:59:59', 'collection_count_color': 'ffe877', 'tran_effect_id': (1494,), 'discount_cost': 25, 'feature_reward_title_bg': 11490, 'discount_tag': 'Great Discount', 'btn_reward_icon': 90135, 'feature_line_color': (222, 201, 159), 'feature_name_bg_color': (58, 105, 147), 'exchange_cost_id': 4120002550, 'begin_utc_stamp': 1781827200, 'first_cost_id': 4120002540, 'gift_roll_times': {}, 'img_weapon_collection_bg': 17451, 'img_weapon_collection_icon': 17452, 'date_bg_icon': 90134, 'img_exchange_money': 17449, 'banner': 13273, 'free_reward': (4100000260, 1), 'discount_count': 10, 'sidebar_banner_color_idx': 15, 'is_discount': 1, 'cost_id': 4000000020, 'lobby_gacha_banner': 16046, 'img_exchange_bg': 17448, 'one_draw_icon': 16201, 'exchange_model_pos_key': 196, 'draw_type': 'Valor', 'reward_model_pos_id': 195, 'draw_icon_png': (17436, 17437, 17438, 17439), 'sidebar_banner': 17445, 'feature_camera_id': 45, 'small_icon': 11253, 'sound_bgm': True, 'sound_sp_state_v': 'heaven', 'tran_hide_color': ((252, 214, 219, 255), (252, 214, 219, 255), (255, 148, 148, 255), (255, 148, 148, 255)), 'feature_reward_select_bg': 11526, 'img_list_reward_bg': 17453, 'ten_draw_vx': 'UIScript/node_og_shop_military_v7_destroyer_btn_ten.csb', 'title_str': 'Penetrator Valor', 'banner_is_v7': 1, 'allow_roll_times': (1, 5, 10, 50), 'exchange_money_color': '#75B2FF', 'cost_count': 50, 'unlock_window_png': (17440, 17441, 17442, 17443, 17444), 'sidebar_bg_icon': 17447, 'left_title_csb': 'UIScript/node_og_shop_military_v7_penetrator_title.csb', 'feature_bg': 11482, 'model_btn_bg': 90133, 'one_draw_vx': 'UIScript/node_og_shop_military_v7_destroyer_btn_one.csb', 'level_id': 235, 'collection_count': 50, 'x_draw_icon': 16201, 'rule': 1616, 'flip_rule': 3942, 'cls_name': 'mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow', 'img_banner_bg': 90311, 'end_utc_stamp': 1786665599, 'sidebar_arrow_icon': 17446, 'first_cost_count': 1, 'highly_recommended': 1, 'id': 1367, 'is_limited-time': True, 'title_str_color': ((255, 227, 96, 255), (255, 227, 96, 255), (255, 114, 0, 255), (255, 114, 0, 255)), 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'logic_index': (1,), 'feature_btn_disable': 11484, 'title_icon': 17450, 'model_pos_id': 194, 'redeem_csb': 'UIScript/node_og_shop_military_v7_penetrator_redeem.csb', 'rank': 22000, 'name': 'Penetrator Valor', 'real_gacha': 1366, 'sound_sp_bnk': 'music_outgame_junxu_heaven', 'begin_time': '2026-06-19 00:00:00', 'feature_icon_color': (156, 156, 156)}",
+        "{'discount_count': 10, 'gift_roll_times': {}, 'img_banner_bg': 90378, 'cost_id': 4000000020, 'img_exchange_money': 17538, 'one_draw_icon': 16201, 'title_str_color': ((240, 165, 22, 255), (240, 165, 22, 255), (253, 247, 192, 255), (253, 247, 192, 255)), 'reward_model_pos_id': 183, 'left_title_csb': 'UIScript/node_og_shop_military_v6_val_title.csb', 'exchange_cost_id': 4120003000, 'sound_bgm': True, 'rule': 1594, 'level_id': 245, 'one_shot': (10, 11, 12), 'sidebar_banner_color_idx': 8, 'first_cost_id': 4120002970, 'sidebar_bg_icon': 17535, 'sound_sp_state_v': 'gy', 'is_discount': 1, 'end_time': '2026-08-28 23:59:59', 'sidebar_arrow_icon': 17536, 'first_cost_count': 1, 'allow_roll_times': (1, 5, 10, 50), 'ten_draw_vx': 'UIScript/node_og_shop_military_v6_val_btn_ten.csb', 'sidebar_banner': 90374, 'btn_reward_icon': 90377, 'title_icon': 17537, 'draw_type': 'Valor', 'title_str': 'Cleopatra Valor', 'model_btn_bg': 90375, 'one_draw_vx': 'UIScript/node_og_shop_military_v6_val_btn_one.csb', 'feature_camera_id': 45, 'discount_coupon': 1, 'begin_utc_stamp': 1784937600, 'cls_name': 'mall_box_hero_v6_roll_window.MallBoxHeroV6StraightRollWindow', 'sound_sp_bnk': 'music_outgame_junxu_gy', 'begin_time': '2026-07-25 00:00:00', 'background_hide_entity_names': ('statshbackground', 'statshbackground_132', 'ui_store', 'shangchengbeijing_001'), 'discount_tag': 'Great Discount', 'gacha_discount_card': 4100003600, 'cost_count': 30, 'end_utc_stamp': 1787961599, 'highly_recommended': 1, 'img_exchange_bg': 17534, 'discount_cost': 15, 'exchange_model_pos_key': 184, 'id': 1396, 'is_limited-time': True, 'x_draw_icon': 16201, 'logic_index': (1,), 'redeem_csb': 'UIScript/node_og_shop_military_v6_val_redeem.csb', 'model_pos_id': 182, 'name': 'Cleopatra Valor', 'date_bg_icon': 90376, 'flip_rule': 3943, 'real_gacha': 1395, 'free_reward': (4100000260, 1)}",
+        "{'cost_id': 4000000020, 'img_exchange_bg': 17509, 'model_pos_id': 88, 'highly_recommended': 1, 'one_shot': (10, 11, 12), 'discount_tag': 'Great Discount', 'discount_count': 10, 'img_exchange_money': 17508, 'discount_cost': 15, 'img_weapon_collection_icon': 17510, 'collection_count_color': 'ffe877', 'real_gacha': 1387, 'first_cost_count': 1, 'reward_model_pos_id': 89, 'date_bg_icon': 90355, 'one_draw_vx': 'UIScript/node_og_shop_military_v6_inp_btn_one.csb', 'sidebar_arrow_icon': 17518, 'sound_sp_bnk': 'music_outgame_2311_junxu_ymxz', 'is_discount': 1, 'sidebar_banner': 90353, 'redeem_csb': 'UIScript/node_og_shop_military_v6_inp_redeem.csb', 'level_id': 246, 'sound_bgm': True, 'sound_sp_state_v': 'ymxz', 'ten_draw_vx': 'UIScript/node_og_shop_military_v6_inp_btn_ten.csb', 'img_weapon_collection_bg': 17511, 'tran_effect_id': (1494,), 'end_utc_stamp': 1787875199, 'tran_hide_color': ((255, 242, 134, 255), (255, 242, 134, 255), (255, 43, 31, 255), (255, 43, 31, 255)), 'x_draw_icon': 16201, 'rule': 1616, 'allow_roll_times': (1, 5, 10, 50), 'begin_time': '2026-07-24 00:00:00', 'title_str': 'Golden Elegy Valor', 'btn_reward_icon': 90356, 'discount_coupon': 1, 'cls_name': 'mall_box_weapon_v6_straight_roll_window.MallBoxWeaponV6StraightRollWindow', 'cost_count': 30, 'is_limited-time': True, 'unlock_window_png': (17512, 17513, 17514, 17515, 17516), 'title_icon': 17503, 'collection_count': 50, 'exchange_cost_id': 4120002870, 'logic_index': (1,), 'begin_utc_stamp': 1784851200, 'first_cost_id': 4120002840, 'end_time': '2026-08-27 23:59:59', 'gift_roll_times': {}, 'exchange_model_pos_key': 90, 'name': 'Golden Elegy Valor', 'id': 1388, 'draw_type': 'Valor', 'sidebar_bg_icon': 17517, 'one_draw_icon': 16201, 'sidebar_banner_color_idx': 3, 'title_str_color': ((240, 165, 22, 255), (240, 165, 22, 255), (253, 247, 192, 255), (253, 247, 192, 255)), 'model_btn_bg': 90354, 'flip_rule': 3942, 'feature_camera_id': 45, 'free_reward': (4100000260, 1), 'gacha_discount_card': 4100003600, 'img_banner_bg': 90357, 'left_title_csb': 'UIScript/node_og_shop_military_v6_inp_title.csb'}",
+        "{'end_time': '2026-08-15 23:59:59', 'discount_cost': 15, 'discount_tag': 'Great Discount', 'feature_name_bg_color': (58, 105, 147), 'feature_reward_title_bg': 11490, 'first_cost_id': 4120002950, 'btn_reward_icon': 90110, 'feature_line_color': (222, 201, 159), 'gift_roll_times': {}, 'exchange_cost_id': 4120002960, 'begin_utc_stamp': 1783814400, 'img_exchange_bg': 17550, 'mall_gacha_v6_roll_back_tips': 'Total #ff000d%d#E draws', 'level_effect_pos': ((0.691726, 1, 11), (0.959806, 0.025088, 2.7172)), 'level_effect_rot': ((0, 90.000207, 0), (0, -163.066052, 0)), 'date_bg_icon': 90109, 'img_exchange_money': 17549, 'banner': 13273, 'free_reward': (4100000260, 1), 'discount_count': 10, 'sidebar_banner_color_idx': 3, 'level_effect_scale': ((5.8, 5.8, 5.8), (1, 1, 1)), 'cost_id': 4000000020, 'lobby_gacha_banner': 16046, 'gun_icon_png': (17552, 17553), 'one_draw_icon': 16201, 'exchange_model_pos_key': 50, 'draw_type': 'Valor', 'reward_model_pos_id': 47, 'draw_icon_png': (17026, 17027, 17028, 17029), 'sidebar_banner': 17554, 'feature_camera_id': 45, 'one_shot': (10, 11, 12), 'small_icon': 11253, 'sound_bgm': True, 'sound_sp_bnk': 'music_outgame_junxu_wjkr', 'feature_reward_select_bg': 11526, 'is_discount': 1, 'ten_draw_vx': 'UIScript/node_og_shop_military_v6_gulong_btn_ten.csb', 'sound_sp_state_v': 'wjkr', 'level_effect_id': (4717, 4303), 'allow_roll_times': (1, 5, 10, 50), 'exchange_money_color': '#f4764e', 'cost_count': 30, 'title_str': 'FEATURED ETERNAL VALOR', 'sidebar_bg_icon': 17039, 'left_title_csb': 'UIScript/node_og_shop_attribute_v6_turnable_return_title.csb', 'feature_bg': 11482, 'model_btn_bg': 90108, 'one_draw_vx': 'UIScript/node_og_shop_military_v6_gulong_btn_one.csb', 'level_id': 110, 'x_draw_icon': 16201, 'cls_name': 'mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponsV6BackStraightRollWindow', 'rule': 1594, 'flip_rule': 4345, 'end_utc_stamp': 1786838399, 'img_banner_bg': 17578, 'return_weapon_init_rotation': (-0.349, 1.745, 0.0), 'sidebar_arrow_icon': 17040, 'first_cost_count': 1, 'highly_recommended': 1, 'id': 1394, 'is_limited-time': True, 'title_str_color': ((255, 16, 43, 255), (255, 16, 43, 255), (191, 0, 0, 255), (191, 0, 0, 255)), 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'logic_index': (1,), 'feature_btn_disable': 11484, 'title_icon': 16403, 'model_pos_id': 46, 'redeem_csb': 'UIScript/node_og_shop_attribute_v6_turnable_immortal_entry.csb', 'rank': 22000, 'name': 'FEATURED ETERNAL VALOR', 'real_gacha': 1393, 'return_weapon_init_pos': (0.858, 0.983, -0.634), 'begin_time': '2026-07-12 00:00:00', 'feature_icon_color': (156, 156, 156)}",
+        "{'feature_reward_select_bg': 11526, 'discount_tag': 'Great Discount', 'exchange_model_pos_key': 17, 'first_cost_count': 1, 'one_shot': (10, 11, 12), 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'feature_line_color': (222, 201, 159), 'model_pos_id': 16, 'img_exchange_bg': 16601, 'first_cost_id': 4120003040, 'img_banner_bg': 90382, 'img_exchange_money': 16602, 'img_weapon_collection_bg': 16592, 'img_weapon_collection_icon': 16593, 'exchange_cost_id': 4120003050, 'effect_sound': 826, 'hide_duration': 1.35, 'discount_coupon': 1, 'small_icon': 11253, 'is_discount': 1, 'effect_pos': (-1.2, -1.25, 3.0), 'mall_gacha_v6_roll_back_tips': \"Obtain #ff000d%d#E\\nBlight's Embrace Series Weapon(s)\", 'sidebar_banner_color_idx': 18, 'left_title_csb': 'UIScript/node_og_shop_military_v6_galil_title.csb', 'lobby_gacha_banner': 12167, 'date_bg_icon': 90398, 'real_gacha': 1397, 'discount_cost': 15, 'model_btn_bg': 12026, 'one_draw_icon': 16201, 'feature_icon_color': (156, 156, 156), 'name': \"Blight's Embrace Valor\", 'btn_reward_icon': 90399, 'sound_sp_state_v': 'dzem', 'effect_rot': (0, 175, 1), 'redeem_csb': 'UIScript/node_og_shop_attribute_v6_turnable_galil_entry.csb', 'feature_reward_title_bg': 11490, 'gun_icon_png': (90386, 90387), 'level_id': 60, 'return_weapon_init_pos': (0.286, 1.117, -0.99), 'tran_hide_color': ((242, 255, 229, 255), (242, 255, 229, 255), (168, 255, 166, 255), (168, 255, 166, 255)), 'rule': 1616, 'sound_bgm': True, 'feature_btn_disable': 11484, 'allow_roll_times': (1, 5, 10, 50), 'img_roll_back_money': (90388, 90389, 90390), 'return_weapon_init_rotation': (-0.297, 1.868, 0.0), 'sound_sp_bnk': 'music_outgame_junxu_dzem', 'ten_draw_vx': 'UIScript/node_og_shop_military_v6_galil_btn_ten.csb', 'effect_id_list': (852,), 'gacha_discount_card': 4100003600, 'title_icon': 90400, 'feature_camera_id': 45, 'free_reward': (4100000260, 1), 'sidebar_arrow_icon': 90391, 'title_str': \"Blight's Embrace Valor\", 'begin_time': '2026-07-10 00:00:00', 'collect_milestone': (5100000900, 5100001600, 5100380210), 'flip_rule': 4344, 'feature_name_bg_color': (58, 105, 147), 'collection_count_color': 'ffe877', 'tran_effect_id': (1494,), 'cls_name': 'mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponV6NewAndBackStraightRollWindow', 'unlock_window_png': (90393, 90394, 90395, 90396, 90397), 'rank': 20000, 'sidebar_banner': 90381, 'reward_model_pos_id': 18, 'collection_count': 50, 'sidebar_bg_icon': 90392, 'discount_count': 10, 'x_draw_icon': 16201, 'feature_bg': 11482, 'begin_utc_stamp': 1783641600, 'cost_count': 30, 'gift_roll_times': {}, 'cost_id': 4000000020, 'draw_type': 'Valor', 'end_time': '2026-08-11 23:59:59', 'highly_recommended': 1, 'end_utc_stamp': 1786492799, 'one_draw_vx': 'UIScript/node_og_shop_military_v6_galil_btn_one.csb', 'id': 1398, 'is_limited-time': True, 'logic_index': (1,), 'title_str_color': ((216, 239, 255, 255), (216, 239, 255, 255), (51, 255, 255, 255), (51, 255, 255, 255))}",
+        "{'discount_tag': 'Great Discount', 'effect_sound': 41152, 'ten_draw_vx': 'UIScript/node_shop_btn_buy_gold_xd.csb', 'draw_type': 'Stash', 'img_banner_bg': 90448, 'feature_camera_id': 45, 'highly_recommended': 1, 'first_cost_count': 1, 'model_pos_id': 41, 'rule': 1595, 'logic_index': (1,), 'discount_coupon': 1, 'sidebar_banner': 90444, 'lucky_gacha': 1, 'discount_cost': 10, 'first_cost_id': 4120003250, 'lucky_gacha_crit': 5, 'one_shot': (1, 2, 3), 'level_id': 259, 'reward_model_pos_id': 26, 'effect_pos': (-0.934, 1.726, 8.27), 'is_discount': 1, 'sidebar_arrow_icon': 17024, 'title_str': 'Mako Stash', 'hide_duration': 0.9, 'sidebar_bg_icon': 17023, 'title_str_color': ((248, 238, 149, 255), (248, 238, 149, 255), (255, 244, 125, 255), (255, 244, 125, 255)), 'gacha_discount_card': 4100003200, 'begin_time': '2026-08-03 00:00:01', 'real_gacha': 1409, 'flip_rule': 4015, 'effect_id_list': (2682,), 'model_btn_bg': 90445, 'cls_name': 'mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow', 'btn_reward_icon': 90447, 'date_bg_icon': 90446, 'begin_utc_stamp': 1785715201, 'cost_count': 20, 'free_reward': (4100000260, 1), 'discount_count': 10, 'effect_rot': (0, 90, 0), 'cost_id': 4000000020, 'end_time': '2026-08-28 23:59:59', 'end_utc_stamp': 1787961599, 'id': 1410, 'one_draw_vx': 'UIScript/node_shop_btn_buy_xd.csb', 'is_limited-time': True, 'name': 'Mako Stash'}",
+        "{'effect_rot': (0, 90, 0), 'feature_btn_disable': 12123, 'img_feature_bg_color': 16040, 'discount_tag': 'Great Discount', 'highly_recommended': 1, 'first_cost_count': 1, 'feature_reward_title_bg': 12126, 'date_bg_icon': 16447, 'title_str': 'Selachian Stash', 'feature_icon_color': (255, 255, 255), 'feature_line_color': (218, 193, 77), 'first_cost_id': 4120003090, 'hide_duration': 0.9, 'one_draw_vx': 'UIScript/node_shop_btn_buy_xd.csb', 'btn_reward_icon': 16448, 'img_banner_bg': 17582, 'begin_utc_stamp': 1784592000, 'level_id': 247, 'lobby_gacha_banner': 16036, 'reward_model_pos_id': 203, 'discount_cost': 12, 'is_discount': 1, 'feature_reward_select_bg': 12125, 'lucky_gacha_crit': 5, 'flip_rule': 4015, 'banner': 11190, 'effect_pos': (-0.934, 1.726, 8.27), 'discount_count': 10, 'is_limited-time': True, 'rank': 19992, 'sidebar_arrow_icon': 17024, 'real_gacha': 1399, 'sidebar_banner': 900736, 'discount_coupon': 1, 'rule': 1595, 'sidebar_bg_icon': 17023, 'model_pos_id': 202, 'unlock_feature_desc': '#f3ff3bInstantly unlock#ffffff %d special features#E', 'model_btn_bg': 16346, 'draw_type': 'Stash', 'free_reward': (4100000260, 1), 'title_str_color': ((248, 238, 149, 255), (248, 238, 149, 255), (255, 244, 125, 255), (255, 244, 125, 255)), 'begin_time': '2026-07-21 00:00:00', 'gacha_discount_card': 4100003200, 'cost_id': 4000000020, 'lucky_gacha': 1, 'cost_count': 25, 'feature_bg': 11482, 'end_time': '2026-08-15 23:59:59', 'effect_sound': 41152, 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg06_vx.csb', 'effect_id_list': (2682,), 'end_utc_stamp': 1786838399, 'small_icon': 11253, 'feature_name_bg_color': (162, 85, 0), 'logic_index': (1,), 'one_shot': (1, 2, 3), 'cls_name': 'mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow', 'ten_draw_vx': 'UIScript/node_shop_btn_buy_gold_xd.csb', 'feature_camera_id': 45, 'id': 1400, 'name': 'Selachian Stash'}",
+        "{'feature_camera_id': 45, 'feature_reward_select_bg': 11526, 'feature_reward_title_bg': 11490, 'model_pos_id': 41, 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'model_btn_bg': 16340, 'highly_recommended': 1, 'first_cost_count': 1, 'is_v4': 1, 'feature_btn_disable': 11484, 'rule': 1595, 'one_draw_vx': 'UIScript/node_shop_btn_buy_xd.csb', 'rank': 19989, 'cost_id': 4000000020, 'cls_name': 'mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow', 'flip_rule': 4015, 'lobby_gacha_banner': 16033, 'id': 1370, 'title_str_color': ((253, 247, 192, 255), (253, 247, 192, 255), (240, 165, 22, 255), (240, 165, 22, 255)), 'reward_model_pos_id': 26, 'feature_icon_color': (156, 156, 156), 'level_id': 90, 'btn_reward_icon': 16339, 'sidebar_banner': 16759, 'feature_name_bg_color': (58, 105, 147), 'first_cost_id': 4100001820, 'date_bg_icon': 16338, 'title_str': 'Gold Stash', 'ten_draw_vx': 'UIScript/node_shop_btn_buy_gold_xd.csb', 'begin_time': '2026-06-15 00:00:00', 'draw_type': 'Stash', 'begin_utc_stamp': 1781481600, 'small_icon': 11253, 'feature_line_color': (222, 201, 159), 'img_banner_bg': 90258, 'feature_bg': 11482, 'cost_count': 10, 'name': 'Gold Stash', 'end_time': '2026-08-14 23:59:59', 'end_utc_stamp': 1786751999, 'is_limited-time': True, 'banner': 11190, 'real_gacha': 1220}",
+        "{'cost_id': 4000000010, 'draw_type': 'Stash', 'begin_utc_stamp': 1780963200, 'ban_recharge_tips': True, 'end_time': '2026-08-15 23:59:59', 'first_cost_id': 4100000260, 'sidebar_banner': 90317, 'highly_recommended': 1, 'id': 2019, 'br_flip_skip': True, 'rule': 1595, 'small_icon': 11142, 'first_cost_count': 1, 'cost_count': 300, 'banner': 90316, 'end_utc_stamp': 1786838399, 'model_pos_id': 7, 'rank': 7000, 'begin_time': '2026-06-09 00:00:00', 'name': 'Rep Stash', 'is_limited-time': True}",
+        "{'slot_num': 10, 'begin_time': '2025-12-19 00:00:00', 'begin_utc_stamp': 1766102400, 'name': 'Iridian Flip', 'free_item_id': ((6030005300, 1),), 'btn_reward_icon': 90148, 'end_utc_stamp': 1797724799, 'discount': 0.9, 'effect_rot': (0, 90, 0), 'exchange_cost_id': 4120001420, 'effect_pos': (-0.934, 1.726, 8.27), 'id': 10237, 'exchange_model_pos_key': 161, 'date_bg_icon': 90147, 'reward_model_pos_id': 160, 'sidebar_arrow_icon': 17131, 'draw_type': 'Flip', 'feature_camera_id': 45, 'hide_duration': 0.9, 'exchange_money_color': '#efd760', 'free_reward': (4100000260, 1), 'highly_recommended': 1, 'sidebar_banner': 90145, 'end_time': '2026-12-19 23:59:59', 'img_banner_bg': 90164, 'img_exchange_bg': 16938, 'title_str': 'Iridian Flip', 'sidebar_bg_icon': 17130, 'level_id': 179, 'model_btn_bg': 90146, 'img_exchange_money': 41200014200, 'model_pos_id': 159, 'effect_id_list': (2420,), 'cls_name': 'new_player_gacha_window.NewPlayerGachaWindow', 'text': 3702, 'effect_sound': 41152, 'title_str_color': ((251, 204, 255, 255), (251, 204, 255, 255), (134, 101, 255, 255), (134, 101, 255, 255))}"
+      ]
+    },
+    "GetGachaShelfList": {
+      "ids": [],
+      "raw": [
+        {
+          "1": "{'level_id': 252, 'effect_rot': (0, 0, 0), 'effect_pos': (1.589, 0.898, 6.128), 'effect_sound': 41195, 'effect_hide_duration_time': 10.0, 'intro_effect': (4634, 4635, 4636, 4637), 'v5_grand_prize': 1, 'icon_for_banner': 90430, 'no_cycle': True, 'group': 3, 'id': '1390.1', 'roll_limit': 1, 'item_count': 1, 'cant_drawn': 150, 'grand_prize': 1, 'effect_id': (4634, 4635, 4636, 4637), 'item_id': 2000000030, 'hide_duration_time': 2.0, 'ranking': 1, 'img_banner_bg': 90429, 'weight': 2}",
+          "10": "{'item_count': 1, 'group': 1, 'ranking': 10, 'item_id': 6090000840, 'no_cycle': True, 'id': '1390.10', 'weight': 125, 'roll_limit': 1, 'level_id': 252, 'grand_prize': 3}",
+          "11": "{'grand_prize': 3, 'group': 1, 'id': '1390.11', 'level_id': 252, 'item_id': 4410000010, 'roll_limit': 3, 'item_count': 100, 'ranking': 11, 'weight': 10}",
+          "12": "{'grand_prize': 3, 'group': 1, 'id': '1390.12', 'level_id': 252, 'item_id': 4410000010, 'roll_limit': 4, 'item_count': 50, 'ranking': 12, 'weight': 20}",
+          "13": "{'grand_prize': 3, 'group': 1, 'id': '1390.13', 'level_id': 252, 'item_id': 4410000010, 'roll_limit': 10, 'item_count': 10, 'ranking': 13, 'weight': 57}",
+          "14": "{'grand_prize': 3, 'group': 1, 'id': '1390.14', 'level_id': 252, 'item_id': 4410000020, 'roll_limit': 4, 'item_count': 50, 'ranking': 14, 'weight': 20}",
+          "15": "{'grand_prize': 3, 'group': 1, 'id': '1390.15', 'level_id': 252, 'item_id': 4410000020, 'roll_limit': 10, 'item_count': 10, 'ranking': 15, 'weight': 57}",
+          "16": "{'ranking': 16, 'grand_prize': 3, 'level_id': 252, 'group': 1, 'id': '1390.16', 'item_count': 100, 'weight': 250, 'item_id': 4120002900}",
+          "17": "{'ranking': 17, 'grand_prize': 3, 'level_id': 252, 'group': 1, 'id': '1390.17', 'item_count': 10, 'weight': 810, 'item_id': 4120002900}",
+          "18": "{'ranking': 18, 'grand_prize': 3, 'level_id': 252, 'group': 1, 'id': '1390.18', 'item_count': 5, 'weight': 1000, 'item_id': 4120002900}",
+          "19": "{'ranking': 19, 'grand_prize': 3, 'level_id': 252, 'group': 1, 'id': '1390.19', 'item_count': 3, 'weight': 1200, 'item_id': 4120002900}",
+          "2": "{'effect_pos': (0.68, 1.11, -2.04), 'convert_item_id': 4120002900, 'effect_id': (3898, 3899), 'item_id': 5100370100, 'effect_rot': (0, 0, 0), 'item_count': 1, 'cant_drawn': 100, 'effect_hide_duration_time': 4.6, 'convert_item_count': 200, 'grand_prize': 3, 'no_cycle': True, 'intro_effect': (3898, 3899), 'group': 2, 'id': '1390.2', 'ranking': 2, 'effect_sound': 41153, 'weight': 8, 'roll_limit': 1, 'level_id': 95, 'v5_grand_prize': 1}",
+          "20": "{'ranking': 20, 'grand_prize': 3, 'level_id': 252, 'group': 1, 'id': '1390.20', 'item_count': 2, 'weight': 1500, 'item_id': 4120002900}",
+          "21": "{'ranking': 21, 'grand_prize': 3, 'level_id': 252, 'group': 1, 'id': '1390.21', 'item_count': 1, 'weight': 2500, 'item_id': 4120002900}",
+          "22": "{'ranking': 22, 'grand_prize': 3, 'level_id': 252, 'group': 1, 'id': '1390.22', 'item_count': 5, 'weight': 400, 'item_id': 4100000340}",
+          "3": "{'level_id': 252, 'group': 2, 'roll_limit': 1, 'grand_prize': 3, 'id': '1390.3', 'item_id': 3001170005, 'cant_drawn': 30, 'v5_grand_prize': 1, 'no_cycle': True, 'item_count': 1, 'convert_item_count': 40, 'convert_item_id': 4120002900, 'ranking': 3, 'weight': 10}",
+          "4": "{'level_id': 252, 'group': 2, 'id': '1390.4', 'weight': 10, 'v5_grand_prize': 1, 'ranking': 4, 'cant_drawn': 30, 'grand_prize': 3, 'no_cycle': True, 'item_count': 1, 'convert_item_count': 40, 'roll_limit': 1, 'item_id': 5300420120, 'convert_item_id': 4120002900}",
+          "5": "{'level_id': 252, 'group': 2, 'id': '1390.5', 'weight': 10, 'v5_grand_prize': 1, 'ranking': 5, 'cant_drawn': 30, 'grand_prize': 3, 'no_cycle': True, 'item_count': 1, 'convert_item_count': 40, 'roll_limit': 1, 'item_id': 5100380040, 'convert_item_id': 4120002900}",
+          "6": "{'grand_prize': 3, 'id': '1390.6', 'level_id': 252, 'weight': 25, 'group': 2, 'no_cycle': True, 'item_count': 1, 'item_id': 6042000257, 'v5_grand_prize': 1, 'roll_limit': 1, 'ranking': 6}",
+          "7": "{'grand_prize': 3, 'item_count': 1, 'item_id': 6120000090, 'weight': 50, 'ranking': 7, 'roll_limit': 1, 'level_id': 252, 'group': 1, 'no_cycle': True, 'convert_item_id': 4120002900, 'convert_item_count': 10, 'id': '1390.7'}",
+          "8": "{'item_count': 1, 'group': 1, 'ranking': 8, 'item_id': 6042000290, 'no_cycle': True, 'id': '1390.8', 'weight': 50, 'roll_limit': 1, 'level_id': 252, 'grand_prize': 3}",
+          "9": "{'item_count': 1, 'group': 1, 'ranking': 9, 'item_id': 6060001180, 'no_cycle': True, 'id': '1390.9', 'weight': 125, 'roll_limit': 1, 'level_id': 252, 'grand_prize': 3}"
+        },
+        {
+          "1": "{'cant_drawn': 100, 'icon_for_banner': 17576, 'level_id': 248, 'effect_id': (4702, 4703), 'img_banner_bg': 17575, 'effect_sound': 41193, 'weapon_pos': (0.471, 1.145, -1.666), 'grand_prize': 1, 'id': '1392.1', 'roll_limit': 1, 'effect_pos': (0.643, 1.101, -0.432), 'hide_duration_time': 3.1, 'item_count': 1, 'intro_effect': (4702, 4703), 'weight': 2, 'group': 3, 'no_cycle': True, 'weapon_rotation': (0.0, 1.55, 0.0), 'effect_rot': (0, 0, 0), 'v5_grand_prize': 1, 'item_id': 5400180160, 'ranking': 2}",
+          "10": "{'item_count': 1, 'group': 1, 'ranking': 10, 'item_id': 6050000100, 'no_cycle': True, 'id': '1392.10', 'weight': 50, 'roll_limit': 1, 'level_id': 248, 'grand_prize': 3}",
+          "11": "{'item_count': 1, 'group': 1, 'ranking': 11, 'item_id': 6042000125, 'no_cycle': True, 'id': '1392.11', 'weight': 50, 'roll_limit': 1, 'level_id': 248, 'grand_prize': 3}",
+          "12": "{'item_count': 1, 'group': 1, 'ranking': 12, 'item_id': 6090000790, 'no_cycle': True, 'id': '1392.12', 'weight': 125, 'roll_limit': 1, 'level_id': 248, 'grand_prize': 3}",
+          "13": "{'item_count': 1, 'group': 1, 'ranking': 13, 'item_id': 6060001160, 'no_cycle': True, 'id': '1392.13', 'weight': 125, 'roll_limit': 1, 'level_id': 248, 'grand_prize': 3}",
+          "14": "{'ranking': 14, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.14', 'item_count': 100, 'weight': 200, 'item_id': 4120002940}",
+          "15": "{'ranking': 15, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.15', 'item_count': 10, 'weight': 810, 'item_id': 4120002940}",
+          "16": "{'ranking': 16, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.16', 'item_count': 5, 'weight': 1000, 'item_id': 4120002940}",
+          "17": "{'ranking': 17, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.17', 'item_count': 3, 'weight': 1200, 'item_id': 4120002940}",
+          "18": "{'ranking': 18, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.18', 'item_count': 2, 'weight': 1500, 'item_id': 4120002940}",
+          "19": "{'ranking': 19, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.19', 'item_count': 1, 'weight': 2500, 'item_id': 4120002940}",
+          "2": "{'effect_rot': (0, 0, 0), 'id': '1392.2', 'weapon_rotation': (0.0, 1.55, 0.0), 'group': 4, 'effect_pos': (0.643, 1.101, -0.432), 'item_count': 1, 'img_banner_bg': 17575, 'v5_grand_prize': 1, 'intro_effect': (4704, 4705), 'effect_sound': 41193, 'effect_id': (4704, 4705), 'level_id': 248, 'roll_limit': 1, 'weapon_pos': (0.471, 1.145, -1.666), 'item_id': 5400180177, 'icon_for_banner': 17577, 'grand_prize': 1, 'ranking': 1, 'collection_price': 1, 'cant_drawn': 200, 'no_cycle': True, 'hide_duration_time': 3.1, 'weight': 1}",
+          "20": "{'ranking': 20, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.20', 'item_count': 5, 'weight': 200, 'item_id': 4120003110}",
+          "21": "{'ranking': 21, 'grand_prize': 3, 'level_id': 248, 'group': 1, 'id': '1392.21', 'item_count': 5, 'weight': 200, 'item_id': 4100000340}",
+          "3": "{'effect_rot': (0, 0, 0), 'id': '1392.3', 'weapon_rotation': (0.0, 1.55, 0.0), 'group': 2, 'effect_pos': (0.68, 1.11, -2.04), 'item_count': 1, 'effect_hide_duration_time': 4.6, 'v5_grand_prize': 1, 'intro_effect': (1839, 1840), 'effect_sound': 41153, 'effect_id': (1839, 1840), 'convert_item_count': 200, 'level_id': 95, 'roll_limit': 1, 'convert_item_id': 4120002940, 'weapon_pos': (0.542, 1.118, -2.0), 'grand_prize': 3, 'item_id': 5100001480, 'ranking': 3, 'cant_drawn': 50, 'no_cycle': True, 'hide_duration_time': 2.0, 'weight': 8}",
+          "4": "{'convert_item_id': 4120002940, 'roll_limit': 1, 'ranking': 4, 'grand_prize': 3, 'group': 2, 'no_cycle': True, 'id': '1392.4', 'item_count': 1, 'convert_item_count': 40, 'v5_grand_prize': 1, 'item_id': 5100370050, 'level_id': 248, 'weight': 19}",
+          "5": "{'convert_item_id': 4120002940, 'roll_limit': 1, 'ranking': 5, 'grand_prize': 3, 'group': 2, 'no_cycle': True, 'id': '1392.5', 'item_count': 1, 'convert_item_count': 35, 'v5_grand_prize': 1, 'item_id': 3000010030, 'level_id': 248, 'weight': 10}",
+          "6": "{'convert_item_id': 4120002940, 'roll_limit': 1, 'ranking': 6, 'grand_prize': 3, 'group': 2, 'no_cycle': True, 'id': '1392.6', 'item_count': 1, 'convert_item_count': 35, 'v5_grand_prize': 1, 'item_id': 2070000020, 'level_id': 248, 'weight': 19}",
+          "7": "{'item_count': 1, 'group': 1, 'ranking': 7, 'item_id': 5100380230, 'no_cycle': True, 'id': '1392.7', 'weight': 60, 'roll_limit': 1, 'level_id': 248, 'grand_prize': 3}",
+          "8": "{'item_count': 1, 'group': 1, 'ranking': 8, 'item_id': 520080110, 'no_cycle': True, 'id': '1392.8', 'weight': 60, 'roll_limit': 1, 'level_id': 248, 'grand_prize': 3}",
+          "9": "{'item_count': 1, 'group': 1, 'ranking': 9, 'item_id': 6040000170, 'no_cycle': True, 'id': '1392.9', 'weight': 50, 'roll_limit': 1, 'level_id': 248, 'grand_prize': 3}"
+        },
+        {
+          "1": "{'cant_drawn': 100, 'icon_for_banner': 90312, 'level_id': 235, 'effect_id': (4585, 4586), 'img_banner_bg': 90311, 'effect_sound': 41191, 'weapon_pos': (0.471, 1.145, -1.666), 'grand_prize': 1, 'id': '1367.1', 'roll_limit': 1, 'effect_pos': (0.855, 0.84, 2.659), 'hide_duration_time': 2.2, 'item_count': 1, 'intro_effect': (4585, 4586), 'weight': 2, 'group': 3, 'no_cycle': True, 'weapon_rotation': (0.0, 1.55, 0.0), 'effect_rot': (0, 0, 0), 'v5_grand_prize': 1, 'item_id': 5100390270, 'ranking': 2}",
+          "10": "{'item_count': 1, 'group': 1, 'ranking': 10, 'item_id': 6042000126, 'no_cycle': True, 'id': '1367.10', 'weight': 50, 'roll_limit': 1, 'level_id': 235, 'grand_prize': 3}",
+          "11": "{'item_count': 1, 'group': 1, 'ranking': 11, 'item_id': 6090000750, 'no_cycle': True, 'id': '1367.11', 'weight': 125, 'roll_limit': 1, 'level_id': 235, 'grand_prize': 3}",
+          "12": "{'item_count': 1, 'group': 1, 'ranking': 12, 'item_id': 6060001150, 'no_cycle': True, 'id': '1367.12', 'weight': 125, 'roll_limit': 1, 'level_id': 235, 'grand_prize': 3}",
+          "13": "{'ranking': 13, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.13', 'item_count': 100, 'weight': 200, 'item_id': 4120002550}",
+          "14": "{'ranking': 14, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.14', 'item_count': 10, 'weight': 810, 'item_id': 4120002550}",
+          "15": "{'ranking': 15, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.15', 'item_count': 5, 'weight': 1000, 'item_id': 4120002550}",
+          "16": "{'ranking': 16, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.16', 'item_count': 3, 'weight': 1200, 'item_id': 4120002550}",
+          "17": "{'ranking': 17, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.17', 'item_count': 2, 'weight': 1500, 'item_id': 4120002550}",
+          "18": "{'ranking': 18, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.18', 'item_count': 1, 'weight': 2500, 'item_id': 4120002550}",
+          "19": "{'ranking': 19, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.19', 'item_count': 5, 'weight': 200, 'item_id': 4120002560}",
+          "2": "{'effect_rot': (0, 0, 0), 'id': '1367.2', 'weapon_rotation': (0.0, 1.55, 0.0), 'group': 4, 'effect_pos': (0.855, 0.84, 2.659), 'item_count': 1, 'img_banner_bg': 90311, 'v5_grand_prize': 1, 'intro_effect': (4587, 4588), 'effect_sound': 41191, 'effect_id': (4587, 4588), 'level_id': 235, 'roll_limit': 1, 'weapon_pos': (0.471, 1.145, -1.666), 'item_id': 5100390287, 'icon_for_banner': 90313, 'grand_prize': 1, 'ranking': 1, 'collection_price': 1, 'cant_drawn': 400, 'no_cycle': True, 'hide_duration_time': 2.2, 'weight': 1}",
+          "20": "{'ranking': 20, 'grand_prize': 3, 'level_id': 235, 'group': 1, 'id': '1367.20', 'item_count': 5, 'weight': 200, 'item_id': 4100000340}",
+          "3": "{'cant_drawn': 50, 'id': '1367.3', 'level_id': 235, 'effect_id': (1560,), 'weapon_pos': (0.542, 1.118, -2.0), 'effect_sound': 1041, 'grand_prize': 3, 'convert_item_id': 4120002550, 'convert_item_count': 200, 'roll_limit': 1, 'effect_pos': (0.5, 1.03, -2.0), 'hide_duration_time': 2.0, 'item_count': 1, 'intro_effect': (1560,), 'weight': 8, 'group': 2, 'no_cycle': True, 'weapon_rotation': (0.0, 1.55, 0.0), 'effect_rot': (0, 0, 0), 'v5_grand_prize': 1, 'item_id': 5200350120, 'ranking': 3}",
+          "4": "{'grand_prize': 3, 'group': 2, 'item_count': 1, 'item_id': 3001240012, 'ranking': 4, 'roll_limit': 1, 'level_id': 235, 'v5_grand_prize': 1, 'no_cycle': True, 'weight': 8, 'cant_drawn': 50, 'id': '1367.4'}",
+          "5": "{'level_id': 235, 'group': 2, 'roll_limit': 1, 'grand_prize': 3, 'id': '1367.5', 'item_id': 520080130, 'cant_drawn': 30, 'v5_grand_prize': 1, 'no_cycle': True, 'item_count': 1, 'convert_item_count': 35, 'convert_item_id': 4120002550, 'ranking': 5, 'weight': 19}",
+          "6": "{'level_id': 235, 'group': 2, 'roll_limit': 1, 'grand_prize': 3, 'id': '1367.6', 'item_id': 2010000330, 'cant_drawn': 30, 'v5_grand_prize': 1, 'no_cycle': True, 'item_count': 1, 'convert_item_count': 35, 'convert_item_id': 4120002550, 'ranking': 6, 'weight': 10}",
+          "7": "{'item_count': 1, 'group': 1, 'ranking': 7, 'item_id': 5100001290, 'no_cycle': True, 'id': '1367.7', 'weight': 85, 'roll_limit': 1, 'level_id': 235, 'grand_prize': 3}",
+          "8": "{'item_count': 1, 'group': 1, 'ranking': 8, 'item_id': 520020230, 'no_cycle': True, 'id': '1367.8', 'weight': 85, 'roll_limit': 1, 'level_id': 235, 'grand_prize': 3}",
+          "9": "{'item_count': 1, 'group': 1, 'ranking': 9, 'item_id': 6050000286, 'no_cycle': True, 'id': '1367.9', 'weight': 20, 'roll_limit': 1, 'level_id': 235, 'grand_prize': 3}"
+        },
+        {
+          "1": "{'no_cycle': True, 'grand_prize': 1, 'cant_drawn': 30, 'group': 3, 'img_banner_bg': 90378, 'roll_limit': 1, 'level_id': 245, 'v5_grand_prize': 1, 'ranking': 1, 'icon_for_banner': 90379, 'weapon_pos': (0.389, 1.152, -1.394), 'id': '1396.1', 'item_count': 1, 'item_id': 3001040171, 'weight': 3, 'weapon_rotation': (0.0, 1.55, 0.0)}",
+          "10": "{'ranking': 10, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.10', 'item_count': 10, 'weight': 200, 'item_id': 4120003000}",
+          "11": "{'ranking': 11, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.11', 'item_count': 5, 'weight': 500, 'item_id': 4120003000}",
+          "12": "{'ranking': 12, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.12', 'item_count': 3, 'weight': 700, 'item_id': 4120003000}",
+          "13": "{'ranking': 13, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.13', 'item_count': 2, 'weight': 800, 'item_id': 4120003000}",
+          "14": "{'ranking': 14, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.14', 'item_count': 1, 'weight': 2400, 'item_id': 4120003000}",
+          "15": "{'ranking': 15, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.15', 'item_count': 5, 'weight': 100, 'item_id': 4120002980}",
+          "16": "{'ranking': 16, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.16', 'item_count': 5, 'weight': 100, 'item_id': 4100000340}",
+          "2": "{'level_id': 245, 'group': 1, 'roll_limit': 1, 'grand_prize': 3, 'id': '1396.2', 'item_id': 2020000210, 'cant_drawn': 15, 'v5_grand_prize': 1, 'no_cycle': True, 'item_count': 1, 'convert_item_count': 35, 'convert_item_id': 4120003000, 'ranking': 2, 'weight': 10}",
+          "3": "{'level_id': 245, 'group': 1, 'roll_limit': 1, 'grand_prize': 3, 'id': '1396.3', 'item_id': 5100270110, 'cant_drawn': 10, 'v5_grand_prize': 1, 'no_cycle': True, 'item_count': 1, 'convert_item_count': 40, 'convert_item_id': 4120003000, 'ranking': 3, 'weight': 10}",
+          "4": "{'hero_model_yaw': 2.618, 'hero_executed_model_yaw': 2.618, 'hero_executed_model_pos': (-1.06, 0.13, 3.6), 'level_id': 245, 'ranking': 4, 'id': '1396.4', 'roll_limit': 1, 'grand_prize': 3, 'weight': 20, 'group': 1, 'hero_model_pos': (-0.63, 0.27, 2.45), 'execute_skin_item_id': 3001040171, 'item_count': 1, 'item_id': 6050000297, 'no_cycle': True}",
+          "5": "{'item_count': 1, 'group': 1, 'ranking': 5, 'item_id': 5400330180, 'no_cycle': True, 'id': '1396.5', 'weight': 60, 'roll_limit': 1, 'level_id': 245, 'grand_prize': 3}",
+          "6": "{'item_count': 1, 'group': 1, 'ranking': 6, 'item_id': 5500300070, 'no_cycle': True, 'id': '1396.6', 'weight': 60, 'roll_limit': 1, 'level_id': 245, 'grand_prize': 3}",
+          "7": "{'item_count': 1, 'group': 1, 'ranking': 7, 'item_id': 6060001170, 'no_cycle': True, 'id': '1396.7', 'weight': 100, 'roll_limit': 1, 'level_id': 245, 'grand_prize': 3}",
+          "8": "{'item_count': 1, 'group': 1, 'ranking': 8, 'item_id': 6090000800, 'no_cycle': True, 'id': '1396.8', 'weight': 100, 'roll_limit': 1, 'level_id': 245, 'grand_prize': 3}",
+          "9": "{'ranking': 9, 'grand_prize': 3, 'level_id': 245, 'group': 1, 'id': '1396.9', 'item_count': 100, 'weight': 40, 'item_id': 4120003000}"
+        },
+        {
+          "1": "{'effect_pos': (0.759, 1.014, -2.496), 'hide_duration_time': 1.2, 'effect_id': (4628, 4629, 4630), 'item_id': 5200170200, 'effect_rot': (0, 0, 0), 'item_count': 1, 'effect_hide_duration_time': 10.0, 'img_banner_bg': 90357, 'weight': 3, 'icon_for_banner': 90358, 'no_cycle': True, 'intro_effect': (4628, 4629, 4630), 'grand_prize': 1, 'group': 3, 'id': '1388.1', 'effect_sound': 41192, 'ranking': 2, 'roll_limit': 1, 'level_id': 246, 'v5_grand_prize': 1}",
+          "10": "{'ranking': 10, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.10', 'item_count': 3, 'weight': 500, 'item_id': 4120002870}",
+          "11": "{'ranking': 11, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.11', 'item_count': 2, 'weight': 800, 'item_id': 4120002870}",
+          "12": "{'ranking': 12, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.12', 'item_count': 1, 'weight': 2500, 'item_id': 4120002870}",
+          "13": "{'ranking': 13, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.13', 'item_count': 5, 'weight': 200, 'item_id': 4120002850}",
+          "14": "{'ranking': 14, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.14', 'item_count': 5, 'weight': 200, 'item_id': 4100000340}",
+          "2": "{'level_id': 246, 'effect_rot': (0, 0, 0), 'effect_pos': (0.759, 1.014, -2.496), 'effect_hide_duration_time': 10.0, 'collection_price': 1, 'effect_sound': 41192, 'v5_grand_prize': 1, 'icon_for_banner': 90359, 'no_cycle': True, 'group': 4, 'id': '1388.2', 'roll_limit': 1, 'item_count': 1, 'intro_effect': (4631, 4632, 4633), 'grand_prize': 1, 'effect_id': (4631, 4632, 4633), 'item_id': 5200170216, 'hide_duration_time': 1.2, 'ranking': 1, 'img_banner_bg': 90357, 'weight': 1}",
+          "3": "{'grand_prize': 3, 'id': '1388.3', 'level_id': 246, 'weight': 70, 'group': 1, 'no_cycle': True, 'item_count': 1, 'item_id': 5100320120, 'v5_grand_prize': 1, 'roll_limit': 1, 'ranking': 3}",
+          "4": "{'grand_prize': 3, 'id': '1388.4', 'level_id': 246, 'weight': 70, 'group': 1, 'no_cycle': True, 'item_count': 1, 'item_id': 5400180190, 'v5_grand_prize': 1, 'roll_limit': 1, 'ranking': 4}",
+          "5": "{'item_count': 1, 'group': 1, 'ranking': 5, 'item_id': 6060001120, 'no_cycle': True, 'id': '1388.5', 'weight': 125, 'roll_limit': 1, 'level_id': 246, 'grand_prize': 3}",
+          "6": "{'item_count': 1, 'group': 1, 'ranking': 6, 'item_id': 6090000820, 'no_cycle': True, 'id': '1388.6', 'weight': 125, 'roll_limit': 1, 'level_id': 246, 'grand_prize': 3}",
+          "7": "{'ranking': 7, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.7', 'item_count': 100, 'weight': 45, 'item_id': 4120002870}",
+          "8": "{'ranking': 8, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.8', 'item_count': 10, 'weight': 200, 'item_id': 4120002870}",
+          "9": "{'ranking': 9, 'grand_prize': 3, 'level_id': 246, 'group': 1, 'id': '1388.9', 'item_count': 5, 'weight': 300, 'item_id': 4120002870}"
+        },
+        {
+          "1": "{'effect_pos': (0.77, 1.059, -1.212), 'icon_for_banner': 17580, 'level_id': 110, 'roll_limit': 1, 'img_banner_bg': 17578, 'hide_duration_time': 1.3, 'weapon_pos': (0.326, 1.152, -1.341), 'v5_grand_prize': 1, 'no_cycle': True, 'group': 3, 'effect_hide_duration_time': 4.3, 'effect_sound': 41169, 'id': '1394.1', 'item_count': 1, 'item_id': 5100440070, 'weapon_rotation': (-0.0, 1.955, 0.001), 'effect_rot': (0, 0, 0), 'grand_prize': 1, 'effect_id': (4243, 4244), 'intro_effect': (4243, 4244), 'convert_item_count': 50, 'convert_item_id': 4120002960, 'ranking': 1, 'weight': 2}",
+          "10": "{'ranking': 10, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.10', 'item_count': 100, 'weight': 45, 'item_id': 4120002960}",
+          "11": "{'ranking': 11, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.11', 'item_count': 10, 'weight': 200, 'item_id': 4120002960}",
+          "12": "{'ranking': 12, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.12', 'item_count': 5, 'weight': 300, 'item_id': 4120002960}",
+          "13": "{'ranking': 13, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.13', 'item_count': 3, 'weight': 500, 'item_id': 4120002960}",
+          "14": "{'ranking': 14, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.14', 'item_count': 2, 'weight': 800, 'item_id': 4120002960}",
+          "15": "{'ranking': 15, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.15', 'item_count': 1, 'weight': 2500, 'item_id': 4120002960}",
+          "16": "{'ranking': 16, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.16', 'item_count': 5, 'weight': 300, 'item_id': 4100000340}",
+          "17": "{'ranking': 17, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.17', 'item_count': 5, 'weight': 200, 'item_id': 4120001730}",
+          "18": "{'ranking': 18, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.18', 'item_count': 5, 'weight': 200, 'item_id': 4120001200}",
+          "19": "{'ranking': 19, 'grand_prize': 3, 'level_id': 110, 'group': 1, 'id': '1394.19', 'item_count': 5, 'weight': 200, 'item_id': 4100002210}",
+          "2": "{'effect_pos': (0.707, 1.085, -0.22), 'icon_for_banner': 17579, 'level_id': 110, 'roll_limit': 1, 'img_banner_bg': 17578, 'hide_duration_time': 3.1, 'weapon_pos': (0.542, 1.118, -2.0), 'v5_grand_prize': 1, 'no_cycle': True, 'group': 3, 'effect_hide_duration_time': 4.7, 'effect_sound': 41158, 'id': '1394.2', 'item_count': 1, 'item_id': 5300420140, 'weapon_rotation': (0.0, 1.55, 0.0), 'effect_rot': (-90, 0, 0), 'grand_prize': 1, 'effect_id': (2599, 2600), 'intro_effect': (2599, 2600), 'convert_item_count': 50, 'convert_item_id': 4120002960, 'ranking': 2, 'weight': 2}",
+          "3": "{'effect_id': (2316, 2317), 'icon_for_banner': 17581, 'level_id': 110, 'effect_pos': (0.74, 0.983, -2.123), 'img_banner_bg': 17578, 'effect_sound': 41156, 'grand_prize': 1, 'convert_item_id': 4120002960, 'convert_item_count': 50, 'roll_limit': 1, 'effect_hide_duration_time': 5.5, 'hide_duration_time': 3.25, 'id': '1394.3', 'intro_effect': (2316, 2317), 'weight': 2, 'group': 3, 'no_cycle': True, 'item_count': 1, 'effect_rot': (90, 0, 0), 'v5_grand_prize': 1, 'item_id': 520020050, 'ranking': 3}",
+          "4": "{'no_cycle': True, 'grand_prize': 2, 'item_count': 1, 'item_id': 5400000400, 'ranking': 4, 'roll_limit': 1, 'level_id': 110, 'group': 1, 'convert_item_count': 8, 'convert_item_id': 4120002960, 'weight': 70, 'id': '1394.4'}",
+          "5": "{'no_cycle': True, 'grand_prize': 2, 'item_count': 1, 'item_id': 5500000290, 'ranking': 5, 'roll_limit': 1, 'level_id': 110, 'group': 1, 'convert_item_count': 8, 'convert_item_id': 4120002960, 'weight': 70, 'id': '1394.5'}",
+          "6": "{'no_cycle': True, 'grand_prize': 2, 'item_count': 1, 'item_id': 5300000180, 'ranking': 6, 'roll_limit': 1, 'level_id': 110, 'group': 1, 'convert_item_count': 8, 'convert_item_id': 4120002960, 'weight': 70, 'id': '1394.6'}",
+          "7": "{'no_cycle': True, 'grand_prize': 2, 'item_count': 1, 'item_id': 5400000330, 'ranking': 7, 'roll_limit': 1, 'level_id': 110, 'group': 1, 'convert_item_count': 8, 'convert_item_id': 4120002960, 'weight': 70, 'id': '1394.7'}",
+          "8": "{'no_cycle': True, 'grand_prize': 2, 'item_count': 1, 'item_id': 6060000780, 'ranking': 8, 'roll_limit': 1, 'level_id': 110, 'group': 1, 'convert_item_count': 4, 'convert_item_id': 4120002960, 'weight': 125, 'id': '1394.8'}",
+          "9": "{'no_cycle': True, 'grand_prize': 2, 'item_count': 1, 'item_id': 6090000550, 'ranking': 9, 'roll_limit': 1, 'level_id': 110, 'group': 1, 'convert_item_count': 4, 'convert_item_id': 4120002960, 'weight': 125, 'id': '1394.9'}"
+        },
+        {
+          "1": "{'no_cycle': True, 'roll_limit': 1, 'ranking': 2, 'icon_for_banner': 90383, 'group': 3, 'level_id': 60, 'grand_prize': 1, 'item_count': 1, 'id': '1398.1', 'v5_grand_prize': 1, 'item_id': 5100380210, 'img_banner_bg': 90382, 'weight': 3}",
+          "10": "{'ranking': 10, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.10', 'item_count': 5, 'weight': 400, 'item_id': 4120003050}",
+          "11": "{'ranking': 11, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.11', 'item_count': 3, 'weight': 800, 'item_id': 4120003050}",
+          "12": "{'ranking': 12, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.12', 'item_count': 2, 'weight': 1000, 'item_id': 4120003050}",
+          "13": "{'ranking': 13, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.13', 'item_count': 1, 'weight': 2000, 'item_id': 4120003050}",
+          "14": "{'ranking': 14, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.14', 'item_count': 5, 'weight': 100, 'item_id': 4120003070}",
+          "15": "{'ranking': 15, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.15', 'item_count': 5, 'weight': 100, 'item_id': 4100000340}",
+          "2": "{'level_id': 66, 'item_id': 5100001600, 'effect_id': (963,), 'item_count': 1, 'v5_grand_prize': 1, 'group': 4, 'ranking': 1, 'effect_sound': 826, 'id': '1398.2', 'icon_for_banner': 90385, 'grand_prize': 1, 'collection_price': 1, 'effect_rot': (0, 175, 1), 'roll_limit': 1, 'weight': 1, 'no_cycle': True, 'intro_effect': (963,), 'effect_pos': (-1.2, -1.25, 3.0), 'img_banner_bg': 90382}",
+          "3": "{'no_cycle': True, 'roll_limit': 1, 'ranking': 3, 'icon_for_banner': 90384, 'group': 3, 'level_id': 60, 'grand_prize': 1, 'item_count': 1, 'id': '1398.3', 'v5_grand_prize': 1, 'item_id': 5100000900, 'img_banner_bg': 90382, 'weight': 3}",
+          "4": "{'grand_prize': 3, 'id': '1398.4', 'level_id': 60, 'weight': 72, 'group': 1, 'no_cycle': True, 'item_count': 1, 'item_id': 5200000590, 'v5_grand_prize': 1, 'roll_limit': 1, 'ranking': 4}",
+          "5": "{'grand_prize': 3, 'id': '1398.5', 'level_id': 60, 'weight': 72, 'group': 1, 'no_cycle': True, 'item_count': 1, 'item_id': 5100001020, 'v5_grand_prize': 1, 'roll_limit': 1, 'ranking': 5}",
+          "6": "{'item_count': 1, 'group': 1, 'ranking': 6, 'item_id': 6060000030, 'no_cycle': True, 'id': '1398.6', 'weight': 185, 'roll_limit': 1, 'level_id': 60, 'grand_prize': 3}",
+          "7": "{'item_count': 1, 'group': 1, 'ranking': 7, 'item_id': 6040000190, 'no_cycle': True, 'id': '1398.7', 'weight': 185, 'roll_limit': 1, 'level_id': 60, 'grand_prize': 3}",
+          "8": "{'ranking': 8, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.8', 'item_count': 100, 'weight': 40, 'item_id': 4120003050}",
+          "9": "{'ranking': 9, 'grand_prize': 3, 'level_id': 60, 'group': 1, 'id': '1398.9', 'item_count': 10, 'weight': 150, 'item_id': 4120003050}"
+        },
+        {
+          "1": "{'no_cycle': True, 'roll_limit': 1, 'ranking': 1, 'icon_for_banner': 90449, 'group': 3, 'level_id': 259, 'grand_prize': 1, 'item_count': 1, 'id': '1410.1', 'v5_grand_prize': 1, 'item_id': 5400130150, 'img_banner_bg': 90448, 'weight': 55}",
+          "10": "{'ranking': 10, 'grand_prize': 3, 'level_id': 259, 'group': 1, 'id': '1410.10', 'item_count': 2, 'weight': 3500, 'item_id': 4420000010}",
+          "11": "{'ranking': 11, 'grand_prize': 3, 'level_id': 259, 'group': 1, 'id': '1410.11', 'item_count': 1, 'weight': 5000, 'item_id': 4420000010}",
+          "2": "{'no_cycle': True, 'roll_limit': 1, 'ranking': 2, 'icon_for_banner': 90450, 'group': 3, 'level_id': 259, 'grand_prize': 1, 'item_count': 1, 'id': '1410.2', 'v5_grand_prize': 1, 'item_id': 5500300120, 'img_banner_bg': 90448, 'weight': 55}",
+          "3": "{'grand_prize': 3, 'group': 1, 'id': '1410.3', 'level_id': 259, 'item_id': 4100000340, 'roll_limit': 30, 'item_count': 1, 'ranking': 3, 'weight': 816}",
+          "4": "{'grand_prize': 3, 'group': 1, 'id': '1410.4', 'level_id': 259, 'item_id': 60300067700, 'roll_limit': 3, 'item_count': 1, 'ranking': 4, 'weight': 550}",
+          "5": "{'item_count': 1, 'group': 1, 'ranking': 5, 'item_id': 6030001380, 'no_cycle': True, 'id': '1410.5', 'weight': 244, 'roll_limit': 1, 'level_id': 259, 'grand_prize': 3}",
+          "6": "{'item_count': 1, 'group': 1, 'ranking': 6, 'item_id': 6030006770, 'no_cycle': True, 'id': '1410.6', 'weight': 243, 'roll_limit': 1, 'level_id': 259, 'grand_prize': 3}",
+          "7": "{'ranking': 7, 'grand_prize': 3, 'level_id': 259, 'group': 1, 'id': '1410.7', 'item_count': 10, 'weight': 100, 'item_id': 4420000010}",
+          "8": "{'ranking': 8, 'grand_prize': 3, 'level_id': 259, 'group': 1, 'id': '1410.8', 'item_count': 5, 'weight': 350, 'item_id': 4420000010}",
+          "9": "{'ranking': 9, 'grand_prize': 3, 'level_id': 259, 'group': 1, 'id': '1410.9', 'item_count': 3, 'weight': 750, 'item_id': 4420000010}"
+        },
+        {
+          "1": "{'no_cycle': True, 'roll_limit': 1, 'ranking': 1, 'icon_for_banner': 17583, 'group': 3, 'level_id': 247, 'grand_prize': 1, 'item_count': 1, 'id': '1400.1', 'v5_grand_prize': 1, 'item_id': 2010000470, 'img_banner_bg': 17582, 'weight': 70}",
+          "10": "{'ranking': 10, 'grand_prize': 3, 'level_id': 247, 'group': 1, 'id': '1400.10', 'item_count': 2, 'weight': 3500, 'item_id': 4420000010}",
+          "11": "{'ranking': 11, 'grand_prize': 3, 'level_id': 247, 'group': 1, 'id': '1400.11', 'item_count': 1, 'weight': 5000, 'item_id': 4420000010}",
+          "2": "{'grand_prize': 2, 'id': '1400.2', 'level_id': 247, 'weight': 165, 'group': 2, 'no_cycle': True, 'item_count': 1, 'item_id': 5100001250, 'v5_grand_prize': 1, 'roll_limit': 1, 'ranking': 2}",
+          "3": "{'grand_prize': 3, 'group': 1, 'id': '1400.3', 'level_id': 247, 'item_id': 4100000340, 'roll_limit': 30, 'item_count': 1, 'ranking': 3, 'weight': 816}",
+          "4": "{'grand_prize': 3, 'group': 1, 'id': '1400.4', 'level_id': 247, 'item_id': 6020003610, 'roll_limit': 3, 'item_count': 1, 'ranking': 4, 'weight': 500}",
+          "5": "{'item_count': 1, 'group': 1, 'ranking': 5, 'item_id': 6030001380, 'no_cycle': True, 'id': '1400.5', 'weight': 221, 'roll_limit': 1, 'level_id': 247, 'grand_prize': 3}",
+          "6": "{'item_count': 1, 'group': 1, 'ranking': 6, 'item_id': 6030004420, 'no_cycle': True, 'id': '1400.6', 'weight': 221, 'roll_limit': 1, 'level_id': 247, 'grand_prize': 3}",
+          "7": "{'ranking': 7, 'grand_prize': 3, 'level_id': 247, 'group': 1, 'id': '1400.7', 'item_count': 10, 'weight': 100, 'item_id': 4420000010}",
+          "8": "{'ranking': 8, 'grand_prize': 3, 'level_id': 247, 'group': 1, 'id': '1400.8', 'item_count': 5, 'weight': 350, 'item_id': 4420000010}",
+          "9": "{'ranking': 9, 'grand_prize': 3, 'level_id': 247, 'group': 1, 'id': '1400.9', 'item_count': 3, 'weight': 750, 'item_id': 4420000010}"
+        },
+        {
+          "1": "{'no_cycle': True, 'roll_limit': 1, 'ranking': 1, 'icon_for_banner': 90321, 'group': 3, 'level_id': 90, 'grand_prize': 1, 'item_count': 1, 'id': '1370.1', 'v5_grand_prize': 1, 'item_id': 510010070, 'img_banner_bg': 90258, 'weight': 38}",
+          "2": "{'grand_prize': 3, 'group': 1, 'item_count': 1, 'item_id': 6020003280, 'ranking': 2, 'id': '1370.2', 'weight': 320, 'roll_limit': 3, 'level_id': 90, 'v5_grand_prize': 1}",
+          "3": "{'grand_prize': 3, 'group': 1, 'item_count': 1, 'item_id': 6020002230, 'ranking': 3, 'id': '1370.3', 'weight': 126, 'roll_limit': 3, 'level_id': 90, 'v5_grand_prize': 1}",
+          "4": "{'item_count': 1, 'group': 1, 'ranking': 4, 'item_id': 6030003970, 'no_cycle': True, 'id': '1370.4', 'weight': 125, 'roll_limit': 1, 'level_id': 90, 'grand_prize': 3}",
+          "5": "{'ranking': 5, 'grand_prize': 3, 'level_id': 90, 'group': 1, 'id': '1370.5', 'item_count': 10, 'weight': 100, 'item_id': 4420000010}",
+          "6": "{'ranking': 6, 'grand_prize': 3, 'level_id': 90, 'group': 1, 'id': '1370.6', 'item_count': 5, 'weight': 350, 'item_id': 4420000010}",
+          "7": "{'ranking': 7, 'grand_prize': 3, 'level_id': 90, 'group': 1, 'id': '1370.7', 'item_count': 3, 'weight': 750, 'item_id': 4420000010}",
+          "8": "{'ranking': 8, 'grand_prize': 3, 'level_id': 90, 'group': 1, 'id': '1370.8', 'item_count': 2, 'weight': 2900, 'item_id': 4420000010}",
+          "9": "{'ranking': 9, 'grand_prize': 3, 'level_id': 90, 'group': 1, 'id': '1370.9', 'item_count': 1, 'weight': 5000, 'item_id': 4420000010}"
+        },
+        {
+          "1": "{'grand_prize': 2, 'group': 2, 'id': '2019.1', 'item_count': 1, 'item_id': 5100001220, 'roll_limit': 1, 'ranking': 1, 'weight': 4, 'no_cycle': True}",
+          "10": "{'grand_prize': 3, 'group': 1, 'id': '2019.10', 'item_count': 1, 'item_id': 1100146100, 'roll_limit': 1, 'ranking': 10, 'weight': 5, 'no_cycle': True}",
+          "100": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.100', 'item_id': 1600216105, 'ranking': 100, 'weight': 10}",
+          "101": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.101', 'item_id': 1400226105, 'ranking': 101, 'weight': 10}",
+          "102": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.102', 'item_id': 1100236105, 'ranking': 102, 'weight': 10}",
+          "103": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.103', 'item_id': 1200246105, 'ranking': 103, 'weight': 10}",
+          "104": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.104', 'item_id': 1100256105, 'ranking': 104, 'weight': 10}",
+          "105": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.105', 'item_id': 1100276105, 'ranking': 105, 'weight': 10}",
+          "106": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.106', 'item_id': 1700286105, 'ranking': 106, 'weight': 10}",
+          "107": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.107', 'item_id': 1100296105, 'ranking': 107, 'weight': 10}",
+          "108": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.108', 'item_id': 1500306105, 'ranking': 108, 'weight': 10}",
+          "109": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.109', 'item_id': 1100316105, 'ranking': 109, 'weight': 10}",
+          "11": "{'grand_prize': 3, 'group': 1, 'id': '2019.11', 'item_count': 1, 'item_id': 1500156100, 'roll_limit': 1, 'ranking': 11, 'weight': 5, 'no_cycle': True}",
+          "110": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.110', 'item_id': 1100326105, 'ranking': 110, 'weight': 10}",
+          "111": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.111', 'item_id': 1400336105, 'ranking': 111, 'weight': 10}",
+          "112": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.112', 'item_id': 1700346105, 'ranking': 112, 'weight': 10}",
+          "113": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.113', 'item_id': 1200356105, 'ranking': 113, 'weight': 10}",
+          "114": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.114', 'item_id': 1100376105, 'ranking': 114, 'weight': 10}",
+          "115": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.115', 'item_id': 1100386105, 'ranking': 115, 'weight': 10}",
+          "116": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.116', 'item_id': 1100396105, 'ranking': 116, 'weight': 10}",
+          "117": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.117', 'item_id': 1400406105, 'ranking': 117, 'weight': 10}",
+          "118": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.118', 'item_id': 1700416105, 'ranking': 118, 'weight': 10}",
+          "119": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.119', 'item_id': 1300426105, 'ranking': 119, 'weight': 10}",
+          "12": "{'grand_prize': 3, 'group': 1, 'id': '2019.12', 'item_count': 1, 'item_id': 1200166100, 'roll_limit': 1, 'ranking': 12, 'weight': 5, 'no_cycle': True}",
+          "120": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.120', 'item_id': 1200436105, 'ranking': 120, 'weight': 10}",
+          "121": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.121', 'item_id': 1100446105, 'ranking': 121, 'weight': 10}",
+          "122": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.122', 'item_id': 1400456105, 'ranking': 122, 'weight': 10}",
+          "123": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.123', 'item_id': 1200486105, 'ranking': 123, 'weight': 10}",
+          "124": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.124', 'item_id': 1300496105, 'ranking': 124, 'weight': 10}",
+          "125": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.125', 'item_id': 1200506105, 'ranking': 125, 'weight': 10}",
+          "126": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.126', 'item_id': 1100516105, 'ranking': 126, 'weight': 10}",
+          "127": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.127', 'item_id': 1200526105, 'ranking': 127, 'weight': 10}",
+          "128": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.128', 'item_id': 1400536105, 'ranking': 128, 'weight': 10}",
+          "13": "{'grand_prize': 3, 'group': 1, 'id': '2019.13', 'item_count': 1, 'item_id': 1200176100, 'roll_limit': 1, 'ranking': 13, 'weight': 5, 'no_cycle': True}",
+          "14": "{'grand_prize': 3, 'group': 1, 'id': '2019.14', 'item_count': 1, 'item_id': 1400186100, 'roll_limit': 1, 'ranking': 14, 'weight': 5, 'no_cycle': True}",
+          "15": "{'grand_prize': 3, 'group': 1, 'id': '2019.15', 'item_count': 1, 'item_id': 1300206100, 'roll_limit': 1, 'ranking': 15, 'weight': 5, 'no_cycle': True}",
+          "16": "{'grand_prize': 3, 'group': 1, 'id': '2019.16', 'item_count': 1, 'item_id': 1600216100, 'roll_limit': 1, 'ranking': 16, 'weight': 5, 'no_cycle': True}",
+          "17": "{'grand_prize': 3, 'group': 1, 'id': '2019.17', 'item_count': 1, 'item_id': 1400226100, 'roll_limit': 1, 'ranking': 17, 'weight': 5, 'no_cycle': True}",
+          "18": "{'grand_prize': 3, 'group': 1, 'id': '2019.18', 'item_count': 1, 'item_id': 1100236100, 'roll_limit': 1, 'ranking': 18, 'weight': 5, 'no_cycle': True}",
+          "19": "{'grand_prize': 3, 'group': 1, 'id': '2019.19', 'item_count': 1, 'item_id': 1200246100, 'roll_limit': 1, 'ranking': 19, 'weight': 5, 'no_cycle': True}",
+          "2": "{'grand_prize': 2, 'group': 2, 'id': '2019.2', 'item_count': 1, 'item_id': 5200500100, 'roll_limit': 1, 'ranking': 2, 'weight': 4, 'no_cycle': True}",
+          "20": "{'grand_prize': 3, 'group': 1, 'id': '2019.20', 'item_count': 1, 'item_id': 1100256100, 'roll_limit': 1, 'ranking': 20, 'weight': 5, 'no_cycle': True}",
+          "21": "{'grand_prize': 3, 'group': 1, 'id': '2019.21', 'item_count': 1, 'item_id': 1100276100, 'roll_limit': 1, 'ranking': 21, 'weight': 5, 'no_cycle': True}",
+          "22": "{'grand_prize': 3, 'group': 1, 'id': '2019.22', 'item_count': 1, 'item_id': 1700286100, 'roll_limit': 1, 'ranking': 22, 'weight': 5, 'no_cycle': True}",
+          "23": "{'grand_prize': 3, 'group': 1, 'id': '2019.23', 'item_count': 1, 'item_id': 1100296100, 'roll_limit': 1, 'ranking': 23, 'weight': 5, 'no_cycle': True}",
+          "24": "{'grand_prize': 3, 'group': 1, 'id': '2019.24', 'item_count': 1, 'item_id': 1500306100, 'roll_limit': 1, 'ranking': 24, 'weight': 5, 'no_cycle': True}",
+          "25": "{'grand_prize': 3, 'group': 1, 'id': '2019.25', 'item_count': 1, 'item_id': 1100316100, 'roll_limit': 1, 'ranking': 25, 'weight': 5, 'no_cycle': True}",
+          "26": "{'grand_prize': 3, 'group': 1, 'id': '2019.26', 'item_count': 1, 'item_id': 1100326100, 'roll_limit': 1, 'ranking': 26, 'weight': 5, 'no_cycle': True}",
+          "27": "{'grand_prize': 3, 'group': 1, 'id': '2019.27', 'item_count': 1, 'item_id': 1400336100, 'roll_limit': 1, 'ranking': 27, 'weight': 5, 'no_cycle': True}",
+          "28": "{'grand_prize': 3, 'group': 1, 'id': '2019.28', 'item_count': 1, 'item_id': 1700346100, 'roll_limit': 1, 'ranking': 28, 'weight': 5, 'no_cycle': True}",
+          "29": "{'grand_prize': 3, 'group': 1, 'id': '2019.29', 'item_count': 1, 'item_id': 1200356100, 'roll_limit': 1, 'ranking': 29, 'weight': 5, 'no_cycle': True}",
+          "3": "{'grand_prize': 3, 'group': 1, 'id': '2019.3', 'item_count': 1, 'item_id': 1100016100, 'roll_limit': 1, 'ranking': 3, 'weight': 5, 'no_cycle': True}",
+          "30": "{'grand_prize': 3, 'group': 1, 'id': '2019.30', 'item_count': 1, 'item_id': 1100376100, 'roll_limit': 1, 'ranking': 30, 'weight': 5, 'no_cycle': True}",
+          "31": "{'grand_prize': 3, 'group': 1, 'id': '2019.31', 'item_count': 1, 'item_id': 1100386100, 'roll_limit': 1, 'ranking': 31, 'weight': 5, 'no_cycle': True}",
+          "32": "{'grand_prize': 3, 'group': 1, 'id': '2019.32', 'item_count': 1, 'item_id': 1100396100, 'roll_limit': 1, 'ranking': 32, 'weight': 5, 'no_cycle': True}",
+          "33": "{'grand_prize': 3, 'group': 1, 'id': '2019.33', 'item_count': 1, 'item_id': 1400406100, 'roll_limit': 1, 'ranking': 33, 'weight': 5, 'no_cycle': True}",
+          "34": "{'grand_prize': 3, 'group': 1, 'id': '2019.34', 'item_count': 1, 'item_id': 1700416100, 'roll_limit': 1, 'ranking': 34, 'weight': 5, 'no_cycle': True}",
+          "35": "{'grand_prize': 3, 'group': 1, 'id': '2019.35', 'item_count': 1, 'item_id': 1300426100, 'roll_limit': 1, 'ranking': 35, 'weight': 5, 'no_cycle': True}",
+          "36": "{'grand_prize': 3, 'group': 1, 'id': '2019.36', 'item_count': 1, 'item_id': 1200436100, 'roll_limit': 1, 'ranking': 36, 'weight': 5, 'no_cycle': True}",
+          "37": "{'grand_prize': 3, 'group': 1, 'id': '2019.37', 'item_count': 1, 'item_id': 1100446100, 'roll_limit': 1, 'ranking': 37, 'weight': 5, 'no_cycle': True}",
+          "38": "{'grand_prize': 3, 'group': 1, 'id': '2019.38', 'item_count': 1, 'item_id': 1400456100, 'roll_limit': 1, 'ranking': 38, 'weight': 5, 'no_cycle': True}",
+          "39": "{'grand_prize': 3, 'group': 1, 'id': '2019.39', 'item_count': 1, 'item_id': 1200486100, 'roll_limit': 1, 'ranking': 39, 'weight': 5, 'no_cycle': True}",
+          "4": "{'grand_prize': 3, 'group': 1, 'id': '2019.4', 'item_count': 1, 'item_id': 1200026100, 'roll_limit': 1, 'ranking': 4, 'weight': 5, 'no_cycle': True}",
+          "40": "{'grand_prize': 3, 'group': 1, 'id': '2019.40', 'item_count': 1, 'item_id': 1300496100, 'roll_limit': 1, 'ranking': 40, 'weight': 5, 'no_cycle': True}",
+          "41": "{'grand_prize': 3, 'group': 1, 'id': '2019.41', 'item_count': 1, 'item_id': 1200506100, 'roll_limit': 1, 'ranking': 41, 'weight': 5, 'no_cycle': True}",
+          "42": "{'grand_prize': 3, 'group': 1, 'id': '2019.42', 'item_count': 1, 'item_id': 1100516100, 'roll_limit': 1, 'ranking': 42, 'weight': 5, 'no_cycle': True}",
+          "43": "{'grand_prize': 3, 'group': 1, 'id': '2019.43', 'item_count': 1, 'item_id': 1200526100, 'roll_limit': 1, 'ranking': 43, 'weight': 5, 'no_cycle': True}",
+          "44": "{'grand_prize': 3, 'group': 1, 'id': '2019.44', 'item_count': 1, 'item_id': 1400536100, 'roll_limit': 1, 'ranking': 44, 'weight': 5, 'no_cycle': True}",
+          "45": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.45', 'item_id': 1100016105, 'ranking': 45, 'weight': 8}",
+          "46": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.46', 'item_id': 1200026105, 'ranking': 46, 'weight': 8}",
+          "47": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.47', 'item_id': 1500046105, 'ranking': 47, 'weight': 8}",
+          "48": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.48', 'item_id': 1300066105, 'ranking': 48, 'weight': 8}",
+          "49": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.49', 'item_id': 1200086105, 'ranking': 49, 'weight': 8}",
+          "5": "{'grand_prize': 3, 'group': 1, 'id': '2019.5', 'item_count': 1, 'item_id': 1500046100, 'roll_limit': 1, 'ranking': 5, 'weight': 5, 'no_cycle': True}",
+          "50": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.50', 'item_id': 1100106105, 'ranking': 50, 'weight': 8}",
+          "51": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.51', 'item_id': 1400136105, 'ranking': 51, 'weight': 8}",
+          "52": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.52', 'item_id': 1100146105, 'ranking': 52, 'weight': 8}",
+          "53": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.53', 'item_id': 1500156105, 'ranking': 53, 'weight': 8}",
+          "54": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.54', 'item_id': 1200166105, 'ranking': 54, 'weight': 8}",
+          "55": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.55', 'item_id': 1200176105, 'ranking': 55, 'weight': 8}",
+          "56": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.56', 'item_id': 1400186105, 'ranking': 56, 'weight': 8}",
+          "57": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.57', 'item_id': 1300206105, 'ranking': 57, 'weight': 8}",
+          "58": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.58', 'item_id': 1600216105, 'ranking': 58, 'weight': 8}",
+          "59": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.59', 'item_id': 1400226105, 'ranking': 59, 'weight': 8}",
+          "6": "{'grand_prize': 3, 'group': 1, 'id': '2019.6', 'item_count': 1, 'item_id': 1300066100, 'roll_limit': 1, 'ranking': 6, 'weight': 5, 'no_cycle': True}",
+          "60": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.60', 'item_id': 1100236105, 'ranking': 60, 'weight': 8}",
+          "61": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.61', 'item_id': 1200246105, 'ranking': 61, 'weight': 8}",
+          "62": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.62', 'item_id': 1100256105, 'ranking': 62, 'weight': 8}",
+          "63": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.63', 'item_id': 1100276105, 'ranking': 63, 'weight': 8}",
+          "64": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.64', 'item_id': 1700286105, 'ranking': 64, 'weight': 8}",
+          "65": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.65', 'item_id': 1100296105, 'ranking': 65, 'weight': 8}",
+          "66": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.66', 'item_id': 1500306105, 'ranking': 66, 'weight': 8}",
+          "67": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.67', 'item_id': 1100316105, 'ranking': 67, 'weight': 8}",
+          "68": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.68', 'item_id': 1100326105, 'ranking': 68, 'weight': 8}",
+          "69": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.69', 'item_id': 1400336105, 'ranking': 69, 'weight': 8}",
+          "7": "{'grand_prize': 3, 'group': 1, 'id': '2019.7', 'item_count': 1, 'item_id': 1200086100, 'roll_limit': 1, 'ranking': 7, 'weight': 5, 'no_cycle': True}",
+          "70": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.70', 'item_id': 1700346105, 'ranking': 70, 'weight': 8}",
+          "71": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.71', 'item_id': 1200356105, 'ranking': 71, 'weight': 8}",
+          "72": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.72', 'item_id': 1100376105, 'ranking': 72, 'weight': 8}",
+          "73": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.73', 'item_id': 1100386105, 'ranking': 73, 'weight': 8}",
+          "74": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.74', 'item_id': 1100396105, 'ranking': 74, 'weight': 8}",
+          "75": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.75', 'item_id': 1400406105, 'ranking': 75, 'weight': 8}",
+          "76": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.76', 'item_id': 1700416105, 'ranking': 76, 'weight': 8}",
+          "77": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.77', 'item_id': 1300426105, 'ranking': 77, 'weight': 8}",
+          "78": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.78', 'item_id': 1200436105, 'ranking': 78, 'weight': 8}",
+          "79": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.79', 'item_id': 1100446105, 'ranking': 79, 'weight': 8}",
+          "8": "{'grand_prize': 3, 'group': 1, 'id': '2019.8', 'item_count': 1, 'item_id': 1100106100, 'roll_limit': 1, 'ranking': 8, 'weight': 5, 'no_cycle': True}",
+          "80": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.80', 'item_id': 1400456105, 'ranking': 80, 'weight': 8}",
+          "81": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.81', 'item_id': 1200486105, 'ranking': 81, 'weight': 8}",
+          "82": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.82', 'item_id': 1300496105, 'ranking': 82, 'weight': 8}",
+          "83": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.83', 'item_id': 1200506105, 'ranking': 83, 'weight': 8}",
+          "84": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.84', 'item_id': 1100516105, 'ranking': 84, 'weight': 8}",
+          "85": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.85', 'item_id': 1200526105, 'ranking': 85, 'weight': 8}",
+          "86": "{'grand_prize': 3, 'group': 1, 'item_count': 168, 'id': '2019.86', 'item_id': 1400536105, 'ranking': 86, 'weight': 8}",
+          "87": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.87', 'item_id': 1100016105, 'ranking': 87, 'weight': 10}",
+          "88": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.88', 'item_id': 1200026105, 'ranking': 88, 'weight': 10}",
+          "89": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.89', 'item_id': 1500046105, 'ranking': 89, 'weight': 10}",
+          "9": "{'grand_prize': 3, 'group': 1, 'id': '2019.9', 'item_count': 1, 'item_id': 1400136100, 'roll_limit': 1, 'ranking': 9, 'weight': 5, 'no_cycle': True}",
+          "90": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.90', 'item_id': 1300066105, 'ranking': 90, 'weight': 10}",
+          "91": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.91', 'item_id': 1200086105, 'ranking': 91, 'weight': 10}",
+          "92": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.92', 'item_id': 1100106105, 'ranking': 92, 'weight': 10}",
+          "93": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.93', 'item_id': 1400136105, 'ranking': 93, 'weight': 10}",
+          "94": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.94', 'item_id': 1100146105, 'ranking': 94, 'weight': 10}",
+          "95": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.95', 'item_id': 1500156105, 'ranking': 95, 'weight': 10}",
+          "96": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.96', 'item_id': 1200166105, 'ranking': 96, 'weight': 10}",
+          "97": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.97', 'item_id': 1200176105, 'ranking': 97, 'weight': 10}",
+          "98": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.98', 'item_id': 1400186105, 'ranking': 98, 'weight': 10}",
+          "99": "{'grand_prize': 3, 'group': 1, 'item_count': 72, 'id': '2019.99', 'item_id': 1300206105, 'ranking': 99, 'weight': 10}"
+        }
+      ]
+    },
+    "GetOnlyGachaList": {
+      "ids": [
+        1367,
+        1370,
+        1388,
+        1390,
+        1392,
+        1394,
+        1396,
+        1398,
+        1400,
+        1410,
+        2019
+      ],
+      "raw": [
+        1390,
+        1392,
+        1367,
+        1396,
+        1388,
+        1394,
+        1398,
+        1410,
+        1400,
+        1370,
+        2019
+      ]
+    }
+  },
+  "server_random_ticket_present": true
+}
+END

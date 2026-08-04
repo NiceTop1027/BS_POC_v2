@@ -1,0 +1,22 @@
+﻿START=2026-08-04T22:43:40.0425004+09:00
+EXE_HASH=D0836A5D076FFB48AD8ACFD6E0CE69B2E19F92A856D192D13A2B9AF7370B524B
+GAME_PID=24032
+GAME_NOW=
+
+   Id ProcessName MainWindowTitle           
+   -- ----------- ---------------           
+24032 BloodStrike BloodStrike NotLoggedInYet
+
+
+
+OVERLAY_PID=20240
+OVERLAY_HAS_EXITED=False
+PROCESSES=
+
+   Id ProcessName       MainWindowTitle
+   -- -----------       ---------------
+24032 BloodStrike       BloodStrike    
+20240 BloodStrikeCTFESP                
+
+
+

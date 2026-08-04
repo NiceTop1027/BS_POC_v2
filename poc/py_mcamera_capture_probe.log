@@ -1,0 +1,51 @@
+BEGIN 1785813931.2375386
+GetScreenSize type=<class 'UVec2'> repr=<1334, 750>
+GetScreenSize.x=1334
+GetScreenSize.y=750
+MUI.GetScreenSize=<1334, 750>
+CaptureFrame.signature=<Signature (self, /)>
+ApplyFrame.signature=<Signature (self, object, /)>
+CaptureFrame() type=<class 'CameraFrame'> repr=<CameraFrame object at 0x0000025A03295CC0>
+CaptureFrame().Fov=75.0
+CaptureFrame().InterpolateMode=0
+CaptureFrame().Pitch=0.0
+CaptureFrame().Position=<-16.5049, 1.5435, -6.7757>
+CaptureFrame().Roll=0.0
+CaptureFrame().Time=0
+CaptureFrame().Yaw=-1.6422725915908813
+frame after () type=<class 'CameraFrame'> repr=<CameraFrame object at 0x0000025A03332380>
+frame after ().Fov=60.0
+frame after ().InterpolateMode=0
+frame after ().Pitch=0.0
+frame after ().Position=<0.0000, 2.0000, 0.0000>
+frame after ().Roll=0.0
+frame after ().Time=0
+frame after ().Yaw=0.0
+CaptureFrame(0,) FAIL TypeError('CaptureFrame() takes no arguments (1 given)')
+frame after (0,) type=<class 'CameraFrame'> repr=<CameraFrame object at 0x0000025A03332380>
+frame after (0,).Fov=60.0
+frame after (0,).InterpolateMode=0
+frame after (0,).Pitch=0.0
+frame after (0,).Position=<0.0000, 2.0000, 0.0000>
+frame after (0,).Roll=0.0
+frame after (0,).Time=0
+frame after (0,).Yaw=0.0
+CaptureFrame(1,) FAIL TypeError('CaptureFrame() takes no arguments (1 given)')
+frame after (1,) type=<class 'CameraFrame'> repr=<CameraFrame object at 0x0000025A03332380>
+frame after (1,).Fov=60.0
+frame after (1,).InterpolateMode=0
+frame after (1,).Pitch=0.0
+frame after (1,).Position=<0.0000, 2.0000, 0.0000>
+frame after (1,).Roll=0.0
+frame after (1,).Time=0
+frame after (1,).Yaw=0.0
+CaptureFrame(<CameraFrame object at 0x0000025A03332380>,) FAIL TypeError('CaptureFrame() takes no arguments (1 given)')
+frame after (<CameraFrame object at 0x0000025A03332380>,) type=<class 'CameraFrame'> repr=<CameraFrame object at 0x0000025A03332380>
+frame after (<CameraFrame object at 0x0000025A03332380>,).Fov=60.0
+frame after (<CameraFrame object at 0x0000025A03332380>,).InterpolateMode=0
+frame after (<CameraFrame object at 0x0000025A03332380>,).Pitch=0.0
+frame after (<CameraFrame object at 0x0000025A03332380>,).Position=<0.0000, 2.0000, 0.0000>
+frame after (<CameraFrame object at 0x0000025A03332380>,).Roll=0.0
+frame after (<CameraFrame object at 0x0000025A03332380>,).Time=0
+frame after (<CameraFrame object at 0x0000025A03332380>,).Yaw=0.0
+END

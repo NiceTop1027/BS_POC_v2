@@ -1,0 +1,1 @@
+STATE={'installed_at': 1785820793.5477154, 'injected_thread': 7684, 'tick_thread': None, 'tick_at': None, 'cls': <class 'gclient.framework.entities.avatar.PlayerAvatar'>, 'original_tick': <function ClientEntity.tick at 0x00000259F5276B90>, 'hook': <function tick_once at 0x0000025A156E6820>}

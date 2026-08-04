@@ -1,0 +1,786 @@
+BEGIN 1785813797.240807
+MCamera type=<class 'module'> repr=<module 'MCamera'>
+MCamera.dir=['ApplyFrame', 'CameraFrame', 'CameraRuntimeInfo', 'CaptureFrame', 'GetPriorityScriptBase', 'GetPriorityScriptExpress', 'GetPriorityScriptTop']
+MCamera.CameraFrame type=<class 'type'> repr=<class 'CameraFrame'>
+MCamera.CameraFrame.dir=['Fov', 'InterpolateMode', 'Pitch', 'Position', 'Roll', 'Time', 'Yaw']
+MCamera.CameraFrame.Fov=<attribute 'Fov' of 'CameraFrame' objects>
+MCamera.CameraFrame.InterpolateMode=<attribute 'InterpolateMode' of 'CameraFrame' objects>
+MCamera.CameraFrame.Pitch=<attribute 'Pitch' of 'CameraFrame' objects>
+MCamera.CameraFrame.Position=<attribute 'Position' of 'CameraFrame' objects>
+MCamera.CameraFrame.Roll=<attribute 'Roll' of 'CameraFrame' objects>
+MCamera.CameraFrame.Time=<attribute 'Time' of 'CameraFrame' objects>
+MCamera.CameraFrame.Yaw=<attribute 'Yaw' of 'CameraFrame' objects>
+MCamera.CameraFrame() type=<class 'CameraFrame'> repr=<CameraFrame object at 0x00000259F9686F40>
+MCamera.CameraFrame().dir=['Fov', 'InterpolateMode', 'Pitch', 'Position', 'Roll', 'Time', 'Yaw']
+MCamera.CameraFrame().Fov=60.0
+MCamera.CameraFrame().InterpolateMode=0
+MCamera.CameraFrame().Pitch=0.0
+MCamera.CameraFrame().Position=<0.0000, 2.0000, 0.0000>
+MCamera.CameraFrame().Roll=0.0
+MCamera.CameraFrame().Time=0
+MCamera.CameraFrame().Yaw=0.0
+MCamera.CameraRuntimeInfo type=<class 'type'> repr=<class 'CameraRuntimeInfo'>
+MCamera.CameraRuntimeInfo.dir=['Controller', 'Direction', 'Fov', 'Roll', 'Target']
+MCamera.CameraRuntimeInfo.Controller=<attribute 'Controller' of 'CameraRuntimeInfo' objects>
+MCamera.CameraRuntimeInfo.Direction=<attribute 'Direction' of 'CameraRuntimeInfo' objects>
+MCamera.CameraRuntimeInfo.Fov=<attribute 'Fov' of 'CameraRuntimeInfo' objects>
+MCamera.CameraRuntimeInfo.Roll=<attribute 'Roll' of 'CameraRuntimeInfo' objects>
+MCamera.CameraRuntimeInfo.Target=<attribute 'Target' of 'CameraRuntimeInfo' objects>
+MCamera.CameraRuntimeInfo() type=<class 'CameraRuntimeInfo'> repr=<CameraRuntimeInfo object at 0x00000259F9685C80>
+MCamera.CameraRuntimeInfo().dir=['Controller', 'Direction', 'Fov', 'Roll', 'Target']
+MCamera.CameraRuntimeInfo().Controller=0
+MCamera.CameraRuntimeInfo().Direction=<0.0000, 0.0000, -1.0000>
+MCamera.CameraRuntimeInfo().Fov=60.0
+MCamera.CameraRuntimeInfo().Roll=0.0
+MCamera.CameraRuntimeInfo().Target=<0.0000, 2.0000, 0.0000>
+Camera class names=['position', 'engine_camera', 'position_tuple', 'is_fps_placer', 'is_tps_placer', 'is_tfps_placer', 'is_gunsmith_placer', 'is_free_placer', 'is_parachute_placer', 'is_look_around', 'is_replay_placer', 'EnsureEnterArea', 'InitController', 'DetachController', 'CreateController', 'CreateShaker', 'CreateCollider', 'SetColliderOffset', 'SetColliderSmooth', 'SetColliderSmoothSeperate', 'SetColliderRadio', 'enableCollider', 'pre_direction', 'Attach', 'Detach', 'StandBy', 'ReadyBy', 'destroy', 'RefreshNearAndFar', 'SetReplayMode', 'StorePrePlacerInfo', 'FetchPrePlacerInfo', 'SetPlacer', 'RefreshPoseType', 'GetReplayCameraMode', 'EnterLookAround', 'EnterCameraIdForLookAround', 'ExitLookAround', 'SyncDirectionToTarget', 'ApplyCamera', 'RestoreCamera', 'SetFpsCameraForHall', 'SetFreeviewCameraForHall', 'SetAimCamera', '_UseSpecialPlacer', 'SetFocusTarget', 'SetSpecialPlacerTarget', 'UpdateSpecialPlacerTarget', 'SetTpsModelVisible', 'SetActorEnableControlCamera', 'CheckActorEnableControlCamera', 'RefreshConfig', 'RefreshMainFov', 'ConfigGunSmithAimPlacer', 'ConfigDeadFollowPlacer', 'ConfigFollowPlacer', 'ConfigAimPlacer', 'ConfigHildaAimPlacer', 'ConfigHildaFollowPlacer', 'ConfigFpsPlacer', 'ConfigTpsPlacer', 'ConfigALSTpsPlacer', 'ConfigFreeviewPlacer', 'ConfigReplayPlacer', 'ConfigReplayAimPlacer', 'ConfigEmoteTpsPlacer', 'LoadFromData', 'ResetTransform', 'ResetTransformWithFocus', 'NotifyPlacer', 'shake', 'shakePulse', 'shakeLoop', 'stopShake', 'cueBlur', 'blurEnd', 'cancelBlurTimer', '_addComponent', '_delComponent', '_callComponents', '_initComponents', '_postComponents', '_tickComponents', '_finiComponents', '_hasComponents', '_on_timer', 'add_repeat_timer', 'add_timer', 'cancel_timer', 'IsAvatar', 'IsCombatAvatar', 'IsPlayerCombatAvatar', 'IsSoulAvatar', 'IsIgnoreCue', 'IsVehicle', 'IsGameLogic', 'IsBomb', 'IsMagicField', 'IsSimpleCombatUnit', 'IsCombatUnit', 'IsReplayRecorder', 'IsItem', 'IsItemSpaceSnare', 'is_fps_avatar', 'is_replay_avatar', 'is_replay_room', 'IsOccupyContractTarget', 'IsOccupyContractTargetNew', 'IsSearchContractBox', 'IsAmmoBox', 'IsSystemKiller', 'IsBuilding', 'IsSupply', 'IsGlass', 'IsAirDrop', 'IsVirtualInteractionEntity', 'IsDummyCombatAvatar', 'IsRobotCombatAvatar', 'IsPhyBall', 'IsHolographicRobot', 'IsShield', 'IsShop', 'IsCombatTeam', 'IsCureUav', 'IsCureUavFix', 'IsContrabandPlane', 'NinjaBeacon', 'IsEntityAttach', 'IsEntityMaster', 'IsMovingPlatform', 'IsBarrieCannon', 'IsNavigateBarrieCannon', 'IsRPGMissile', 'IsOilbox', 'IsArrow', 'IsBlackHole', 'IsTimeSpear', 'IsStickyMaster', 'IsHelenAI', 'IsIceWall', 'IsCrow', 'IsStronghold', 'IsObserveAvatar', 'IsPlayerObserveAvatar', 'IsDestructible', 'IsMonster', 'IsGiantMonster', 'IsCrack', 'IsEmoteTree', 'IsReplayPuppet', 'IsEnergyStronghold', 'IsSafeBox', 'IsStropUav', 'IsChaosUav', 'IsPortableShop', 'IsSaveMachine', 'IsSaveDrone', 'IsATM', 'IsAttackDrone', 'IsATMGuardAI', 'IsScoutArrow', 'IsRobotCombatAvatarZombie', 'IsCombatAvatarZombieXray', 'IsSwordSpirit', 'IsSyncTransEntity', 'IsSpellDrone', 'IsMonitorMissile', 'IsCombatAvatarSniper', 'IsCombatBillboard', 'IsShootingRange', 'IsContractDesk', 'IsMineral', 'IsEvoPlatform', 'IsFlagSF', 'IsTransferBomb', 'IsHiderClone', 'IsGasStation', 'IsGroupDanceField', 'IsEvaMonster', 'IsPosterBoard', 'IsCureUavShield', 'IsEvaGame', 'IsUavShield', 'IsAltar', 'IsSkullBomb', 'IsBleachSpirit', 'IsNewCrystalMonster', 'IsDoubleDanceField', 'IsOverloadGift', 'IsBleachGame', 'IsStonePilar', 'IsSevenSinsGame', 'IsUltraMegaGame', 'IsTitan2Game', 'IsTitan2Stronghold', 'IsUltraMegaEnergy', 'IsTitan2StrongholdChest', 'IsBombSite', 'IsFormationRobot', 'IsBlastingC4', 'IsPanpan', 'IsFootball', 'IsDmzContainer', 'IsDmzMonster']
+DIS Camera.GetReplayCameraMode names=('camera_id', 'CameraMode', 'FPS', 'cconst', 'CAMERA_ID_VEHICLE', 'AIM', 'CAMERA_ID_HELICOPTER', 'CAMERA_ID_MOTORBIKE', 'CAMERA_ID_DEATH', 'DEATH', 'CAMERA_ID_LIGHT_ATTACK', 'FREE', 'CAMERA_ID_NEW_MISSILE_SPELL', 'CAMERA_ID_EMOTE', 'EMOTE', 'CAMERA_ID_EMOTE_SPEC', 'CAMERA_ID_EMOTE_ENVY_SIN', 'CAMERA_ID_EXECUTE', 'CAMCTRL', 'CAMERA_ID_ALS_TPS', 'ALTPS', 'CAMERA_ID_TITAN_2_BEAST', 'TPS', 'CAMERA_ID_TITAN_2_TRANSFORMED', 'CAMERA_ID_GREAT_SWORD', 'CAMERA_ID_JUREN_FLY', 'CAMERA_ID_BLEACH_SWORD', 'CAMERA_ID_TRANSFORMING', 'CAMERA_ID_TRANSFORMED', 'get', 'REPLAY')
+373           RESUME                   0
+
+374           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (camera_id)
+              TO_BOOL
+              POP_JUMP_IF_TRUE        17 (to L1)
+              NOT_TAKEN
+
+375           LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR                4 (FPS)
+              RETURN_VALUE
+
+376   L1:     BUILD_MAP                0
+
+377           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR                8 (CAMERA_ID_VEHICLE)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               10 (AIM)
+
+376           MAP_ADD                  1
+
+378           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               12 (CAMERA_ID_HELICOPTER)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               10 (AIM)
+
+376           MAP_ADD                  1
+
+379           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               14 (CAMERA_ID_MOTORBIKE)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               10 (AIM)
+
+376           MAP_ADD                  1
+
+380           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               16 (CAMERA_ID_DEATH)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               18 (DEATH)
+
+376           MAP_ADD                  1
+
+381           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               20 (CAMERA_ID_LIGHT_ATTACK)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               22 (FREE)
+
+376           MAP_ADD                  1
+
+382           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               24 (CAMERA_ID_NEW_MISSILE_SPELL)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               22 (FREE)
+
+376           MAP_ADD                  1
+
+383           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               26 (CAMERA_ID_EMOTE)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               28 (EMOTE)
+
+376           MAP_ADD                  1
+
+384           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               30 (CAMERA_ID_EMOTE_SPEC)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               28 (EMOTE)
+
+376           MAP_ADD                  1
+
+385           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               32 (CAMERA_ID_EMOTE_ENVY_SIN)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               28 (EMOTE)
+
+376           MAP_ADD                  1
+
+386           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               34 (CAMERA_ID_EXECUTE)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               36 (CAMCTRL)
+
+376           MAP_ADD                  1
+
+387           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               38 (CAMERA_ID_ALS_TPS)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               40 (ALTPS)
+
+376           MAP_ADD                  1
+
+388           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               42 (CAMERA_ID_TITAN_2_BEAST)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               44 (TPS)
+
+376           MAP_ADD                  1
+
+389           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               46 (CAMERA_ID_TITAN_2_TRANSFORMED)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               44 (TPS)
+
+376           MAP_ADD                  1
+
+390           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               48 (CAMERA_ID_GREAT_SWORD)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               44 (TPS)
+
+376           MAP_ADD                  1
+
+391           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               50 (CAMERA_ID_JUREN_FLY)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               44 (TPS)
+
+376           MAP_ADD                  1
+
+392           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               52 (CAMERA_ID_BLEACH_SWORD)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               44 (TPS)
+
+376           MAP_ADD                  1
+
+393           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               54 (CAMERA_ID_TRANSFORMING)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               36 (CAMCTRL)
+
+376           MAP_ADD                  1
+
+394           LOAD_GLOBAL              6 (cconst)
+              LOAD_ATTR               56 (CAMERA_ID_TRANSFORMED)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               40 (ALTPS)
+
+376           BUILD_MAP                1
+              DICT_UPDATE              1
+              STORE_FAST               1 (camera_mode_map)
+
+396           LOAD_FAST_BORROW         1 (camera_mode_map)
+              LOAD_ATTR               59 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (camera_id)
+              LOAD_GLOBAL              2 (CameraMode)
+              LOAD_ATTR               60 (REPLAY)
+              CALL                     2
+              RETURN_VALUE
+
+DIS Camera.EnterCameraIdForLookAround names=('is_look_around', 'look_around_pre_camera_id')
+405           RESUME                   0
+
+406           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (is_look_around)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+407           LOAD_CONST               0 (False)
+              RETURN_VALUE
+
+408   L1:     LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (camera_id, self)
+              STORE_ATTR               1 (look_around_pre_camera_id)
+
+409           LOAD_CONST               1 (True)
+              RETURN_VALUE
+
+DIS Camera.ApplyCamera names=('camera_data', 'data', 'get', 'update', 'camera_id', 'ReadyBy', 'cconst', 'CAMERA_ID_CALCULATION', 'CAMERA_ID_DEFAULT', 'CAMERA_ID_NEED_BLENDER', '_UseSpecialPlacer', 'CAMERA_ID_LOOK_AROUND', 'genv', 'messenger', 'Broadcast', 'events', 'ON_CAMERA_LOOKAROUND')
+424            RESUME                   0
+
+430            LOAD_FAST_BORROW         2 (info)
+               POP_JUMP_IF_NOT_NONE     3 (to L1)
+               NOT_TAKEN
+
+431            BUILD_MAP                0
+               STORE_FAST               2 (info)
+
+433    L1:     LOAD_FAST_BORROW         1 (camera_id)
+               LOAD_GLOBAL              0 (camera_data)
+               LOAD_ATTR                2 (data)
+               CONTAINS_OP              0 (in)
+               POP_JUMP_IF_FALSE       66 (to L2)
+               NOT_TAKEN
+
+434            LOAD_GLOBAL              0 (camera_data)
+               LOAD_ATTR                2 (data)
+               LOAD_FAST_BORROW         1 (camera_id)
+               BINARY_OP               26 ([])
+               STORE_FAST               3 (camera_info)
+
+435            LOAD_FAST_BORROW         2 (info)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST               1 ('need_blender')
+               CALL                     1
+               STORE_FAST               4 (need_blender)
+
+436            LOAD_FAST_BORROW         2 (info)
+               LOAD_ATTR                7 (update + NULL|self)
+               LOAD_FAST_BORROW         3 (camera_info)
+               CALL                     1
+               POP_TOP
+
+437            LOAD_FAST_BORROW         4 (need_blender)
+               POP_JUMP_IF_NONE         5 (to L2)
+               NOT_TAKEN
+
+438            LOAD_FAST_BORROW_LOAD_FAST_BORROW 66 (need_blender, info)
+               LOAD_CONST               1 ('need_blender')
+               STORE_SUBSCR
+
+440    L2:     LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (camera_id, self)
+               LOAD_ATTR                8 (camera_id)
+               COMPARE_OP              88 (bool(==))
+               POP_JUMP_IF_FALSE       20 (to L3)
+               NOT_TAKEN
+
+441            LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR               11 (ReadyBy + NULL|self)
+               LOAD_FAST_BORROW         2 (info)
+               CALL                     1
+               POP_TOP
+
+442            LOAD_CONST               0 (None)
+               RETURN_VALUE
+
+443    L3:     LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                8 (camera_id)
+               LOAD_GLOBAL             12 (cconst)
+               LOAD_ATTR               14 (CAMERA_ID_CALCULATION)
+               COMPARE_OP              88 (bool(==))
+               POP_JUMP_IF_FALSE        3 (to L4)
+               NOT_TAKEN
+
+445            LOAD_CONST               0 (None)
+               RETURN_VALUE
+
+446    L4:     LOAD_FAST_BORROW         1 (camera_id)
+               LOAD_GLOBAL             12 (cconst)
+               LOAD_ATTR               16 (CAMERA_ID_DEFAULT)
+               COMPARE_OP              88 (bool(==))
+               POP_JUMP_IF_FALSE      208 (to L9)
+               NOT_TAKEN
+
+447            LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                8 (camera_id)
+               LOAD_GLOBAL             18 (CAMERA_ID_NEED_BLENDER)
+               CONTAINS_OP              0 (in)
+               COPY                     1
+               TO_BOOL
+               POP_JUMP_IF_FALSE       18 (to L5)
+               NOT_TAKEN
+               POP_TOP
+               LOAD_FAST_BORROW         2 (info)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST               1 ('need_blender')
+               CALL                     1
+       L5:     STORE_FAST               5 (need_blend_info)
+
+448            LOAD_FAST_BORROW         2 (info)
+               TO_BOOL
+               POP_JUMP_IF_TRUE        32 (to L6)
+               NOT_TAKEN
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                8 (camera_id)
+               LOAD_GLOBAL              0 (camera_data)
+               LOAD_ATTR                2 (data)
+               CONTAINS_OP              0 (in)
+               POP_JUMP_IF_TRUE         9 (to L7)
+               NOT_TAKEN
+       L6:     LOAD_FAST_BORROW         5 (need_blend_info)
+               TO_BOOL
+               POP_JUMP_IF_FALSE       92 (to L8)
+               NOT_TAKEN
+
+449    L7:     LOAD_GLOBAL              0 (camera_data)
+               LOAD_ATTR                2 (data)
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                8 (camera_id)
+               BINARY_OP               26 ([])
+               STORE_FAST               3 (camera_info)
+
+450            LOAD_CONST               2 ('to_fps')
+               LOAD_CONST               3 (True)
+
+451            LOAD_CONST               1 ('need_blender')
+               LOAD_FAST_BORROW         3 (camera_info)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST               4 ('need_blender_to_fps')
+               LOAD_CONST               5 (False)
+               CALL                     2
+
+452            LOAD_CONST               6 ('blend_time')
+               LOAD_FAST_BORROW         3 (camera_info)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST               7 ('blend_time_to_fps')
+               LOAD_CONST               8 (0.2)
+               CALL                     2
+
+453            LOAD_CONST               9 ('blend_type')
+               LOAD_FAST_BORROW         3 (camera_info)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST              10 ('blend_type_to_fps')
+               LOAD_SMALL_INT           2
+               CALL                     2
+
+450            BUILD_MAP                4
+               STORE_FAST               2 (info)
+
+455    L8:     LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR               21 (_UseSpecialPlacer + NULL|self)
+               LOAD_CONST               0 (None)
+               LOAD_FAST_BORROW         2 (info)
+               CALL                     2
+               POP_TOP
+
+456            LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (camera_id, self)
+               STORE_ATTR               4 (camera_id)
+               JUMP_FORWARD            40 (to L10)
+
+458    L9:     LOAD_FAST_CHECK          3 (camera_info)
+               LOAD_ATTR                5 (get + NULL|self)
+               LOAD_CONST              11 ('type')
+               CALL                     1
+               STORE_FAST               6 (camera_type)
+
+459            LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR               21 (_UseSpecialPlacer + NULL|self)
+               LOAD_FAST_BORROW_LOAD_FAST_BORROW 98 (camera_type, info)
+               CALL                     2
+               POP_TOP
+
+460            LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (camera_id, self)
+               STORE_ATTR               4 (camera_id)
+
+462   L10:     LOAD_FAST_BORROW         1 (camera_id)
+               LOAD_GLOBAL             12 (cconst)
+               LOAD_ATTR               22 (CAMERA_ID_LOOK_AROUND)
+               COMPARE_OP             119 (bool(!=))
+
+DIS Camera.RestoreCamera names=('replay_util', 'GetPlayer', 'is_fps_mode', 'combat_state', 'consts', 'CombatState', 'ALIVE', 'SPIRIT', 'normal_placer', 'IsValid', 'ApplyCamera', 'cconst', 'CAMERA_ID_DEFAULT', 'ConfigFpsPlacer', 'is_replay_avatar', 'replay_mode', 'CameraMode', 'REPLAY', 'ConfigReplayPlacer', 'default_tps_camera_id', 'SetColliderSmoothSeperate')
+465           RESUME                   0
+
+467           LOAD_GLOBAL              0 (replay_util)
+              LOAD_ATTR                2 (GetPlayer)
+              PUSH_NULL
+              CALL                     0
+              STORE_FAST               2 (player)
+
+468           LOAD_FAST_BORROW         2 (player)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+469           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+470   L1:     LOAD_FAST_BORROW         2 (player)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      213 (to L4)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         2 (player)
+              LOAD_ATTR                4 (is_fps_mode)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      195 (to L4)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         2 (player)
+              LOAD_ATTR                6 (combat_state)
+              LOAD_GLOBAL              8 (consts)
+              LOAD_ATTR               10 (CombatState)
+              LOAD_ATTR               12 (ALIVE)
+              LOAD_GLOBAL              8 (consts)
+              LOAD_ATTR               10 (CombatState)
+              LOAD_ATTR               14 (SPIRIT)
+              BUILD_TUPLE              2
+              CONTAINS_OP              0 (in)
+              POP_JUMP_IF_FALSE      128 (to L4)
+              NOT_TAKEN
+
+471           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               16 (normal_placer)
+              STORE_FAST               3 (normal_placer)
+
+472           LOAD_FAST_BORROW         3 (normal_placer)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       23 (to L2)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         3 (normal_placer)
+              LOAD_ATTR               19 (IsValid + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_TRUE        50 (to L3)
+              NOT_TAKEN
+
+473   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               21 (ApplyCamera + NULL|self)
+              LOAD_GLOBAL             22 (cconst)
+              LOAD_ATTR               24 (CAMERA_ID_DEFAULT)
+              CALL                     1
+              POP_TOP
+
+474           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               27 (ConfigFpsPlacer + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+476   L3:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               21 (ApplyCamera + NULL|self)
+              LOAD_GLOBAL             22 (cconst)
+              LOAD_ATTR               24 (CAMERA_ID_DEFAULT)
+              LOAD_CONST               1 ('need_blender')
+              LOAD_FAST_BORROW         1 (need_blender)
+              BUILD_MAP                1
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+482   L4:     LOAD_FAST_BORROW         2 (player)
+              LOAD_ATTR               28 (is_replay_avatar)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       54 (to L6)
+              NOT_TAKEN
+
+484           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (replay_mode)
+              LOAD_CONST               0 (None)
+              LOAD_GLOBAL             32 (CameraMode)
+              LOAD_ATTR               34 (REPLAY)
+              BUILD_TUPLE              2
+              CONTAINS_OP              0 (in)
+              POP_JUMP_IF_FALSE       19 (to L5)
+              NOT_TAKEN
+
+485           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               37 (ConfigReplayPlacer + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+484   L5:     LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+487   L6:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               21 (ApplyCamera + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               38 (default_tps_camera_id)
+              LOAD_CONST               1 ('need_blender')
+              LOAD_FAST_BORROW         1 (need_blender)
+              BUILD_MAP                1
+              CALL                     2
+              POP_TOP
+
+488           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               41 (SetColliderSmoothSeperate + NULL|self)
+              LOAD_CONST               2 (False)
+              LOAD_CONST               3 (True)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+DIS Camera.SetFpsCameraForHall names=('ApplyCamera', 'cconst', 'CAMERA_ID_DEFAULT', 'ConfigFpsPlacer')
+490           RESUME                   0
+
+491           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (ApplyCamera + NULL|self)
+              LOAD_GLOBAL              2 (cconst)
+              LOAD_ATTR                4 (CAMERA_ID_DEFAULT)
+              CALL                     1
+              POP_TOP
+
+492           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                7 (ConfigFpsPlacer + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+DIS Camera.SetFreeviewCameraForHall names=('genv', 'space', 'InitCameraId')
+494           RESUME                   0
+
+495           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (space)
+              LOAD_ATTR                5 (InitCameraId + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+DIS Camera.SetAimCamera names=('ApplyCamera', 'cconst', 'CAMERA_ID_DEFAULT', 'CAMERA_ID_ALS_TPS')
+497           RESUME                   0
+
+498           LOAD_FAST_BORROW         1 (is_aim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       37 (to L1)
+              NOT_TAKEN
+
+499           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (ApplyCamera + NULL|self)
+              LOAD_GLOBAL              2 (cconst)
+              LOAD_ATTR                4 (CAMERA_ID_DEFAULT)
+              LOAD_CONST               0 ('need_blender')
+              LOAD_CONST               1 (False)
+              BUILD_MAP                1
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+501   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (ApplyCamera + NULL|self)
+              LOAD_GLOBAL              2 (cconst)
+              LOAD_ATTR                6 (CAMERA_ID_ALS_TPS)
+              LOAD_CONST               0 ('need_blender')
+              LOAD_CONST               1 (False)
+              BUILD_MAP                1
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+DIS Camera.UpdateSpecialPlacerTarget names=('special_placer', 'SetFocusTarget')
+544           RESUME                   0
+
+545           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (special_placer)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+546           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+547   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (special_placer)
+              LOAD_ATTR                3 (SetFocusTarget + NULL|self)
+              LOAD_FAST_BORROW         1 (target)
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+DIS Camera.SetActorEnableControlCamera names=('IsValid', 'control_camera_actors', 'remove', 'SetEnableControlCamera', 'append', 'CheckActorEnableControlCamera')
+ 562           RESUME                   0
+
+ 563           LOAD_FAST_BORROW         1 (actor)
+               TO_BOOL
+               POP_JUMP_IF_FALSE       23 (to L1)
+               NOT_TAKEN
+               LOAD_FAST_BORROW         1 (actor)
+               LOAD_ATTR                1 (IsValid + NULL|self)
+               CALL                     0
+               TO_BOOL
+               POP_JUMP_IF_TRUE        52 (to L3)
+               NOT_TAKEN
+
+ 564   L1:     LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (actor, self)
+               LOAD_ATTR                2 (control_camera_actors)
+               CONTAINS_OP              0 (in)
+               COPY                     1
+               TO_BOOL
+               POP_JUMP_IF_FALSE       28 (to L2)
+               NOT_TAKEN
+               POP_TOP
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                2 (control_camera_actors)
+               LOAD_ATTR                5 (remove + NULL|self)
+               LOAD_FAST_BORROW         1 (actor)
+               CALL                     1
+
+  --   L2:     POP_TOP
+
+ 565           LOAD_CONST               0 (None)
+               RETURN_VALUE
+
+ 566   L3:     LOAD_FAST_BORROW         2 (enable)
+               TO_BOOL
+               POP_JUMP_IF_FALSE       96 (to L5)
+               NOT_TAKEN
+
+ 567           LOAD_FAST_BORROW         1 (actor)
+               LOAD_ATTR                7 (SetEnableControlCamera + NULL|self)
+               LOAD_CONST               1 (True)
+               CALL                     1
+               POP_TOP
+
+ 568           LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (actor, self)
+               LOAD_ATTR                2 (control_camera_actors)
+               CONTAINS_OP              0 (in)
+               COPY                     1
+               TO_BOOL
+               POP_JUMP_IF_FALSE       28 (to L4)
+               NOT_TAKEN
+               POP_TOP
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                2 (control_camera_actors)
+               LOAD_ATTR                5 (remove + NULL|self)
+               LOAD_FAST_BORROW         1 (actor)
+               CALL                     1
+
+  --   L4:     POP_TOP
+
+ 569           LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                2 (control_camera_actors)
+               LOAD_ATTR                9 (append + NULL|self)
+               LOAD_FAST_BORROW         1 (actor)
+               CALL                     1
+               POP_TOP
+               LOAD_CONST               0 (None)
+               RETURN_VALUE
+
+ 571   L5:     LOAD_FAST_BORROW         1 (actor)
+               LOAD_ATTR                7 (SetEnableControlCamera + NULL|self)
+               LOAD_CONST               2 (False)
+               CALL                     1
+               POP_TOP
+
+ 572           LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (actor, self)
+               LOAD_ATTR                2 (control_camera_actors)
+               CONTAINS_OP              0 (in)
+               COPY                     1
+               TO_BOOL
+               POP_JUMP_IF_FALSE       28 (to L6)
+               NOT_TAKEN
+               POP_TOP
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                2 (control_camera_actors)
+               LOAD_ATTR                5 (remove + NULL|self)
+               LOAD_FAST_BORROW         1 (actor)
+               CALL                     1
+
+  --   L6:     POP_TOP
+
+ 573           LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR               11 (CheckActorEnableControlCamera + NULL|self)
+               CALL                     0
+               POP_TOP
+               LOAD_CONST               0 (None)
+               RETURN_VALUE
+
+DIS Camera.CheckActorEnableControlCamera names=('control_camera_actors', 'IsValid', 'SetEnableControlCamera', 'remove', 'CheckActorEnableControlCamera')
+575           RESUME                   0
+
+576           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (control_camera_actors)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+577           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+578   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (control_camera_actors)
+              LOAD_CONST               2 (-1)
+              BINARY_OP               26 ([])
+              STORE_FAST               1 (control_actor)
+
+579           LOAD_FAST_BORROW         1 (control_actor)
+              TO_BOOL
+              POP_JUMP_IF_FALSE       42 (to L2)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         1 (control_actor)
+              LOAD_ATTR                3 (IsValid + NULL|self)
+              CALL                     0
+              TO_BOOL
+              POP_JUMP_IF_FALSE       20 (to L2)
+              NOT_TAKEN
+
+580           LOAD_FAST_BORROW         1 (control_actor)
+              LOAD_ATTR                5 (SetEnableControlCamera + NULL|self)
+              LOAD_CONST               1 (True)
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+582   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (control_camera_actors)
+              LOAD_ATTR                7 (remove + NULL|self)
+              LOAD_FAST_BORROW         1 (control_actor)
+              CALL                     1
+              POP_TOP
+
+583           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                9 (CheckActorEnableControlCamera + NULL|self)
+              CALL                     0
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+DIS Camera._tickComponents names=('LookupComponent', '__class__', 'sys', 'excepthook', 'exc_info')
+ 105           RESUME                   0
+
+ 106           LOAD_GLOBAL              1 (LookupComponent + NULL)
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                2 (__class__)
+               LOAD_CONST               0 ('tick')
+               CALL                     2
+               GET_ITER
+       L1:     FOR_ITER                12 (to L4)
+               STORE_FAST               2 (func)
+
+ 107           NOP
+
+ 108   L2:     LOAD_FAST_BORROW         2 (func)
+               PUSH_NULL
+               LOAD_FAST_BORROW_LOAD_FAST_BORROW 1 (self, dtime)
+               CALL                     2
+               POP_TOP
+       L3:     JUMP_BACKWARD           14 (to L1)
+
+ 106   L4:     END_FOR
+               POP_ITER
+               LOAD_CONST               1 (None)
+               RETURN_VALUE
+
+  --   L5:     PUSH_EXC_INFO
+
+ 109           POP_TOP
+
+ 110           LOAD_GLOBAL              4 (sys)
+               LOAD_ATTR                6 (excepthook)
+               PUSH_NULL
+               LOAD_GLOBAL              4 (sys)
+               LOAD_ATTR                8 (exc_info)
+               PUSH_NULL
+               CALL                     0
+               PUSH_NULL
+               CALL_FUNCTION_EX
+               POP_TOP
+       L6:     POP_EXCEPT
+               JUMP_BACKWARD           62 (to L1)
+
+  --   L7:     COPY                     3
+               POP_EXCEPT
+               RERAISE                  1
+ExceptionTable:
+  L2 to L3 -> L5 [1]
+  L5 to L6 -> L7 [2] lasti
+
+ENTITIES=[('AjDCIrilGhEBXtfh', 'PlayerAvatar'), ('anFbI3pyqyRkPhUC', 'HallSpace'), ('anFbI3pyqyRkPhUD', 'Doll')]
+player type=<class 'NoneType'> repr=None
+END

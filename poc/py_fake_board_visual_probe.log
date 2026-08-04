@@ -1,0 +1,56 @@
+BEGIN 1785813210.428778
+DrawNode=<cc.DrawNode object at 0x0000025A174908D0>
+DrawNode methods=['drawBreakLines', 'drawCircle', 'drawDotLine', 'drawLine', 'drawLines', 'drawPoint', 'drawPoints', 'drawPoly', 'drawSolidCircle', 'drawSolidPoly', 'drawTriangle', 'drawTriangles', 'getColor', 'getDisplayedColor', 'getLineWidth', 'getLocalZOrder', 'isCascadeColorEnabled', 'setCascadeColorEnabled', 'setColor', 'setColorRecursively', 'setLineWidth', 'setLocalZOrder', 'updateDisplayedColor']
+drawRect fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+drawRect4 fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+EXC
+Traceback (most recent call last):
+  File "<string>", line 100, in _ctf_fbv_run
+  File "<string>", line 61, in _ctf_fbv_make_node
+RuntimeError: invalid size of args.
+
+END
+BEGIN 1785813321.6595855
+DrawNode=<cc.DrawNode object at 0x00000259D7DBC4D0>
+DrawNode methods=['drawBreakLines', 'drawCircle', 'drawDotLine', 'drawLine', 'drawLines', 'drawPoint', 'drawPoints', 'drawPoly', 'drawSolidCircle', 'drawSolidPoly', 'drawTriangle', 'drawTriangles', 'getColor', 'getDisplayedColor', 'getLineWidth', 'getLocalZOrder', 'isCascadeColorEnabled', 'setCascadeColorEnabled', 'setColor', 'setColorRecursively', 'setLineWidth', 'setLocalZOrder', 'updateDisplayedColor']
+cocos_vec2_type=<class 'cc.Vec2'>
+drawLine sig fail=ValueError('no signature found for builtin <built-in method drawLine of cc.DrawNode object at 0x00000259D7DBC4D0>')
+drawRect fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+drawRect4 fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+EXC
+Traceback (most recent call last):
+  File "<string>", line 113, in _ctf_fbv_run
+  File "<string>", line 74, in _ctf_fbv_make_node
+RuntimeError: invalid size of args.
+
+END
+BEGIN 1785813366.7154233
+DrawNode=<cc.DrawNode object at 0x0000025A17422FB0>
+DrawNode methods=['drawBreakLines', 'drawCircle', 'drawDotLine', 'drawLine', 'drawLines', 'drawPoint', 'drawPoints', 'drawPoly', 'drawSolidCircle', 'drawSolidPoly', 'drawTriangle', 'drawTriangles', 'getColor', 'getDisplayedColor', 'getLineWidth', 'getLocalZOrder', 'isCascadeColorEnabled', 'setCascadeColorEnabled', 'setColor', 'setColorRecursively', 'setLineWidth', 'setLocalZOrder', 'updateDisplayedColor']
+cocos_vec2_type=<class 'cc.Vec2'>
+drawLine sig fail=ValueError('no signature found for builtin <built-in method drawLine of cc.DrawNode object at 0x0000025A17422FB0>')
+drawRect fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+drawRect4 fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+drawLine variant fail=RuntimeError('invalid size of args.')
+drawLine variant fail=RuntimeError('cannot convert argument 3 to float')
+drawLine variant fail=RuntimeError('cannot convert argument 4 to cocos2d::Color4B')
+drawLine variant fail=RuntimeError('invalid size of args.')
+EXC
+Traceback (most recent call last):
+  File "<string>", line 127, in _ctf_fbv_run
+  File "<string>", line 90, in _ctf_fbv_make_node
+RuntimeError: DrawNode.drawLine failed: RuntimeError('invalid size of args.')
+
+END
+BEGIN 1785813415.4515276
+DrawNode=<cc.DrawNode object at 0x0000025A17267750>
+DrawNode methods=['drawBreakLines', 'drawCircle', 'drawDotLine', 'drawLine', 'drawLines', 'drawPoint', 'drawPoints', 'drawPoly', 'drawSolidCircle', 'drawSolidPoly', 'drawTriangle', 'drawTriangles', 'getColor', 'getDisplayedColor', 'getLineWidth', 'getLocalZOrder', 'isCascadeColorEnabled', 'setCascadeColorEnabled', 'setColor', 'setColorRecursively', 'setLineWidth', 'setLocalZOrder', 'updateDisplayedColor']
+cocos_vec2_type=<class 'cc.Vec2'>
+drawLine sig fail=ValueError('no signature found for builtin <built-in method drawLine of cc.DrawNode object at 0x0000025A17267750>')
+drawRect fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+drawRect4 fail=AttributeError("'cc.DrawNode' object has no attribute 'drawRect'")
+drawLine variant fail=RuntimeError('invalid size of args.')
+drawLine variant fail=RuntimeError('cannot convert argument 3 to float')
+drawLine rectangle OK argc=4
+ADD_OK result=True robot=<RobotCombatAvatarShootingRange(anFTyksxNr+4wJ5m)> distance=10.300220759567015 height=1.8882365226745605
+END

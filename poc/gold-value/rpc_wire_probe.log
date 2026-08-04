@@ -1,0 +1,92 @@
+BEGIN
+FUNCTION Player.CallServerOld signature=(methodname, *args, **kwargs) repr=<bound method PlayerAvatar.CallServerOld of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+DIS Player.CallServerOld
+159           RESUME                   0
+
+162           LOAD_GLOBAL              1 (getattr + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_CONST               0 ('server')
+              LOAD_CONST               1 (None)
+              CALL                     3
+              STORE_FAST               4 (server)
+
+163           LOAD_FAST_BORROW         4 (server)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+164           LOAD_CONST               2 (False)
+              RETURN_VALUE
+
+166   L1:     LOAD_GLOBAL              1 (getattr + NULL)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 65 (server, methodname)
+              CALL                     2
+              STORE_FAST               5 (func)
+
+167           LOAD_FAST_BORROW         5 (func)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L2)
+              NOT_TAKEN
+
+168           LOAD_CONST               2 (False)
+              RETURN_VALUE
+
+170   L2:     LOAD_FAST_BORROW         5 (func)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (args)
+              BUILD_MAP                0
+              LOAD_FAST_BORROW         3 (kwargs)
+              DICT_MERGE               1
+              CALL_FUNCTION_EX
+              POP_TOP
+
+171           LOAD_CONST               3 (True)
+              RETURN_VALUE
+
+FUNCTION Player.CallServer signature=(methodname, *args, **kwargs) repr=<bound method PlayerAvatar.CallServerOld of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+DIS Player.CallServer
+159           RESUME                   0
+
+162           LOAD_GLOBAL              1 (getattr + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_CONST               0 ('server')
+              LOAD_CONST               1 (None)
+              CALL                     3
+              STORE_FAST               4 (server)
+
+163           LOAD_FAST_BORROW         4 (server)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+164           LOAD_CONST               2 (False)
+              RETURN_VALUE
+
+166   L1:     LOAD_GLOBAL              1 (getattr + NULL)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 65 (server, methodname)
+              CALL                     2
+              STORE_FAST               5 (func)
+
+167           LOAD_FAST_BORROW         5 (func)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L2)
+              NOT_TAKEN
+
+168           LOAD_CONST               2 (False)
+              RETURN_VALUE
+
+170   L2:     LOAD_FAST_BORROW         5 (func)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (args)
+              BUILD_MAP                0
+              LOAD_FAST_BORROW         3 (kwargs)
+              DICT_MERGE               1
+              CALL_FUNCTION_EX
+              POP_TOP
+
+171           LOAD_CONST               3 (True)
+              RETURN_VALUE
+
+MODULE gclient.framework.entities.avatar loader=<MImporter.finder object at 0x00000259EF045550> file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/gclient/framework/entities/avatar.py'
+MODULE engine.client.AsioServerProxy loader=<MImporter.finder object at 0x00000259EF045550> file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/client/AsioServerProxy.py'
+END

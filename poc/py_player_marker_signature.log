@@ -1,0 +1,586 @@
+BEGIN 1785807779.8546672
+entities=23 robots=6 players=1
+player='anE9NksxNr+4uzVs' <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)> class=<class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.PlayerCombatAvatarShootingRange'>
+candidate_names=['AddSceneCenterMark', 'AddWorldField', 'AutoMarkItem', 'CanCreateMarkByGuid', 'CanCreateMarkToplogo', 'CanDamageByMagicField', 'CanMarkRequest', 'CanShowEnemyToplogo', 'CanShowEnemyToplogoBar', 'CanShowToplogoBarWhenGetHit', 'CanTakeMaxDamage', 'CancelCheckAimEnemy', 'CancelExposeKilledEnemyTimer', 'ChangeMarkOpacityForAds', 'ChangeMarkOpacityForRealAds', 'CheckAimEnemyTimer', 'CheckEnemyQuitForNearbyEnemies', 'CheckRestoreIdleDamageUp', 'CheckRestoreMeleeDamageUp', 'CheckTalentRemoteShotDamageUp', 'CheckUavEnemyPosValid', 'ClearCureConnectingLine', 'ClearElecticalFieldEffect', 'CreateCommonMarkToplogo', 'CreateCommonMarkToplogoMapOnly', 'CreateCommonMarkToplogoSceneOnly', 'CreateElecticalFieldEffect', 'CreateMarkToplogo', 'CreateMarkWorldEffect', 'CreateWorldFieldFollow', 'DealForAdsMarkPos', 'DelAutoMarkItem', 'DelSceneCenterMark', 'DestroyAllMark', 'DestroyAllMarkToplogo', 'DestroyAllMarkWorldEffect', 'DestroyCommonMarkToplogo', 'DestroyCommonMarkToplogoMapOnly', 'DestroyCommonMarkToplogoSceneOnly', 'DestroyMarkToplogo', 'DestroyMarkWorldEffect', 'DestroyReconDroneMarkFrame', 'DestroySelfPosMarkTopLogo', 'DisEnableSpecifyWorldField', 'DoAutoMarkItem', 'DrawCureConnectingLine', 'DrawEnemyReconMarkFrames', 'DrawReconDroneMarkFrame', 'EnableSpecifyWorldField', 'EnterTeammateDancingField', 'ExposeKilledTeamEnemyPos', 'ExposeKilledTeamEnemyPosTick', 'FeelLowHpEnemyTick', 'GetCombatTeamMarkPosition', 'GetCommonMarkInfo', 'GetCommonMarkToplogo', 'GetDamageTextBulletDataId', 'GetDamageTextColor', 'GetDamageTextOffPos', 'GetDamageTextOffset', 'GetDamageTextWeapon', 'GetMarkPosAndType', 'GetTargetDamageTextWorldPosition', 'GetTeammateMarkToplogo', 'HAS_TOPLOGO', 'HasCommonMarkTopLogo', 'HasTeammateMarkToplogo', 'HideAirdropMarkToplogo', 'HideAllCommonMarkToplogoSceneOnly', 'HideAllEnemyToplogo', 'HideCommonMarkToplogoMapOnly', 'HideEnemyTopLogo', 'HideTeammateToplogoWithReason', 'InitTeammateMark', 'IsAccumulateWithClassicDamageTextMode', 'IsContinuousDamageTextMode', 'IsDoubleDanceField', 'IsGroupDanceField', 'IsMagicField', 'IsShotgunNormalBulletDamage', 'IsShotgunSlugDamage', 'JoinDancingField', 'MarkAutoPickupItemTime', 'MarkCommonEntityImp', 'MarkJurenFlyAirSlashActive', 'MarkOffline', 'MarkOrCancelMarkPos', 'MarkRequest', 'MarkRequestDoubleClick', 'MarkTargetRequest', 'NeedShowCriticalDamageText', 'OnAddAdsMark', 'OnAddClientUavMark', 'OnAddSelfMarkBuff', 'OnAddTeamMarkBuff', 'OnBotDamageToPlayer', 'OnDealDamageResult', 'OnDealSystemDamageResult', 'OnEnterGunRefit_HideTopLogos', 'OnExitGunRefit_ShowTopLogos', 'OnGainTalentEnemyTrack', 'OnGunSpellHitEnemy', 'OnHolographicMarkChange', 'OnLoseTalentEnemyTrack', 'OnMarkChangePCPickUp', 'OnMarkMissionCancel', 'OnMarkMissionConfirm', 'OnMarkRespondDotAdd', 'OnMarkRespondDotRemove', 'OnPerkActivateStatusChange_IdleDamageUp', 'OnPerkActivateStatusChange_MeleeDamageUp', 'OnPlayerDamageToBot', 'OnPlayerParaStageChangedForMark', 'OnReconDroneMarksUpdate', 'OnRemoveAdsMark', 'OnRemoveClientUavMark', 'OnRemoveSelfMarkBuff', 'OnRemoveTeamMarkBuff', 'OnSlotLoseTalentIdleDamageUp', 'OnSlotLoseTalentMeleeDamageUp', 'OnTeammateMarkImmediateForReplay', 'OnUpdateMarkToplogoState', 'PlaceElecticalFieldTick', 'PlayerInputHandle_OnClickMark', 'PlayerInputHandle_OnClickMarkDouble', 'PlayerInputHandle_OnLongMarkDown', 'PlayerInputHandle_OnLongMarkUp', 'PlayerInput_JoinDancingField', 'PullPlayerFromMagicFieldModelInside', 'ReShowCommonMarkToplogoMapOnly', 'RecordGunFireDamage', 'RecvIgEnemyVoice', 'RefreshHolographicMark', 'RefreshMarkVisibility', 'RemoveKilledTeamEnemyPos', 'RemoveWorldField', 'RemoveWorldFieldFollow', 'RequestCheckAimEnemy', 'ServerPromptBuySuccessFieldShop', 'ServerShowDamageTextEffect', 'SetEnableWorldFieldFadeTime', 'SetTeamValReconDroneId', 'ShowClassicDamageText', 'ShowContinuousDamageText', 'ShowDamageTextByMode', 'ShowEnemyTopLogoInRange', 'SortAndActiveWorldField', 'TOPLOGO_SHOW_POSITION', 'TryAttack_recon_drone_spell', 'UpdateAllTeammateMark', '_CancelCheckAimEnemyTimer', '_CheckCanAutoMarkItem', '_CheckInvisibleCasterDamage', '_CreateElecticalFieldEffect', '_DamageGameLogicEffect', '_DamageModelEffect', '_DamageSoundEffect', '_DamageTextEffect', '_DamageUIEffect', '_DamageUIEffect234', '_DelayDisableSpecifyWorldField', '_MarkSlideTimestamp', '_PlayWhiteScreenUIForExecuteChangeUI', '_auto_mark_item_guid', '_auto_mark_item_timer', '_holographic_mark_entities', '_on_set_double_dance_field_id', 'ads_mark_mgr', 'ads_mark_pos_avatars', 'aiming_enemy_id', 'assist_mark', 'can_mark_dying_killer', 'can_show_mark_dying_killer', 'check_aim_enemy_interval', 'check_aim_enemy_ref', 'check_aim_enemy_timer', 'cold_fields', 'common_center_mark_dict', 'common_mark_dict', 'common_mark_info', 'cur_active_world_field_id', 'cur_mark_avt_id', 'cur_mark_mission_guid', 'cur_shield_magic_field_id', 'expose_killed_enemy_pos_timer', 'fsm_ads_mark_pos', 'gun_spell_last_mark_enemy', 'gun_spell_mark_enemy_stamp', 'is_refuse_team_mark', 'knock_down_team_enemy_pos_timer', 'mark_effect_dict', 'mark_toplogo_dict', 'mark_toplogo_hit_guid', 'mark_toplogo_hit_type', 'mark_toplogo_op_mode', 'nearby_dancing_field_id', 'perk_melee_damage_up_model_effect_ids', 'recon_drone_frame_top_logo', 'recon_drone_mark_ent_ids', 'team_val_recon_drone_id', 'toplogo_not_in_hide_state_enemy', 'world_fields']
+AddSceneCenterMark: repr=<bound method PlayerCombatAvatarMember.AddSceneCenterMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+AddSceneCenterMark: sig=<Signature (mark_id)>
+AddSceneCenterMark: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=708 argc=2 kwonly=0 vars=('self', 'mark_id')
+AddWorldField: repr=<bound method CombatAvatarMember.AddWorldField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+AddWorldField: sig=<Signature (world_field_id, magic_field_id)>
+AddWorldField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=21 argc=3 kwonly=0 vars=('self', 'world_field_id', 'magic_field_id')
+AutoMarkItem: repr=<bound method PlayerCombatAvatarMember.AutoMarkItem of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+AutoMarkItem: sig=<Signature (combatitem)>
+AutoMarkItem: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=572 argc=2 kwonly=0 vars=('self', 'combatitem')
+CanCreateMarkByGuid: repr=<bound method PlayerCombatAvatarMember.CanCreateMarkByGuid of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanCreateMarkByGuid: sig=<Signature (guid, *args, **kwargs)>
+CanCreateMarkByGuid: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=516 argc=2 kwonly=0 vars=('self', 'guid')
+CanCreateMarkToplogo: repr=<bound method PlayerCombatAvatarMember.CanCreateMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanCreateMarkToplogo: sig=<Signature ()>
+CanCreateMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=315 argc=1 kwonly=0 vars=('self',)
+CanDamageByMagicField: repr=<bound method ISimpleCombatUnitBase.CanDamageByMagicField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanDamageByMagicField: sig=<Signature (magic_field)>
+CanDamageByMagicField: file='gshare/icombat_unit.py' first=50 argc=2 kwonly=0 vars=('self', 'magic_field')
+CanMarkRequest: repr=<bound method PlayerCombatAvatarMember.CanMarkRequest of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanMarkRequest: sig=<Signature ()>
+CanMarkRequest: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=231 argc=1 kwonly=0 vars=('self',)
+CanShowEnemyToplogo: repr=<bound method CombatAvatarMember.CanShowEnemyToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanShowEnemyToplogo: sig=<Signature ()>
+CanShowEnemyToplogo: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=575 argc=1 kwonly=0 vars=('self',)
+CanShowEnemyToplogoBar: repr=<bound method CombatAvatarMember.CanShowEnemyToplogoBar of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanShowEnemyToplogoBar: sig=<Signature ()>
+CanShowEnemyToplogoBar: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=578 argc=1 kwonly=0 vars=('self',)
+CanShowToplogoBarWhenGetHit: repr=<bound method CombatAvatarMember.CanShowToplogoBarWhenGetHit of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanShowToplogoBarWhenGetHit: sig=<Signature ()>
+CanShowToplogoBarWhenGetHit: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_snare.py' first=30 argc=1 kwonly=0 vars=('self',)
+CanTakeMaxDamage: repr=<bound method ISimpleCombatUnitBase.CanTakeMaxDamage of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CanTakeMaxDamage: sig=<Signature (damage_info)>
+CanTakeMaxDamage: file='gshare/icombat_unit.py' first=53 argc=2 kwonly=0 vars=('self', 'damage_info')
+CancelCheckAimEnemy: repr=<bound method PlayerCombatAvatarMember.CancelCheckAimEnemy of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CancelCheckAimEnemy: sig=<Signature ()>
+CancelCheckAimEnemy: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_assist_aim.py' first=156 argc=1 kwonly=0 vars=('self',)
+CancelExposeKilledEnemyTimer: repr=<bound method CombatAvatarMember.CancelExposeKilledEnemyTimer of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CancelExposeKilledEnemyTimer: sig=<Signature ()>
+CancelExposeKilledEnemyTimer: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=525 argc=1 kwonly=0 vars=('self',)
+ChangeMarkOpacityForAds: repr=<bound method PlayerCombatAvatarMember.ChangeMarkOpacityForAds of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ChangeMarkOpacityForAds: sig=<Signature (enter)>
+ChangeMarkOpacityForAds: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=591 argc=2 kwonly=0 vars=('self', 'enter')
+ChangeMarkOpacityForRealAds: repr=<bound method PlayerCombatAvatarMember.ChangeMarkOpacityForRealAds of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ChangeMarkOpacityForRealAds: sig=<Signature (enter)>
+ChangeMarkOpacityForRealAds: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=602 argc=2 kwonly=0 vars=('self', 'enter')
+CheckAimEnemyTimer: repr=<bound method PlayerCombatAvatarMember.CheckAimEnemyTimer of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CheckAimEnemyTimer: sig=<Signature ()>
+CheckAimEnemyTimer: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_assist_aim.py' first=161 argc=1 kwonly=0 vars=('self',)
+CheckEnemyQuitForNearbyEnemies: repr=<bound method PlayerCombatAvatarMember.CheckEnemyQuitForNearbyEnemies of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CheckEnemyQuitForNearbyEnemies: sig=<Signature (target_id)>
+CheckEnemyQuitForNearbyEnemies: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_execute.py' first=872 argc=2 kwonly=0 vars=('self', 'target_id')
+CheckRestoreIdleDamageUp: repr=<bound method CombatAvatarMember.CheckRestoreIdleDamageUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CheckRestoreIdleDamageUp: sig=<Signature ()>
+CheckRestoreIdleDamageUp: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=869 argc=1 kwonly=0 vars=('self',)
+CheckRestoreMeleeDamageUp: repr=<bound method CombatAvatarMember.CheckRestoreMeleeDamageUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CheckRestoreMeleeDamageUp: sig=<Signature ()>
+CheckRestoreMeleeDamageUp: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=817 argc=1 kwonly=0 vars=('self',)
+CheckTalentRemoteShotDamageUp: repr=<bound method PlayerCombatAvatarMember.CheckTalentRemoteShotDamageUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CheckTalentRemoteShotDamageUp: sig=<Signature (weapon_id)>
+CheckTalentRemoteShotDamageUp: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_talent.py' first=42 argc=2 kwonly=0 vars=('self', 'weapon_id')
+CheckUavEnemyPosValid: repr=<bound method CombatAvatarMember.CheckUavEnemyPosValid of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CheckUavEnemyPosValid: sig=<Signature (pos)>
+CheckUavEnemyPosValid: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=112 argc=2 kwonly=0 vars=('self', 'pos')
+ClearCureConnectingLine: repr=<bound method CombatAvatarMember.ClearCureConnectingLine of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ClearCureConnectingLine: sig=<Signature ()>
+ClearCureConnectingLine: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2578 argc=1 kwonly=0 vars=('self',)
+ClearElecticalFieldEffect: repr=<bound method CombatAvatarMember.ClearElecticalFieldEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ClearElecticalFieldEffect: sig=<Signature ()>
+ClearElecticalFieldEffect: file='gclient/util/decorators.py' first=163 argc=1 kwonly=0 vars=('ins',)
+CreateCommonMarkToplogo: repr=<bound method PlayerCombatAvatarMember.CreateCommonMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CreateCommonMarkToplogo: sig=<Signature (mark_id, mark_info)>
+CreateCommonMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=444 argc=3 kwonly=0 vars=('self', 'mark_id', 'mark_info')
+CreateCommonMarkToplogoMapOnly: repr=<bound method PlayerCombatAvatarMember.CreateCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CreateCommonMarkToplogoMapOnly: sig=<Signature (mark_id, mark_info)>
+CreateCommonMarkToplogoMapOnly: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=519 argc=3 kwonly=0 vars=('self', 'mark_id', 'mark_info')
+CreateCommonMarkToplogoSceneOnly: repr=<bound method PlayerCombatAvatarMember.CreateCommonMarkToplogoSceneOnly of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CreateCommonMarkToplogoSceneOnly: sig=<Signature (mark_id, mark_info)>
+CreateCommonMarkToplogoSceneOnly: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=549 argc=3 kwonly=0 vars=('self', 'mark_id', 'mark_info')
+CreateElecticalFieldEffect: repr=<bound method CombatAvatarMember.CreateElecticalFieldEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CreateElecticalFieldEffect: sig=<Signature (spell_id, level=1)>
+CreateElecticalFieldEffect: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2189 argc=3 kwonly=0 vars=('self', 'spell_id', 'level')
+CreateElecticalFieldEffect: defaults=(1,)
+CreateMarkToplogo: repr=<bound method PlayerCombatAvatarMember.CreateMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CreateMarkToplogo: sig=<Signature (pos, slot, mark_type, guid, extra_info=None)>
+CreateMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=327 argc=6 kwonly=0 vars=('self', 'pos', 'slot', 'mark_type', 'guid', 'extra_info')
+CreateMarkToplogo: defaults=(None,)
+CreateMarkWorldEffect: repr=<bound method PlayerCombatAvatarMember.CreateMarkWorldEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CreateMarkWorldEffect: sig=<Signature (pos, slot)>
+CreateMarkWorldEffect: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=424 argc=3 kwonly=0 vars=('self', 'pos', 'slot')
+CreateWorldFieldFollow: repr=<bound method CombatAvatarMember.CreateWorldFieldFollow of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+CreateWorldFieldFollow: sig=<Signature (buff_proto, buff_guid)>
+CreateWorldFieldFollow: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=475 argc=3 kwonly=0 vars=('self', 'buff_proto', 'buff_guid')
+DealForAdsMarkPos: repr=<bound method PlayerCombatAvatarMember.DealForAdsMarkPos of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DealForAdsMarkPos: sig=<Signature (is_ads)>
+DealForAdsMarkPos: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1596 argc=2 kwonly=0 vars=('self', 'is_ads')
+DelAutoMarkItem: repr=<bound method PlayerCombatAvatarMember.DelAutoMarkItem of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DelAutoMarkItem: sig=<Signature (combatitem)>
+DelAutoMarkItem: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=580 argc=2 kwonly=0 vars=('self', 'combatitem')
+DelSceneCenterMark: repr=<bound method PlayerCombatAvatarMember.DelSceneCenterMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DelSceneCenterMark: sig=<Signature (mark_id)>
+DelSceneCenterMark: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=715 argc=2 kwonly=0 vars=('self', 'mark_id')
+DestroyAllMark: repr=<bound method PlayerCombatAvatarMember.DestroyAllMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyAllMark: sig=<Signature ()>
+DestroyAllMark: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=321 argc=1 kwonly=0 vars=('self',)
+DestroyAllMarkToplogo: repr=<bound method PlayerCombatAvatarMember.DestroyAllMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyAllMarkToplogo: sig=<Signature ()>
+DestroyAllMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=183 argc=1 kwonly=0 vars=('self',)
+DestroyAllMarkWorldEffect: repr=<bound method PlayerCombatAvatarMember.DestroyAllMarkWorldEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyAllMarkWorldEffect: sig=<Signature ()>
+DestroyAllMarkWorldEffect: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=439 argc=1 kwonly=0 vars=('self',)
+DestroyCommonMarkToplogo: repr=<bound method PlayerCombatAvatarMember.DestroyCommonMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyCommonMarkToplogo: sig=<Signature (mark_id)>
+DestroyCommonMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=477 argc=2 kwonly=0 vars=('self', 'mark_id')
+DestroyCommonMarkToplogoMapOnly: repr=<bound method PlayerCombatAvatarMember.DestroyCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyCommonMarkToplogoMapOnly: sig=<Signature (mark_id)>
+DestroyCommonMarkToplogoMapOnly: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=534 argc=2 kwonly=0 vars=('self', 'mark_id')
+DestroyCommonMarkToplogoSceneOnly: repr=<bound method PlayerCombatAvatarMember.DestroyCommonMarkToplogoSceneOnly of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyCommonMarkToplogoSceneOnly: sig=<Signature (mark_id)>
+DestroyCommonMarkToplogoSceneOnly: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=573 argc=2 kwonly=0 vars=('self', 'mark_id')
+DestroyMarkToplogo: repr=<bound method PlayerCombatAvatarMember.DestroyMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyMarkToplogo: sig=<Signature (slot, mark_type, guid)>
+DestroyMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=412 argc=4 kwonly=0 vars=('self', 'slot', 'mark_type', 'guid')
+DestroyMarkWorldEffect: repr=<bound method PlayerCombatAvatarMember.DestroyMarkWorldEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyMarkWorldEffect: sig=<Signature (slot)>
+DestroyMarkWorldEffect: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=432 argc=2 kwonly=0 vars=('self', 'slot')
+DestroyReconDroneMarkFrame: repr=<bound method CombatAvatarMember.DestroyReconDroneMarkFrame of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroyReconDroneMarkFrame: sig=<Signature ()>
+DestroyReconDroneMarkFrame: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=47 argc=1 kwonly=0 vars=('self',)
+DestroySelfPosMarkTopLogo: repr=<bound method PlayerCombatAvatarMember.DestroySelfPosMarkTopLogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DestroySelfPosMarkTopLogo: sig=<Signature ()>
+DestroySelfPosMarkTopLogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=195 argc=1 kwonly=0 vars=('self',)
+DisEnableSpecifyWorldField: repr=<bound method CombatAvatarMember.DisEnableSpecifyWorldField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DisEnableSpecifyWorldField: sig=<Signature (world_field_id)>
+DisEnableSpecifyWorldField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=106 argc=2 kwonly=0 vars=('self', 'world_field_id')
+DoAutoMarkItem: repr=<bound method PlayerCombatAvatarMember.DoAutoMarkItem of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DoAutoMarkItem: sig=<Signature (combatitem)>
+DoAutoMarkItem: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=588 argc=2 kwonly=0 vars=('self', 'combatitem')
+DrawCureConnectingLine: repr=<bound method CombatAvatarMember.DrawCureConnectingLine of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DrawCureConnectingLine: sig=<Signature (target_ent, refresh=False)>
+DrawCureConnectingLine: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2537 argc=3 kwonly=0 vars=('self', 'target_ent', 'refresh')
+DrawCureConnectingLine: defaults=(False,)
+DrawEnemyReconMarkFrames: repr=<bound method PlayerCombatAvatarMember.DrawEnemyReconMarkFrames of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DrawEnemyReconMarkFrames: sig=<Signature (*args)>
+DrawEnemyReconMarkFrames: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=222 argc=1 kwonly=0 vars=('self',)
+DrawReconDroneMarkFrame: repr=<bound method CombatAvatarMember.DrawReconDroneMarkFrame of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+DrawReconDroneMarkFrame: sig=<Signature ()>
+DrawReconDroneMarkFrame: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=42 argc=1 kwonly=0 vars=('self',)
+EnableSpecifyWorldField: repr=<bound method CombatAvatarMember.EnableSpecifyWorldField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+EnableSpecifyWorldField: sig=<Signature (world_field_id)>
+EnableSpecifyWorldField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=69 argc=2 kwonly=0 vars=('self', 'world_field_id')
+EnterTeammateDancingField: repr=<bound method PlayerCombatAvatarMember.EnterTeammateDancingField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+EnterTeammateDancingField: sig=<Signature (magic_field, is_enter)>
+EnterTeammateDancingField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4704 argc=3 kwonly=0 vars=('self', 'magic_field', 'is_enter')
+ExposeKilledTeamEnemyPos: repr=<bound method CombatAvatarMember.ExposeKilledTeamEnemyPos of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ExposeKilledTeamEnemyPos: sig=<Signature (info)>
+ExposeKilledTeamEnemyPos: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=530 argc=2 kwonly=0 vars=('self', 'info')
+ExposeKilledTeamEnemyPosTick: repr=<bound method CombatAvatarMember.ExposeKilledTeamEnemyPosTick of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ExposeKilledTeamEnemyPosTick: sig=<Signature (info)>
+ExposeKilledTeamEnemyPosTick: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=540 argc=2 kwonly=0 vars=('self', 'info')
+FeelLowHpEnemyTick: repr=<bound method CombatAvatarMember.FeelLowHpEnemyTick of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+FeelLowHpEnemyTick: sig=<Signature (param)>
+FeelLowHpEnemyTick: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1038 argc=2 kwonly=0 vars=('self', 'param')
+GetCombatTeamMarkPosition: repr=<bound method PlayerCombatAvatarMember.GetCombatTeamMarkPosition of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetCombatTeamMarkPosition: sig=<Signature ()>
+GetCombatTeamMarkPosition: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=223 argc=1 kwonly=0 vars=('self',)
+GetCommonMarkInfo: repr=<bound method PlayerCombatAvatarMember.GetCommonMarkInfo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetCommonMarkInfo: sig=<Signature (mark_id)>
+GetCommonMarkInfo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=484 argc=2 kwonly=0 vars=('self', 'mark_id')
+GetCommonMarkToplogo: repr=<bound method PlayerCombatAvatarMember.GetCommonMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetCommonMarkToplogo: sig=<Signature (mark_id)>
+GetCommonMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=487 argc=2 kwonly=0 vars=('self', 'mark_id')
+GetDamageTextBulletDataId: repr=<bound method PlayerCombatAvatarMember.GetDamageTextBulletDataId of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetDamageTextBulletDataId: sig=<Signature (result, caster, damage_data)>
+GetDamageTextBulletDataId: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1290 argc=4 kwonly=0 vars=('self', 'result', 'caster', 'damage_data')
+GetDamageTextColor: repr=<bound method PlayerCombatAvatarMember.GetDamageTextColor of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetDamageTextColor: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+GetDamageTextColor: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1271 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+GetDamageTextOffPos: repr=<bound method PlayerCombatAvatarMember.GetDamageTextOffPos of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetDamageTextOffPos: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+GetDamageTextOffPos: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1324 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+GetDamageTextOffset: repr=<bound method PlayerCombatAvatarMember.GetDamageTextOffset of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetDamageTextOffset: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+GetDamageTextOffset: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1328 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+GetDamageTextWeapon: repr=<bound method PlayerCombatAvatarMember.GetDamageTextWeapon of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetDamageTextWeapon: sig=<Signature (result, caster, damage_data)>
+GetDamageTextWeapon: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1279 argc=4 kwonly=0 vars=('self', 'result', 'caster', 'damage_data')
+GetMarkPosAndType: repr=<bound method PlayerCombatAvatarMember.GetMarkPosAndType of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetMarkPosAndType: sig=<Signature (mark_type)>
+GetMarkPosAndType: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=242 argc=2 kwonly=0 vars=('self', 'mark_type')
+GetTargetDamageTextWorldPosition: repr=<bound method PlayerCombatAvatarMember.GetTargetDamageTextWorldPosition of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetTargetDamageTextWorldPosition: sig=<Signature (target)>
+GetTargetDamageTextWorldPosition: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1253 argc=2 kwonly=0 vars=('self', 'target')
+GetTeammateMarkToplogo: repr=<bound method PlayerCombatAvatarMember.GetTeammateMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+GetTeammateMarkToplogo: sig=<Signature (mark_guid)>
+GetTeammateMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=496 argc=2 kwonly=0 vars=('self', 'mark_guid')
+HAS_TOPLOGO: repr=False type=<class 'bool'>
+HAS_TOPLOGO: sig FAIL TypeError('False is not a callable object')
+HasCommonMarkTopLogo: repr=<bound method PlayerCombatAvatarMember.HasCommonMarkTopLogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HasCommonMarkTopLogo: sig=<Signature (mark_id)>
+HasCommonMarkTopLogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=481 argc=2 kwonly=0 vars=('self', 'mark_id')
+HasTeammateMarkToplogo: repr=<bound method PlayerCombatAvatarMember.HasTeammateMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HasTeammateMarkToplogo: sig=<Signature (mark_guid)>
+HasTeammateMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=490 argc=2 kwonly=0 vars=('self', 'mark_guid')
+HideAirdropMarkToplogo: repr=<bound method PlayerCombatAvatarMember.HideAirdropMarkToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HideAirdropMarkToplogo: sig=<Signature (guid)>
+HideAirdropMarkToplogo: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=403 argc=2 kwonly=0 vars=('self', 'guid')
+HideAllCommonMarkToplogoSceneOnly: repr=<bound method PlayerCombatAvatarMember.HideAllCommonMarkToplogoSceneOnly of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HideAllCommonMarkToplogoSceneOnly: sig=<Signature (is_hide, hide_reason)>
+HideAllCommonMarkToplogoSceneOnly: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=582 argc=3 kwonly=0 vars=('self', 'is_hide', 'hide_reason')
+HideAllEnemyToplogo: repr=<bound method PlayerCombatAvatarMember.HideAllEnemyToplogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HideAllEnemyToplogo: sig=<Signature ()>
+HideAllEnemyToplogo: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=756 argc=1 kwonly=0 vars=('self',)
+HideCommonMarkToplogoMapOnly: repr=<bound method PlayerCombatAvatarMember.HideCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HideCommonMarkToplogoMapOnly: sig=<Signature (mark_id, hidden_reason)>
+HideCommonMarkToplogoMapOnly: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=539 argc=3 kwonly=0 vars=('self', 'mark_id', 'hidden_reason')
+HideEnemyTopLogo: repr=<bound method CombatAvatarMember.HideEnemyTopLogo of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HideEnemyTopLogo: sig=<Signature ()>
+HideEnemyTopLogo: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=999 argc=1 kwonly=0 vars=('self',)
+HideTeammateToplogoWithReason: repr=<bound method PlayerCombatAvatarMember.HideTeammateToplogoWithReason of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+HideTeammateToplogoWithReason: sig=<Signature (reason, is_hide)>
+HideTeammateToplogoWithReason: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_calculation.py' first=103 argc=3 kwonly=0 vars=('self', 'reason', 'is_hide')
+InitTeammateMark: repr=<bound method PlayerCombatAvatarMember.InitTeammateMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+InitTeammateMark: sig=<Signature ()>
+InitTeammateMark: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=145 argc=1 kwonly=0 vars=('self',)
+IsAccumulateWithClassicDamageTextMode: repr=<bound method PlayerCombatAvatarMember.IsAccumulateWithClassicDamageTextMode of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+IsAccumulateWithClassicDamageTextMode: sig=<Signature ()>
+IsAccumulateWithClassicDamageTextMode: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1237 argc=1 kwonly=0 vars=('self',)
+IsContinuousDamageTextMode: repr=<bound method PlayerCombatAvatarMember.IsContinuousDamageTextMode of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+IsContinuousDamageTextMode: sig=<Signature ()>
+IsContinuousDamageTextMode: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1231 argc=1 kwonly=0 vars=('self',)
+IsDoubleDanceField: repr=False type=<class 'bool'>
+IsDoubleDanceField: sig FAIL TypeError('False is not a callable object')
+IsGroupDanceField: repr=False type=<class 'bool'>
+IsGroupDanceField: sig FAIL TypeError('False is not a callable object')
+IsMagicField: repr=False type=<class 'bool'>
+IsMagicField: sig FAIL TypeError('False is not a callable object')
+IsShotgunNormalBulletDamage: repr=<bound method PlayerCombatAvatarMember.IsShotgunNormalBulletDamage of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+IsShotgunNormalBulletDamage: sig=<Signature (damage_data, is_shotgun_slug)>
+IsShotgunNormalBulletDamage: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1318 argc=3 kwonly=0 vars=('self', 'damage_data', 'is_shotgun_slug')
+IsShotgunSlugDamage: repr=<bound method PlayerCombatAvatarMember.IsShotgunSlugDamage of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+IsShotgunSlugDamage: sig=<Signature (result, caster, damage_data)>
+IsShotgunSlugDamage: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1299 argc=4 kwonly=0 vars=('self', 'result', 'caster', 'damage_data')
+JoinDancingField: repr=<bound method PlayerCombatAvatarMember.JoinDancingField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+JoinDancingField: sig=<Signature (join)>
+JoinDancingField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4712 argc=2 kwonly=0 vars=('self', 'join')
+MarkAutoPickupItemTime: repr=<bound method PlayerCombatAvatarMember.MarkAutoPickupItemTime of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkAutoPickupItemTime: sig=<Signature (item_id, item_ids=None)>
+MarkAutoPickupItemTime: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=497 argc=3 kwonly=0 vars=('self', 'item_id', 'item_ids')
+MarkAutoPickupItemTime: defaults=(None,)
+MarkCommonEntityImp: repr=<bound method PlayerCombatAvatarMember.MarkCommonEntityImp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkCommonEntityImp: sig=<Signature (entity_guid)>
+MarkCommonEntityImp: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=288 argc=2 kwonly=0 vars=('self', 'entity_guid')
+MarkJurenFlyAirSlashActive: repr=<bound method CombatAvatarMember.MarkJurenFlyAirSlashActive of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkJurenFlyAirSlashActive: sig=<Signature ()>
+MarkJurenFlyAirSlashActive: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=446 argc=1 kwonly=0 vars=('self',)
+MarkOffline: repr=<bound method PlayerCombatAvatarMember.MarkOffline of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkOffline: sig=<Signature (pos)>
+MarkOffline: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=299 argc=2 kwonly=0 vars=('self', 'pos')
+MarkOrCancelMarkPos: repr=<bound method PlayerCombatAvatarMember.MarkOrCancelMarkPos of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkOrCancelMarkPos: sig=<Signature ()>
+MarkOrCancelMarkPos: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=680 argc=1 kwonly=0 vars=('self',)
+MarkRequest: repr=<bound method PlayerCombatAvatarMember.MarkRequest of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkRequest: sig=<Signature (mark_type=1)>
+MarkRequest: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=251 argc=2 kwonly=0 vars=('self', 'mark_type')
+MarkRequest: defaults=(1,)
+MarkRequestDoubleClick: repr=<bound method PlayerCombatAvatarMember.MarkRequestDoubleClick of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkRequestDoubleClick: sig=<Signature ()>
+MarkRequestDoubleClick: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_help.py' first=365 argc=1 kwonly=0 vars=('self',)
+MarkTargetRequest: repr=<bound method PlayerCombatAvatarMember.MarkTargetRequest of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+MarkTargetRequest: sig=<Signature (target_id, mark_type=15)>
+MarkTargetRequest: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=281 argc=3 kwonly=0 vars=('self', 'target_id', 'mark_type')
+MarkTargetRequest: defaults=(15,)
+NeedShowCriticalDamageText: repr=<bound method PlayerCombatAvatarMember.NeedShowCriticalDamageText of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+NeedShowCriticalDamageText: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+NeedShowCriticalDamageText: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1331 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+OnAddAdsMark: repr=<bound method CombatAvatarMember.OnAddAdsMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnAddAdsMark: sig=<Signature (buff_proto)>
+OnAddAdsMark: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=627 argc=2 kwonly=0 vars=('self', 'buff_proto')
+OnAddClientUavMark: repr=<bound method PlayerCombatAvatarMember.OnAddClientUavMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnAddClientUavMark: sig=<Signature (buff_proto)>
+OnAddClientUavMark: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=824 argc=2 kwonly=0 vars=('self', 'buff_proto')
+OnAddSelfMarkBuff: repr=<bound method CombatAvatarMember.OnAddSelfMarkBuff of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnAddSelfMarkBuff: sig=<Signature (buff_proto)>
+OnAddSelfMarkBuff: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=280 argc=2 kwonly=0 vars=('self', 'buff_proto')
+OnAddTeamMarkBuff: repr=<bound method CombatAvatarMember.OnAddTeamMarkBuff of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnAddTeamMarkBuff: sig=<Signature (buff_proto)>
+OnAddTeamMarkBuff: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=302 argc=2 kwonly=0 vars=('self', 'buff_proto')
+OnBotDamageToPlayer: repr=<bound method PlayerCombatAvatarMember.OnBotDamageToPlayer of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnBotDamageToPlayer: sig=<Signature (caster_id, ai_grade, damage)>
+OnBotDamageToPlayer: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_robot_combat_log.py' first=144 argc=4 kwonly=0 vars=('self', 'caster_id', 'ai_grade', 'damage')
+OnDealDamageResult: repr=<bound method PlayerCombatAvatarMember.OnDealDamageResult of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnDealDamageResult: sig=<Signature (result, damage_result)>
+OnDealDamageResult: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1444 argc=3 kwonly=0 vars=('self', 'result', 'damage_result')
+OnDealSystemDamageResult: repr=<bound method PlayerCombatAvatarMember.OnDealSystemDamageResult of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnDealSystemDamageResult: sig=<Signature (result, damage_result)>
+OnDealSystemDamageResult: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1533 argc=3 kwonly=0 vars=('self', 'result', 'damage_result')
+OnEnterGunRefit_HideTopLogos: repr=<bound method PlayerCombatAvatarShootingRange.OnEnterGunRefit_HideTopLogos of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnEnterGunRefit_HideTopLogos: sig=<Signature ()>
+OnEnterGunRefit_HideTopLogos: file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=344 argc=1 kwonly=0 vars=('self',)
+OnExitGunRefit_ShowTopLogos: repr=<bound method PlayerCombatAvatarShootingRange.OnExitGunRefit_ShowTopLogos of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnExitGunRefit_ShowTopLogos: sig=<Signature ()>
+OnExitGunRefit_ShowTopLogos: file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=360 argc=1 kwonly=0 vars=('self',)
+OnGainTalentEnemyTrack: repr=<bound method PlayerCombatAvatarMember.OnGainTalentEnemyTrack of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnGainTalentEnemyTrack: sig=<Signature ()>
+OnGainTalentEnemyTrack: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1567 argc=1 kwonly=0 vars=('self',)
+OnGunSpellHitEnemy: repr=<bound method PlayerCombatAvatarMember.OnGunSpellHitEnemy of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnGunSpellHitEnemy: sig=<Signature (enemy)>
+OnGunSpellHitEnemy: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=204 argc=2 kwonly=0 vars=('self', 'enemy')
+OnHolographicMarkChange: repr=<bound method PlayerCombatAvatarMember.OnHolographicMarkChange of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnHolographicMarkChange: sig=<Signature (key, old, new)>
+OnHolographicMarkChange: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1885 argc=4 kwonly=0 vars=('self', 'key', 'old', 'new')
+OnLoseTalentEnemyTrack: repr=<bound method PlayerCombatAvatarMember.OnLoseTalentEnemyTrack of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnLoseTalentEnemyTrack: sig=<Signature ()>
+OnLoseTalentEnemyTrack: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1573 argc=1 kwonly=0 vars=('self',)
+OnMarkChangePCPickUp: repr=<bound method PlayerCombatAvatarMember.OnMarkChangePCPickUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnMarkChangePCPickUp: sig=<Signature (pos, slot, mark_type, guid, extra_info=None, member_id='')>
+OnMarkChangePCPickUp: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=393 argc=7 kwonly=0 vars=('self', 'pos', 'slot', 'mark_type', 'guid', 'extra_info', 'member_id')
+OnMarkChangePCPickUp: defaults=(None, '')
+OnMarkMissionCancel: repr=<bound method PlayerCombatAvatarMember.OnMarkMissionCancel of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnMarkMissionCancel: sig=<Signature (mark_id)>
+OnMarkMissionCancel: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=649 argc=2 kwonly=0 vars=('self', 'mark_id')
+OnMarkMissionConfirm: repr=<bound method PlayerCombatAvatarMember.OnMarkMissionConfirm of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnMarkMissionConfirm: sig=<Signature (mark_id)>
+OnMarkMissionConfirm: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=645 argc=2 kwonly=0 vars=('self', 'mark_id')
+OnMarkRespondDotAdd: repr=<bound method PlayerCombatAvatarMember.OnMarkRespondDotAdd of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnMarkRespondDotAdd: sig=<Signature (mark_guid, avt_id)>
+OnMarkRespondDotAdd: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=502 argc=3 kwonly=0 vars=('self', 'mark_guid', 'avt_id')
+OnMarkRespondDotRemove: repr=<bound method PlayerCombatAvatarMember.OnMarkRespondDotRemove of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnMarkRespondDotRemove: sig=<Signature (mark_guid, avt_id)>
+OnMarkRespondDotRemove: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=509 argc=3 kwonly=0 vars=('self', 'mark_guid', 'avt_id')
+OnPerkActivateStatusChange_IdleDamageUp: repr=<bound method CombatAvatarMember.OnPerkActivateStatusChange_IdleDamageUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnPerkActivateStatusChange_IdleDamageUp: sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+OnPerkActivateStatusChange_IdleDamageUp: file='gclient/util/decorators.py' first=163 argc=1 kwonly=0 vars=('ins',)
+OnPerkActivateStatusChange_MeleeDamageUp: repr=<bound method CombatAvatarMember.OnPerkActivateStatusChange_MeleeDamageUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnPerkActivateStatusChange_MeleeDamageUp: sig=<Signature (talent_id, perk_activate, is_main_player, status_old=None)>
+OnPerkActivateStatusChange_MeleeDamageUp: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1336 argc=5 kwonly=0 vars=('self', 'talent_id', 'perk_activate', 'is_main_player', 'status_old')
+OnPerkActivateStatusChange_MeleeDamageUp: defaults=(None,)
+OnPlayerDamageToBot: repr=<bound method PlayerCombatAvatarMember.OnPlayerDamageToBot of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnPlayerDamageToBot: sig=<Signature (target_id, ai_grade, damage)>
+OnPlayerDamageToBot: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_robot_combat_log.py' first=136 argc=4 kwonly=0 vars=('self', 'target_id', 'ai_grade', 'damage')
+OnPlayerParaStageChangedForMark: repr=<bound method PlayerCombatAvatarMember.OnPlayerParaStageChangedForMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnPlayerParaStageChangedForMark: sig=<Signature (para_stage)>
+OnPlayerParaStageChangedForMark: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=617 argc=2 kwonly=0 vars=('self', 'para_stage')
+OnReconDroneMarksUpdate: repr=<bound method PlayerCombatAvatarMember.OnReconDroneMarksUpdate of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnReconDroneMarksUpdate: sig=<Signature ()>
+OnReconDroneMarksUpdate: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=210 argc=1 kwonly=0 vars=('self',)
+OnRemoveAdsMark: repr=<bound method CombatAvatarMember.OnRemoveAdsMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnRemoveAdsMark: sig=<Signature (buff_proto, buff_guid='')>
+OnRemoveAdsMark: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=653 argc=3 kwonly=0 vars=('self', 'buff_proto', 'buff_guid')
+OnRemoveAdsMark: defaults=('',)
+OnRemoveClientUavMark: repr=<bound method PlayerCombatAvatarMember.OnRemoveClientUavMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnRemoveClientUavMark: sig=<Signature (buff_proto, buff_guid='')>
+OnRemoveClientUavMark: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=851 argc=3 kwonly=0 vars=('self', 'buff_proto', 'buff_guid')
+OnRemoveClientUavMark: defaults=('',)
+OnRemoveSelfMarkBuff: repr=<bound method CombatAvatarMember.OnRemoveSelfMarkBuff of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnRemoveSelfMarkBuff: sig=<Signature (buff_proto)>
+OnRemoveSelfMarkBuff: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=291 argc=2 kwonly=0 vars=('self', 'buff_proto')
+OnRemoveTeamMarkBuff: repr=<bound method CombatAvatarMember.OnRemoveTeamMarkBuff of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnRemoveTeamMarkBuff: sig=<Signature (buff_proto, buff_guid='')>
+OnRemoveTeamMarkBuff: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=319 argc=3 kwonly=0 vars=('self', 'buff_proto', 'buff_guid')
+OnRemoveTeamMarkBuff: defaults=('',)
+OnSlotLoseTalentIdleDamageUp: repr=<bound method CombatAvatarMember.OnSlotLoseTalentIdleDamageUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnSlotLoseTalentIdleDamageUp: sig=<Signature ()>
+OnSlotLoseTalentIdleDamageUp: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=783 argc=1 kwonly=0 vars=('self',)
+OnSlotLoseTalentMeleeDamageUp: repr=<bound method CombatAvatarMember.OnSlotLoseTalentMeleeDamageUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnSlotLoseTalentMeleeDamageUp: sig=<Signature ()>
+OnSlotLoseTalentMeleeDamageUp: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=733 argc=1 kwonly=0 vars=('self',)
+OnTeammateMarkImmediateForReplay: repr=<bound method PlayerCombatAvatarMember.OnTeammateMarkImmediateForReplay of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnTeammateMarkImmediateForReplay: sig=<Signature (mark_guid, old, new, member_id)>
+OnTeammateMarkImmediateForReplay: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=702 argc=5 kwonly=0 vars=('self', 'mark_guid', 'old', 'new', 'member_id')
+OnUpdateMarkToplogoState: repr=<bound method PlayerCombatAvatarMember.OnUpdateMarkToplogoState of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+OnUpdateMarkToplogoState: sig=<Signature (logo_name, hit, own_mark=False, mark_type=None, mark_avt_id='', mark_guid='')>
+OnUpdateMarkToplogoState: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=660 argc=7 kwonly=0 vars=('self', 'logo_name', 'hit', 'own_mark', 'mark_type', 'mark_avt_id', 'mark_guid')
+OnUpdateMarkToplogoState: defaults=(False, None, '', '')
+PlaceElecticalFieldTick: repr=<bound method CombatAvatarMember.PlaceElecticalFieldTick of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+PlaceElecticalFieldTick: sig=<Signature (dtime)>
+PlaceElecticalFieldTick: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2214 argc=2 kwonly=0 vars=('self', 'dtime')
+PlayerInputHandle_OnClickMark: repr=<bound method PlayerCombatAvatarMember.PlayerInputHandle_OnClickMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+PlayerInputHandle_OnClickMark: sig=<Signature ()>
+PlayerInputHandle_OnClickMark: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=191 argc=1 kwonly=0 vars=('self',)
+PlayerInputHandle_OnClickMarkDouble: repr=<bound method PlayerCombatAvatarMember.PlayerInputHandle_OnClickMarkDouble of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+PlayerInputHandle_OnClickMarkDouble: sig=<Signature ()>
+PlayerInputHandle_OnClickMarkDouble: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=221 argc=1 kwonly=0 vars=('self',)
+PlayerInputHandle_OnLongMarkDown: repr=<bound method PlayerCombatAvatarMember.PlayerInputHandle_OnLongMarkDown of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+PlayerInputHandle_OnLongMarkDown: sig=<Signature ()>
+PlayerInputHandle_OnLongMarkDown: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=201 argc=1 kwonly=0 vars=('self',)
+PlayerInputHandle_OnLongMarkUp: repr=<bound method PlayerCombatAvatarMember.PlayerInputHandle_OnLongMarkUp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+PlayerInputHandle_OnLongMarkUp: sig=<Signature ()>
+PlayerInputHandle_OnLongMarkUp: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=215 argc=1 kwonly=0 vars=('self',)
+PlayerInput_JoinDancingField: repr=<bound method PlayerCombatAvatarMember.PlayerInput_JoinDancingField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+PlayerInput_JoinDancingField: sig=<Signature ()>
+PlayerInput_JoinDancingField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=2120 argc=1 kwonly=0 vars=('self',)
+PullPlayerFromMagicFieldModelInside: repr=<bound method PlayerCombatAvatarMember.PullPlayerFromMagicFieldModelInside of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+PullPlayerFromMagicFieldModelInside: sig=<Signature (mf_id)>
+PullPlayerFromMagicFieldModelInside: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4759 argc=2 kwonly=0 vars=('self', 'mf_id')
+ReShowCommonMarkToplogoMapOnly: repr=<bound method PlayerCombatAvatarMember.ReShowCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ReShowCommonMarkToplogoMapOnly: sig=<Signature (mark_id, hidden_reason)>
+ReShowCommonMarkToplogoMapOnly: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=544 argc=3 kwonly=0 vars=('self', 'mark_id', 'hidden_reason')
+RecordGunFireDamage: repr=<bound method PlayerCombatAvatarMember.RecordGunFireDamage of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RecordGunFireDamage: sig=<Signature (equip_id, damage, part_slots=None)>
+RecordGunFireDamage: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_log.py' first=39 argc=4 kwonly=0 vars=('self', 'equip_id', 'damage', 'part_slots')
+RecordGunFireDamage: defaults=(None,)
+RecvIgEnemyVoice: repr=<bound method PlayerCombatAvatarMember.RecvIgEnemyVoice of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RecvIgEnemyVoice: sig=<Signature (voice_id, player_id, hero_id)>
+RecvIgEnemyVoice: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1968 argc=4 kwonly=0 vars=('self', 'voice_id', 'player_id', 'hero_id')
+RefreshHolographicMark: repr=<bound method PlayerCombatAvatarMember.RefreshHolographicMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RefreshHolographicMark: sig=<Signature ()>
+RefreshHolographicMark: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1881 argc=1 kwonly=0 vars=('self',)
+RefreshMarkVisibility: repr=<bound method PlayerCombatAvatarMember.RefreshMarkVisibility of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RefreshMarkVisibility: sig=<Signature (_)>
+RefreshMarkVisibility: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=654 argc=2 kwonly=0 vars=('self', '_')
+RemoveKilledTeamEnemyPos: repr=<bound method CombatAvatarMember.RemoveKilledTeamEnemyPos of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RemoveKilledTeamEnemyPos: sig=<Signature ()>
+RemoveKilledTeamEnemyPos: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=536 argc=1 kwonly=0 vars=('self',)
+RemoveWorldField: repr=<bound method CombatAvatarMember.RemoveWorldField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RemoveWorldField: sig=<Signature (world_field_id, magic_field_id, delay_disable_time=0)>
+RemoveWorldField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=28 argc=4 kwonly=0 vars=('self', 'world_field_id', 'magic_field_id', 'delay_disable_time')
+RemoveWorldField: defaults=(0,)
+RemoveWorldFieldFollow: repr=<bound method CombatAvatarMember.RemoveWorldFieldFollow of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RemoveWorldFieldFollow: sig=<Signature (buff_proto, buff_guid)>
+RemoveWorldFieldFollow: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=484 argc=3 kwonly=0 vars=('self', 'buff_proto', 'buff_guid')
+RequestCheckAimEnemy: repr=<bound method PlayerCombatAvatarMember.RequestCheckAimEnemy of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+RequestCheckAimEnemy: sig=<Signature (interval=0.2)>
+RequestCheckAimEnemy: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_assist_aim.py' first=140 argc=2 kwonly=0 vars=('self', 'interval')
+RequestCheckAimEnemy: defaults=(0.2,)
+ServerPromptBuySuccessFieldShop: repr=<bound method PlayerCombatAvatarMember.ServerPromptBuySuccessFieldShop of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ServerPromptBuySuccessFieldShop: sig=<Signature (proto_id, extra_data, extra_info=None)>
+ServerPromptBuySuccessFieldShop: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_store.py' first=240 argc=4 kwonly=0 vars=('self', 'proto_id', 'extra_data', 'extra_info')
+ServerPromptBuySuccessFieldShop: defaults=(None,)
+ServerShowDamageTextEffect: repr=<bound method PlayerCombatAvatarMember.ServerShowDamageTextEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ServerShowDamageTextEffect: sig=<Signature (cur_result)>
+ServerShowDamageTextEffect: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1501 argc=2 kwonly=0 vars=('self', 'cur_result')
+SetEnableWorldFieldFadeTime: repr=<bound method CombatAvatarMember.SetEnableWorldFieldFadeTime of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+SetEnableWorldFieldFadeTime: sig=<Signature (value)>
+SetEnableWorldFieldFadeTime: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=18 argc=2 kwonly=0 vars=('self', 'value')
+SetTeamValReconDroneId: repr=<bound method PlayerCombatAvatarMember.SetTeamValReconDroneId of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+SetTeamValReconDroneId: sig=<Signature (drone_id)>
+SetTeamValReconDroneId: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=207 argc=2 kwonly=0 vars=('self', 'drone_id')
+ShowClassicDamageText: repr=<bound method PlayerCombatAvatarMember.ShowClassicDamageText of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ShowClassicDamageText: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend, itype=0, screen_offset=None)>
+ShowClassicDamageText: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1240 argc=9 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend', 'itype', 'screen_offset')
+ShowClassicDamageText: defaults=(0, None)
+ShowContinuousDamageText: repr=<bound method PlayerCombatAvatarMember.ShowContinuousDamageText of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ShowContinuousDamageText: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+ShowContinuousDamageText: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1257 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+ShowDamageTextByMode: repr=<bound method PlayerCombatAvatarMember.ShowDamageTextByMode of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ShowDamageTextByMode: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+ShowDamageTextByMode: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1216 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+ShowEnemyTopLogoInRange: repr=<bound method CombatAvatarMember.ShowEnemyTopLogoInRange of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+ShowEnemyTopLogoInRange: sig=<Signature (params)>
+ShowEnemyTopLogoInRange: file='gclient/gameplay/logic_base/comps/comp_talent.py' first=695 argc=2 kwonly=0 vars=('self', 'params')
+SortAndActiveWorldField: repr=<bound method CombatAvatarMember.SortAndActiveWorldField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+SortAndActiveWorldField: sig=<Signature ()>
+SortAndActiveWorldField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=45 argc=1 kwonly=0 vars=('self',)
+TOPLOGO_SHOW_POSITION: repr=True type=<class 'bool'>
+TOPLOGO_SHOW_POSITION: sig FAIL TypeError('True is not a callable object')
+TryAttack_recon_drone_spell: repr=<bound method PlayerCombatAvatarMember.TryAttack_recon_drone_spell of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+TryAttack_recon_drone_spell: sig=<Signature (spell_id, spell_level, spell_code, extra=None)>
+TryAttack_recon_drone_spell: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4179 argc=5 kwonly=0 vars=('self', 'spell_id', 'spell_level', 'spell_code', 'extra')
+TryAttack_recon_drone_spell: defaults=(None,)
+UpdateAllTeammateMark: repr=<bound method PlayerCombatAvatarMember.UpdateAllTeammateMark of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+UpdateAllTeammateMark: sig=<Signature ()>
+UpdateAllTeammateMark: file='gclient/gameplay/logic_base/comps/comp_mark.py' first=626 argc=1 kwonly=0 vars=('self',)
+_CancelCheckAimEnemyTimer: repr=<bound method PlayerCombatAvatarMember._CancelCheckAimEnemyTimer of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_CancelCheckAimEnemyTimer: sig=<Signature ()>
+_CancelCheckAimEnemyTimer: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_assist_aim.py' first=150 argc=1 kwonly=0 vars=('self',)
+_CheckCanAutoMarkItem: repr=<bound method PlayerCombatAvatarMember._CheckCanAutoMarkItem of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_CheckCanAutoMarkItem: sig=<Signature (combatitem)>
+_CheckCanAutoMarkItem: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=540 argc=2 kwonly=0 vars=('self', 'combatitem')
+_CheckInvisibleCasterDamage: repr=<bound method CombatAvatarMember._CheckInvisibleCasterDamage of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_CheckInvisibleCasterDamage: sig=<Signature (result, caster, target)>
+_CheckInvisibleCasterDamage: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=684 argc=4 kwonly=0 vars=('self', 'result', 'caster', 'target')
+_CreateElecticalFieldEffect: repr=<bound method CombatAvatarMember._CreateElecticalFieldEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_CreateElecticalFieldEffect: sig=<Signature (spell_id, level=1)>
+_CreateElecticalFieldEffect: file='gclient/util/decorators.py' first=163 argc=1 kwonly=0 vars=('ins',)
+_DamageGameLogicEffect: repr=<bound method PlayerCombatAvatarShootingRange._DamageGameLogicEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_DamageGameLogicEffect: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+_DamageGameLogicEffect: file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=299 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+_DamageModelEffect: repr=<bound method PlayerCombatAvatarMember._DamageModelEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_DamageModelEffect: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+_DamageModelEffect: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1421 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+_DamageSoundEffect: repr=<bound method PlayerCombatAvatarMember._DamageSoundEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_DamageSoundEffect: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+_DamageSoundEffect: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1384 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+_DamageTextEffect: repr=<bound method PlayerCombatAvatarMember._DamageTextEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_DamageTextEffect: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+_DamageTextEffect: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1201 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+_DamageUIEffect: repr=<bound method PlayerCombatAvatarMember._DamageUIEffect of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_DamageUIEffect: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+_DamageUIEffect: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1340 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+_DamageUIEffect234: repr=<bound method PlayerCombatAvatarMember._DamageUIEffect234 of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_DamageUIEffect234: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+_DamageUIEffect234: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1377 argc=7 kwonly=0 vars=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+_DelayDisableSpecifyWorldField: repr=<bound method CombatAvatarMember._DelayDisableSpecifyWorldField of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_DelayDisableSpecifyWorldField: sig=<Signature (delay_time, world_field_id)>
+_DelayDisableSpecifyWorldField: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=125 argc=3 kwonly=0 vars=('self', 'delay_time', 'world_field_id')
+_MarkSlideTimestamp: repr=<bound method PlayerCombatAvatarMember._MarkSlideTimestamp of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_MarkSlideTimestamp: sig=<Signature (to_slide)>
+_MarkSlideTimestamp: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=1316 argc=2 kwonly=0 vars=('self', 'to_slide')
+_PlayWhiteScreenUIForExecuteChangeUI: repr=<bound method PlayerCombatAvatarMember._PlayWhiteScreenUIForExecuteChangeUI of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_PlayWhiteScreenUIForExecuteChangeUI: sig=<Signature (is_show)>
+_PlayWhiteScreenUIForExecuteChangeUI: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_execute.py' first=791 argc=2 kwonly=0 vars=('self', 'is_show')
+_auto_mark_item_guid: repr=None type=<class 'NoneType'>
+_auto_mark_item_guid: sig FAIL TypeError('None is not a callable object')
+_auto_mark_item_timer: repr={} type=<class 'dict'>
+_auto_mark_item_timer: sig FAIL TypeError('{} is not a callable object')
+_holographic_mark_entities: repr={} type=<class 'dict'>
+_holographic_mark_entities: sig FAIL TypeError('{} is not a callable object')
+_on_set_double_dance_field_id: repr=<bound method CombatAvatarMember._on_set_double_dance_field_id of <PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>> type=<class 'method'>
+_on_set_double_dance_field_id: sig=<Signature (old)>
+_on_set_double_dance_field_id: file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_emote.py' first=47 argc=2 kwonly=0 vars=('self', 'old')
+ads_mark_mgr: repr=<gclient.gameplay.util.ads_mark_manager.AdsMarkManager object at 0x00000259E1DF57F0> type=<class 'gclient.gameplay.util.ads_mark_manager.AdsMarkManager'>
+ads_mark_mgr: sig FAIL TypeError('<gclient.gameplay.util.ads_mark_manager.AdsMarkManager object at 0x00000259E1DF57F0> is not a callable object')
+ads_mark_pos_avatars: repr=[] type=<class 'list'>
+ads_mark_pos_avatars: sig FAIL TypeError('[] is not a callable object')
+aiming_enemy_id: repr='' type=<class 'str'>
+aiming_enemy_id: sig FAIL TypeError("'' is not a callable object")
+assist_mark: repr=<gclient.framework.util.assist_aim_util.AssistMark object at 0x00000259E1DF6900> type=<class 'gclient.framework.util.assist_aim_util.AssistMark'>
+assist_mark: sig FAIL TypeError('<gclient.framework.util.assist_aim_util.AssistMark object at 0x00000259E1DF6900> is not a callable object')
+can_mark_dying_killer: repr=False type=<class 'bool'>
+can_mark_dying_killer: sig FAIL TypeError('False is not a callable object')
+can_show_mark_dying_killer: repr=False type=<class 'bool'>
+can_show_mark_dying_killer: sig FAIL TypeError('False is not a callable object')
+check_aim_enemy_interval: repr=0.2 type=<class 'float'>
+check_aim_enemy_interval: sig FAIL TypeError('0.2 is not a callable object')
+check_aim_enemy_ref: repr=0 type=<class 'int'>
+check_aim_enemy_ref: sig FAIL TypeError('0 is not a callable object')
+check_aim_enemy_timer: repr=None type=<class 'NoneType'>
+check_aim_enemy_timer: sig FAIL TypeError('None is not a callable object')
+cold_fields: repr={} type=<class 'dict'>
+cold_fields: sig FAIL TypeError('{} is not a callable object')
+common_center_mark_dict: repr={} type=<class 'dict'>
+common_center_mark_dict: sig FAIL TypeError('{} is not a callable object')
+common_mark_dict: repr={'anFBRnpyqyRkPhTU': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x00000259D7E1AF90>} type=<class 'dict'>
+common_mark_dict: sig FAIL TypeError("{'anFBRnpyqyRkPhTU': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x00000259D7E1AF90>} is not a callable object")
+common_mark_info: repr={'anFBRnpyqyRkPhTU': {'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (1, 2.5, 0), 'visible_distance': 50.0, 'camera_hit_max_dis': 165, 'icon': 733, 'cls': 'ToplogoGunRefit', 'fov_distance': 10.0, 'id': 10, 'max_opacity': 1.0, 'camera_hit_min_dis': 50, 'pos': (-23.85, 0, -6.73), 'scene_on': True}} type=<class 'dict'>
+common_mark_info: sig FAIL TypeError("{'anFBRnpyqyRkPhTU': {'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (1, 2.5, 0), 'visible_distance': 50.0, 'camera_hit_max_dis': 165, 'icon': 733, 'cls': 'ToplogoGunRefit', 'fov_distance': 10.0, 'id': 10, 'max_opacity': 1.0, 'camera_hit_min_dis': 50, 'pos': (-23.85, 0, -6.73), 'scene_on': True}} is not a callable object")
+cur_active_world_field_id: repr=6 type=<class 'int'>
+cur_active_world_field_id: sig FAIL TypeError('6 is not a callable object')
+cur_mark_avt_id: repr=None type=<class 'NoneType'>
+cur_mark_avt_id: sig FAIL TypeError('None is not a callable object')
+cur_mark_mission_guid: repr='' type=<class 'str'>
+cur_mark_mission_guid: sig FAIL TypeError("'' is not a callable object")
+cur_shield_magic_field_id: repr=None type=<class 'NoneType'>
+cur_shield_magic_field_id: sig FAIL TypeError('None is not a callable object')
+expose_killed_enemy_pos_timer: repr=None type=<class 'NoneType'>
+expose_killed_enemy_pos_timer: sig FAIL TypeError('None is not a callable object')
+fsm_ads_mark_pos: repr=None type=<class 'NoneType'>
+fsm_ads_mark_pos: sig FAIL TypeError('None is not a callable object')
+gun_spell_last_mark_enemy: repr=None type=<class 'NoneType'>
+gun_spell_last_mark_enemy: sig FAIL TypeError('None is not a callable object')
+gun_spell_mark_enemy_stamp: repr=None type=<class 'NoneType'>
+gun_spell_mark_enemy_stamp: sig FAIL TypeError('None is not a callable object')
+is_refuse_team_mark: repr=False type=<class 'bool'>
+is_refuse_team_mark: sig FAIL TypeError('False is not a callable object')
+knock_down_team_enemy_pos_timer: repr=None type=<class 'NoneType'>
+knock_down_team_enemy_pos_timer: sig FAIL TypeError('None is not a callable object')
+mark_effect_dict: repr={} type=<class 'dict'>
+mark_effect_dict: sig FAIL TypeError('{} is not a callable object')
+mark_toplogo_dict: repr={} type=<class 'dict'>
+mark_toplogo_dict: sig FAIL TypeError('{} is not a callable object')
+mark_toplogo_hit_guid: repr='' type=<class 'str'>
+mark_toplogo_hit_guid: sig FAIL TypeError("'' is not a callable object")
+mark_toplogo_hit_type: repr=1 type=<class 'int'>
+mark_toplogo_hit_type: sig FAIL TypeError('1 is not a callable object')
+mark_toplogo_op_mode: repr=0 type=<class 'int'>
+mark_toplogo_op_mode: sig FAIL TypeError('0 is not a callable object')
+nearby_dancing_field_id: repr=None type=<class 'NoneType'>
+nearby_dancing_field_id: sig FAIL TypeError('None is not a callable object')
+perk_melee_damage_up_model_effect_ids: repr=None type=<class 'NoneType'>
+perk_melee_damage_up_model_effect_ids: sig FAIL TypeError('None is not a callable object')
+recon_drone_frame_top_logo: repr=None type=<class 'NoneType'>
+recon_drone_frame_top_logo: sig FAIL TypeError('None is not a callable object')
+recon_drone_mark_ent_ids: repr=set() type=<class 'set'>
+recon_drone_mark_ent_ids: sig FAIL TypeError('set() is not a callable object')
+team_val_recon_drone_id: repr=None type=<class 'NoneType'>
+team_val_recon_drone_id: sig FAIL TypeError('None is not a callable object')
+toplogo_not_in_hide_state_enemy: repr=set() type=<class 'set'>
+toplogo_not_in_hide_state_enemy: sig FAIL TypeError('set() is not a callable object')
+world_fields: repr=[(6, 'anE9NksxNr+4uzVs')] type=<class 'list'>
+world_fields: sig FAIL TypeError("[(6, 'anE9NksxNr+4uzVs')] is not a callable object")
+END

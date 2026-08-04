@@ -1,0 +1,62 @@
+BEGIN 1785807759.3593783
+entities=23 robots=6 players=1
+robot='anE8/EsxNr+4ux9Q' <RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)> class=<class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.RobotCombatAvatarShootingRange'>
+CanShowEnemyToplogo: repr=<bound method CombatAvatarMember.CanShowEnemyToplogo of <RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)>> type=<class 'method'>
+CanShowEnemyToplogo: sig=<Signature ()>
+CanShowEnemyToplogo: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=575 argc=1 kwonly=0 vars=('self',)
+CanShowEnemyToplogoBar: repr=<bound method CombatAvatarMember.CanShowEnemyToplogoBar of <RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)>> type=<class 'method'>
+CanShowEnemyToplogoBar: sig=<Signature ()>
+CanShowEnemyToplogoBar: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=578 argc=1 kwonly=0 vars=('self',)
+CreateEnemyToplogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateEnemyToplogo'")
+CreateEnemyTopLogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateEnemyTopLogo'")
+CreateMarkToplogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateMarkToplogo'")
+CreateCommonMarkToplogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateCommonMarkToplogo'")
+CreateCommonMarkToplogoSceneOnly: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateCommonMarkToplogoSceneOnly'")
+CreateCommonMarkToplogoMapOnly: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateCommonMarkToplogoMapOnly'")
+CreateTeammateMarkToplogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateTeammateMarkToplogo'")
+CreateMarkWorldEffect: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateMarkWorldEffect'")
+DestroyMarkToplogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'DestroyMarkToplogo'")
+DestroyAllMarkToplogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'DestroyAllMarkToplogo'")
+HideEnemyTopLogo: repr=<bound method CombatAvatarMember.HideEnemyTopLogo of <RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)>> type=<class 'method'>
+HideEnemyTopLogo: sig=<Signature ()>
+HideEnemyTopLogo: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=999 argc=1 kwonly=0 vars=('self',)
+HideAllEnemyToplogo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'HideAllEnemyToplogo'")
+DrawEnemyReconMarkFrames: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'DrawEnemyReconMarkFrames'")
+DrawReconDroneMarkFrame: repr=<bound method CombatAvatarMember.DrawReconDroneMarkFrame of <RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)>> type=<class 'method'>
+DrawReconDroneMarkFrame: sig=<Signature ()>
+DrawReconDroneMarkFrame: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=42 argc=1 kwonly=0 vars=('self',)
+CreateSceneCenterMark: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'CreateSceneCenterMark'")
+AddSceneCenterMark: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'AddSceneCenterMark'")
+AddWorldField: repr=<bound method CombatAvatarMember.AddWorldField of <RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)>> type=<class 'method'>
+AddWorldField: sig=<Signature (world_field_id, magic_field_id)>
+AddWorldField: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_world_field.py' first=21 argc=3 kwonly=0 vars=('self', 'world_field_id', 'magic_field_id')
+CreateWorldFieldFollow: repr=<bound method CombatAvatarMember.CreateWorldFieldFollow of <RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)>> type=<class 'method'>
+CreateWorldFieldFollow: sig=<Signature (buff_proto, buff_guid)>
+CreateWorldFieldFollow: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=475 argc=3 kwonly=0 vars=('self', 'buff_proto', 'buff_guid')
+GetDamageTextOffPos: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'GetDamageTextOffPos'")
+GetTargetDamageTextWorldPosition: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'GetTargetDamageTextWorldPosition'")
+GetMarkPosAndType: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'GetMarkPosAndType'")
+GetCommonMarkInfo: getattr FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'GetCommonMarkInfo'")
+CreateScreenText: repr=<built-in function CreateScreenText> type=<class 'builtin_function_or_method'>
+CreateScreenText: sig FAIL ValueError('no signature found for builtin <built-in function CreateScreenText>')
+UpdateScreenText: repr=<built-in function UpdateScreenText> type=<class 'builtin_function_or_method'>
+UpdateScreenText: sig FAIL ValueError('no signature found for builtin <built-in function UpdateScreenText>')
+RemoveScreenText: repr=<built-in function RemoveScreenText> type=<class 'builtin_function_or_method'>
+RemoveScreenText: sig=<Signature (self, object, /)>
+AddFakeBoardElement: repr=<built-in function AddFakeBoardElement> type=<class 'builtin_function_or_method'>
+AddFakeBoardElement: sig FAIL ValueError('no signature found for builtin <built-in function AddFakeBoardElement>')
+AddFakeBoardElement0: repr=<built-in function AddFakeBoardElement0> type=<class 'builtin_function_or_method'>
+AddFakeBoardElement0: sig FAIL ValueError('no signature found for builtin <built-in function AddFakeBoardElement0>')
+AddFakeBoardElementWithBone: repr=<built-in function AddFakeBoardElementWithBone> type=<class 'builtin_function_or_method'>
+AddFakeBoardElementWithBone: sig FAIL ValueError('no signature found for builtin <built-in function AddFakeBoardElementWithBone>')
+RemoveFakeBoardElement: repr=<built-in function RemoveFakeBoardElement> type=<class 'builtin_function_or_method'>
+RemoveFakeBoardElement: sig=<Signature (self, object, /)>
+GetScreenWidth: repr=<built-in function GetScreenWidth> type=<class 'builtin_function_or_method'>
+GetScreenWidth: sig=<Signature (self, /)>
+GetScreenHeight: repr=<built-in function GetScreenHeight> type=<class 'builtin_function_or_method'>
+GetScreenHeight: sig=<Signature (self, /)>
+GetScreenSize: repr=<built-in function GetScreenSize> type=<class 'builtin_function_or_method'>
+GetScreenSize: sig=<Signature (self, /)>
+GetWindowClientInfo: repr=<built-in function GetWindowClientInfo> type=<class 'builtin_function_or_method'>
+GetWindowClientInfo: sig=<Signature (self, /)>
+END

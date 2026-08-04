@@ -1,0 +1,4 @@
+BEGIN
+REQUEST={'display_id': 1392, 'server_id': 1391, 'times': 1, 'callback_name': 'OnGachaV6Roll', 'before_gold': 99980, 'before_display_roll': 0, 'before_server_roll': 0, 'requested_at': 1785821777.057188}
+REQUEST_DISPATCHED
+END

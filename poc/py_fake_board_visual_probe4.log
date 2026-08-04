@@ -1,0 +1,12 @@
+BEGIN 1785813636.546879
+remove old OK False
+layout.content OK None
+layout.anchor OK True
+layout.background type OK None
+layout.background color OK None
+layout.background alpha OK None
+layout.visible OK None
+layout.scale OK None
+layout.size=Size(420.000000, 840.000000)
+ADD result=True robot=<RobotCombatAvatarShootingRange(anFTyksxNr+4wJ5m)> dist=10.300220759567015 height=1.8882365226745605
+END

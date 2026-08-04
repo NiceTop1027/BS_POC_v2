@@ -1,0 +1,22 @@
+BEGIN
+FIELD yuanbao type=<class 'int'> value=25
+FIELD free_yuanbao type=<class 'int'> value=0
+FIELD pay_yuanbao type=<class 'int'> value=25
+FIELD limit_yuanbao type=<class 'int'> value=0
+FIELD skin_metal_coin type=<class 'int'> value=1250
+FIELD dmz_coin type=<class 'int'> value=0
+FIELD honor type=<class 'int'> value=12762
+FIELD_FAIL gold AttributeError("'PlayerAvatar' object has no attribute 'gold'")
+FIELD_FAIL coins AttributeError("'PlayerAvatar' object has no attribute 'coins'")
+CLASS_DESCRIPTORS gclient.framework.entities.avatar.PlayerAvatar {'yuanbao': <property object at 0x00000259CC310810>, 'limit_yuanbao': <property object at 0x00000259CC310860>, 'skin_metal_coin': <property object at 0x00000259CC310770>}
+PROPERTY yuanbao.fget names=('pay_yuanbao', 'free_yuanbao', 'limit_yuanbao') vars=('self',) consts=(None,)
+PROPERTY limit_yuanbao.fget names=('sum', 'six2', 'values', 'limit_yuanbao_dict') vars=('self',) consts=(None,)
+PROPERTY skin_metal_coin.fget names=('metal',) vars=('self',) consts=(None,)
+CONST EMoneyType_YUANBAO=4 GET=25
+CONST EMoneyType_PAY_YUANBAO=3 GET=25
+CONST EMoneyType_FREE_YUANBAO=2 GET=0
+CONST EMoneyType_LIMIT_YUANBAO=6 GET=0
+CONST EMoneyType_METAL=7 GET=1250
+CONST EMoneyType_DMZ=8 GET=0
+PROBE_FAIL TypeError("PlayerAvatarMember.GetYuanbao() missing 1 required positional argument: 'exclude_limit_yuanbao'")
+END

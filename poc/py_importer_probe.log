@@ -1,0 +1,44 @@
+BEGIN
+MOD MImporter <module 'MImporter'>
+KEYS MImporter ['ENCRYPTED_MODULE_CACHE', 'FILL_CACHE', 'LOGICROOT', 'MPatch', 'PATCHROOT', 'PATH_LIST', 'REALROOT', 'SALT', 'SpecInfo', 'USE_CACHE', 'USE_LAZY_IMPORT', '_frozen_importlib', '_frozen_importlib_external', '_md5', '_names', '_unicode', 'decrypt_string', 'decrypt_string_old', 'encrypt', 'filename_encrypt', 'finder', 'gen_md5', 'imp', 'import_error', 'inspect_ismodule', 'lazyimporter', 'marshal', 'new_module', 'normpath', 'normpath_nt', 'normpath_posix', 'old_sys_meta_path', 'open_file_data_in_package', 'open_file_data_in_patch', 'path_exists_in_package', 'path_exists_in_patch', 'plain_finder', 'py_decrypt_and_decompress', 'setImporterPath', 'setLazyImportEnabled', 'splitdrive', 'stopImporter', 'sys', 'zlib']
+ATTR MImporter.MPatch type=<class 'module'> val=<module 'MPatch'>
+ATTR MImporter.PATCHROOT type=<class 'str'> val='C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch'
+ATTR MImporter.PATH_LIST type=<class 'dict'> val={}
+ATTR MImporter.filename_encrypt type=<class '_cython_3_0_11.cython_function_or_method'> val=<cyfunction filename_encrypt at 0x00000259EF9BDBE0>
+ATTR MImporter.finder type=<class 'type'> val=<class 'MImporter.finder'>
+ATTR MImporter.normpath type=<class '_cython_3_0_11.cython_function_or_method'> val=<cyfunction normpath_nt at 0x00000259EF9BDA40>
+ATTR MImporter.normpath_nt type=<class '_cython_3_0_11.cython_function_or_method'> val=<cyfunction normpath_nt at 0x00000259EF9BDA40>
+ATTR MImporter.normpath_posix type=<class '_cython_3_0_11.cython_function_or_method'> val=<cyfunction normpath_posix at 0x00000259EF9BDB10>
+ATTR MImporter.old_sys_meta_path type=<class 'list'> val=[<class '_frozen_importlib.BuiltinImporter'>, <class '_frozen_importlib.FrozenImporter'>, <class '_frozen_importlib_external.PathFinder'>]
+ATTR MImporter.open_file_data_in_package type=<class 'builtin_function_or_method'> val=<built-in function OpenRawBufferInPackage>
+ATTR MImporter.open_file_data_in_patch type=<class 'builtin_function_or_method'> val=<built-in function OpenRawBufferInPatch>
+ATTR MImporter.path_exists_in_package type=<class 'builtin_function_or_method'> val=<built-in function FileExistInPackage>
+ATTR MImporter.path_exists_in_patch type=<class 'builtin_function_or_method'> val=<built-in function FileExistInPatch>
+ATTR MImporter.plain_finder type=<class 'type'> val=<class 'MImporter.plain_finder'>
+ATTR MImporter.setImporterPath type=<class '_cython_3_0_11.cython_function_or_method'> val=<cyfunction setImporterPath at 0x00000259EF9BF9F0>
+MOD MReloadImporter <module 'MReloadImporter'>
+KEYS MReloadImporter []
+MOD MLauncher <module 'MLauncher'>
+KEYS MLauncher ['CreateFileInPatch', 'CreateFileInPatchBak', 'DeleteFileInPatch', 'Entry', 'FileExistInPackage', 'FileExistInPatch', 'FileExistInPatchRaw', 'Filelist', 'Filelist_name', 'HASH_ALGORITHM_DEFAULT', 'HASH_ALGORITHM_MD5', 'HASH_ALGORITHM_XXHASH', 'HAVE_HUNTER', 'IS_PY3', 'MAGIC', 'MPatch', 'OpenFile', 'OpenFileData', 'OpenFileDataInPackage', 'OpenFileDataInPatch', 'OpenFileInPackage', 'OpenFileInPatch', 'PATCHROOT', 'PKGROOT', 'PatchTick', 'Result', 'SetPatchTickFunc', '_md5', 'aftercheck', 'calc_hash', 'check', 'gen_md5', 'importer', 'marshal', 'py_launcher', 'setPath', 'sys', 'xxHashHexDigest']
+ATTR MLauncher.CreateFileInPatch type=<class 'function'> val=<function CreateFileInPatch at 0x00000259EE5AB110>
+ATTR MLauncher.CreateFileInPatchBak type=<class 'builtin_function_or_method'> val=<built-in function CreateFileInPatch>
+ATTR MLauncher.DeleteFileInPatch type=<class 'builtin_function_or_method'> val=<built-in function DeleteFileInPatch>
+ATTR MLauncher.FileExistInPackage type=<class 'builtin_function_or_method'> val=<built-in function FileExistInPackage>
+ATTR MLauncher.FileExistInPatch type=<class 'builtin_function_or_method'> val=<built-in function FileExistInPatch>
+ATTR MLauncher.FileExistInPatchRaw type=<class 'builtin_function_or_method'> val=<built-in function FileExistInPatchRaw>
+ATTR MLauncher.Filelist type=<class 'dict'> val={}
+ATTR MLauncher.Filelist_name type=<class 'str'> val='prerequisite'
+ATTR MLauncher.MPatch type=<class 'module'> val=<module 'MPatch'>
+ATTR MLauncher.OpenFile type=<class '_cython_3_1_0.cython_function_or_method'> val=<cyfunction OpenFile at 0x00000259EF057A00>
+ATTR MLauncher.OpenFileData type=<class '_cython_3_1_0.cython_function_or_method'> val=<cyfunction OpenFileData at 0x00000259EF057940>
+ATTR MLauncher.OpenFileDataInPackage type=<class 'builtin_function_or_method'> val=<built-in function GetRawDataInPackage>
+ATTR MLauncher.OpenFileDataInPatch type=<class 'builtin_function_or_method'> val=<built-in function GetRawDataInPatch>
+ATTR MLauncher.OpenFileInPackage type=<class 'builtin_function_or_method'> val=<built-in function OpenRawBufferInPackage>
+ATTR MLauncher.OpenFileInPatch type=<class 'builtin_function_or_method'> val=<built-in function OpenRawBufferInPatch>
+ATTR MLauncher.PATCHROOT type=<class 'str'> val='C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch'
+ATTR MLauncher.PatchTick type=<class 'NoneType'> val=None
+ATTR MLauncher.SetPatchTickFunc type=<class '_cython_3_1_0.cython_function_or_method'> val=<cyfunction SetPatchTickFunc at 0x00000259EF057B80>
+ATTR MLauncher.setPath type=<class '_cython_3_1_0.cython_function_or_method'> val=<cyfunction setPath at 0x00000259EF057880>
+EntityManager loader type=<class 'MImporter.finder'> val=<MImporter.finder object at 0x00000259EF045550>
+loader dir=['INIT', '_create_module', '_get_relpath', '_import_module', '_lazy_import_module', '_load_encrypted_module', '_relpath_cache', 'create_module', 'exec_module', 'find_spec', 'find_spec_in_anywhere', 'find_spec_in_encrypt', 'find_spec_in_patch_encrypt', 'find_spec_in_pkg_encrypt', 'get_encrypt_name_with_path', 'get_module', 'get_module_data', 'get_relpath', 'get_relpath_with_path']
+END

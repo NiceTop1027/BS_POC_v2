@@ -1,0 +1,8 @@
+BEGIN 1785813082.2963014
+robot=<RobotCombatAvatarShootingRange(anFTyksxNr+4wJ5v)> position=(6.3227458000183105, 0.06980303674936295, -5.500764846801758)
+layout setup fail=RuntimeError('cannot convert argument 1 to cocos2d::Size')
+node=<ccui.Layout object at 0x00000259D7E3A9D0>
+AddFakeBoardElement0(param, robot) fail=TypeError('can not convert RobotCombatAvatarShootingRange to PyIObject')
+AddFakeBoardElementWithBone(param, robot, Root) fail=RuntimeError('expected 8 arguments, got 3')
+AddFakeBoardElementWithBone(param, robot, Head) fail=RuntimeError('expected 8 arguments, got 3')
+END

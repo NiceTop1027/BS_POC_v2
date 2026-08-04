@@ -1,0 +1,38 @@
+BEGIN
+MOD common.EntityManager file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/common/EntityManager.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL common.EntityManager AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL common.EntityManager FileNotFoundError(2, 'No such file or directory')
+inspect FAIL common.EntityManager OSError('could not get source code')
+MOD common.Entity file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/common/Entity.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL common.Entity AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL common.Entity FileNotFoundError(2, 'No such file or directory')
+inspect FAIL common.Entity OSError('could not get source code')
+MOD common.EntityFactory file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/common/EntityFactory.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL common.EntityFactory AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL common.EntityFactory FileNotFoundError(2, 'No such file or directory')
+inspect FAIL common.EntityFactory OSError('could not get source code')
+MOD client.ClientEntity file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/engine/client/ClientEntity.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL client.ClientEntity AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL client.ClientEntity FileNotFoundError(2, 'No such file or directory')
+inspect FAIL client.ClientEntity OSError('could not get source code')
+MOD gclient.entitylist file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/gclient/entitylist.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL gclient.entitylist AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL gclient.entitylist FileNotFoundError(2, 'No such file or directory')
+inspect FAIL gclient.entitylist OSError('could not get source code')
+MOD gclient.gameplay.logic_base.entities.combat_avatar file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/gclient/gameplay/logic_base/entities/combat_avatar.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL gclient.gameplay.logic_base.entities.combat_avatar AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL gclient.gameplay.logic_base.entities.combat_avatar FileNotFoundError(2, 'No such file or directory')
+inspect FAIL gclient.gameplay.logic_base.entities.combat_avatar OSError('could not get source code')
+MOD gclient.gameplay.logic_base.comps.comp_toplogo file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/gclient/gameplay/logic_base/comps/comp_toplogo.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL gclient.gameplay.logic_base.comps.comp_toplogo AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL gclient.gameplay.logic_base.comps.comp_toplogo FileNotFoundError(2, 'No such file or directory')
+inspect FAIL gclient.gameplay.logic_base.comps.comp_toplogo OSError('could not get source code')
+MOD gclient.gameplay.logic_base.comps.comp_enemy_show_distance file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/gclient/gameplay/logic_base/comps/comp_enemy_show_distance.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL gclient.gameplay.logic_base.comps.comp_enemy_show_distance AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL gclient.gameplay.logic_base.comps.comp_enemy_show_distance FileNotFoundError(2, 'No such file or directory')
+inspect FAIL gclient.gameplay.logic_base.comps.comp_enemy_show_distance OSError('could not get source code')
+MOD gclient.gameplay.logic_base.comps.fsm_avatar_toplogo file='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/gclient/gameplay/logic_base/comps/fsm_avatar_toplogo.py' loader=<MImporter.finder object at 0x00000259EF045550>
+loader.get_data FAIL gclient.gameplay.logic_base.comps.fsm_avatar_toplogo AttributeError("'finder' object has no attribute 'get_data'")
+open FAIL gclient.gameplay.logic_base.comps.fsm_avatar_toplogo FileNotFoundError(2, 'No such file or directory')
+inspect FAIL gclient.gameplay.logic_base.comps.fsm_avatar_toplogo OSError('could not get source code')
+END

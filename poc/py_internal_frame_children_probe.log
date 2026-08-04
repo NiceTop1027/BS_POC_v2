@@ -1,0 +1,699 @@
+BEGIN 1785811402.646265
+EnsureShootingRangeToplogo=True
+ShowEnemyToplogo=None
+DrawReconDroneMarkFrame=None
+node <gclient.gameplay.logic_base.entities.val_drone.ReconDroneMarkFrameTopLogoUINode object(Node) at 0x25A032A3AC0> type=<class 'gclient.gameplay.logic_base.entities.val_drone.ReconDroneMarkFrameTopLogoUINode'>
+node.getName='Node'
+node.getChildrenCount=1
+node.getContentSize=Size(0.000000, 0.000000)
+node.GetRealContentSize=Size(0.000000, 0.000000)
+node.getPosition=Vec2(0.000000, 0.000000)
+node.getPositionX=0.0
+node.getPositionY=0.0
+node.getScale=1.0
+node.getScaleX=1.0
+node.getScaleY=1.0
+node.isVisible=True
+node.getAnchorPoint=Vec2(0.000000, 0.000000)
+node.interesting=['AddChild', 'CancelScaleTickTimer', 'CheckPosInView', 'EnablePressScale', 'GetRealContentSize', 'GetTextureType', 'GetWorldPosition', 'GetWorldPositionLeftBottom', 'GetWorldPositionPercent', 'HelperChildex', 'IsAncestorsVisible', 'IsWorldPosInNodeBound', 'MAX_SCALE', 'MIN_SCALE', 'OnScaleTick', 'SCRATCH_CARD_IMAGE_NAME', 'SetChildrenClippingEnabled', 'SetChildrenClippingType', 'SetNodeHoverImage', 'SetPosition', 'SetPositionX', 'SetPositionY', 'SetWorldPosition', 'SetWorldPositionPercent', 'ShowNodeHoverImage', 'StartScaleTickTimer', '_CreateScratchCardImage', '_CreateScratchCardTouchImage', '_pos_began', '_scratch_card_image', '_scratch_card_touch_image', 'addChild', 'child', 'childex', 'color', 'getContentSize', 'opacity', 'rchild', 'rchildex', 'scale', 'scale_tick_timer', 'scale_x', 'scale_y', 'setContentSize', 'setZoomChildren', 'visible', 'zoomChildren']
+node.widget <cc.Node object at 0x00000259F7501E50> type=<class 'cc.Node'>
+node.widget.getName='Node'
+node.widget.getChildrenCount=1
+node.widget.getContentSize=Size(0.000000, 0.000000)
+node.widget.getPosition=Vec2(0.000000, 0.000000)
+node.widget.getPositionX=0.0
+node.widget.getPositionY=0.0
+node.widget.getScale=1.0
+node.widget.getScaleX=1.0
+node.widget.getScaleY=1.0
+node.widget.isVisible=True
+node.widget.getAnchorPoint=Vec2(0.000000, 0.000000)
+node.widget.interesting=['addChild', 'addChildByIndex', 'convertProxyChildrenToChildren', 'copyNodeClonedChildren', 'enableFontScale', 'enableFontScaleRecursively', 'getChildByName', 'getChildByTag', 'getChildren', 'getChildrenCount', 'getColor', 'getContentSize', 'getDisplayedColor', 'getDisplayedOpacity', 'getNormalizedPosition', 'getOpacity', 'getPosition', 'getPosition3D', 'getPositionX', 'getPositionY', 'getPositionZ', 'getScale', 'getScaleX', 'getScaleY', 'getScaleZ', 'ignoreAnchorPointForPosition', 'isCascadeColorEnabled', 'isCascadeOpacityEnabled', 'isIgnoreAnchorPointForPosition', 'isUseProxyChild', 'isVisible', 'removeAllChildren', 'removeAllProxyChildren', 'removeChild', 'removeChildByName', 'removeChildByTag', 'reorderChild', 'setCascadeColorEnabled', 'setCascadeOpacityEnabled', 'setColor', 'setColorRecursively', 'setContentSize', 'setNormalizedPosition', 'setOpacity', 'setOpacityRecursively', 'setPosition', 'setPosition3D', 'setPositionX', 'setPositionY', 'setPositionZ', 'setScale', 'setScaleX', 'setScaleY', 'setScaleZ', 'setUseProxyChild', 'setVisible', 'sortAllChildren', 'updateDisplayedColor', 'updateDisplayedOpacity', 'updateLayoutChildrenClippingType']
+node.widget.child[0] <ccui.Layout object at 0x00000259F7501950> type=<class 'ccui.Layout'>
+node.widget.child[0].getName='panel_frame'
+node.widget.child[0].getChildrenCount=3
+node.widget.child[0].getContentSize=Size(58.000000, 152.000000)
+node.widget.child[0].getPosition=Vec2(0.000000, 0.000000)
+node.widget.child[0].getPositionX=0.0
+node.widget.child[0].getPositionY=0.0
+node.widget.child[0].getScale=0.5612410306930542
+node.widget.child[0].getScaleX=0.5612410306930542
+node.widget.child[0].getScaleY=0.5612410306930542
+node.widget.child[0].isVisible=True
+node.widget.child[0].getAnchorPoint=Vec2(0.500000, 0.500000)
+node.widget.child[0].interesting=['addChild', 'addChildByIndex', 'addProtectedChild', 'convertProxyChildrenToChildren', 'copyClonedWidgetChildren', 'copyNodeClonedChildren', 'enableFontScale', 'enableFontScaleRecursively', 'enableTouchAreaImage', 'getBackGroundColor', 'getBackGroundColorOpacity', 'getBackGroundColorType', 'getBackGroundColorVector', 'getBackGroundEndColor', 'getBackGroundImage', 'getBackGroundImageCapInsets', 'getBackGroundImageColor', 'getBackGroundImageOpacity', 'getBackGroundImageTextureSize', 'getBackGroundStartColor', 'getChildByName', 'getChildByTag', 'getChildren', 'getChildrenCount', 'getColor', 'getContentSize', 'getCustomSize', 'getDisplayedColor', 'getDisplayedOpacity', 'getLayoutSize', 'getNodeSpaceTouchBeganPosition', 'getNodeSpaceTouchEndPosition', 'getNodeSpaceTouchMovePosition', 'getNormalizedPosition', 'getOpacity', 'getPosition', 'getPosition3D', 'getPositionPercent', 'getPositionType', 'getPositionX', 'getPositionY', 'getPositionZ', 'getProtectedChildByTag', 'getProtectedChildren', 'getScale', 'getScaleX', 'getScaleY', 'getScaleZ', 'getSizePercent', 'getSizeType', 'getTexture', 'getTextureResType', 'getTouchBeganPosition', 'getTouchEndPosition', 'getTouchMovePosition', 'getVirtualRendererSize', 'getWindowPosition', 'getWorldPosition', 'ignoreAnchorPointForPosition', 'ignoreContentAdaptWithSize', 'isBackGroundImageScale9Enabled', 'isCascadeColorEnabled', 'isCascadeOpacityEnabled', 'isIgnoreAnchorPointForPosition', 'isIgnoreContentAdaptWithSize', 'isUnifySizeEnabled', 'isUseProxyChild', 'isVisible', 'removeAllChildren', 'removeAllProtectedChildren', 'removeAllProtectedChildrenWithCleanup', 'removeAllProxyChildren', 'removeBackGroundImage', 'removeChild', 'removeChildByName', 'removeChildByTag', 'removeProtectedChild', 'removeProtectedChildByTag', 'reorderChild', 'reorderProtectedChild', 'setBackGroundColor', 'setBackGroundColorOpacity', 'setBackGroundColorType', 'setBackGroundColorVector', 'setBackGroundImage', 'setBackGroundImageCapInsets', 'setBackGroundImageColor', 'setBackGroundImageOpacity', 'setBackGroundImageScale9Enabled', 'setBackGroundTextureRect', 'setBackgroundImageExternal', 'setCascadeColorEnabled', 'setCascadeOpacityEnabled', 'setChildrenRecursivelyDisableSwallowTouches', 'setColor', 'setColorRecursively', 'setContentSize', 'setNormalizedPosition', 'setOpacity', 'setOpacityRecursively', 'setPosition', 'setPosition3D', 'setPositionPercent', 'setPositionType', 'setPositionX', 'setPositionY', 'setPositionZ', 'setScale', 'setScaleX', 'setScaleY', 'setScaleZ', 'setSizePercent', 'setSizeType', 'setUnifySizeEnabled', 'setUseProxyChild', 'setVisible', 'sortAllChildren', 'sortAllChildrenByTag', 'touchAreaImageEnable', 'updateDisplayedColor', 'updateDisplayedOpacity', 'updateLayoutChildrenClippingType', 'updateSizeAndPosition']
+node.widget.child[0].child[0] <ccui.ImageView object at 0x00000259D7DB9E90> type=<class 'ccui.ImageView'>
+node.widget.child[0].child[0].getName='img_bg'
+node.widget.child[0].child[0].getChildrenCount=0
+node.widget.child[0].child[0].getContentSize=Size(200.000000, 300.000000)
+node.widget.child[0].child[0].getPosition=Vec2(29.000000, 76.000000)
+node.widget.child[0].child[0].getPositionX=29.0
+node.widget.child[0].child[0].getPositionY=76.0
+node.widget.child[0].child[0].getScale=0.28999999165534973
+node.widget.child[0].child[0].getScaleX=0.28999999165534973
+node.widget.child[0].child[0].getScaleY=0.5066666603088379
+node.widget.child[0].child[0].isVisible=True
+node.widget.child[0].child[0].getAnchorPoint=Vec2(0.500000, 0.500000)
+node.widget.child[0].child[0].interesting=['addChild', 'addChildByIndex', 'addProtectedChild', 'convertProxyChildrenToChildren', 'copyClonedWidgetChildren', 'copyNodeClonedChildren', 'enableFontScale', 'enableFontScaleRecursively', 'enableTouchAreaImage', 'getChildByName', 'getChildByTag', 'getChildren', 'getChildrenCount', 'getColor', 'getContentSize', 'getCustomSize', 'getDisplayedColor', 'getDisplayedOpacity', 'getLayoutSize', 'getNodeSpaceTouchBeganPosition', 'getNodeSpaceTouchEndPosition', 'getNodeSpaceTouchMovePosition', 'getNormalizedPosition', 'getOpacity', 'getPosition', 'getPosition3D', 'getPositionPercent', 'getPositionType', 'getPositionX', 'getPositionY', 'getPositionZ', 'getProtectedChildByTag', 'getProtectedChildren', 'getScale', 'getScaleX', 'getScaleY', 'getScaleZ', 'getSizePercent', 'getSizeType', 'getTexture', 'getTextureResType', 'getTouchBeganPosition', 'getTouchEndPosition', 'getTouchMovePosition', 'getVertexOpacity', 'getVirtualRendererSize', 'getWindowPosition', 'getWorldPosition', 'ignoreAnchorPointForPosition', 'ignoreContentAdaptWithSize', 'isCascadeColorEnabled', 'isCascadeOpacityEnabled', 'isIgnoreAnchorPointForPosition', 'isIgnoreContentAdaptWithSize', 'isScale9Enabled', 'isUnifySizeEnabled', 'isUseProxyChild', 'isVisible', 'loadTexture', 'loadTextureData', 'removeAllChildren', 'removeAllProtectedChildren', 'removeAllProtectedChildrenWithCleanup', 'removeAllProxyChildren', 'removeChild', 'removeChildByName', 'removeChildByTag', 'removeProtectedChild', 'removeProtectedChildByTag', 'reorderChild', 'reorderProtectedChild', 'resizeContentSize', 'setCascadeColorEnabled', 'setCascadeOpacityEnabled', 'setChildrenRecursivelyDisableSwallowTouches', 'setColor', 'setColorRecursively', 'setContentSize', 'setExternalImage', 'setExternalImage2', 'setExternalImageBySize', 'setNormalizedPosition', 'setOpacity', 'setOpacityRecursively', 'setPosition', 'setPosition3D', 'setPositionPercent', 'setPositionType', 'setPositionX', 'setPositionY', 'setPositionZ', 'setScale', 'setScale9Enabled', 'setScaleX', 'setScaleY', 'setScaleZ', 'setSizePercent', 'setSizeType', 'setTextureRect', 'setUnifySizeEnabled', 'setUseProxyChild', 'setVertexOpacity', 'setVisible', 'sortAllChildren', 'touchAreaImageEnable', 'updateDisplayedColor', 'updateDisplayedOpacity', 'updateLayoutChildrenClippingType', 'updateSizeAndPosition', 'updateTextureCoord', 'updateTextureValue', 'updateVertexColor']
+node.widget.child[0].child[1] <ccui.ImageView object at 0x00000259D7DCDC30> type=<class 'ccui.ImageView'>
+node.widget.child[0].child[1].getName='img_bg_0'
+node.widget.child[0].child[1].getChildrenCount=0
+node.widget.child[0].child[1].getContentSize=Size(200.000000, 300.000000)
+node.widget.child[0].child[1].getPosition=Vec2(29.000000, 76.000000)
+node.widget.child[0].child[1].getPositionX=29.0
+node.widget.child[0].child[1].getPositionY=76.0
+node.widget.child[0].child[1].getScale=0.28999999165534973
+node.widget.child[0].child[1].getScaleX=0.28999999165534973
+node.widget.child[0].child[1].getScaleY=0.5066666603088379
+node.widget.child[0].child[1].isVisible=True
+node.widget.child[0].child[1].getAnchorPoint=Vec2(0.500000, 0.500000)
+node.widget.child[0].child[1].interesting=['addChild', 'addChildByIndex', 'addProtectedChild', 'convertProxyChildrenToChildren', 'copyClonedWidgetChildren', 'copyNodeClonedChildren', 'enableFontScale', 'enableFontScaleRecursively', 'enableTouchAreaImage', 'getChildByName', 'getChildByTag', 'getChildren', 'getChildrenCount', 'getColor', 'getContentSize', 'getCustomSize', 'getDisplayedColor', 'getDisplayedOpacity', 'getLayoutSize', 'getNodeSpaceTouchBeganPosition', 'getNodeSpaceTouchEndPosition', 'getNodeSpaceTouchMovePosition', 'getNormalizedPosition', 'getOpacity', 'getPosition', 'getPosition3D', 'getPositionPercent', 'getPositionType', 'getPositionX', 'getPositionY', 'getPositionZ', 'getProtectedChildByTag', 'getProtectedChildren', 'getScale', 'getScaleX', 'getScaleY', 'getScaleZ', 'getSizePercent', 'getSizeType', 'getTexture', 'getTextureResType', 'getTouchBeganPosition', 'getTouchEndPosition', 'getTouchMovePosition', 'getVertexOpacity', 'getVirtualRendererSize', 'getWindowPosition', 'getWorldPosition', 'ignoreAnchorPointForPosition', 'ignoreContentAdaptWithSize', 'isCascadeColorEnabled', 'isCascadeOpacityEnabled', 'isIgnoreAnchorPointForPosition', 'isIgnoreContentAdaptWithSize', 'isScale9Enabled', 'isUnifySizeEnabled', 'isUseProxyChild', 'isVisible', 'loadTexture', 'loadTextureData', 'removeAllChildren', 'removeAllProtectedChildren', 'removeAllProtectedChildrenWithCleanup', 'removeAllProxyChildren', 'removeChild', 'removeChildByName', 'removeChildByTag', 'removeProtectedChild', 'removeProtectedChildByTag', 'reorderChild', 'reorderProtectedChild', 'resizeContentSize', 'setCascadeColorEnabled', 'setCascadeOpacityEnabled', 'setChildrenRecursivelyDisableSwallowTouches', 'setColor', 'setColorRecursively', 'setContentSize', 'setExternalImage', 'setExternalImage2', 'setExternalImageBySize', 'setNormalizedPosition', 'setOpacity', 'setOpacityRecursively', 'setPosition', 'setPosition3D', 'setPositionPercent', 'setPositionType', 'setPositionX', 'setPositionY', 'setPositionZ', 'setScale', 'setScale9Enabled', 'setScaleX', 'setScaleY', 'setScaleZ', 'setSizePercent', 'setSizeType', 'setTextureRect', 'setUnifySizeEnabled', 'setUseProxyChild', 'setVertexOpacity', 'setVisible', 'sortAllChildren', 'touchAreaImageEnable', 'updateDisplayedColor', 'updateDisplayedOpacity', 'updateLayoutChildrenClippingType', 'updateSizeAndPosition', 'updateTextureCoord', 'updateTextureValue', 'updateVertexColor']
+node.widget.child[0].child[2] <ccui.ImageView object at 0x00000259D8E54670> type=<class 'ccui.ImageView'>
+node.widget.child[0].child[2].getName='img_bg_0_0'
+node.widget.child[0].child[2].getChildrenCount=0
+node.widget.child[0].child[2].getContentSize=Size(200.000000, 300.000000)
+node.widget.child[0].child[2].getPosition=Vec2(29.000000, 76.000000)
+node.widget.child[0].child[2].getPositionX=29.0
+node.widget.child[0].child[2].getPositionY=76.0
+node.widget.child[0].child[2].getScale=0.28999999165534973
+node.widget.child[0].child[2].getScaleX=0.28999999165534973
+node.widget.child[0].child[2].getScaleY=0.5066666603088379
+node.widget.child[0].child[2].isVisible=True
+node.widget.child[0].child[2].getAnchorPoint=Vec2(0.500000, 0.500000)
+node.widget.child[0].child[2].interesting=['addChild', 'addChildByIndex', 'addProtectedChild', 'convertProxyChildrenToChildren', 'copyClonedWidgetChildren', 'copyNodeClonedChildren', 'enableFontScale', 'enableFontScaleRecursively', 'enableTouchAreaImage', 'getChildByName', 'getChildByTag', 'getChildren', 'getChildrenCount', 'getColor', 'getContentSize', 'getCustomSize', 'getDisplayedColor', 'getDisplayedOpacity', 'getLayoutSize', 'getNodeSpaceTouchBeganPosition', 'getNodeSpaceTouchEndPosition', 'getNodeSpaceTouchMovePosition', 'getNormalizedPosition', 'getOpacity', 'getPosition', 'getPosition3D', 'getPositionPercent', 'getPositionType', 'getPositionX', 'getPositionY', 'getPositionZ', 'getProtectedChildByTag', 'getProtectedChildren', 'getScale', 'getScaleX', 'getScaleY', 'getScaleZ', 'getSizePercent', 'getSizeType', 'getTexture', 'getTextureResType', 'getTouchBeganPosition', 'getTouchEndPosition', 'getTouchMovePosition', 'getVertexOpacity', 'getVirtualRendererSize', 'getWindowPosition', 'getWorldPosition', 'ignoreAnchorPointForPosition', 'ignoreContentAdaptWithSize', 'isCascadeColorEnabled', 'isCascadeOpacityEnabled', 'isIgnoreAnchorPointForPosition', 'isIgnoreContentAdaptWithSize', 'isScale9Enabled', 'isUnifySizeEnabled', 'isUseProxyChild', 'isVisible', 'loadTexture', 'loadTextureData', 'removeAllChildren', 'removeAllProtectedChildren', 'removeAllProtectedChildrenWithCleanup', 'removeAllProxyChildren', 'removeChild', 'removeChildByName', 'removeChildByTag', 'removeProtectedChild', 'removeProtectedChildByTag', 'reorderChild', 'reorderProtectedChild', 'resizeContentSize', 'setCascadeColorEnabled', 'setCascadeOpacityEnabled', 'setChildrenRecursivelyDisableSwallowTouches', 'setColor', 'setColorRecursively', 'setContentSize', 'setExternalImage', 'setExternalImage2', 'setExternalImageBySize', 'setNormalizedPosition', 'setOpacity', 'setOpacityRecursively', 'setPosition', 'setPosition3D', 'setPositionPercent', 'setPositionType', 'setPositionX', 'setPositionY', 'setPositionZ', 'setScale', 'setScale9Enabled', 'setScaleX', 'setScaleY', 'setScaleZ', 'setSizePercent', 'setSizeType', 'setTextureRect', 'setUnifySizeEnabled', 'setUseProxyChild', 'setVertexOpacity', 'setVisible', 'sortAllChildren', 'touchAreaImageEnable', 'updateDisplayedColor', 'updateDisplayedOpacity', 'updateLayoutChildrenClippingType', 'updateSizeAndPosition', 'updateTextureCoord', 'updateTextureValue', 'updateVertexColor']
+END
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK n=1800 total=23 players=[('anFMmksxNr+4vtxr', (-16.123294830322266, 0.05000004544854164, 1.6333431005477905))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 16.6999679282248, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 16.789861887486158, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 23.552507899148228, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 32.48968190231023, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.320396423339844, 0.06699013710021973, 2.5996055603027344), 42.45469207332141, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 18.846507792845852, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK n=1840 total=23 players=[('anFMmksxNr+4vtxr', (-16.123294830322266, 0.05000004544854164, 1.6333431005477905))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 16.6999679282248, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 16.789861887486158, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 23.552507899148228, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 32.48968190231023, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.320396423339844, 0.06699013710021973, 2.5996055603027344), 42.45469207332141, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 18.846507792845852, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK n=1880 total=23 players=[('anFMmksxNr+4vtxr', (-3.429422378540039, 0.0694517269730568, -3.1346435546875))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 6.370844948190586, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 11.637222746455434, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 10.035104098875069, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 19.73014131838574, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.320396423339844, 0.06699013710021973, 2.5996055603027344), 30.29741470351681, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 26.477139588938936, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+
+TICK_EXC
+Traceback (most recent call last):
+  File "<string>", line 756, in tick
+  File "<string>", line 339, in ensure_toplogo
+TypeError: cannot unpack non-iterable bool object
+

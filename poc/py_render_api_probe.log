@@ -1,0 +1,134 @@
+BEGIN 1785813721.764899
+MRender=['AddAffiliatedRender', 'AddAffiliatedViewport', 'AddExtMaskOfPreCompileShaderProgram', 'BakeDecalOnModel', 'BakeTexture', 'BakeTextureInDuration', 'CaptureSequence', 'ClearDynamicTexture', 'ClearSemanticToAffiliatedViewport', 'CompileMissShaders', 'CompleteRealTimeBakeDecal', 'CreateDynamicTexture', 'CreateTexture2dArrayRuntime', 'CreateTextureAtlas', 'CreateTextureAtlasInFormat', 'DestroyDynamicTexture', 'DestroyTexture2DArrayRuntime', 'DestroyTextureAtlas', 'DissolveTransitDynamic', 'DissolveTransitStatic', 'Diy0ToPercent', 'Diy1ToPercent', 'DrawSphereOnHeightmap', 'EnableCloudGodRayRendering', 'EnableCollectShaderCacheMiss', 'EnableCompactTextureHeaderFirst', 'EnableCompilingElementShader', 'EnableCompilingFallbackShader', 'EnableCompilingMaterialShader', 'EnableComputePass', 'EnableDOFRendering', 'EnableDissolveTransition', 'EnableDynamicResourceAlis', 'EnableFallbackShader', 'EnableFeedElementShader', 'EnableFeedMaterialShader', 'EnableFoliageIndirectRendering', 'EnableFoliageIndirectWorkaround', 'EnableFrameExtrapolation', 'EnableHDRDisplay', 'EnableHDRRendering', 'EnableHMotionBlurRendering', 'EnableManipulatorRender', 'EnableMiniFallBackShader', 'EnablePredictShader', 'EnableRendering', 'EnableSMAA', 'EnableSSAO', 'EnableShaderCacheWrite', 'EnableShaderGraphPostProcess', 'EnableShaderHttpFetch', 'EnableTSAARendering', 'EnableTileMemoryHeap', 'EnableVBufferGen', 'EnableVolumetricCloudRendering', 'EnableVolumetricFogLighting', 'FlushFSRHistory', 'ForceRefreshCandelaSDF', 'ForceRefreshShadowMap', 'ForceRefreshShelterMap', 'ForceRefreshStaticMaps', 'GetAffiliatedRenderOption', 'GetAffiliatedRenderOptions', 'GetAffiliatedRenderTextureId', 'GetAffiliatedViewportTextureId', 'GetAvgCompileShaderElapsedTime', 'GetAvgDownloadShaderElapsedTime', 'GetCompiledShaderProfiles', 'GetDebugOption', 'GetDynamicTextureData', 'GetParameter', 'GetParameterCollectionValue', 'GetParameterID', 'GetPresetGraphicsLevel', 'GetPresetGraphicsLevelDeviceName', 'GetRenderOption', 'GetRenderOptions', 'GetShaderCacheMissRecords', 'GetShaderCacheNames', 'GetShaderCacheProfiles', 'GetShaderHttpFetchRate', 'GetShaderSimulateBusyWaiting', 'GetSupportMaxMultisampleQuality', 'GrayToPercent', 'IsCompactTextureHeaderFirst', 'IsDeferredRendering', 'IsEnableCandelaGI', 'IsEnableDLSS', 'IsEnableEnvRendering', 'IsEnableFog', 'IsEnableSGSR', 'IsEnableSSSRendering', 'IsEnableScreenSpaceReflection', 'IsEncodeHDR', 'IsFullRTDeferred', 'IsGodRayRendering', 'IsSupportMSAA', 'Link3DUIToAffiliatedViewport', 'LinkSemanticToAffiliatedRender', 'LinkSemanticToAffiliatedViewport', 'LoadDynamicTexture', 'LoadShaderCache', 'LoadShaderSource', 'MotionBlurToPercent', 'NeedGBufferNormal', 'OldMovieToPercent', 'PreCompileShaderProgramOfMap', 'PreCompileShaderProgramOfMapByPythonConfig', 'PreCompileShaders', 'PreloadPSO', 'PyStartCollectPSOInfo', 'ReadOnBlackBoard', 'RealTimeBakeDecalOnModel', 'RefreshOneShaderSource', 'RefreshShaderCache', 'RefreshShaderSource', 'RemoveAffiliatedRender', 'RemoveAffiliatedViewport', 'ResetAllParameterCollections', 'ResetParameterCollection', 'ResetShaderGraphParameters', 'SavePSOInfo', 'SaveTextureAtlasToFile', 'SetAffiliatedRenderOption', 'SetAffiliatedRenderOptions', 'SetAffiliatedRenderRenderOption', 'SetAffiliatedViewportRenderTargetResource', 'SetColorGrading', 'SetCompileShaderNotification', 'SetDebugDrawFlag', 'SetDebugOption', 'SetDiy0Param', 'SetDiy1Param', 'SetDiyParameter', 'SetDiyTexture', 'SetDynamicTexturePixel', 'SetFrameInterpRenderMode', 'SetGlobalParticleLOD', 'SetImpactStrength', 'SetMaxForwardLights', 'SetMaxPreloadPSOCount', 'SetOnlyDrawUIs', 'SetPSOConfigVersion', 'SetPSODisabled', 'SetPSOEnabled', 'SetParameterCollectionValue', 'SetParameterModifer', 'SetPreCompileShaderComplexityNotification', 'SetPreCompileShaderProgressNotification', 'SetPreCompileShaderProgressNotificationEx', 'SetPrecompileShadersOfMapCallback', 'SetRenderOption', 'SetRenderOptions', 'SetRenderResourceDelayDeleteInterval', 'SetReportDetails', 'SetScreenColor', 'SetSelectedColor', 'SetShaderGlobalMask', 'SetShaderGraphParameter', 'SetShaderHttpFetchData', 'SetShaderHttpFetchHeader', 'SetShaderSimulateBusyWaiting', 'SetShaderVariationConfig', 'SetShaderVariationFilterStatus', 'SetTextureMipLevelOffsets', 'SetVisibilityForReport', 'SplitLocalCompiled', 'SupportMipDistance', 'TransformFromHudWorldToWorld', 'TransformFromWorldToHudWorld', 'UpdateAffiliatedRenderResolution', 'UpdateAffiliatedViewportResolution', 'UpdateDynamicTexture', 'UpdateRealTimeDecalCamera', 'WriteOnBlackBoard', 'WriteShaderCache']
+player.type=<class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.PlayerCombatAvatarShootingRange'> names=['AddCameraEffect', 'AddCameraEffectByBuff', 'AddSceneCenterMark', 'AddWorldField', 'ApplyCameraKeyframe', 'CacheModel', 'CallClientSpectatorCamera', 'CameraRotateOnKnock', 'CameraRotateOnVehicle', 'CanRotateCamera', 'CancelRemoveCameraEffectTimer', 'CancelReplayOnUploadCameraTimer', 'ChangeParachuteCameraMode', 'CheckCanShowLowerModelForFps', 'CheckPreloadExecuteThirdModel', 'CheckVehicleHitInScene', 'ClearArmorCameraEffects', 'ClearCloseParachuteAttachModel', 'ClearPerkHintSceneEffect', 'ClearSpaceTeleportPreviewLine', 'ClearWaitBombModelTimer', 'ClientAddCameraEffect', 'ClientRemoveCameraEffect', 'CreateCommonMarkToplogoSceneOnly', 'CreateMarkWorldEffect', 'CreateMeowDanceModel', 'CreateModelFollow', 'CreateWingModel', 'CreateWorldFieldFollow', 'DelSceneCenterMark', 'DestroyAllMarkWorldEffect', 'DestroyCommonMarkToplogoSceneOnly', 'DestroyJuRenLiTiModel', 'DestroyMarkWorldEffect', 'DestroyMeowDanceModel', 'DestroyWingModel', 'DisEnableSpecifyWorldField', 'EnableSpecifyWorldField', 'EnterTempFirstPersonView', 'ExecuteCreateThirdPersonModel', 'ExitAllTempFirstPersonView', 'ExitTempFirstPersonView', 'ForceRemoveModelFollow', 'GetCameraId', 'GetEmoteModelInfo', 'GetExecuteThirdModel', 'GetModelData', 'GetReplaceModelID', 'GetTargetDamageTextWorldPosition', 'HideAllCommonMarkToplogoSceneOnly', 'HideAttachModelForDead', 'HideHandModelForCalculation', 'HideHeroAttachModel', 'HideWingModel', 'InitAvatarModel', 'IsJurenFlySlashCamera', 'IsLockTpsParachuteCamera', 'IsTitan2ArmorCameraEffectDisabled', 'LeanOutHelicopterForCameraLimit', 'ModelOnHandleAdsChanged', 'ModelOnHandleReplayAdsChanged', 'NeedAddAdvancedHuntFlaggedModel', 'OnCameraModeChangeForBeard', 'OnCombatItemModelCreated', 'OnCombatItemModelDestroy', 'OnCombatStateChangeForCameraEffect', 'OnLoadModel', 'OnLookAroundCameraForPara', 'OnMeowDanceModelLoaded', 'OnModelLoadedForResetUnit', 'OnPlayWingModelAnim', 'OnReloadHandModel', 'OnReloadModel', 'OnReplayCameraModeChange', 'OnReplayHandModelLoaded', 'OnReplayHandModelReloaded', 'OnRotateCamera', 'OnWeaponModelLoaded_RefreshTechState', 'PlayArmorCameraEffect', 'PlayEffectPathInWorld', 'PlayExtraArmorCameraEffect', 'PlayGrapplingHookRopeModel', 'PlayGrapplingHookRopeModelImp_Hand', 'PlayGrapplingHookRopeModelImp_avatar', 'PlayGrapplingHookRopeModelTick', 'PlayJuRenLiTiLeftModel', 'PlayJuRenLiTiModel', 'PlayJuRenLiTiModelImp', 'PlayJuRenLiTiRightModel', 'PlayPerkHintSoundAndSceneEffect', 'PlayWingModelAnim', 'PlayerInput_OnChangeParachuteCameraMode', 'PullPlayerFromMagicFieldModelInside', 'RefreshCameraOnVehicle', 'RefreshLockTpsParachuteCamera', 'RefreshLowerModelForPara', 'Reload3PModelForVehicle', 'RemoveAllCameraEffect', 'RemoveCameraEffect', 'RemoveCameraEffectByBuff', 'RemoveModelFollow', 'RemoveWorldField', 'RemoveWorldFieldFollow', 'ReplayForHandModel', 'ReplayOnPackCamera', 'ReplayOnRecvCameraStream', 'ReplayOnUploadCamera', 'ReplaySpectatorHandModelStatus', 'RestoreBuffCameraEffect', 'SetAllCameraEffectVisible', 'SetCameraCtrlTargetExecute', 'SetCameraLeanOut', 'SetCameraOnVehicle', 'SetEnableWorldFieldFadeTime', 'ShouldRestoreCameraAfterParachute', 'ShowAttachModelForDead', 'ShowModel', 'ShowWingModel', 'SortAndActiveWorldField', 'SpectatorHandModelStatus', 'StartSpaceTeleportPreviewLine', 'StopCameraUploadAfterSettle', 'StopGrapplingHookRopeModel', 'SwitchCameraForDrone', 'SwitchCameraOnDroneControllingStateChanged', 'SwitchToEmoteCamera', 'SwitchToFlyCamera', 'SwitchToMeowDanceCamera', 'TickVehicleHitInScene', '_CheckRedundantHandModelStatus', '_DamageModelEffect', '_DelayDisableSpecifyWorldField', '_GetCameraData_AIM', '_GetCameraData_CamCtrl', '_GetCameraData_DEATH', '_GetCameraData_Emote', '_GetCameraData_FPS', '_GetCameraData_FREE', '_GetCameraData_TPS', '_PlayJuRenLiTiModelImpWithoutDlcCheck', '_PlayWhiteScreenUIForExecuteChangeUI', '_RefreshExecuteOriginSkinView', '_RestoreCameraFromTempFpv', '_SetCameraToFreeFall', '_SetCameraToParachute', '_SetRescueOtherModelAction', '_SetRescueOtherThirdPersonModelAction', '_execute_third_model', '_on_set_envy_model_scale', '_temp_fpv_camera_id_before', 'attach_model_dict', 'auto_refill_bomb_model_effect_id', 'buff_camera_effect_tmp', 'camera_date_getters', 'camera_effect_ids', 'camera_effect_timers', 'camera_id_before_ads', 'client_spectator_camera_stream', 'cur_active_world_field_id', 'cure_uav_camera_effect', 'custom_attach_model', 'disable_sky_render_by_calculation', 'distance_from_camera', 'grappling_hook_model', 'hand_model', 'hand_model_id', 'hand_model_status_cache', 'hand_model_status_hits', 'hand_model_status_last', 'hand_model_status_statistic', 'hand_model_status_total', 'handmodel_status', 'holding_camera_effect_ids', 'is_player_set_camera', 'is_temp_first_person_view', 'juren_effect_model_left', 'juren_effect_model_right', 'last_camera_frame', 'meow_dance_model', 'model', 'model_loaded', 'perk_armor_broker_up_model_effect_id', 'perk_kinetic_energy_recovery_camera_effect_id', 'perk_kinetic_energy_recovery_model_effect_id', 'perk_melee_damage_up_model_effect_ids', 'rage_model_effect_id', 'replay_camera_expired', 'replay_camera_stamp', 'replay_camera_stream', 'replay_on_upload_camera_timer', 'replay_upload_camera_interval', 'sky_render_switcher', 'space_teleport_preview_line', 'thruster_pack_model', 'tmp_window_scene', 'unit_model_id', 'use_camera_fps_for_para', 'wait_bomb_model_fsm_timer', 'wait_bomb_model_guid', 'wing_model', 'world_fields']
+player._execute_third_model=None
+player._temp_fpv_camera_id_before=0
+player.attach_model_dict={}
+player.auto_refill_bomb_model_effect_id=None
+player.buff_camera_effect_tmp={}
+player.camera_date_getters={0: <bound method PlayerCombatAvatarMember._GetCameraData_TPS of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 1: <bound method PlayerCombatAvatarMember._GetCameraData_FPS of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 2: <bound method PlayerCombatAvatarMember._GetCameraData_TPS of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 3: <bound method PlayerCombatAvatarMember._GetCameraData_AIM of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 4: <bound method PlayerCombatAvatarMember._GetCameraData_DEATH of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 5: <bound method PlayerCombatAvatarMember._GetCameraData_FREE of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 6: <bound method PlayerCombatAvatarMember._GetCameraData_CamCtrl of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 7: <bound method PlayerCombatAvatarMember._GetCameraData_Emote of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>, 8: <bound method PlayerCombatAvatarMember._GetCameraData_TPS of <PlayerCombatAvatarShootingRange(anFUG0sxNr+4wLF0)>>}
+player.camera_effect_ids={}
+player.camera_effect_timers={}
+player.camera_id_before_ads=None
+player.client_spectator_camera_stream=[]
+player.cur_active_world_field_id=6
+player.cure_uav_camera_effect=None
+robot.type=<class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.RobotCombatAvatarShootingRange'> names=['AddCameraEffect', 'AddCameraEffectByBuff', 'AddWorldField', 'ApplyCameraKeyframe', 'CacheModel', 'CancelRemoveCameraEffectTimer', 'CheckPreloadExecuteThirdModel', 'ClearArmorCameraEffects', 'ClearCloseParachuteAttachModel', 'ClearPerkHintSceneEffect', 'CreateMeowDanceModel', 'CreateModelFollow', 'CreateWingModel', 'CreateWorldFieldFollow', 'DestroyJuRenLiTiModel', 'DestroyMeowDanceModel', 'DestroyWingModel', 'DisEnableSpecifyWorldField', 'EnableSpecifyWorldField', 'ExecuteCreateThirdPersonModel', 'GetExecuteThirdModel', 'GetModelData', 'GetReplaceModelID', 'GetSceneNodeClass', 'HideAttachModelForDead', 'HideHeroAttachModel', 'HideWingModel', 'InitAvatarModel', 'IsCameraHitMe', 'IsTitan2ArmorCameraEffectDisabled', 'NeedAddAdvancedHuntFlaggedModel', 'OnCombatStateChangeForCameraEffect', 'OnLoadModel', 'OnMeowDanceModelLoaded', 'OnPlayWingModelAnim', 'OnReloadHandModel', 'OnReloadModel', 'OnReplayHandModelLoaded', 'OnReplayHandModelReloaded', 'PlayArmorCameraEffect', 'PlayEffectPathInWorld', 'PlayExtraArmorCameraEffect', 'PlayGrapplingHookRopeModel', 'PlayGrapplingHookRopeModelImp_Hand', 'PlayGrapplingHookRopeModelImp_avatar', 'PlayGrapplingHookRopeModelTick', 'PlayJuRenLiTiLeftModel', 'PlayJuRenLiTiModel', 'PlayJuRenLiTiModelImp', 'PlayJuRenLiTiRightModel', 'PlayPerkHintSoundAndSceneEffect', 'PlayWingModelAnim', 'RemoveAllCameraEffect', 'RemoveCameraEffect', 'RemoveCameraEffectByBuff', 'RemoveModelFollow', 'RemoveWorldField', 'RemoveWorldFieldFollow', 'ReplayForHandModel', 'ReplayOnPackCamera', 'ReplayOnRecvCameraStream', 'ReplayOnUploadCamera', 'RestoreBuffCameraEffect', 'SetCameraCtrlTargetExecute', 'SetEnableWorldFieldFadeTime', 'ShouldRestoreCameraAfterParachute', 'ShowAttachModelForDead', 'ShowModel', 'ShowWingModel', 'SortAndActiveWorldField', 'SpectatorHandModelStatus', 'StopGrapplingHookRopeModel', 'SwitchCameraForDrone', 'SwitchCameraOnDroneControllingStateChanged', 'SwitchToFlyCamera', '_DamageModelEffect', '_DelayDisableSpecifyWorldField', '_PlayJuRenLiTiModelImpWithoutDlcCheck', '_RefreshExecuteOriginSkinView', '_SetRescueOtherModelAction', '_SetRescueOtherThirdPersonModelAction', '_execute_third_model', '_on_set_envy_model_scale', 'ai_camera_controller', 'ai_camera_ticker', 'attach_model_dict', 'auto_refill_bomb_model_effect_id', 'buff_camera_effect_tmp', 'camera_controller', 'camera_effect_ids', 'camera_effect_timers', 'cur_active_world_field_id', 'cure_uav_camera_effect', 'custom_attach_model', 'disable_sky_render_by_calculation', 'distance_from_camera', 'grappling_hook_model', 'hand_model', 'hand_model_id', 'hand_model_status_cache', 'hand_model_status_hits', 'hand_model_status_last', 'hand_model_status_statistic', 'hand_model_status_total', 'handmodel_status', 'holding_camera_effect_ids', 'is_temp_first_person_view', 'juren_effect_model_left', 'juren_effect_model_right', 'meow_dance_model', 'model', 'model_loaded', 'perk_armor_broker_up_model_effect_id', 'perk_kinetic_energy_recovery_camera_effect_id', 'perk_kinetic_energy_recovery_model_effect_id', 'perk_melee_damage_up_model_effect_ids', 'rage_model_effect_id', 'replay_camera_stamp', 'replay_camera_stream', 'scene_node_class', 'sky_render_switcher', 'thruster_pack_model', 'tmp_window_scene', 'unit_model_id', 'wing_model', 'world_fields']
+robot._execute_third_model=None
+robot.ai_camera_controller=None
+robot.ai_camera_ticker=None
+robot.attach_model_dict={}
+robot.auto_refill_bomb_model_effect_id=None
+robot.buff_camera_effect_tmp={}
+robot.camera_controller=<gclient.gameplay.logic_base.bot.camera_controller.CameraController object at 0x00000259D30D9440>
+robot.camera_effect_ids={}
+robot.camera_effect_timers={}
+robot.cur_active_world_field_id=None
+robot.cure_uav_camera_effect=None
+robot.custom_attach_model=None
+robot.disable_sky_render_by_calculation=False
+robot.distance_from_camera=-1.0
+robot.grappling_hook_model=None
+robot.hand_model=None
+robot.hand_model_id=74
+robot.hand_model_status_cache={}
+robot.hand_model_status_hits=0
+robot.hand_model_status_last=''
+robot.hand_model_status_statistic=defaultdict(<class 'int'>, {})
+robot.hand_model_status_total=0
+robot.handmodel_status={}
+robot.holding_camera_effect_ids=set()
+robot.is_temp_first_person_view=False
+robot.juren_effect_model_left=None
+robot.juren_effect_model_right=None
+robot.meow_dance_model=None
+robot.model=<gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel object at 0x0000025A0331F4D0>
+robot.model_loaded=True
+robot.perk_armor_broker_up_model_effect_id=None
+robot.perk_kinetic_energy_recovery_camera_effect_id=None
+robot.perk_kinetic_energy_recovery_model_effect_id=None
+robot.perk_melee_damage_up_model_effect_ids=None
+robot.rage_model_effect_id=None
+robot.replay_camera_stamp=1785811997.6390865
+robot.replay_camera_stream=[]
+robot.sky_render_switcher=None
+robot.thruster_pack_model=None
+robot.tmp_window_scene=<1334.0000, 750.0000>
+robot.unit_model_id=58
+robot.wing_model=None
+robot.world_fields=[]
+CAMERA_MODULES=['MCamera', 'gclient.framework.camera.base_placer', 'gclient.framework.camera.engine_placer', 'gclient.framework.camera.aim_placer', 'gclient.framework.camera.follow_placer', 'gclient.framework.camera.types', 'gclient.framework.camera.hilda_aim_placer', 'gclient.framework.camera.hilda_follow_placer', 'gclient.framework.camera.dead_follow_placer', 'gclient.framework.camera.freeview_placer', 'gclient.framework.camera.gun_smith_aim_placer', 'gclient.framework.camera.tps_placer', 'gclient.framework.camera.replay_placer', 'gclient.data.ets_data.camera', 'gclient.data.ets_data.camera.grenade_burstCameraShake', 'gclient.framework.commoncomps.camera_shake_sunshine_component', 'gclient.framework.camera.fps_state_fsm', 'gclient.framework.camera.fps_placer', 'gclient.framework.camera.als_tps_placer', 'gclient.framework.camera.vehicle_placer', 'gclient.framework.camera.parachute_placer', 'gclient.framework.camera.lookaround_placer', 'gclient.framework.camera.simple_tps_placer', 'gclient.framework.camera.titan_2_armor_charge_placer', 'gclient.framework.camera', 'gclient.framework.util.camera_simulator', 'SunshineSDK.Custom.Editor.EditorMeta.camera.CameraMeta', 'SunshineSDK.Custom.Editor.EditorMeta.camera.AimPlacerMeta', 'SunshineSDK.Custom.Editor.EditorMeta.camera.FollowPlacerMeta', 'SunshineSDK.Custom.Editor.EditorMeta.camera.HildaPlacerTypesMeta', 'SunshineSDK.Custom.Editor.EditorMeta.camera.HildaAimPlacerMeta', 'SunshineSDK.Custom.Editor.EditorMeta.camera.HildaFollowPlacerMeta', 'SunshineSDK.Custom.Editor.EditorMeta.camera.CameraShakePlacerMeta', 'gclient.data.ets_data.gun_smith_camera', 'gclient.data.camera_data', 'gclient.framework.commoncomps.gunsmith_camera_sunshine_component', 'SunshineSDK.Custom.Editor.EditorMeta.camera.GunSmithAimPlacerMeta', 'SunshineSDK.Custom.Editor.EditorMeta.camera', 'gclient.framework.entities.camera', 'gclient.data.hall_camera_param_data', 'gclient.gameplay.logic_base.bot.camera_controller', 'gclient.data.calculation_camera_param_data']
+CAMERA MCamera names=['CameraFrame', 'CameraRuntimeInfo']
+CAMERA gclient.framework.camera.base_placer names=[]
+CAMERA gclient.framework.camera.engine_placer names=[]
+CAMERA gclient.framework.camera.aim_placer names=[]
+CAMERA gclient.framework.camera.follow_placer names=[]
+CAMERA gclient.framework.camera.types names=[]
+CAMERA gclient.framework.camera.hilda_aim_placer names=[]
+CAMERA gclient.framework.camera.hilda_follow_placer names=[]
+CAMERA gclient.framework.camera.dead_follow_placer names=[]
+CAMERA gclient.framework.camera.freeview_placer names=[]
+CAMERA gclient.framework.camera.gun_smith_aim_placer names=[]
+CAMERA gclient.framework.camera.tps_placer names=[]
+CAMERA gclient.framework.camera.replay_placer names=[]
+CAMERA gclient.data.ets_data.camera names=['grenade_burstCameraShake']
+CAMERA gclient.data.ets_data.camera.grenade_burstCameraShake names=[]
+CAMERA gclient.framework.commoncomps.camera_shake_sunshine_component names=['CameraShakePlacerObject']
+CAMERA gclient.framework.camera.fps_state_fsm names=[]
+CAMERA gclient.framework.camera.fps_placer names=['grenade_burstCameraShake', 'TPS_ADS_CAMERA_LOCAL_OFFSET']
+CAMERA gclient.framework.camera.als_tps_placer names=['grenade_burstCameraShake', 'ALS_TPS_CAMERA_BONE_NAME']
+CAMERA gclient.framework.camera.vehicle_placer names=[]
+CAMERA gclient.framework.camera.parachute_placer names=[]
+CAMERA gclient.framework.camera.lookaround_placer names=[]
+CAMERA gclient.framework.camera.simple_tps_placer names=[]
+CAMERA gclient.framework.camera.titan_2_armor_charge_placer names=[]
+CAMERA gclient.framework.camera names=[]
+CAMERA gclient.framework.util.camera_simulator names=['CameraCtrlModeKeyframe', 'GodCameraSimulator', 'CameraSimulator']
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.CameraMeta names=['CameraMeta']
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.AimPlacerMeta names=[]
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.FollowPlacerMeta names=[]
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.HildaPlacerTypesMeta names=[]
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.HildaAimPlacerMeta names=[]
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.HildaFollowPlacerMeta names=[]
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.CameraShakePlacerMeta names=['CameraShakePlacerMeta']
+CAMERA gclient.data.ets_data.gun_smith_camera names=[]
+CAMERA gclient.data.camera_data names=[]
+CAMERA gclient.framework.commoncomps.gunsmith_camera_sunshine_component names=['gun_smith_camera', 'CameraTypeWithDataAndBoundBox', 'GUNSMITH_PART_CAMERA_TYPE']
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera.GunSmithAimPlacerMeta names=[]
+CAMERA SunshineSDK.Custom.Editor.EditorMeta.camera names=['CameraMeta', 'CameraShakePlacerMeta']
+CAMERA gclient.framework.entities.camera names=['MRender', 'camera_data', 'CameraMode', 'CameraSunshineComponent', 'CAMERA_ID_NEED_BLENDER', 'Camera']
+CAMERA gclient.data.hall_camera_param_data names=[]
+CAMERA gclient.gameplay.logic_base.bot.camera_controller names=['CameraController']
+CAMERA gclient.data.calculation_camera_param_data names=[]
+EXC
+Traceback (most recent call last):
+  File "MImporter_py3.py", line 393, in MImporter.finder.exec_module
+  File "Lib/dbm/ndbm.py", line 3, in <module>
+ModuleNotFoundError: No module named '_dbm'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "MImporter_py3.py", line 393, in MImporter.finder.exec_module
+  File "Lib/dbm/__init__.py", line 48, in <module>
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "MImporter_py3.py", line 398, in MImporter.finder.exec_module
+Exception: -------------------- exception when execute (dbm.ndbm) module
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<string>", line 115, in _ctf_rap_run
+  File "<string>", line 49, in _ctf_rap_code_hits
+  File "Lib/six2.py", line 67, in __getattr__
+  File "Lib/six2.py", line 64, in _resolve
+  File "Lib/six2.py", line 32, in _import_module
+  File "<frozen importlib._bootstrap>", line 1371, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1342, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 938, in _load_unlocked
+  File "MImporter_py3.py", line 398, in MImporter.finder.exec_module
+Exception: -------------------- exception when execute (dbm) module
+
+END

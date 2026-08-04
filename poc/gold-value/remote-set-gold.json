@@ -1,0 +1,18 @@
+{
+  "pid": 9316,
+  "started": 1785820057.798422,
+  "run_va": "0x142a71900",
+  "image_base": "0x7ff744ce0000",
+  "remote_code": "0x259f4800000",
+  "thread_id": 37612,
+  "wait": 0,
+  "exit_code": 0,
+  "state": 1,
+  "result": 0,
+  "addresses": {
+    "ensure": "0x7ff74778fbe0",
+    "release": "0x7ff74778fcb0",
+    "run": "0x7ff747751900"
+  },
+  "finished": 1785820057.8155842
+}

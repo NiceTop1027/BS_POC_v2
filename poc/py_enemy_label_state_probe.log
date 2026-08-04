@@ -1,0 +1,455 @@
+BEGIN 1785810273.7460513
+robots=6
+robot=anFL9UsxNr+4vr8u top=<gclient.gameplay.logic_base.comps.avatar_scene_node.AvatarSceneNode object at 0x0000025A0335CEC0>
+anFL9UsxNr+4vr8u.text_dis_friend: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D65D0> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8u.text_dis_friend.text='125hp 22m'
+anFL9UsxNr+4vr8u.text_dis_friend._last_text='125hp 22m'
+anFL9UsxNr+4vr8u.text_dis_friend.visible=True
+anFL9UsxNr+4vr8u.text_dis_friend.opacity=255
+anFL9UsxNr+4vr8u.text_dis_friend.scale=0.10000000149011612
+anFL9UsxNr+4vr8u.text_dis_friend.color=(235, 235, 230)
+anFL9UsxNr+4vr8u.text_dis_friend.text_color=(235, 235, 230, 255)
+anFL9UsxNr+4vr8u.text_dis_friend.hidden_reason=0
+anFL9UsxNr+4vr8u.text_dis_friend.force_show_reason=0
+anFL9UsxNr+4vr8u.text_dis_friend.init_font_size=1
+anFL9UsxNr+4vr8u.text_dis_friend.auto_fit_parent_size=1
+anFL9UsxNr+4vr8u.text_dis_friend.GetWidth()=47.0
+anFL9UsxNr+4vr8u.text_dis_friend.GetHeight()=12.0
+anFL9UsxNr+4vr8u.text_dis_friend.getContentSize()=Size(47.000000, 12.000000)
+anFL9UsxNr+4vr8u.text_dis_friend.GetWorldPosition()=Vec2(-3.149998, 31.400002)
+anFL9UsxNr+4vr8u.text_dis_friend.GetRealContentSize()=Size(4.700000, 1.200000)
+anFL9UsxNr+4vr8u.text_dis_friend.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8u.text_name_enemy: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D6210> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8u.text_name_enemy.text='125hp 22m'
+anFL9UsxNr+4vr8u.text_name_enemy._last_text='125hp 22m'
+anFL9UsxNr+4vr8u.text_name_enemy.visible=True
+anFL9UsxNr+4vr8u.text_name_enemy.opacity=255
+anFL9UsxNr+4vr8u.text_name_enemy.scale=0.10000000149011612
+anFL9UsxNr+4vr8u.text_name_enemy.color=(235, 235, 230)
+anFL9UsxNr+4vr8u.text_name_enemy.text_color=(235, 235, 230, 255)
+anFL9UsxNr+4vr8u.text_name_enemy.hidden_reason=0
+anFL9UsxNr+4vr8u.text_name_enemy.force_show_reason=0
+anFL9UsxNr+4vr8u.text_name_enemy.init_font_size=1
+anFL9UsxNr+4vr8u.text_name_enemy.auto_fit_parent_size=1
+anFL9UsxNr+4vr8u.text_name_enemy.GetWidth()=45.0
+anFL9UsxNr+4vr8u.text_name_enemy.GetHeight()=10.0
+anFL9UsxNr+4vr8u.text_name_enemy.getContentSize()=Size(45.000000, 10.000000)
+anFL9UsxNr+4vr8u.text_name_enemy.GetWorldPosition()=Vec2(-0.000001, 20.900000)
+anFL9UsxNr+4vr8u.text_name_enemy.GetRealContentSize()=Size(4.500000, 1.000000)
+anFL9UsxNr+4vr8u.text_name_enemy.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8u.text_name_friend: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D6490> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8u.text_name_friend.text=''
+anFL9UsxNr+4vr8u.text_name_friend._last_text=''
+anFL9UsxNr+4vr8u.text_name_friend.visible=False
+anFL9UsxNr+4vr8u.text_name_friend.opacity=0
+anFL9UsxNr+4vr8u.text_name_friend.scale=0.10000000149011612
+anFL9UsxNr+4vr8u.text_name_friend.color=(255, 255, 255)
+anFL9UsxNr+4vr8u.text_name_friend.text_color=(255, 255, 255, 255)
+anFL9UsxNr+4vr8u.text_name_friend.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8u.text_name_friend.force_show_reason=0
+anFL9UsxNr+4vr8u.text_name_friend.init_font_size=1
+anFL9UsxNr+4vr8u.text_name_friend.auto_fit_parent_size=0
+anFL9UsxNr+4vr8u.text_name_friend.GetWidth()=6.0
+anFL9UsxNr+4vr8u.text_name_friend.GetHeight()=4.0
+anFL9UsxNr+4vr8u.text_name_friend.getContentSize()=Size(6.000000, 4.000000)
+anFL9UsxNr+4vr8u.text_name_friend.GetWorldPosition()=Vec2(-1.400002, 16.699999)
+anFL9UsxNr+4vr8u.text_name_friend.GetRealContentSize()=Size(0.600000, 0.400000)
+anFL9UsxNr+4vr8u.text_name_friend.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8u.txt_blood_num: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D6350> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8u.txt_blood_num.text=''
+anFL9UsxNr+4vr8u.txt_blood_num._last_text=''
+anFL9UsxNr+4vr8u.txt_blood_num.visible=False
+anFL9UsxNr+4vr8u.txt_blood_num.opacity=0
+anFL9UsxNr+4vr8u.txt_blood_num.scale=0.10000000149011612
+anFL9UsxNr+4vr8u.txt_blood_num.color=(255, 255, 255)
+anFL9UsxNr+4vr8u.txt_blood_num.text_color=(237, 10, 4, 255)
+anFL9UsxNr+4vr8u.txt_blood_num.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8u.txt_blood_num.force_show_reason=0
+anFL9UsxNr+4vr8u.txt_blood_num.init_font_size=1
+anFL9UsxNr+4vr8u.txt_blood_num.auto_fit_parent_size=0
+anFL9UsxNr+4vr8u.txt_blood_num.GetWidth()=0.0
+anFL9UsxNr+4vr8u.txt_blood_num.GetHeight()=0.0
+anFL9UsxNr+4vr8u.txt_blood_num.getContentSize()=Size(0.000000, 0.000000)
+anFL9UsxNr+4vr8u.txt_blood_num.GetWorldPosition()=Vec2(-20.334999, 20.865002)
+anFL9UsxNr+4vr8u.txt_blood_num.GetRealContentSize()=Size(0.000000, 0.000000)
+anFL9UsxNr+4vr8u.txt_blood_num.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8u.node_name_hp: obj=<gclient.framework.ui.widgets.ui_node.UINode object(Node) at 0x25A0335DD30> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+anFL9UsxNr+4vr8u.node_name_hp.text=''
+anFL9UsxNr+4vr8u.node_name_hp._last_text=''
+anFL9UsxNr+4vr8u.node_name_hp.visible=False
+anFL9UsxNr+4vr8u.node_name_hp.opacity=0
+anFL9UsxNr+4vr8u.node_name_hp.scale=0.10000000149011612
+anFL9UsxNr+4vr8u.node_name_hp.color=(255, 255, 255)
+anFL9UsxNr+4vr8u.node_name_hp.text_color=FAIL AttributeError("'cc.Node' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8u.node_name_hp.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8u.node_name_hp.force_show_reason=0
+anFL9UsxNr+4vr8u.node_name_hp.init_font_size=FAIL AttributeError("'cc.Node' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8u.node_name_hp.auto_fit_parent_size=FAIL AttributeError("'cc.Node' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8u.node_name_hp.GetWidth()=1.0
+anFL9UsxNr+4vr8u.node_name_hp.GetHeight()=1.0
+anFL9UsxNr+4vr8u.node_name_hp.getContentSize()=Size(1.000000, 1.000000)
+anFL9UsxNr+4vr8u.node_name_hp.GetWorldPosition()=Vec2(0.000001, 12.499999)
+anFL9UsxNr+4vr8u.node_name_hp.GetRealContentSize()=Size(0.100000, 0.100000)
+anFL9UsxNr+4vr8u.node_name_hp.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8u.panel_enemy_bars: obj=<gclient.framework.ui.widgets.ui_node.UINode object(Layout) at 0x25A0335D940> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+anFL9UsxNr+4vr8u.panel_enemy_bars.text=FAIL AttributeError("'ccui.Layout' object has no attribute 'text'")
+anFL9UsxNr+4vr8u.panel_enemy_bars._last_text=FAIL AttributeError("'ccui.Layout' object has no attribute '_last_text'")
+anFL9UsxNr+4vr8u.panel_enemy_bars.visible=False
+anFL9UsxNr+4vr8u.panel_enemy_bars.opacity=255
+anFL9UsxNr+4vr8u.panel_enemy_bars.scale=0.5958642363548279
+anFL9UsxNr+4vr8u.panel_enemy_bars.color=(255, 255, 255)
+anFL9UsxNr+4vr8u.panel_enemy_bars.text_color=FAIL AttributeError("'ccui.Layout' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8u.panel_enemy_bars.hidden_reason=1
+anFL9UsxNr+4vr8u.panel_enemy_bars.force_show_reason=0
+anFL9UsxNr+4vr8u.panel_enemy_bars.init_font_size=FAIL AttributeError("'ccui.Layout' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8u.panel_enemy_bars.auto_fit_parent_size=FAIL AttributeError("'ccui.Layout' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8u.panel_enemy_bars.GetWidth()=72.0
+anFL9UsxNr+4vr8u.panel_enemy_bars.GetHeight()=10.0
+anFL9UsxNr+4vr8u.panel_enemy_bars.getContentSize()=Size(72.000000, 10.000000)
+anFL9UsxNr+4vr8u.panel_enemy_bars.GetWorldPosition()=Vec2(0.000001, 12.499999)
+anFL9UsxNr+4vr8u.panel_enemy_bars.GetRealContentSize()=Size(42.902225, 5.958642)
+anFL9UsxNr+4vr8u.panel_enemy_bars.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8u.toplogo_widget: obj=<gclient.framework.commoncomps.toplogo_component.TopLogoUINode object(Node) at 0x25A156C99B0> type=<class 'gclient.framework.commoncomps.toplogo_component.TopLogoUINode'>
+anFL9UsxNr+4vr8u.toplogo_widget.text=FAIL AttributeError("'cc.Node' object has no attribute 'text'")
+anFL9UsxNr+4vr8u.toplogo_widget._last_text=FAIL AttributeError("'cc.Node' object has no attribute '_last_text'")
+anFL9UsxNr+4vr8u.toplogo_widget.visible=False
+anFL9UsxNr+4vr8u.toplogo_widget.opacity=255
+anFL9UsxNr+4vr8u.toplogo_widget.scale=1.0
+anFL9UsxNr+4vr8u.toplogo_widget.color=(255, 255, 255)
+anFL9UsxNr+4vr8u.toplogo_widget.text_color=FAIL AttributeError("'cc.Node' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8u.toplogo_widget.hidden_reason=1
+anFL9UsxNr+4vr8u.toplogo_widget.force_show_reason=0
+anFL9UsxNr+4vr8u.toplogo_widget.init_font_size=FAIL AttributeError("'cc.Node' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8u.toplogo_widget.auto_fit_parent_size=FAIL AttributeError("'cc.Node' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8u.toplogo_widget.GetWidth()=0.0
+anFL9UsxNr+4vr8u.toplogo_widget.GetHeight()=40.0
+anFL9UsxNr+4vr8u.toplogo_widget.getContentSize()=Size(0.000000, 40.000000)
+anFL9UsxNr+4vr8u.toplogo_widget.GetWorldPosition()=Vec2(0.000000, 20.000000)
+anFL9UsxNr+4vr8u.toplogo_widget.GetRealContentSize()=Size(0.000000, 40.000000)
+anFL9UsxNr+4vr8u.toplogo_widget.IsAncestorsVisible()=True
+robot=anFL9UsxNr+4vr8p top=<gclient.gameplay.logic_base.comps.avatar_scene_node.AvatarSceneNode object at 0x0000025A0335EBA0>
+anFL9UsxNr+4vr8p.text_dis_friend: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D7110> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8p.text_dis_friend.text='125hp 21m'
+anFL9UsxNr+4vr8p.text_dis_friend._last_text='125hp 21m'
+anFL9UsxNr+4vr8p.text_dis_friend.visible=True
+anFL9UsxNr+4vr8p.text_dis_friend.opacity=255
+anFL9UsxNr+4vr8p.text_dis_friend.scale=0.10000000149011612
+anFL9UsxNr+4vr8p.text_dis_friend.color=(235, 235, 230)
+anFL9UsxNr+4vr8p.text_dis_friend.text_color=(235, 235, 230, 255)
+anFL9UsxNr+4vr8p.text_dis_friend.hidden_reason=0
+anFL9UsxNr+4vr8p.text_dis_friend.force_show_reason=0
+anFL9UsxNr+4vr8p.text_dis_friend.init_font_size=1
+anFL9UsxNr+4vr8p.text_dis_friend.auto_fit_parent_size=1
+anFL9UsxNr+4vr8p.text_dis_friend.GetWidth()=46.0
+anFL9UsxNr+4vr8p.text_dis_friend.GetHeight()=12.0
+anFL9UsxNr+4vr8p.text_dis_friend.getContentSize()=Size(46.000000, 12.000000)
+anFL9UsxNr+4vr8p.text_dis_friend.GetWorldPosition()=Vec2(-3.150002, 31.400002)
+anFL9UsxNr+4vr8p.text_dis_friend.GetRealContentSize()=Size(4.600000, 1.200000)
+anFL9UsxNr+4vr8p.text_dis_friend.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8p.text_name_enemy: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D6D50> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8p.text_name_enemy.text='125hp 21m'
+anFL9UsxNr+4vr8p.text_name_enemy._last_text='125hp 21m'
+anFL9UsxNr+4vr8p.text_name_enemy.visible=True
+anFL9UsxNr+4vr8p.text_name_enemy.opacity=255
+anFL9UsxNr+4vr8p.text_name_enemy.scale=0.10000000149011612
+anFL9UsxNr+4vr8p.text_name_enemy.color=(235, 235, 230)
+anFL9UsxNr+4vr8p.text_name_enemy.text_color=(235, 235, 230, 255)
+anFL9UsxNr+4vr8p.text_name_enemy.hidden_reason=0
+anFL9UsxNr+4vr8p.text_name_enemy.force_show_reason=0
+anFL9UsxNr+4vr8p.text_name_enemy.init_font_size=1
+anFL9UsxNr+4vr8p.text_name_enemy.auto_fit_parent_size=1
+anFL9UsxNr+4vr8p.text_name_enemy.GetWidth()=44.0
+anFL9UsxNr+4vr8p.text_name_enemy.GetHeight()=10.0
+anFL9UsxNr+4vr8p.text_name_enemy.getContentSize()=Size(44.000000, 10.000000)
+anFL9UsxNr+4vr8p.text_name_enemy.GetWorldPosition()=Vec2(0.000003, 20.900000)
+anFL9UsxNr+4vr8p.text_name_enemy.GetRealContentSize()=Size(4.400000, 1.000000)
+anFL9UsxNr+4vr8p.text_name_enemy.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8p.text_name_friend: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D6FD0> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8p.text_name_friend.text=''
+anFL9UsxNr+4vr8p.text_name_friend._last_text=''
+anFL9UsxNr+4vr8p.text_name_friend.visible=False
+anFL9UsxNr+4vr8p.text_name_friend.opacity=0
+anFL9UsxNr+4vr8p.text_name_friend.scale=0.10000000149011612
+anFL9UsxNr+4vr8p.text_name_friend.color=(255, 255, 255)
+anFL9UsxNr+4vr8p.text_name_friend.text_color=(255, 255, 255, 255)
+anFL9UsxNr+4vr8p.text_name_friend.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8p.text_name_friend.force_show_reason=0
+anFL9UsxNr+4vr8p.text_name_friend.init_font_size=1
+anFL9UsxNr+4vr8p.text_name_friend.auto_fit_parent_size=0
+anFL9UsxNr+4vr8p.text_name_friend.GetWidth()=6.0
+anFL9UsxNr+4vr8p.text_name_friend.GetHeight()=4.0
+anFL9UsxNr+4vr8p.text_name_friend.getContentSize()=Size(6.000000, 4.000000)
+anFL9UsxNr+4vr8p.text_name_friend.GetWorldPosition()=Vec2(-1.400002, 16.699999)
+anFL9UsxNr+4vr8p.text_name_friend.GetRealContentSize()=Size(0.600000, 0.400000)
+anFL9UsxNr+4vr8p.text_name_friend.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8p.txt_blood_num: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D6E90> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8p.txt_blood_num.text=''
+anFL9UsxNr+4vr8p.txt_blood_num._last_text=''
+anFL9UsxNr+4vr8p.txt_blood_num.visible=False
+anFL9UsxNr+4vr8p.txt_blood_num.opacity=0
+anFL9UsxNr+4vr8p.txt_blood_num.scale=0.10000000149011612
+anFL9UsxNr+4vr8p.txt_blood_num.color=(255, 255, 255)
+anFL9UsxNr+4vr8p.txt_blood_num.text_color=(237, 10, 4, 255)
+anFL9UsxNr+4vr8p.txt_blood_num.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8p.txt_blood_num.force_show_reason=0
+anFL9UsxNr+4vr8p.txt_blood_num.init_font_size=1
+anFL9UsxNr+4vr8p.txt_blood_num.auto_fit_parent_size=0
+anFL9UsxNr+4vr8p.txt_blood_num.GetWidth()=0.0
+anFL9UsxNr+4vr8p.txt_blood_num.GetHeight()=0.0
+anFL9UsxNr+4vr8p.txt_blood_num.getContentSize()=Size(0.000000, 0.000000)
+anFL9UsxNr+4vr8p.txt_blood_num.GetWorldPosition()=Vec2(-20.334999, 20.865002)
+anFL9UsxNr+4vr8p.txt_blood_num.GetRealContentSize()=Size(0.000000, 0.000000)
+anFL9UsxNr+4vr8p.txt_blood_num.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8p.node_name_hp: obj=<gclient.framework.ui.widgets.ui_node.UINode object(Node) at 0x25A0335FA10> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+anFL9UsxNr+4vr8p.node_name_hp.text=''
+anFL9UsxNr+4vr8p.node_name_hp._last_text=''
+anFL9UsxNr+4vr8p.node_name_hp.visible=False
+anFL9UsxNr+4vr8p.node_name_hp.opacity=0
+anFL9UsxNr+4vr8p.node_name_hp.scale=0.10000000149011612
+anFL9UsxNr+4vr8p.node_name_hp.color=(255, 255, 255)
+anFL9UsxNr+4vr8p.node_name_hp.text_color=FAIL AttributeError("'cc.Node' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8p.node_name_hp.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8p.node_name_hp.force_show_reason=0
+anFL9UsxNr+4vr8p.node_name_hp.init_font_size=FAIL AttributeError("'cc.Node' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8p.node_name_hp.auto_fit_parent_size=FAIL AttributeError("'cc.Node' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8p.node_name_hp.GetWidth()=1.0
+anFL9UsxNr+4vr8p.node_name_hp.GetHeight()=1.0
+anFL9UsxNr+4vr8p.node_name_hp.getContentSize()=Size(1.000000, 1.000000)
+anFL9UsxNr+4vr8p.node_name_hp.GetWorldPosition()=Vec2(0.000001, 12.500000)
+anFL9UsxNr+4vr8p.node_name_hp.GetRealContentSize()=Size(0.100000, 0.100000)
+anFL9UsxNr+4vr8p.node_name_hp.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8p.panel_enemy_bars: obj=<gclient.framework.ui.widgets.ui_node.UINode object(Layout) at 0x25A0335F620> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+anFL9UsxNr+4vr8p.panel_enemy_bars.text=FAIL AttributeError("'ccui.Layout' object has no attribute 'text'")
+anFL9UsxNr+4vr8p.panel_enemy_bars._last_text=FAIL AttributeError("'ccui.Layout' object has no attribute '_last_text'")
+anFL9UsxNr+4vr8p.panel_enemy_bars.visible=False
+anFL9UsxNr+4vr8p.panel_enemy_bars.opacity=255
+anFL9UsxNr+4vr8p.panel_enemy_bars.scale=0.6011963486671448
+anFL9UsxNr+4vr8p.panel_enemy_bars.color=(255, 255, 255)
+anFL9UsxNr+4vr8p.panel_enemy_bars.text_color=FAIL AttributeError("'ccui.Layout' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8p.panel_enemy_bars.hidden_reason=1
+anFL9UsxNr+4vr8p.panel_enemy_bars.force_show_reason=0
+anFL9UsxNr+4vr8p.panel_enemy_bars.init_font_size=FAIL AttributeError("'ccui.Layout' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8p.panel_enemy_bars.auto_fit_parent_size=FAIL AttributeError("'ccui.Layout' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8p.panel_enemy_bars.GetWidth()=72.0
+anFL9UsxNr+4vr8p.panel_enemy_bars.GetHeight()=10.0
+anFL9UsxNr+4vr8p.panel_enemy_bars.getContentSize()=Size(72.000000, 10.000000)
+anFL9UsxNr+4vr8p.panel_enemy_bars.GetWorldPosition()=Vec2(0.000001, 12.500000)
+anFL9UsxNr+4vr8p.panel_enemy_bars.GetRealContentSize()=Size(43.286137, 6.011963)
+anFL9UsxNr+4vr8p.panel_enemy_bars.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8p.toplogo_widget: obj=<gclient.framework.commoncomps.toplogo_component.TopLogoUINode object(Node) at 0x25A156C9470> type=<class 'gclient.framework.commoncomps.toplogo_component.TopLogoUINode'>
+anFL9UsxNr+4vr8p.toplogo_widget.text=FAIL AttributeError("'cc.Node' object has no attribute 'text'")
+anFL9UsxNr+4vr8p.toplogo_widget._last_text=FAIL AttributeError("'cc.Node' object has no attribute '_last_text'")
+anFL9UsxNr+4vr8p.toplogo_widget.visible=False
+anFL9UsxNr+4vr8p.toplogo_widget.opacity=255
+anFL9UsxNr+4vr8p.toplogo_widget.scale=1.0
+anFL9UsxNr+4vr8p.toplogo_widget.color=(255, 255, 255)
+anFL9UsxNr+4vr8p.toplogo_widget.text_color=FAIL AttributeError("'cc.Node' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8p.toplogo_widget.hidden_reason=1
+anFL9UsxNr+4vr8p.toplogo_widget.force_show_reason=0
+anFL9UsxNr+4vr8p.toplogo_widget.init_font_size=FAIL AttributeError("'cc.Node' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8p.toplogo_widget.auto_fit_parent_size=FAIL AttributeError("'cc.Node' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8p.toplogo_widget.GetWidth()=0.0
+anFL9UsxNr+4vr8p.toplogo_widget.GetHeight()=40.0
+anFL9UsxNr+4vr8p.toplogo_widget.getContentSize()=Size(0.000000, 40.000000)
+anFL9UsxNr+4vr8p.toplogo_widget.GetWorldPosition()=Vec2(0.000000, 20.000000)
+anFL9UsxNr+4vr8p.toplogo_widget.GetRealContentSize()=Size(0.000000, 40.000000)
+anFL9UsxNr+4vr8p.toplogo_widget.IsAncestorsVisible()=True
+robot=anFL9UsxNr+4vr8y top=<gclient.gameplay.logic_base.comps.avatar_scene_node.AvatarSceneNode object at 0x0000025A03338980>
+anFL9UsxNr+4vr8y.text_dis_friend: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D7C50> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8y.text_dis_friend.text='125hp 29m'
+anFL9UsxNr+4vr8y.text_dis_friend._last_text='125hp 29m'
+anFL9UsxNr+4vr8y.text_dis_friend.visible=True
+anFL9UsxNr+4vr8y.text_dis_friend.opacity=255
+anFL9UsxNr+4vr8y.text_dis_friend.scale=0.10000000149011612
+anFL9UsxNr+4vr8y.text_dis_friend.color=(235, 235, 230)
+anFL9UsxNr+4vr8y.text_dis_friend.text_color=(235, 235, 230, 255)
+anFL9UsxNr+4vr8y.text_dis_friend.hidden_reason=0
+anFL9UsxNr+4vr8y.text_dis_friend.force_show_reason=0
+anFL9UsxNr+4vr8y.text_dis_friend.init_font_size=1
+anFL9UsxNr+4vr8y.text_dis_friend.auto_fit_parent_size=1
+anFL9UsxNr+4vr8y.text_dis_friend.GetWidth()=47.0
+anFL9UsxNr+4vr8y.text_dis_friend.GetHeight()=12.0
+anFL9UsxNr+4vr8y.text_dis_friend.getContentSize()=Size(47.000000, 12.000000)
+anFL9UsxNr+4vr8y.text_dis_friend.GetWorldPosition()=Vec2(-3.149998, 31.400002)
+anFL9UsxNr+4vr8y.text_dis_friend.GetRealContentSize()=Size(4.700000, 1.200000)
+anFL9UsxNr+4vr8y.text_dis_friend.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8y.text_name_enemy: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D7890> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8y.text_name_enemy.text='125hp 29m'
+anFL9UsxNr+4vr8y.text_name_enemy._last_text='125hp 29m'
+anFL9UsxNr+4vr8y.text_name_enemy.visible=True
+anFL9UsxNr+4vr8y.text_name_enemy.opacity=255
+anFL9UsxNr+4vr8y.text_name_enemy.scale=0.10000000149011612
+anFL9UsxNr+4vr8y.text_name_enemy.color=(235, 235, 230)
+anFL9UsxNr+4vr8y.text_name_enemy.text_color=(235, 235, 230, 255)
+anFL9UsxNr+4vr8y.text_name_enemy.hidden_reason=0
+anFL9UsxNr+4vr8y.text_name_enemy.force_show_reason=0
+anFL9UsxNr+4vr8y.text_name_enemy.init_font_size=1
+anFL9UsxNr+4vr8y.text_name_enemy.auto_fit_parent_size=1
+anFL9UsxNr+4vr8y.text_name_enemy.GetWidth()=45.0
+anFL9UsxNr+4vr8y.text_name_enemy.GetHeight()=10.0
+anFL9UsxNr+4vr8y.text_name_enemy.getContentSize()=Size(45.000000, 10.000000)
+anFL9UsxNr+4vr8y.text_name_enemy.GetWorldPosition()=Vec2(-0.000001, 20.900000)
+anFL9UsxNr+4vr8y.text_name_enemy.GetRealContentSize()=Size(4.500000, 1.000000)
+anFL9UsxNr+4vr8y.text_name_enemy.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8y.text_name_friend: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D7B10> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8y.text_name_friend.text=''
+anFL9UsxNr+4vr8y.text_name_friend._last_text=''
+anFL9UsxNr+4vr8y.text_name_friend.visible=False
+anFL9UsxNr+4vr8y.text_name_friend.opacity=0
+anFL9UsxNr+4vr8y.text_name_friend.scale=0.10000000149011612
+anFL9UsxNr+4vr8y.text_name_friend.color=(255, 255, 255)
+anFL9UsxNr+4vr8y.text_name_friend.text_color=(255, 255, 255, 255)
+anFL9UsxNr+4vr8y.text_name_friend.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8y.text_name_friend.force_show_reason=0
+anFL9UsxNr+4vr8y.text_name_friend.init_font_size=1
+anFL9UsxNr+4vr8y.text_name_friend.auto_fit_parent_size=0
+anFL9UsxNr+4vr8y.text_name_friend.GetWidth()=6.0
+anFL9UsxNr+4vr8y.text_name_friend.GetHeight()=4.0
+anFL9UsxNr+4vr8y.text_name_friend.getContentSize()=Size(6.000000, 4.000000)
+anFL9UsxNr+4vr8y.text_name_friend.GetWorldPosition()=Vec2(-1.400002, 16.699999)
+anFL9UsxNr+4vr8y.text_name_friend.GetRealContentSize()=Size(0.600000, 0.400000)
+anFL9UsxNr+4vr8y.text_name_friend.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8y.txt_blood_num: obj=<gclient.framework.ui.widgets.ui_text.UIText object(Text) at 0x25A032D79D0> type=<class 'gclient.framework.ui.widgets.ui_text.UIText'>
+anFL9UsxNr+4vr8y.txt_blood_num.text=''
+anFL9UsxNr+4vr8y.txt_blood_num._last_text=''
+anFL9UsxNr+4vr8y.txt_blood_num.visible=False
+anFL9UsxNr+4vr8y.txt_blood_num.opacity=0
+anFL9UsxNr+4vr8y.txt_blood_num.scale=0.10000000149011612
+anFL9UsxNr+4vr8y.txt_blood_num.color=(255, 255, 255)
+anFL9UsxNr+4vr8y.txt_blood_num.text_color=(237, 10, 4, 255)
+anFL9UsxNr+4vr8y.txt_blood_num.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8y.txt_blood_num.force_show_reason=0
+anFL9UsxNr+4vr8y.txt_blood_num.init_font_size=1
+anFL9UsxNr+4vr8y.txt_blood_num.auto_fit_parent_size=0
+anFL9UsxNr+4vr8y.txt_blood_num.GetWidth()=0.0
+anFL9UsxNr+4vr8y.txt_blood_num.GetHeight()=0.0
+anFL9UsxNr+4vr8y.txt_blood_num.getContentSize()=Size(0.000000, 0.000000)
+anFL9UsxNr+4vr8y.txt_blood_num.GetWorldPosition()=Vec2(-20.334999, 20.865002)
+anFL9UsxNr+4vr8y.txt_blood_num.GetRealContentSize()=Size(0.000000, 0.000000)
+anFL9UsxNr+4vr8y.txt_blood_num.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8y.node_name_hp: obj=<gclient.framework.ui.widgets.ui_node.UINode object(Node) at 0x25A033397F0> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+anFL9UsxNr+4vr8y.node_name_hp.text=''
+anFL9UsxNr+4vr8y.node_name_hp._last_text=''
+anFL9UsxNr+4vr8y.node_name_hp.visible=False
+anFL9UsxNr+4vr8y.node_name_hp.opacity=0
+anFL9UsxNr+4vr8y.node_name_hp.scale=0.10000000149011612
+anFL9UsxNr+4vr8y.node_name_hp.color=(255, 255, 255)
+anFL9UsxNr+4vr8y.node_name_hp.text_color=FAIL AttributeError("'cc.Node' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8y.node_name_hp.hidden_reason=FAIL ValueError('Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit')
+anFL9UsxNr+4vr8y.node_name_hp.force_show_reason=0
+anFL9UsxNr+4vr8y.node_name_hp.init_font_size=FAIL AttributeError("'cc.Node' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8y.node_name_hp.auto_fit_parent_size=FAIL AttributeError("'cc.Node' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8y.node_name_hp.GetWidth()=1.0
+anFL9UsxNr+4vr8y.node_name_hp.GetHeight()=1.0
+anFL9UsxNr+4vr8y.node_name_hp.getContentSize()=Size(1.000000, 1.000000)
+anFL9UsxNr+4vr8y.node_name_hp.GetWorldPosition()=Vec2(-0.000001, 12.500000)
+anFL9UsxNr+4vr8y.node_name_hp.GetRealContentSize()=Size(0.100000, 0.100000)
+anFL9UsxNr+4vr8y.node_name_hp.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8y.panel_enemy_bars: obj=<gclient.framework.ui.widgets.ui_node.UINode object(Layout) at 0x25A03339400> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+anFL9UsxNr+4vr8y.panel_enemy_bars.text=FAIL AttributeError("'ccui.Layout' object has no attribute 'text'")
+anFL9UsxNr+4vr8y.panel_enemy_bars._last_text=FAIL AttributeError("'ccui.Layout' object has no attribute '_last_text'")
+anFL9UsxNr+4vr8y.panel_enemy_bars.visible=False
+anFL9UsxNr+4vr8y.panel_enemy_bars.opacity=255
+anFL9UsxNr+4vr8y.panel_enemy_bars.scale=0.5365922451019287
+anFL9UsxNr+4vr8y.panel_enemy_bars.color=(255, 255, 255)
+anFL9UsxNr+4vr8y.panel_enemy_bars.text_color=FAIL AttributeError("'ccui.Layout' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8y.panel_enemy_bars.hidden_reason=1
+anFL9UsxNr+4vr8y.panel_enemy_bars.force_show_reason=0
+anFL9UsxNr+4vr8y.panel_enemy_bars.init_font_size=FAIL AttributeError("'ccui.Layout' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8y.panel_enemy_bars.auto_fit_parent_size=FAIL AttributeError("'ccui.Layout' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8y.panel_enemy_bars.GetWidth()=72.0
+anFL9UsxNr+4vr8y.panel_enemy_bars.GetHeight()=10.0
+anFL9UsxNr+4vr8y.panel_enemy_bars.getContentSize()=Size(72.000000, 10.000000)
+anFL9UsxNr+4vr8y.panel_enemy_bars.GetWorldPosition()=Vec2(-0.000001, 12.500000)
+anFL9UsxNr+4vr8y.panel_enemy_bars.GetRealContentSize()=Size(38.634644, 5.365922)
+anFL9UsxNr+4vr8y.panel_enemy_bars.IsAncestorsVisible()=False
+anFL9UsxNr+4vr8y.toplogo_widget: obj=<gclient.framework.commoncomps.toplogo_component.TopLogoUINode object(Node) at 0x25A171FD550> type=<class 'gclient.framework.commoncomps.toplogo_component.TopLogoUINode'>
+anFL9UsxNr+4vr8y.toplogo_widget.text=FAIL AttributeError("'cc.Node' object has no attribute 'text'")
+anFL9UsxNr+4vr8y.toplogo_widget._last_text=FAIL AttributeError("'cc.Node' object has no attribute '_last_text'")
+anFL9UsxNr+4vr8y.toplogo_widget.visible=False
+anFL9UsxNr+4vr8y.toplogo_widget.opacity=255
+anFL9UsxNr+4vr8y.toplogo_widget.scale=1.0
+anFL9UsxNr+4vr8y.toplogo_widget.color=(255, 255, 255)
+anFL9UsxNr+4vr8y.toplogo_widget.text_color=FAIL AttributeError("'cc.Node' object has no attribute 'text_color'")
+anFL9UsxNr+4vr8y.toplogo_widget.hidden_reason=1
+anFL9UsxNr+4vr8y.toplogo_widget.force_show_reason=0
+anFL9UsxNr+4vr8y.toplogo_widget.init_font_size=FAIL AttributeError("'cc.Node' object has no attribute 'init_font_size'")
+anFL9UsxNr+4vr8y.toplogo_widget.auto_fit_parent_size=FAIL AttributeError("'cc.Node' object has no attribute 'auto_fit_parent_size'")
+anFL9UsxNr+4vr8y.toplogo_widget.GetWidth()=0.0
+anFL9UsxNr+4vr8y.toplogo_widget.GetHeight()=40.0
+anFL9UsxNr+4vr8y.toplogo_widget.getContentSize()=Size(0.000000, 40.000000)
+anFL9UsxNr+4vr8y.toplogo_widget.GetWorldPosition()=Vec2(0.000000, 20.000000)
+anFL9UsxNr+4vr8y.toplogo_widget.GetRealContentSize()=Size(0.000000, 40.000000)
+anFL9UsxNr+4vr8y.toplogo_widget.IsAncestorsVisible()=True
+END
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=320 total=23 players=[('anFMmksxNr+4vtxr', (-20.749406814575195, 0.050000060349702835, 3.8336002826690674))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 21.66302810366991, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 21.035726611326936, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 28.636204561946343, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 37.34248546657495, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.323650360107422, 0.07277331501245499, 2.5989699363708496), 47.08925081676355, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 18.328698808622633, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=360 total=23 players=[('anFMmksxNr+4vtxr', (-20.749406814575195, 0.050000060349702835, 3.8336002826690674))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 21.66302810366991, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 21.035726611326936, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 28.636204561946343, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 37.34248546657495, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.323650360107422, 0.07277331501245499, 2.5989699363708496), 47.08925081676355, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 18.328698808622633, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=400 total=23 players=[('anFMmksxNr+4vtxr', (-20.749406814575195, 0.050000060349702835, 3.8336002826690674))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 21.66302810366991, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 21.035726611326936, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 28.636204561946343, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 37.34248546657495, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.323650360107422, 0.07277331501245499, 2.5989699363708496), 47.08925081676355, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 18.328698808622633, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=440 total=23 players=[('anFMmksxNr+4vtxr', (-20.749406814575195, 0.050000060349702835, 3.8336002826690674))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 21.66302810366991, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 21.035726611326936, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 28.636204561946343, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 37.34248546657495, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.323650360107422, 0.07277331501245499, 2.5989699363708496), 47.08925081676355, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 18.328698808622633, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=480 total=23 players=[('anFMmksxNr+4vtxr', (-20.749406814575195, 0.050000060349702835, 3.8336002826690674))] robots=[('anFL9UsxNr+4vr8u', (-3.6765191555023193, 0.05925846844911575, -9.500686645507812), 21.66302810366991, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8p', (-8.783376693725586, 0.09060771018266678, -13.467101097106934), 21.035726611326936, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr8y', (6.3227458000183105, 0.06980297714471817, -5.500764846801758), 28.636204561946343, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr86', (16.224382400512695, 0.08436132222414017, -1.4008004665374756), 37.34248546657495, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9C', (26.323650360107422, 0.07277331501245499, 2.5989699363708496), 47.08925081676355, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFL9UsxNr+4vr9G', (-28.0, 0.05000007152557373, -13.0), 18.328698808622633, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8u pos=(-3.6765191555023193, 0.05925846844911575, -9.500686645507812) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8p pos=(-8.783376693725586, 0.09060771018266678, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr8y pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr86 pos=(16.224382400512695, 0.08436132222414017, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9C pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFL9UsxNr+4vr9G pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True

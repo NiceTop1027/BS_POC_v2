@@ -1,0 +1,220 @@
+BEGIN
+SETTING 1392={'end_time': '2026-08-27 23:59:59', 'collection_count_color': 'ffe877', 'tran_effect_id': (1494,), 'discount_cost': 25, 'feature_reward_title_bg': 11490, 'discount_tag': 'Great Discount', 'btn_reward_icon': 17574, 'feature_line_color': (222, 201, 159), 'feature_name_bg_color': (58, 105, 147), 'exchange_cost_id': 4120002940, 'begin_utc_stamp': 1784246400, 'first_cost_id': 4120002930, 'gift_roll_times': {}, 'img_weapon_collection_bg': 17570, 'img_weapon_collection_icon': 17571, 'date_bg_icon': 17573, 'img_exchange_money': 17568, 'banner': 13273, 'free_reward': (4100000260, 1), 'discount_count': 30, 'sidebar_banner_color_idx': 8, 'is_discount': 1, 'cost_id': 4000000020, 'lobby_gacha_banner': 16046, 'img_exchange_bg': 17567, 'one_draw_icon': 16201, 'exchange_model_pos_key': 201, 'draw_type': 'Valor', 'reward_model_pos_id': 200, 'draw_icon_png': (17555, 17556, 17557, 17558), 'sidebar_banner': 17564, 'feature_camera_id': 45, 'small_icon': 11253, 'sound_bgm': True, 'sound_sp_state_v': 'xhbm', 'tran_hide_color': ((255, 251, 235, 255), (255, 251, 235, 255), (245, 201, 121, 255), (245, 201, 121, 255)), 'feature_reward_select_bg': 11526, 'img_list_reward_bg': 17572, 'ten_draw_vx': 'UIScript/node_og_shop_military_v7_m700_btn_ten.csb', 'title_str': 'Warlock Valor', 'banner_is_v7': 1, 'allow_roll_times': (1, 5, 10, 50), 'exchange_money_color': '#FAD255', 'cost_count': 50, 'unlock_window_png': (17559, 17560, 17561, 17562, 17563), 'sidebar_bg_icon': 17566, 'left_title_csb': 'UIScript/node_og_shop_military_v7_m700_title.csb', 'feature_bg': 11482, 'model_btn_bg': 90133, 'one_draw_vx': 'UIScript/node_og_shop_military_v7_m700_btn_one.csb', 'level_id': 248, 'collection_count': 50, 'x_draw_icon': 16201, 'rule': 1616, 'flip_rule': 3942, 'cls_name': 'mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow', 'img_banner_bg': 17575, 'end_utc_stamp': 1787875199, 'sidebar_arrow_icon': 17565, 'first_cost_count': 1, 'highly_recommended': 1, 'id': 1392, 'is_limited-time': True, 'title_str_color': ((255, 227, 96, 255), (255, 227, 96, 255), (255, 114, 0, 255), (255, 114, 0, 255)), 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'logic_index': (1,), 'feature_btn_disable': 11484, 'title_icon': 17569, 'model_pos_id': 199, 'redeem_csb': 'UIScript/node_og_shop_military_v7_m700_redeem.csb', 'rank': 22000, 'name': 'Warlock Valor', 'real_gacha': 1391, 'sound_sp_bnk': 'music_outgame_junxu_v7_xhbm', 'begin_time': '2026-07-17 00:00:00', 'feature_icon_color': (156, 156, 156)}
+ROLL 1392=0 GACHA_STATE=CGacha({'count': 0, 'exchange_id_count': ExchangeIdCountMap({}), 'proto_id_count': ProtoIdCountMap({}), 'act_id': 1392, 'no_cycle_proto_ids': [], 'flip_cur_items': CustomMapType({}), 'baseline_count_dict': CustomMapType({}), 'back_reward_request_id': '', 'pending_baselines': [], 'discount_show_reduce': 0, 'baseline_trigger_count': CustomMapType({}), 'next_free_time': 0, 'use_discount_count': 0, 'token_roll_record': CustomMapType({}), 'sp_gacha_records': [], 'sp_gacha_extra': CustomMapType({}), 'milestone_record': CustomMapType({}), 'collect_milestone_record': CustomMapType({}), 'card_discount_count': 0, 'customize_reward_pool': CustomMapType({}), 'back_reward_pool': CustomMapType({}), 'lucky_point': 0, 'free_reward_get_time': 0.0, 'ngpush': 0})
+CAN_BUY 1392=True
+SETTING 1391={'discount_tag': 'Great Discount', 'exchange_cost_id': 4120002940, 'feature_icon_color': (156, 156, 156), 'first_cost_count': 1, 'sound_bgm': True, 'feature_line_color': (222, 201, 159), 'name': 'Warlock Valor', 'feature_camera_id': 45, 'feature_name_bg_color': (58, 105, 147), 'gift_roll_times': {}, 'img_banner_bg': 17575, 'is_limited-time': True, 'x_draw_icon': 16201, 'img_weapon_collection_bg': 17570, 'banner': 13273, 'feature_bg_node': 'UIScript/node_og_shop_attribute_features_bg02_vx.csb', 'left_title_csb': 'UIScript/node_og_shop_military_v7_m700_title.csb', 'collection_count': 50, 'level_id': 248, 'allow_roll_times': (1, 5, 10, 50), 'date_bg_icon': 17573, 'one_draw_icon': 16201, 'btn_reward_icon': 17574, 'model_btn_bg': 90133, 'is_discount': 1, 'feature_reward_select_bg': 11526, 'rank': 22000, 'exchange_model_pos_key': 201, 'sidebar_banner': 17564, 'img_weapon_collection_icon': 17571, 'small_icon': 11253, 'exchange_money_color': '#FAD255', 'sound_sp_bnk': 'music_outgame_junxu_v7_xhbm', 'title_str': 'Warlock Valor', 'tran_effect_id': (1494,), 'ten_draw_vx': 'UIScript/node_og_shop_military_v7_m700_btn_ten.csb', 'feature_bg': 11482, 'lobby_gacha_banner': 16046, 'free_reward': (4100000260, 1), 'img_exchange_money': 17568, 'unlock_window_png': (17559, 17560, 17561, 17562, 17563), 'begin_utc_stamp': 1784246400, 'rule': 1616, 'img_exchange_bg': 17567, 'cls_name': 'mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow', 'end_utc_stamp': 1787875199, 'feature_reward_title_bg': 11490, 'redeem_csb': 'UIScript/node_og_shop_military_v7_m700_redeem.csb', 'flip_rule': 3942, 'banner_is_v7': 1, 'tran_hide_color': ((255, 251, 235, 255), (255, 251, 235, 255), (245, 201, 121, 255), (245, 201, 121, 255)), 'begin_time': '2026-07-17 00:00:00', 'cost_count': 50, 'sound_sp_state_v': 'xhbm', 'first_cost_id': 4120002930, 'collection_count_color': 'ffe877', 'cost_id': 4000000020, 'sidebar_banner_color_idx': 8, 'draw_type': 'Valor', 'highly_recommended': 1, 'one_draw_vx': 'UIScript/node_og_shop_military_v7_m700_btn_one.csb', 'id': 1391, 'discount_cost': 25, 'feature_btn_disable': 11484, 'img_list_reward_bg': 17572, 'draw_icon_png': (17555, 17556, 17557, 17558), 'logic_index': (999,), 'title_icon': 17569, 'model_pos_id': 199, 'discount_count': 30, 'end_time': '2026-08-27 23:59:59', 'real_gacha': 1391, 'title_str_color': ((255, 227, 96, 255), (255, 227, 96, 255), (255, 114, 0, 255), (255, 114, 0, 255)), 'sidebar_bg_icon': 17566, 'sidebar_arrow_icon': 17565}
+ROLL 1391=0 GACHA_STATE=None
+CAN_BUY 1391=True
+BUY_COMP=<class 'gclient.gamesystem.uihall.uimall.mall_gacha_buy_comp.MallGachaBuyComp'> MRO=(<class 'gclient.gamesystem.uihall.uimall.mall_gacha_buy_comp.MallGachaBuyComp'>, <class 'gclient.gamesystem.uihall.uimall.mall_gacha_buy_comp.MallGachaBuyWithFreeComp'>, <class 'object'>)
+FUNCTION MallGachaBuyWithFreeComp.OnBuy signature=(self, times) names=('LocalConfig', 'mall_gacha_confirm_popup', 'get', 'cur_key', 'GachaPopUpWindow', 'BuildData', 'gacha_setting_proto', 'OnBuyConfirm', 'ClearTempBuyInfo', 'temp_buy_info', 'instance', 'Show', 'genv', 'avatar', 'CheckCanBuyGacha', 'BuyConfirm') consts=('id',)
+114           RESUME                   0
+
+115           LOAD_GLOBAL              0 (LocalConfig)
+              LOAD_ATTR                2 (mall_gacha_confirm_popup)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                6 (cur_key)
+              LOAD_CONST               0 (True)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE      172 (to L2)
+              NOT_TAKEN
+
+116           LOAD_GLOBAL              8 (GachaPopUpWindow)
+              LOAD_ATTR               10 (BuildData)
+              PUSH_NULL
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               12 (gacha_setting_proto)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               14 (OnBuyConfirm)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (times, self)
+              LOAD_ATTR               16 (ClearTempBuyInfo)
+              CALL                     4
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (temp_buy_info)
+
+117           LOAD_GLOBAL              8 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Show + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (temp_buy_info)
+              CALL                     1
+              POP_TOP
+
+118           LOAD_GLOBAL             24 (genv)
+              LOAD_ATTR               26 (avatar)
+              LOAD_ATTR               29 (CheckCanBuyGacha + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               12 (gacha_setting_proto)
+              LOAD_CONST               1 ('id')
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       10 (to L1)
+              NOT_TAKEN
+
+119           LOAD_CONST               2 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (temp_buy_info)
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+118   L1:     LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+122   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               31 (BuyConfirm + NULL|self)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+FUNCTION MallGachaBuyWithFreeComp.OnBuyConfirm signature=(self, money_info, times) names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+FUNCTION MallGachaBuyWithFreeComp._BuyGacha signature=(self, gacha_setting_proto, times, skip_anim) names=('genv', 'avatar', 'BuyGacha') consts=('id', 'OnGachaRollSkipAnim', 'OnGachaRoll')
+159           RESUME                   0
+
+160           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              LOAD_FAST_LOAD_FAST     35 (times, skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaRoll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+FUNCTION MallGachaBuyWithFreeComp.BuyConfirm signature=(self, times) names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+END

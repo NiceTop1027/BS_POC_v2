@@ -1,0 +1,257 @@
+BEGIN
+FUNCTION owner=MallBoxWeaponV7RollWindow name=RefreshPanelReward names=('super', 'MallBoxWeaponV7RollWindow', 'RefreshPanelReward', 'gacha_setting_proto', 'get', 'reward_bg', 'texture', 'RefreshGunShow') consts=('img_list_reward_bg',)
+FUNCTION owner=MallBoxWeaponV7RollWindow name=RefreshAllExchangeNodes names=('panel_exchange', 'removeAllChildren', 'gui', 'LoadWidgetFromFile', 'str', 'widget', 'panel_content', 'seek', 'node_exchange', 'setPosition', 'node_exchange_ori', 'EnableTouch', 'OnClickExchange', 'onClick', 'UIText', 'txt_exchange_money', 'CycleTextNode', 'txt_redeem', 'UITexture', 'img_exchange_money', 'ignoreContentAdaptWithSize', 'img_exchange_bg', 'gacha_setting_proto', 'get', 'texture', 'Color', 'To', 'tuple', 'text_color', 'exchange_item_nodes', 'six2', 'xrange', 'MallV6WeaponRollExchangeItemNode', 'parent', 'txt_exchange', 'gacha_exchange_proto', 'is_unlock', 'LoadData') consts=('UIScript/node_og_shop_military_v7_scarsiling_redeem.csb', 'panel_redeem', 'node', 'panel_money', 'txt_money', 'panel_exchange', 'img_money', 'img_bg', 'img_exchange_money', 'img_exchange_bg', 'exchange_money_color', 'panel_item%.2d', 'node_item', 'collection_count')
+FUNCTION owner=MallBoxWeaponV7RollWindow name=ShowRewardWindow names=('genv', 'sound_mgr', 'PlayEventById', 'gclient.gamesystem.uihall.uimall.mall_box_v6_reward_window', 'MallBoxV7RewardWindow', 'instance', 'Show', 'cur_key') consts=('key',)
+FUNCTION owner=MallBoxWeaponV7RollWindow name=OnShowProbability names=('gclient.gamesystem.uihall.activity.activity_harvest_window', 'ActPopShowWindow', 'gacha_setting_proto', 'instance', 'Show', 'ui_helper', 'GetStrMsgFromData', 'get') consts=('tips_txt', 'rule')
+FUNCTION owner=MallBoxWeaponV7RollWindow name=ChangeCameraForGacha names=('genv', 'camera', 'is_fps_placer', 'space', 'gacha_setting_proto', 'get', 'cconst', 'GunUpgradeFeature', 'UPGRADE_FEATURE_SHOW_3P_WEAPON', 'UPGRADE_FEATURE_UNLOCK_ITEM_1', 'ChangeSpecialCameraId', 'UPGRADE_FEATURE_KILL_NUMBER', 'RefreshCamera') consts=('special_feature_camera_id', 'feature_camera_id')
+FUNCTION owner=MallBoxWeaponV7RollWindow name=RefreshLeftTitleCsb names=('gacha_setting_proto', 'panel_new_title', 'removeAllChildren', 'gui', 'LoadWidgetFromFile', 'str', 'widget', 'seek', 'node_title', 'setPosition', 'cc', 'Vec2', 'node_title_pos', 'x', 'y', 'panel_name', 'UITexture', 'img_gacha_title', 'UIText', 'txt_title', 'txt_date', 'getattr', 'childex', 'UIButton', 'onClick', 'img_date', 'img_date_bg', 'btn_reward_show', 'ShowRewardWindow', 'btn_reward_show_bg') consts=('left_title_csb', 'node', 'panel_content', 'panel_time', 'img_title', 'txt_name', 'txt_time', 'OnShowProbability', 'panel_tips.btn_reward', 'img_icon', 'img_bg', 'panel_btn.btn_reward')
+FUNCTION owner=MallBoxWeaponV7RollWindow name=RefreshPanelDate names=('gacha_setting_proto', 'genv', 'avatar', 'common_util', 'IsEnableBrazil', 'time_util', 'UtcStampToZoneSecond', 'cconst', 'BRAZIL_GACHA_LIMIT_TIME', 'server_time_zone', 'GetTimeNow', '_RefreshDate') consts=('end_utc_stamp', 'id')
+FUNCTION owner=MallBoxWeaponV7RollWindow name=RefreshPanelTitle names=('gacha_setting_proto', 'get', 'img_gacha_title', 'texture', 'visible', 'txt_title', 'text', 'SetTextColorByList', 'org_text_color', 'text_color', 'SetVertexColor', 'RefreshGunTitle') consts=('title_icon', 'title_str', '', 'title_str_color')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=InitData names=('cur_key', 'enable_click', 'cost_item_timer', 'select_item_id', 'reward_item_nodes', 'exchange_item_nodes', 'gacha_setting_proto', 'pre_roll_count', 'pre_unlock_effect', 'pre_cost_item', 'protect_timer', 'is_has_item', 'is_roll', 'list_reward_anim_nodes', 'WeaponV6StraightRollManager', 'roll_manager', '_callComponents', 'cur_select_item_key', 'is_first_show', 'v6_model_hide_timer', 'model_ctrl', 'SetWindowStance') consts=('init_data',)
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshPanelReward names=('GetGachaData', 'gacha_reward_data', 'RefreshPanelRollCountTips', 'six2', 'iteritems', 'append', 'sort', 'genv', 'avatar', 'IsGachaCollectionUnlock', 'cur_key', 'is_unlock', 'collection_reward_item_id', 'len', 'list_reward', 'total_item_num', 'list_reward_anim_nodes', 'list_reward_anim_double_1', 'list_reward_anim_double_2', 'getContentSize', 'width', 'height', 'setContentSize', 'cc', 'Size', 'list_reward_anim', 'RefreshAllExchangeNodes', 'RefreshTextChangeMoney', 'gacha_setting_proto', 'get', 'img_weapon_collection_icon', 'texture', 'img_weapon_collection_bg', 'warehouse', 'ItemCountByItemId', 'exchange_cost_item_id', 'pre_cost_item', 'RefreshHasItem', 'RefreshNodeForExchange', 'gacha_box_id', 'txt_special_tips', 'visible', 'RefreshGunShow', 'RefreshJackpot') consts=('item_id', 'img_weapon_collection_icon', 'img_weapon_collection_bg')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshAllExchangeNodes names=('gacha_setting_proto', 'get', 'panel_exchange', 'removeAllChildren', 'gui', 'LoadWidgetFromFile', 'str', 'widget', 'panel_content', 'seek', 'EnableTouch', 'OnClickExchange', 'onClick', 'node_exchange', 'setPosition', 'node_exchange_ori', 'UIText', 'txt_exchange_money', 'CycleTextNode', 'txt_redeem', 'UITexture', 'img_exchange_money', 'ignoreContentAdaptWithSize', 'img_exchange_bg', 'exchange_item_nodes', 'six2', 'xrange', 'MallV6WeaponRollExchangeItemNode', 'parent', 'texture', 'Color', 'To', 'tuple', 'text_color', 'txt_exchange', 'super', 'MallBoxWeaponV6StraightRollWindow', 'RefreshAllExchangeNodes') consts=('redeem_csb', 'panel_redeem', 'node', 'panel_money', 'txt_money', 'panel_exchange', 'img_money', 'img_bg', 'panel_item%.2d', 'node_item', 'img_exchange_money', 'img_exchange_bg', 'exchange_money_color')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshItemDetailPanel names=('select_item_id', 'GunUpgradeDataMgr', 'instance', 'GetImportantFeatures', 'GetItemFeatureList', 'panel_item_detail', 'SetNodeInfo', 'gacha_setting_proto', 'get', 'txt_date', 'seek', 'visible', 'lobby_item_data', 'data', 'consts', 'ItemSubType', 'PanPan', 'WarehouseItemType', 'Heirloom', 'panel_panpan') consts=('rule', 'panel_tips', 'sub_type')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshPanelRollCountTips names=('collection_reward_item_id', 'panel_tips', 'visible', 'genv', 'avatar', 'GetGachaRollCount', 'cur_key', 'is_unlock', 'lang', 'MALL_GACHA_V6_ROLL_COLLECTION_TIPS', 'gacha_setting_proto', 'get', 'txt_weapon_collection_tips', 'text') consts=('collection_count_color', 'fffcb5', 'collection_count')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshJackpot names=('genv', 'avatar', 'list_reward', '_items', 'RefreshJackpot', 'list_reward_anim_double_1', 'list_reward_anim_double_2', 'exchange_item_nodes', 'items', 'cur_key', 'GetJackpotGachaIds', 'panel_jackpot', 'act_id', 'panel_buy', 'visible') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=Show names=('model_ctrl', 'SetWindowStance', 'super', 'MallBoxWeaponV6StraightRollWindow', 'Show', 'PlayAnim', 'genv', 'avatar', 'IsGachaCollectionUnlock', 'cur_key', 'pre_unlock_effect') consts=('in',)
+  --           COPY_FREE_VARS           1
+
+1196           RESUME                   0
+
+1197           LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                0 (model_ctrl)
+               LOAD_ATTR                3 (SetWindowStance + NULL|self)
+               LOAD_FAST_BORROW         0 (self)
+               CALL                     1
+               POP_TOP
+
+1198           LOAD_GLOBAL              4 (super)
+               LOAD_GLOBAL              6 (MallBoxWeaponV6StraightRollWindow)
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_SUPER_ATTR         19 (Show + NULL|self)
+               LOAD_FAST_BORROW         1 (info)
+               CALL                     1
+               POP_TOP
+
+1199           LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR               11 (PlayAnim + NULL|self)
+               LOAD_CONST               0 ('in')
+               CALL                     1
+               POP_TOP
+
+1200           LOAD_GLOBAL             12 (genv)
+               LOAD_ATTR               14 (avatar)
+               LOAD_ATTR               17 (IsGachaCollectionUnlock + NULL|self)
+               LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR               18 (cur_key)
+               CALL                     1
+               LOAD_FAST_BORROW         0 (self)
+               STORE_ATTR              10 (pre_unlock_effect)
+               LOAD_CONST               1 (None)
+               RETURN_VALUE
+
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnGachaV6RollReward names=('visible', 'cur_key', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'get', 'RollCallback', 'len', 'gacha_reward_data', 'PlayAnim', 'list', 'enumerate', 'list_reward_anim_nodes', 'list_reward_anim', 'enable_click', 'HideUIForRollStart', 'genv', 'messenger', 'Broadcast', 'events', 'ON_ENABLE_SWITCH_MALL_PAGE', 'panel_reward', 'panel_reward_anim', 'panel_reward_anim_double', 'txt_special_tips', 'RefreshRollReward', 'item_id', 'data', 'append', 'roll_manager', 'SetRollNodes', 'functools', 'partial', 'OnRollAnimationEnd', 'protect_timer', 'CancelProtectTimer', 'add_timer', 'cconst', 'MALL_ROLL_NOCYCLE_STAGE_ONE_DURATION', 'MALL_ROLL_NOCYCLE_STAGE_TWO_DURATION', 'MALL_ROLL_PROTECT_TIME', 'ProtectRollOver') consts=('final_roll_proto_id', 'item_id', 'in_3', 'in_2', 'item_count')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnGachaRewardWindowShowOneByOneEnd names=('genv', 'avatar', 'get', 'exchange_cost_item_id', 'StartTickCostItem', 'pre_cost_item', 'collection_reward_item_id', 'gacha_setting_proto', 'GetGachaRollCount', 'cur_key', 'pre_roll_count', 'pre_unlock_effect', 'PlayGachaEffect', 'IsGachaCollectionUnlock') consts=('reward_data', 'item_id', 'collection_count')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnGachaRewardWindowClose names=('cur_key', 'genv', 'avatar', 'list_reward', 'RefreshOnRollEnd', 'RefreshPanelReward', 'get', 'exchange_cost_item_id', 'StartTickCostItem', 'pre_cost_item', 'collection_reward_item_id', 'gacha_setting_proto', 'GetGachaRollCount', 'pre_roll_count', 'pre_unlock_effect', 'PlayGachaEffect', 'IsGachaCollectionUnlock', 'warehouse', 'ItemCountByItemId') consts=('act_id', 'reward_data', 'item_id', 'collection_count')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=LaterShow names=('unlock_csb', 'panel_content', 'visible', 'PlayAnim', 'list_reward', 'panel', 'model_ctrl', 'RemoveHiddenReason', 'cconst', 'HIDDEN_REASON_COMMON', 'MallCollectionUnlockWindow', 'instance', 'Show', 'OnUnlockWindowCallback', 'gacha_setting_proto', 'is_unlock', 'RefreshPanelRollCountTips') consts=('in', 'callback', 'gacha_data')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnShowProbability names=('gclient.gamesystem.uihall.activity.activity_harvest_window', 'ActPopShowWindow', 'gacha_setting_proto', 'instance', 'Show', 'ui_helper', 'GetStrMsgFromData', 'get') consts=('tips_txt', 'rule')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnCheckBox names=('LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', 'saveLocalConfig') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnRefreshX names=('btn_buy_refresh_num', 'len', 'btn_refresh_x', 'visible', 'gacha_setting_proto', 'LocalConfig', 'mall_gacha_v6_roll_btn_buy_cur_num', 'OnBuyX', 'btn_buy_ten', 'buy_func', 'LoadDataGacha', 'get', 'hall_ui_util', 'GetGachaDiscountInfoByGachaId', 'RefreshGachaBuyText', 'txt_open_buy_ten') consts=('use_special_icon', 'id')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnUseGachaDiscountCountChangedForPanelBuy names=('cur_key', 'visible', 'RefreshPanelBuy') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshPanelBuy names=('gacha_setting_proto', 'get', 'csb_btn_buy_ten', '_RemoveOldPanelBuyNode', 'panel_buy_ten', 'gui', 'LoadWidgetFromFile', 'str', 'widget', 'seek', 'MallBtnBuyAll', 'btn_buy_ten', 'OnBuyTen', 'buy_func', 'InitCheckBox', 'len', 'btn_buy', 'LoadNormalTexture', 'LoadPressTexture', 'LoadDisableTexture', 'csb_btn_buy_single', 'panel_buy_single', 'btn_buy_single', 'OnBuySingle', 'ignoreContentAdaptWithSize', 'getContentSize', 'width', 'height', 'btn_buy_single_reddot_offset', 'LoadDataGacha', 'hall_ui_util', 'GetGachaDiscountInfoByGachaId', 'RefreshPanelBuySingle', 'OnRefreshX', 'skip_roll_check_box', 'Create', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', 'OnCheckBox') consts=('ten_draw_vx', 'draw_icon_png', 'node', 'one_draw_vx', 'use_special_icon', 'id', 'roll_nocycle_skip_anim')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshPanelBuySingle names=('btn_buy_single', 'LoadDataGacha', 'gacha_setting_proto', 'hall_ui_util', 'GetGachaDiscountInfoByGachaId', 'cur_key', 'RefreshGachaBuyText', 'txt_open_buy_single') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=ChangeCameraForGacha names=('genv', 'camera', 'is_fps_placer', 'space', 'gacha_setting_proto', 'get', 'cconst', 'GunUpgradeFeature', 'UPGRADE_FEATURE_SHOW_3P_WEAPON', 'UPGRADE_FEATURE_UNLOCK_ITEM_1', 'ChangeSpecialCameraId', 'UPGRADE_FEATURE_KILL_NUMBER', 'RefreshCamera') consts=('special_feature_camera_id', 'feature_camera_id')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshLeftTitleCsb names=('gacha_setting_proto', 'panel_new_title', 'removeAllChildren', 'gui', 'LoadWidgetFromFile', 'str', 'widget', 'seek', 'node_title', 'setPosition', 'cc', 'Vec2', 'node_title_pos', 'x', 'y', 'panel_name', 'UITexture', 'img_gacha_title', 'UIText', 'txt_title', 'txt_date', 'getattr', 'childex', 'UIButton', 'onClick', 'img_date', 'img_date_bg', 'btn_reward_show', 'ShowRewardWindow', 'btn_reward_show_bg') consts=('left_title_csb', 'node', 'panel_content', 'panel_time', 'img_title', 'txt_name', 'txt_time', 'OnShowProbability', 'panel_tips.btn_reward', 'img_icon', 'img_bg', 'panel_btn.btn_reward')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshPanelDate names=('gacha_setting_proto', 'genv', 'avatar', 'common_util', 'IsEnableBrazil', 'time_util', 'UtcStampToZoneSecond', 'cconst', 'BRAZIL_GACHA_LIMIT_TIME', 'server_time_zone', 'GetTimeNow', '_RefreshDate') consts=('end_utc_stamp', 'id')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshPanelTitle names=('gacha_setting_proto', 'get', 'img_gacha_title', 'texture', 'visible', 'txt_title', 'text', 'SetTextColorByList', 'org_text_color', 'text_color', 'SetVertexColor', 'RefreshGunTitle') consts=('title_icon', 'title_str', '', 'title_str_color')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnBtnSkinHalfClick names=('fsm_mall_model', 'state', 'FSMTransfer', 'StateMallModelHeroSkin', 'item_id', 'lobby_item_data', 'data', 'gacha_setting_proto', 'StateMallModelHeroSkinFullBody') consts=('MallModelHeroSkinFullBody',)
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnClosePanelVideo names=('fsm_mall_model', 'FSMTransfer', 'StateMallModelHeroSkin', 'item_id', 'lobby_item_data', 'data', 'gacha_setting_proto') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshModelClothes names=('fsm_mall_model', 'FSMForceTransfer', 'StateMallModelHeroSkin', 'gacha_setting_proto') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=RefreshModelExecuteItem names=('fsm_mall_model', 'FSMForceTransfer', 'StateGachaModelExecutionItem', 'gacha_setting_proto') consts=()
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=SetupHallLevelAndCamera names=('gacha_setting_proto', 'genv', 'space', 'LoadHallLevel', 'cconst', 'HallLevel', 'LEVEL_HALL_MALL', 'ChangeSpecialCameraId') consts=('level_id', 'camera_id')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=LoadOneTimeEffectAndSound names=('UnLoadOneTimeEffectAndSound', 'gacha_setting_proto', 'genv', 'sound_mgr', 'PlayEventById', 'sp_effect_sound', 'MType', 'Matrix4x3', 'Vector3', 'get', 'translation', 'math', 'pi', 'set_pitch_yaw_roll', 'scale', 'effect_util', 'WarpperPlayEffectInWorld2', 'sp_effect', 'PlayLevelEffect') consts=('effect_sound', 'effect_id_list', 'effect_pos', 'effect_rot', 'effect_scale')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=LoadSpBGM names=('UnLoadSpBGM', 'gacha_setting_proto', 'get', 'model_ctrl', 'SetGachaSettingProto', 'genv', 'sound_mgr', 'CheckABTestCondition', 'avatar', 'LoadMedia', 'SetState') consts=('sound_bgm', 'sound_sp_state_v', 'sound_sp_bnk', 'sound_bgm_ab_test_condition_id', 'music_junxu', 'music_basic', 'Junxu', 'None', 'Shop')
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=OnMallModelWeaponModelLoadedForSoundEffectComp names=('real_visible', 'need_hide_duration', 'gacha_setting_proto', 'model_ctrl', 'AddHiddenReason', 'cconst', 'HIDDEN_REASON_VEHICLE', 'model_hide_timer', 'cancel_timer', 'add_timer') consts=('hide_duration',)
+FUNCTION owner=MallBoxWeaponV6StraightRollWindow name=GetFloorProto names=('hasattr', 'item_id', 'hero_data_util', 'GetHeroSkinProto', 'get', 'gacha_setting_proto') consts=('item_id', 'floor_level_id')
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=RefreshAllPanel names=('genv', 'avatar', 'IsGachaCollectionUnlock', 'cur_key', 'is_unlock', 'super', 'MallBoxWeaponV6RollNewWindow', 'RefreshAllPanel') consts=()
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=BuildData names=('super', 'MallBoxWeaponV6RollNewWindow', 'BuildData', 'gacha_setting_proto', 'get', 'InitReward') consts=('reward_csb',)
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=RefreshPanelReward names=('RefreshPanelRollCountTips', 'gacha_reward_data', 'six2', 'iteritems', 'reward_item_nodes', 'LoadData', 'is_big', 'HasCollectionItem', 'is_unlock', 'visible', 'RefreshAllExchangeNodes', 'exchange_cost_item_proto', 'get', 'img_exchange_money', 'texture', 'RefreshTextChangeMoney', 'genv', 'avatar', 'GetGachaRollCount', 'cur_key', 'pre_roll_count', 'warehouse', 'ItemCountByItemId', 'exchange_cost_item_id', 'pre_cost_item') consts=('icon',)
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=RefreshPanelRollCountTips names=('collection_reward_item_id', 'panel_tips', 'visible', 'genv', 'avatar', 'GetGachaRollCount', 'cur_key', 'is_unlock', 'reward_item_nodes', 'lang', 'MALL_GACHA_V6_ROLL_COLLECTION_TIPS', 'gacha_setting_proto', 'get', 'txt_weapon_collection_tips', 'text') consts=('collection_count_color', 'fffcb5', 'collection_count')
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=RefreshAllExchangeNodes names=('ui_define', 'DEVICE_SAFE_AREA_OFFSET_L', 'panel_exchange', 'setPosition', 'panel_exchange_ori', 'x', 'y', 'melee_feature_panel', 'melee_feature_panel_ori', 'gacha_exchange_proto', 'gacha_setting_proto', 'get', 'is_unlock', 'exchange_item_nodes', 'LoadData') consts=('collection_count',)
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=OnGachaRewardWindowShowOneByOneEnd names=('genv', 'avatar', 'get', 'exchange_cost_item_id', 'reward_node', 'PlayAnim', 'functools', 'partial', 'StartTickCostItem', 'pre_cost_item', 'collection_reward_item_id', 'gacha_setting_proto', 'GetGachaRollCount', 'cur_key', 'pre_roll_count', 'PlayGachaEffect') consts=('reward_data', 'item_id', 'tips', 'collection_count')
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=OnGachaRewardWindowClose names=('cur_key', 'genv', 'avatar', 'six2', 'itervalues', 'reward_item_nodes', 'RefreshOnRollEnd', 'RefreshAllExchangeNodes', 'collection_reward_item_id', 'gacha_setting_proto', 'GetGachaRollCount', 'pre_roll_count', 'PlayGachaEffect', 'warehouse', 'ItemCountByItemId', 'exchange_cost_item_id', 'pre_cost_item') consts=('act_id', 'collection_count')
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=PlayGachaEffect names=('visible', 'PlayAnim', 'panel_content', 'RefreshPanelReward', 'model_ctrl', 'AddHiddenReason', 'cconst', 'HIDDEN_REASON_COMMON', 'gclient.gamesystem.uihall.hall_common_reward_window', 'GachaRewardComp', 'isInited', 'instance', 'Close', 'gacha_setting_proto', 'get', 'genv', 'sound_mgr', 'PlayEventById', 'sp_effect_sound', 'MHelper', 'PlayCameraEffectById', 'sp_effect', 'add_timer', 'LaterShow', 'v6_model_hide_timer') consts=('out', 'tran_hide_duration', 'tran_effect_id', 'effect_sound')
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=LaterShow names=('unlock_csb', 'panel_content', 'visible', 'PlayAnim', 'model_ctrl', 'RemoveHiddenReason', 'cconst', 'HIDDEN_REASON_COMMON', 'MallCollectionUnlockWindow', 'instance', 'Show', 'OnUnlockWindowCallback', 'gacha_setting_proto', 'is_unlock', 'reward_item_nodes', 'RefreshOnRollEnd', 'RefreshPanelRollCountTips') consts=('in', 'callback', 'gacha_data')
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=OnClickPanelDiscount names=('gclient.gamesystem.uihall.uimall.discount_coupon_popup_window', 'DiscountCouponPopUpWindow', 'instance', 'Show', 'cur_key') consts=('gacha_id',)
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=OnShowGachaCardDiscountVx names=('cur_key', 'visible', 'panel_discount', 'ShowVx', 'panel_discount_coupon') consts=()
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=OnUseGachaDiscountCountChanged names=('cur_key', 'visible', 'RefreshDiscount') consts=()
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=RefreshDiscount names=('cur_key', 'hall_ui_util', 'GetGachaDiscountInfoByGachaId', 'gacha_setting_data', 'data', 'get', 'panel_discount', 'visible', 'panel_discount_coupon', 'genv', 'avatar', 'SetDefaultDiscount', 'warehouse', 'HasItemByItemId', '_GetGachaDiscountCardId', 'SetCouponDiscount') consts=('discount_coupon',)
+FUNCTION owner=MallBoxWeaponV6RollNewWindow name=_GetGachaDiscountCardId names=('gacha_setting_data', 'data', 'get', 'cur_key', 'consts', 'ItemID', 'GachaDiscountCard') consts=('gacha_discount_card',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=HasCollectionItem names=('gacha_setting_proto',) consts=('collection_count',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=InitData names=('cur_key', 'enable_click', 'cost_item_timer', 'cur_select_item_key', 'select_item_id', 'reward_item_nodes', 'exchange_item_nodes', 'gacha_setting_proto', 'pre_roll_count', 'pre_cost_item', 'protect_timer', 'WeaponV6RollManager', 'roll_manager', '_callComponents') consts=('init_data',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=BuildData names=('item_id', 'show_type', 'cur_key', 'gacha_box_id', 'gacha_setting_data', 'data', 'gacha_setting_proto', 'gacha_exchange_data', 'gacha_exchange_proto', 'get', 'model_pos_key', 'exchange_cost_item_id', 'lobby_item_data', 'exchange_cost_item_proto', 'unlock_csb', 'genv', 'messenger', 'Broadcast', 'events', 'ON_ACTIVITY_CHANGE_SIDEBAR_PANEL', 'GetGachaData', 'gacha_reward_data', 'six2', 'iteritems', 'reward_item_id_2_idx', 'GetTokenUltimateRewardItemId', 'token_ultimate_reward_item_id', 'collection_reward_item_id', 'items', 'btn_buy_refresh_num', 'gun_skin_util', 'GetGunIdByGuiseItemId', 'ultimate_reward_gun_id', 'lobby_item_upgrade_data', 'final_view_item_id', 'select_item_id', 'sorted', 'iterkeys', 'gacha_extra_info', 'itervalues', 'StartAutoBatchDownloadByLobbyItems') consts=('model_pos_id', 'exchange_cost_id', 'unlock_window', 'UIScript/og_shop_attribute_v6_turnable_hide.csb', 'sidebar_bg_icon', 'sidebar_arrow_icon', 'item_id', 'collection_price', 'allow_roll_times', 'camera_id', 'level_id')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=Show names=('super', 'MallBoxWeaponV6RollWindow', 'Show', 'ClearAllDlcIconNodes', 'cur_key', 'cur_select_item_key', 'select_item_id', 'reward_item_nodes', 'BuildData', '_callComponents', 'SetModelSettingProto', 'model_pos_key', 'SetupModelModeBtnBg', 'gacha_setting_proto', 'LocalConfig', 'mall_gacha_v6_roll_btn_buy_cur_num', 'RefreshAllPanel', 'genv', 'messenger', 'Broadcast', 'events', 'ON_GACHA_V6_SIDEBAR_CLOSE_PANEL_SHOW', 'PlayAnim', 'ui_display_statistic_mgr', 'BuildWindowIdExtra', 'ON_WINDOW_SHOW') consts=('key', 'show', 'in', 'after_show')
+  --           COPY_FREE_VARS           1
+               MAKE_CELL                0 (self)
+
+ 417           RESUME                   0
+
+ 418           LOAD_GLOBAL              0 (super)
+               LOAD_GLOBAL              2 (MallBoxWeaponV6RollWindow)
+               LOAD_DEREF               0 (self)
+               LOAD_SUPER_ATTR         11 (Show + NULL|self)
+               LOAD_FAST_BORROW         1 (info)
+               CALL                     1
+               POP_TOP
+
+ 419           LOAD_DEREF               0 (self)
+               LOAD_ATTR                7 (ClearAllDlcIconNodes + NULL|self)
+               CALL                     0
+               POP_TOP
+
+ 420           LOAD_FAST_BORROW         1 (info)
+               LOAD_CONST               0 ('key')
+               BINARY_OP               26 ([])
+               STORE_FAST               2 (key)
+
+ 421           LOAD_DEREF               0 (self)
+               LOAD_ATTR                8 (cur_key)
+               LOAD_FAST_BORROW         2 (key)
+               COMPARE_OP             119 (bool(!=))
+               POP_JUMP_IF_FALSE       22 (to L1)
+               NOT_TAKEN
+
+ 423           LOAD_CONST               1 (None)
+               LOAD_DEREF               0 (self)
+               STORE_ATTR               5 (cur_select_item_key)
+
+ 424           LOAD_CONST               1 (None)
+               LOAD_DEREF               0 (self)
+               STORE_ATTR               6 (select_item_id)
+
+ 425           BUILD_MAP                0
+               LOAD_DEREF               0 (self)
+               STORE_ATTR               7 (reward_item_nodes)
+
+ 426   L1:     LOAD_FAST_BORROW         2 (key)
+               LOAD_DEREF               0 (self)
+               STORE_ATTR               4 (cur_key)
+
+ 427           LOAD_DEREF               0 (self)
+               LOAD_ATTR               17 (BuildData + NULL|self)
+               CALL                     0
+               POP_TOP
+
+ 428           LOAD_DEREF               0 (self)
+               LOAD_ATTR               19 (_callComponents + NULL|self)
+               LOAD_CONST               2 ('show')
+               LOAD_FAST_BORROW         2 (key)
+               CALL                     2
+               POP_TOP
+
+ 429           LOAD_DEREF               0 (self)
+               LOAD_ATTR               21 (SetModelSettingProto + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               22 (model_pos_key)
+               CALL                     1
+               POP_TOP
+
+ 430           LOAD_DEREF               0 (self)
+               LOAD_ATTR               25 (SetupModelModeBtnBg + NULL|self)
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR               26 (gacha_setting_proto)
+               CALL                     1
+               POP_TOP
+
+ 431           LOAD_CONST               1 (None)
+               LOAD_GLOBAL             28 (LocalConfig)
+               STORE_ATTR              15 (mall_gacha_v6_roll_btn_buy_cur_num)
+
+ 432           LOAD_DEREF               0 (self)
+               LOAD_ATTR               33 (RefreshAllPanel + NULL|self)
+               CALL                     0
+               POP_TOP
+
+ 433           LOAD_GLOBAL             34 (genv)
+               LOAD_ATTR               36 (messenger)
+               LOAD_ATTR               39 (Broadcast + NULL|self)
+               LOAD_GLOBAL             40 (events)
+               LOAD_ATTR               42 (ON_GACHA_V6_SIDEBAR_CLOSE_PANEL_SHOW)
+               LOAD_CONST               3 (True)
+               CALL                     2
+               POP_TOP
+
+ 434           LOAD_DEREF               0 (self)
+               LOAD_ATTR               45 (PlayAnim + NULL|self)
+               LOAD_CONST               4 ('in')
+               LOAD_FAST_BORROW         0 (self)
+               BUILD_TUPLE              1
+               LOAD_CONST               5 (<code object <lambda> at 0x00000259DFF03630, file "gclient/gamesystem/uihall/uimall/mall_box_weapon_v6_roll_window.py", line 434>)
+               MAKE_FUNCTION
+               SET_FUNCTION_ATTRIBUTE   8 (closure)
+               LOAD_CONST               6 (('callback',))
+               CALL_KW                  2
+               POP_TOP
+
+ 435           LOAD_GLOBAL             34 (genv)
+               LOAD_ATTR               46 (ui_display_statistic_mgr)
+               LOAD_ATTR               49 (BuildWindowIdExtra + NULL|self)
+               LOAD_SMALL_INT         102
+               LOAD_DEREF               0 (self)
+               LOAD_ATTR                8 (cur_key)
+               CALL                     2
+               STORE_FAST               3 (window_id)
+
+ 436           LOAD_GLOBAL             34 (genv)
+               LOAD_ATTR               36 (messenger)
+               LOAD_ATTR               39 (Broadcast + NULL|self)
+               LOAD_GLOBAL             40 (events)
+               LOAD_ATTR               50 (ON_WINDOW_SHOW)
+               LOAD_FAST_BORROW         3 (window_id)
+               CALL                     2
+               POP_TOP
+
+ 437           LOAD_DEREF               0 (self)
+               LOAD_ATTR               19 (_callComponents + NULL|self)
+               LOAD_CONST               7 ('after_show')
+               LOAD_FAST_BORROW         2 (key)
+               CALL                     2
+               POP_TOP
+               LOAD_CONST               1 (None)
+               RETURN_VALUE
+
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelReward names=('RefreshPanelRollCountTips', 'gacha_reward_data', 'six2', 'iteritems', 'reward_item_nodes', 'LoadData', 'RefreshAllExchangeNodes', 'exchange_cost_item_proto', 'get', 'img_exchange_money', 'texture', 'RefreshTextChangeMoney', 'genv', 'avatar', 'GetGachaRollCount', 'cur_key', 'pre_roll_count', 'warehouse', 'ItemCountByItemId', 'exchange_cost_item_id', 'pre_cost_item') consts=('icon',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelRollCountTips names=('genv', 'avatar', 'GetGachaRollCount', 'cur_key', 'gacha_setting_proto', 'panel_tips', 'visible', 'lang', 'MALL_GACHA_V6_ROLL_COLLECTION_TIPS', 'get', 'txt_weapon_collection_tips', 'text') consts=('collection_count', 'collection_count_color', 'fffcb5')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnGachaRollCountChanged names=('cur_key', 'RefreshPanelRollCountTips') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnGachaV6RollReward names=('visible', 'cur_key', 'genv', 'avatar', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'get', 'RollCallback', 'enable_click', 'HideUIForRollStart', 'messenger', 'Broadcast', 'events', 'ON_ENABLE_SWITCH_MALL_PAGE', 'ItemCountIncludeUpgradeItem', 'FilterRewardItemNodes', 'IsGachaCollectionUnlock', 'collection_reward_item_id', 'six2', 'iteritems', 'reward_item_nodes', 'item_id', 'data', 'append', 'roll_manager', 'SetRollNodes', 'functools', 'partial', 'protect_timer', 'CancelProtectTimer', 'add_timer', 'cconst', 'MALL_ROLL_NOCYCLE_STAGE_ONE_DURATION', 'MALL_ROLL_NOCYCLE_STAGE_TWO_DURATION', 'MALL_ROLL_PROTECT_TIME', 'ProtectRollOver') consts=('final_roll_proto_id', 'item_id', 'no_cycle')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnGachaRewardWindowShowOneByOneEnd names=('genv', 'avatar', 'get', 'exchange_cost_item_id', 'reward_node', 'PlayAnim', 'collection_reward_item_id', 'gacha_setting_proto', 'GetGachaRollCount', 'cur_key', 'pre_roll_count', 'unlock_csb', 'MallCollectionUnlockWindow', 'instance', 'Show', 'OnUnlockWindowCallback', 'reward_item_nodes', 'RefreshOnRollEnd') consts=('reward_data', 'item_id', 'tips', 'collection_count', 'callback', 'gacha_data')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnGachaRewardWindowClose names=('cur_key', 'genv', 'avatar', 'six2', 'itervalues', 'reward_item_nodes', 'RefreshOnRollEnd', 'RefreshAllExchangeNodes', 'collection_reward_item_id', 'gacha_setting_proto', 'GetGachaRollCount', 'pre_roll_count', 'unlock_csb', 'MallCollectionUnlockWindow', 'instance', 'Show', 'OnUnlockWindowCallback', 'warehouse', 'ItemCountByItemId', 'exchange_cost_item_id', 'pre_cost_item') consts=('act_id', 'collection_count', 'callback', 'gacha_data')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnClickExchange names=('genv', 'sound_mgr', 'PlayEventById', 'gclient.gamesystem.uihall.uimall.mall_box_exchange_window', 'MallBoxExchangeWindow', 'instance', 'Show', 'cur_key', 'RefreshOnExchangeCallback') consts=('key', 'callback')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=ShowRewardWindow names=('genv', 'sound_mgr', 'PlayEventById', 'gclient.gamesystem.uihall.uimall.mall_box_v6_reward_window', 'MallBoxWeaponV6RollRewardWindow', 'instance', 'Show', 'cur_key') consts=('key',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=GetActivityRechargeIDS names=('gacha_setting_proto', 'genv', 'avatar', 'GetActivityRechargeIDS') consts=('ban_recharge_tips',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnClickCoupon names=('gclient.gamesystem.uihall.uimall.discount_coupon_popup_window', 'DiscountCouponPopUpWindow', 'instance', 'Show', 'cur_key') consts=('gacha_id',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnClickFreeReward names=('genv', 'avatar', 'CallServer', 'cur_key') consts=('GachaGetFreeReward',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelCoupon names=('gacha_setting_proto', 'img_arrow', 'visible', 'node_money', 'StopAnim', 'bool', '_img_can_use_coupon', '_img_can_not_use_coupon', 'genv', 'avatar', '_GetGachaDiscountCardId', 'warehouse', 'HasItemByItemId', 'PlayAnim') consts=('discount_coupon', 'in_arrow')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelFreeReward names=('cur_key', 'gacha_setting_proto', 'genv', 'avatar', 'server_time_zone', 'time_util', 'UtcStampToZoneSecond', 'gacha_mgr', 'free_reward_get_time', 'get', 'GetTimeNow', 'panel_free_reward', 'visible', 'node_free_reward_tips', 'panel_free_reward_tips', 'PlayAnim', 'node_free_reward_item', 'SetItem', 'OnClickFreeReward', 'node_money') consts=('begin_utc_stamp', 'free_reward', 'in', 'box_loop')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=_GetGachaDiscountCardId names=('gacha_setting_proto', 'get', 'consts', 'ItemID', 'GachaDiscountCard') consts=('gacha_discount_card',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=LoadOneTimeEffectAndSound names=('UnLoadOneTimeEffectAndSound', 'gacha_setting_proto', 'genv', 'sound_mgr', 'PlayEventById', 'sp_effect_sound', 'MType', 'Matrix4x3', 'Vector3', 'get', 'translation', 'math', 'pi', 'set_pitch_yaw_roll', 'scale', 'effect_util', 'WarpperPlayEffectInWorld2', 'sp_effect', 'PlayLevelEffect') consts=('effect_sound', 'effect_id_list', 'effect_pos', 'effect_rot', 'effect_scale')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=LoadSpBGM names=('UnLoadSpBGM', 'gacha_setting_proto', 'get', 'model_ctrl', 'SetGachaSettingProto', 'genv', 'sound_mgr', 'CheckABTestCondition', 'avatar', 'LoadMedia', 'SetState') consts=('sound_bgm', 'sound_sp_state_v', 'sound_sp_bnk', 'sound_bgm_ab_test_condition_id', 'music_junxu', 'music_basic', 'Junxu', 'None', 'Shop')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnMallModelWeaponModelLoadedForSoundEffectComp names=('real_visible', 'need_hide_duration', 'gacha_setting_proto', 'model_ctrl', 'AddHiddenReason', 'cconst', 'HIDDEN_REASON_VEHICLE', 'model_hide_timer', 'cancel_timer', 'add_timer') consts=('hide_duration',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnCheckBox names=('LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', 'saveLocalConfig') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnRefreshX names=('btn_buy_refresh_num', 'len', 'btn_refresh_x', 'visible', 'gacha_setting_proto', 'LocalConfig', 'mall_gacha_v6_roll_btn_buy_cur_num', 'OnBuyX', 'btn_buy_ten', 'buy_func', 'LoadDataGacha', 'get', 'hall_ui_util', 'GetGachaDiscountInfoByGachaId', 'RefreshGachaBuyText', 'txt_open_buy_ten') consts=('use_special_icon', 'id')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnUseGachaDiscountCountChangedForPanelBuy names=('cur_key', 'visible', 'RefreshPanelBuy') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelBuy names=('gacha_setting_proto', 'get', 'csb_btn_buy_ten', '_RemoveOldPanelBuyNode', 'panel_buy_ten', 'gui', 'LoadWidgetFromFile', 'str', 'widget', 'seek', 'MallBtnBuyAll', 'btn_buy_ten', 'OnBuyTen', 'buy_func', 'InitCheckBox', 'len', 'btn_buy', 'LoadNormalTexture', 'LoadPressTexture', 'LoadDisableTexture', 'csb_btn_buy_single', 'panel_buy_single', 'btn_buy_single', 'OnBuySingle', 'ignoreContentAdaptWithSize', 'getContentSize', 'width', 'height', 'btn_buy_single_reddot_offset', 'LoadDataGacha', 'hall_ui_util', 'GetGachaDiscountInfoByGachaId', 'RefreshPanelBuySingle', 'OnRefreshX', 'skip_roll_check_box', 'Create', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', 'OnCheckBox') consts=('ten_draw_vx', 'draw_icon_png', 'node', 'one_draw_vx', 'use_special_icon', 'id', 'roll_nocycle_skip_anim')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelBuySingle names=('btn_buy_single', 'LoadDataGacha', 'gacha_setting_proto', 'hall_ui_util', 'GetGachaDiscountInfoByGachaId', 'cur_key', 'RefreshGachaBuyText', 'txt_open_buy_single') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelDate names=('gacha_setting_proto', 'genv', 'avatar', 'common_util', 'IsEnableBrazil', 'time_util', 'UtcStampToZoneSecond', 'cconst', 'BRAZIL_GACHA_LIMIT_TIME', 'server_time_zone', 'GetTimeNow', '_RefreshDate') consts=('end_utc_stamp', 'id')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshPanelTitle names=('gacha_setting_proto', 'get', 'img_gacha_title', 'texture', 'visible', 'txt_title', 'text', 'SetTextColorByList', 'org_text_color', 'text_color', 'SetVertexColor', 'RefreshGunTitle') consts=('title_icon', 'title_str', '', 'title_str_color')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=ChangeCameraForGacha names=('genv', 'camera', 'is_fps_placer', 'space', 'gacha_setting_proto', 'get', 'cconst', 'GunUpgradeFeature', 'UPGRADE_FEATURE_SHOW_3P_WEAPON', 'UPGRADE_FEATURE_UNLOCK_ITEM_1', 'ChangeSpecialCameraId', 'UPGRADE_FEATURE_KILL_NUMBER', 'RefreshCamera') consts=('special_feature_camera_id', 'feature_camera_id')
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnBtnSkinHalfClick names=('fsm_mall_model', 'state', 'FSMTransfer', 'StateMallModelHeroSkin', 'item_id', 'lobby_item_data', 'data', 'gacha_setting_proto', 'StateMallModelHeroSkinFullBody') consts=('MallModelHeroSkinFullBody',)
+FUNCTION owner=MallBoxWeaponV6RollWindow name=OnClosePanelVideo names=('fsm_mall_model', 'FSMTransfer', 'StateMallModelHeroSkin', 'item_id', 'lobby_item_data', 'data', 'gacha_setting_proto') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshModelClothes names=('fsm_mall_model', 'FSMForceTransfer', 'StateMallModelHeroSkin', 'gacha_setting_proto') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=RefreshModelExecuteItem names=('fsm_mall_model', 'FSMForceTransfer', 'StateGachaModelExecutionItem', 'gacha_setting_proto') consts=()
+FUNCTION owner=MallBoxWeaponV6RollWindow name=SetupHallLevelAndCamera names=('gacha_setting_proto', 'genv', 'space', 'LoadHallLevel', 'cconst', 'HallLevel', 'LEVEL_HALL_MALL', 'ChangeSpecialCameraId') consts=('level_id', 'camera_id')
+END

@@ -1,0 +1,122 @@
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F model=<class 'gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel'>
+anFju0sxNr+4xE8F MakeSureBones=None
+anFju0sxNr+4xE8F skeleton=<ActorComponent object at 0x0000025A1746C380> type=<class 'ActorComponent'>
+anFju0sxNr+4xE8F pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped R Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'qunbai021', 'qunbai041', 'qunbai061', 'qunbai062', 'qunbai022', 'qunbai042', 'HP_WR', 'HP_Camera', 'HP_WL', 'HP_Spine_L'] type=<class 'list'> attrs=[]
+anFju0sxNr+4xE8F Head create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F head create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Head create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_Head create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_HeadNub create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Neck create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Neck create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F neck create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F mixamorig:Head create=None world=(-19.347902297973633, 0.050000015646219254, -3.3629515171051025) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk model=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'>
+anFjs0sxNr+4xEqk MakeSureBones=None
+anFjs0sxNr+4xEqk skeleton=<ActorComponent object at 0x00000259E1A217C0> type=<class 'ActorComponent'>
+anFjs0sxNr+4xEqk pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R Clavicle', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'HP_WR'] type=<class 'list'> attrs=[]
+anFjs0sxNr+4xEqk Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_HeadNub create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk mixamorig:Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F model=<class 'gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel'>
+anFju0sxNr+4xE8F MakeSureBones=None
+anFju0sxNr+4xE8F skeleton=<ActorComponent object at 0x0000025A1746C380> type=<class 'ActorComponent'>
+anFju0sxNr+4xE8F pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped R Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'qunbai021', 'qunbai041', 'qunbai061', 'qunbai062', 'qunbai022', 'qunbai042', 'HP_WR', 'HP_Camera', 'HP_WL', 'HP_Spine_L'] type=<class 'list'> attrs=[]
+anFju0sxNr+4xE8F biped Head create=None world=(-19.550338745117188, 1.524994969367981, -6.103753089904785) model=(0.035146959125995636, 1.3409044742584229, -0.03691611438989639)
+anFju0sxNr+4xE8F Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_HeadNub create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Neck create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Neck create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F neck create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F mixamorig:Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk model=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'>
+anFjs0sxNr+4xEqk MakeSureBones=None
+anFjs0sxNr+4xEqk skeleton=<ActorComponent object at 0x00000259E1A217C0> type=<class 'ActorComponent'>
+anFjs0sxNr+4xEqk pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R Clavicle', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'HP_WR'] type=<class 'list'> attrs=[]
+anFjs0sxNr+4xEqk biped Head create=None world=(-3.640326499938965, 1.544240951538086, -9.427184104919434) model=(0.06646323204040527, 1.354580283164978, -0.03491516783833504)
+anFjs0sxNr+4xEqk Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_HeadNub create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk mixamorig:Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F model=<class 'gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel'>
+anFju0sxNr+4xE8F MakeSureBones=None
+anFju0sxNr+4xE8F skeleton=<ActorComponent object at 0x0000025A1746C380> type=<class 'ActorComponent'>
+anFju0sxNr+4xE8F pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped R Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'qunbai021', 'qunbai041', 'qunbai061', 'qunbai062', 'qunbai022', 'qunbai042', 'HP_WR', 'HP_Camera', 'HP_WL', 'HP_Spine_L'] type=<class 'list'> attrs=[]
+anFju0sxNr+4xE8F biped Neck create=None world=(-19.599702835083008, 1.4764416217803955, -6.140654563903809) model=(0.06120128184556961, 1.2967649698257446, -0.08776233345270157)
+anFju0sxNr+4xE8F biped Head create=None world=(-19.547836303710938, 1.5272122621536255, -6.111574649810791) model=(0.03584675118327141, 1.342920184135437, -0.04002043604850769)
+anFju0sxNr+4xE8F Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_HeadNub create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Neck create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Neck create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F neck create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F mixamorig:Head create=None world=(-19.504724502563477, 0.05000007152557373, -6.071149826049805) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk model=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'>
+anFjs0sxNr+4xEqk MakeSureBones=None
+anFjs0sxNr+4xEqk skeleton=<ActorComponent object at 0x00000259E1A217C0> type=<class 'ActorComponent'>
+anFjs0sxNr+4xEqk pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R Clavicle', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'HP_WR'] type=<class 'list'> attrs=[]
+anFjs0sxNr+4xEqk biped Neck create=None world=(-3.5894505977630615, 1.486973524093628, -9.4168119430542) model=(0.07592912763357162, 1.3025190830230713, -0.08115844428539276)
+anFjs0sxNr+4xEqk biped Head create=None world=(-3.6414995193481445, 1.5441830158233643, -9.428277969360352) model=(0.0654684454202652, 1.3545275926589966, -0.03384958580136299)
+anFjs0sxNr+4xEqk Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_HeadNub create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk mixamorig:Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F model=<class 'gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel'>
+anFju0sxNr+4xE8F entity head_attrs=['CanShowRedFrontSight', 'ChangeLefthandWeaponClientAhead', 'ChangeSpecWeaponClientAhead', 'ChangeWeaponClientAhead', 'CheckCrisisAwarenessInSight', 'CheckVehicleHeadHit', 'OnGainTalentSighted', 'OnLoseTalentSighted', 'ReplayForHudFrontSight', '_house_range_head_cover', 'meow_head_effect_id', 'on_ent_out_sight', 'on_out_sight']
+anFju0sxNr+4xE8F model head_attrs=['BindBoneColliderCallFunc']
+anFju0sxNr+4xE8F MakeSureBones=None
+anFju0sxNr+4xE8F skeleton=<ActorComponent object at 0x0000025A1746C380> type=<class 'ActorComponent'>
+anFju0sxNr+4xE8F pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped R Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'qunbai021', 'qunbai041', 'qunbai061', 'qunbai062', 'qunbai022', 'qunbai042', 'HP_WR', 'HP_Camera', 'HP_WL', 'HP_Spine_L'] type=<class 'list'> attrs=[]
+anFju0sxNr+4xE8F biped Neck create=None world=(-20.016910552978516, 1.477276086807251, -8.209141731262207) model=(0.06222422420978546, 1.2975237369537354, -0.08760261535644531)
+anFju0sxNr+4xE8F biped Head create=None world=(-19.964513778686523, 1.527163028717041, -8.179490089416504) model=(0.03691535443067551, 1.3428754806518555, -0.03907302767038345)
+anFju0sxNr+4xE8F Head create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F head create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Head create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_Head create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001_HeadNub create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Bip001 Neck create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F Neck create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F neck create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFju0sxNr+4xE8F mixamorig:Head create=None world=(-19.922948837280273, 0.050000011920928955, -8.137434959411621) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk model=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'>
+anFjs0sxNr+4xEqk entity head_attrs=['OnGainTalentSighted', 'OnLoseTalentSighted', 'ReplayForHudFrontSight', '_house_range_head_cover', 'meow_head_effect_id', 'on_ent_out_sight', 'on_out_sight']
+anFjs0sxNr+4xEqk model head_attrs=['BindBoneColliderCallFunc']
+anFjs0sxNr+4xEqk MakeSureBones=None
+anFjs0sxNr+4xEqk skeleton=<ActorComponent object at 0x00000259E1A217C0> type=<class 'ActorComponent'>
+anFjs0sxNr+4xEqk pose=['Scene Root', 'biped', 'biped Pelvis', 'biped Spine', 'biped Spine1', 'biped Spine2', 'biped Neck', 'biped Head', 'biped L Clavicle', 'biped L UpperArm', 'biped L Forearm', 'biped L ForeTwist', 'biped L Hand', 'biped L Finger0', 'biped L Finger01', 'biped L Finger02', 'biped L Finger1', 'biped L Finger11', 'biped L Finger12', 'biped L Finger2', 'biped L Finger21', 'biped L Finger22', 'biped L Finger3', 'biped L Finger31', 'biped L Finger32', 'biped L Finger4', 'biped L Finger41', 'biped L Finger42', 'biped R Clavicle', 'biped R UpperArm', 'biped R Forearm', 'biped R ForeTwist', 'biped R Hand', 'biped R Finger0', 'biped R Finger01', 'biped R Finger02', 'biped R Finger1', 'biped R Finger11', 'biped R Finger12', 'biped R Finger2', 'biped R Finger21', 'biped R Finger22', 'biped R Finger3', 'biped R Finger31', 'biped R Finger32', 'biped R Finger4', 'biped R Finger41', 'biped R Finger42', 'biped L Thigh', 'biped L Calf', 'biped R Thigh', 'biped R Calf', 'biped R Foot', 'biped R Toe0', 'biped L Foot', 'biped L Toe0', 'HP_WR'] type=<class 'list'> attrs=[]
+anFjs0sxNr+4xEqk biped Neck create=None world=(-3.589845657348633, 1.4860568046569824, -9.416214942932129) model=(0.07647153735160828, 1.3016856908798218, -0.08079871535301208)
+anFjs0sxNr+4xEqk biped Head create=None world=(-3.642014503479004, 1.5431256294250488, -9.427835464477539) model=(0.06586960703134537, 1.353566288948059, -0.0333809033036232)
+anFjs0sxNr+4xEqk Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001_HeadNub create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Bip001 Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk Neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk neck create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)
+anFjs0sxNr+4xEqk mixamorig:Head create=None world=(-3.6787912845611572, 0.0542026162147522, -9.500263214111328) model=(0.0, 0.0, 0.0)

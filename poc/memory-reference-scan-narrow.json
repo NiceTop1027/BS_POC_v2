@@ -1,0 +1,2174 @@
+{
+  "pid": 34312,
+  "started": 1785804997.9285913,
+  "finished": 1785805022.9431708,
+  "terms": [
+    "HP_Dummy",
+    "shootingrange_target",
+    "target_entity_id",
+    "recon_drone_mark_ent_ids",
+    "EnemyMarkComp.ShowEnemyMark",
+    "ShowEnemyToplogo",
+    "CombatAvatarToplogo.ShowEnemyBar"
+  ],
+  "seed_hits": [
+    {
+      "address": "0x273c27963fb",
+      "needle": "Dummy",
+      "encoding": "ascii",
+      "context": " p cy s       %= HP_bone_waikebujian_01  x p F    6   cy s        {(h    HP_Dummy001  X p   (dy s        W Np D HP_bone_qiu_01   *d 8 pXdy s        o< ( HP_bone_qiu_07     dy s        yz |  HP_bone_"
+    },
+    {
+      "address": "0x273d0bbdc66",
+      "needle": "target",
+      "encoding": "ascii",
+      "context": "   d 9 ? f       shootingrange                    ;bL            \"V ,cf       shootingrange_target             ;bL            * f       IS_BATTLE_SPACE                                  YbL            0 s   _ s__            ;bL"
+    },
+    {
+      "address": "0x273d1921dde",
+      "needle": "target",
+      "encoding": "ascii",
+      "context": "           9  G~ s   P s    gT s    9  P s    s   PxT s    9 shootingrange_target     9 s    s            9 D s    , s    , s    59  0 s   0 s            79   s     s            19 p "
+    },
+    {
+      "address": "0x273f158196a",
+      "needle": "Enemy",
+      "encoding": "ascii",
+      "context": "nnonToplogo.DelayStopToplogo PickupUI          ;bL            Fa #x ftitan2_CannonToplogo.ShowEnemyToplogo mepad                             YbL            X s     X s     X s   P X s            ;bL            xS Fn f       CannonT"
+    },
+    {
+      "address": "0x273f17374a2",
+      "needle": "Enemy",
+      "encoding": "ascii",
+      "context": "arToplogo.RefreshEnemyHpBar            ;bL   \"        h lN f       CombatAvatarToplogo.OnShowEnemyBar               ;bL            9 f       CombatAvatarToplogo.ShowEnemyBar                 ;bL   \"        u f       CombatAvatarTop"
+    },
+    {
+      "address": "0x273f17374f0",
+      "needle": "Enemy",
+      "encoding": "ascii",
+      "context": "atarToplogo.OnShowEnemyBar               ;bL            9 f       CombatAvatarToplogo.ShowEnemyBar                 ;bL   \"        u f       CombatAvatarToplogo.RefreshToplogo               ;bL            f       RemoveToplogo"
+    },
+    {
+      "address": "0x273f17375e0",
+      "needle": "Enemy",
+      "encoding": "ascii",
+      "context": "plogoVisibleTick                         ;bL   $        k O&x f       CombatAvatarToplogo.ShowEnemyToplogo                             YbL             A M   06 s   @ t s    h s            ;bL   %       D ui `hf       CombatAvatarT"
+    },
+    {
+      "address": "0x273f174a31c",
+      "needle": "Enemy",
+      "encoding": "ascii",
+      "context": "            i f       RefreshEmmaFriendTips            ;bL           = f       ShowEnemyBar r                   ;bL            2C}  f       AddToplogoVisibleTick r          ;bL            H2 f       ShowEnemyToplogo         "
+    }
+  ],
+  "target_count": 64,
+  "regions_scanned": 2681,
+  "bytes_scanned": 1118466048,
+  "reference_hits": [
+    {
+      "ref_address": "0x273f16bb900",
+      "points_to": "0x273f17374b0",
+      "region_base": "0x273f15d0000",
+      "region_size": "0x100000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 5,
+          "seed_address": "0x273f17374f0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "atarToplogo.OnShowEnemyBar               ;bL            9 f       CombatAvatarToplogo.ShowEnemyBar                 ;bL   \"        u f       CombatAvatarToplogo.RefreshToplogo      "
+        }
+      ],
+      "ascii_context": "                                  V P                   P                  V 4        R #              QcL            r s     s   x M                                                 @ t s   0 t s   P r s    t s   pHu s    t s                                                                     V P                   P   ",
+      "nearby_pointers": [
+        {
+          "address": "0x273f16bb668",
+          "value": "0x7ff74c635110",
+          "local_context": "R #              QcL            r s     s   x M                          "
+        },
+        {
+          "address": "0x273f16bb678",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s     s   x M                                          "
+        },
+        {
+          "address": "0x273f16bb680",
+          "value": "0x273e9bfee00",
+          "local_context": "         r s     s   x M                                                 "
+        },
+        {
+          "address": "0x273f16bb688",
+          "value": "0x7ff74de58478",
+          "local_context": " r s     s   x M                                                 @ t s   "
+        },
+        {
+          "address": "0x273f16bb6c0",
+          "value": "0x273f1748040",
+          "local_context": "               @ t s   0 t s   P r s    t s   pHu s    t s                   "
+        },
+        {
+          "address": "0x273f16bb6c8",
+          "value": "0x273f1740c30",
+          "local_context": "       @ t s   0 t s   P r s    t s   pHu s    t s                           "
+        },
+        {
+          "address": "0x273f16bb6d0",
+          "value": "0x273f172ba50",
+          "local_context": "@ t s   0 t s   P r s    t s   pHu s    t s                                   "
+        },
+        {
+          "address": "0x273f16bb6d8",
+          "value": "0x273f174a2b0",
+          "local_context": "0 t s   P r s    t s   pHu s    t s                                           "
+        },
+        {
+          "address": "0x273f16bb6e0",
+          "value": "0x273f1754870",
+          "local_context": "P r s    t s   pHu s    t s                                                   "
+        },
+        {
+          "address": "0x273f16bb6e8",
+          "value": "0x273f17405d0",
+          "local_context": " t s   pHu s    t s                                                           "
+        },
+        {
+          "address": "0x273f16bb778",
+          "value": "0x7ff74c635110",
+          "local_context": "#                QcL            r s   @ s   x M                          "
+        },
+        {
+          "address": "0x273f16bb788",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s   @ s   x M                                          "
+        },
+        {
+          "address": "0x273f16bb790",
+          "value": "0x273e9bff440",
+          "local_context": "         r s   @ s   x M                                                 "
+        },
+        {
+          "address": "0x273f16bb798",
+          "value": "0x7ff74de58478",
+          "local_context": " r s   @ s   x M                                                 @ t s   "
+        },
+        {
+          "address": "0x273f16bb7d0",
+          "value": "0x273f1748040",
+          "local_context": "               @ t s   p t s   P r s   psq s   `ts s    t s                   "
+        },
+        {
+          "address": "0x273f16bb7d8",
+          "value": "0x273f1740b70",
+          "local_context": "       @ t s   p t s   P r s   psq s   `ts s    t s                           "
+        },
+        {
+          "address": "0x273f16bb7e0",
+          "value": "0x273f172ba50",
+          "local_context": "@ t s   p t s   P r s   psq s   `ts s    t s                                   "
+        },
+        {
+          "address": "0x273f16bb7e8",
+          "value": "0x273f1717370",
+          "local_context": "p t s   P r s   psq s   `ts s    t s                                           "
+        },
+        {
+          "address": "0x273f16bb7f0",
+          "value": "0x273f1737460",
+          "local_context": "P r s   psq s   `ts s    t s                                                   "
+        },
+        {
+          "address": "0x273f16bb7f8",
+          "value": "0x273f17405d0",
+          "local_context": "psq s   `ts s    t s                                                           "
+        },
+        {
+          "address": "0x273f16bb888",
+          "value": "0x7ff74c635110",
+          "local_context": "#                QcL            r s   @ s   x M                          "
+        },
+        {
+          "address": "0x273f16bb898",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s   @ s   x M                                          "
+        },
+        {
+          "address": "0x273f16bb8a0",
+          "value": "0x273e9bff440",
+          "local_context": "         r s   @ s   x M                                                 "
+        },
+        {
+          "address": "0x273f16bb8a8",
+          "value": "0x7ff74de58478",
+          "local_context": " r s   @ s   x M                                                 @ t s   "
+        },
+        {
+          "address": "0x273f16bb8e0",
+          "value": "0x273f1748040",
+          "local_context": "               @ t s   @ t s   P r s    t s    ts s     t s                   "
+        },
+        {
+          "address": "0x273f16bb8e8",
+          "value": "0x273f1740b40",
+          "local_context": "       @ t s   @ t s   P r s    t s    ts s     t s                           "
+        },
+        {
+          "address": "0x273f16bb8f0",
+          "value": "0x273f172ba50",
+          "local_context": "@ t s   @ t s   P r s    t s    ts s     t s                                   "
+        },
+        {
+          "address": "0x273f16bb8f8",
+          "value": "0x273f174a2f0",
+          "local_context": "@ t s   P r s    t s    ts s     t s                                           "
+        },
+        {
+          "address": "0x273f16bb900",
+          "value": "0x273f17374b0",
+          "local_context": "P r s    t s    ts s     t s                                                   "
+        },
+        {
+          "address": "0x273f16bb908",
+          "value": "0x273f1740720",
+          "local_context": " t s    ts s     t s                                                           "
+        },
+        {
+          "address": "0x273f16bb998",
+          "value": "0x7ff74c635110",
+          "local_context": "#                QcL            r s     s   x M                          "
+        },
+        {
+          "address": "0x273f16bb9a8",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s     s   x M                                          "
+        },
+        {
+          "address": "0x273f16bb9b0",
+          "value": "0x273e9bff400",
+          "local_context": "         r s     s   x M                                                 "
+        },
+        {
+          "address": "0x273f16bb9b8",
+          "value": "0x7ff74de58478",
+          "local_context": " r s     s   x M                                                  r s   "
+        },
+        {
+          "address": "0x273f16bb9f0",
+          "value": "0x273f172a6e0",
+          "local_context": "                r s    t s   P r s    R s    Iu s     t s                   "
+        },
+        {
+          "address": "0x273f16bb9f8",
+          "value": "0x273f1740ba0",
+          "local_context": "        r s    t s   P r s    R s    Iu s     t s                           "
+        },
+        {
+          "address": "0x273f16bba00",
+          "value": "0x273f172ba50",
+          "local_context": " r s    t s   P r s    R s    Iu s     t s                                   "
+        },
+        {
+          "address": "0x273f16bba08",
+          "value": "0x273e3f352f0",
+          "local_context": " t s   P r s    R s    Iu s     t s                                           "
+        },
+        {
+          "address": "0x273f16bba10",
+          "value": "0x273f17549f0",
+          "local_context": "P r s    R s    Iu s     t s                                                   "
+        },
+        {
+          "address": "0x273f16bba18",
+          "value": "0x273f1740c00",
+          "local_context": " R s    Iu s     t s                                                           "
+        },
+        {
+          "address": "0x273f16bbaa8",
+          "value": "0x7ff74c635110",
+          "local_context": "  R #            QcL            r s    s   x M                          "
+        },
+        {
+          "address": "0x273f16bbab8",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s    s   x M                                          "
+        },
+        {
+          "address": "0x273f16bbac0",
+          "value": "0x273e9bff3c0",
+          "local_context": "         r s    s   x M                                                 "
+        },
+        {
+          "address": "0x273f16bbac8",
+          "value": "0x7ff74de58478",
+          "local_context": " r s    s   x M                                                 @ t s   "
+        },
+        {
+          "address": "0x273f16bbb00",
+          "value": "0x273f1748040",
+          "local_context": "               @ t s    t s   P r s    s    Ju s    t s                   "
+        },
+        {
+          "address": "0x273f16bbb08",
+          "value": "0x273f1740bd0",
+          "local_context": "       @ t s    t s   P r s    s    Ju s    t s                           "
+        },
+        {
+          "address": "0x273f16bbb10",
+          "value": "0x273f172ba50",
+          "local_context": "@ t s    t s   P r s    s    Ju s    t s                                   "
+        },
+        {
+          "address": "0x273f16bbb18",
+          "value": "0x273e3f29ca0",
+          "local_context": " t s   P r s    s    Ju s    t s                                           "
+        }
+      ],
+      "nearby_vec3": []
+    },
+    {
+      "ref_address": "0x273f16bbf60",
+      "points_to": "0x273f17375a0",
+      "region_base": "0x273f15d0000",
+      "region_size": "0x100000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 6,
+          "seed_address": "0x273f17375e0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "plogoVisibleTick                         ;bL   $        k O&x f       CombatAvatarToplogo.ShowEnemyToplogo                             YbL             A M   06 s   @ t s    h s    "
+        }
+      ],
+      "ascii_context": "                                  V P                    0 (8  )     @ s     @       #                QcL            r s     s   x M                                                @ t s   ` t s   P r s   0 t s    Ku s    t s                                                                     V P                   P    ",
+      "nearby_pointers": [
+        {
+          "address": "0x273f16bbcc8",
+          "value": "0x7ff74c635110",
+          "local_context": "#                QcL            r s     s   x M                         "
+        },
+        {
+          "address": "0x273f16bbcd8",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s     s   x M                                         "
+        },
+        {
+          "address": "0x273f16bbce0",
+          "value": "0x273e9bfef00",
+          "local_context": "         r s     s   x M                                                "
+        },
+        {
+          "address": "0x273f16bbce8",
+          "value": "0x7ff74de58478",
+          "local_context": " r s     s   x M                                                @ t s   "
+        },
+        {
+          "address": "0x273f16bbd20",
+          "value": "0x273f1748040",
+          "local_context": "               @ t s   ` t s   P r s   0 t s    Ku s    t s                   "
+        },
+        {
+          "address": "0x273f16bbd28",
+          "value": "0x273f1740c60",
+          "local_context": "       @ t s   ` t s   P r s   0 t s    Ku s    t s                           "
+        },
+        {
+          "address": "0x273f16bbd30",
+          "value": "0x273f172ba50",
+          "local_context": "@ t s   ` t s   P r s   0 t s    Ku s    t s                                   "
+        },
+        {
+          "address": "0x273f16bbd38",
+          "value": "0x273f174a330",
+          "local_context": "` t s   P r s   0 t s    Ku s    t s                                           "
+        },
+        {
+          "address": "0x273f16bbd40",
+          "value": "0x273f1754bd0",
+          "local_context": "P r s   0 t s    Ku s    t s                                                   "
+        },
+        {
+          "address": "0x273f16bbd48",
+          "value": "0x273f17405d0",
+          "local_context": "0 t s    Ku s    t s                                                           "
+        },
+        {
+          "address": "0x273f16bbdd8",
+          "value": "0x7ff74c635110",
+          "local_context": "#                QcL            r s   @ s   x M                         "
+        },
+        {
+          "address": "0x273f16bbde8",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s   @ s   x M                                         "
+        },
+        {
+          "address": "0x273f16bbdf0",
+          "value": "0x273e9bff040",
+          "local_context": "         r s   @ s   x M                                                "
+        },
+        {
+          "address": "0x273f16bbdf8",
+          "value": "0x7ff74de58478",
+          "local_context": " r s   @ s   x M                                                @ t s   "
+        },
+        {
+          "address": "0x273f16bbe30",
+          "value": "0x273f1748040",
+          "local_context": "               @ t s    t s   P r s   Pus s    Lu s    t s                   "
+        },
+        {
+          "address": "0x273f16bbe38",
+          "value": "0x273f1740c90",
+          "local_context": "       @ t s    t s   P r s   Pus s    Lu s    t s                           "
+        },
+        {
+          "address": "0x273f16bbe40",
+          "value": "0x273f172ba50",
+          "local_context": "@ t s    t s   P r s   Pus s    Lu s    t s                                   "
+        },
+        {
+          "address": "0x273f16bbe48",
+          "value": "0x273f1737550",
+          "local_context": " t s   P r s   Pus s    Lu s    t s                                           "
+        },
+        {
+          "address": "0x273f16bbe50",
+          "value": "0x273f1754c90",
+          "local_context": "P r s   Pus s    Lu s    t s                                                   "
+        },
+        {
+          "address": "0x273f16bbe58",
+          "value": "0x273f17405d0",
+          "local_context": "Pus s    Lu s    t s                                                           "
+        },
+        {
+          "address": "0x273f16bbee8",
+          "value": "0x7ff74c635110",
+          "local_context": "#                QcL            r s   @ s   x M                         "
+        },
+        {
+          "address": "0x273f16bbef8",
+          "value": "0x273f1727f80",
+          "local_context": " QcL            r s   @ s   x M                                         "
+        },
+        {
+          "address": "0x273f16bbf00",
+          "value": "0x273e9bfe040",
+          "local_context": "         r s   @ s   x M                                                "
+        },
+        {
+          "address": "0x273f16bbf08",
+          "value": "0x7ff74de58478",
+          "local_context": " r s   @ s   x M                                                 s   "
+        },
+        {
+          "address": "0x273f16bbf40",
+          "value": "0x273e9bfecc0",
+          "local_context": "                s    t s   P r s   p t s    us s    t s                   "
+        },
+        {
+          "address": "0x273f16bbf48",
+          "value": "0x273f1740cf0",
+          "local_context": "        s    t s   P r s   p t s    us s    t s                           "
+        },
+        {
+          "address": "0x273f16bbf50",
+          "value": "0x273f172ba50",
+          "local_context": " s    t s   P r s   p t s    us s    t s                                   "
+        },
+        {
+          "address": "0x273f16bbf58",
+          "value": "0x273f174a370",
+          "local_context": " t s   P r s   p t s    us s    t s                                           "
+        },
+        {
+          "address": "0x273f16bbf60",
+          "value": "0x273f17375a0",
+          "local_context": "P r s   p t s    us s    t s                                                   "
+        },
+        {
+          "address": "0x273f16bbf68",
+          "value": "0x273f1740810",
+          "local_context": "p t s    us s    t s                                                           "
+        },
+        {
+          "address": "0x273f16bc010",
+          "value": "0x7ff74d9f2730",
+          "local_context": "                0' M   0' M            ?   ?           ;bL   @        | "
+        },
+        {
+          "address": "0x273f16bc018",
+          "value": "0x7ff74d9f2730",
+          "local_context": "        0' M   0' M            ?   ?           ;bL   @        | f       "
+        },
+        {
+          "address": "0x273f16bc038",
+          "value": "0x7ff74c623b10",
+          "local_context": " ?   ?           ;bL   @        | f       gclient.gamesystem.uiwarehouse.p"
+        },
+        {
+          "address": "0x273f16bc0b8",
+          "value": "0x7ff74c6259e0",
+          "local_context": "                 YbL             A M    ! s   p^b s   p l s    l s   "
+        },
+        {
+          "address": "0x273f16bc0d0",
+          "value": "0x7ff74de64100",
+          "local_context": "          A M    ! s   p^b s   p l s    l s    l s   0 l s     y     "
+        },
+        {
+          "address": "0x273f16bc0d8",
+          "value": "0x273d121c3f0",
+          "local_context": "  A M    ! s   p^b s   p l s    l s    l s   0 l s     y             "
+        },
+        {
+          "address": "0x273f16bc0e0",
+          "value": "0x273e3625e70",
+          "local_context": " A M    ! s   p^b s   p l s    l s    l s   0 l s     y              ;bL   "
+        },
+        {
+          "address": "0x273f16bc0e8",
+          "value": "0x273f16c9470",
+          "local_context": " ! s   p^b s   p l s    l s    l s   0 l s     y              ;bL   C       "
+        },
+        {
+          "address": "0x273f16bc0f0",
+          "value": "0x273f16c94b0",
+          "local_context": "p^b s   p l s    l s    l s   0 l s     y              ;bL   C       \"uA9J, "
+        },
+        {
+          "address": "0x273f16bc0f8",
+          "value": "0x273f16c94f0",
+          "local_context": "p l s    l s    l s   0 l s     y              ;bL   C       \"uA9J, f       "
+        },
+        {
+          "address": "0x273f16bc100",
+          "value": "0x273f16c9530",
+          "local_context": " l s    l s   0 l s     y              ;bL   C       \"uA9J, f       gclient/"
+        },
+        {
+          "address": "0x273f16bc118",
+          "value": "0x7ff74c623b10",
+          "local_context": "  y              ;bL   C       \"uA9J, f       gclient/gamesystem/uiwarehouse/p"
+        },
+        {
+          "address": "0x273f16bc190",
+          "value": "0x273f16c8971",
+          "local_context": "                q l s    + s            s        psj s    aL    aL   "
+        },
+        {
+          "address": "0x273f16bc198",
+          "value": "0x273f1052bb0",
+          "local_context": "        q l s    + s            s        psj s    aL    aL    aL   "
+        },
+        {
+          "address": "0x273f16bc1a8",
+          "value": "0x273c6b683c0",
+          "local_context": " + s            s        psj s    aL    aL    aL                 "
+        },
+        {
+          "address": "0x273f16bc1b8",
+          "value": "0x273f16a7370",
+          "local_context": " s        psj s    aL    aL    aL                                 "
+        },
+        {
+          "address": "0x273f16bc1c0",
+          "value": "0x7ff74c61f690",
+          "local_context": "     psj s    aL    aL    aL                                  ;bL   "
+        },
+        {
+          "address": "0x273f16bc1c8",
+          "value": "0x7ff74c61f6b0",
+          "local_context": "psj s    aL    aL    aL                                  ;bL   8       "
+        }
+      ],
+      "nearby_vec3": [
+        {
+          "address": "0x273f16bc1a0",
+          "vec3": [
+            0.0,
+            0.0,
+            -23361.875
+          ]
+        },
+        {
+          "address": "0x273f16bc1a4",
+          "vec3": [
+            0.0,
+            -23361.875,
+            0.0
+          ]
+        },
+        {
+          "address": "0x273f16bc1a8",
+          "vec3": [
+            -23361.875,
+            0.0,
+            0.0
+          ]
+        }
+      ]
+    },
+    {
+      "ref_address": "0x273f1760698",
+      "points_to": "0x273f17374b0",
+      "region_base": "0x273f16d0000",
+      "region_size": "0x100000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 5,
+          "seed_address": "0x273f17374f0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "atarToplogo.OnShowEnemyBar               ;bL            9 f       CombatAvatarToplogo.ShowEnemyBar                 ;bL   \"        u f       CombatAvatarToplogo.RefreshToplogo      "
+        }
+      ],
+      "ascii_context": "        Q v s    v s            bL     t s    xz s   ppq s    ts s   @ k s                           PnaL                   P r s                            uG                   v s    v s            bL     t s    xz s    pq s    Gu s   P k s                           PnaL                   P r s                       ",
+      "nearby_pointers": [
+        {
+          "address": "0x273f17603a0",
+          "value": "0x273f1760451",
+          "local_context": "        Q v s    v s            bL     t s    xz s   ppq s    ts s   "
+        },
+        {
+          "address": "0x273f17603a8",
+          "value": "0x273f17602f0",
+          "local_context": "        Q v s    v s            bL     t s    xz s   ppq s    ts s   @ k s   "
+        },
+        {
+          "address": "0x273f17603b8",
+          "value": "0x7ff74c6202a0",
+          "local_context": " v s            bL     t s    xz s   ppq s    ts s   @ k s                   "
+        },
+        {
+          "address": "0x273f17603c0",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s   ppq s    ts s   @ k s                           "
+        },
+        {
+          "address": "0x273f17603c8",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s   ppq s    ts s   @ k s                           PnaL   "
+        },
+        {
+          "address": "0x273f17603d0",
+          "value": "0x273f1717070",
+          "local_context": "  t s    xz s   ppq s    ts s   @ k s                           PnaL           "
+        },
+        {
+          "address": "0x273f17603d8",
+          "value": "0x273f1737410",
+          "local_context": " xz s   ppq s    ts s   @ k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f17603e0",
+          "value": "0x273f16bb440",
+          "local_context": "ppq s    ts s   @ k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f1760400",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f1760418",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                   v s   "
+        },
+        {
+          "address": "0x273f1760438",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                   v s    v s            bL     t s   "
+        },
+        {
+          "address": "0x273f1760450",
+          "value": "0x273f1760501",
+          "local_context": "                v s    v s            bL     t s    xz s    pq s    Gu s   "
+        },
+        {
+          "address": "0x273f1760458",
+          "value": "0x273f17603a0",
+          "local_context": "         v s    v s            bL     t s    xz s    pq s    Gu s   P k s   "
+        },
+        {
+          "address": "0x273f1760468",
+          "value": "0x7ff74c6202a0",
+          "local_context": " v s            bL     t s    xz s    pq s    Gu s   P k s                   "
+        },
+        {
+          "address": "0x273f1760470",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s    pq s    Gu s   P k s                           "
+        },
+        {
+          "address": "0x273f1760478",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s    pq s    Gu s   P k s                           PnaL   "
+        },
+        {
+          "address": "0x273f1760480",
+          "value": "0x273f17170b0",
+          "local_context": "  t s    xz s    pq s    Gu s   P k s                           PnaL           "
+        },
+        {
+          "address": "0x273f1760488",
+          "value": "0x273f17547b0",
+          "local_context": " xz s    pq s    Gu s   P k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f1760490",
+          "value": "0x273f16bb550",
+          "local_context": " pq s    Gu s   P k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f17604b0",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f17604c8",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                   v s   "
+        },
+        {
+          "address": "0x273f17604e8",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                   v s   P v s            bL     t s   "
+        },
+        {
+          "address": "0x273f1760500",
+          "value": "0x273f17605b1",
+          "local_context": "                v s   P v s            bL     t s    xz s    t s   pHu s   "
+        },
+        {
+          "address": "0x273f1760508",
+          "value": "0x273f1760450",
+          "local_context": "         v s   P v s            bL     t s    xz s    t s   pHu s   ` k s   "
+        },
+        {
+          "address": "0x273f1760518",
+          "value": "0x7ff74c6202a0",
+          "local_context": "P v s            bL     t s    xz s    t s   pHu s   ` k s                   "
+        },
+        {
+          "address": "0x273f1760520",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s    t s   pHu s   ` k s                           "
+        },
+        {
+          "address": "0x273f1760528",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s    t s   pHu s   ` k s                           PnaL   "
+        },
+        {
+          "address": "0x273f1760530",
+          "value": "0x273f174a2b0",
+          "local_context": "  t s    xz s    t s   pHu s   ` k s                           PnaL           "
+        },
+        {
+          "address": "0x273f1760538",
+          "value": "0x273f1754870",
+          "local_context": " xz s    t s   pHu s   ` k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f1760540",
+          "value": "0x273f16bb660",
+          "local_context": " t s   pHu s   ` k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f1760560",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f1760578",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                  a v s   "
+        },
+        {
+          "address": "0x273f1760598",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                  a v s     v s            bL     t s   "
+        },
+        {
+          "address": "0x273f17605b0",
+          "value": "0x273f1760661",
+          "local_context": "               a v s     v s            bL     t s    xz s   psq s   `ts s   "
+        },
+        {
+          "address": "0x273f17605b8",
+          "value": "0x273f1760500",
+          "local_context": "        a v s     v s            bL     t s    xz s   psq s   `ts s   p k s   "
+        },
+        {
+          "address": "0x273f17605c8",
+          "value": "0x7ff74c6202a0",
+          "local_context": "  v s            bL     t s    xz s   psq s   `ts s   p k s                   "
+        },
+        {
+          "address": "0x273f17605d0",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s   psq s   `ts s   p k s                           "
+        },
+        {
+          "address": "0x273f17605d8",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s   psq s   `ts s   p k s                           PnaL   "
+        },
+        {
+          "address": "0x273f17605e0",
+          "value": "0x273f1717370",
+          "local_context": "  t s    xz s   psq s   `ts s   p k s                           PnaL           "
+        },
+        {
+          "address": "0x273f17605e8",
+          "value": "0x273f1737460",
+          "local_context": " xz s   psq s   `ts s   p k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f17605f0",
+          "value": "0x273f16bb770",
+          "local_context": "psq s   `ts s   p k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f1760610",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f1760628",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                   v s   "
+        },
+        {
+          "address": "0x273f1760648",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                   v s    v s            bL     t s   "
+        },
+        {
+          "address": "0x273f1760660",
+          "value": "0x273f1760711",
+          "local_context": "                v s    v s            bL     t s    xz s    t s    ts s   "
+        },
+        {
+          "address": "0x273f1760668",
+          "value": "0x273f17605b0",
+          "local_context": "         v s    v s            bL     t s    xz s    t s    ts s    k s   "
+        },
+        {
+          "address": "0x273f1760678",
+          "value": "0x7ff74c6202a0",
+          "local_context": " v s            bL     t s    xz s    t s    ts s    k s                   "
+        },
+        {
+          "address": "0x273f1760680",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s    t s    ts s    k s                           "
+        }
+      ],
+      "nearby_vec3": []
+    },
+    {
+      "ref_address": "0x273f1760ab8",
+      "points_to": "0x273f17375a0",
+      "region_base": "0x273f16d0000",
+      "region_size": "0x100000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 6,
+          "seed_address": "0x273f17375e0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "plogoVisibleTick                         ;bL   $        k O&x f       CombatAvatarToplogo.ShowEnemyToplogo                             YbL             A M   06 s   @ t s    h s    "
+        }
+      ],
+      "ascii_context": "        q v s    v s            bL     t s    xz s    s    Ju s    k s                           PnaL                   P r s                            uG                  ! v s    v s            bL     t s    xz s    oq s    us s    k s                           PnaL                   P r s                           ",
+      "nearby_pointers": [
+        {
+          "address": "0x273f17607c0",
+          "value": "0x273f1760871",
+          "local_context": "        q v s    v s            bL     t s    xz s    s    Ju s   "
+        },
+        {
+          "address": "0x273f17607c8",
+          "value": "0x273f1760710",
+          "local_context": "        q v s    v s            bL     t s    xz s    s    Ju s    k s   "
+        },
+        {
+          "address": "0x273f17607d8",
+          "value": "0x7ff74c6202a0",
+          "local_context": " v s            bL     t s    xz s    s    Ju s    k s                   "
+        },
+        {
+          "address": "0x273f17607e0",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s    s    Ju s    k s                           "
+        },
+        {
+          "address": "0x273f17607e8",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s    s    Ju s    k s                           PnaL   "
+        },
+        {
+          "address": "0x273f17607f0",
+          "value": "0x273e3f29ca0",
+          "local_context": "  t s    xz s    s    Ju s    k s                           PnaL           "
+        },
+        {
+          "address": "0x273f17607f8",
+          "value": "0x273f1754ab0",
+          "local_context": " xz s    s    Ju s    k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f1760800",
+          "value": "0x273f16bbaa0",
+          "local_context": " s    Ju s    k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f1760820",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f1760838",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                  ! v s   "
+        },
+        {
+          "address": "0x273f1760858",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                  ! v s    v s            bL     t s   "
+        },
+        {
+          "address": "0x273f1760870",
+          "value": "0x273f1760921",
+          "local_context": "               ! v s    v s            bL     t s    xz s    oq s    us s   "
+        },
+        {
+          "address": "0x273f1760878",
+          "value": "0x273f17607c0",
+          "local_context": "        ! v s    v s            bL     t s    xz s    oq s    us s    k s   "
+        },
+        {
+          "address": "0x273f1760888",
+          "value": "0x7ff74c6202a0",
+          "local_context": " v s            bL     t s    xz s    oq s    us s    k s                   "
+        },
+        {
+          "address": "0x273f1760890",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s    oq s    us s    k s                           "
+        },
+        {
+          "address": "0x273f1760898",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s    oq s    us s    k s                           PnaL   "
+        },
+        {
+          "address": "0x273f17608a0",
+          "value": "0x273f1716fb0",
+          "local_context": "  t s    xz s    oq s    us s    k s                           PnaL           "
+        },
+        {
+          "address": "0x273f17608a8",
+          "value": "0x273f1737500",
+          "local_context": " xz s    oq s    us s    k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f17608b0",
+          "value": "0x273f16bbbb0",
+          "local_context": " oq s    us s    k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f17608d0",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f17608e8",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                   v s   "
+        },
+        {
+          "address": "0x273f1760908",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                   v s   p v s            bL     t s   "
+        },
+        {
+          "address": "0x273f1760920",
+          "value": "0x273f17609d1",
+          "local_context": "                v s   p v s            bL     t s    xz s   0 t s    Ku s   "
+        },
+        {
+          "address": "0x273f1760928",
+          "value": "0x273f1760870",
+          "local_context": "         v s   p v s            bL     t s    xz s   0 t s    Ku s    k s   "
+        },
+        {
+          "address": "0x273f1760938",
+          "value": "0x7ff74c6202a0",
+          "local_context": "p v s            bL     t s    xz s   0 t s    Ku s    k s                   "
+        },
+        {
+          "address": "0x273f1760940",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s   0 t s    Ku s    k s                           "
+        },
+        {
+          "address": "0x273f1760948",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s   0 t s    Ku s    k s                           PnaL   "
+        },
+        {
+          "address": "0x273f1760950",
+          "value": "0x273f174a330",
+          "local_context": "  t s    xz s   0 t s    Ku s    k s                           PnaL           "
+        },
+        {
+          "address": "0x273f1760958",
+          "value": "0x273f1754bd0",
+          "local_context": " xz s   0 t s    Ku s    k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f1760960",
+          "value": "0x273f16bbcc0",
+          "local_context": "0 t s    Ku s    k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f1760980",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f1760998",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                   v s   "
+        },
+        {
+          "address": "0x273f17609b8",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                   v s     v s            bL     t s   "
+        },
+        {
+          "address": "0x273f17609d0",
+          "value": "0x273f1760a81",
+          "local_context": "                v s     v s            bL     t s    xz s   Pus s    Lu s   "
+        },
+        {
+          "address": "0x273f17609d8",
+          "value": "0x273f1760920",
+          "local_context": "         v s     v s            bL     t s    xz s   Pus s    Lu s    k s   "
+        },
+        {
+          "address": "0x273f17609e8",
+          "value": "0x7ff74c6202a0",
+          "local_context": "  v s            bL     t s    xz s   Pus s    Lu s    k s                   "
+        },
+        {
+          "address": "0x273f17609f0",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s   Pus s    Lu s    k s                           "
+        },
+        {
+          "address": "0x273f17609f8",
+          "value": "0x273c87a78c0",
+          "local_context": " bL     t s    xz s   Pus s    Lu s    k s                           PnaL   "
+        },
+        {
+          "address": "0x273f1760a00",
+          "value": "0x273f1737550",
+          "local_context": "  t s    xz s   Pus s    Lu s    k s                           PnaL           "
+        },
+        {
+          "address": "0x273f1760a08",
+          "value": "0x273f1754c90",
+          "local_context": " xz s   Pus s    Lu s    k s                           PnaL                   "
+        },
+        {
+          "address": "0x273f1760a10",
+          "value": "0x273f16bbdd0",
+          "local_context": "Pus s    Lu s    k s                           PnaL                   P r s   "
+        },
+        {
+          "address": "0x273f1760a30",
+          "value": "0x7ff74c616e50",
+          "local_context": "                PnaL                   P r s                            uG   "
+        },
+        {
+          "address": "0x273f1760a48",
+          "value": "0x273f172b450",
+          "local_context": "                P r s                            uG                  1 v s   "
+        },
+        {
+          "address": "0x273f1760a68",
+          "value": "0x7ff74775c810",
+          "local_context": "                 uG                  1 v s    v s            bL     t s   "
+        },
+        {
+          "address": "0x273f1760a80",
+          "value": "0x273f1760b31",
+          "local_context": "               1 v s    v s            bL     t s    xz s   p t s    us s   "
+        },
+        {
+          "address": "0x273f1760a88",
+          "value": "0x273f17609d0",
+          "local_context": "        1 v s    v s            bL     t s    xz s   p t s    us s    k s   "
+        },
+        {
+          "address": "0x273f1760a98",
+          "value": "0x7ff74c6202a0",
+          "local_context": " v s            bL     t s    xz s   p t s    us s    k s                   "
+        },
+        {
+          "address": "0x273f1760aa0",
+          "value": "0x273f1749700",
+          "local_context": "         bL     t s    xz s   p t s    us s    k s                           "
+        }
+      ],
+      "nearby_vec3": []
+    },
+    {
+      "ref_address": "0x273f67f0ef0",
+      "points_to": "0x273f17374b0",
+      "region_base": "0x273f6439000",
+      "region_size": "0x756000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 5,
+          "seed_address": "0x273f17374f0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "atarToplogo.OnShowEnemyBar               ;bL            9 f       CombatAvatarToplogo.ShowEnemyBar                 ;bL   \"        u f       CombatAvatarToplogo.RefreshToplogo      "
+        }
+      ],
+      "ascii_context": "0 r s   0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    B",
+      "nearby_pointers": [
+        {
+          "address": "0x273f67f0bf0",
+          "value": "0x273f172bc30",
+          "local_context": "0 r s   0 r s    ls s    ls s    r s    r s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0bf8",
+          "value": "0x273f172bc30",
+          "local_context": "0 r s   0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   "
+        },
+        {
+          "address": "0x273f67f0c00",
+          "value": "0x273f1736ce0",
+          "local_context": "0 r s   0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   0ms s   "
+        },
+        {
+          "address": "0x273f67f0c08",
+          "value": "0x273f1736ce0",
+          "local_context": "0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   0ms s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c10",
+          "value": "0x273f172bcf0",
+          "local_context": " ls s    ls s    r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c18",
+          "value": "0x273f172bcf0",
+          "local_context": " ls s    r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   "
+        },
+        {
+          "address": "0x273f67f0c20",
+          "value": "0x273f1749eb0",
+          "local_context": " r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s   "
+        },
+        {
+          "address": "0x273f67f0c28",
+          "value": "0x273f1749eb0",
+          "local_context": " r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s   "
+        },
+        {
+          "address": "0x273f67f0c30",
+          "value": "0x273f1736d30",
+          "local_context": " t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s   "
+        },
+        {
+          "address": "0x273f67f0c38",
+          "value": "0x273f1736d30",
+          "local_context": " t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c40",
+          "value": "0x273f1736d80",
+          "local_context": "0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c48",
+          "value": "0x273f1736d80",
+          "local_context": "0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   "
+        },
+        {
+          "address": "0x273f67f0c50",
+          "value": "0x273f1749f70",
+          "local_context": " ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   p r s   "
+        },
+        {
+          "address": "0x273f67f0c58",
+          "value": "0x273f1749f70",
+          "local_context": " ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   p r s    ns s   "
+        },
+        {
+          "address": "0x273f67f0c60",
+          "value": "0x273f172bdb0",
+          "local_context": "p t s   p t s    r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   "
+        },
+        {
+          "address": "0x273f67f0c68",
+          "value": "0x273f172bdb0",
+          "local_context": "p t s    r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   "
+        },
+        {
+          "address": "0x273f67f0c70",
+          "value": "0x273f1736dd0",
+          "local_context": " r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s   "
+        },
+        {
+          "address": "0x273f67f0c78",
+          "value": "0x273f1736dd0",
+          "local_context": " r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s   "
+        },
+        {
+          "address": "0x273f67f0c80",
+          "value": "0x273f172be70",
+          "local_context": " ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   "
+        },
+        {
+          "address": "0x273f67f0c88",
+          "value": "0x273f172be70",
+          "local_context": " ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c90",
+          "value": "0x273f1736e20",
+          "local_context": "p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c98",
+          "value": "0x273f1736e20",
+          "local_context": "p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca0",
+          "value": "0x273f172bf30",
+          "local_context": " ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca8",
+          "value": "0x273f172bf30",
+          "local_context": " ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb0",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb8",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc0",
+          "value": "0x273f1736e70",
+          "local_context": " r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc8",
+          "value": "0x273f1736e70",
+          "local_context": " r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd0",
+          "value": "0x273f1754090",
+          "local_context": "pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd8",
+          "value": "0x273f1754090",
+          "local_context": "pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce0",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce8",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf0",
+          "value": "0x273f17540f0",
+          "local_context": " os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf8",
+          "value": "0x273f17540f0",
+          "local_context": " os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d00",
+          "value": "0x273f1736f60",
+          "local_context": " @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d08",
+          "value": "0x273f1736f60",
+          "local_context": " @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s   "
+        },
+        {
+          "address": "0x273f67f0d10",
+          "value": "0x273f17541b0",
+          "local_context": "`os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0d18",
+          "value": "0x273f17541b0",
+          "local_context": "`os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d20",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d28",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d30",
+          "value": "0x273f1754210",
+          "local_context": " t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d38",
+          "value": "0x273f1754210",
+          "local_context": " t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d40",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d48",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d50",
+          "value": "0x273f1754270",
+          "local_context": " os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d58",
+          "value": "0x273f1754270",
+          "local_context": " os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d60",
+          "value": "0x273f1737000",
+          "local_context": "pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d68",
+          "value": "0x273f1737000",
+          "local_context": "pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   "
+        }
+      ],
+      "nearby_vec3": []
+    },
+    {
+      "ref_address": "0x273f67f0ef8",
+      "points_to": "0x273f17374b0",
+      "region_base": "0x273f6439000",
+      "region_size": "0x756000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 5,
+          "seed_address": "0x273f17374f0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "atarToplogo.OnShowEnemyBar               ;bL            9 f       CombatAvatarToplogo.ShowEnemyBar                 ;bL   \"        u f       CombatAvatarToplogo.RefreshToplogo      "
+        }
+      ],
+      "ascii_context": "0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    o",
+      "nearby_pointers": [
+        {
+          "address": "0x273f67f0bf8",
+          "value": "0x273f172bc30",
+          "local_context": "0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   "
+        },
+        {
+          "address": "0x273f67f0c00",
+          "value": "0x273f1736ce0",
+          "local_context": "0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   0ms s   "
+        },
+        {
+          "address": "0x273f67f0c08",
+          "value": "0x273f1736ce0",
+          "local_context": "0 r s    ls s    ls s    r s    r s    t s    t s   0ms s   0ms s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c10",
+          "value": "0x273f172bcf0",
+          "local_context": " ls s    ls s    r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c18",
+          "value": "0x273f172bcf0",
+          "local_context": " ls s    r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   "
+        },
+        {
+          "address": "0x273f67f0c20",
+          "value": "0x273f1749eb0",
+          "local_context": " r s    r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s   "
+        },
+        {
+          "address": "0x273f67f0c28",
+          "value": "0x273f1749eb0",
+          "local_context": " r s    t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s   "
+        },
+        {
+          "address": "0x273f67f0c30",
+          "value": "0x273f1736d30",
+          "local_context": " t s    t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s   "
+        },
+        {
+          "address": "0x273f67f0c38",
+          "value": "0x273f1736d30",
+          "local_context": " t s   0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c40",
+          "value": "0x273f1736d80",
+          "local_context": "0ms s   0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   "
+        },
+        {
+          "address": "0x273f67f0c48",
+          "value": "0x273f1736d80",
+          "local_context": "0ms s    ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   "
+        },
+        {
+          "address": "0x273f67f0c50",
+          "value": "0x273f1749f70",
+          "local_context": " ms s    ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   p r s   "
+        },
+        {
+          "address": "0x273f67f0c58",
+          "value": "0x273f1749f70",
+          "local_context": " ms s   p t s   p t s    r s    r s    ms s    ms s   p r s   p r s    ns s   "
+        },
+        {
+          "address": "0x273f67f0c60",
+          "value": "0x273f172bdb0",
+          "local_context": "p t s   p t s    r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   "
+        },
+        {
+          "address": "0x273f67f0c68",
+          "value": "0x273f172bdb0",
+          "local_context": "p t s    r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   "
+        },
+        {
+          "address": "0x273f67f0c70",
+          "value": "0x273f1736dd0",
+          "local_context": " r s    r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s   "
+        },
+        {
+          "address": "0x273f67f0c78",
+          "value": "0x273f1736dd0",
+          "local_context": " r s    ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s   "
+        },
+        {
+          "address": "0x273f67f0c80",
+          "value": "0x273f172be70",
+          "local_context": " ms s    ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   "
+        },
+        {
+          "address": "0x273f67f0c88",
+          "value": "0x273f172be70",
+          "local_context": " ms s   p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c90",
+          "value": "0x273f1736e20",
+          "local_context": "p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c98",
+          "value": "0x273f1736e20",
+          "local_context": "p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca0",
+          "value": "0x273f172bf30",
+          "local_context": " ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca8",
+          "value": "0x273f172bf30",
+          "local_context": " ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb0",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb8",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc0",
+          "value": "0x273f1736e70",
+          "local_context": " r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc8",
+          "value": "0x273f1736e70",
+          "local_context": " r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd0",
+          "value": "0x273f1754090",
+          "local_context": "pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd8",
+          "value": "0x273f1754090",
+          "local_context": "pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce0",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce8",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf0",
+          "value": "0x273f17540f0",
+          "local_context": " os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf8",
+          "value": "0x273f17540f0",
+          "local_context": " os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d00",
+          "value": "0x273f1736f60",
+          "local_context": " @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d08",
+          "value": "0x273f1736f60",
+          "local_context": " @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s   "
+        },
+        {
+          "address": "0x273f67f0d10",
+          "value": "0x273f17541b0",
+          "local_context": "`os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0d18",
+          "value": "0x273f17541b0",
+          "local_context": "`os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d20",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d28",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d30",
+          "value": "0x273f1754210",
+          "local_context": " t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d38",
+          "value": "0x273f1754210",
+          "local_context": " t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d40",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d48",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d50",
+          "value": "0x273f1754270",
+          "local_context": " os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d58",
+          "value": "0x273f1754270",
+          "local_context": " os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d60",
+          "value": "0x273f1737000",
+          "local_context": "pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d68",
+          "value": "0x273f1737000",
+          "local_context": "pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   "
+        },
+        {
+          "address": "0x273f67f0d70",
+          "value": "0x273f1754330",
+          "local_context": " ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s   "
+        }
+      ],
+      "nearby_vec3": []
+    },
+    {
+      "ref_address": "0x273f67f0f80",
+      "points_to": "0x273f17375a0",
+      "region_base": "0x273f6439000",
+      "region_size": "0x756000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 6,
+          "seed_address": "0x273f17375e0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "plogoVisibleTick                         ;bL   $        k O&x f       CombatAvatarToplogo.ShowEnemyToplogo                             YbL             A M   06 s   @ t s    h s    "
+        }
+      ],
+      "ascii_context": "p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s ",
+      "nearby_pointers": [
+        {
+          "address": "0x273f67f0c80",
+          "value": "0x273f172be70",
+          "local_context": "p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   "
+        },
+        {
+          "address": "0x273f67f0c88",
+          "value": "0x273f172be70",
+          "local_context": "p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c90",
+          "value": "0x273f1736e20",
+          "local_context": "p r s   p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c98",
+          "value": "0x273f1736e20",
+          "local_context": "p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca0",
+          "value": "0x273f172bf30",
+          "local_context": " ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca8",
+          "value": "0x273f172bf30",
+          "local_context": " ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb0",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb8",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc0",
+          "value": "0x273f1736e70",
+          "local_context": " r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc8",
+          "value": "0x273f1736e70",
+          "local_context": " r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd0",
+          "value": "0x273f1754090",
+          "local_context": "pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd8",
+          "value": "0x273f1754090",
+          "local_context": "pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce0",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce8",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf0",
+          "value": "0x273f17540f0",
+          "local_context": " os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf8",
+          "value": "0x273f17540f0",
+          "local_context": " os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d00",
+          "value": "0x273f1736f60",
+          "local_context": " @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d08",
+          "value": "0x273f1736f60",
+          "local_context": " @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s   "
+        },
+        {
+          "address": "0x273f67f0d10",
+          "value": "0x273f17541b0",
+          "local_context": "`os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0d18",
+          "value": "0x273f17541b0",
+          "local_context": "`os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d20",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d28",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d30",
+          "value": "0x273f1754210",
+          "local_context": " t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d38",
+          "value": "0x273f1754210",
+          "local_context": " t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d40",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d48",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d50",
+          "value": "0x273f1754270",
+          "local_context": " os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d58",
+          "value": "0x273f1754270",
+          "local_context": " os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d60",
+          "value": "0x273f1737000",
+          "local_context": "pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d68",
+          "value": "0x273f1737000",
+          "local_context": "pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   "
+        },
+        {
+          "address": "0x273f67f0d70",
+          "value": "0x273f1754330",
+          "local_context": " ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s   "
+        },
+        {
+          "address": "0x273f67f0d78",
+          "value": "0x273f1754330",
+          "local_context": " ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s   "
+        },
+        {
+          "address": "0x273f67f0d80",
+          "value": "0x273f1737050",
+          "local_context": "0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0d88",
+          "value": "0x273f1737050",
+          "local_context": "0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d90",
+          "value": "0x273f17543f0",
+          "local_context": "Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d98",
+          "value": "0x273f17543f0",
+          "local_context": "Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s    ps s    t s   "
+        },
+        {
+          "address": "0x273f67f0da0",
+          "value": "0x273f174a070",
+          "local_context": " Cu s    Cu s   p t s   p t s    t s    t s    ps s    ps s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0da8",
+          "value": "0x273f174a070",
+          "local_context": " Cu s   p t s   p t s    t s    t s    ps s    ps s    t s    t s   @qs s   "
+        },
+        {
+          "address": "0x273f67f0db0",
+          "value": "0x273f174a0b0",
+          "local_context": "p t s   p t s    t s    t s    ps s    ps s    t s    t s   @qs s   @qs s   "
+        },
+        {
+          "address": "0x273f67f0db8",
+          "value": "0x273f174a0b0",
+          "local_context": "p t s    t s    t s    ps s    ps s    t s    t s   @qs s   @qs s   0rs s   "
+        },
+        {
+          "address": "0x273f67f0dc0",
+          "value": "0x273f17370a0",
+          "local_context": " t s    t s    ps s    ps s    t s    t s   @qs s   @qs s   0rs s   0rs s   "
+        },
+        {
+          "address": "0x273f67f0dc8",
+          "value": "0x273f17370a0",
+          "local_context": " t s    ps s    ps s    t s    t s   @qs s   @qs s   0rs s   0rs s    Du s   "
+        },
+        {
+          "address": "0x273f67f0dd0",
+          "value": "0x273f174a0f0",
+          "local_context": " ps s    ps s    t s    t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   "
+        },
+        {
+          "address": "0x273f67f0dd8",
+          "value": "0x273f174a0f0",
+          "local_context": " ps s    t s    t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   "
+        },
+        {
+          "address": "0x273f67f0de0",
+          "value": "0x273f1737140",
+          "local_context": " t s    t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   p t s   "
+        },
+        {
+          "address": "0x273f67f0de8",
+          "value": "0x273f1737140",
+          "local_context": " t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   p t s    rs s   "
+        },
+        {
+          "address": "0x273f67f0df0",
+          "value": "0x273f1737230",
+          "local_context": "@qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   p t s    rs s    rs s   "
+        },
+        {
+          "address": "0x273f67f0df8",
+          "value": "0x273f1737230",
+          "local_context": "@qs s   0rs s   0rs s    Du s    Du s   p t s   p t s    rs s    rs s    t s   "
+        }
+      ],
+      "nearby_vec3": []
+    },
+    {
+      "ref_address": "0x273f67f0f88",
+      "points_to": "0x273f17375a0",
+      "region_base": "0x273f6439000",
+      "region_size": "0x756000",
+      "region_type": 131072,
+      "target_seeds": [
+        {
+          "seed_index": 6,
+          "seed_address": "0x273f17375e0",
+          "object_offset_guess": 64,
+          "needle": "Enemy",
+          "context": "plogoVisibleTick                         ;bL   $        k O&x f       CombatAvatarToplogo.ShowEnemyToplogo                             YbL             A M   06 s   @ t s    h s    "
+        }
+      ],
+      "ascii_context": "p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s    ps s ",
+      "nearby_pointers": [
+        {
+          "address": "0x273f67f0c88",
+          "value": "0x273f172be70",
+          "local_context": "p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c90",
+          "value": "0x273f1736e20",
+          "local_context": "p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s   "
+        },
+        {
+          "address": "0x273f67f0c98",
+          "value": "0x273f1736e20",
+          "local_context": "p r s    ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca0",
+          "value": "0x273f172bf30",
+          "local_context": " ns s    ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0ca8",
+          "value": "0x273f172bf30",
+          "local_context": " ns s   0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb0",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s   0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0cb8",
+          "value": "0x273f172bf90",
+          "local_context": "0 r s    r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc0",
+          "value": "0x273f1736e70",
+          "local_context": " r s    r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   "
+        },
+        {
+          "address": "0x273f67f0cc8",
+          "value": "0x273f1736e70",
+          "local_context": " r s   pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd0",
+          "value": "0x273f1754090",
+          "local_context": "pns s   pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s   "
+        },
+        {
+          "address": "0x273f67f0cd8",
+          "value": "0x273f1754090",
+          "local_context": "pns s    @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce0",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s   "
+        },
+        {
+          "address": "0x273f67f0ce8",
+          "value": "0x273f1736f10",
+          "local_context": " @u s    os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf0",
+          "value": "0x273f17540f0",
+          "local_context": " os s    os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0cf8",
+          "value": "0x273f17540f0",
+          "local_context": " os s    @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d00",
+          "value": "0x273f1736f60",
+          "local_context": " @u s    @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s   "
+        },
+        {
+          "address": "0x273f67f0d08",
+          "value": "0x273f1736f60",
+          "local_context": " @u s   `os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s   "
+        },
+        {
+          "address": "0x273f67f0d10",
+          "value": "0x273f17541b0",
+          "local_context": "`os s   `os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   "
+        },
+        {
+          "address": "0x273f67f0d18",
+          "value": "0x273f17541b0",
+          "local_context": "`os s    Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d20",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s   "
+        },
+        {
+          "address": "0x273f67f0d28",
+          "value": "0x273f1749ff0",
+          "local_context": " Au s    t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d30",
+          "value": "0x273f1754210",
+          "local_context": " t s    t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d38",
+          "value": "0x273f1754210",
+          "local_context": " t s    Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d40",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   "
+        },
+        {
+          "address": "0x273f67f0d48",
+          "value": "0x273f1736fb0",
+          "local_context": " Bu s    os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d50",
+          "value": "0x273f1754270",
+          "local_context": " os s    os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s   "
+        },
+        {
+          "address": "0x273f67f0d58",
+          "value": "0x273f1754270",
+          "local_context": " os s   pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d60",
+          "value": "0x273f1737000",
+          "local_context": "pBu s   pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   "
+        },
+        {
+          "address": "0x273f67f0d68",
+          "value": "0x273f1737000",
+          "local_context": "pBu s    ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   "
+        },
+        {
+          "address": "0x273f67f0d70",
+          "value": "0x273f1754330",
+          "local_context": " ps s    ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s   "
+        },
+        {
+          "address": "0x273f67f0d78",
+          "value": "0x273f1754330",
+          "local_context": " ps s   0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s   "
+        },
+        {
+          "address": "0x273f67f0d80",
+          "value": "0x273f1737050",
+          "local_context": "0Cu s   0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0d88",
+          "value": "0x273f1737050",
+          "local_context": "0Cu s   Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d90",
+          "value": "0x273f17543f0",
+          "local_context": "Pps s   Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s    ps s   "
+        },
+        {
+          "address": "0x273f67f0d98",
+          "value": "0x273f17543f0",
+          "local_context": "Pps s    Cu s    Cu s   p t s   p t s    t s    t s    ps s    ps s    t s   "
+        },
+        {
+          "address": "0x273f67f0da0",
+          "value": "0x273f174a070",
+          "local_context": " Cu s    Cu s   p t s   p t s    t s    t s    ps s    ps s    t s    t s   "
+        },
+        {
+          "address": "0x273f67f0da8",
+          "value": "0x273f174a070",
+          "local_context": " Cu s   p t s   p t s    t s    t s    ps s    ps s    t s    t s   @qs s   "
+        },
+        {
+          "address": "0x273f67f0db0",
+          "value": "0x273f174a0b0",
+          "local_context": "p t s   p t s    t s    t s    ps s    ps s    t s    t s   @qs s   @qs s   "
+        },
+        {
+          "address": "0x273f67f0db8",
+          "value": "0x273f174a0b0",
+          "local_context": "p t s    t s    t s    ps s    ps s    t s    t s   @qs s   @qs s   0rs s   "
+        },
+        {
+          "address": "0x273f67f0dc0",
+          "value": "0x273f17370a0",
+          "local_context": " t s    t s    ps s    ps s    t s    t s   @qs s   @qs s   0rs s   0rs s   "
+        },
+        {
+          "address": "0x273f67f0dc8",
+          "value": "0x273f17370a0",
+          "local_context": " t s    ps s    ps s    t s    t s   @qs s   @qs s   0rs s   0rs s    Du s   "
+        },
+        {
+          "address": "0x273f67f0dd0",
+          "value": "0x273f174a0f0",
+          "local_context": " ps s    ps s    t s    t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   "
+        },
+        {
+          "address": "0x273f67f0dd8",
+          "value": "0x273f174a0f0",
+          "local_context": " ps s    t s    t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   "
+        },
+        {
+          "address": "0x273f67f0de0",
+          "value": "0x273f1737140",
+          "local_context": " t s    t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   p t s   "
+        },
+        {
+          "address": "0x273f67f0de8",
+          "value": "0x273f1737140",
+          "local_context": " t s   @qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   p t s    rs s   "
+        },
+        {
+          "address": "0x273f67f0df0",
+          "value": "0x273f1737230",
+          "local_context": "@qs s   @qs s   0rs s   0rs s    Du s    Du s   p t s   p t s    rs s    rs s   "
+        },
+        {
+          "address": "0x273f67f0df8",
+          "value": "0x273f1737230",
+          "local_context": "@qs s   0rs s   0rs s    Du s    Du s   p t s   p t s    rs s    rs s    t s   "
+        },
+        {
+          "address": "0x273f67f0e00",
+          "value": "0x273f17544b0",
+          "local_context": "0rs s   0rs s    Du s    Du s   p t s   p t s    rs s    rs s    t s    t s   "
+        }
+      ],
+      "nearby_vec3": []
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+BEGIN
+MODULE=<module 'gclient.gamesystem.entities.avatarmembers.cimp_money' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/gclient/gamesystem/entities/avatarmembers/cimp_money.py)>
+MODULE_FILE='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python/gclient/gamesystem/entities/avatarmembers/cimp_money.py'
+MODULE_DIR=['FirstPayYuanbaoRecord', 'IYuanbaoRecord', 'LimitYuanbaoDict', 'limit_gold_data']
+CLASS PlayerAvatarMember NAMES=['CheckCanPlayForYuanbao', 'GetMoneyByMoneyType', 'GetYuanbao', 'IsAutoShowLimitYuanbaoTips', 'IsGetFirstPayYuanbao', 'IsShowLimitYuanbaoTips', 'YuanBaoVisitorLimitNotice', '_on_set_free_yuanbao', '_on_set_pay_yuanbao', 'limit_yuanbao', 'skin_metal_coin', 'yuanbao']
+FUNC PlayerAvatarMember.CheckCanPlayForYuanbao names=('yuanbao',) vars=('self',) consts=[0]
+FUNC PlayerAvatarMember.GetMoneyByMoneyType names=('consts', 'EMoneyType_HONOR', 'honor', 'EMoneyType_YUANBAO', 'yuanbao', 'EMoneyType_PAY_YUANBAO', 'pay_yuanbao', 'EMoneyType_FREE_YUANBAO', 'free_yuanbao', 'EMoneyType_LIMIT_YUANBAO', 'limit_yuanbao', 'EMoneyType_METAL', 'skin_metal_coin', 'EMoneyType_DMZ', 'dmz_coin') vars=('self', 'money_type') consts=[0]
+FUNC PlayerAvatarMember.GetYuanbao names=('pay_yuanbao', 'free_yuanbao', 'yuanbao') vars=('self', 'exclude_limit_yuanbao') consts=[]
+FUNC PlayerAvatarMember.IsAutoShowLimitYuanbaoTips names=('limit_yuanbao_dict', 'time_util', 'UtcStampToZoneSecond', 'six2', 'iteritems', 'limit_gold_data', 'data', 'GetTimeNow') vars=('self', 'UtcStampToZoneSecond', 'limit_id', 'limit_yuanbao', 'end_utc_stamp', 'time_left') consts=[False, 'end_utc_stamp', 86400, True]
+FUNC PlayerAvatarMember.IsGetFirstPayYuanbao names=('first_pay_yuanbao_record',) vars=('self', 'pay_data_id') consts=[]
+FUNC PlayerAvatarMember.IsShowLimitYuanbaoTips names=('limit_yuanbao_dict', 'time_util', 'UtcStampToZoneSecond', 'six2', 'iteritems', 'limit_gold_data', 'data', 'GetTimeNow') vars=('self', 'UtcStampToZoneSecond', 'limit_id', 'limit_yuanbao', 'end_utc_stamp', 'time_left') consts=[False, 'end_utc_stamp', True]
+FUNC PlayerAvatarMember.YuanBaoVisitorLimitNotice names=('gclient.data', 'text_message_data', 'gui', 'Notice', 'data') vars=('self', 'text_message_data', 'on_click_callback') consts=[0, ('text_message_data',), '', 'message', False, ('content', 'callback', 'show_close')]
+FUNC PlayerAvatarMember._on_set_free_yuanbao names=('genv', 'messenger', 'Broadcast', 'events', 'ON_MONEY_YUANBAO_CHANGE', 'yuanbao') vars=('self', 'old') consts=[]
+FUNC PlayerAvatarMember._on_set_pay_yuanbao names=('genv', 'messenger', 'Broadcast', 'events', 'ON_MONEY_YUANBAO_CHANGE', 'yuanbao') vars=('self', 'old') consts=[]
+PLAYERS=[('AjDCIrilGhEBXtfh', 'PlayerAvatar', '<PlayerAvatar(AjDCIrilGhEBXtfh)>')]
+PLAYER AjDCIrilGhEBXtfh TYPE=<class 'gclient.framework.entities.avatar.PlayerAvatar'>
+MRO=['gclient.framework.entities.avatar.PlayerAvatar', 'gclient.framework.entities.avatar.Avatar', 'client.ClientEntity.AvatarEntity', 'client.ClientEntity.PlayerEntity', 'client.ClientEntity.ClientAreaEntity', 'client.ClientEntity.ClientEntity', 'common.Entity.Entity', 'builtins.entity', 'builtins.object']
+PLAYER_NAMES=['CheckCanPlayForYuanbao', 'GetGoldGachaID', 'GetMoneyByMoneyType', 'GetYuanbao', 'IsAutoShowLimitYuanbaoTips', 'IsGetFirstPayYuanbao', 'IsShowLimitYuanbaoTips', 'OnCacheTokenReward', 'OnCoinDrawDiscount', 'OnFetchServiceToken', 'OnFetchServiceTokenFailed', 'OnGachaRollToken', 'OnGoldBadgeReceive', 'OnNGPSeasonRefreshRedpoint', 'PopCacheTokenReward', 'PopGachaTokenReward', 'PreCheckEnoughMoney', 'PreCheckEnoughMoneyNew', 'ReceiveCreDitWeekReward', 'ShowCreditScorePoint', 'ShowLocationRedpointForNotPids', 'TestNgpushToken', 'YuanBaoVisitorLimitNotice', '_on_set_dmz_coin', '_on_set_free_yuanbao', '_on_set_last_settle_coins', '_on_set_pay_yuanbao', 'cache_token_rewards', 'gacha_token_rewards', 'limit_yuanbao', 'on_set_space_center', 'on_set_space_data', 'skin_metal_coin', 'yuanbao']
+PLAYER_FUNC CheckCanPlayForYuanbao names=('yuanbao',) vars=('self',)
+PLAYER_FUNC GetGoldGachaID names=('GetOnlyGachaList', 'gacha_setting_data', 'data', 'get', 'consts', 'ItemID', 'GoldGachaItemID') vars=('self', 'gacha_list', 'gacha_id')
+PLAYER_FUNC GetMoneyByMoneyType names=('consts', 'EMoneyType_HONOR', 'honor', 'EMoneyType_YUANBAO', 'yuanbao', 'EMoneyType_PAY_YUANBAO', 'pay_yuanbao', 'EMoneyType_FREE_YUANBAO', 'free_yuanbao', 'EMoneyType_LIMIT_YUANBAO', 'limit_yuanbao', 'EMoneyType_METAL', 'skin_metal_coin', 'EMoneyType_DMZ', 'dmz_coin') vars=('self', 'money_type')
+PLAYER_FUNC GetYuanbao names=('pay_yuanbao', 'free_yuanbao', 'yuanbao') vars=('self', 'exclude_limit_yuanbao')
+PLAYER_FUNC IsAutoShowLimitYuanbaoTips names=('limit_yuanbao_dict', 'time_util', 'UtcStampToZoneSecond', 'six2', 'iteritems', 'limit_gold_data', 'data', 'GetTimeNow') vars=('self', 'UtcStampToZoneSecond', 'limit_id', 'limit_yuanbao', 'end_utc_stamp', 'time_left')
+PLAYER_FUNC IsGetFirstPayYuanbao names=('first_pay_yuanbao_record',) vars=('self', 'pay_data_id')
+PLAYER_FUNC IsShowLimitYuanbaoTips names=('limit_yuanbao_dict', 'time_util', 'UtcStampToZoneSecond', 'six2', 'iteritems', 'limit_gold_data', 'data', 'GetTimeNow') vars=('self', 'UtcStampToZoneSecond', 'limit_id', 'limit_yuanbao', 'end_utc_stamp', 'time_left')
+PLAYER_FUNC OnCacheTokenReward names=('cache_token_rewards', 'append', 'cache_one_shot', 'GachaOneShotReward', 'PopCacheTokenReward') vars=('self', 'act_id', 'item_add', 'extra')
+PLAYER_FUNC OnCoinDrawDiscount names=('genv', 'messenger', 'Broadcast', 'events', 'ON_COIN_DRAW_DISCOUNT_RESULT') vars=('self', 'act_id', 'discount_proto_id')
+PLAYER_FUNC OnFetchServiceToken names=('gmsdk_type', 'cconst', 'GMSDK_TYPE_EXTRA_QUESTION', 'gmsdk_extra', 'get', 'six_urllib_parse', 'urlencode', 'GMSDK_TYPE_CLIENT_URL', 'MPlatform', 'GotoUrl', 'channel_util', 'OpenUrlGMSDK', 'GMSDK_TYPE_SPRITE') vars=('self', 'token', 'refer', 'url', 'extra_question', 'client_url')
+PLAYER_FUNC OnFetchServiceTokenFailed names=('gmsdk_type', 'cconst', 'GMSDK_TYPE_CUSTOMERSERVICE', 'channel_util', 'OpenUrl', 'CUSTOMER_SERVICE_URL', 'GMSDK_TYPE_SPRITE') vars=('self',)
+PLAYER_FUNC OnGachaRollToken names=('gacha_token_rewards', 'append', 'cache_one_shot', 'GachaOneShotReward', 'PopGachaTokenReward') vars=('self', 'act_id', 'item_add', 'extra')
+PLAYER_FUNC OnGoldBadgeReceive names=('gclient.gamesystem.uihall.activity.activity_gold_badge_roll_window', 'ActivityGoldBadgeRollWindow', 'instance', 'Show', 'get') vars=('self', 'result', 'data', 'ActivityGoldBadgeRollWindow', 'target_num', 'value')
+PLAYER_FUNC OnNGPSeasonRefreshRedpoint names=('LocalConfig', 'ngp_red_show', 'genv', 'messenger', 'Broadcast', 'events', 'ON_GMSDK_REDPOINT') vars=('self',)
+PLAYER_FUNC PopCacheTokenReward names=('cache_token_rewards', 'pop') vars=('self',)
+PLAYER_FUNC PopGachaTokenReward names=('gacha_token_rewards', 'pop') vars=('self',)
+PLAYER_FUNC PreCheckEnoughMoney names=('EMoneyType_ITEM', 'GetItemCountByCostItemId', 'GetMoneyByMoneyType', 'consts', 'EMoneyType_YUANBAO', '_ShowChargePopupWindow', 'genv', 'messenger', 'Broadcast', 'events', 'ON_BUY_GACHA_SUCCESS', 'gui', 'Prompt') vars=('self', 'money_info', 'money_type', 'money', 'price')
+PLAYER_FUNC PreCheckEnoughMoneyNew names=('EMoneyType_ITEM', 'GetItemCountByCostItemId', 'GetMoneyByMoneyType', 'consts', 'EMoneyType_YUANBAO', '_ShowChargePopupWindow', 'genv', 'messenger', 'Broadcast', 'events', 'ON_BUY_GACHA_SUCCESS', 'gui', 'Prompt') vars=('self', 'money_info', 'auto_buy_callback', 'not_show_pop', 'money_type', 'money', 'price')
+PLAYER_FUNC ReceiveCreDitWeekReward names=('CallServer',) vars=('self',)
+PLAYER_FUNC ShowCreditScorePoint names=('credit_score_records', 'score_change', 'max', 'record_time', 'config', 'LocalConfig', 'reddot_credit_score_timestamp') vars=('self', 'max_time', 'record')
+PLAYER_FUNC ShowLocationRedpointForNotPids names=('mypids', 'HasAnyGunReachedLeaderboardScore') vars=('self',)
+PLAYER_FUNC TestNgpushToken names=('MPush', 'GetPushDevId', 'CallServer') vars=('self', 'ngpush_id', 'MPush', 'regid')
+PLAYER_FUNC YuanBaoVisitorLimitNotice names=('gclient.data', 'text_message_data', 'gui', 'Notice', 'data') vars=('self', 'text_message_data', 'on_click_callback')
+PLAYER_FUNC _on_set_dmz_coin names=('genv', 'messenger', 'Broadcast', 'events', 'ON_MONEY_DMZ_COIN_CHANGE', 'dmz_coin') vars=('self', 'old')
+PLAYER_FUNC _on_set_free_yuanbao names=('genv', 'messenger', 'Broadcast', 'events', 'ON_MONEY_YUANBAO_CHANGE', 'yuanbao') vars=('self', 'old')
+PLAYER_FUNC _on_set_last_settle_coins names=('last_settle_coins', 'RankKey', 'GrandTheftActivity', 'max', 'rank_scores', 'GetScore', 'last_rank_scores') vars=('self', 'old', 'key')
+PLAYER_FUNC _on_set_pay_yuanbao names=('genv', 'messenger', 'Broadcast', 'events', 'ON_MONEY_YUANBAO_CHANGE', 'yuanbao') vars=('self', 'old')
+PLAYER_ATTR cache_token_rewards type=<class 'list'> value=[]
+PLAYER_ATTR gacha_token_rewards type=<class 'list'> value=[]
+PLAYER_ATTR limit_yuanbao type=<class 'int'> value=0
+PLAYER_FUNC on_set_space_center names=('logger', 'info', 'name', 'id') vars=('self', 'cent')
+PLAYER_FUNC on_set_space_data names=('logger', 'info', 'str') vars=('self', 'key', 'value')
+PLAYER_ATTR skin_metal_coin type=<class 'int'> value=1250
+PLAYER_ATTR yuanbao type=<class 'int'> value=25
+LOADED_MONEY_MODULES=['gclient.gameplay.logic_grand_theft.ui.grand_theft_money_node', 'gclient.gameplay.logic_grand_theft.ui.grand_theft_settle_money_window', 'gclient.gamesystem.entities.avatarmembers.cimp_money', 'gclient.gamesystem.uihall.activity.noble_coin.noble_coin_money_comp', 'gclient.gamesystem.uihall.activity.save_money', 'gclient.gamesystem.uihall.activity.save_money.save_money_window', 'gclient.gamesystem.uihall.common_mall_money_window', 'gclient.gamesystem.uihall.common_money_window', 'gclient.gamesystem.uihall.hall_moneybox_window', 'gclient.gamesystem.uihall.uimall.mall_money_comp', 'gclient.gamesystem.uihall.uimall.mall_moneybox_window']
+END

@@ -1,0 +1,6 @@
+BEGIN
+BEFORE={'total': 25, 'free': 0, 'pay': 25, 'limit': 0}
+AFTER={'total': 100000, 'free': 99975, 'pay': 25, 'limit': 0}
+GET_MONEY_BY_TYPE=100000
+SUCCESS target_gold=100000
+END

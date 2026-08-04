@@ -1,0 +1,129 @@
+BEGIN
+MODULE asiocore_64 OK <module 'asiocore_64'>
+KEYS asiocore_64 ['IS_CLIENT_ONLY', 'KCP_FEC_REED_SOLOMON', 'KCP_FEC_XOR', 'KCP_FEC_XOR_COMPACT', '_debug_only_do_not_call_it_crashes_', 'add_string_indexes', 'add_timer', 'area', 'area_list', 'area_map', 'area_prop_index', 'async_connection', 'async_kcp_connection', 'async_server', 'async_websocket_connection', 'async_websocket_server', 'b64decode', 'b64encode', 'bhttp_client', 'bhttp_client_pool', 'bhttps_client', 'binded_prop', 'btree', 'call_next_frame', 'check_watcher', 'clear_area_message', 'clear_class', 'clear_prop_index', 'clear_string_statistic', 'debug_dangerous_get_object', 'del_all_timers', 'del_timer', 'dump_string_statistic', 'enable_compressor_stats', 'enable_kcp_dupack', 'enable_pos_unreliable', 'enable_reliable', 'enabled_kcp_dupack', 'enabled_pos_unreliable', 'enabled_reliable', 'entities', 'entity', 'get_class', 'get_classes', 'get_compressor_stats', 'get_compressor_stats_dict', 'get_debug_rpc', 'get_def_timer_mgr', 'get_default_mem_level', 'get_default_win_bits', 'get_enable_insight_stat', 'get_enable_kcp_log', 'get_enable_py_callback_stat', 'get_fec_codec', 'get_fec_grade', 'get_fec_grade_symbol_len', 'get_fec_max_level', 'get_fec_rate', 'get_fec_rto_switch', 'get_fec_switch',...
+ATTR asiocore_64.bhttp_client type=<class 'type'> val=<class 'bhttp_client'>
+ATTR asiocore_64.bhttp_client_pool type=<class 'type'> val=<class 'bhttp_client_pool'>
+ATTR asiocore_64.bhttps_client type=<class 'type'> val=<class 'bhttps_client'>
+ATTR asiocore_64.entities type=<class 'builtin_function_or_method'> val=<built-in function entities>
+ATTR asiocore_64.entity type=<class 'type'> val=<class 'entity'>
+ATTR asiocore_64.set_entity_class_callback type=<class 'builtin_function_or_method'> val=<built-in function set_entity_class_callback>
+MODULE gclient.entitylist OK <module 'gclient.entitylist' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/gclient/entitylist.py)>
+KEYS gclient.entitylist ['Async', 'ENTITIES', 'EntityFactory', 'GAME_LOGIC_ENTITIES', 'HAS_REGISTER_ENTITIES', 'LoadBaseEntityClasses', 'LoadGameLogicEntities', 'PreprocessModelCue', 'RegisterEntities', 'time']
+ATTR gclient.entitylist.EntityFactory type=<class 'type'> val=<class 'common.EntityFactory.EntityFactory'>
+ATTR gclient.entitylist.LoadBaseEntityClasses type=<class 'function'> val=<function LoadBaseEntityClasses at 0x00000259C960EAE0>
+ATTR gclient.entitylist.LoadGameLogicEntities type=<class 'function'> val=<function LoadGameLogicEntities at 0x00000259C960EC40>
+ATTR gclient.entitylist.RegisterEntities type=<class 'function'> val=<function RegisterEntities at 0x00000259C960EB90>
+MODULE common.Entity OK <module 'common.Entity' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/engine/common/Entity.py)>
+KEYS common.Entity ['ComponentHost', 'Entity', 'EntityManager', 'EntityMetaClass', 'IdManager', 'LogManager', 'NonexistentSwallower', 'PropertyMetaClass', 'Timer', 'asiocore', 'copy_rpc_decorator', 'py3compat', 'sys']
+ATTR common.Entity.ComponentHost type=<class 'function'> val=<function ComponentHost at 0x00000259F18F9590>
+ATTR common.Entity.Entity type=<class 'common.Entity.EntityMetaClass'> val=<class 'common.Entity.Entity'>
+ATTR common.Entity.EntityManager type=<class 'type'> val=<class 'common.EntityManager.EntityManager'>
+ATTR common.Entity.EntityMetaClass type=<class 'type'> val=<class 'common.Entity.EntityMetaClass'>
+ATTR common.Entity.IdManager type=<class 'type'> val=<class 'common.IdManager.IdManager'>
+ATTR common.Entity.LogManager type=<class 'type'> val=<class 'mobilelog.LogManager.LogManager'>
+ATTR common.Entity.NonexistentSwallower type=<class 'type'> val=<class 'common.mobilecommon.NonexistentSwallower'>
+MODULE common.EntityManager OK <module 'common.EntityManager' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/engine/common/EntityManager.py)>
+KEYS common.EntityManager ['COMPONENT', 'EntityManager', 'LogManager']
+ATTR common.EntityManager.EntityManager type=<class 'type'> val=<class 'common.EntityManager.EntityManager'>
+ATTR common.EntityManager.LogManager type=<class 'type'> val=<class 'mobilelog.LogManager.LogManager'>
+MODULE client.ClientEntity OK <module 'client.ClientEntity' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/engine/client/ClientEntity.py)>
+KEYS client.ClientEntity ['AsioGateClient', 'AvatarEntity', 'BinData', 'CLIENT_STUB', 'ClientAreaEntity', 'ClientEntity', 'CustomMapType', 'Entity', 'EntityID', 'Float', 'INDEX2RPC', 'Int', 'List', 'PlayerEntity', 'Property', 'Str', 'asiocore', 'get_props_desc', 'is_rpc_method', 'regist_rpc_methods', 'rpc_call', 'rpc_method']
+ATTR client.ClientEntity.AsioGateClient type=<class 'type'> val=<class 'client.AsioGateClient.AsioGateClient'>
+ATTR client.ClientEntity.AvatarEntity type=<class 'common.Entity.EntityMetaClass'> val=<class 'client.ClientEntity.AvatarEntity'>
+ATTR client.ClientEntity.ClientAreaEntity type=<class 'common.Entity.EntityMetaClass'> val=<class 'client.ClientEntity.ClientAreaEntity'>
+ATTR client.ClientEntity.ClientEntity type=<class 'common.Entity.EntityMetaClass'> val=<class 'client.ClientEntity.ClientEntity'>
+ATTR client.ClientEntity.Entity type=<class 'common.Entity.EntityMetaClass'> val=<class 'common.Entity.Entity'>
+ATTR client.ClientEntity.EntityID type=<class 'type'> val=<class 'entityid'>
+ATTR client.ClientEntity.PlayerEntity type=<class 'common.Entity.EntityMetaClass'> val=<class 'client.ClientEntity.PlayerEntity'>
+MODULE gclient.gameplay.logic_base.entities.combat_avatar OK <module 'gclient.gameplay.logic_base.entities.combat_avatar' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/gclient/gameplay/logic_base/entities/combat_avatar.py)>
+KEYS gclient.gameplay.logic_base.entities.combat_avatar ['Bool', 'CLIENT_STUB', 'ClientAreaEntity', 'CombatAvatar', 'Components', 'Float', 'GlobalData', 'HighFrequencyProperties', 'MEngine', 'MType', 'NoPersistentTitles', 'PlayerCombatAvatar', 'Property', 'Tuple', 'cconst', 'combatavatarmembers', 'comp_beard', 'comp_climb_wall', 'comp_fly', 'comp_left_hand_special_weapon', 'comp_meow_dance', 'comp_parachute', 'comp_thruster_pack', 'consts', 'events', 'formula', 'math', 'pubsub', 'rpc_method', 'sys', 'time', 'with_tag']
+ATTR gclient.gameplay.logic_base.entities.combat_avatar.ClientAreaEntity type=<class 'common.Entity.EntityMetaClass'> val=<class 'client.ClientEntity.ClientAreaEntity'>
+ATTR gclient.gameplay.logic_base.entities.combat_avatar.CombatAvatar type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_avatar.CombatAvatar'>
+ATTR gclient.gameplay.logic_base.entities.combat_avatar.Components type=<class 'function'> val=<function ReplaceComponents.<locals>.Components at 0x00000259F958EFB0>
+ATTR gclient.gameplay.logic_base.entities.combat_avatar.NoPersistentTitles type=<class 'common.classutils.CustomListTypeMetaClass'> val=<class 'gshare.ititle.NoPersistentTitles'>
+ATTR gclient.gameplay.logic_base.entities.combat_avatar.PlayerCombatAvatar type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_avatar.PlayerCombatAvatar'>
+ATTR gclient.gameplay.logic_base.entities.combat_avatar.combatavatarmembers type=<class 'module'> val=<module 'gclient.gameplay.logic_base.entities.combatavatarmembers' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/gclient/gameplay/logic_base/entities/combatavatarmembers/__init__.py)>
+ATTR gclient.gameplay.logic_base.entities.combat_avatar.events type=<class 'module'> val=<module 'gclient.framework.util.events' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/gclient/framework/util/events.py)>
+MODULE gclient.gameplay.logic_base.entities.combat_team OK <module 'gclient.gameplay.logic_base.entities.combat_team' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/gclient/gameplay/logic_base/entities/combat_team.py)>
+KEYS gclient.gameplay.logic_base.entities.combat_team ['AutoMarkRecordMap', 'BuildDummyInfo', 'CCombatTeamMember', 'CCombatTeamMember_Blasting', 'CCombatTeamMember_Football', 'CCombatTeamMember_GrandTheft', 'CCombatTeamMember_HotSpot', 'CCombatTeamMember_Moba', 'CCombatTeamMember_MobaUltraMega', 'CCombatTeamMember_MobaZombie', 'CCombatTeamMember_Nowhere', 'CCombatTeamMember_Peekaboo', 'CCombatTeamMember_ShootingRange', 'CCombatTeamMember_SquadFight', 'CCombatTeamMembers', 'CCombatTeamMembers_Blasting', 'CCombatTeamMembers_Football', 'CCombatTeamMembers_GrandTheft', 'CCombatTeamMembers_HotSpot', 'CCombatTeamMembers_Moba', 'CCombatTeamMembers_MobaUltraMega', 'CCombatTeamMembers_MobaZombie', 'CCombatTeamMembers_Nowhere', 'CCombatTeamMembers_Peekaboo', 'CCombatTeamMembers_ShootingRange', 'CCombatTeamMembers_SquadFight', 'CIntroGunInfo', 'CLIENT_STUB', 'CMark_Moba', 'CMark_Moba_Map', 'CReconDroneMarks', 'CRequestBuyItems', 'CRequestBuyItemsBlasting', 'CRoomCombatTeamMember', 'CSimpleCombatTeamInfo', 'CSimpleCombatTeamInfos', 'CSimpleCombatTeamMembers', 'CSmokeXrayTargets', 'CSupportLastBuyTime', 'CTeamTalentData', 'CXrayTargets', 'ClientAreaEntity', 'CombatState', 'CombatTeamEntity', 'CombatTeamEntity_ArmsRaceMode', 'CombatTeamEntity_BigHe...
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Blasting type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Blasting'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Football type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Football'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_GrandTheft type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_GrandTheft'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_HotSpot type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_HotSpot'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Moba type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Moba'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_MobaUltraMega type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_MobaUltraMega'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_MobaZombie type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_MobaZombie'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Nowhere type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Nowhere'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Peekaboo type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_Peekaboo'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_ShootingRange type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_ShootingRange'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_SquadFight type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMember_SquadFight'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Blasting type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Blasting'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Football type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Football'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_GrandTheft type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_GrandTheft'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_HotSpot type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_HotSpot'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Moba type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Moba'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_MobaUltraMega type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_MobaUltraMega'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_MobaZombie type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_MobaZombie'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Nowhere type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Nowhere'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Peekaboo type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_Peekaboo'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_ShootingRange type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_ShootingRange'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_SquadFight type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CCombatTeamMembers_SquadFight'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CRoomCombatTeamMember type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CRoomCombatTeamMember'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CSimpleCombatTeamInfo type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CSimpleCombatTeamInfo'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CSimpleCombatTeamInfos type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CSimpleCombatTeamInfos'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CSimpleCombatTeamMembers type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CSimpleCombatTeamMembers'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CTeamTalentData type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CTeamTalentData'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ClientAreaEntity type=<class 'common.Entity.EntityMetaClass'> val=<class 'client.ClientEntity.ClientAreaEntity'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_ArmsRaceMode type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_ArmsRaceMode'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_BigHead type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_BigHead'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Blasting type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Blasting'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Football type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Football'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_GrandTheft type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_GrandTheft'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_GunFight type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_GunFight'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_HotSpot type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_HotSpot'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Lockdown type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Lockdown'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Moba type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Moba'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_MobaUltraMega type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_MobaUltraMega'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_MobaZombie type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_MobaZombie'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Nowhere type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Nowhere'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Overload type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Overload'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Peekaboo type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_Peekaboo'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_ShootingRange type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_ShootingRange'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_SniperMode type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_SniperMode'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_SquadFight type=<class 'common.Entity.EntityMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.CombatTeamEntity_SquadFight'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.EntityID type=<class 'type'> val=<class 'entityid'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.EntityManager type=<class 'type'> val=<class 'common.EntityManager.EntityManager'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember_Blasting type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember_Blasting'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember_Football type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember_Football'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember_HotSpot type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember_HotSpot'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember_Moba type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember_Moba'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember_Peekaboo type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember_Peekaboo'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember_ShootingRange type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember_ShootingRange'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMember_SquadFight type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMember_SquadFight'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_Blasting type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_Blasting'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_Football type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_Football'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_GrandTheft type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_GrandTheft'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_HotSpot type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_HotSpot'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_Moba type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_Moba'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_MobaZombie type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_MobaZombie'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_Nowhere type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_Nowhere'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_Peekaboo type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_Peekaboo'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_ShootingRange type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_ShootingRange'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ICombatTeamMembers_SquadFight type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ICombatTeamMembers_SquadFight'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.IRoomCombatTeamMember type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.IRoomCombatTeamMember'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ISimpleCombatTeamInfo type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ISimpleCombatTeamInfo'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ISimpleCombatTeamInfos type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ISimpleCombatTeamInfos'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ISimpleCombatTeamMembers type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.icombat_team.ISimpleCombatTeamMembers'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.IdManager type=<class 'type'> val=<class 'common.IdManager.IdManager'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.ParaAvatarStage type=<class 'gshare.utils.EnumMetaclass'> val=<class 'gshare.game_logic.igame_logic_parachute_comp.ParaAvatarStage'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.TeamMapMarks type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gclient.gameplay.logic_base.entities.combat_team.TeamMapMarks'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.TeamTalentData type=<class 'common.classutils.CustomMapTypeMetaClass'> val=<class 'gshare.italent.TeamTalentData'>
+ATTR gclient.gameplay.logic_base.entities.combat_team.events type=<class 'module'> val=<module 'gclient.framework.util.events' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/gclient/framework/util/events.py)>
+CALL asiocore_64.entities() => {}
+CALL asiocore_64.entity() => <entity object at 0x00000259D8E6AF40>
+END

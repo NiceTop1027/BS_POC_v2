@@ -1,0 +1,7 @@
+BEGIN 1785813148.3028665
+candidate model type=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'> repr=<gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel object at 0x0000025A0331F4D0>
+AddFakeBoardElement0(model) fail=TypeError('can not convert ShootingRangeRobotAvatarModel to PyIObject')
+candidate model.model type=<class 'IEntity'> repr=<IEntity object at 0x00000259D8E37280>
+AddFakeBoardElement0(model.model) => True
+RemoveFakeBoardElement(ctf_fb2_1) => True
+END

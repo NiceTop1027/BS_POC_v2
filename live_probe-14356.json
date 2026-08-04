@@ -1,0 +1,1232 @@
+{
+  "pid": 14356,
+  "command_line": "\"C:\\Program Files (x86)\\bloodstrike\\Engine\\Binaries\\Win64\\BloodStrike.exe\"",
+  "startup_context": null,
+  "images": [
+    {
+      "base": "0x287443e0000",
+      "region_size": 45056,
+      "image_size": 40960,
+      "type": 262144
+    },
+    {
+      "base": "0x287443f0000",
+      "region_size": 16384,
+      "image_size": 12288,
+      "type": 262144
+    },
+    {
+      "base": "0x28749850000",
+      "region_size": 626688,
+      "image_size": 622592,
+      "type": 262144
+    },
+    {
+      "base": "0x28749ff0000",
+      "region_size": 16384,
+      "image_size": 12288,
+      "type": 262144
+    },
+    {
+      "base": "0x2874a000000",
+      "region_size": 16384,
+      "image_size": 12288,
+      "type": 262144
+    },
+    {
+      "base": "0x2874b420000",
+      "region_size": 32768,
+      "image_size": 28672,
+      "type": 262144
+    },
+    {
+      "base": "0x287949d0000",
+      "region_size": 929792,
+      "image_size": 929792,
+      "type": 262144
+    },
+    {
+      "base": "0x287a65d0000",
+      "region_size": 4096,
+      "image_size": 3629056,
+      "type": 131072
+    },
+    {
+      "base": "0x7ff744ce0000",
+      "region_size": 4096,
+      "image_size": 155168768,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b0df0000",
+      "region_size": 4096,
+      "image_size": 9216000,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b23f0000",
+      "region_size": 4096,
+      "image_size": 3207168,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b2700000",
+      "region_size": 4096,
+      "image_size": 3420160,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b2a50000",
+      "region_size": 4096,
+      "image_size": 2920448,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b2d20000",
+      "region_size": 4096,
+      "image_size": 2252800,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b2f50000",
+      "region_size": 4096,
+      "image_size": 9904128,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b38d0000",
+      "region_size": 4096,
+      "image_size": 4771840,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b4140000",
+      "region_size": 4096,
+      "image_size": 11456512,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b4c30000",
+      "region_size": 4096,
+      "image_size": 16605184,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b5c10000",
+      "region_size": 4096,
+      "image_size": 8372224,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b6410000",
+      "region_size": 4096,
+      "image_size": 5980160,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b69d0000",
+      "region_size": 4096,
+      "image_size": 6172672,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b6fc0000",
+      "region_size": 4096,
+      "image_size": 15659008,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9b8830000",
+      "region_size": 4096,
+      "image_size": 2842624,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9bac20000",
+      "region_size": 4096,
+      "image_size": 3317760,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ff9bc260000",
+      "region_size": 4096,
+      "image_size": 3194880,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa04e60000",
+      "region_size": 4096,
+      "image_size": 749568,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa04f20000",
+      "region_size": 4096,
+      "image_size": 606208,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa05040000",
+      "region_size": 4096,
+      "image_size": 49152,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa05060000",
+      "region_size": 4096,
+      "image_size": 135168,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa05090000",
+      "region_size": 4096,
+      "image_size": 61440,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa050b0000",
+      "region_size": 4096,
+      "image_size": 159744,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa050e0000",
+      "region_size": 4096,
+      "image_size": 311296,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa05290000",
+      "region_size": 4096,
+      "image_size": 225280,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa40ba0000",
+      "region_size": 4096,
+      "image_size": 593920,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa40c40000",
+      "region_size": 4096,
+      "image_size": 3416064,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa41190000",
+      "region_size": 4096,
+      "image_size": 499712,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa415d0000",
+      "region_size": 4096,
+      "image_size": 1269760,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa53b70000",
+      "region_size": 4096,
+      "image_size": 503808,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa56cc0000",
+      "region_size": 4096,
+      "image_size": 307200,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa56d40000",
+      "region_size": 4096,
+      "image_size": 135168,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa56d70000",
+      "region_size": 4096,
+      "image_size": 147456,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa5c8e0000",
+      "region_size": 4096,
+      "image_size": 139264,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa5e2f0000",
+      "region_size": 4096,
+      "image_size": 7499776,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa829d0000",
+      "region_size": 4096,
+      "image_size": 1777664,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa83460000",
+      "region_size": 4096,
+      "image_size": 53248,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa87330000",
+      "region_size": 4096,
+      "image_size": 61440,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa87710000",
+      "region_size": 4096,
+      "image_size": 462848,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa87790000",
+      "region_size": 4096,
+      "image_size": 77824,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa878e0000",
+      "region_size": 4096,
+      "image_size": 684032,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa88eb0000",
+      "region_size": 4096,
+      "image_size": 282624,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa8ae50000",
+      "region_size": 4096,
+      "image_size": 1339392,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa8b040000",
+      "region_size": 4096,
+      "image_size": 733184,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa8d210000",
+      "region_size": 4096,
+      "image_size": 110592,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa8fe70000",
+      "region_size": 4096,
+      "image_size": 1982464,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa92170000",
+      "region_size": 4096,
+      "image_size": 1458176,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa95c30000",
+      "region_size": 4096,
+      "image_size": 57344,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa95e10000",
+      "region_size": 4096,
+      "image_size": 782336,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa96af0000",
+      "region_size": 4096,
+      "image_size": 802816,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa96cd0000",
+      "region_size": 4096,
+      "image_size": 196608,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa97320000",
+      "region_size": 4096,
+      "image_size": 241664,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa97730000",
+      "region_size": 4096,
+      "image_size": 89804800,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa9d0f0000",
+      "region_size": 4096,
+      "image_size": 1138688,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa9d6c0000",
+      "region_size": 4096,
+      "image_size": 1290240,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa9db20000",
+      "region_size": 4096,
+      "image_size": 1417216,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa9dc80000",
+      "region_size": 4096,
+      "image_size": 1941504,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffa9e010000",
+      "region_size": 4096,
+      "image_size": 98623488,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa4830000",
+      "region_size": 4096,
+      "image_size": 884736,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa4d00000",
+      "region_size": 4096,
+      "image_size": 827392,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa5470000",
+      "region_size": 4096,
+      "image_size": 3031040,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa5ae0000",
+      "region_size": 4096,
+      "image_size": 45056,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa5af0000",
+      "region_size": 4096,
+      "image_size": 389120,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa5b60000",
+      "region_size": 4096,
+      "image_size": 1798144,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa6210000",
+      "region_size": 4096,
+      "image_size": 90112,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa6230000",
+      "region_size": 4096,
+      "image_size": 139264,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaa6290000",
+      "region_size": 4096,
+      "image_size": 110592,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaac4a0000",
+      "region_size": 4096,
+      "image_size": 86016,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaaccd0000",
+      "region_size": 4096,
+      "image_size": 360448,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaae3b0000",
+      "region_size": 4096,
+      "image_size": 995328,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaaf370000",
+      "region_size": 4096,
+      "image_size": 73728,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaaf580000",
+      "region_size": 4096,
+      "image_size": 1949696,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaaf770000",
+      "region_size": 4096,
+      "image_size": 135168,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab0090000",
+      "region_size": 4096,
+      "image_size": 499712,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab0f10000",
+      "region_size": 4096,
+      "image_size": 2707456,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab1590000",
+      "region_size": 4096,
+      "image_size": 77824,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab1bd0000",
+      "region_size": 4096,
+      "image_size": 94208,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab1bf0000",
+      "region_size": 4096,
+      "image_size": 98304,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab22f0000",
+      "region_size": 4096,
+      "image_size": 2695168,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab2620000",
+      "region_size": 4096,
+      "image_size": 32768,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab2750000",
+      "region_size": 4096,
+      "image_size": 278528,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab27c0000",
+      "region_size": 4096,
+      "image_size": 167936,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab2810000",
+      "region_size": 4096,
+      "image_size": 2904064,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab35c0000",
+      "region_size": 4096,
+      "image_size": 5730304,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab3b40000",
+      "region_size": 4096,
+      "image_size": 561152,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab3dc0000",
+      "region_size": 4096,
+      "image_size": 2367488,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab4910000",
+      "region_size": 4096,
+      "image_size": 221184,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab67b0000",
+      "region_size": 4096,
+      "image_size": 2420736,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab6d10000",
+      "region_size": 4096,
+      "image_size": 1073152,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab71c0000",
+      "region_size": 4096,
+      "image_size": 667648,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab7270000",
+      "region_size": 4096,
+      "image_size": 118784,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab7960000",
+      "region_size": 4096,
+      "image_size": 45056,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab7e90000",
+      "region_size": 4096,
+      "image_size": 679936,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab8130000",
+      "region_size": 4096,
+      "image_size": 102400,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab86d0000",
+      "region_size": 4096,
+      "image_size": 548864,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab8760000",
+      "region_size": 4096,
+      "image_size": 1544192,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab88e0000",
+      "region_size": 4096,
+      "image_size": 241664,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab8a30000",
+      "region_size": 4096,
+      "image_size": 110592,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab8a70000",
+      "region_size": 4096,
+      "image_size": 1482752,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab8be0000",
+      "region_size": 4096,
+      "image_size": 151552,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab90a0000",
+      "region_size": 4096,
+      "image_size": 45056,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab90b0000",
+      "region_size": 4096,
+      "image_size": 118784,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab91a0000",
+      "region_size": 4096,
+      "image_size": 139264,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab93b0000",
+      "region_size": 4096,
+      "image_size": 581632,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffab9b70000",
+      "region_size": 4096,
+      "image_size": 450560,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaba090000",
+      "region_size": 4096,
+      "image_size": 45056,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaba360000",
+      "region_size": 4096,
+      "image_size": 102400,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffaba5c0000",
+      "region_size": 4096,
+      "image_size": 4714496,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabb300000",
+      "region_size": 4096,
+      "image_size": 2490368,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabb570000",
+      "region_size": 4096,
+      "image_size": 2224128,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabbbe0000",
+      "region_size": 4096,
+      "image_size": 1200128,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabbea0000",
+      "region_size": 4096,
+      "image_size": 53248,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabbec0000",
+      "region_size": 4096,
+      "image_size": 167936,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabbef0000",
+      "region_size": 4096,
+      "image_size": 655360,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabbfd0000",
+      "region_size": 4096,
+      "image_size": 692224,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabc0d0000",
+      "region_size": 4096,
+      "image_size": 286720,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabc120000",
+      "region_size": 4096,
+      "image_size": 1302528,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabc290000",
+      "region_size": 4096,
+      "image_size": 192512,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabc610000",
+      "region_size": 4096,
+      "image_size": 81920,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabc960000",
+      "region_size": 4096,
+      "image_size": 8986624,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabd200000",
+      "region_size": 4096,
+      "image_size": 61440,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabd510000",
+      "region_size": 4096,
+      "image_size": 53248,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabd530000",
+      "region_size": 4096,
+      "image_size": 208896,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabd5c0000",
+      "region_size": 4096,
+      "image_size": 1400832,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabdae0000",
+      "region_size": 4096,
+      "image_size": 233472,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabdb80000",
+      "region_size": 4096,
+      "image_size": 110592,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabdcb0000",
+      "region_size": 4096,
+      "image_size": 221184,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabde30000",
+      "region_size": 4096,
+      "image_size": 299008,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabdf10000",
+      "region_size": 4096,
+      "image_size": 53248,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabe110000",
+      "region_size": 4096,
+      "image_size": 442368,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabe1d0000",
+      "region_size": 4096,
+      "image_size": 204800,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabe420000",
+      "region_size": 4096,
+      "image_size": 434176,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabe510000",
+      "region_size": 4096,
+      "image_size": 49152,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabe540000",
+      "region_size": 4096,
+      "image_size": 110592,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabe5b0000",
+      "region_size": 4096,
+      "image_size": 77824,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabe7f0000",
+      "region_size": 4096,
+      "image_size": 397312,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabea70000",
+      "region_size": 4096,
+      "image_size": 192512,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabeab0000",
+      "region_size": 4096,
+      "image_size": 331776,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabeb60000",
+      "region_size": 4096,
+      "image_size": 81920,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabeb80000",
+      "region_size": 4096,
+      "image_size": 385024,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabedd0000",
+      "region_size": 4096,
+      "image_size": 172032,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabee00000",
+      "region_size": 4096,
+      "image_size": 167936,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabeee0000",
+      "region_size": 4096,
+      "image_size": 159744,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabef10000",
+      "region_size": 4096,
+      "image_size": 536576,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabefa0000",
+      "region_size": 4096,
+      "image_size": 4186112,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabf3b0000",
+      "region_size": 4096,
+      "image_size": 1540096,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabf530000",
+      "region_size": 4096,
+      "image_size": 1359872,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabf690000",
+      "region_size": 4096,
+      "image_size": 1220608,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabf880000",
+      "region_size": 4096,
+      "image_size": 667648,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabf930000",
+      "region_size": 4096,
+      "image_size": 704512,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabfa40000",
+      "region_size": 4096,
+      "image_size": 32768,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabfa50000",
+      "region_size": 4096,
+      "image_size": 3682304,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabfde0000",
+      "region_size": 4096,
+      "image_size": 421888,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabfe70000",
+      "region_size": 4096,
+      "image_size": 696320,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffabff20000",
+      "region_size": 4096,
+      "image_size": 1429504,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0090000",
+      "region_size": 4096,
+      "image_size": 4747264,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0520000",
+      "region_size": 4096,
+      "image_size": 131072,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0550000",
+      "region_size": 4096,
+      "image_size": 991232,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0650000",
+      "region_size": 4096,
+      "image_size": 823296,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0720000",
+      "region_size": 4096,
+      "image_size": 204800,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0780000",
+      "region_size": 4096,
+      "image_size": 1863680,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0950000",
+      "region_size": 4096,
+      "image_size": 888832,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0ac0000",
+      "region_size": 4096,
+      "image_size": 466944,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0b40000",
+      "region_size": 4096,
+      "image_size": 749568,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0c00000",
+      "region_size": 4096,
+      "image_size": 1011712,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac0d00000",
+      "region_size": 4096,
+      "image_size": 7938048,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac14a0000",
+      "region_size": 4096,
+      "image_size": 692224,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac1550000",
+      "region_size": 4096,
+      "image_size": 32768,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac1560000",
+      "region_size": 4096,
+      "image_size": 524288,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac15f0000",
+      "region_size": 4096,
+      "image_size": 1146880,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac1710000",
+      "region_size": 4096,
+      "image_size": 507904,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac17a0000",
+      "region_size": 4096,
+      "image_size": 712704,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac18c0000",
+      "region_size": 4096,
+      "image_size": 176128,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac18f0000",
+      "region_size": 4096,
+      "image_size": 1675264,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac1a90000",
+      "region_size": 4096,
+      "image_size": 40960,
+      "type": 16777216
+    },
+    {
+      "base": "0x7ffac1cc0000",
+      "region_size": 4096,
+      "image_size": 2514944,
+      "type": 16777216
+    }
+  ],
+  "readable_region_count": 3478,
+  "marker_hits": {
+    "BoneName": [
+      "0x7ff745b7c862",
+      "0x7ff745b7ebc1",
+      "0x7ff745e4b2d3",
+      "0x7ff74618a484",
+      "0x7ff7463ca8a4",
+      "0x7ff7463db4f2",
+      "0x7ff7464248c4",
+      "0x7ff74645265a",
+      "0x7ff7464d0911",
+      "0x7ff746522fc5",
+      "0x7ff74654edee",
+      "0x7ff746564df3",
+      "0x7ff7465725ae",
+      "0x7ff7465a581a",
+      "0x7ff7465d1516",
+      "0x7ff7465d1f37",
+      "0x7ff7465d264d",
+      "0x7ff746652c74",
+      "0x7ff749acd316",
+      "0x7ff749ace478",
+      "0x7ff749acfab7",
+      "0x7ff749acfb00",
+      "0x7ff749e44bd7",
+      "0x7ff749e81b77",
+      "0x7ff749f2b7d3",
+      "0x7ff749f2baf4",
+      "0x7ff749f2bb07",
+      "0x7ff749f2bb50",
+      "0x7ff749f2d6d9",
+      "0x7ff749f2d6e6",
+      "0x7ff749f2e00f",
+      "0x7ff74a0444b0",
+      "0x7ff74a04ca5d",
+      "0x7ff74a04e765",
+      "0x7ff74a071bae",
+      "0x7ff74a07c837",
+      "0x7ff74a10254d",
+      "0x7ff74a10255b",
+      "0x7ff74a141e89",
+      "0x7ff74a141e9c"
+    ],
+    "MainPlayer_POS": [
+      "0x7ff749b3f1d0"
+    ],
+    "PlayerPos": [
+      "0x7ff749b381e8"
+    ],
+    "GetBoneWorldTransform": [
+      "0x7ff749ad3808",
+      "0x7ff749fae62a",
+      "0x7ff749fc10c2",
+      "0x7ff749fdd858",
+      "0x7ff74cacd00b",
+      "0x7ff74cacd4cb"
+    ],
+    "GetBoneVisualTransform": [
+      "0x7ff749ad37f0",
+      "0x7ff749fb4e9a",
+      "0x7ff74cacd2eb"
+    ],
+    "EntityID": [
+      "0x7ff745f5be36",
+      "0x7ff7464e1637",
+      "0x7ff7464e195c",
+      "0x7ff7464e1a8d",
+      "0x7ff7464e1ee4"
+    ],
+    "IEntity": [
+      "0x7ff749a87317",
+      "0x7ff749a8a567",
+      "0x7ff749a8a717",
+      "0x7ff749a8a997",
+      "0x7ff749ad4428",
+      "0x7ff749b5e6a7",
+      "0x7ff749b6e980",
+      "0x7ff749b6ebb0",
+      "0x7ff749b6ebc0",
+      "0x7ff749b6ef80",
+      "0x7ff749b6efb0",
+      "0x7ff749b6f698",
+      "0x7ff749b6f950",
+      "0x7ff749b6fb48",
+      "0x7ff749b6fbf0",
+      "0x7ff749b70cd0",
+      "0x7ff749b70ce0",
+      "0x7ff749b70f20",
+      "0x7ff749b71400",
+      "0x7ff749b71a00",
+      "0x7ff749b71c40",
+      "0x7ff749b734f0",
+      "0x7ff749b73c98",
+      "0x7ff749b74108",
+      "0x7ff749b74868",
+      "0x7ff749b74880",
+      "0x7ff749b74ab0",
+      "0x7ff749b76168",
+      "0x7ff749b76830",
+      "0x7ff749b76898",
+      "0x7ff749b770f0",
+      "0x7ff749b77440",
+      "0x7ff749b775c8",
+      "0x7ff749b77bc0",
+      "0x7ff749b78080",
+      "0x7ff749b782e0",
+      "0x7ff749b78308",
+      "0x7ff749b796fd",
+      "0x7ff749b79e48",
+      "0x7ff749b79f48"
+    ],
+    "RpcServerPort": [
+      "0x7ff749b11ef0",
+      "0x7ff749b14fcc"
+    ],
+    "debug_dangerous_get_object": [
+      "0x7ff749b18190",
+      "0x7ff749b181b9"
+    ]
+  }
+}

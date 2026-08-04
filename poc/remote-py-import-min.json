@@ -1,0 +1,21 @@
+{
+  "pid": 34896,
+  "module": "ctf_min",
+  "started": 1785806395.2798548,
+  "image_base": "0x7ff744ce0000",
+  "remote_code": "0x2cc2c790000",
+  "thread_id": 34864,
+  "wait": 0,
+  "wait_name": "signaled",
+  "exit_code": 1,
+  "state": 1,
+  "result": "0x0",
+  "addresses": {
+    "ensure": "0x7ff74778fbe0",
+    "release": "0x7ff74778fcb0",
+    "import_module": "0x7ff74776c1f0",
+    "set_path": "0x7ff7477589f0"
+  },
+  "sys_path_set": "C:\\PROGRA~2\\bloodstrike\\Package\\Script\\Python;C:\\PROGRA~2\\bloodstrike\\LocalData\\Patch\\Script\\Python;C:\\PROGRA~2\\bloodstrike;C:\\PROGRA~2\\bloodstrike\\Engine\\Binaries\\Win64",
+  "finished": 1785806395.2872734
+}

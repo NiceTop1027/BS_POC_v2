@@ -1,0 +1,4 @@
+BEGIN
+REQUEST gacha_id=1370 before_gold=100000 before_roll_count=7
+REQUEST_DISPATCHED
+END

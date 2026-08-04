@@ -1,0 +1,1222 @@
+BEGIN
+GACHA id=1367 name='Penetrator Valor' draw_type='Valor' class=mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow
+CLASS=mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow MRO=('MallBoxWeaponV7RollWindow', 'MallBoxWeaponV6StraightRollWindow', 'MallBoxWeaponV6RollNewWindow', 'MallBoxWeaponV6RollWindow', 'UIWindow', 'UINode', 'object')
+METHOD class=MallBoxWeaponV7RollWindow owner=MallBoxWeaponV6StraightRollWindow name=_BuyGacha names=('genv', 'avatar', 'BuyGacha') consts=('id', 'OnGachaRollSkipAnim', 'OnGachaV6Roll')
+130           RESUME                   0
+
+131           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              STORE_FAST               4 (gacha_id)
+
+132           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_LOAD_FAST     66 (gacha_id, times)
+              LOAD_FAST_BORROW         3 (skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaV6Roll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV7RollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV7RollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuy names=('enable_click', 'six2', 'get_unbound_or_bound_function', 'MallGachaBuyComp', 'OnBuy') consts=()
+ 52           RESUME                   0
+
+ 53           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (enable_click)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+ 54           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+ 55   L1:     LOAD_GLOBAL              2 (six2)
+              LOAD_ATTR                4 (get_unbound_or_bound_function)
+              PUSH_NULL
+              LOAD_GLOBAL              6 (MallGachaBuyComp)
+              LOAD_ATTR                8 (OnBuy)
+              CALL                     1
+              PUSH_NULL
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 1 (self, times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV7RollWindow owner=MallBoxWeaponV6StraightRollWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV7RollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuySingle names=('OnBuy',) consts=()
+200           RESUME                   0
+
+201           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT           1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV7RollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyTen names=('OnBuy',) consts=()
+104           RESUME                   0
+
+105           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT          10
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+GACHA id=1370 name='Gold Stash' draw_type='Stash' class=mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow
+CLASS=mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow MRO=('MallBoxAttributeDragonNewWindow', 'MallBoxAttributeWindow', 'UIWindow', 'UINode', 'object')
+METHOD class=MallBoxAttributeDragonNewWindow owner=MallBoxAttributeWindow name=_BuyGacha names=('genv', 'avatar', 'BuyGacha') consts=('id', 'OnGachaRollSkipAnim', 'OnGachaRoll')
+159           RESUME                   0
+
+160           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              LOAD_FAST_LOAD_FAST     35 (times, skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaRoll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxAttributeDragonNewWindow owner=MallBoxAttributeWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxAttributeDragonNewWindow owner=MallBoxAttributeWindow name=OnBuy names=('LocalConfig', 'mall_gacha_confirm_popup', 'get', 'cur_key', 'GachaPopUpWindow', 'BuildData', 'gacha_setting_proto', 'OnBuyConfirm', 'ClearTempBuyInfo', 'temp_buy_info', 'instance', 'Show', 'genv', 'avatar', 'CheckCanBuyGacha', 'BuyConfirm') consts=('id',)
+114           RESUME                   0
+
+115           LOAD_GLOBAL              0 (LocalConfig)
+              LOAD_ATTR                2 (mall_gacha_confirm_popup)
+              LOAD_ATTR                5 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                6 (cur_key)
+              LOAD_CONST               0 (True)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE      172 (to L2)
+              NOT_TAKEN
+
+116           LOAD_GLOBAL              8 (GachaPopUpWindow)
+              LOAD_ATTR               10 (BuildData)
+              PUSH_NULL
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               12 (gacha_setting_proto)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               14 (OnBuyConfirm)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 16 (times, self)
+              LOAD_ATTR               16 (ClearTempBuyInfo)
+              CALL                     4
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (temp_buy_info)
+
+117           LOAD_GLOBAL              8 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Show + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               18 (temp_buy_info)
+              CALL                     1
+              POP_TOP
+
+118           LOAD_GLOBAL             24 (genv)
+              LOAD_ATTR               26 (avatar)
+              LOAD_ATTR               29 (CheckCanBuyGacha + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               12 (gacha_setting_proto)
+              LOAD_CONST               1 ('id')
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              TO_BOOL
+              POP_JUMP_IF_FALSE       10 (to L1)
+              NOT_TAKEN
+
+119           LOAD_CONST               2 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR               9 (temp_buy_info)
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+118   L1:     LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+122   L2:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               31 (BuyConfirm + NULL|self)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               2 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxAttributeDragonNewWindow owner=MallBoxAttributeWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxAttributeDragonNewWindow owner=MallBoxAttributeWindow name=OnBuySingle names=('OnBuy',) consts=()
+200           RESUME                   0
+
+201           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT           1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxAttributeDragonNewWindow owner=MallBoxAttributeWindow name=OnBuyTen names=('OnBuy',) consts=()
+104           RESUME                   0
+
+105           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT          10
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+GACHA id=1388 name='Golden Elegy Valor' draw_type='Valor' class=mall_box_weapon_v6_straight_roll_window.MallBoxWeaponV6StraightRollWindow
+CLASS=mall_box_weapon_v6_straight_roll_window.MallBoxWeaponV6StraightRollWindow MRO=('MallBoxWeaponV6StraightRollWindow', 'MallBoxWeaponV6RollNewWindow', 'MallBoxWeaponV6RollWindow', 'UIWindow', 'UINode', 'object')
+METHOD class=MallBoxWeaponV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=_BuyGacha names=('genv', 'avatar', 'BuyGacha') consts=('id', 'OnGachaRollSkipAnim', 'OnGachaV6Roll')
+130           RESUME                   0
+
+131           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              STORE_FAST               4 (gacha_id)
+
+132           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_LOAD_FAST     66 (gacha_id, times)
+              LOAD_FAST_BORROW         3 (skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaV6Roll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuy names=('enable_click', 'six2', 'get_unbound_or_bound_function', 'MallGachaBuyComp', 'OnBuy') consts=()
+ 52           RESUME                   0
+
+ 53           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (enable_click)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+ 54           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+ 55   L1:     LOAD_GLOBAL              2 (six2)
+              LOAD_ATTR                4 (get_unbound_or_bound_function)
+              PUSH_NULL
+              LOAD_GLOBAL              6 (MallGachaBuyComp)
+              LOAD_ATTR                8 (OnBuy)
+              CALL                     1
+              PUSH_NULL
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 1 (self, times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuySingle names=('OnBuy',) consts=()
+200           RESUME                   0
+
+201           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT           1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyTen names=('OnBuy',) consts=()
+104           RESUME                   0
+
+105           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT          10
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+GACHA id=1390 name='Fireborn Valor' draw_type='Valor' class=mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow
+GACHA id=1392 name='Warlock Valor' draw_type='Valor' class=mall_box_weapon_v7_roll_window.MallBoxWeaponV7RollWindow
+GACHA id=1394 name='FEATURED ETERNAL VALOR' draw_type='Valor' class=mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponsV6BackStraightRollWindow
+CLASS=mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponsV6BackStraightRollWindow MRO=('MallBoxWeaponsV6BackStraightRollWindow', 'MallBoxWeaponV6BackStraightRollWindow', 'MallBoxWeaponV6StraightRollWindow', 'MallBoxWeaponV6RollNewWindow', 'MallBoxWeaponV6RollWindow', 'UIWindow', 'UINode', 'object')
+METHOD class=MallBoxWeaponsV6BackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=_BuyGacha names=('genv', 'avatar', 'BuyGacha') consts=('id', 'OnGachaRollSkipAnim', 'OnGachaV6Roll')
+130           RESUME                   0
+
+131           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              STORE_FAST               4 (gacha_id)
+
+132           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_LOAD_FAST     66 (gacha_id, times)
+              LOAD_FAST_BORROW         3 (skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaV6Roll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponsV6BackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponsV6BackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuy names=('enable_click', 'six2', 'get_unbound_or_bound_function', 'MallGachaBuyComp', 'OnBuy') consts=()
+ 52           RESUME                   0
+
+ 53           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (enable_click)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+ 54           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+ 55   L1:     LOAD_GLOBAL              2 (six2)
+              LOAD_ATTR                4 (get_unbound_or_bound_function)
+              PUSH_NULL
+              LOAD_GLOBAL              6 (MallGachaBuyComp)
+              LOAD_ATTR                8 (OnBuy)
+              CALL                     1
+              PUSH_NULL
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 1 (self, times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponsV6BackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponsV6BackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuySingle names=('OnBuy',) consts=()
+200           RESUME                   0
+
+201           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT           1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponsV6BackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyTen names=('OnBuy',) consts=()
+104           RESUME                   0
+
+105           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT          10
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+GACHA id=1396 name='Cleopatra Valor' draw_type='Valor' class=mall_box_hero_v6_roll_window.MallBoxHeroV6StraightRollWindow
+CLASS=mall_box_hero_v6_roll_window.MallBoxHeroV6StraightRollWindow MRO=('MallBoxHeroV6StraightRollWindow', 'MallBoxWeaponV6StraightRollWindow', 'MallBoxWeaponV6RollNewWindow', 'MallBoxWeaponV6RollWindow', 'UIWindow', 'UINode', 'object')
+METHOD class=MallBoxHeroV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=_BuyGacha names=('genv', 'avatar', 'BuyGacha') consts=('id', 'OnGachaRollSkipAnim', 'OnGachaV6Roll')
+130           RESUME                   0
+
+131           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              STORE_FAST               4 (gacha_id)
+
+132           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_LOAD_FAST     66 (gacha_id, times)
+              LOAD_FAST_BORROW         3 (skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaV6Roll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxHeroV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxHeroV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuy names=('enable_click', 'six2', 'get_unbound_or_bound_function', 'MallGachaBuyComp', 'OnBuy') consts=()
+ 52           RESUME                   0
+
+ 53           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (enable_click)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+ 54           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+ 55   L1:     LOAD_GLOBAL              2 (six2)
+              LOAD_ATTR                4 (get_unbound_or_bound_function)
+              PUSH_NULL
+              LOAD_GLOBAL              6 (MallGachaBuyComp)
+              LOAD_ATTR                8 (OnBuy)
+              CALL                     1
+              PUSH_NULL
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 1 (self, times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxHeroV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxHeroV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuySingle names=('OnBuy',) consts=()
+200           RESUME                   0
+
+201           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT           1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxHeroV6StraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyTen names=('OnBuy',) consts=()
+104           RESUME                   0
+
+105           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT          10
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+GACHA id=1398 name="Blight's Embrace Valor" draw_type='Valor' class=mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponV6NewAndBackStraightRollWindow
+CLASS=mall_box_weapon_v6_back_straight_roll_window.MallBoxWeaponV6NewAndBackStraightRollWindow MRO=('MallBoxWeaponV6NewAndBackStraightRollWindow', 'MallBoxWeaponV6BackStraightRollWindow', 'MallBoxWeaponV6StraightRollWindow', 'MallBoxWeaponV6RollNewWindow', 'MallBoxWeaponV6RollWindow', 'UIWindow', 'UINode', 'object')
+METHOD class=MallBoxWeaponV6NewAndBackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=_BuyGacha names=('genv', 'avatar', 'BuyGacha') consts=('id', 'OnGachaRollSkipAnim', 'OnGachaV6Roll')
+130           RESUME                   0
+
+131           LOAD_FAST_BORROW         1 (gacha_setting_proto)
+              LOAD_CONST               0 ('id')
+              BINARY_OP               26 ([])
+              STORE_FAST               4 (gacha_id)
+
+132           LOAD_GLOBAL              0 (genv)
+              LOAD_ATTR                2 (avatar)
+              LOAD_ATTR                5 (BuyGacha + NULL|self)
+              LOAD_FAST_LOAD_FAST     66 (gacha_id, times)
+              LOAD_FAST_BORROW         3 (skip_anim)
+              TO_BOOL
+              POP_JUMP_IF_FALSE        9 (to L1)
+              NOT_TAKEN
+              LOAD_CONST               1 ('OnGachaRollSkipAnim')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+      L1:     LOAD_CONST               2 ('OnGachaV6Roll')
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               3 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6NewAndBackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyConfirm names=('gacha_setting_proto', 'get', 'time_util', 'IsInLimitTime', 'GetTimeNow', 'gui', 'Notice', 'lang', 'ACTIVITY_EXPIRED_TIPS', 'GachaPopUpWindow', 'instance', 'Close', 'temp_buy_info', 'LocalConfig', 'roll_nocycle_skip_anim_dict', 'cur_key', '_BuyGacha') consts=('begin_time', 'end_time', '')
+146           RESUME                   0
+
+147           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (gacha_setting_proto)
+              STORE_FAST               3 (gacha_setting_proto)
+
+148           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               0 ('begin_time')
+              CALL                     1
+              STORE_FAST               4 (begin_time)
+
+149           LOAD_FAST_BORROW         3 (gacha_setting_proto)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_CONST               1 ('end_time')
+              CALL                     1
+              STORE_FAST               5 (end_time)
+
+150           LOAD_FAST_BORROW         4 (begin_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      141 (to L1)
+              NOT_TAKEN
+              LOAD_FAST_BORROW         5 (end_time)
+              TO_BOOL
+              POP_JUMP_IF_FALSE      133 (to L1)
+              NOT_TAKEN
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                6 (IsInLimitTime)
+              PUSH_NULL
+              LOAD_GLOBAL              4 (time_util)
+              LOAD_ATTR                8 (GetTimeNow)
+              PUSH_NULL
+              CALL                     0
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 69 (begin_time, end_time)
+              CALL                     3
+              TO_BOOL
+              POP_JUMP_IF_TRUE        85 (to L1)
+              NOT_TAKEN
+
+151           LOAD_GLOBAL             10 (gui)
+              LOAD_ATTR               13 (Notice + NULL|self)
+              LOAD_CONST               2 ('')
+              LOAD_GLOBAL             14 (lang)
+              LOAD_ATTR               16 (ACTIVITY_EXPIRED_TIPS)
+
+152           LOAD_CONST               3 (<code object <lambda> at 0x00000259DFE417F0, file "gclient/gamesystem/uihall/uimall/mall_gacha_buy_comp.py", line 152>)
+              MAKE_FUNCTION
+              LOAD_CONST               4 (False)
+
+151           LOAD_CONST               5 (('callback', 'show_cancel'))
+              CALL_KW                  4
+              POP_TOP
+
+153           LOAD_GLOBAL             18 (GachaPopUpWindow)
+              LOAD_ATTR               20 (instance)
+              PUSH_NULL
+              CALL                     0
+              LOAD_ATTR               23 (Close + NULL|self)
+              CALL                     0
+              POP_TOP
+
+154           LOAD_CONST               6 (None)
+              LOAD_FAST_BORROW         0 (self)
+              STORE_ATTR              12 (temp_buy_info)
+
+155           LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+156   L1:     LOAD_GLOBAL             26 (LocalConfig)
+              LOAD_ATTR               28 (roll_nocycle_skip_anim_dict)
+              LOAD_ATTR                3 (get + NULL|self)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               30 (cur_key)
+              LOAD_CONST               4 (False)
+              CALL                     2
+              STORE_FAST               6 (skip_anim)
+
+157           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR               33 (_BuyGacha + NULL|self)
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 50 (gacha_setting_proto, times)
+              LOAD_FAST_BORROW         6 (skip_anim)
+              CALL                     3
+              POP_TOP
+              LOAD_CONST               6 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6NewAndBackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuy names=('enable_click', 'six2', 'get_unbound_or_bound_function', 'MallGachaBuyComp', 'OnBuy') consts=()
+ 52           RESUME                   0
+
+ 53           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                0 (enable_click)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+ 54           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+ 55   L1:     LOAD_GLOBAL              2 (six2)
+              LOAD_ATTR                4 (get_unbound_or_bound_function)
+              PUSH_NULL
+              LOAD_GLOBAL              6 (MallGachaBuyComp)
+              LOAD_ATTR                8 (OnBuy)
+              CALL                     1
+              PUSH_NULL
+              LOAD_FAST_BORROW_LOAD_FAST_BORROW 1 (self, times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6NewAndBackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=BuyConfirm names=('GetMoneyDictByGachaSettingData', 'gacha_setting_proto', 'OnBuyConfirm', 'six2', 'values') consts=()
+140           RESUME                   0
+
+141           LOAD_GLOBAL              1 (GetMoneyDictByGachaSettingData + NULL)
+              LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                2 (gacha_setting_proto)
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              STORE_FAST               2 (money_dict)
+
+142           LOAD_FAST_BORROW         2 (money_dict)
+              TO_BOOL
+              POP_JUMP_IF_TRUE         3 (to L1)
+              NOT_TAKEN
+
+143           LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+144   L1:     LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                5 (OnBuyConfirm + NULL|self)
+              LOAD_GLOBAL              6 (six2)
+              LOAD_ATTR                8 (values)
+              PUSH_NULL
+              LOAD_FAST_BORROW         2 (money_dict)
+              CALL                     1
+              LOAD_SMALL_INT           0
+              BINARY_OP               26 ([])
+              LOAD_FAST_BORROW         1 (times)
+              CALL                     2
+              POP_TOP
+              LOAD_CONST               0 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6NewAndBackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuySingle names=('OnBuy',) consts=()
+200           RESUME                   0
+
+201           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT           1
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+METHOD class=MallBoxWeaponV6NewAndBackStraightRollWindow owner=MallBoxWeaponV6StraightRollWindow name=OnBuyTen names=('OnBuy',) consts=()
+104           RESUME                   0
+
+105           LOAD_FAST_BORROW         0 (self)
+              LOAD_ATTR                1 (OnBuy + NULL|self)
+              LOAD_SMALL_INT          10
+              CALL                     1
+              POP_TOP
+              LOAD_CONST               1 (None)
+              RETURN_VALUE
+
+GACHA id=1400 name='Selachian Stash' draw_type='Stash' class=mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow
+GACHA id=1410 name='Mako Stash' draw_type='Stash' class=mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow
+GACHA id=2019 name='Rep Stash' route=NO_UI_CLASS
+END

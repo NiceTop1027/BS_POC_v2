@@ -1,0 +1,158 @@
+BEGIN 1785808121.5464218
+TryInitToplogo: repr=<function CombatAvatarToplogo.TryInitToplogo at 0x00000259DD96FE20>
+TryInitToplogo: sig=<Signature (self)>
+TryInitToplogo: file='gshare/decorators.py' first=379 vars=('args', 'kwargs') names=('time',) consts=(None,)
+TryInitToplogo: DIS_BEGIN
+  0000 COPY_FREE_VARS                 
+  0002 RESUME                         
+  0004 LOAD_DEREF                     wrapper
+  0006 PUSH_NULL                      
+  0008 LOAD_GLOBAL                    time
+  0012 LOAD_ATTR                      time
+  0026 PUSH_NULL                      
+  0028 CALL                           
+  0030 BUILD_LIST                     
+  0032 LOAD_FAST_BORROW               args
+  0034 LIST_EXTEND                    
+  0036 CALL_INTRINSIC_1               INTRINSIC_LIST_TO_TUPLE
+  0038 BUILD_MAP                      
+  003a LOAD_FAST_BORROW               kwargs
+  003c DICT_MERGE                     
+  003e CALL_FUNCTION_EX               
+  0040 RETURN_VALUE                   
+TryInitToplogo: DIS_END
+IsShootingRangeToplogoReady: repr=<function CombatAvatarShootingRange.IsShootingRangeToplogoReady at 0x00000259E1DF1D20>
+IsShootingRangeToplogoReady: sig=<Signature (self)>
+IsShootingRangeToplogoReady: file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=119 vars=('self',) names=('bool', 'toplogo', 'init_toplogo_ui', 'panel_enemy_bars') consts=(None,)
+IsShootingRangeToplogoReady: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_GLOBAL                    bool + NULL
+  000c LOAD_FAST_BORROW               self
+  000e LOAD_ATTR                      toplogo
+  0022 COPY                           
+  0024 TO_BOOL                        
+  002c POP_JUMP_IF_FALSE              to L1
+  0030 NOT_TAKEN                      
+  0032 POP_TOP                        
+  0034 LOAD_FAST_BORROW               self
+  0036 LOAD_ATTR                      toplogo
+  004a LOAD_ATTR                      init_toplogo_ui
+  005e COPY                           
+  0060 TO_BOOL                        
+  0068 POP_JUMP_IF_FALSE              to L1
+  006c NOT_TAKEN                      
+  006e POP_TOP                        
+  0070 LOAD_FAST_BORROW               self
+  0072 LOAD_ATTR                      toplogo
+  0086 LOAD_ATTR                      panel_enemy_bars
+  009a CALL                           
+  00a2 RETURN_VALUE                   
+IsShootingRangeToplogoReady: DIS_END
+CreateToplogo: repr=<function CombatAvatarToplogo.CreateToplogo at 0x00000259DD96FC10>
+CreateToplogo: sig=<Signature (self, ientity, scene_node_name, cocos_widget, depthEnable=False, auto_distinct=True)>
+CreateToplogo: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=168 vars=('self', 'ientity', 'scene_node_name', 'cocos_widget', 'depthEnable', 'auto_distinct') names=('RemoveToplogo', 'init_toplogo_ui', 'scene_node_class', 'toplogo', 'Create', 'SetOwner', 'InitToplogo', 'toplogo_widget') consts=(True, None)
+CreateToplogo: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      RemoveToplogo + NULL|self
+  0018 CALL                           
+  0020 POP_TOP                        
+  0022 LOAD_CONST                     True
+  0024 LOAD_FAST_BORROW               self
+  0026 STORE_ATTR                     init_toplogo_ui
+  0030 LOAD_FAST_BORROW               self
+  0032 LOAD_ATTR                      scene_node_class + NULL|self
+  0046 LOAD_FAST_BORROW               ientity
+  0048 CALL                           
+  0050 LOAD_FAST_BORROW               self
+  0052 STORE_ATTR                     toplogo
+  005c LOAD_FAST_BORROW               self
+  005e LOAD_ATTR                      toplogo
+  0072 LOAD_ATTR                      Create + NULL|self
+  0086 LOAD_FAST_BORROW_LOAD_FAST_BORROW scene_node_name, cocos_widget
+  0088 LOAD_FAST_BORROW_LOAD_FAST_BORROW depthEnable, auto_distinct
+  008a CALL                           
+  0092 POP_TOP                        
+  0094 LOAD_FAST_BORROW               self
+  0096 LOAD_ATTR                      toplogo
+  00aa LOAD_ATTR                      SetOwner + NULL|self
+  00be LOAD_FAST_BORROW               self
+  00c0 CALL                           
+  00c8 POP_TOP                        
+  00ca LOAD_FAST_BORROW               self
+  00cc LOAD_ATTR                      toplogo
+  00e0 LOAD_ATTR                      InitToplogo + NULL|self
+  00f4 LOAD_FAST_BORROW               self
+  00f6 LOAD_ATTR                      toplogo_widget
+  010a CALL                           
+  0112 POP_TOP                        
+  0114 LOAD_CONST                     None
+  0116 RETURN_VALUE                   
+CreateToplogo: DIS_END
+RemoveToplogo: repr=<function ToplogoComponent.RemoveToplogo at 0x00000259CFC91DD0>
+RemoveToplogo: sig=<Signature (self)>
+RemoveToplogo: file='gclient/framework/commoncomps/toplogo_component.py' first=171 vars=('self',) names=('toplogo', 'Clear') consts=(None,)
+RemoveToplogo: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      toplogo
+  0018 TO_BOOL                        
+  0020 POP_JUMP_IF_FALSE              to L1
+  0024 NOT_TAKEN                      
+  0026 LOAD_FAST_BORROW               self
+  0028 LOAD_ATTR                      toplogo
+  003c LOAD_ATTR                      Clear + NULL|self
+  0050 CALL                           
+  0058 POP_TOP                        
+  005a LOAD_CONST                     None
+  005c LOAD_FAST_BORROW               self
+  005e STORE_ATTR                     toplogo
+  0068 LOAD_CONST                     None
+  006a RETURN_VALUE                   
+  006c LOAD_CONST                     None
+  006e RETURN_VALUE                   
+RemoveToplogo: DIS_END
+ShowEnemyToplogo: repr=<function CombatAvatarToplogo.ShowEnemyToplogo at 0x00000259DD9ACA90>
+ShowEnemyToplogo: sig=<Signature (self, value)>
+ShowEnemyToplogo: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=263 vars=('self', 'value') names=('toplogo', 'ShowEnemyToplogo') consts=(None,)
+ShowEnemyToplogo: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      toplogo
+  0018 LOAD_ATTR                      ShowEnemyToplogo + NULL|self
+  002c LOAD_FAST_BORROW               value
+  002e CALL                           
+  0036 POP_TOP                        
+  0038 LOAD_CONST                     None
+  003a RETURN_VALUE                   
+ShowEnemyToplogo: DIS_END
+ShowToplogo: getattr FAIL AttributeError("type object 'RobotCombatAvatarShootingRange' has no attribute 'ShowToplogo'")
+SetToplogoVisible: repr=<function CombatAvatarToplogo.SetToplogoVisible at 0x00000259DD9ACB40>
+SetToplogoVisible: sig=<Signature (self, fade_cb=None, fade_in=0.05, fade_out=1)>
+SetToplogoVisible: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=266 vars=('self', 'fade_cb', 'fade_in', 'fade_out') names=('toplogo', 'SetToplogoVisible') consts=(None,)
+SetToplogoVisible: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      toplogo
+  0018 LOAD_ATTR                      SetToplogoVisible + NULL|self
+  002c LOAD_FAST_BORROW_LOAD_FAST_BORROW fade_cb, fade_in
+  002e LOAD_FAST_BORROW               fade_out
+  0030 CALL                           
+  0038 POP_TOP                        
+  003a LOAD_CONST                     None
+  003c RETURN_VALUE                   
+SetToplogoVisible: DIS_END
+RefreshToplogo: repr=<function CombatAvatarToplogo.RefreshToplogo at 0x00000259DD9AC880>
+RefreshToplogo: sig=<Signature (self)>
+RefreshToplogo: file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=254 vars=('self',) names=('toplogo', 'RefreshToplogo') consts=(None,)
+RefreshToplogo: DIS_BEGIN
+  0000 RESUME                         
+  0002 LOAD_FAST_BORROW               self
+  0004 LOAD_ATTR                      toplogo
+  0018 LOAD_ATTR                      RefreshToplogo + NULL|self
+  002c CALL                           
+  0034 POP_TOP                        
+  0036 LOAD_CONST                     None
+  0038 RETURN_VALUE                   
+RefreshToplogo: DIS_END
+END

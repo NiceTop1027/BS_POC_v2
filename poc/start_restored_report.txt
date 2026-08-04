@@ -1,0 +1,14 @@
+﻿START=2026-08-04T22:42:24.0036304+09:00
+EXE_EXISTS=True
+EXE_HASH=D0836A5D076FFB48AD8ACFD6E0CE69B2E19F92A856D192D13A2B9AF7370B524B
+PID=41952
+HAS_EXITED=True
+EXIT_CODE=1
+PROCESSES=
+
+   Id ProcessName MainWindowTitle         
+   -- ----------- ---------------         
+40540 BloodStrike BloodStrike SexMaster_18
+
+
+

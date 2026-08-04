@@ -1,0 +1,4 @@
+BEGIN
+CAPTURE method='GachaRoll' args=(1392, 1, {'server_random_ticket': 'anF5W0sxNr+4yQ/7', 'callback': 'OnGachaV6Roll'}) kwargs={}
+CAPTURED_COUNT=1
+END

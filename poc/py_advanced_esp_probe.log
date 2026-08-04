@@ -1,0 +1,598 @@
+BEGIN 1785808531.1383953
+counts total=23 players=1 robots=6
+PLAYER anFFZUsxNr+4vT0l pos=(-17.672456741333008, 0.05000000819563866, -2.370279550552368)
+PLAYER ATTR_CANDIDATES count=295 names=['AddLowHpEffect', 'AddUavResidualBloodTip', 'AddWrathSkillTimer', 'AdjustBombEffectPathPitch', 'BroadcastDeadHiddenUI', 'BuyPersonalStoreTeammate', 'CalAttrResult', 'CanDamageByMagicField', 'CanTakeMaxDamage', 'CancelExposeKilledEnemyTimer', 'CancelFeelHpTimer', 'CancelHelpTeammate', 'CancelHelpedByTeammate', 'CancelKnockDownTeamTimer', 'CancelLowHpEffectTimer', 'CheckGrenadeLauncherSkill', 'CheckRestoreIdleDamageUp', 'CheckRestoreMeleeDamageUp', 'CheckRestoreOverloadArmor', 'CheckTalentRemoteShotDamageUp', 'ClearArmorCameraEffects', 'ClearControlPlayerOnDead', 'ClearLowHpEffect', 'ClearOverloadArmorEffect', 'ClearSpaceBlackHoleSkillActive', 'ClearSpaceBlackHoleSkillActiveForTeardown', 'ClearSpaceBlackHoleSkillActiveState', 'ClearWrathSkillTimer', 'CloseKillRidiculeListener', 'CloseKillRidiculeMike', 'EnterTeammateDancingField', 'ExposeKilledTeamEnemyPos', 'ExposeKilledTeamEnemyPosTick', 'ExposeKnockDownTeamPos', 'ExposeKnockDownTeamPosTick', 'FeelLowHpEnemyTick', 'GetCalculationLevelName', 'GetCombatTeamMarkPosition', 'GetCombatTeammateVolume', 'GetCurHighPriorityWeapon', 'GetDamageTextBulletDataId', 'GetDamageTextColor', 'GetDamageTextOffPos', 'GetDamageTextOffset', 'GetDamageTextWeapon', 'GetInHouseName', 'GetSortLevel', 'GetTacticalArmorLevel', 'GetTacticalColorLevel', 'GetTacticalLevelColorOpacity', 'GetTargetDamageTextWorldPosition', 'GetTeammateColorIndex', 'GetTeammateIndex', 'GetTeammateInfo', 'GetTeammateMarkToplogo', 'GetWeaponAttrValueWithCache', 'HasActiveSpaceBlackHoleSkill', 'HasAttr', 'HasTeammateMarkToplogo', 'HelpTeammateLoadingFinishCb', 'HideAttachModelForDead', 'HideTeammateToplogoWithReason', 'IgnoreCombatTeamVoiceForNearby', 'InitTeammateMark', 'IsAccumulateWithClassicDamageTextMode', 'IsCombatTeam', 'IsContinuousDamageTextMode', 'IsCureUavShield', 'IsMoveRecoverHpArmorActive', 'IsShield', 'IsShotgunNormalBulletDamage', 'IsShotgunSlugDamage', 'IsSkillTalentFull', 'IsSystemKiller', 'IsTeammateXrayEnabled', 'IsTitan2ArmorCameraEffectDisabled', 'IsUavShield', 'JumpToSkillEnd', 'JumpToSkillHold', 'JumpToSkillToss', 'JumpToSkillTossSecondary', 'KillAvatar', 'LeaveHouseOnDead', 'LikeTeammateId', 'NeedShowArmorHitEffect', 'NeedShowCriticalDamageText', 'OnAddRecoverHpBuff', 'OnAddTeamMarkBuff', 'OnBanSkill', 'OnBanSkillFromItemHold310', 'OnBanSkillFromItemHoldDefault', 'OnBanSkillFromItemUsing314', 'OnBanSkillFromItemUsingDefault', 'OnBotDamageToPlayer', 'OnBreakSkill', 'OnBuyPersonStoreTeammateResult', 'OnChangeArmor', 'OnCombatTeamChangeForJoinCC', 'OnDead', 'OnDealDamageResult', 'OnDealSystemDamageResult', 'OnGainSkillTalents', 'OnGainTalentArmorEnergy', 'OnGainTalentFeelLowHp', 'OnGetBackItem_CommonSkill', 'OnGetBackItem_LeftShield', 'OnGuiseKillCountChanged', 'OnGunKillCountChanged', 'OnInputSpaceTeleportSkillRelease', 'OnJurenFlyFuelDisplaySkillChanged', 'OnLoseTalentArmorEnergy', 'OnLoseTalentFeelLowHp', 'OnLoseTalentMoveRecoverHpArmor', 'OnOpenAdsShield', 'OnOpenMovingShield', 'OnOverloadArmorChange', 'OnPerkActivateStatusChange_ArmorBrokenUp', 'OnPerkActivateStatusChange_IdleDamageUp', 'OnPerkActivateStatusChange_MeleeDamageUp', 'OnPerkActivateStatusChange_MoveRecoverHpArmor', 'OnPlayerDamageToBot', 'OnPlayerKillBot', 'OnPlayerKilledByBot', 'OnRefreshPickupGroup', 'OnRefreshPickupItem', 'OnRefreshPickupItemList', 'OnRefreshPickupSquadFightAirDrop', 'OnRefreshPickupUIPC', 'OnRemoveRecoverHpBuff', 'OnRemoveTeamMarkBuff', 'OnSlideWithParkour', 'OnSlotLoseTalentIdleDamageUp', 'OnSlotLoseTalentMeleeDamageUp', 'OnSlotLoseTalentMoveRecoverHpArmor', 'OnSpaceBlackHoleSkillActiveTimeout', 'OnSpeedLevelChange', 'OnSpellItem_CommonSkill', 'OnSpellItem_LeftShield', 'OnTakeItem_CommonSkill', 'OnTakeItem_LeftShield', 'OnTeammateBuyMyAirdropSetting', 'OnTeammateCureHpBySpell', 'OnTeammateMarkImmediateForReplay', 'OnTeammateSharePerformanceData', 'OnTotemSkillCoountDownFinishCb', 'OpenKillRidiculeListener', 'OpenKillRidiculeMike', 'PlayArmorCameraEffect', 'PlayExtraArmorCameraEffect', 'PlayMeleeSkill', 'PlayOverloadArmorEffect', 'PlayerInputHandle_QuickBuyTeammate', 'PlayerInput_OnSecondSkillDown', 'PlayerInput_OnSecondSkillUp', 'PlayerInput_OnSkillMeleeWeapon3UseDown', 'PlayerInput_OnSkillMeleeWeapon3UseUp', 'PlayerInput_OnSkillWeapon3UseDown', 'PlayerInput_OnSkillWeapon3UseUp', 'PlayerInput_OnSkillWeapon4UseDown', 'PlayerInput_OnSkillWeapon4UseUp', 'PlayerInput_OnSkillWeaponUseDown', 'PlayerInput_OnSkillWeaponUseUp', 'PlayerInput_OnUseArmor', 'PlayerInput_OnUseSpecialSkill', 'PlayerInput_QuickBuyTeammate', 'PlayerInput_ReplyTeammateOneByCoins', 'PlayerInput_SwitchEvoSkill', 'PlayerInput_ThankTeammate', 'QuickBuyTeammateByTeammateGuid', 'QuickBuyTeammateByTeammateNum', 'RecordGunFireDamage', 'RecoverHp1090', 'RecvIgTeammateVoice', 'RecvTeammateAchievement', 'RefreshAllTeammateTechState', 'RefreshAllTeammateVolume', 'RefreshCombatAttrImmediately', 'RefreshPickupData', 'RefreshPickupDataAfterPickup', 'RefreshPickupDataList', 'RefreshSpaceBlackHoleSkillActive', 'RefreshSpeedLevel', 'RefreshTeammateTechState', 'RefreshTeammateVolume', 'RefreshTotemSkillCountDown', 'RefreshUavResidualBloodTip', 'RemoveKilledTeamEnemyPos', 'RemoveKnockDownTeamPos', 'RemoveUavResidualBloodTip', 'ReplayCanWatchTeammate', 'RestoreSpaceBlackHoleSkillActive', 'ServerShowDamageTextEffect', 'SetShieldVoiceForCombatHallTeamChannel', 'SetSpaceBlackHoleSkillActive', 'SetTeamValReconDroneId', 'ShowAttachModelForDead', 'ShowBeCuedForTeammate', 'ShowClassicDamageText', 'ShowContinuousDamageText', 'ShowDamageTextByMode', 'StartTryHelpTeammate', 'SupportBuyTeammateResult', 'TryAttack_ads_shield_spell', 'TryExplodeSpaceBlackHoleSkill', 'TryRouteSpaceBlackHoleSkillInput', 'UpdateAllTeammateMark', 'UpdateTeammateXrayHiddenReason', 'UseCombatItemArmor', '_CanInputSkillWeapon3', '_CheckInvisibleCasterDamage', '_DamageGameLogicEffect', '_DamageModelEffect', '_DamageSoundEffect', '_DamageTextEffect', '_DamageUIEffect', '_DamageUIEffect234', '_FilterIgnoreTeamShieldSpeakingList', '_IsGrapplinghookSkillWeapon3', '_OnJoinCCCombatTeam', '_OnJoinCCKillRidicule']
+PLAYER.AddLowHpEffect: CALLABLE type=<class 'method'> sig=<Signature (tech_state, material_rank_id, duration)>
+PLAYER.AddUavResidualBloodTip: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.AddWrathSkillTimer: CALLABLE type=<class 'method'> sig=<Signature (duration, callback)>
+PLAYER.AdjustBombEffectPathPitch: CALLABLE type=<class 'method'> sig=<Signature (camera_pitch=None)>
+PLAYER.BroadcastDeadHiddenUI: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.BuyPersonalStoreTeammate: CALLABLE type=<class 'method'> sig=<Signature (guid)>
+PLAYER.CalAttrResult: CALLABLE type=<class 'method'> sig=<Signature (attr_type, value, equip_id='')>
+PLAYER.CanDamageByMagicField: CALLABLE type=<class 'method'> sig=<Signature (magic_field)>
+PLAYER.CanDamageByMagicField() FAIL TypeError("ISimpleCombatUnitBase.CanDamageByMagicField() missing 1 required positional argument: 'magic_field'")
+PLAYER.CanTakeMaxDamage: CALLABLE type=<class 'method'> sig=<Signature (damage_info)>
+PLAYER.CanTakeMaxDamage() FAIL TypeError("ISimpleCombatUnitBase.CanTakeMaxDamage() missing 1 required positional argument: 'damage_info'")
+PLAYER.CancelExposeKilledEnemyTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CancelExposeKilledEnemyTimer() => None
+PLAYER.CancelFeelHpTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CancelFeelHpTimer() => None
+PLAYER.CancelHelpTeammate: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CancelHelpTeammate() => None
+PLAYER.CancelHelpedByTeammate: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CancelHelpedByTeammate() => None
+PLAYER.CancelKnockDownTeamTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CancelKnockDownTeamTimer() => None
+PLAYER.CancelLowHpEffectTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CancelLowHpEffectTimer() => None
+PLAYER.CheckGrenadeLauncherSkill: CALLABLE type=<class 'method'> sig=<Signature (item)>
+PLAYER.CheckRestoreIdleDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CheckRestoreMeleeDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CheckRestoreOverloadArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CheckTalentRemoteShotDamageUp: CALLABLE type=<class 'method'> sig=<Signature (weapon_id)>
+PLAYER.ClearArmorCameraEffects: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.ClearControlPlayerOnDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.ClearLowHpEffect: CALLABLE type=<class 'method'> sig=<Signature (tech_state, material_rank_id)>
+PLAYER.ClearOverloadArmorEffect: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.ClearSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (reset_input=True, refresh=True, clear_item_fsm=True)>
+PLAYER.ClearSpaceBlackHoleSkillActiveForTeardown: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.ClearSpaceBlackHoleSkillActiveState: CALLABLE type=<class 'method'> sig=<Signature (reset_input=True)>
+PLAYER.ClearWrathSkillTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CloseKillRidiculeListener: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.CloseKillRidiculeMike: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.EnterTeammateDancingField: CALLABLE type=<class 'method'> sig=<Signature (magic_field, is_enter)>
+PLAYER.ExposeKilledTeamEnemyPos: CALLABLE type=<class 'method'> sig=<Signature (info)>
+PLAYER.ExposeKilledTeamEnemyPosTick: CALLABLE type=<class 'method'> sig=<Signature (info)>
+PLAYER.ExposeKnockDownTeamPos: CALLABLE type=<class 'method'> sig=<Signature (info)>
+PLAYER.ExposeKnockDownTeamPosTick: CALLABLE type=<class 'method'> sig=<Signature (info)>
+PLAYER.FeelLowHpEnemyTick: CALLABLE type=<class 'method'> sig=<Signature (param)>
+PLAYER.GetCalculationLevelName: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.GetCalculationLevelName() => 'D_20211123Jiesuan'
+PLAYER.GetCombatTeamMarkPosition: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.GetCombatTeamMarkPosition() => []
+PLAYER.GetCombatTeammateVolume: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+PLAYER.GetCombatTeammateVolume() FAIL TypeError("PlayerCombatAvatarMember.GetCombatTeammateVolume() missing 1 required positional argument: 'teammate_id'")
+PLAYER.GetCurHighPriorityWeapon: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.GetCurHighPriorityWeapon() => CItem({'part_slots': CParts({1: CPart({'part_id': 140101}), 2: CPart({'part_id': 140203}), 3: CPart({'part_id': 140311}), 4: CPart({'part_id': 140402}), 5: CPart({'part_id': 140503}), 6: CPart({'part_id': 140601}), 7: CPart({'part_id': 140707}), 8: CPart({'part_id': 140808})}), 'guise_item_id': 0, 'guid': 'ZeGPIgo/2LfxXB0L', 'ammo_empty': 0, 'item_id': 120, 'server_ammo': 60, 'spec_ammo': 0, 'item_source': 'pickup', 'skin_item_id': 1100004270, 'skin_sticker': CustomMapType({}), 'anim_info': CustomMapType({1: 0, 2: 0, 3: 0, 4: 0}), 'part_guise_info': CustomMapType({}), 'sight_info': CustomMapType({}), 'ornament_item_id': 0, 'dye_owner_id': 'anFFZUsxNr+4vT0l', 'heirloom_attrs': CustomMapType({}), 'fine_tuning_attr': CustomMapType({}), '_client_ammo': 60, 'ignore_unlock': 0, 'count': 1, 'owner_name': 'SexMaster_18', '_client_left_ammo': 0})
+PLAYER.GetDamageTextBulletDataId: CALLABLE type=<class 'method'> sig=<Signature (result, caster, damage_data)>
+PLAYER.GetDamageTextBulletDataId() FAIL TypeError("PlayerCombatAvatarMember.GetDamageTextBulletDataId() missing 3 required positional arguments: 'result', 'caster', and 'damage_data'")
+PLAYER.GetDamageTextColor: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER.GetDamageTextColor() FAIL TypeError("PlayerCombatAvatarMember.GetDamageTextColor() missing 6 required positional arguments: 'result', 'caster', 'target', 'damage_data', 'is_system_damage', and 'is_friend'")
+PLAYER.GetDamageTextOffPos: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER.GetDamageTextOffPos() FAIL TypeError("PlayerCombatAvatarMember.GetDamageTextOffPos() missing 6 required positional arguments: 'result', 'caster', 'target', 'damage_data', 'is_system_damage', and 'is_friend'")
+PLAYER.GetDamageTextOffset: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER.GetDamageTextOffset() FAIL TypeError("PlayerCombatAvatarMember.GetDamageTextOffset() missing 6 required positional arguments: 'result', 'caster', 'target', 'damage_data', 'is_system_damage', and 'is_friend'")
+PLAYER.GetDamageTextWeapon: CALLABLE type=<class 'method'> sig=<Signature (result, caster, damage_data)>
+PLAYER.GetDamageTextWeapon() FAIL TypeError("PlayerCombatAvatarMember.GetDamageTextWeapon() missing 3 required positional arguments: 'result', 'caster', and 'damage_data'")
+PLAYER.GetInHouseName: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.GetInHouseName() => ''
+PLAYER.GetSortLevel: CALLABLE type=<class 'method'> sig=<Signature (item, sort_proto)>
+PLAYER.GetSortLevel() FAIL TypeError("PlayerCombatAvatarMember.GetSortLevel() missing 2 required positional arguments: 'item' and 'sort_proto'")
+PLAYER.GetTacticalArmorLevel: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.GetTacticalArmorLevel() => 1
+PLAYER.GetTacticalColorLevel: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.GetTacticalColorLevel() => 1
+PLAYER.GetTacticalLevelColorOpacity: CALLABLE type=<class 'method'> sig=<Signature (is_bg=False)>
+PLAYER.GetTacticalLevelColorOpacity() => ((211, 211, 209), 255)
+PLAYER.GetTargetDamageTextWorldPosition: CALLABLE type=<class 'method'> sig=<Signature (target)>
+PLAYER.GetTargetDamageTextWorldPosition() FAIL TypeError("PlayerCombatAvatarMember.GetTargetDamageTextWorldPosition() missing 1 required positional argument: 'target'")
+PLAYER.GetTeammateColorIndex: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+PLAYER.GetTeammateColorIndex() FAIL TypeError("CombatAvatarMember.GetTeammateColorIndex() missing 1 required positional argument: 'teammate_id'")
+PLAYER.GetTeammateIndex: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+PLAYER.GetTeammateIndex() FAIL TypeError("CombatAvatarMember.GetTeammateIndex() missing 1 required positional argument: 'teammate_id'")
+PLAYER.GetTeammateInfo: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+PLAYER.GetTeammateInfo() FAIL TypeError("CombatAvatarMember.GetTeammateInfo() missing 1 required positional argument: 'teammate_id'")
+PLAYER.GetTeammateMarkToplogo: CALLABLE type=<class 'method'> sig=<Signature (mark_guid)>
+PLAYER.GetTeammateMarkToplogo() FAIL TypeError("PlayerCombatAvatarMember.GetTeammateMarkToplogo() missing 1 required positional argument: 'mark_guid'")
+PLAYER.GetWeaponAttrValueWithCache: CALLABLE type=<class 'method'> sig=<Signature (name, defalut, timeout)>
+PLAYER.GetWeaponAttrValueWithCache() FAIL TypeError("CombatAvatarMember.GetWeaponAttrValueWithCache() missing 3 required positional arguments: 'name', 'defalut', and 'timeout'")
+PLAYER.HasActiveSpaceBlackHoleSkill: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632)>
+PLAYER.HasActiveSpaceBlackHoleSkill() => False
+PLAYER.HasAttr: CALLABLE type=<class 'method'> sig=<Signature (attr_type)>
+PLAYER.HasAttr() FAIL TypeError("ICombatUnitBase.HasAttr() missing 1 required positional argument: 'attr_type'")
+PLAYER.HasTeammateMarkToplogo: CALLABLE type=<class 'method'> sig=<Signature (mark_guid)>
+PLAYER.HasTeammateMarkToplogo() FAIL TypeError("PlayerCombatAvatarMember.HasTeammateMarkToplogo() missing 1 required positional argument: 'mark_guid'")
+PLAYER.HelpTeammateLoadingFinishCb: CALLABLE type=<class 'method'> sig=<Signature (loading_type)>
+PLAYER.HideAttachModelForDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.HideTeammateToplogoWithReason: CALLABLE type=<class 'method'> sig=<Signature (reason, is_hide)>
+PLAYER.IgnoreCombatTeamVoiceForNearby: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.InitTeammateMark: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.IsAccumulateWithClassicDamageTextMode: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.IsAccumulateWithClassicDamageTextMode() => False
+PLAYER.IsCombatTeam: <class 'bool'> False
+PLAYER.IsContinuousDamageTextMode: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.IsContinuousDamageTextMode() => False
+PLAYER.IsCureUavShield: <class 'bool'> False
+PLAYER.IsMoveRecoverHpArmorActive: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.IsMoveRecoverHpArmorActive() => False
+PLAYER.IsShield: <class 'bool'> False
+PLAYER.IsShotgunNormalBulletDamage: CALLABLE type=<class 'method'> sig=<Signature (damage_data, is_shotgun_slug)>
+PLAYER.IsShotgunNormalBulletDamage() FAIL TypeError("PlayerCombatAvatarMember.IsShotgunNormalBulletDamage() missing 2 required positional arguments: 'damage_data' and 'is_shotgun_slug'")
+PLAYER.IsShotgunSlugDamage: CALLABLE type=<class 'method'> sig=<Signature (result, caster, damage_data)>
+PLAYER.IsShotgunSlugDamage() FAIL TypeError("PlayerCombatAvatarMember.IsShotgunSlugDamage() missing 3 required positional arguments: 'result', 'caster', and 'damage_data'")
+PLAYER.IsSkillTalentFull: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.IsSkillTalentFull() => False
+PLAYER.IsSystemKiller: <class 'bool'> False
+PLAYER.IsTeammateXrayEnabled: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.IsTeammateXrayEnabled() => False
+PLAYER.IsTitan2ArmorCameraEffectDisabled: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.IsTitan2ArmorCameraEffectDisabled() => False
+PLAYER.IsUavShield: <class 'bool'> False
+PLAYER.JumpToSkillEnd: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.JumpToSkillHold: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.JumpToSkillToss: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.JumpToSkillTossSecondary: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.KillAvatar: CALLABLE type=<class 'method'> sig=<Signature (caster, target, critical_spell)>
+PLAYER.LeaveHouseOnDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.LikeTeammateId: CALLABLE type=<class 'method'> sig=<Signature (t_id, key)>
+PLAYER.NeedShowArmorHitEffect: CALLABLE type=<class 'method'> sig=<Signature (target, damage_data)>
+PLAYER.NeedShowCriticalDamageText: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER.OnAddRecoverHpBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_proto)>
+PLAYER.OnAddTeamMarkBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_proto)>
+PLAYER.OnBanSkill: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnBanSkillFromItemHold310: CALLABLE type=<class 'method'> sig=<Signature (skill)>
+PLAYER.OnBanSkillFromItemHoldDefault: CALLABLE type=<class 'method'> sig=<Signature (skill)>
+PLAYER.OnBanSkillFromItemUsing314: CALLABLE type=<class 'method'> sig=<Signature (skill)>
+PLAYER.OnBanSkillFromItemUsingDefault: CALLABLE type=<class 'method'> sig=<Signature (skill)>
+PLAYER.OnBotDamageToPlayer: CALLABLE type=<class 'method'> sig=<Signature (caster_id, ai_grade, damage)>
+PLAYER.OnBreakSkill: CALLABLE type=<class 'method'> sig=<Signature (break_state)>
+PLAYER.OnBuyPersonStoreTeammateResult: CALLABLE type=<class 'method'> sig=<Signature (guid, result)>
+PLAYER.OnChangeArmor: CALLABLE type=<class 'method'> sig=<Signature (player, old_armor)>
+PLAYER.OnCombatTeamChangeForJoinCC: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnDealDamageResult: CALLABLE type=<class 'method'> sig=<Signature (result, damage_result)>
+PLAYER.OnDealSystemDamageResult: CALLABLE type=<class 'method'> sig=<Signature (result, damage_result)>
+PLAYER.OnGainSkillTalents: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnGainTalentArmorEnergy: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnGainTalentFeelLowHp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnGetBackItem_CommonSkill: CALLABLE type=<class 'method'> sig=<Signature (item)>
+PLAYER.OnGetBackItem_LeftShield: CALLABLE type=<class 'method'> sig=<Signature (item)>
+PLAYER.OnGuiseKillCountChanged: CALLABLE type=<class 'method'> sig=<Signature (item_id, count)>
+PLAYER.OnGunKillCountChanged: CALLABLE type=<class 'method'> sig=<Signature (gun_id)>
+PLAYER.OnInputSpaceTeleportSkillRelease: CALLABLE type=<class 'method'> sig=<Signature (item_guid)>
+PLAYER.OnJurenFlyFuelDisplaySkillChanged: CALLABLE type=<class 'method'> sig=<Signature (slot_key, old=None, new=None)>
+PLAYER.OnLoseTalentArmorEnergy: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnLoseTalentFeelLowHp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnLoseTalentMoveRecoverHpArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnOpenAdsShield: CALLABLE type=<class 'method'> sig=<Signature (is_open)>
+PLAYER.OnOpenMovingShield: CALLABLE type=<class 'method'> sig=<Signature (is_open)>
+PLAYER.OnOverloadArmorChange: CALLABLE type=<class 'method'> sig=<Signature (old, new)>
+PLAYER.OnPerkActivateStatusChange_ArmorBrokenUp: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+PLAYER.OnPerkActivateStatusChange_IdleDamageUp: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+PLAYER.OnPerkActivateStatusChange_MeleeDamageUp: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, status_old=None)>
+PLAYER.OnPerkActivateStatusChange_MoveRecoverHpArmor: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+PLAYER.OnPlayerDamageToBot: CALLABLE type=<class 'method'> sig=<Signature (target_id, ai_grade, damage)>
+PLAYER.OnPlayerKillBot: CALLABLE type=<class 'method'> sig=<Signature (target_id)>
+PLAYER.OnPlayerKilledByBot: CALLABLE type=<class 'method'> sig=<Signature (killer_id)>
+PLAYER.OnRefreshPickupGroup: CALLABLE type=<class 'method'> sig=<Signature (is_enter, itementity, check_shoot=True, need_sort=True)>
+PLAYER.OnRefreshPickupItem: CALLABLE type=<class 'method'> sig=<Signature (is_enter, itementity)>
+PLAYER.OnRefreshPickupItemList: CALLABLE type=<class 'method'> sig=<Signature (items)>
+PLAYER.OnRefreshPickupSquadFightAirDrop: CALLABLE type=<class 'method'> sig=<Signature (is_enter, itementity)>
+PLAYER.OnRefreshPickupUIPC: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnRemoveRecoverHpBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_guid)>
+PLAYER.OnRemoveTeamMarkBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_proto, buff_guid='')>
+PLAYER.OnSlideWithParkour: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnSlotLoseTalentIdleDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnSlotLoseTalentMeleeDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnSlotLoseTalentMoveRecoverHpArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnSpaceBlackHoleSkillActiveTimeout: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnSpeedLevelChange: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.OnSpellItem_CommonSkill: CALLABLE type=<class 'method'> sig=<Signature (item, secondary)>
+PLAYER.OnSpellItem_LeftShield: CALLABLE type=<class 'method'> sig=<Signature (item, secondary)>
+PLAYER.OnTakeItem_CommonSkill: CALLABLE type=<class 'method'> sig=<Signature (item)>
+PLAYER.OnTakeItem_LeftShield: CALLABLE type=<class 'method'> sig=<Signature (item)>
+PLAYER.OnTeammateBuyMyAirdropSetting: CALLABLE type=<class 'method'> sig=<Signature (guid)>
+PLAYER.OnTeammateCureHpBySpell: CALLABLE type=<class 'method'> sig=<Signature (target_id, spell_id, delta_hp)>
+PLAYER.OnTeammateMarkImmediateForReplay: CALLABLE type=<class 'method'> sig=<Signature (mark_guid, old, new, member_id)>
+PLAYER.OnTeammateSharePerformanceData: CALLABLE type=<class 'method'> sig=<Signature (result)>
+PLAYER.OnTotemSkillCoountDownFinishCb: CALLABLE type=<class 'method'> sig=<Signature (loading_type)>
+PLAYER.OpenKillRidiculeListener: CALLABLE type=<class 'method'> sig=<Signature (killer_guid)>
+PLAYER.OpenKillRidiculeMike: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayArmorCameraEffect: CALLABLE type=<class 'method'> sig=<Signature (old_armor)>
+PLAYER.PlayExtraArmorCameraEffect: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayMeleeSkill: CALLABLE type=<class 'method'> sig=<Signature (skill_type=0, info={})>
+PLAYER.PlayOverloadArmorEffect: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInputHandle_QuickBuyTeammate: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSecondSkillDown: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSecondSkillUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillMeleeWeapon3UseDown: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillMeleeWeapon3UseUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillWeapon3UseDown: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillWeapon3UseUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillWeapon4UseDown: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillWeapon4UseUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillWeaponUseDown: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnSkillWeaponUseUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnUseArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_OnUseSpecialSkill: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_QuickBuyTeammate: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_ReplyTeammateOneByCoins: CALLABLE type=<class 'method'> sig=<Signature (teammate_num)>
+PLAYER.PlayerInput_SwitchEvoSkill: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.PlayerInput_ThankTeammate: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.QuickBuyTeammateByTeammateGuid: CALLABLE type=<class 'method'> sig=<Signature (teammate_guid, is_auto_buy=False)>
+PLAYER.QuickBuyTeammateByTeammateNum: CALLABLE type=<class 'method'> sig=<Signature (teammate_num, is_auto_buy=False)>
+PLAYER.RecordGunFireDamage: CALLABLE type=<class 'method'> sig=<Signature (equip_id, damage, part_slots=None)>
+PLAYER.RecoverHp1090: CALLABLE type=<class 'method'> sig=<Signature (effect_id, keep_time)>
+PLAYER.RecvIgTeammateVoice: CALLABLE type=<class 'method'> sig=<Signature (voice_id, teammate_id)>
+PLAYER.RecvTeammateAchievement: CALLABLE type=<class 'method'> sig=<Signature (teammate_id, achieve_id, extra_data, teammate_name='', teammate_hero_id=0)>
+PLAYER.RefreshAllTeammateTechState: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RefreshAllTeammateVolume: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RefreshCombatAttrImmediately: CALLABLE type=<class 'method'> sig=<Signature (attr_name, old, new)>
+PLAYER.RefreshPickupData: CALLABLE type=<class 'method'> sig=<Signature (is_add, combatitem, check_shoot=True, do_sort=True)>
+PLAYER.RefreshPickupDataAfterPickup: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RefreshPickupDataList: CALLABLE type=<class 'method'> sig=<Signature (combat_item_list, check_shoot=True)>
+PLAYER.RefreshSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632)>
+PLAYER.RefreshSpeedLevel: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RefreshTeammateTechState: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RefreshTeammateVolume: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+PLAYER.RefreshTotemSkillCountDown: CALLABLE type=<class 'method'> sig=<Signature (is_transferring=None)>
+PLAYER.RefreshUavResidualBloodTip: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RemoveKilledTeamEnemyPos: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RemoveKnockDownTeamPos: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.RemoveUavResidualBloodTip: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.ReplayCanWatchTeammate: CALLABLE type=<class 'method'> sig=<Signature (method)>
+PLAYER.RestoreSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632)>
+PLAYER.ServerShowDamageTextEffect: CALLABLE type=<class 'method'> sig=<Signature (cur_result)>
+PLAYER.SetShieldVoiceForCombatHallTeamChannel: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.SetSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (spell_id, item_guid, duration)>
+PLAYER.SetTeamValReconDroneId: CALLABLE type=<class 'method'> sig=<Signature (drone_id)>
+PLAYER.ShowAttachModelForDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.ShowBeCuedForTeammate: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.ShowClassicDamageText: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend, itype=0, screen_offset=None)>
+PLAYER.ShowContinuousDamageText: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER.ShowDamageTextByMode: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER.StartTryHelpTeammate: CALLABLE type=<class 'method'> sig=<Signature (target_id)>
+PLAYER.SupportBuyTeammateResult: CALLABLE type=<class 'method'> sig=<Signature (reason, guid)>
+PLAYER.TryAttack_ads_shield_spell: CALLABLE type=<class 'method'> sig=<Signature (spell_id, spell_level, spell_code, extra=None)>
+PLAYER.TryExplodeSpaceBlackHoleSkill: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632, swallow_release=True)>
+PLAYER.TryRouteSpaceBlackHoleSkillInput: CALLABLE type=<class 'method'> sig=<Signature (item, key_mode)>
+PLAYER.UpdateAllTeammateMark: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER.UpdateTeammateXrayHiddenReason: CALLABLE type=<class 'method'> sig=<Signature (enabled, reason)>
+PLAYER.UseCombatItemArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER._CanInputSkillWeapon3: CALLABLE type=<class 'method'> sig=<Signature (is_down)>
+PLAYER._CheckInvisibleCasterDamage: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target)>
+PLAYER._DamageGameLogicEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER._DamageModelEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER._DamageSoundEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER._DamageTextEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER._DamageUIEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER._DamageUIEffect234: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+PLAYER._FilterIgnoreTeamShieldSpeakingList: CALLABLE type=<class 'method'> sig=<Signature (speak_eids)>
+PLAYER._IsGrapplinghookSkillWeapon3: CALLABLE type=<class 'method'> sig=<Signature ()>
+PLAYER._OnJoinCCCombatTeam: CALLABLE type=<class 'method'> sig=<Signature (is_join)>
+PLAYER._OnJoinCCKillRidicule: CALLABLE type=<class 'method'> sig=<Signature (is_join)>
+ROBOT anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756)
+ROBOT ATTR_CANDIDATES count=163 names=['AIQueryTeamMembers', 'AddLowHpEffect', 'AddUavResidualBloodTip', 'AddWrathSkillTimer', 'CalAttrResult', 'CanDamageByMagicField', 'CanTakeMaxDamage', 'CancelExposeKilledEnemyTimer', 'CancelFeelHpTimer', 'CancelKnockDownTeamTimer', 'CancelLowHpEffectTimer', 'CheckRestoreIdleDamageUp', 'CheckRestoreMeleeDamageUp', 'CheckRestoreOverloadArmor', 'ClearArmorCameraEffects', 'ClearLowHpEffect', 'ClearOverloadArmorEffect', 'ClearSpaceBlackHoleSkillActive', 'ClearSpaceBlackHoleSkillActiveForTeardown', 'ClearSpaceBlackHoleSkillActiveState', 'ClearWrathSkillTimer', 'ExposeKilledTeamEnemyPos', 'ExposeKilledTeamEnemyPosTick', 'ExposeKnockDownTeamPos', 'ExposeKnockDownTeamPosTick', 'FeelLowHpEnemyTick', 'GetCurHighPriorityWeapon', 'GetInHouseName', 'GetTacticalArmorLevel', 'GetTacticalColorLevel', 'GetTacticalLevelColorOpacity', 'GetTeammateColorIndex', 'GetTeammateIndex', 'GetTeammateInfo', 'GetWeaponAttrValueWithCache', 'HasActiveSpaceBlackHoleSkill', 'HasAttr', 'HideAttachModelForDead', 'IsCombatTeam', 'IsCureUavShield', 'IsMoveRecoverHpArmorActive', 'IsShield', 'IsSkillTalentFull', 'IsSystemKiller', 'IsTitan2ArmorCameraEffectDisabled', 'IsUavShield', 'JumpToSkillEnd', 'JumpToSkillHold', 'JumpToSkillToss', 'JumpToSkillTossSecondary', 'KillAvatar', 'LeaveHouseOnDead', 'OnAIQueryTeamMembers', 'OnAddRecoverHpBuff', 'OnAddTeamMarkBuff', 'OnDead', 'OnDealDamageResult', 'OnEnterKillMoment', 'OnGainTalentArmorEnergy', 'OnGainTalentFeelLowHp', 'OnHeroAchProgressChange', 'OnJurenFlyFuelDisplaySkillChanged', 'OnLoseTalentArmorEnergy', 'OnLoseTalentFeelLowHp', 'OnLoseTalentMoveRecoverHpArmor', 'OnOpenAdsShield', 'OnOverloadArmorChange', 'OnPerkActivateStatusChange_ArmorBrokenUp', 'OnPerkActivateStatusChange_IdleDamageUp', 'OnPerkActivateStatusChange_MeleeDamageUp', 'OnPerkActivateStatusChange_MoveRecoverHpArmor', 'OnRemoveRecoverHpBuff', 'OnRemoveTeamMarkBuff', 'OnSettingHideTeammateNameChanged', 'OnSlideWithParkour', 'OnSlotLoseTalentIdleDamageUp', 'OnSlotLoseTalentMeleeDamageUp', 'OnSlotLoseTalentMoveRecoverHpArmor', 'OnSpaceBlackHoleSkillActiveTimeout', 'OnSpeedLevelChange', 'OnTotemSkillCoountDownFinishCb', 'PlayArmorCameraEffect', 'PlayExtraArmorCameraEffect', 'PlayOverloadArmorEffect', 'RefreshCombatAttrImmediately', 'RefreshEnemyArmorBar', 'RefreshEnemyHpBar', 'RefreshSpaceBlackHoleSkillActive', 'RefreshSpeedLevel', 'RefreshTeammateTechState', 'RefreshToplogoArmorBarForReplayRoom', 'RefreshToplogoHpBarForReplayRoom', 'RefreshToplogoTacticalLevelForReplayRoom', 'RefreshToplogoTeamTagForReplayRoom', 'RefreshTotemSkillCountDown', 'RefreshUavResidualBloodTip', 'RemoveKilledTeamEnemyPos', 'RemoveKnockDownTeamPos', 'RemoveUavResidualBloodTip', 'RestoreSpaceBlackHoleSkillActive', 'SetSpaceBlackHoleSkillActive', 'ShowAttachModelForDead', 'ShowBeCuedForTeammate', 'ShowToplogoDamageNumber', 'TEAM_COLOR_MAP', 'TryExplodeSpaceBlackHoleSkill', 'TryRouteSpaceBlackHoleSkillInput', '_CheckInvisibleCasterDamage', '_DamageGameLogicEffect', '_DamageModelEffect', '_DamageSoundEffect', '_DamageUIEffect', '_GetMyTeammateIndex', '_GetMyTeammateInfo', '__delattr__', '__getattribute__', '__setattr__', '__static_attributes__', '_client_armor', '_combat_team', '_enter_house_name', '_enter_house_range_name', '_on_refresh_SkillMaxCount', '_on_set_brain_class_name', '_on_set_maxarmor', '_on_set_server_armor', '_on_set_server_hp', '_on_set_tactical_level', '_wrath_skill_timer', 'ads_shield_effect', 'ads_shield_timer', 'armor', 'armor_broken_up_soundid', 'armor_effect', 'armor_recovering', 'base_armor', 'base_maxarmor', 'can_damage', 'client_armor', 'combat_team', 'controlled_sim_level', 'cur_maxhp', 'cur_shield_magic_field_id', 'expose_killed_enemy_pos_timer', 'extra_armor', 'extra_armor_effect', 'extra_max_armor_effect', 'feel_hp_timer', 'hero_skill_talent', 'hp', 'is_dead_state', 'is_move_recover_Armor', 'is_using_nova_second_skill', 'knock_down_team_enemy_pos_timer', 'last_speed_level', 'low_hp_effect_timer', 'on_setattr', 'overload_armor_effect_entity_id', 'perk_armor_broker_up_model_effect_id', 'perk_melee_damage_up_model_effect_ids', 'speed_level_prop', 'teammate_info', 'weapon_attr_cache']
+ROBOT.AIQueryTeamMembers: CALLABLE type=<class 'method'> sig=<Signature (callback)>
+ROBOT.AddLowHpEffect: CALLABLE type=<class 'method'> sig=<Signature (tech_state, material_rank_id, duration)>
+ROBOT.AddUavResidualBloodTip: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.AddWrathSkillTimer: CALLABLE type=<class 'method'> sig=<Signature (duration, callback)>
+ROBOT.CalAttrResult: CALLABLE type=<class 'method'> sig=<Signature (attr_type, value, equip_id='')>
+ROBOT.CanDamageByMagicField: CALLABLE type=<class 'method'> sig=<Signature (magic_field)>
+ROBOT.CanDamageByMagicField() FAIL TypeError("ISimpleCombatUnitBase.CanDamageByMagicField() missing 1 required positional argument: 'magic_field'")
+ROBOT.CanTakeMaxDamage: CALLABLE type=<class 'method'> sig=<Signature (damage_info)>
+ROBOT.CanTakeMaxDamage() FAIL TypeError("ISimpleCombatUnitBase.CanTakeMaxDamage() missing 1 required positional argument: 'damage_info'")
+ROBOT.CancelExposeKilledEnemyTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.CancelExposeKilledEnemyTimer() => None
+ROBOT.CancelFeelHpTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.CancelFeelHpTimer() => None
+ROBOT.CancelKnockDownTeamTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.CancelKnockDownTeamTimer() => None
+ROBOT.CancelLowHpEffectTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.CancelLowHpEffectTimer() => None
+ROBOT.CheckRestoreIdleDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.CheckRestoreMeleeDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.CheckRestoreOverloadArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.ClearArmorCameraEffects: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.ClearLowHpEffect: CALLABLE type=<class 'method'> sig=<Signature (tech_state, material_rank_id)>
+ROBOT.ClearOverloadArmorEffect: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.ClearSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (reset_input=True, refresh=True, clear_item_fsm=True)>
+ROBOT.ClearSpaceBlackHoleSkillActiveForTeardown: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.ClearSpaceBlackHoleSkillActiveState: CALLABLE type=<class 'method'> sig=<Signature (reset_input=True)>
+ROBOT.ClearWrathSkillTimer: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.ExposeKilledTeamEnemyPos: CALLABLE type=<class 'method'> sig=<Signature (info)>
+ROBOT.ExposeKilledTeamEnemyPosTick: CALLABLE type=<class 'method'> sig=<Signature (info)>
+ROBOT.ExposeKnockDownTeamPos: CALLABLE type=<class 'method'> sig=<Signature (info)>
+ROBOT.ExposeKnockDownTeamPosTick: CALLABLE type=<class 'method'> sig=<Signature (info)>
+ROBOT.FeelLowHpEnemyTick: CALLABLE type=<class 'method'> sig=<Signature (param)>
+ROBOT.GetCurHighPriorityWeapon: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.GetCurHighPriorityWeapon() => CItem({'part_slots': CParts({}), 'guise_item_id': 0, 'guid': 'anFFTEsxNr+4vTgI', 'ammo_empty': 0, 'item_id': 43, 'server_ammo': 0, 'spec_ammo': 0, 'item_source': 'pickup', 'skin_item_id': 0, 'skin_sticker': CustomMapType({}), 'anim_info': CustomMapType({}), 'part_guise_info': CustomMapType({}), 'sight_info': CustomMapType({}), 'ornament_item_id': 0, 'dye_owner_id': '', 'heirloom_attrs': CustomMapType({}), 'fine_tuning_attr': CustomMapType({}), 'count': 1})
+ROBOT.GetInHouseName: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.GetInHouseName() => ''
+ROBOT.GetTacticalArmorLevel: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.GetTacticalArmorLevel() => 1
+ROBOT.GetTacticalColorLevel: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.GetTacticalColorLevel() => 1
+ROBOT.GetTacticalLevelColorOpacity: CALLABLE type=<class 'method'> sig=<Signature (is_bg=False)>
+ROBOT.GetTacticalLevelColorOpacity() => ((211, 211, 209), 255)
+ROBOT.GetTeammateColorIndex: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+ROBOT.GetTeammateColorIndex() FAIL TypeError("CombatAvatarMember.GetTeammateColorIndex() missing 1 required positional argument: 'teammate_id'")
+ROBOT.GetTeammateIndex: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+ROBOT.GetTeammateIndex() FAIL TypeError("CombatAvatarMember.GetTeammateIndex() missing 1 required positional argument: 'teammate_id'")
+ROBOT.GetTeammateInfo: CALLABLE type=<class 'method'> sig=<Signature (teammate_id)>
+ROBOT.GetTeammateInfo() FAIL TypeError("CombatAvatarMember.GetTeammateInfo() missing 1 required positional argument: 'teammate_id'")
+ROBOT.GetWeaponAttrValueWithCache: CALLABLE type=<class 'method'> sig=<Signature (name, defalut, timeout)>
+ROBOT.GetWeaponAttrValueWithCache() FAIL TypeError("CombatAvatarMember.GetWeaponAttrValueWithCache() missing 3 required positional arguments: 'name', 'defalut', and 'timeout'")
+ROBOT.HasActiveSpaceBlackHoleSkill: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632)>
+ROBOT.HasActiveSpaceBlackHoleSkill() FAIL AttributeError("'RobotCombatAvatarShootingRange' object has no attribute 'space_black_hole_skill_spell_id'")
+ROBOT.HasAttr: CALLABLE type=<class 'method'> sig=<Signature (attr_type)>
+ROBOT.HasAttr() FAIL TypeError("ICombatUnitBase.HasAttr() missing 1 required positional argument: 'attr_type'")
+ROBOT.HideAttachModelForDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.IsCombatTeam: <class 'bool'> False
+ROBOT.IsCureUavShield: <class 'bool'> False
+ROBOT.IsMoveRecoverHpArmorActive: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.IsMoveRecoverHpArmorActive() => False
+ROBOT.IsShield: <class 'bool'> False
+ROBOT.IsSkillTalentFull: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.IsSkillTalentFull() => False
+ROBOT.IsSystemKiller: <class 'bool'> False
+ROBOT.IsTitan2ArmorCameraEffectDisabled: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.IsTitan2ArmorCameraEffectDisabled() => False
+ROBOT.IsUavShield: <class 'bool'> False
+ROBOT.JumpToSkillEnd: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.JumpToSkillHold: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.JumpToSkillToss: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.JumpToSkillTossSecondary: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.KillAvatar: CALLABLE type=<class 'method'> sig=<Signature (caster, target, critical_spell)>
+ROBOT.LeaveHouseOnDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnAIQueryTeamMembers: CALLABLE type=<class 'method'> sig=<Signature (ticket, member_ids)>
+ROBOT.OnAddRecoverHpBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_proto)>
+ROBOT.OnAddTeamMarkBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_proto)>
+ROBOT.OnDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnDealDamageResult: CALLABLE type=<class 'method'> sig=<Signature (result, damage_result)>
+ROBOT.OnEnterKillMoment: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnGainTalentArmorEnergy: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnGainTalentFeelLowHp: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnHeroAchProgressChange: CALLABLE type=<class 'method'> sig=<Signature (player_id)>
+ROBOT.OnJurenFlyFuelDisplaySkillChanged: CALLABLE type=<class 'method'> sig=<Signature (slot_key, old=None, new=None)>
+ROBOT.OnLoseTalentArmorEnergy: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnLoseTalentFeelLowHp: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnLoseTalentMoveRecoverHpArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnOpenAdsShield: CALLABLE type=<class 'method'> sig=<Signature (is_open)>
+ROBOT.OnOverloadArmorChange: CALLABLE type=<class 'method'> sig=<Signature (old, new)>
+ROBOT.OnPerkActivateStatusChange_ArmorBrokenUp: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+ROBOT.OnPerkActivateStatusChange_IdleDamageUp: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+ROBOT.OnPerkActivateStatusChange_MeleeDamageUp: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, status_old=None)>
+ROBOT.OnPerkActivateStatusChange_MoveRecoverHpArmor: CALLABLE type=<class 'method'> sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+ROBOT.OnRemoveRecoverHpBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_guid)>
+ROBOT.OnRemoveTeamMarkBuff: CALLABLE type=<class 'method'> sig=<Signature (buff_proto, buff_guid='')>
+ROBOT.OnSettingHideTeammateNameChanged: CALLABLE type=<class 'method'> sig=<Signature (new)>
+ROBOT.OnSlideWithParkour: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnSlotLoseTalentIdleDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnSlotLoseTalentMeleeDamageUp: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnSlotLoseTalentMoveRecoverHpArmor: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnSpaceBlackHoleSkillActiveTimeout: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnSpeedLevelChange: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.OnTotemSkillCoountDownFinishCb: CALLABLE type=<class 'method'> sig=<Signature (loading_type)>
+ROBOT.PlayArmorCameraEffect: CALLABLE type=<class 'method'> sig=<Signature (old_armor)>
+ROBOT.PlayExtraArmorCameraEffect: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.PlayOverloadArmorEffect: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RefreshCombatAttrImmediately: CALLABLE type=<class 'method'> sig=<Signature (attr_name, old, new)>
+ROBOT.RefreshEnemyArmorBar: CALLABLE type=<class 'method'> sig=<Signature (old)>
+ROBOT.RefreshEnemyHpBar: CALLABLE type=<class 'method'> sig=<Signature (old)>
+ROBOT.RefreshSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632)>
+ROBOT.RefreshSpeedLevel: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RefreshTeammateTechState: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RefreshToplogoArmorBarForReplayRoom: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RefreshToplogoHpBarForReplayRoom: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RefreshToplogoTacticalLevelForReplayRoom: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RefreshToplogoTeamTagForReplayRoom: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RefreshTotemSkillCountDown: CALLABLE type=<class 'method'> sig=<Signature (is_transferring=None)>
+ROBOT.RefreshUavResidualBloodTip: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RemoveKilledTeamEnemyPos: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RemoveKnockDownTeamPos: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RemoveUavResidualBloodTip: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.RestoreSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632)>
+ROBOT.SetSpaceBlackHoleSkillActive: CALLABLE type=<class 'method'> sig=<Signature (spell_id, item_guid, duration)>
+ROBOT.ShowAttachModelForDead: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.ShowBeCuedForTeammate: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.ShowToplogoDamageNumber: CALLABLE type=<class 'method'> sig=<Signature (source_key, damage, color, duration)>
+ROBOT.TEAM_COLOR_MAP: <class 'dict'> {1: 167, 2: 168, 3: 169, 4: 170}
+ROBOT.TryExplodeSpaceBlackHoleSkill: CALLABLE type=<class 'method'> sig=<Signature (spell_id=632, swallow_release=True)>
+ROBOT.TryRouteSpaceBlackHoleSkillInput: CALLABLE type=<class 'method'> sig=<Signature (item, key_mode)>
+ROBOT._CheckInvisibleCasterDamage: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target)>
+ROBOT._DamageGameLogicEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+ROBOT._DamageModelEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+ROBOT._DamageSoundEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+ROBOT._DamageUIEffect: CALLABLE type=<class 'method'> sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+ROBOT._GetMyTeammateIndex: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT._GetMyTeammateInfo: CALLABLE type=<class 'method'> sig=<Signature ()>
+ROBOT.__delattr__: CALLABLE type=<class 'method-wrapper'> sig=<Signature (name, /)>
+ROBOT.__getattribute__: CALLABLE type=<class 'method-wrapper'> sig=<Signature (name, /)>
+ROBOT.__setattr__: CALLABLE type=<class 'method-wrapper'> sig=<Signature (name, value, /)>
+ROBOT.__static_attributes__: <class 'tuple'> ('position', 'yaw')
+ROBOT._client_armor: <class 'float'> 0.0
+ROBOT._combat_team: <class 'NoneType'> None
+ROBOT._enter_house_name: <class 'NoneType'> None
+ROBOT._enter_house_range_name: <class 'str'> ''
+ROBOT._on_refresh_SkillMaxCount: CALLABLE type=<class 'method'> sig=<Signature (old, new)>
+ROBOT._on_set_brain_class_name: CALLABLE type=<class 'method'> sig=<Signature (old)>
+ROBOT._on_set_maxarmor: CALLABLE type=<class 'method'> sig=<Signature (old)>
+ROBOT._on_set_server_armor: CALLABLE type=<class 'method'> sig=<Signature (old)>
+ROBOT._on_set_server_hp: CALLABLE type=<class 'method'> sig=<Signature (old)>
+ROBOT._on_set_tactical_level: CALLABLE type=<class 'method'> sig=<Signature (old)>
+ROBOT._wrath_skill_timer: <class 'NoneType'> None
+ROBOT.ads_shield_effect: <class 'NoneType'> None
+ROBOT.ads_shield_timer: <class 'NoneType'> None
+ROBOT.armor: <class 'float'> 0.0
+ROBOT.armor_broken_up_soundid: <class 'NoneType'> None
+ROBOT.armor_effect: <class 'NoneType'> None
+ROBOT.armor_recovering: <class 'bool'> False
+ROBOT.base_armor: <class 'float'> 0.0
+ROBOT.base_maxarmor: <class 'float'> 0.0
+ROBOT.can_damage: <class 'bool'> True
+ROBOT.client_armor: <class 'float'> 0.0
+ROBOT.combat_team: <class 'NoneType'> None
+ROBOT.controlled_sim_level: <class 'ECCTSimLevel'> Highest
+ROBOT.cur_maxhp: <class 'float'> 125.0
+ROBOT.cur_shield_magic_field_id: <class 'NoneType'> None
+ROBOT.expose_killed_enemy_pos_timer: <class 'NoneType'> None
+ROBOT.extra_armor: <class 'float'> 0.0
+ROBOT.extra_armor_effect: <class 'NoneType'> None
+ROBOT.extra_max_armor_effect: <class 'NoneType'> None
+ROBOT.feel_hp_timer: <class 'NoneType'> None
+ROBOT.hero_skill_talent: <class 'list'> [3000, 3001]
+ROBOT.hp: <class 'float'> 125.0
+ROBOT.is_dead_state: <class 'bool'> False
+ROBOT.is_move_recover_Armor: <class 'bool'> False
+ROBOT.is_using_nova_second_skill: <class 'bool'> False
+ROBOT.knock_down_team_enemy_pos_timer: <class 'NoneType'> None
+ROBOT.last_speed_level: <class 'int'> 0
+ROBOT.low_hp_effect_timer: <class 'NoneType'> None
+ROBOT.on_setattr: CALLABLE type=<class 'method'> sig=<Signature (key, old, new)>
+ROBOT.overload_armor_effect_entity_id: <class 'NoneType'> None
+ROBOT.perk_armor_broker_up_model_effect_id: <class 'NoneType'> None
+ROBOT.perk_melee_damage_up_model_effect_ids: <class 'NoneType'> None
+ROBOT.speed_level_prop: <class 'int'> 0
+ROBOT.teammate_info: <class 'dict'> {}
+ROBOT.weapon_attr_cache: <class 'dict'> {}
+MUI_NAMES ['AddHarmAnimSample', 'ClearUITextures', 'CreateHarmText', 'CreateHarmText0', 'CreateHarmText2', 'CreateHarmText3', 'CreateMessageText', 'CreateMessageText2', 'CreateScreenText', 'GetTextBoundBox', 'GetTextBoundBox2', 'GetTextLength', 'GetUITextAtlasFreeList', 'GetUITextAtlasGUID', 'GetUITextAtlasSize', 'GetUITextureAtlasFreeList', 'GetUITextureAtlasGUID', 'GetUITextureAtlasSize', 'HarmTextParam', 'IsUITextureLoaded', 'PreloadLoadingTexture', 'RemoveMessageText', 'RemoveScreenText', 'SetBackgroundBiasForHarmText', 'SetCocosWindowTopDirectionTextStr', 'SetPermanentUITexture', 'SetRenderTextureFollower', 'SetRenderTextureFollower2', 'SetRenderTextureToEntity', 'SetRenderTextureToEntity2', 'SetScreenTextFontName', 'UpdateHarmText', 'UpdateHarmText0', 'UpdateHarmText2', 'UpdateHarmText3', 'UpdateHarmTextRenderType', 'UpdateScreenText']
+set worldPos FAIL TypeError('Vector3 is required, got(tuple)')
+set color FAIL TypeError('Vector3 is required, got(tuple)')
+set strokeColor FAIL TypeError('Vector3 is required, got(tuple)')
+set offset FAIL TypeError('Vector2 is required, got(tuple)')
+CreateScreenText(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 6 arguments, got 1')
+CreateScreenText('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL RuntimeError('expected 6 arguments, got 2')
+CreateScreenText((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 6 arguments, got 2')
+CreateScreenText('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 6 arguments, got 3')
+CreateScreenText('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 6 arguments, got 3')
+UpdateScreenText(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 2 arguments, got 1')
+UpdateScreenText('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL TypeError('Vector2 is required, got(HarmTextParam)')
+UpdateScreenText((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL TypeError('bad argument type for built-in operation')
+UpdateScreenText('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 2 arguments, got 3')
+UpdateScreenText('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 2 arguments, got 3')
+CreateHarmText(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 10 arguments, got 1')
+CreateHarmText('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL RuntimeError('expected 10 arguments, got 2')
+CreateHarmText((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 10 arguments, got 2')
+CreateHarmText('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 10 arguments, got 3')
+CreateHarmText('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 10 arguments, got 3')
+CreateHarmText0(<HarmTextParam object at 0x0000025A0334DC80>,) => OK 8
+CreateHarmText0('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL TypeError('CreateHarmText0() takes exactly one argument (2 given)')
+CreateHarmText0((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL TypeError('CreateHarmText0() takes exactly one argument (2 given)')
+CreateHarmText0('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL TypeError('CreateHarmText0() takes exactly one argument (3 given)')
+CreateHarmText0('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL TypeError('CreateHarmText0() takes exactly one argument (3 given)')
+CreateHarmText2(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 10 arguments, got 1')
+CreateHarmText2('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL RuntimeError('expected 10 arguments, got 2')
+CreateHarmText2((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 10 arguments, got 2')
+CreateHarmText2('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 10 arguments, got 3')
+CreateHarmText2('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 10 arguments, got 3')
+CreateHarmText3(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 11 arguments, got 1')
+CreateHarmText3('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL RuntimeError('expected 11 arguments, got 2')
+CreateHarmText3((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 11 arguments, got 2')
+CreateHarmText3('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 11 arguments, got 3')
+CreateHarmText3('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 11 arguments, got 3')
+UpdateHarmText(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 12 arguments, got 1')
+UpdateHarmText('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL RuntimeError('expected 12 arguments, got 2')
+UpdateHarmText((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 12 arguments, got 2')
+UpdateHarmText('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 12 arguments, got 3')
+UpdateHarmText('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 12 arguments, got 3')
+CreateMessageText(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 7 arguments, got 1')
+CreateMessageText('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL RuntimeError('expected 7 arguments, got 2')
+CreateMessageText((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 7 arguments, got 2')
+CreateMessageText('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 7 arguments, got 3')
+CreateMessageText('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 7 arguments, got 3')
+CreateMessageText2(<HarmTextParam object at 0x0000025A0334DC80>,) => FAIL RuntimeError('expected 12 arguments, got 1')
+CreateMessageText2('ctf_text_probe', <HarmTextParam object at 0x0000025A0334DC80>) => FAIL RuntimeError('expected 12 arguments, got 2')
+CreateMessageText2((16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 12 arguments, got 2')
+CreateMessageText2('ctf_text_probe', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'CTF ESP 12m HP100') => FAIL RuntimeError('expected 12 arguments, got 3')
+CreateMessageText2('ctf_text_probe', 'CTF ESP 12m HP100', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)) => FAIL RuntimeError('expected 12 arguments, got 3')
+END
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+TICK n=640 total=23 players=[('anFFZUsxNr+4vT0l', (-17.672456741333008, 0.05000000819563866, -2.370279550552368))] robots=[('anFFTEsxNr+4vTgF', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)), ('anFFTEsxNr+4vTgO', (-28.0, 0.05000007152557373, -13.0)), ('anFFTEsxNr+4vTgJ', (26.3205623626709, 0.06777054071426392, 2.599637508392334)), ('anFFTEsxNr+4vTf9', (-3.6765191555023193, 0.05925852805376053, -9.500686645507812)), ('anFFTEsxNr+4vTf4', (-8.783376693725586, 0.09060776978731155, -13.467101097106934)), ('anFFTEsxNr+4vTgB', (6.3227458000183105, 0.06980297714471817, -5.500764846801758))]
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+TICK n=680 total=23 players=[('anFFZUsxNr+4vT0l', (-17.672456741333008, 0.05000000819563866, -2.370279550552368))] robots=[('anFFTEsxNr+4vTgF', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)), ('anFFTEsxNr+4vTgO', (-28.0, 0.05000007152557373, -13.0)), ('anFFTEsxNr+4vTgJ', (26.3205623626709, 0.06777054071426392, 2.599637508392334)), ('anFFTEsxNr+4vTf9', (-3.6765191555023193, 0.05925852805376053, -9.500686645507812)), ('anFFTEsxNr+4vTf4', (-8.783376693725586, 0.09060776978731155, -13.467101097106934)), ('anFFTEsxNr+4vTgB', (6.3227458000183105, 0.06980297714471817, -5.500764846801758))]
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+TICK n=720 total=23 players=[('anFFZUsxNr+4vT0l', (-17.672456741333008, 0.05000000819563866, -2.370279550552368))] robots=[('anFFTEsxNr+4vTgF', (16.224382400512695, 0.08436138182878494, -1.4008004665374756)), ('anFFTEsxNr+4vTgO', (-28.0, 0.05000007152557373, -13.0)), ('anFFTEsxNr+4vTgJ', (26.3205623626709, 0.06777054071426392, 2.599637508392334)), ('anFFTEsxNr+4vTf9', (-3.6765191555023193, 0.05925852805376053, -9.500686645507812)), ('anFFTEsxNr+4vTf4', (-8.783376693725586, 0.09060776978731155, -13.467101097106934)), ('anFFTEsxNr+4vTgB', (6.3227458000183105, 0.06980297714471817, -5.500764846801758))]
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None ready_after=True
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)
+MARK key=anFFTEsxNr+4vTgF mark_id=ctf_esp_anFFTEsxNr_4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>,None)
+MARK key=anFFTEsxNr+4vTgO mark_id=ctf_esp_anFFTEsxNr_4vTgO pos=(-28.0, 0.05000007152557373, -13.0) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>,None)
+MARK key=anFFTEsxNr+4vTgJ mark_id=ctf_esp_anFFTEsxNr_4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>,None)
+MARK key=anFFTEsxNr+4vTf9 mark_id=ctf_esp_anFFTEsxNr_4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>,None)
+MARK key=anFFTEsxNr+4vTf4 mark_id=ctf_esp_anFFTEsxNr_4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>,None)
+MARK key=anFFTEsxNr+4vTgB mark_id=ctf_esp_anFFTEsxNr_4vTgB pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) CreateCommonMarkToplogoSceneOnly=ok CreateMarkWorldEffect=ok res=(<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>,None)

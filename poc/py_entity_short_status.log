@@ -1,0 +1,6 @@
+BEGIN 1785808054.7975454
+entity_count=3
+'AjDCIrilGhEBXtfh' <PlayerAvatar(AjDCIrilGhEBXtfh)> class=PlayerAvatar flags=['IsAvatar'] pos=[-16.196739196777344, 0.05000006780028343, -7.852128028869629]
+'anFEPnpyqyRkPhTY' <HallSpace(anFEPnpyqyRkPhTY)> class=HallSpace flags=[] pos=None
+'anFEPnpyqyRkPhTZ' <Doll(anFEPnpyqyRkPhTZ)> class=Doll flags=[] pos=(0.0, 0.0, 0.0)
+END

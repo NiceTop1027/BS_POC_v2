@@ -1,0 +1,4 @@
+max_distance=800
+native_aim=0
+aim_fov_px=216
+visible_only=1

@@ -1,0 +1,19 @@
+{
+  "pid": 34896,
+  "module": "ctf_esp",
+  "started": 1785805962.2576337,
+  "image_base": "0x7ff744ce0000",
+  "remote_code": "0x2cc2c780000",
+  "thread_id": 8008,
+  "wait": 0,
+  "wait_name": "signaled",
+  "exit_code": 1,
+  "state": 1,
+  "result": "0x0",
+  "addresses": {
+    "ensure": "0x7ff74778fbe0",
+    "release": "0x7ff74778fcb0",
+    "import_module": "0x7ff74776c1f0"
+  },
+  "finished": 1785805962.274703
+}

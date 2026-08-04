@@ -1,0 +1,9 @@
+BEGIN 1785833886.0614667
+NO_UNIQUE_CAMERA count=3 owner=True
+BEGIN 1785833903.4787595
+NO_UNIQUE_CAMERA count=3 owner=True candidates=[(0, '<gclient.framework.entities.camera.Camera object at 0x0000017086597450>', '<-18.3241, 1.5515, -4.6201>', '<ICamera object at 0x00000170012CB100>'), (1, '<gclient.framework.entities.camera.Camera object at 0x0000017008CF3650>', '<-18.3241, 1.5515, -4.6201>', '<ICamera object at 0x00000170012CB100>'), (2, '<gclient.framework.entities.camera.Camera object at 0x0000017095CD8950>', '<-18.3241, 1.5515, -4.6201>', '<ICamera object at 0x00000170012CB100>')]
+BEGIN 1785834590.9875734
+camera=<gclient.framework.entities.camera.Camera object at 0x0000017086597450> engine=<ICamera object at 0x00000170012CB100> engine_names=['FieldOfView', 'RuntimeCameraFlag', 'RuntimeVirtualTexture', 'Transform', 'TransformUpdate', 'UseAuroraCamera', 'ViewMatrix', 'VirtualCameraManager']
+HOOKED candidates=3
+RESULT reason=sample_complete callbacks=0 elapsed=1.521510 hz=0.000 intervals=[]
+PER_CAMERA={}

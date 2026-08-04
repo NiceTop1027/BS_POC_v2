@@ -1,0 +1,6 @@
+BEGIN
+STATE={'gacha_id': 1370, 'requested_at': 1785821267.0830092, 'before_gold': 100000, 'before_roll_count': 7, 'callback_name': 'OnGachaRoll'}
+AFTER gold=99990 roll_count=8 checked_at=1785821284.9721403
+COST money_type=4 item_id=4000000020 item_count=0 price=10
+DELTA gold=-10 rolls=1
+END

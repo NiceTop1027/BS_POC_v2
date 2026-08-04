@@ -1,0 +1,15 @@
+{
+  "pid": 14356,
+  "command_line": "\"C:\\Program Files (x86)\\bloodstrike\\Engine\\Binaries\\Win64\\BloodStrike.exe\"",
+  "startup_context": {
+    "peb": "0xbc19093000",
+    "process_parameters": "0x28740058a50",
+    "current_directory": null,
+    "image_path": null,
+    "command_line_from_peb": null,
+    "launcher_environment": {
+      "MessiahAppName": "hyxd",
+      "MessiahLauncherInfo": "\\Device\\HarddiskVolume2\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+    }
+  }
+}

@@ -1,0 +1,1327 @@
+BEGIN 1785809363.0943482
+entities=23 players=1 robots=6
+player=anFFZUsxNr+4vT0l <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>
+robot=anFFTEsxNr+4vTgF <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)> pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756)
+player: repr=<PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)> type=<class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.PlayerCombatAvatarShootingRange'>
+player: names=['ActiveAssistAimByMoveInputGate', 'ActiveAssistAimByWeapon', 'AddAssassinateEffect', 'AddAssistAimBanReason', 'AddBeShootTechEffect', 'AddBombPathEffect', 'AddBuffSpell', 'AddCameraEffect', 'AddCameraEffectByBuff', 'AddClientBuff', 'AddDelayShootReason', 'AddForceTpsReason', 'AddHallBackpackGun', 'AddHoldingTimer', 'AddLowHpEffect', 'AddNativeHotfix', 'AddSceneCenterMark', 'AddSkeletonEffectByBuff', 'AddSnareToSnareDict', 'AddSoundTipsBanReason', 'AddSprintTrigger', 'AddStoryTick', 'AddStoryTickRaycastForMovingPlatform', 'AddSuperJumpChance', 'AddTechStateXray', 'AddTpsShowEntity', 'AddTrackBombLockTips', 'AddTrackTargetSearchTimer', 'AddUavResidualBloodTip', 'AddWeaponPart', 'AddWeaponPartByGunId', 'AddWorldField', 'AddWrathSkillTimer', 'AdjustAssistAim', 'AdjustBombContactEntityFadeDistance', 'AdjustBombEffectPathPitch', 'AdjustBombEffectPathSpeed', 'AdjustBombEffectPathStartPos', 'AdjustBombEffectPitch', 'AdsFlashTick', 'AfterPlayerWeaponListChange', 'AntiPenetrateDrawMovePath', 'ApplyCameraKeyframe', 'ApplyFilterMotionForEmote', 'ApplyFilterMotionForExecute', 'ApplyForceFrameForAccelToCurVehicle', 'ApplyHallBackpack', 'ArmGunDiyBlueprint', 'AttachToVehicle', 'AutoDriveVehicle', 'AutoEnterAdsState', 'AutoMarkItem', 'AutoPickupItemImpl', 'AutoPickupItemPCImpl', 'AutoPickupItemPCTimer', 'AutoSendIntervalCheckStatic', 'AutoSendIntervalOnTick', 'AutoSendIntervalSetInterval', 'AutoTryDualGunAttack', 'AutoTryGunAttack', 'BatchForwardSpellResult', 'BatchForwardSpellResultFull', 'BatchOnSpellResult', 'BatchOnSpellResultFull', 'BeGothicScan', 'BindHandToBody', 'BlastBombExplode', 'BreakDancingCureByState', 'BreakEmoteByState', 'BreakSwim', 'BroadcastDeadHiddenUI', 'BroadcastDyingHiddenUI', 'BroadcastSoundEvent', 'BuyPersonalStoreItem', 'BuyPersonalStoreTeammate', 'BuySupportItems', 'BuySupportResult', 'CLIENT_PRIORITY_UNIT_STATE', 'CacheDealSpellResultRpc', 'CacheModel', 'CacheMovingPlatformInfoForShow', 'CacheSoundID', 'CalAttrResult', 'CalcDistanceVehicle', 'CalcDistanceWalk', 'CalculateBombEffectPath', 'CalculateMagicBulletHit', 'CallClientSpectatorCamera', 'CallClientSpectatorRhs', 'CallClientSpectatorSpellResult', 'CallClientSpectators', 'CallGameLogic', 'CallServer', 'CallServerAnyTime', 'CallServerGameLogic', 'CallServerNew', 'CallServerOffline', 'CallServerOld', 'CallServerPacked', 'CameraRotateOnKnock', 'CameraRotateOnVehicle', 'CanBuyItemInBackpack', 'CanCacheEmptyItemKey', 'CanChangeSkyBox', 'CanControlDrone', 'CanCreateMarkByGuid', 'CanCreateMarkToplogo', 'CanDamageByMagicField', 'CanDropItemByGuid', 'CanEnableMikeForChannel', 'CanEnableVoiceForChannel', 'CanEnterStateItemusing', 'CanEnterStateStropConnecting', 'CanJoinChannel', 'CanJurenFlyAirSlash', 'CanLimitFrameInvisible', 'CanMarkRequest', 'CanMikeForVoiceMode', 'CanOpenHeroChoose', 'CanOperateThrusterPack', 'CanPickupItemForCapacity', 'CanRecycleCannon', 'CanRotateCamera', 'CanShowEnemyToplogo', 'CanShowEnemyToplogoBar', 'CanShowRedFrontSight', 'CanShowToplogoBarWhenGetHit', 'CanStartOperateThrusterPack', 'CanStopOperateThrusterPack', 'CanTakeMaxDamage', 'CanUseThrowableWeapon', 'CanVisibleInLightAttackMode', 'CancelAutoFireTimer', 'CancelAutoSprintTimer', 'CancelCheckAimEnemy', 'CancelCheckSwimStateTimer', 'CancelDancingCureState', 'CancelDelayDancingCureTimer', 'CancelDelayEmoteTimer', 'CancelDissolvingOnLeaveExecute', 'CancelDoubleEmoteWallCheckTimer', 'CancelEmoteDetect', 'CancelEmoteState', 'CancelExecuteTarget', 'CancelExposeKilledEnemyTimer', 'CancelFeelHpTimer', 'CancelFeelSurmount1Timer', 'CancelGiveUpTimer', 'CancelGothicScan', 'CancelGrapplingHook', 'CancelHeartbeatResetTimer', 'CancelHelpTeammate', 'CancelHelpedByTeammate', 'CancelHoldTelescopeForFov', 'CancelInspectionTimer', 'CancelKnockDownTeamTimer', 'CancelLongTouceMedTimer', 'CancelLongTouceThrowableTimer', 'CancelLowHpEffectTimer', 'CancelLucianTransfer', 'CancelMissileAttackIndicateTick', 'CancelMovingPlatformChecker', 'CancelRemoveCameraEffectTimer', 'CancelReplayOnUploadCameraTimer', 'CancelS...<cut>
+player.AddLowHpEffect: <bound method CombatAvatarMember.AddLowHpEffect of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.AddLowHpEffect: sig=<Signature (tech_state, material_rank_id, duration)>
+player.AddLowHpEffect: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1072 args=('self', 'tech_state', 'material_rank_id', 'duration')
+player.AddSceneCenterMark: <bound method PlayerCombatAvatarMember.AddSceneCenterMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.AddSceneCenterMark: sig=<Signature (mark_id)>
+player.AddSceneCenterMark: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=708 args=('self', 'mark_id')
+player.AdjustBombEffectPathPitch: <bound method PlayerCombatAvatarMember.AdjustBombEffectPathPitch of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.AdjustBombEffectPathPitch: sig=<Signature (camera_pitch=None)>
+player.AdjustBombEffectPathPitch: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1809 args=('self', 'camera_pitch')
+player.AdjustBombEffectPathStartPos: <bound method PlayerCombatAvatarMember.AdjustBombEffectPathStartPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.AdjustBombEffectPathStartPos: sig=<Signature ()>
+player.AdjustBombEffectPathStartPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1858 args=('self',)
+player.AutoMarkItem: <bound method PlayerCombatAvatarMember.AutoMarkItem of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.AutoMarkItem: sig=<Signature (combatitem)>
+player.AutoMarkItem: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=572 args=('self', 'combatitem')
+player.CanChangeSkyBox: <bound method PlayerCombatAvatarMember.CanChangeSkyBox of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanChangeSkyBox: sig=<Signature ()>
+player.CanChangeSkyBox: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_env.py' first=24 args=('self',)
+player.CanCreateMarkByGuid: <bound method PlayerCombatAvatarMember.CanCreateMarkByGuid of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanCreateMarkByGuid: sig=<Signature (guid, *args, **kwargs)>
+player.CanCreateMarkByGuid: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=516 args=('self', 'guid')
+player.CanCreateMarkToplogo: <bound method PlayerCombatAvatarMember.CanCreateMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanCreateMarkToplogo: sig=<Signature ()>
+player.CanCreateMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=315 args=('self',)
+player.CanLimitFrameInvisible: <bound method CombatAvatarMember.CanLimitFrameInvisible of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanLimitFrameInvisible: sig=<Signature (combat_team_id)>
+player.CanLimitFrameInvisible: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=228 args=('self', 'combat_team_id')
+player.CanMarkRequest: <bound method PlayerCombatAvatarMember.CanMarkRequest of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanMarkRequest: sig=<Signature ()>
+player.CanMarkRequest: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=231 args=('self',)
+player.CanShowEnemyToplogo: <bound method CombatAvatarMember.CanShowEnemyToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanShowEnemyToplogo: sig=<Signature ()>
+player.CanShowEnemyToplogo: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=575 args=('self',)
+player.CanShowEnemyToplogoBar: <bound method CombatAvatarMember.CanShowEnemyToplogoBar of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanShowEnemyToplogoBar: sig=<Signature ()>
+player.CanShowEnemyToplogoBar: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=578 args=('self',)
+player.CanShowToplogoBarWhenGetHit: <bound method CombatAvatarMember.CanShowToplogoBarWhenGetHit of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanShowToplogoBarWhenGetHit: sig=<Signature ()>
+player.CanShowToplogoBarWhenGetHit: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_snare.py' first=30 args=('self',)
+player.CanVisibleInLightAttackMode: <bound method PlayerCombatAvatarMember.CanVisibleInLightAttackMode of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CanVisibleInLightAttackMode: sig=<Signature (avatar)>
+player.CanVisibleInLightAttackMode: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2967 args=('self', 'avatar')
+player.CancelExposeKilledEnemyTimer: <bound method CombatAvatarMember.CancelExposeKilledEnemyTimer of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CancelExposeKilledEnemyTimer: sig=<Signature ()>
+player.CancelExposeKilledEnemyTimer: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=525 args=('self',)
+player.CancelFeelHpTimer: <bound method CombatAvatarMember.CancelFeelHpTimer of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CancelFeelHpTimer: sig=<Signature ()>
+player.CancelFeelHpTimer: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1006 args=('self',)
+player.CancelLowHpEffectTimer: <bound method CombatAvatarMember.CancelLowHpEffectTimer of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CancelLowHpEffectTimer: sig=<Signature ()>
+player.CancelLowHpEffectTimer: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1011 args=('self',)
+player.CancelScaleEffectTimer: <bound method PlayerCombatAvatarMember.CancelScaleEffectTimer of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CancelScaleEffectTimer: sig=<Signature ()>
+player.CancelScaleEffectTimer: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_effect.py' first=34 args=('self',)
+player.ChangeMarkOpacityForAds: <bound method PlayerCombatAvatarMember.ChangeMarkOpacityForAds of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ChangeMarkOpacityForAds: sig=<Signature (enter)>
+player.ChangeMarkOpacityForAds: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=591 args=('self', 'enter')
+player.ChangeMarkOpacityForRealAds: <bound method PlayerCombatAvatarMember.ChangeMarkOpacityForRealAds of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ChangeMarkOpacityForRealAds: sig=<Signature (enter)>
+player.ChangeMarkOpacityForRealAds: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=602 args=('self', 'enter')
+player.ChangePoseType: <bound method PlayerCombatAvatarMember.ChangePoseType of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ChangePoseType: sig=<Signature (pose_type)>
+player.ChangePoseType: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=450 args=('self', 'pose_type')
+player.CheckAutoOpenSupplyBox: <bound method PlayerCombatAvatarMember.CheckAutoOpenSupplyBox of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CheckAutoOpenSupplyBox: sig=<Signature (entity)>
+player.CheckAutoOpenSupplyBox: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=1216 args=('self', 'entity')
+player.CheckSuitableExecuteTargetPos: <bound method PlayerCombatAvatarMember.CheckSuitableExecuteTargetPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CheckSuitableExecuteTargetPos: sig=<Signature (target_id)>
+player.CheckSuitableExecuteTargetPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_execute.py' first=963 args=('self', 'target_id')
+player.CheckUavEnemyPosValid: <bound method CombatAvatarMember.CheckUavEnemyPosValid of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CheckUavEnemyPosValid: sig=<Signature (pos)>
+player.CheckUavEnemyPosValid: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=112 args=('self', 'pos')
+player.CheckUpdatePosRecursively: <bound method PlayerCombatAvatar.CheckUpdatePosRecursively of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CheckUpdatePosRecursively: sig=<Signature (x, y, z)>
+player.CheckUpdatePosRecursively: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=328 args=('self', 'x', 'y', 'z')
+player.ClearLowHpEffect: <bound method CombatAvatarMember.ClearLowHpEffect of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ClearLowHpEffect: sig=<Signature (tech_state, material_rank_id)>
+player.ClearLowHpEffect: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1064 args=('self', 'tech_state', 'material_rank_id')
+player.ClientAdjustPosition: <bound method PlayerCombatAvatarMember.ClientAdjustPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ClientAdjustPosition: sig=<Signature (pos)>
+player.ClientAdjustPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=373 args=('self', 'pos')
+player.CreateCommonMarkToplogo: <bound method PlayerCombatAvatarMember.CreateCommonMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CreateCommonMarkToplogo: sig=<Signature (mark_id, mark_info)>
+player.CreateCommonMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=444 args=('self', 'mark_id', 'mark_info')
+player.CreateCommonMarkToplogoMapOnly: <bound method PlayerCombatAvatarMember.CreateCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CreateCommonMarkToplogoMapOnly: sig=<Signature (mark_id, mark_info)>
+player.CreateCommonMarkToplogoMapOnly: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=519 args=('self', 'mark_id', 'mark_info')
+player.CreateCommonMarkToplogoSceneOnly: <bound method PlayerCombatAvatarMember.CreateCommonMarkToplogoSceneOnly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CreateCommonMarkToplogoSceneOnly: sig=<Signature (mark_id, mark_info)>
+player.CreateCommonMarkToplogoSceneOnly: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=549 args=('self', 'mark_id', 'mark_info')
+player.CreateMarkToplogo: <bound method PlayerCombatAvatarMember.CreateMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CreateMarkToplogo: sig=<Signature (pos, slot, mark_type, guid, extra_info=None)>
+player.CreateMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=327 args=('self', 'pos', 'slot', 'mark_type', 'guid', 'extra_info')
+player.CreateMarkWorldEffect: <bound method PlayerCombatAvatarMember.CreateMarkWorldEffect of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.CreateMarkWorldEffect: sig=<Signature (pos, slot)>
+player.CreateMarkWorldEffect: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=424 args=('self', 'pos', 'slot')
+player.DealForAdsMarkPos: <bound method PlayerCombatAvatarMember.DealForAdsMarkPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DealForAdsMarkPos: sig=<Signature (is_ads)>
+player.DealForAdsMarkPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1596 args=('self', 'is_ads')
+player.DealScatterOffsetByTalent: <bound method PlayerCombatAvatarMember.DealScatterOffsetByTalent of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DealScatterOffsetByTalent: sig=<Signature (scatter_offset)>
+player.DealScatterOffsetByTalent: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_talent.py' first=54 args=('self', 'scatter_offset')
+player.DebugDisableDumpPlayerPos: <bound method PlayerCombatAvatarMember.DebugDisableDumpPlayerPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DebugDisableDumpPlayerPos: sig=<Signature ()>
+player.DebugDisableDumpPlayerPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1980 args=('self',)
+player.DebugDumpPlayerPosOnTick: <bound method PlayerCombatAvatarMember.DebugDumpPlayerPosOnTick of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DebugDumpPlayerPosOnTick: sig=<Signature (dt)>
+player.DebugDumpPlayerPosOnTick: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1983 args=('self', 'dt')
+player.DebugEnableDumpPlayerPos: <bound method PlayerCombatAvatarMember.DebugEnableDumpPlayerPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DebugEnableDumpPlayerPos: sig=<Signature ()>
+player.DebugEnableDumpPlayerPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1976 args=('self',)
+player.DelAutoMarkItem: <bound method PlayerCombatAvatarMember.DelAutoMarkItem of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DelAutoMarkItem: sig=<Signature (combatitem)>
+player.DelAutoMarkItem: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=580 args=('self', 'combatitem')
+player.DelSceneCenterMark: <bound method PlayerCombatAvatarMember.DelSceneCenterMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DelSceneCenterMark: sig=<Signature (mark_id)>
+player.DelSceneCenterMark: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=715 args=('self', 'mark_id')
+player.DestroyAllMark: <bound method PlayerCombatAvatarMember.DestroyAllMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyAllMark: sig=<Signature ()>
+player.DestroyAllMark: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=321 args=('self',)
+player.DestroyAllMarkToplogo: <bound method PlayerCombatAvatarMember.DestroyAllMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyAllMarkToplogo: sig=<Signature ()>
+player.DestroyAllMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=183 args=('self',)
+player.DestroyAllMarkWorldEffect: <bound method PlayerCombatAvatarMember.DestroyAllMarkWorldEffect of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyAllMarkWorldEffect: sig=<Signature ()>
+player.DestroyAllMarkWorldEffect: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=439 args=('self',)
+player.DestroyCommonMarkToplogo: <bound method PlayerCombatAvatarMember.DestroyCommonMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyCommonMarkToplogo: sig=<Signature (mark_id)>
+player.DestroyCommonMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=477 args=('self', 'mark_id')
+player.DestroyCommonMarkToplogoMapOnly: <bound method PlayerCombatAvatarMember.DestroyCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyCommonMarkToplogoMapOnly: sig=<Signature (mark_id)>
+player.DestroyCommonMarkToplogoMapOnly: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=534 args=('self', 'mark_id')
+player.DestroyCommonMarkToplogoSceneOnly: <bound method PlayerCombatAvatarMember.DestroyCommonMarkToplogoSceneOnly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyCommonMarkToplogoSceneOnly: sig=<Signature (mark_id)>
+player.DestroyCommonMarkToplogoSceneOnly: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=573 args=('self', 'mark_id')
+player.DestroyMarkToplogo: <bound method PlayerCombatAvatarMember.DestroyMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyMarkToplogo: sig=<Signature (slot, mark_type, guid)>
+player.DestroyMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=412 args=('self', 'slot', 'mark_type', 'guid')
+player.DestroyMarkWorldEffect: <bound method PlayerCombatAvatarMember.DestroyMarkWorldEffect of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyMarkWorldEffect: sig=<Signature (slot)>
+player.DestroyMarkWorldEffect: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=432 args=('self', 'slot')
+player.DestroyReconDroneMarkFrame: <bound method CombatAvatarMember.DestroyReconDroneMarkFrame of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroyReconDroneMarkFrame: sig=<Signature ()>
+player.DestroyReconDroneMarkFrame: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=47 args=('self',)
+player.DestroySelfPosMarkTopLogo: <bound method PlayerCombatAvatarMember.DestroySelfPosMarkTopLogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DestroySelfPosMarkTopLogo: sig=<Signature ()>
+player.DestroySelfPosMarkTopLogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=195 args=('self',)
+player.DetectVisibleTargetInEmote: <bound method PlayerCombatAvatarMember.DetectVisibleTargetInEmote of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DetectVisibleTargetInEmote: sig=<Signature ()>
+player.DetectVisibleTargetInEmote: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_emote.py' first=713 args=('self',)
+player.DisableInvisibleFrameLimit: <bound method CombatAvatarMember.DisableInvisibleFrameLimit of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DisableInvisibleFrameLimit: sig=<Signature ()>
+player.DisableInvisibleFrameLimit: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=236 args=('self',)
+player.DoAutoMarkItem: <bound method PlayerCombatAvatarMember.DoAutoMarkItem of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DoAutoMarkItem: sig=<Signature (combatitem)>
+player.DoAutoMarkItem: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=588 args=('self', 'combatitem')
+player.DoOpenPickUpBoxPC: <bound method PlayerCombatAvatarMember.DoOpenPickUpBoxPC of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DoOpenPickUpBoxPC: sig=<Signature ()>
+player.DoOpenPickUpBoxPC: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=363 args=('self',)
+player.DrawEnemyReconMarkFrames: <bound method PlayerCombatAvatarMember.DrawEnemyReconMarkFrames of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DrawEnemyReconMarkFrames: sig=<Signature (*args)>
+player.DrawEnemyReconMarkFrames: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=222 args=('self',)
+player.DrawReconDroneMarkFrame: <bound method CombatAvatarMember.DrawReconDroneMarkFrame of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.DrawReconDroneMarkFrame: sig=<Signature ()>
+player.DrawReconDroneMarkFrame: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=42 args=('self',)
+player.ENABLE_CHANGE_SKYBOX: False type=<class 'bool'>
+player.EndAttack_boxing_melee_spell: <bound method PlayerCombatAvatarMember.EndAttack_boxing_melee_spell of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.EndAttack_boxing_melee_spell: sig=<Signature (spell_id, spell_code)>
+player.EndAttack_boxing_melee_spell: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4479 args=('self', 'spell_id', 'spell_code')
+player.ExposeKilledTeamEnemyPos: <bound method CombatAvatarMember.ExposeKilledTeamEnemyPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ExposeKilledTeamEnemyPos: sig=<Signature (info)>
+player.ExposeKilledTeamEnemyPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=530 args=('self', 'info')
+player.ExposeKilledTeamEnemyPosTick: <bound method CombatAvatarMember.ExposeKilledTeamEnemyPosTick of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ExposeKilledTeamEnemyPosTick: sig=<Signature (info)>
+player.ExposeKilledTeamEnemyPosTick: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=540 args=('self', 'info')
+player.ExposeKnockDownTeamPos: <bound method CombatAvatarMember.ExposeKnockDownTeamPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ExposeKnockDownTeamPos: sig=<Signature (info)>
+player.ExposeKnockDownTeamPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=549 args=('self', 'info')
+player.ExposeKnockDownTeamPosTick: <bound method CombatAvatarMember.ExposeKnockDownTeamPosTick of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ExposeKnockDownTeamPosTick: sig=<Signature (info)>
+player.ExposeKnockDownTeamPosTick: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=559 args=('self', 'info')
+player.FeelLowHpEnemyTick: <bound method CombatAvatarMember.FeelLowHpEnemyTick of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.FeelLowHpEnemyTick: sig=<Signature (param)>
+player.FeelLowHpEnemyTick: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1038 args=('self', 'param')
+player.FixPositionForCharctrlOverlap: <bound method PlayerCombatAvatarMember.FixPositionForCharctrlOverlap of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.FixPositionForCharctrlOverlap: sig=<Signature ()>
+player.FixPositionForCharctrlOverlap: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1178 args=('self',)
+player.GetBombPathEffectLocalStartPos: <bound method PlayerCombatAvatarMember.GetBombPathEffectLocalStartPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetBombPathEffectLocalStartPos: sig=<Signature (start_pos, hardpoint)>
+player.GetBombPathEffectLocalStartPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1750 args=('self', 'start_pos', 'hardpoint')
+player.GetCalculationLevelName: <bound method PlayerCombatAvatarMember.GetCalculationLevelName of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetCalculationLevelName: sig=<Signature ()>
+player.GetCalculationLevelName: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_calculation.py' first=62 args=('self',)
+player.GetCombatTeamMarkPosition: <bound method PlayerCombatAvatarMember.GetCombatTeamMarkPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetCombatTeamMarkPosition: sig=<Signature ()>
+player.GetCombatTeamMarkPosition: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=223 args=('self',)
+player.GetCommonMarkInfo: <bound method PlayerCombatAvatarMember.GetCommonMarkInfo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetCommonMarkInfo: sig=<Signature (mark_id)>
+player.GetCommonMarkInfo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=484 args=('self', 'mark_id')
+player.GetCommonMarkToplogo: <bound method PlayerCombatAvatarMember.GetCommonMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetCommonMarkToplogo: sig=<Signature (mark_id)>
+player.GetCommonMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=487 args=('self', 'mark_id')
+player.GetCurHighPriorityWeapon: <bound method CombatAvatarMember.GetCurHighPriorityWeapon of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetCurHighPriorityWeapon: sig=<Signature ()>
+player.GetCurHighPriorityWeapon: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_backpack.py' first=175 args=('self',)
+player.GetDamageTextBulletDataId: <bound method PlayerCombatAvatarMember.GetDamageTextBulletDataId of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetDamageTextBulletDataId: sig=<Signature (result, caster, damage_data)>
+player.GetDamageTextBulletDataId: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1290 args=('self', 'result', 'caster', 'damage_data')
+player.GetDamageTextColor: <bound method PlayerCombatAvatarMember.GetDamageTextColor of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetDamageTextColor: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+player.GetDamageTextColor: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1271 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+player.GetDamageTextOffPos: <bound method PlayerCombatAvatarMember.GetDamageTextOffPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetDamageTextOffPos: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+player.GetDamageTextOffPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1324 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+player.GetDamageTextOffset: <bound method PlayerCombatAvatarMember.GetDamageTextOffset of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetDamageTextOffset: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+player.GetDamageTextOffset: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1328 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+player.GetDamageTextWeapon: <bound method PlayerCombatAvatarMember.GetDamageTextWeapon of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetDamageTextWeapon: sig=<Signature (result, caster, damage_data)>
+player.GetDamageTextWeapon: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1279 args=('self', 'result', 'caster', 'damage_data')
+player.GetDroneInitPos: <bound method PlayerCombatAvatarMember.GetDroneInitPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetDroneInitPos: sig=<Signature (item=None, cache_pos=False)>
+player.GetDroneInitPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=133 args=('self', 'item', 'cache_pos')
+player.GetExecuteUpdatePosType: <bound method CombatAvatarMember.GetExecuteUpdatePosType of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetExecuteUpdatePosType: sig=<Signature (armed_execute_item_id)>
+player.GetExecuteUpdatePosType: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_execute.py' first=62 args=('self', 'armed_execute_item_id')
+player.GetFireWallPlacePosition: <bound method CombatAvatarMember.GetFireWallPlacePosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetFireWallPlacePosition: sig=<Signature (proto)>
+player.GetFireWallPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2107 args=('self', 'proto')
+player.GetFireWallPlacePositionH: <bound method CombatAvatarMember.GetFireWallPlacePositionH of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetFireWallPlacePositionH: sig=<Signature (proto)>
+player.GetFireWallPlacePositionH: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2063 args=('self', 'proto')
+player.GetFireWallPlacePositionV: <bound method CombatAvatarMember.GetFireWallPlacePositionV of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetFireWallPlacePositionV: sig=<Signature (proto)>
+player.GetFireWallPlacePositionV: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2056 args=('self', 'proto')
+player.GetInHouseName: <bound method CombatAvatarMember.GetInHouseName of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetInHouseName: sig=<Signature ()>
+player.GetInHouseName: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_house_detector.py' first=127 args=('self',)
+player.GetMarkPosAndType: <bound method PlayerCombatAvatarMember.GetMarkPosAndType of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetMarkPosAndType: sig=<Signature (mark_type)>
+player.GetMarkPosAndType: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=242 args=('self', 'mark_type')
+player.GetParanoiaPlacePosition: <bound method CombatAvatarMember.GetParanoiaPlacePosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetParanoiaPlacePosition: sig=<Signature (proto)>
+player.GetParanoiaPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=925 args=('self', 'proto')
+player.GetPlacePosition: <bound method CombatAvatarMember.GetPlacePosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetPlacePosition: sig=<Signature (cast_proto)>
+player.GetPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=994 args=('self', 'cast_proto')
+player.GetPrePlaceEntityPosition: <bound method CombatAvatarMember.GetPrePlaceEntityPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetPrePlaceEntityPosition: sig=<Signature (spell_proto)>
+player.GetPrePlaceEntityPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1429 args=('self', 'spell_proto')
+player.GetPrePlaceEntityPosition225: <bound method CombatAvatarMember.GetPrePlaceEntityPosition225 of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetPrePlaceEntityPosition225: sig=<Signature (spell_proto)>
+player.GetPrePlaceEntityPosition225: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1590 args=('self', 'spell_proto')
+player.GetPrePlaceEntityPosition234: <bound method CombatAvatarMember.GetPrePlaceEntityPosition234 of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetPrePlaceEntityPosition234: sig=<Signature (spell_proto)>
+player.GetPrePlaceEntityPosition234: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1832 args=('self', 'spell_proto')
+player.GetPrePlaceEntityPosition510: <bound method CombatAvatarMember.GetPrePlaceEntityPosition225 of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetPrePlaceEntityPosition510: sig=<Signature (spell_proto)>
+player.GetPrePlaceEntityPosition510: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1590 args=('self', 'spell_proto')
+player.GetPrePlaceEntityPosition588: <bound method CombatAvatarMember.GetPrePlaceEntityPosition588 of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetPrePlaceEntityPosition588: sig=<Signature (spell_proto)>
+player.GetPrePlaceEntityPosition588: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1729 args=('self', 'spell_proto')
+player.GetSmartFPos_InteractiveUIAction: <bound method PlayerCombatAvatarMember.GetSmartFPos_InteractiveUIAction of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetSmartFPos_InteractiveUIAction: sig=<Signature ()>
+player.GetSmartFPos_InteractiveUIAction: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=1992 args=('self',)
+player.GetSmartFPos_PickUp: <bound method PlayerCombatAvatarMember.GetSmartFPos_PickUp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetSmartFPos_PickUp: sig=<Signature ()>
+player.GetSmartFPos_PickUp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=1948 args=('self',)
+player.GetTacticalColorLevel: <bound method CombatAvatarMember.GetTacticalColorLevel of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetTacticalColorLevel: sig=<Signature ()>
+player.GetTacticalColorLevel: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1097 args=('self',)
+player.GetTacticalLevelColorOpacity: <bound method CombatAvatarMember.GetTacticalLevelColorOpacity of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetTacticalLevelColorOpacity: sig=<Signature (is_bg=False)>
+player.GetTacticalLevelColorOpacity: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1111 args=('self', 'is_bg')
+player.GetTargetDamageTextWorldPosition: <bound method PlayerCombatAvatarMember.GetTargetDamageTextWorldPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetTargetDamageTextWorldPosition: sig=<Signature (target)>
+player.GetTargetDamageTextWorldPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1253 args=('self', 'target')
+player.GetTeammateColorIndex: <bound method CombatAvatarMember.GetTeammateColorIndex of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetTeammateColorIndex: sig=<Signature (teammate_id)>
+player.GetTeammateColorIndex: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=449 args=('self', 'teammate_id')
+player.GetTeammateMarkToplogo: <bound method PlayerCombatAvatarMember.GetTeammateMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.GetTeammateMarkToplogo: sig=<Signature (mark_guid)>
+player.GetTeammateMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=496 args=('self', 'mark_guid')
+player.HAS_TOPLOGO: False type=<class 'bool'>
+player.HasCommonMarkTopLogo: <bound method PlayerCombatAvatarMember.HasCommonMarkTopLogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HasCommonMarkTopLogo: sig=<Signature (mark_id)>
+player.HasCommonMarkTopLogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=481 args=('self', 'mark_id')
+player.HasTeammateMarkToplogo: <bound method PlayerCombatAvatarMember.HasTeammateMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HasTeammateMarkToplogo: sig=<Signature (mark_guid)>
+player.HasTeammateMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=490 args=('self', 'mark_guid')
+player.HideAirdropMarkToplogo: <bound method PlayerCombatAvatarMember.HideAirdropMarkToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HideAirdropMarkToplogo: sig=<Signature (guid)>
+player.HideAirdropMarkToplogo: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=403 args=('self', 'guid')
+player.HideAllCommonMarkToplogoSceneOnly: <bound method PlayerCombatAvatarMember.HideAllCommonMarkToplogoSceneOnly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HideAllCommonMarkToplogoSceneOnly: sig=<Signature (is_hide, hide_reason)>
+player.HideAllCommonMarkToplogoSceneOnly: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=582 args=('self', 'is_hide', 'hide_reason')
+player.HideAllEnemyToplogo: <bound method PlayerCombatAvatarMember.HideAllEnemyToplogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HideAllEnemyToplogo: sig=<Signature ()>
+player.HideAllEnemyToplogo: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=756 args=('self',)
+player.HideCommonMarkToplogoMapOnly: <bound method PlayerCombatAvatarMember.HideCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HideCommonMarkToplogoMapOnly: sig=<Signature (mark_id, hidden_reason)>
+player.HideCommonMarkToplogoMapOnly: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=539 args=('self', 'mark_id', 'hidden_reason')
+player.HideEnemyTopLogo: <bound method CombatAvatarMember.HideEnemyTopLogo of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HideEnemyTopLogo: sig=<Signature ()>
+player.HideEnemyTopLogo: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=999 args=('self',)
+player.HideTeammateToplogoWithReason: <bound method PlayerCombatAvatarMember.HideTeammateToplogoWithReason of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HideTeammateToplogoWithReason: sig=<Signature (reason, is_hide)>
+player.HideTeammateToplogoWithReason: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_calculation.py' first=103 args=('self', 'reason', 'is_hide')
+player.HitByBoxing: <bound method PlayerCombatAvatarMember.HitByBoxing of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HitByBoxing: sig=<Signature (caster_pos, target_list, target_yaw)>
+player.HitByBoxing: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=2054 args=('self', 'caster_pos', 'target_list', 'target_yaw')
+player.HitByBoxingMelee: <bound method PlayerCombatAvatarMember.HitByBoxingMelee of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.HitByBoxingMelee: sig=<Signature ()>
+player.HitByBoxingMelee: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=2068 args=('self',)
+player.InitTeammateMark: <bound method PlayerCombatAvatarMember.InitTeammateMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.InitTeammateMark: sig=<Signature ()>
+player.InitTeammateMark: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=145 args=('self',)
+player.IsAccumulateWithClassicDamageTextMode: <bound method PlayerCombatAvatarMember.IsAccumulateWithClassicDamageTextMode of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.IsAccumulateWithClassicDamageTextMode: sig=<Signature ()>
+player.IsAccumulateWithClassicDamageTextMode: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1237 args=('self',)
+player.IsAmmoBox: False type=<class 'bool'>
+player.IsBarrieCannon: False type=<class 'bool'>
+player.IsContinuousDamageTextMode: <bound method PlayerCombatAvatarMember.IsContinuousDamageTextMode of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.IsContinuousDamageTextMode: sig=<Signature ()>
+player.IsContinuousDamageTextMode: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1231 args=('self',)
+player.IsInChangeSkyBoxStage: <bound method PlayerCombatAvatarMember.IsInChangeSkyBoxStage of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.IsInChangeSkyBoxStage: sig=<Signature ()>
+player.IsInChangeSkyBoxStage: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_env.py' first=32 args=('self',)
+player.IsMoveRecoverHpArmorActive: <bound method CombatAvatarMember.IsMoveRecoverHpArmorActive of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.IsMoveRecoverHpArmorActive: sig=<Signature ()>
+player.IsMoveRecoverHpArmorActive: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=519 args=('self',)
+player.IsNavigateBarrieCannon: False type=<class 'bool'>
+player.IsOilbox: False type=<class 'bool'>
+player.IsPosterBoard: False type=<class 'bool'>
+player.IsSafeBox: False type=<class 'bool'>
+player.IsSearchContractBox: False type=<class 'bool'>
+player.IsVisible: True type=<class 'bool'>
+player.MarkAutoPickupItemTime: <bound method PlayerCombatAvatarMember.MarkAutoPickupItemTime of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkAutoPickupItemTime: sig=<Signature (item_id, item_ids=None)>
+player.MarkAutoPickupItemTime: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=497 args=('self', 'item_id', 'item_ids')
+player.MarkCommonEntityImp: <bound method PlayerCombatAvatarMember.MarkCommonEntityImp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkCommonEntityImp: sig=<Signature (entity_guid)>
+player.MarkCommonEntityImp: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=288 args=('self', 'entity_guid')
+player.MarkJurenFlyAirSlashActive: <bound method CombatAvatarMember.MarkJurenFlyAirSlashActive of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkJurenFlyAirSlashActive: sig=<Signature ()>
+player.MarkJurenFlyAirSlashActive: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=446 args=('self',)
+player.MarkOffline: <bound method PlayerCombatAvatarMember.MarkOffline of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkOffline: sig=<Signature (pos)>
+player.MarkOffline: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=299 args=('self', 'pos')
+player.MarkOrCancelMarkPos: <bound method PlayerCombatAvatarMember.MarkOrCancelMarkPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkOrCancelMarkPos: sig=<Signature ()>
+player.MarkOrCancelMarkPos: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=680 args=('self',)
+player.MarkRequest: <bound method PlayerCombatAvatarMember.MarkRequest of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkRequest: sig=<Signature (mark_type=1)>
+player.MarkRequest: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=251 args=('self', 'mark_type')
+player.MarkRequestDoubleClick: <bound method PlayerCombatAvatarMember.MarkRequestDoubleClick of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkRequestDoubleClick: sig=<Signature ()>
+player.MarkRequestDoubleClick: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_help.py' first=365 args=('self',)
+player.MarkTargetRequest: <bound method PlayerCombatAvatarMember.MarkTargetRequest of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.MarkTargetRequest: sig=<Signature (target_id, mark_type=15)>
+player.MarkTargetRequest: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=281 args=('self', 'target_id', 'mark_type')
+player.NavigatorCannonToPosition: <bound method PlayerCombatAvatarMember.NavigatorCannonToPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.NavigatorCannonToPosition: sig=<Signature ()>
+player.NavigatorCannonToPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2860 args=('self',)
+player.NeedShowCriticalDamageText: <bound method PlayerCombatAvatarMember.NeedShowCriticalDamageText of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.NeedShowCriticalDamageText: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+player.NeedShowCriticalDamageText: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1331 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+player.OnAddAdsMark: <bound method CombatAvatarMember.OnAddAdsMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnAddAdsMark: sig=<Signature (buff_proto)>
+player.OnAddAdsMark: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=627 args=('self', 'buff_proto')
+player.OnAddClientUavMark: <bound method PlayerCombatAvatarMember.OnAddClientUavMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnAddClientUavMark: sig=<Signature (buff_proto)>
+player.OnAddClientUavMark: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=824 args=('self', 'buff_proto')
+player.OnAddRecoverHpBuff: <bound method CombatAvatarMember.OnAddRecoverHpBuff of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnAddRecoverHpBuff: sig=<Signature (buff_proto)>
+player.OnAddRecoverHpBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=546 args=('self', 'buff_proto')
+player.OnAddSelfMarkBuff: <bound method CombatAvatarMember.OnAddSelfMarkBuff of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnAddSelfMarkBuff: sig=<Signature (buff_proto)>
+player.OnAddSelfMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=280 args=('self', 'buff_proto')
+player.OnAddTeamMarkBuff: <bound method CombatAvatarMember.OnAddTeamMarkBuff of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnAddTeamMarkBuff: sig=<Signature (buff_proto)>
+player.OnAddTeamMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=302 args=('self', 'buff_proto')
+player.OnBackToTotemPosition: <bound method PlayerCombatAvatarMember.OnBackToTotemPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnBackToTotemPosition: sig=<Signature ()>
+player.OnBackToTotemPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4593 args=('self',)
+player.OnCursorVisibleChangedForSpell: <bound method PlayerCombatAvatarMember.OnCursorVisibleChangedForSpell of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnCursorVisibleChangedForSpell: sig=<Signature (visible)>
+player.OnCursorVisibleChangedForSpell: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4588 args=('self', 'visible')
+player.OnEnterGunRefit_HideTopLogos: <bound method PlayerCombatAvatarShootingRange.OnEnterGunRefit_HideTopLogos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnEnterGunRefit_HideTopLogos: sig=<Signature ()>
+player.OnEnterGunRefit_HideTopLogos: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=344 args=('self',)
+player.OnExitGunRefit_ShowTopLogos: <bound method PlayerCombatAvatarShootingRange.OnExitGunRefit_ShowTopLogos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnExitGunRefit_ShowTopLogos: sig=<Signature ()>
+player.OnExitGunRefit_ShowTopLogos: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=360 args=('self',)
+player.OnGainTalentFeelLowHp: <bound method CombatAvatarMember.OnGainTalentFeelLowHp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnGainTalentFeelLowHp: sig=<Signature ()>
+player.OnGainTalentFeelLowHp: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1016 args=('self',)
+player.OnGameStateChangeForSkyBox: <bound method PlayerCombatAvatarMember.OnGameStateChangeForSkyBox of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnGameStateChangeForSkyBox: sig=<Signature (old_state, new_state)>
+player.OnGameStateChangeForSkyBox: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_env.py' first=45 args=('self', 'old_state', 'new_state')
+player.OnHolographicMarkChange: <bound method PlayerCombatAvatarMember.OnHolographicMarkChange of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnHolographicMarkChange: sig=<Signature (key, old, new)>
+player.OnHolographicMarkChange: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1885 args=('self', 'key', 'old', 'new')
+player.OnJumpBoxJump: <bound method PlayerCombatAvatarMember.OnJumpBoxJump of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnJumpBoxJump: sig=<Signature (jumpbox_normal=<0.0000, 1.0000, 0.0000>, can_second_jump=False, jump_params=())>
+player.OnJumpBoxJump: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=916 args=('self', 'jumpbox_normal', 'can_second_jump', 'jump_params')
+player.OnLoseTalentFeelLowHp: <bound method CombatAvatarMember.OnLoseTalentFeelLowHp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnLoseTalentFeelLowHp: sig=<Signature ()>
+player.OnLoseTalentFeelLowHp: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1030 args=('self',)
+player.OnLoseTalentMoveRecoverHpArmor: <bound method CombatAvatarMember.OnLoseTalentMoveRecoverHpArmor of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnLoseTalentMoveRecoverHpArmor: sig=<Signature ()>
+player.OnLoseTalentMoveRecoverHpArmor: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=989 args=('self',)
+player.OnMarkChangePCPickUp: <bound method PlayerCombatAvatarMember.OnMarkChangePCPickUp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnMarkChangePCPickUp: sig=<Signature (pos, slot, mark_type, guid, extra_info=None, member_id='')>
+player.OnMarkChangePCPickUp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=393 args=('self', 'pos', 'slot', 'mark_type', 'guid', 'extra_info', 'member_id')
+player.OnMarkMissionCancel: <bound method PlayerCombatAvatarMember.OnMarkMissionCancel of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnMarkMissionCancel: sig=<Signature (mark_id)>
+player.OnMarkMissionCancel: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=649 args=('self', 'mark_id')
+player.OnMarkMissionConfirm: <bound method PlayerCombatAvatarMember.OnMarkMissionConfirm of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnMarkMissionConfirm: sig=<Signature (mark_id)>
+player.OnMarkMissionConfirm: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=645 args=('self', 'mark_id')
+player.OnMarkRespondDotAdd: <bound method PlayerCombatAvatarMember.OnMarkRespondDotAdd of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnMarkRespondDotAdd: sig=<Signature (mark_guid, avt_id)>
+player.OnMarkRespondDotAdd: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=502 args=('self', 'mark_guid', 'avt_id')
+player.OnMarkRespondDotRemove: <bound method PlayerCombatAvatarMember.OnMarkRespondDotRemove of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnMarkRespondDotRemove: sig=<Signature (mark_guid, avt_id)>
+player.OnMarkRespondDotRemove: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=509 args=('self', 'mark_guid', 'avt_id')
+player.OnParaStageChangeForSkyBox: <bound method PlayerCombatAvatarMember.OnParaStageChangeForSkyBox of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnParaStageChangeForSkyBox: sig=<Signature (state)>
+player.OnParaStageChangeForSkyBox: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_env.py' first=50 args=('self', 'state')
+player.OnPerkActivateStatusChange_MoveRecoverHpArmor: <bound method CombatAvatarMember.OnPerkActivateStatusChange_MoveRecoverHpArmor of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnPerkActivateStatusChange_MoveRecoverHpArmor: sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+player.OnPerkActivateStatusChange_MoveRecoverHpArmor: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=942 args=('self', 'talent_id', 'perk_activate', 'is_main_player', 'old')
+player.OnPlayerParaStageChangedForMark: <bound method PlayerCombatAvatarMember.OnPlayerParaStageChangedForMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnPlayerParaStageChangedForMark: sig=<Signature (para_stage)>
+player.OnPlayerParaStageChangedForMark: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=617 args=('self', 'para_stage')
+player.OnPoseTypeChange: <bound method PlayerCombatAvatarMember.OnPoseTypeChange of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnPoseTypeChange: sig=<Signature ()>
+player.OnPoseTypeChange: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=468 args=('self',)
+player.OnReconDroneMarksUpdate: <bound method PlayerCombatAvatarMember.OnReconDroneMarksUpdate of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnReconDroneMarksUpdate: sig=<Signature ()>
+player.OnReconDroneMarksUpdate: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=210 args=('self',)
+player.OnRefreshPickupGroup: <bound method PlayerCombatAvatarMember.OnRefreshPickupGroup of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRefreshPickupGroup: sig=<Signature (is_enter, itementity, check_shoot=True, need_sort=True)>
+player.OnRefreshPickupGroup: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=92 args=('self', 'is_enter', 'itementity', 'check_shoot', 'need_sort')
+player.OnRefreshPickupItem: <bound method PlayerCombatAvatarMember.OnRefreshPickupItem of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRefreshPickupItem: sig=<Signature (is_enter, itementity)>
+player.OnRefreshPickupItem: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=132 args=('self', 'is_enter', 'itementity')
+player.OnRefreshPickupItemList: <bound method PlayerCombatAvatarMember.OnRefreshPickupItemList of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRefreshPickupItemList: sig=<Signature (items)>
+player.OnRefreshPickupItemList: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=71 args=('self', 'items')
+player.OnRefreshPickupSquadFightAirDrop: <bound method PlayerCombatAvatarMember.OnRefreshPickupSquadFightAirDrop of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRefreshPickupSquadFightAirDrop: sig=<Signature (is_enter, itementity)>
+player.OnRefreshPickupSquadFightAirDrop: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=153 args=('self', 'is_enter', 'itementity')
+player.OnRefreshPickupUIPC: <bound method PlayerCombatAvatarMember.OnRefreshPickupUIPC of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRefreshPickupUIPC: sig=<Signature ()>
+player.OnRefreshPickupUIPC: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=342 args=('self',)
+player.OnRemoveAdsMark: <bound method CombatAvatarMember.OnRemoveAdsMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRemoveAdsMark: sig=<Signature (buff_proto, buff_guid='')>
+player.OnRemoveAdsMark: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=653 args=('self', 'buff_proto', 'buff_guid')
+player.OnRemoveClientUavMark: <bound method PlayerCombatAvatarMember.OnRemoveClientUavMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRemoveClientUavMark: sig=<Signature (buff_proto, buff_guid='')>
+player.OnRemoveClientUavMark: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=851 args=('self', 'buff_proto', 'buff_guid')
+player.OnRemoveRecoverHpBuff: <bound method CombatAvatarMember.OnRemoveRecoverHpBuff of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRemoveRecoverHpBuff: sig=<Signature (buff_guid)>
+player.OnRemoveRecoverHpBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=569 args=('self', 'buff_guid')
+player.OnRemoveSelfMarkBuff: <bound method CombatAvatarMember.OnRemoveSelfMarkBuff of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRemoveSelfMarkBuff: sig=<Signature (buff_proto)>
+player.OnRemoveSelfMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=291 args=('self', 'buff_proto')
+player.OnRemoveTeamMarkBuff: <bound method CombatAvatarMember.OnRemoveTeamMarkBuff of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnRemoveTeamMarkBuff: sig=<Signature (buff_proto, buff_guid='')>
+player.OnRemoveTeamMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=319 args=('self', 'buff_proto', 'buff_guid')
+player.OnSetPosition: <bound method PlayerCombatAvatar.OnSetPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnSetPosition: sig=<Signature (position)>
+player.OnSetPosition: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=200 args=('self', 'position')
+player.OnSlideWithParkour: <bound method CombatAvatarMember.OnSlideWithParkour of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnSlideWithParkour: sig=<Signature ()>
+player.OnSlideWithParkour: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=104 args=('self',)
+player.OnSlotLoseTalentMoveRecoverHpArmor: <bound method CombatAvatarMember.OnSlotLoseTalentMoveRecoverHpArmor of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnSlotLoseTalentMoveRecoverHpArmor: sig=<Signature ()>
+player.OnSlotLoseTalentMoveRecoverHpArmor: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=932 args=('self',)
+player.OnStateRelationSuccessForPoseType: <bound method PlayerCombatAvatarMember.OnStateRelationSuccessForPoseType of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnStateRelationSuccessForPoseType: sig=<Signature (state)>
+player.OnStateRelationSuccessForPoseType: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=1229 args=('self', 'state')
+player.OnTeammateCureHpBySpell: <bound method PlayerCombatAvatarMember.OnTeammateCureHpBySpell of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnTeammateCureHpBySpell: sig=<Signature (target_id, spell_id, delta_hp)>
+player.OnTeammateCureHpBySpell: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4745 args=('self', 'target_id', 'spell_id', 'delta_hp')
+player.OnTeammateMarkImmediateForReplay: <bound method PlayerCombatAvatarMember.OnTeammateMarkImmediateForReplay of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnTeammateMarkImmediateForReplay: sig=<Signature (mark_guid, old, new, member_id)>
+player.OnTeammateMarkImmediateForReplay: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=702 args=('self', 'mark_guid', 'old', 'new', 'member_id')
+player.OnUpdateGrapplingHookPosition: <bound method CombatAvatarMember.OnUpdateGrapplingHookPosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnUpdateGrapplingHookPosition: sig=<Signature (extra)>
+player.OnUpdateGrapplingHookPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=439 args=('self', 'extra')
+player.OnUpdateMarkToplogoState: <bound method PlayerCombatAvatarMember.OnUpdateMarkToplogoState of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OnUpdateMarkToplogoState: sig=<Signature (logo_name, hit, own_mark=False, mark_type=None, mark_avt_id='', mark_guid='')>
+player.OnUpdateMarkToplogoState: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=660 args=('self', 'logo_name', 'hit', 'own_mark', 'mark_type', 'mark_avt_id', 'mark_guid')
+player.OpenPickUpBox: <bound method PlayerCombatAvatarMember.OpenPickUpBox of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.OpenPickUpBox: sig=<Signature ()>
+player.OpenPickUpBox: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=1965 args=('self',)
+player.PlayerInputHandle_ChangeSkyBoxDown: <bound method PlayerCombatAvatarMember.PlayerInputHandle_ChangeSkyBoxDown of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInputHandle_ChangeSkyBoxDown: sig=<Signature ()>
+player.PlayerInputHandle_ChangeSkyBoxDown: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=413 args=('self',)
+player.PlayerInputHandle_ChangeSkyBoxUp: <bound method PlayerCombatAvatarMember.PlayerInputHandle_ChangeSkyBoxUp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInputHandle_ChangeSkyBoxUp: sig=<Signature ()>
+player.PlayerInputHandle_ChangeSkyBoxUp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=433 args=('self',)
+player.PlayerInputHandle_OnCancelLoadingBar: <bound method PlayerCombatAvatarMember.PlayerInputHandle_OnCancelLoadingBar of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInputHandle_OnCancelLoadingBar: sig=<Signature ()>
+player.PlayerInputHandle_OnCancelLoadingBar: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=569 args=('self',)
+player.PlayerInputHandle_OnClickMark: <bound method PlayerCombatAvatarMember.PlayerInputHandle_OnClickMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInputHandle_OnClickMark: sig=<Signature ()>
+player.PlayerInputHandle_OnClickMark: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=191 args=('self',)
+player.PlayerInputHandle_OnClickMarkDouble: <bound method PlayerCombatAvatarMember.PlayerInputHandle_OnClickMarkDouble of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInputHandle_OnClickMarkDouble: sig=<Signature ()>
+player.PlayerInputHandle_OnClickMarkDouble: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=221 args=('self',)
+player.PlayerInputHandle_OnLongMarkDown: <bound method PlayerCombatAvatarMember.PlayerInputHandle_OnLongMarkDown of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInputHandle_OnLongMarkDown: sig=<Signature ()>
+player.PlayerInputHandle_OnLongMarkDown: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=201 args=('self',)
+player.PlayerInputHandle_OnLongMarkUp: <bound method PlayerCombatAvatarMember.PlayerInputHandle_OnLongMarkUp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInputHandle_OnLongMarkUp: sig=<Signature ()>
+player.PlayerInputHandle_OnLongMarkUp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller_handle.py' first=215 args=('self',)
+player.PlayerInput_ChangeSkyBoxDown: <bound method PlayerCombatAvatarMember.PlayerInput_ChangeSkyBoxDown of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInput_ChangeSkyBoxDown: sig=<Signature ()>
+player.PlayerInput_ChangeSkyBoxDown: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=1519 args=('self',)
+player.PlayerInput_ChangeSkyBoxUp: <bound method PlayerCombatAvatarMember.PlayerInput_ChangeSkyBoxUp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInput_ChangeSkyBoxUp: sig=<Signature ()>
+player.PlayerInput_ChangeSkyBoxUp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=1537 args=('self',)
+player.PlayerInput_MinimapLocatePosition: <bound method PlayerCombatAvatarMember.PlayerInput_MinimapLocatePosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.PlayerInput_MinimapLocatePosition: sig=<Signature ()>
+player.PlayerInput_MinimapLocatePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=931 args=('self',)
+player.ReSetExecutePosition: <bound method PlayerCombatAvatarMember.ReSetExecutePosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ReSetExecutePosition: sig=<Signature (execute_target_id, executor_id)>
+player.ReSetExecutePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_execute.py' first=545 args=('self', 'execute_target_id', 'executor_id')
+player.ReShowCommonMarkToplogoMapOnly: <bound method PlayerCombatAvatarMember.ReShowCommonMarkToplogoMapOnly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ReShowCommonMarkToplogoMapOnly: sig=<Signature (mark_id, hidden_reason)>
+player.ReShowCommonMarkToplogoMapOnly: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=544 args=('self', 'mark_id', 'hidden_reason')
+player.RecordPosResult: <bound method PlayerCombatAvatar.RecordPosResult of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RecordPosResult: sig=<Signature (stamp, x, y, z)>
+player.RecordPosResult: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=292 args=('self', 'stamp', 'x', 'y', 'z')
+player.RecoverHp1090: <bound method PlayerCombatAvatarMember.RecoverHp1090 of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RecoverHp1090: sig=<Signature (effect_id, keep_time)>
+player.RecoverHp1090: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=872 args=('self', 'effect_id', 'keep_time')
+player.RefreshChangeSkyBoxStage: <bound method PlayerCombatAvatarMember.RefreshChangeSkyBoxStage of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshChangeSkyBoxStage: sig=<Signature ()>
+player.RefreshChangeSkyBoxStage: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_env.py' first=54 args=('self',)
+player.RefreshContactOffsetWhenParachute: <bound method ParaPlayerAvatarCommonBase.RefreshContactOffsetWhenParachute of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshContactOffsetWhenParachute: sig=<Signature (is_parachute=False)>
+player.RefreshContactOffsetWhenParachute: code file='gclient/gameplay/logic_base/comps/comp_parachute.py' first=1100 args=('self', 'is_parachute')
+player.RefreshHolographicMark: <bound method PlayerCombatAvatarMember.RefreshHolographicMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshHolographicMark: sig=<Signature ()>
+player.RefreshHolographicMark: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1881 args=('self',)
+player.RefreshJurenFlyFuelDisplayVisible: <bound method CombatAvatarMember.RefreshJurenFlyFuelDisplayVisible of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshJurenFlyFuelDisplayVisible: sig=<Signature ()>
+player.RefreshJurenFlyFuelDisplayVisible: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=199 args=('self',)
+player.RefreshMarkVisibility: <bound method PlayerCombatAvatarMember.RefreshMarkVisibility of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshMarkVisibility: sig=<Signature (_)>
+player.RefreshMarkVisibility: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=654 args=('self', '_')
+player.RefreshPickupData: <bound method PlayerCombatAvatarMember.RefreshPickupData of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshPickupData: sig=<Signature (is_add, combatitem, check_shoot=True, do_sort=True)>
+player.RefreshPickupData: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=370 args=('self', 'is_add', 'combatitem', 'check_shoot', 'do_sort')
+player.RefreshPickupDataAfterPickup: <bound method PlayerCombatAvatarMember.RefreshPickupDataAfterPickup of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshPickupDataAfterPickup: sig=<Signature ()>
+player.RefreshPickupDataAfterPickup: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=415 args=('self',)
+player.RefreshPickupDataList: <bound method PlayerCombatAvatarMember.RefreshPickupDataList of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RefreshPickupDataList: sig=<Signature (combat_item_list, check_shoot=True)>
+player.RefreshPickupDataList: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=401 args=('self', 'combat_item_list', 'check_shoot')
+player.RemoveKilledTeamEnemyPos: <bound method CombatAvatarMember.RemoveKilledTeamEnemyPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RemoveKilledTeamEnemyPos: sig=<Signature ()>
+player.RemoveKilledTeamEnemyPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=536 args=('self',)
+player.RemoveKnockDownTeamPos: <bound method CombatAvatarMember.RemoveKnockDownTeamPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RemoveKnockDownTeamPos: sig=<Signature ()>
+player.RemoveKnockDownTeamPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=555 args=('self',)
+player.ReplyPosResult: <bound method PlayerCombatAvatar.ReplyPosResult of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ReplyPosResult: sig=<Signature (stamp, x, y, z, yaw)>
+player.ReplyPosResult: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=282 args=('self', 'stamp', 'x', 'y', 'z', 'yaw')
+player.RequireRefreshEntityPoseState: <bound method PlayerCombatAvatarMember.RequireRefreshEntityPoseState of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.RequireRefreshEntityPoseState: sig=<Signature (guid)>
+player.RequireRefreshEntityPoseState: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=681 args=('self', 'guid')
+player.ResetPosResult: <bound method PlayerCombatAvatar.ResetPosResult of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ResetPosResult: sig=<Signature (reason='client_create')>
+player.ResetPosResult: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=288 args=('self', 'reason')
+player.ScaleEffectTimer: <bound method PlayerCombatAvatarMember.ScaleEffectTimer of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ScaleEffectTimer: sig=<Signature ()>
+player.ScaleEffectTimer: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_effect.py' first=39 args=('self',)
+player.ServerShowDamageTextEffect: <bound method PlayerCombatAvatarMember.ServerShowDamageTextEffect of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ServerShowDamageTextEffect: sig=<Signature (cur_result)>
+player.ServerShowDamageTextEffect: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1501 args=('self', 'cur_result')
+player.SetAllCameraEffectVisible: <bound method PlayerCombatAvatarMember.SetAllCameraEffectVisible of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.SetAllCameraEffectVisible: sig=<Signature (visible)>
+player.SetAllCameraEffectVisible: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2839 args=('self', 'visible')
+player.SetBombPathEffectOffset: <bound method PlayerCombatAvatarMember.SetBombPathEffectOffset of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.SetBombPathEffectOffset: sig=<Signature (weapon_proto)>
+player.SetBombPathEffectOffset: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1767 args=('self', 'weapon_proto')
+player.SetCharCtrlNeedPosReady: <bound method ParaPlayerAvatarCommonBase.SetCharCtrlNeedPosReady of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.SetCharCtrlNeedPosReady: sig=<Signature (need)>
+player.SetCharCtrlNeedPosReady: code file='gclient/gameplay/logic_base/comps/comp_parachute.py' first=1096 args=('self', 'need')
+player.SetFocusBoxGuid: <bound method PlayerCombatAvatarMember.SetFocusBoxGuid of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.SetFocusBoxGuid: sig=<Signature (guid)>
+player.SetFocusBoxGuid: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_pickup.py' first=357 args=('self', 'guid')
+player.SetSensitivityRuntimeScale: <bound method PlayerCombatAvatarMember.SetSensitivityRuntimeScale of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.SetSensitivityRuntimeScale: sig=<Signature (scale)>
+player.SetSensitivityRuntimeScale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_assist_aim.py' first=115 args=('self', 'scale')
+player.SetSkyBox: <bound method PlayerCombatAvatarMember.SetSkyBox of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.SetSkyBox: sig=<Signature (item_id, sky_box_id)>
+player.SetSkyBox: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_env.py' first=62 args=('self', 'item_id', 'sky_box_id')
+player.ShowClassicDamageText: <bound method PlayerCombatAvatarMember.ShowClassicDamageText of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ShowClassicDamageText: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend, itype=0, screen_offset=None)>
+player.ShowClassicDamageText: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1240 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend', 'itype', 'screen_offset')
+player.ShowContinuousDamageText: <bound method PlayerCombatAvatarMember.ShowContinuousDamageText of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ShowContinuousDamageText: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+player.ShowContinuousDamageText: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1257 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+player.ShowDamageTextByMode: <bound method PlayerCombatAvatarMember.ShowDamageTextByMode of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ShowDamageTextByMode: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+player.ShowDamageTextByMode: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1216 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+player.ShowEnemyTopLogoInRange: <bound method CombatAvatarMember.ShowEnemyTopLogoInRange of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.ShowEnemyTopLogoInRange: sig=<Signature (params)>
+player.ShowEnemyTopLogoInRange: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=695 args=('self', 'params')
+player.StabilizeJuRenLiTiHandPoseAfterFly: <bound method CombatAvatarMember.StabilizeJuRenLiTiHandPoseAfterFly of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.StabilizeJuRenLiTiHandPoseAfterFly: sig=<Signature ()>
+player.StabilizeJuRenLiTiHandPoseAfterFly: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=419 args=('self',)
+player.TOPLOGO_SHOW_POSITION: True type=<class 'bool'>
+player.TryAttack_boxing_melee_spell: <bound method PlayerCombatAvatarMember.TryAttack_boxing_melee_spell of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.TryAttack_boxing_melee_spell: sig=<Signature (spell_id, spell_level, spell_code, extra=None)>
+player.TryAttack_boxing_melee_spell: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=4168 args=('self', 'spell_id', 'spell_level', 'spell_code', 'extra')
+player.TryEnableInvisibleFrameLimit: <bound method CombatAvatarMember.TryEnableInvisibleFrameLimit of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.TryEnableInvisibleFrameLimit: sig=<Signature (frames)>
+player.TryEnableInvisibleFrameLimit: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=231 args=('self', 'frames')
+player.UpdateAllTeammateMark: <bound method PlayerCombatAvatarMember.UpdateAllTeammateMark of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.UpdateAllTeammateMark: sig=<Signature ()>
+player.UpdateAllTeammateMark: code file='gclient/gameplay/logic_base/comps/comp_mark.py' first=626 args=('self',)
+player.UpdateInvisibleAvatarsFrameLimit: <bound method PlayerCombatAvatarMember.UpdateInvisibleAvatarsFrameLimit of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.UpdateInvisibleAvatarsFrameLimit: sig=<Signature (dt)>
+player.UpdateInvisibleAvatarsFrameLimit: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=391 args=('self', 'dt')
+player.UseDroneInitPos: <bound method PlayerCombatAvatarMember.UseDroneInitPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.UseDroneInitPos: sig=<Signature (item=None)>
+player.UseDroneInitPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=191 args=('self', 'item')
+player._ApplySkinPrePlaceEntityScale: <bound method CombatAvatarMember._ApplySkinPrePlaceEntityScale of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._ApplySkinPrePlaceEntityScale: sig=<Signature (place_entity, trans)>
+player._ApplySkinPrePlaceEntityScale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1389 args=('self', 'place_entity', 'trans')
+player._CheckCanAutoMarkItem: <bound method PlayerCombatAvatarMember._CheckCanAutoMarkItem of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._CheckCanAutoMarkItem: sig=<Signature (combatitem)>
+player._CheckCanAutoMarkItem: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=540 args=('self', 'combatitem')
+player._CheckDroneInitPos: <bound method PlayerCombatAvatarMember._CheckDroneInitPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._CheckDroneInitPos: sig=<Signature (cam_pos, target_pos)>
+player._CheckDroneInitPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=118 args=('self', 'cam_pos', 'target_pos')
+player._CheckInvisibleCasterDamage: <bound method CombatAvatarMember._CheckInvisibleCasterDamage of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._CheckInvisibleCasterDamage: sig=<Signature (result, caster, target)>
+player._CheckInvisibleCasterDamage: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=684 args=('self', 'result', 'caster', 'target')
+player._DamageTextEffect: <bound method PlayerCombatAvatarMember._DamageTextEffect of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._DamageTextEffect: sig=<Signature (result, caster, target, damage_data, is_system_damage, is_friend)>
+player._DamageTextEffect: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=1201 args=('self', 'result', 'caster', 'target', 'damage_data', 'is_system_damage', 'is_friend')
+player._GetFireWallPlacePosition: <bound method CombatAvatarMember._GetFireWallPlacePosition of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._GetFireWallPlacePosition: sig=<Signature (max_distance, interval, cur_dir, start_pos, yaw)>
+player._GetFireWallPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2115 args=('self', 'max_distance', 'interval', 'cur_dir', 'start_pos', 'yaw')
+player._GetSpaceGemBeamEffectOffset: <bound method CombatAvatarMember._GetSpaceGemBeamEffectOffset of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._GetSpaceGemBeamEffectOffset: sig=<Signature (position, attach_transform)>
+player._GetSpaceGemBeamEffectOffset: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=675 args=('self', 'position', 'attach_transform')
+player._GetSpaceGemBeamEffectScale: <bound method CombatAvatarMember._GetSpaceGemBeamEffectScale of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._GetSpaceGemBeamEffectScale: sig=<Signature (effect_proto)>
+player._GetSpaceGemBeamEffectScale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=701 args=('self', 'effect_proto')
+player._GetWallWeaponRaiseContext: <bound method PlayerCombatAvatarMember._GetWallWeaponRaiseContext of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._GetWallWeaponRaiseContext: sig=<Signature (model)>
+player._GetWallWeaponRaiseContext: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_wall_weapon_raise.py' first=131 args=('self', 'model')
+player._MarkSlideTimestamp: <bound method PlayerCombatAvatarMember._MarkSlideTimestamp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._MarkSlideTimestamp: sig=<Signature (to_slide)>
+player._MarkSlideTimestamp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=1316 args=('self', 'to_slide')
+player._ParachuteCheckPosReady: <bound method ParaPlayerAvatarCommonBase._ParachuteCheckPosReady of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._ParachuteCheckPosReady: sig=<Signature ()>
+player._ParachuteCheckPosReady: code file='gclient/gameplay/logic_base/comps/comp_parachute.py' first=995 args=('self',)
+player._PlayerCombatAvatarMember__post_component: <bound method PlayerCombatAvatarMember.__post_component of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._PlayerCombatAvatarMember__post_component: sig=<Signature (_)>
+player._PlayerCombatAvatarMember__post_component: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_emote.py' first=317 args=('self', '_')
+player._RefreshPitchKeyForVehicle: <bound method PlayerCombatAvatarMember._RefreshPitchKeyForVehicle of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._RefreshPitchKeyForVehicle: sig=<Signature ()>
+player._RefreshPitchKeyForVehicle: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_input_controller.py' first=1210 args=('self',)
+player._SetNearbyCCPos: <bound method PlayerCombatAvatarMember._SetNearbyCCPos of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._SetNearbyCCPos: sig=<Signature ()>
+player._SetNearbyCCPos: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_cc.py' first=322 args=('self',)
+player._auto_mark_item_guid: None type=<class 'NoneType'>
+player._auto_mark_item_timer: {} type=<class 'dict'>
+player._enter_house_name: None type=<class 'NoneType'>
+player._enter_house_range_name: '' type=<class 'str'>
+player._holographic_mark_entities: {} type=<class 'dict'>
+player._last_house_enter_trigger_name: None type=<class 'NoneType'>
+player._on_refresh_StrafeMainFovScale: <bound method PlayerCombatAvatarMember._on_refresh_StrafeMainFovScale of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._on_refresh_StrafeMainFovScale: sig=<Signature (old, new)>
+player._on_refresh_StrafeMainFovScale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_attr.py' first=108 args=('self', 'old', 'new')
+player._on_set_envy_model_scale: <bound method CombatAvatarMember._on_set_envy_model_scale of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._on_set_envy_model_scale: sig=<Signature (old)>
+player._on_set_envy_model_scale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=211 args=('self', 'old')
+player._on_set_maxhp: <bound method PlayerCombatAvatarMember._on_set_maxhp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._on_set_maxhp: sig=<Signature (old)>
+player._on_set_maxhp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=917 args=('self', 'old')
+player._on_set_pose_crouch: <bound method CombatAvatarMember._on_set_pose_crouch of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._on_set_pose_crouch: sig=<Signature (old)>
+player._on_set_pose_crouch: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=100 args=('self', 'old')
+player._on_set_pose_type_server: <bound method CombatAvatarMember._on_set_pose_type_server of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._on_set_pose_type_server: sig=<Signature (old)>
+player._on_set_pose_type_server: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=136 args=('self', 'old')
+player._on_set_server_hp: <bound method PlayerCombatAvatarMember._on_set_server_hp of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._on_set_server_hp: sig=<Signature (old)>
+player._on_set_server_hp: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=914 args=('self', 'old')
+player._para_check_stuck_pre_pos: None type=<class 'NoneType'>
+player._pose_type: 0 type=<class 'int'>
+player._postComponents: <bound method _postComponents of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player._postComponents: sig=<Signature (bdict)>
+player._postComponents: code file='engine/common/classutils.py' first=97 args=('self', 'bdict')
+player._prone_check_name: None type=<class 'NoneType'>
+player._server_update_pos_timestamp_list: [] type=<class 'list'>
+player.ads_mark_mgr: <gclient.gameplay.util.ads_mark_manager.AdsMarkManager object at 0x00000259D7DDA710> type=<class 'gclient.gameplay.util.ads_mark_manager.AdsMarkManager'>
+player.ads_mark_pos_avatars: [] type=<class 'list'>
+player.assist_mark: <gclient.framework.util.assist_aim_util.AssistMark object at 0x00000259D7DD9A90> type=<class 'gclient.framework.util.assist_aim_util.AssistMark'>
+player.auto_send_interval_last_pos: (-16.196739196777344, 0.05000006780028343, -7.852128028869629) type=<class 'tuple'>
+player.bomb_path_effect_start_pos: None type=<class 'NoneType'>
+player.box_jump_delay_timer: None type=<class 'NoneType'>
+player.buff_1090_hp_timer: None type=<class 'NoneType'>
+player.can_change_sky_box_stage: False type=<class 'bool'>
+player.can_mark_dying_killer: False type=<class 'bool'>
+player.can_show_mark_dying_killer: False type=<class 'bool'>
+player.change_skybox_time: 0.0 type=<class 'float'>
+player.common_center_mark_dict: {} type=<class 'dict'>
+player.common_mark_dict: {'anFFZ3pyqyRkPhTe': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A0331E850>, 'ctf_esp_anFFTEsxNr_4vTgF': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444050>, 'ctf_esp_anFFTEsxNr_4vTgO': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17444690>, 'ctf_esp_anFFTEsxNr_4vTgJ': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445950>, 'ctf_esp_anFFTEsxNr_4vTf9': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17445F90>, 'ctf_esp_anFFTEsxNr_4vTf4': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174465D0>, 'ctf_esp_anFFTEsxNr_4vTgB': <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A17446C10>} type=<class 'dict'>
+player.common_mark_info: {'anFFZ3pyqyRkPhTe': {'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (1, 2.5, 0), 'visible_distance': 50.0, 'camera_hit_max_dis': 165, 'icon': 733, 'cls': 'ToplogoGunRefit', 'fov_distance': 10.0, 'id': 10, 'max_opacity': 1.0, 'camera_hit_min_dis': 50, 'pos': (-23.85, 0, -6.73), 'scene_on': True}, 'ctf_esp_anFFTEsxNr_4vTgF': {'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (0, 2.75, 0), 'visible_distance': 9999.0, 'camera_hit_max_dis': 165, 'icon': 733, 'cls': 'ToplogoGunRefit', 'fov_distance': 9999.0, 'id': 9000, 'max_opacity': 1.0, 'camera_hit_min_dis': 50, 'pos': (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'scene_on': True, 'minScale': 1.0, 'maxScale': 1.0}, 'ctf_esp_anFFTEsxNr_4vTgO': {'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (0, 3.25, 0), 'visible_distance': 9999.0, 'camera_hit_max_dis': 165, 'icon': 733, 'cls': 'ToplogoGunRefit', 'fov_distance': 9999.0, 'id': 9001, 'max_opacity': 1.0, 'camera_hit_min_dis': 50, 'pos': (-28.0, 0.05000007152557373, -13.0), 'scene_on': True, 'minScale': 1.35, 'maxScale': 1.35}, 'ctf_esp_anFFTEsxNr_4vTgJ': {'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (0, 2.75, 0...<cut> type=<class 'dict'>
+player.cur_focus_box_guid: None type=<class 'NoneType'>
+player.cur_focus_item_pos: None type=<class 'NoneType'>
+player.cur_mark_avt_id: None type=<class 'NoneType'>
+player.cur_mark_mission_guid: '' type=<class 'str'>
+player.cur_maxhp: 125.0 type=<class 'float'>
+player.double_emote_pre_pos: None type=<class 'NoneType'>
+player.drone_init_pos: None type=<class 'NoneType'>
+player.execute_player_pre_pos: None type=<class 'NoneType'>
+player.expose_killed_enemy_pos_timer: None type=<class 'NoneType'>
+player.feel_hp_timer: None type=<class 'NoneType'>
+player.force_use_client_pos: False type=<class 'bool'>
+player.fsm_ads_mark_pos: None type=<class 'NoneType'>
+player.grappling_hook_target_pos: None type=<class 'NoneType'>
+player.gun_spell_last_mark_enemy: None type=<class 'NoneType'>
+player.gun_spell_mark_enemy_stamp: None type=<class 'NoneType'>
+player.hp: 125.0 type=<class 'float'>
+player.is_box_jump: False type=<class 'bool'>
+player.is_refuse_team_mark: False type=<class 'bool'>
+player.juren_fly_slash_hit_positions: {} type=<class 'dict'>
+player.juren_fly_slash_nape_execute_hit_pos: None type=<class 'NoneType'>
+player.juren_hook_pos_left: None type=<class 'NoneType'>
+player.juren_hook_pos_right: None type=<class 'NoneType'>
+player.knock_down_team_enemy_pos_timer: None type=<class 'NoneType'>
+player.last_check_stuck_poss: [] type=<class 'list'>
+player.last_crouch2_position: None type=<class 'NoneType'>
+player.last_position: (-16.968557357788086, 0.050000011920928955, -9.098176002502441) type=<class 'tuple'>
+player.last_server_pos_stamp: 0 type=<class 'int'>
+player.last_server_pos_time: 0 type=<class 'int'>
+player.last_server_position: None type=<class 'NoneType'>
+player.light_attack_pos: None type=<class 'NoneType'>
+player.low_hp_effect_timer: None type=<class 'NoneType'>
+player.mark_effect_dict: {3: 11646, 2: 11778, 1: 11780} type=<class 'dict'>
+player.mark_toplogo_dict: {} type=<class 'dict'>
+player.mark_toplogo_hit_guid: '' type=<class 'str'>
+player.mark_toplogo_hit_type: 1 type=<class 'int'>
+player.mark_toplogo_op_mode: 0 type=<class 'int'>
+player.med_last_offset_y: 0 type=<class 'int'>
+player.missile_indicate_pos: None type=<class 'NoneType'>
+player.on_update_position: <bound method PlayerCombatAvatar.on_update_position of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.on_update_position: sig=<Signature (stamp, x, y, z)>
+player.on_update_position: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=307 args=('self', 'stamp', 'x', 'y', 'z')
+player.on_update_position_and_direction: <bound method PlayerCombatAvatar.on_update_position_and_direction of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.on_update_position_and_direction: sig=<Signature (stamp, x, y, z, yaw)>
+player.on_update_position_and_direction: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=348 args=('self', 'stamp', 'x', 'y', 'z', 'yaw')
+player.pick_up_box_timer: None type=<class 'NoneType'>
+player.pickup_group_box_ids: [] type=<class 'list'>
+player.pos: (-16.968557357788086, 0.050000011920928955, -9.098176002502441) type=<class 'tuple'>
+player.pose_type: 0 type=<class 'int'>
+player.position: (-16.968557357788086, 0.050000011920928955, -9.098176002502441) type=<class 'tuple'>
+player.recon_drone_mark_ent_ids: set() type=<class 'set'>
+player.replay_last_valid_pos: (-16.968557357788086, 0.050000011920928955, -9.098176002502441) type=<class 'tuple'>
+player.samurai_sprint_pos: None type=<class 'NoneType'>
+player.scale_effect_timer: -528 type=<class 'int'>
+player.scale_effects: {10004: [(-14.75, 0.25, 4.999999523162842), 1.0, True], 10005: [(-16.25, 0.25, 4.999999523162842), 1.0, True], 10006: [(-15.25, 0.25, 4.999999523162842), 1.0, True], 10007: [(-15.750000953674316, 0.25, 4.999999523162842), 1.0, True]} type=<class 'dict'>
+player.sensitivity_runtime_scale: 1.0 type=<class 'float'>
+player.server_force_set_position: <bound method PlayerCombatAvatar.server_force_set_position of <PlayerCombatAvatarShootingRange(anFFZUsxNr+4vT0l)>> type=<class 'method'>
+player.server_force_set_position: sig=<Signature (x, y, z)>
+player.server_force_set_position: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=368 args=('self', 'x', 'y', 'z')
+player.throwable_last_offset_y: 0 type=<class 'int'>
+player.toplogo_not_in_hide_state_enemy: set() type=<class 'set'>
+robot: repr=<RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)> type=<class 'gclient.gameplay.logic_shootingrange.combat_avatar_shootingrange.RobotCombatAvatarShootingRange'>
+robot: names=['AINotifySearchSnare', 'AIOnQueryRandomPos', 'AIOnQueryRandomSnare', 'AIOnQuerySupply', 'AIOpenSupply', 'AIPickupAmmo', 'AIPickupGun', 'AIPublishEvent', 'AIQueryNaviPoints', 'AIQueryRandomPos', 'AIQueryRandomSnare', 'AIQuerySupply', 'AIQueryTeamMembers', 'AddAssassinateEffect', 'AddBeShootTechEffect', 'AddBuffSpell', 'AddCameraEffect', 'AddCameraEffectByBuff', 'AddClientBuff', 'AddHoldingTimer', 'AddLowHpEffect', 'AddSkeletonEffectByBuff', 'AddSnareToSnareDict', 'AddStoryTick', 'AddTechStateXray', 'AddTopLogoHiddenReason', 'AddTopLogoWidgetHiddenReason', 'AddToplogoVisibleTick', 'AddTpsShowEntity', 'AddUavResidualBloodTip', 'AddWorldField', 'AddWrathSkillTimer', 'AdsFlashTick', 'ApplyCameraKeyframe', 'ApplyFilterMotionForEmote', 'ApplyFilterMotionForExecute', 'AttachToVehicle', 'BatchForwardSpellResult', 'BatchForwardSpellResultFull', 'BatchOnSpellResult', 'BatchOnSpellResultFull', 'BindHandToBody', 'BlastBombExplode', 'BroadcastSoundEvent', 'CacheModel', 'CacheMovingPlatformInfoForShow', 'CacheSoundID', 'CalAttrResult', 'CallServer', 'CallServerGameLogic', 'CanDamageByMagicField', 'CanLimitFrameInvisible', 'CanRecycleCannon', 'CanShowEnemyToplogo', 'CanShowEnemyToplogoBar', 'CanShowToplogoBarWhenGetHit', 'CanTakeMaxDamage', 'CancelEmoteDetect', 'CancelExposeKilledEnemyTimer', 'CancelFeelHpTimer', 'CancelGothicScan', 'CancelGrapplingHook', 'CancelHeartbeatResetTimer', 'CancelHoldTelescopeForFov', 'CancelKnockDownTeamTimer', 'CancelLowHpEffectTimer', 'CancelMissileAttackIndicateTick', 'CancelRemoveCameraEffectTimer', 'CancelSamuraiSprintTick', 'ChangeAIPrecision', 'ChangeCustomMaterial', 'ChangeDoorState', 'ChangeFireWallSpellMode', 'ChangePoseType', 'ChangeRelayStateInfo', 'ChangeShaderGraphMaterial', 'ChangeSpecWeapon', 'ChangeSpellMode226', 'ChangeSpellMode227', 'ChangeSpellMode231', 'CheckAndGetSwitchDict', 'CheckBindBombReload', 'CheckCanTakeXdroidItem', 'CheckCostAmmo', 'CheckDoubleEmoteVisualEntity', 'CheckEmitterObstructValue', 'CheckGrapplingHookTargetTimer', 'CheckHeroSkinEffect', 'CheckHoldingGlockState', 'CheckInHouseWhenStateChange', 'CheckIsOutDoor', 'CheckPreloadExecuteThirdModel', 'CheckProne', 'CheckRefreshAdsFlash', 'CheckReset000ForMovingPlatform', 'CheckResetFilterForMovingPlatform', 'CheckRestoreIdleDamageUp', 'CheckRestoreMeleeDamageUp', 'CheckRestoreOverloadArmor', 'CheckRestorePowerSkeleton', 'CheckThrusterPackOwnedState', 'CheckUavEnemyPosValid', 'ClearAllStoryTick', 'ClearArmorCameraEffects', 'ClearAssassinateEffect', 'ClearCloseParachuteAttachModel', 'ClearCloseParachuteEffect', 'ClearCureConnectingLine', 'ClearDirectionExplode', 'ClearElecticalFieldEffect', 'ClearFireWallPlaceEntity', 'ClearHeroSkinEffect', 'ClearHoldingTimer', 'ClearInactiveSpaceBlackHoleItemFsm', 'ClearJurenFlyAirSlashActive', 'ClearJurenFlyHookTitanTarget', 'ClearJurenFlyRuntimeState', 'ClearLowHpEffect', 'ClearMegaFireWallPlaceEntity', 'ClearOverloadArmorEffect', 'ClearParanoiaEntity', 'ClearPerkHint3PEffect', 'ClearPerkHintSceneEffect', 'ClearPlaceExplodeEntity', 'ClearPrePlaceEntity', 'ClearSpaceBlackHoleItemClientState', 'ClearSpaceBlackHoleItemFsm', 'ClearSpaceBlackHoleLocalCarrier', 'ClearSpaceBlackHoleSkillActive', 'ClearSpaceBlackHoleSkillActiveForTeardown', 'ClearSpaceBlackHoleSkillActiveState', 'ClearUnit', 'ClearWrathSkillTimer', 'CommonPerkHint', 'CreateBorder', 'CreateElecticalFieldEffect', 'CreateFireWallPlaceEntity', 'CreateMegaFireWallPlaceEntity', 'CreateMeowDanceModel', 'CreateModelFollow', 'CreateParanoiaEntity', 'CreatePrePlaceEntity', 'CreateStickyObject', 'CreateToplogo', 'CreateWingModel', 'CreateWorldFieldFollow', 'CueChangeExecuteHeroSkin', 'DealForFeelSurmount3', 'DealRecoilDataByTalent', 'DealScatterOffsetByTalent', 'DelayPlayRebornSound', 'DelayStartHeartbeatScan', 'DestroyJuRenLiTiModel', 'DestroyMeowDanceModel', 'DestroyReconDroneMarkFrame', 'DestroyStickyObject', 'DestroyWingModel', 'DetachFromVehicle', 'DetectVisibleTargetInEmote', 'DirectionExplode', 'DisEnableSpecifyWorldField', 'DisableInvisible...<cut>
+robot.AIOnQueryRandomPos: <bound method RobotCombatAvatarPatch.AIOnQueryRandomPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.AIOnQueryRandomPos: sig=<Signature (ticket, target_pos, points)>
+robot.AIOnQueryRandomPos: code file='gclient/gameplay/logic_base/entities/robot_combat_avatar.py' first=784 args=('self', 'ticket', 'target_pos', 'points')
+robot.AIQueryRandomPos: <bound method RobotCombatAvatarPatch.AIQueryRandomPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.AIQueryRandomPos: sig=<Signature (target_pos, target_radius, flag, callback)>
+robot.AIQueryRandomPos: code file='gclient/gameplay/logic_base/entities/robot_combat_avatar.py' first=779 args=('self', 'target_pos', 'target_radius', 'flag', 'callback')
+robot.AddLowHpEffect: <bound method CombatAvatarMember.AddLowHpEffect of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.AddLowHpEffect: sig=<Signature (tech_state, material_rank_id, duration)>
+robot.AddLowHpEffect: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1072 args=('self', 'tech_state', 'material_rank_id', 'duration')
+robot.AddTopLogoHiddenReason: <bound method CombatAvatarToplogo.AddTopLogoHiddenReason of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.AddTopLogoHiddenReason: sig=<Signature (hidden_reason)>
+robot.AddTopLogoHiddenReason: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=151 args=('self', 'hidden_reason')
+robot.AddTopLogoWidgetHiddenReason: <bound method CombatAvatarToplogo.AddTopLogoWidgetHiddenReason of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.AddTopLogoWidgetHiddenReason: sig=<Signature (reason, fade_out_time=1)>
+robot.AddTopLogoWidgetHiddenReason: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=157 args=('self', 'reason', 'fade_out_time')
+robot.AddToplogoVisibleTick: <bound method CombatAvatarToplogo.AddToplogoVisibleTick of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.AddToplogoVisibleTick: sig=<Signature ()>
+robot.AddToplogoVisibleTick: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=257 args=('self',)
+robot.CanLimitFrameInvisible: <bound method CombatAvatarMember.CanLimitFrameInvisible of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CanLimitFrameInvisible: sig=<Signature (combat_team_id)>
+robot.CanLimitFrameInvisible: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=228 args=('self', 'combat_team_id')
+robot.CanShowEnemyToplogo: <bound method CombatAvatarMember.CanShowEnemyToplogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CanShowEnemyToplogo: sig=<Signature ()>
+robot.CanShowEnemyToplogo: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=575 args=('self',)
+robot.CanShowEnemyToplogoBar: <bound method CombatAvatarMember.CanShowEnemyToplogoBar of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CanShowEnemyToplogoBar: sig=<Signature ()>
+robot.CanShowEnemyToplogoBar: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=578 args=('self',)
+robot.CanShowToplogoBarWhenGetHit: <bound method CombatAvatarMember.CanShowToplogoBarWhenGetHit of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CanShowToplogoBarWhenGetHit: sig=<Signature ()>
+robot.CanShowToplogoBarWhenGetHit: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_snare.py' first=30 args=('self',)
+robot.CancelExposeKilledEnemyTimer: <bound method CombatAvatarMember.CancelExposeKilledEnemyTimer of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CancelExposeKilledEnemyTimer: sig=<Signature ()>
+robot.CancelExposeKilledEnemyTimer: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=525 args=('self',)
+robot.CancelFeelHpTimer: <bound method CombatAvatarMember.CancelFeelHpTimer of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CancelFeelHpTimer: sig=<Signature ()>
+robot.CancelFeelHpTimer: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1006 args=('self',)
+robot.CancelLowHpEffectTimer: <bound method CombatAvatarMember.CancelLowHpEffectTimer of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CancelLowHpEffectTimer: sig=<Signature ()>
+robot.CancelLowHpEffectTimer: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1011 args=('self',)
+robot.ChangePoseType: <bound method RobotCombatAvatarPatch.ChangePoseType of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ChangePoseType: sig=<Signature (pose_type)>
+robot.ChangePoseType: code file='gclient/gameplay/logic_base/entities/robot_combat_avatar.py' first=547 args=('self', 'pose_type')
+robot.CheckUavEnemyPosValid: <bound method CombatAvatarMember.CheckUavEnemyPosValid of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CheckUavEnemyPosValid: sig=<Signature (pos)>
+robot.CheckUavEnemyPosValid: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_item.py' first=112 args=('self', 'pos')
+robot.ClearLowHpEffect: <bound method CombatAvatarMember.ClearLowHpEffect of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ClearLowHpEffect: sig=<Signature (tech_state, material_rank_id)>
+robot.ClearLowHpEffect: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1064 args=('self', 'tech_state', 'material_rank_id')
+robot.CreateToplogo: <bound method CombatAvatarToplogo.CreateToplogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.CreateToplogo: sig=<Signature (ientity, scene_node_name, cocos_widget, depthEnable=False, auto_distinct=True)>
+robot.CreateToplogo: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=168 args=('self', 'ientity', 'scene_node_name', 'cocos_widget', 'depthEnable', 'auto_distinct')
+robot.DealScatterOffsetByTalent: <bound method CombatAvatarMember.DealScatterOffsetByTalent of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.DealScatterOffsetByTalent: sig=<Signature (scatter_offset)>
+robot.DealScatterOffsetByTalent: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_talent.py' first=16 args=('self', 'scatter_offset')
+robot.DestroyReconDroneMarkFrame: <bound method CombatAvatarMember.DestroyReconDroneMarkFrame of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.DestroyReconDroneMarkFrame: sig=<Signature ()>
+robot.DestroyReconDroneMarkFrame: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=47 args=('self',)
+robot.DetectVisibleTargetInEmote: <bound method CombatAvatarMember.DetectVisibleTargetInEmote of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.DetectVisibleTargetInEmote: sig=<Signature ()>
+robot.DetectVisibleTargetInEmote: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_emote.py' first=70 args=('self',)
+robot.DisableInvisibleFrameLimit: <bound method CombatAvatarMember.DisableInvisibleFrameLimit of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.DisableInvisibleFrameLimit: sig=<Signature ()>
+robot.DisableInvisibleFrameLimit: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=236 args=('self',)
+robot.DrawReconDroneMarkFrame: <bound method CombatAvatarMember.DrawReconDroneMarkFrame of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.DrawReconDroneMarkFrame: sig=<Signature ()>
+robot.DrawReconDroneMarkFrame: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_drone.py' first=42 args=('self',)
+robot.ENABLE_CHANGE_SKYBOX: True type=<class 'bool'>
+robot.EnemyTopLogoTimer: <bound method CombatAvatarToplogo.EnemyTopLogoTimer of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.EnemyTopLogoTimer: sig=<Signature ()>
+robot.EnemyTopLogoTimer: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=282 args=('self',)
+robot.EnsureShootingRangeToplogo: <bound method CombatAvatarShootingRange.EnsureShootingRangeToplogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.EnsureShootingRangeToplogo: sig=<Signature ()>
+robot.EnsureShootingRangeToplogo: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=122 args=('self',)
+robot.ExposeKilledTeamEnemyPos: <bound method CombatAvatarMember.ExposeKilledTeamEnemyPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ExposeKilledTeamEnemyPos: sig=<Signature (info)>
+robot.ExposeKilledTeamEnemyPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=530 args=('self', 'info')
+robot.ExposeKilledTeamEnemyPosTick: <bound method CombatAvatarMember.ExposeKilledTeamEnemyPosTick of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ExposeKilledTeamEnemyPosTick: sig=<Signature (info)>
+robot.ExposeKilledTeamEnemyPosTick: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=540 args=('self', 'info')
+robot.ExposeKnockDownTeamPos: <bound method CombatAvatarMember.ExposeKnockDownTeamPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ExposeKnockDownTeamPos: sig=<Signature (info)>
+robot.ExposeKnockDownTeamPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=549 args=('self', 'info')
+robot.ExposeKnockDownTeamPosTick: <bound method CombatAvatarMember.ExposeKnockDownTeamPosTick of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ExposeKnockDownTeamPosTick: sig=<Signature (info)>
+robot.ExposeKnockDownTeamPosTick: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=559 args=('self', 'info')
+robot.FeelLowHpEnemyTick: <bound method CombatAvatarMember.FeelLowHpEnemyTick of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.FeelLowHpEnemyTick: sig=<Signature (param)>
+robot.FeelLowHpEnemyTick: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1038 args=('self', 'param')
+robot.GetCurHighPriorityWeapon: <bound method CombatAvatarMember.GetCurHighPriorityWeapon of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetCurHighPriorityWeapon: sig=<Signature ()>
+robot.GetCurHighPriorityWeapon: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_backpack.py' first=175 args=('self',)
+robot.GetExecuteUpdatePosType: <bound method CombatAvatarMember.GetExecuteUpdatePosType of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetExecuteUpdatePosType: sig=<Signature (armed_execute_item_id)>
+robot.GetExecuteUpdatePosType: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_execute.py' first=62 args=('self', 'armed_execute_item_id')
+robot.GetFireWallPlacePosition: <bound method CombatAvatarMember.GetFireWallPlacePosition of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetFireWallPlacePosition: sig=<Signature (proto)>
+robot.GetFireWallPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2107 args=('self', 'proto')
+robot.GetFireWallPlacePositionH: <bound method CombatAvatarMember.GetFireWallPlacePositionH of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetFireWallPlacePositionH: sig=<Signature (proto)>
+robot.GetFireWallPlacePositionH: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2063 args=('self', 'proto')
+robot.GetFireWallPlacePositionV: <bound method CombatAvatarMember.GetFireWallPlacePositionV of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetFireWallPlacePositionV: sig=<Signature (proto)>
+robot.GetFireWallPlacePositionV: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2056 args=('self', 'proto')
+robot.GetInHouseName: <bound method CombatAvatarMember.GetInHouseName of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetInHouseName: sig=<Signature ()>
+robot.GetInHouseName: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_house_detector.py' first=127 args=('self',)
+robot.GetParanoiaPlacePosition: <bound method CombatAvatarMember.GetParanoiaPlacePosition of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetParanoiaPlacePosition: sig=<Signature (proto)>
+robot.GetParanoiaPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=925 args=('self', 'proto')
+robot.GetPlacePosition: <bound method CombatAvatarMember.GetPlacePosition of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetPlacePosition: sig=<Signature (cast_proto)>
+robot.GetPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=994 args=('self', 'cast_proto')
+robot.GetPrePlaceEntityPosition: <bound method CombatAvatarMember.GetPrePlaceEntityPosition of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetPrePlaceEntityPosition: sig=<Signature (spell_proto)>
+robot.GetPrePlaceEntityPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1429 args=('self', 'spell_proto')
+robot.GetPrePlaceEntityPosition225: <bound method CombatAvatarMember.GetPrePlaceEntityPosition225 of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetPrePlaceEntityPosition225: sig=<Signature (spell_proto)>
+robot.GetPrePlaceEntityPosition225: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1590 args=('self', 'spell_proto')
+robot.GetPrePlaceEntityPosition234: <bound method CombatAvatarMember.GetPrePlaceEntityPosition234 of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetPrePlaceEntityPosition234: sig=<Signature (spell_proto)>
+robot.GetPrePlaceEntityPosition234: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1832 args=('self', 'spell_proto')
+robot.GetPrePlaceEntityPosition510: <bound method CombatAvatarMember.GetPrePlaceEntityPosition225 of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetPrePlaceEntityPosition510: sig=<Signature (spell_proto)>
+robot.GetPrePlaceEntityPosition510: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1590 args=('self', 'spell_proto')
+robot.GetPrePlaceEntityPosition588: <bound method CombatAvatarMember.GetPrePlaceEntityPosition588 of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetPrePlaceEntityPosition588: sig=<Signature (spell_proto)>
+robot.GetPrePlaceEntityPosition588: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1729 args=('self', 'spell_proto')
+robot.GetTacticalColorLevel: <bound method CombatAvatarMember.GetTacticalColorLevel of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetTacticalColorLevel: sig=<Signature ()>
+robot.GetTacticalColorLevel: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1097 args=('self',)
+robot.GetTacticalLevelColorOpacity: <bound method CombatAvatarMember.GetTacticalLevelColorOpacity of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetTacticalLevelColorOpacity: sig=<Signature (is_bg=False)>
+robot.GetTacticalLevelColorOpacity: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1111 args=('self', 'is_bg')
+robot.GetTeammateColorIndex: <bound method CombatAvatarMember.GetTeammateColorIndex of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.GetTeammateColorIndex: sig=<Signature (teammate_id)>
+robot.GetTeammateColorIndex: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=449 args=('self', 'teammate_id')
+robot.HAS_TOPLOGO: True type=<class 'bool'>
+robot.HideEnemyTopLogo: <bound method CombatAvatarMember.HideEnemyTopLogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.HideEnemyTopLogo: sig=<Signature ()>
+robot.HideEnemyTopLogo: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=999 args=('self',)
+robot.IsAmmoBox: False type=<class 'bool'>
+robot.IsBarrieCannon: False type=<class 'bool'>
+robot.IsInShowToplogoByExposeTalentDuration: <bound method CombatAvatarToplogo.IsInShowToplogoByExposeTalentDuration of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.IsInShowToplogoByExposeTalentDuration: sig=<Signature ()>
+robot.IsInShowToplogoByExposeTalentDuration: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=291 args=('self',)
+robot.IsMoveRecoverHpArmorActive: <bound method CombatAvatarMember.IsMoveRecoverHpArmorActive of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.IsMoveRecoverHpArmorActive: sig=<Signature ()>
+robot.IsMoveRecoverHpArmorActive: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=519 args=('self',)
+robot.IsNavigateBarrieCannon: False type=<class 'bool'>
+robot.IsOilbox: False type=<class 'bool'>
+robot.IsPosterBoard: False type=<class 'bool'>
+robot.IsSafeBox: False type=<class 'bool'>
+robot.IsSearchContractBox: False type=<class 'bool'>
+robot.IsShootingRangeToplogoReady: <bound method CombatAvatarShootingRange.IsShootingRangeToplogoReady of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.IsShootingRangeToplogoReady: sig=<Signature ()>
+robot.IsShootingRangeToplogoReady: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=119 args=('self',)
+robot.IsVisible: True type=<class 'bool'>
+robot.MarkJurenFlyAirSlashActive: <bound method CombatAvatarMember.MarkJurenFlyAirSlashActive of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.MarkJurenFlyAirSlashActive: sig=<Signature ()>
+robot.MarkJurenFlyAirSlashActive: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=446 args=('self',)
+robot.MoveToBornPos: <bound method ShootingRangeRobotConfComponent.MoveToBornPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.MoveToBornPos: sig=<Signature ()>
+robot.MoveToBornPos: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=74 args=('self',)
+robot.OnAddAdsMark: <bound method CombatAvatarMember.OnAddAdsMark of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnAddAdsMark: sig=<Signature (buff_proto)>
+robot.OnAddAdsMark: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=627 args=('self', 'buff_proto')
+robot.OnAddRecoverHpBuff: <bound method CombatAvatarMember.OnAddRecoverHpBuff of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnAddRecoverHpBuff: sig=<Signature (buff_proto)>
+robot.OnAddRecoverHpBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=546 args=('self', 'buff_proto')
+robot.OnAddSelfMarkBuff: <bound method CombatAvatarMember.OnAddSelfMarkBuff of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnAddSelfMarkBuff: sig=<Signature (buff_proto)>
+robot.OnAddSelfMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=280 args=('self', 'buff_proto')
+robot.OnAddTeamMarkBuff: <bound method CombatAvatarMember.OnAddTeamMarkBuff of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnAddTeamMarkBuff: sig=<Signature (buff_proto)>
+robot.OnAddTeamMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=302 args=('self', 'buff_proto')
+robot.OnExposeEnemyIdsPop: <bound method CombatAvatarToplogo.OnExposeEnemyIdsPop of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnExposeEnemyIdsPop: sig=<Signature ()>
+robot.OnExposeEnemyIdsPop: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=294 args=('self',)
+robot.OnGainTalentFeelLowHp: <bound method CombatAvatarMember.OnGainTalentFeelLowHp of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnGainTalentFeelLowHp: sig=<Signature ()>
+robot.OnGainTalentFeelLowHp: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1016 args=('self',)
+robot.OnHeroAchProgressChange: <bound method CombatAvatarToplogo.OnHeroAchProgressChange of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnHeroAchProgressChange: sig=<Signature (player_id)>
+robot.OnHeroAchProgressChange: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=300 args=('self', 'player_id')
+robot.OnLoseTalentFeelLowHp: <bound method CombatAvatarMember.OnLoseTalentFeelLowHp of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnLoseTalentFeelLowHp: sig=<Signature ()>
+robot.OnLoseTalentFeelLowHp: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=1030 args=('self',)
+robot.OnLoseTalentMoveRecoverHpArmor: <bound method CombatAvatarMember.OnLoseTalentMoveRecoverHpArmor of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnLoseTalentMoveRecoverHpArmor: sig=<Signature ()>
+robot.OnLoseTalentMoveRecoverHpArmor: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=989 args=('self',)
+robot.OnPerkActivateStatusChange_MoveRecoverHpArmor: <bound method CombatAvatarMember.OnPerkActivateStatusChange_MoveRecoverHpArmor of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnPerkActivateStatusChange_MoveRecoverHpArmor: sig=<Signature (talent_id, perk_activate, is_main_player, old)>
+robot.OnPerkActivateStatusChange_MoveRecoverHpArmor: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=942 args=('self', 'talent_id', 'perk_activate', 'is_main_player', 'old')
+robot.OnQueryPeekTacticalPos: <bound method RobotCombatAvatarPatch.OnQueryPeekTacticalPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnQueryPeekTacticalPos: sig=<Signature (ticket, location)>
+robot.OnQueryPeekTacticalPos: code file='gclient/gameplay/logic_base/entities/robot_combat_avatar.py' first=742 args=('self', 'ticket', 'location')
+robot.OnRemoveAdsMark: <bound method CombatAvatarMember.OnRemoveAdsMark of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnRemoveAdsMark: sig=<Signature (buff_proto, buff_guid='')>
+robot.OnRemoveAdsMark: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=653 args=('self', 'buff_proto', 'buff_guid')
+robot.OnRemoveRecoverHpBuff: <bound method CombatAvatarMember.OnRemoveRecoverHpBuff of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnRemoveRecoverHpBuff: sig=<Signature (buff_guid)>
+robot.OnRemoveRecoverHpBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=569 args=('self', 'buff_guid')
+robot.OnRemoveSelfMarkBuff: <bound method CombatAvatarMember.OnRemoveSelfMarkBuff of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnRemoveSelfMarkBuff: sig=<Signature (buff_proto)>
+robot.OnRemoveSelfMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=291 args=('self', 'buff_proto')
+robot.OnRemoveTeamMarkBuff: <bound method CombatAvatarMember.OnRemoveTeamMarkBuff of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnRemoveTeamMarkBuff: sig=<Signature (buff_proto, buff_guid='')>
+robot.OnRemoveTeamMarkBuff: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_buff.py' first=319 args=('self', 'buff_proto', 'buff_guid')
+robot.OnSettingHideTeammateNameChanged: <bound method CombatAvatarToplogo.OnSettingHideTeammateNameChanged of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnSettingHideTeammateNameChanged: sig=<Signature (new)>
+robot.OnSettingHideTeammateNameChanged: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=113 args=('self', 'new')
+robot.OnShowEnemyBar: <bound method CombatAvatarToplogo.OnShowEnemyBar of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnShowEnemyBar: sig=<Signature ()>
+robot.OnShowEnemyBar: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=241 args=('self',)
+robot.OnSlideWithParkour: <bound method CombatAvatarMember.OnSlideWithParkour of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnSlideWithParkour: sig=<Signature ()>
+robot.OnSlideWithParkour: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=104 args=('self',)
+robot.OnSlotLoseTalentMoveRecoverHpArmor: <bound method CombatAvatarMember.OnSlotLoseTalentMoveRecoverHpArmor of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnSlotLoseTalentMoveRecoverHpArmor: sig=<Signature ()>
+robot.OnSlotLoseTalentMoveRecoverHpArmor: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=932 args=('self',)
+robot.OnUpdateGrapplingHookPosition: <bound method CombatAvatarMember.OnUpdateGrapplingHookPosition of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.OnUpdateGrapplingHookPosition: sig=<Signature (extra)>
+robot.OnUpdateGrapplingHookPosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=439 args=('self', 'extra')
+robot.QueryPeekTacticalPos: <bound method RobotCombatAvatarPatch.QueryPeekTacticalPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.QueryPeekTacticalPos: sig=<Signature (enemy_pos, flag, callback)>
+robot.QueryPeekTacticalPos: code file='gclient/gameplay/logic_base/entities/robot_combat_avatar.py' first=737 args=('self', 'enemy_pos', 'flag', 'callback')
+robot.RefreshEnemyArmorBar: <bound method CombatAvatarToplogo.RefreshEnemyArmorBar of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshEnemyArmorBar: sig=<Signature (old)>
+robot.RefreshEnemyArmorBar: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=235 args=('self', 'old')
+robot.RefreshEnemyHpBar: <bound method CombatAvatarToplogo.RefreshEnemyHpBar of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshEnemyHpBar: sig=<Signature (old)>
+robot.RefreshEnemyHpBar: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=232 args=('self', 'old')
+robot.RefreshJurenFlyFuelDisplayVisible: <bound method CombatAvatarMember.RefreshJurenFlyFuelDisplayVisible of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshJurenFlyFuelDisplayVisible: sig=<Signature ()>
+robot.RefreshJurenFlyFuelDisplayVisible: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=199 args=('self',)
+robot.RefreshToplogo: <bound method CombatAvatarToplogo.RefreshToplogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogo: sig=<Signature ()>
+robot.RefreshToplogo: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=254 args=('self',)
+robot.RefreshToplogoAchievement: <bound method CombatAvatarToplogo.RefreshToplogoAchievement of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoAchievement: sig=<Signature ()>
+robot.RefreshToplogoAchievement: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=130 args=('self',)
+robot.RefreshToplogoArmorBarForReplayRoom: <bound method CombatAvatarToplogo.RefreshToplogoArmorBarForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoArmorBarForReplayRoom: sig=<Signature ()>
+robot.RefreshToplogoArmorBarForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=319 args=('self',)
+robot.RefreshToplogoCombatState: <bound method CombatAvatarToplogo.RefreshToplogoCombatState of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoCombatState: sig=<Signature ()>
+robot.RefreshToplogoCombatState: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=202 args=('self',)
+robot.RefreshToplogoEquipWeaponForReplayRoom: <bound method CombatAvatarToplogo.RefreshToplogoEquipWeaponForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoEquipWeaponForReplayRoom: sig=<Signature ()>
+robot.RefreshToplogoEquipWeaponForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=328 args=('self',)
+robot.RefreshToplogoForReplayRoom: <bound method CombatAvatarToplogo.RefreshToplogoForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoForReplayRoom: sig=<Signature ()>
+robot.RefreshToplogoForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=313 args=('self',)
+robot.RefreshToplogoHpBarForReplayRoom: <bound method CombatAvatarToplogo.RefreshToplogoHpBarForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoHpBarForReplayRoom: sig=<Signature ()>
+robot.RefreshToplogoHpBarForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=322 args=('self',)
+robot.RefreshToplogoInjuredStatus: <bound method CombatAvatarToplogo.RefreshToplogoInjuredStatus of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoInjuredStatus: sig=<Signature ()>
+robot.RefreshToplogoInjuredStatus: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=133 args=('self',)
+robot.RefreshToplogoTacticalLevelForReplayRoom: <bound method CombatAvatarToplogo.RefreshToplogoTacticalLevelForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoTacticalLevelForReplayRoom: sig=<Signature ()>
+robot.RefreshToplogoTacticalLevelForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=325 args=('self',)
+robot.RefreshToplogoTeamTagForReplayRoom: <bound method CombatAvatarToplogo.RefreshToplogoTeamTagForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoTeamTagForReplayRoom: sig=<Signature ()>
+robot.RefreshToplogoTeamTagForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=316 args=('self',)
+robot.RefreshToplogoTitles: <bound method CombatAvatarToplogo.RefreshToplogoTitles of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoTitles: sig=<Signature ()>
+robot.RefreshToplogoTitles: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=127 args=('self',)
+robot.RefreshToplogoVisibleForAircraft: <bound method CombatAvatarToplogo.RefreshToplogoVisibleForAircraft of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoVisibleForAircraft: sig=<Signature ()>
+robot.RefreshToplogoVisibleForAircraft: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=136 args=('self',)
+robot.RefreshToplogoVisibleForCalculation: <bound method CombatAvatarToplogo.RefreshToplogoVisibleForCalculation of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoVisibleForCalculation: sig=<Signature ()>
+robot.RefreshToplogoVisibleForCalculation: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=141 args=('self',)
+robot.RefreshToplogoVisibleForReplayRoom: <bound method CombatAvatarToplogo.RefreshToplogoVisibleForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoVisibleForReplayRoom: sig=<Signature ()>
+robot.RefreshToplogoVisibleForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=310 args=('self',)
+robot.RefreshToplogoVisibleForSelectHero: <bound method CombatAvatarToplogo.RefreshToplogoVisibleForSelectHero of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RefreshToplogoVisibleForSelectHero: sig=<Signature ()>
+robot.RefreshToplogoVisibleForSelectHero: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=148 args=('self',)
+robot.RemoveKilledTeamEnemyPos: <bound method CombatAvatarMember.RemoveKilledTeamEnemyPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RemoveKilledTeamEnemyPos: sig=<Signature ()>
+robot.RemoveKilledTeamEnemyPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=536 args=('self',)
+robot.RemoveKnockDownTeamPos: <bound method CombatAvatarMember.RemoveKnockDownTeamPos of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RemoveKnockDownTeamPos: sig=<Signature ()>
+robot.RemoveKnockDownTeamPos: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=555 args=('self',)
+robot.RemoveTopLogoHiddenReason: <bound method CombatAvatarToplogo.RemoveTopLogoHiddenReason of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RemoveTopLogoHiddenReason: sig=<Signature (hidden_reason)>
+robot.RemoveTopLogoHiddenReason: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=154 args=('self', 'hidden_reason')
+robot.RemoveTopLogoWidgetHiddenReason: <bound method CombatAvatarToplogo.RemoveTopLogoWidgetHiddenReason of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RemoveTopLogoWidgetHiddenReason: sig=<Signature (reason, fade_in_time=0.05)>
+robot.RemoveTopLogoWidgetHiddenReason: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=160 args=('self', 'reason', 'fade_in_time')
+robot.RemoveToplogo: <bound method ToplogoComponent.RemoveToplogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RemoveToplogo: sig=<Signature ()>
+robot.RemoveToplogo: code file='gclient/framework/commoncomps/toplogo_component.py' first=171 args=('self',)
+robot.RemoveToplogoVisibleTick: <bound method CombatAvatarToplogo.RemoveToplogoVisibleTick of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.RemoveToplogoVisibleTick: sig=<Signature ()>
+robot.RemoveToplogoVisibleTick: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=260 args=('self',)
+robot.ResetPosResult: <bound method CombatAvatar.ResetPosResult of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ResetPosResult: sig=<Signature (reason='client_create')>
+robot.ResetPosResult: code file='gclient/gameplay/logic_base/entities/combat_avatar.py' first=89 args=('self', 'reason')
+robot.SLOT_TO_MARGIN_ICON: {1: 162, 2: 163, 3: 164, 4: 165} type=<class 'dict'>
+robot.SetEnemyTopLogoWidgetVisibleImm: <bound method CombatAvatarToplogo.SetEnemyTopLogoWidgetVisibleImm of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.SetEnemyTopLogoWidgetVisibleImm: sig=<Signature (visible)>
+robot.SetEnemyTopLogoWidgetVisibleImm: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=270 args=('self', 'visible')
+robot.SetToplogoVisible: <bound method CombatAvatarToplogo.SetToplogoVisible of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.SetToplogoVisible: sig=<Signature (fade_cb=None, fade_in=0.05, fade_out=1)>
+robot.SetToplogoVisible: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=266 args=('self', 'fade_cb', 'fade_in', 'fade_out')
+robot.ShowEnemyBar: <bound method CombatAvatarToplogo.ShowEnemyBar of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ShowEnemyBar: sig=<Signature ()>
+robot.ShowEnemyBar: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=244 args=('self',)
+robot.ShowEnemyTopLogoInRange: <bound method CombatAvatarMember.ShowEnemyTopLogoInRange of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ShowEnemyTopLogoInRange: sig=<Signature (params)>
+robot.ShowEnemyTopLogoInRange: code file='gclient/gameplay/logic_base/comps/comp_talent.py' first=695 args=('self', 'params')
+robot.ShowEnemyToplogo: <bound method CombatAvatarToplogo.ShowEnemyToplogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ShowEnemyToplogo: sig=<Signature (value)>
+robot.ShowEnemyToplogo: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=263 args=('self', 'value')
+robot.ShowToplogoByExposeTalent: <bound method CombatAvatarToplogo.ShowToplogoByExposeTalent of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ShowToplogoByExposeTalent: sig=<Signature (duration)>
+robot.ShowToplogoByExposeTalent: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=288 args=('self', 'duration')
+robot.ShowToplogoDamageNumber: <bound method CombatAvatarToplogo.ShowToplogoDamageNumber of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ShowToplogoDamageNumber: sig=<Signature (source_key, damage, color, duration)>
+robot.ShowToplogoDamageNumber: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=248 args=('self', 'source_key', 'damage', 'color', 'duration')
+robot.StabilizeJuRenLiTiHandPoseAfterFly: <bound method CombatAvatarMember.StabilizeJuRenLiTiHandPoseAfterFly of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.StabilizeJuRenLiTiHandPoseAfterFly: sig=<Signature ()>
+robot.StabilizeJuRenLiTiHandPoseAfterFly: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell_juren.py' first=419 args=('self',)
+robot.TEAM_COLOR_MAP: {1: 167, 2: 168, 3: 169, 4: 170} type=<class 'dict'>
+robot.TOPLOGO_SHOW_POSITION: True type=<class 'bool'>
+robot.TickTopologoVisible: <bound method CombatAvatarToplogo.TickTopologoVisible of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.TickTopologoVisible: sig=<Signature (dtime)>
+robot.TickTopologoVisible: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=285 args=('self', 'dtime')
+robot.ToplogoTickForReplayRoom: <bound method CombatAvatarToplogo.ToplogoTickForReplayRoom of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.ToplogoTickForReplayRoom: sig=<Signature ()>
+robot.ToplogoTickForReplayRoom: code file='gclient/gameplay/logic_base/comps/comp_toplogo.py' first=307 args=('self',)
+robot.TryEnableInvisibleFrameLimit: <bound method CombatAvatarMember.TryEnableInvisibleFrameLimit of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.TryEnableInvisibleFrameLimit: sig=<Signature (frames)>
+robot.TryEnableInvisibleFrameLimit: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_model.py' first=231 args=('self', 'frames')
+robot.TryInitToplogo: <bound method CombatAvatarToplogo.TryInitToplogo of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.TryInitToplogo: sig=<Signature ()>
+robot.TryInitToplogo: code file='gshare/decorators.py' first=379 args=()
+robot.UpdatePoseSender: <bound method ShootingRangeRobotCombatAvatarPatch.UpdatePoseSender of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.UpdatePoseSender: sig=<Signature ()>
+robot.UpdatePoseSender: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=198 args=('self',)
+robot._ApplySkinPrePlaceEntityScale: <bound method CombatAvatarMember._ApplySkinPrePlaceEntityScale of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._ApplySkinPrePlaceEntityScale: sig=<Signature (place_entity, trans)>
+robot._ApplySkinPrePlaceEntityScale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=1389 args=('self', 'place_entity', 'trans')
+robot._CheckInvisibleCasterDamage: <bound method CombatAvatarMember._CheckInvisibleCasterDamage of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._CheckInvisibleCasterDamage: sig=<Signature (result, caster, target)>
+robot._CheckInvisibleCasterDamage: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_unit.py' first=684 args=('self', 'result', 'caster', 'target')
+robot._GetFireWallPlacePosition: <bound method CombatAvatarMember._GetFireWallPlacePosition of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._GetFireWallPlacePosition: sig=<Signature (max_distance, interval, cur_dir, start_pos, yaw)>
+robot._GetFireWallPlacePosition: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=2115 args=('self', 'max_distance', 'interval', 'cur_dir', 'start_pos', 'yaw')
+robot._GetSpaceGemBeamEffectOffset: <bound method CombatAvatarMember._GetSpaceGemBeamEffectOffset of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._GetSpaceGemBeamEffectOffset: sig=<Signature (position, attach_transform)>
+robot._GetSpaceGemBeamEffectOffset: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=675 args=('self', 'position', 'attach_transform')
+robot._GetSpaceGemBeamEffectScale: <bound method CombatAvatarMember._GetSpaceGemBeamEffectScale of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._GetSpaceGemBeamEffectScale: sig=<Signature (effect_proto)>
+robot._GetSpaceGemBeamEffectScale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=701 args=('self', 'effect_proto')
+robot._enter_house_name: None type=<class 'NoneType'>
+robot._enter_house_range_name: '' type=<class 'str'>
+robot._on_refresh_StrafeMainFovScale: <bound method CombatAvatarMember._on_refresh_StrafeMainFovScale of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._on_refresh_StrafeMainFovScale: sig=<Signature (old, new)>
+robot._on_refresh_StrafeMainFovScale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_combat_attr.py' first=53 args=('self', 'old', 'new')
+robot._on_set_brain_class_name: <bound method RobotCombatAvatarPatch._on_set_brain_class_name of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._on_set_brain_class_name: sig=<Signature (old)>
+robot._on_set_brain_class_name: code file='gclient/gameplay/logic_base/entities/robot_combat_avatar.py' first=214 args=('self', 'old')
+robot._on_set_envy_model_scale: <bound method CombatAvatarMember._on_set_envy_model_scale of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._on_set_envy_model_scale: sig=<Signature (old)>
+robot._on_set_envy_model_scale: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_spell.py' first=211 args=('self', 'old')
+robot._on_set_pose_crouch: <bound method CombatAvatarMember._on_set_pose_crouch of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._on_set_pose_crouch: sig=<Signature (old)>
+robot._on_set_pose_crouch: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=100 args=('self', 'old')
+robot._on_set_pose_type_server: <bound method CombatAvatarMember._on_set_pose_type_server of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._on_set_pose_type_server: sig=<Signature (old)>
+robot._on_set_pose_type_server: code file='gclient/gameplay/logic_base/entities/combatavatarmembers/cimp_motion.py' first=136 args=('self', 'old')
+robot._on_set_server_hp: <bound method CombatAvatarShootingRange._on_set_server_hp of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._on_set_server_hp: sig=<Signature (old)>
+robot._on_set_server_hp: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=104 args=('self', 'old')
+robot._postComponents: <bound method _postComponents of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot._postComponents: sig=<Signature (bdict)>
+robot._postComponents: code file='engine/common/classutils.py' first=97 args=('self', 'bdict')
+robot.ads_mark_pos_avatars: [] type=<class 'list'>
+robot.ai_bind_target_pos: getattr FAIL error('unpack requires a buffer of 6 bytes')
+robot.born_pos: (16.200000762939453, 0.0, -1.399999976158142) type=<class 'tuple'>
+robot.cur_maxhp: 125.0 type=<class 'float'>
+robot.execute_player_pre_pos: None type=<class 'NoneType'>
+robot.expose_killed_enemy_pos_timer: None type=<class 'NoneType'>
+robot.expose_talent_end_stamp: None type=<class 'NoneType'>
+robot.feel_hp_timer: None type=<class 'NoneType'>
+robot.fsm_ads_mark_pos: None type=<class 'NoneType'>
+robot.fsm_enemy_toplogo: None type=<class 'NoneType'>
+robot.grappling_hook_target_pos: None type=<class 'NoneType'>
+robot.hp: 125.0 type=<class 'float'>
+robot.init_toplogo_ui: True type=<class 'bool'>
+robot.is_pose_sender_enabled: False type=<class 'bool'>
+robot.juren_hook_pos_left: None type=<class 'NoneType'>
+robot.juren_hook_pos_right: None type=<class 'NoneType'>
+robot.knock_down_team_enemy_pos_timer: None type=<class 'NoneType'>
+robot.low_hp_effect_timer: None type=<class 'NoneType'>
+robot.missile_indicate_pos: None type=<class 'NoneType'>
+robot.on_update_position: <bound method RobotCombatAvatarShootingRange.on_update_position of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.on_update_position: sig=<Signature (stamp, x, y, z)>
+robot.on_update_position: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=222 args=('self', 'stamp', 'x', 'y', 'z')
+robot.on_update_position_and_direction: <bound method RobotCombatAvatarShootingRange.on_update_position_and_direction of <RobotCombatAvatarShootingRange(anFFTEsxNr+4vTgF)>> type=<class 'method'>
+robot.on_update_position_and_direction: sig=<Signature (stamp, x, y, z, yaw)>
+robot.on_update_position_and_direction: code file='gclient/gameplay/logic_shootingrange/combat_avatar_shootingrange.py' first=230 args=('self', 'stamp', 'x', 'y', 'z', 'yaw')
+robot.pos: (16.200000762939453, 0.0, -1.399999976158142) type=<class 'tuple'>
+robot.pose_type: 0 type=<class 'int'>
+robot.position: (16.224382400512695, 0.08436138182878494, -1.4008004665374756) type=<class 'tuple'>
+robot.samurai_sprint_pos: None type=<class 'NoneType'>
+robot.toplogo: <gclient.gameplay.logic_base.comps.avatar_scene_node.AvatarSceneNode object at 0x0000025A03379A90> type=<class 'gclient.gameplay.logic_base.comps.avatar_scene_node.AvatarSceneNode'>
+robot.toplogo_border_widget: None type=<class 'NoneType'>
+robot.toplogo_widget: <gclient.framework.commoncomps.toplogo_component.TopLogoUINode object(Node) at 0x25A032A17B0> type=<class 'gclient.framework.commoncomps.toplogo_component.TopLogoUINode'>
+robot.toplogo_widget_hidden_reason: 0 type=<class 'int'>
+template={'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (0, 3.15, 0), 'visible_distance': 9999.0, 'camera_hit_max_dis': 165, 'icon': 733, 'cls': 'ToplogoGunRefit', 'fov_distance': 9999.0, 'id': 9801, 'max_opacity': 1.0, 'camera_hit_min_dis': 50, 'pos': (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'scene_on': True, 'minScale': 1.0, 'maxScale': 1.0, 'text': 'CTF 12m HP125', 'name': 'CTF 12m HP125', 'title': 'CTF 12m HP125', 'label': 'CTF 12m HP125'}
+CreateCommonMarkToplogoSceneOnly returned <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>
+toplogo: repr=<gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590> type=<class 'gclient.gameplay.util.common_toplogo.ToplogoGunRefit'>
+toplogo: names=['AddUpdateTimer', 'AddVisibleUpdateTimer', 'AdjustWidgetByScale', 'CancelUpdateTimer', 'CancelVisibleUpdateTimer', 'Create', 'CreateBorder', 'CreateToplogo', 'CreateToplogoWorldEffect', 'Destroy', 'GetScreenPointFromWorldPointPython', 'InitMarkToplogoUI', 'IsCameraHitMe', 'NEED_TICK', 'OnCreateMarkMargin', 'OnMarkClick', 'PlayAnim', 'PlayGuideAnim', 'RemoveToplogo', 'RemoveToplogoWorldEffect', 'SetOpacity', 'StopGuideAnim', 'UpdateMarkToplogo', 'UpdateMarkToplogoVisible', '_UpdateMarkToplogo', '_addComponent', '_callComponents', '_delComponent', '_finiComponents', '_hasComponents', '_initComponents', '_postComponents', '_tickComponents', 'hit_test_panel_x', 'hit_test_panel_y', 'icon_id', 'img_black', 'img_black_posy_origin', 'img_loading', 'img_mark', 'img_mark_vx', 'logo_world_effect', 'mark_id', 'mark_info', 'mark_toplogo_attach_ientity', 'mark_toplogo_ientity', 'mark_toplogo_pos', 'mark_toplogo_widget', 'mark_vx_panel_2', 'mark_vx_panel_2_0', 'model_position', 'owner', 'panel_mark', 'panel_mark_height_origin', 'panel_top', 'timer_interval', 'toplogo', 'toplogo_border_widget', 'toplogo_name', 'txt_distance', 'update_timer', 'visible_update_timer']
+toplogo.AddVisibleUpdateTimer: <bound method CommonTopLogo.AddVisibleUpdateTimer of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.AddVisibleUpdateTimer: sig=<Signature ()>
+toplogo.AddVisibleUpdateTimer: code file='gclient/gameplay/util/common_toplogo.py' first=79 args=('self',)
+toplogo.AdjustWidgetByScale: <bound method CommonTopLogo.AdjustWidgetByScale of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.AdjustWidgetByScale: sig=<Signature (scale)>
+toplogo.AdjustWidgetByScale: code file='gclient/gameplay/util/common_toplogo.py' first=133 args=('self', 'scale')
+toplogo.CancelVisibleUpdateTimer: <bound method CommonTopLogo.CancelVisibleUpdateTimer of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.CancelVisibleUpdateTimer: sig=<Signature ()>
+toplogo.CancelVisibleUpdateTimer: code file='gclient/gameplay/util/common_toplogo.py' first=85 args=('self',)
+toplogo.CreateToplogo: <bound method ToplogoComponent.CreateToplogo of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.CreateToplogo: sig=<Signature (ientity, scene_node_name, cocos_widget, depthEnable=False, auto_distinct=True)>
+toplogo.CreateToplogo: code file='gclient/framework/commoncomps/toplogo_component.py' first=161 args=('self', 'ientity', 'scene_node_name', 'cocos_widget', 'depthEnable', 'auto_distinct')
+toplogo.CreateToplogoWorldEffect: <bound method CommonTopLogo.CreateToplogoWorldEffect of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.CreateToplogoWorldEffect: sig=<Signature ()>
+toplogo.CreateToplogoWorldEffect: code file='gclient/gameplay/util/common_toplogo.py' first=235 args=('self',)
+toplogo.InitMarkToplogoUI: <bound method ToplogoGunRefit.InitMarkToplogoUI of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.InitMarkToplogoUI: sig=<Signature ()>
+toplogo.InitMarkToplogoUI: code file='gclient/gameplay/util/common_toplogo.py' first=787 args=('self',)
+toplogo.OnCreateMarkMargin: <bound method CommonTopLogo.OnCreateMarkMargin of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.OnCreateMarkMargin: sig=<Signature ()>
+toplogo.OnCreateMarkMargin: code file='gclient/gameplay/util/common_toplogo.py' first=327 args=('self',)
+toplogo.OnMarkClick: <bound method CommonTopLogo.OnMarkClick of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.OnMarkClick: sig=<Signature (btn)>
+toplogo.OnMarkClick: code file='gclient/gameplay/util/common_toplogo.py' first=342 args=('self', 'btn')
+toplogo.RemoveToplogo: <bound method ToplogoComponent.RemoveToplogo of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.RemoveToplogo: sig=<Signature ()>
+toplogo.RemoveToplogo: code file='gclient/framework/commoncomps/toplogo_component.py' first=171 args=('self',)
+toplogo.RemoveToplogoWorldEffect: <bound method CommonTopLogo.RemoveToplogoWorldEffect of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.RemoveToplogoWorldEffect: sig=<Signature ()>
+toplogo.RemoveToplogoWorldEffect: code file='gclient/gameplay/util/common_toplogo.py' first=247 args=('self',)
+toplogo.UpdateMarkToplogo: <bound method ToplogoGunRefit.UpdateMarkToplogo of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.UpdateMarkToplogo: sig=<Signature ()>
+toplogo.UpdateMarkToplogo: code file='gclient/gameplay/util/common_toplogo.py' first=790 args=('self',)
+toplogo.UpdateMarkToplogoVisible: <bound method CommonTopLogo.UpdateMarkToplogoVisible of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo.UpdateMarkToplogoVisible: sig=<Signature ()>
+toplogo.UpdateMarkToplogoVisible: code file='gclient/gameplay/util/common_toplogo.py' first=217 args=('self',)
+toplogo._UpdateMarkToplogo: <bound method CommonTopLogo._UpdateMarkToplogo of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo._UpdateMarkToplogo: sig=<Signature ()>
+toplogo._UpdateMarkToplogo: code file='gclient/gameplay/util/common_toplogo.py' first=276 args=('self',)
+toplogo._postComponents: <bound method _postComponents of <gclient.gameplay.util.common_toplogo.ToplogoGunRefit object at 0x0000025A174E9590>> type=<class 'method'>
+toplogo._postComponents: sig=<Signature (bdict)>
+toplogo._postComponents: code file='engine/common/classutils.py' first=97 args=('self', 'bdict')
+toplogo.icon_id: 733 type=<class 'int'>
+toplogo.img_black_posy_origin: 33.0 type=<class 'float'>
+toplogo.img_mark: <gclient.framework.ui.widgets.ui_texture.UITexture object(ImageView) at 0x25A174E8E10> type=<class 'gclient.framework.ui.widgets.ui_texture.UITexture'>
+toplogo.img_mark_vx: <gclient.framework.ui.widgets.ui_texture.UITexture object(ImageView) at 0x25A174EA5D0> type=<class 'gclient.framework.ui.widgets.ui_texture.UITexture'>
+toplogo.mark_id: 'ctf_probe_toplogo_object' type=<class 'str'>
+toplogo.mark_info: {'camera_hit_min_opacity': 70, 'min_opacity': 1.0, 'camera_hit': False, 'camera_hit_max_opacity': 255, 'offset': (0, 3.15, 0), 'visible_distance': 9999.0, 'camera_hit_max_dis': 165, 'icon': 733, 'cls': 'ToplogoGunRefit', 'fov_distance': 9999.0, 'id': 9801, 'max_opacity': 1.0, 'camera_hit_min_dis': 50, 'pos': (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 'scene_on': True, 'minScale': 1.0, 'maxScale': 1.0, 'text': 'CTF 12m HP125', 'name': 'CTF 12m HP125', 'title': 'CTF 12m HP125', 'label': 'CTF 12m HP125'} type=<class 'dict'>
+toplogo.mark_toplogo_attach_ientity: None type=<class 'NoneType'>
+toplogo.mark_toplogo_ientity: <IEntity object at 0x0000025A17224CC0> type=<class 'IEntity'>
+toplogo.mark_toplogo_pos: (16.224382400512695, 3.234361410140991, -1.4008004665374756) type=<class 'tuple'>
+toplogo.mark_toplogo_widget: <gclient.framework.ui.widgets.ui_autohide_node.UiAutohideNode object(Node) at 0x259F92B2F90> type=<class 'gclient.framework.ui.widgets.ui_autohide_node.UiAutohideNode'>
+toplogo.mark_vx_panel_2: <gclient.framework.ui.widgets.ui_node.UINode object(Layout) at 0x25A174E3380> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+toplogo.mark_vx_panel_2_0: <gclient.framework.ui.widgets.ui_node.UINode object(Layout) at 0x25A174E3620> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+toplogo.model_position: None type=<class 'NoneType'>
+toplogo.panel_mark: <gclient.framework.ui.widgets.ui_node.UINode object(Layout) at 0x25A174E3230> type=<class 'gclient.framework.ui.widgets.ui_node.UINode'>
+toplogo.panel_mark_height_origin: 100.0 type=<class 'float'>
+toplogo.toplogo: <gclient.framework.commoncomps.toplogo_component.SceneNode object at 0x0000025A17207F50> type=<class 'gclient.framework.commoncomps.toplogo_component.SceneNode'>
+toplogo.toplogo_border_widget: None type=<class 'NoneType'>
+toplogo.toplogo_name: 'ctf_probe_toplogo_object' type=<class 'str'>
+toplogo.visible_update_timer: None type=<class 'NoneType'>
+END
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) stats={'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=360 total=23 players=[('anFFZUsxNr+4vT0l', (-16.968557357788086, 0.050000011920928955, -9.098176002502441))] robots=[('anFFTEsxNr+4vTgF', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 34.073773208196336, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgO', (-28.0, 0.05000007152557373, -13.0), 11.701151963625598, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgJ', (26.3205623626709, 0.06777054071426392, 2.599637508392334), 44.84180017460937, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTf9', (-3.6765191555023193, 0.05925852805376053, -9.500686645507812), 13.298134459723206, {'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTf4', (-8.783376693725586, 0.09060776978731155, -13.467101097106934), 9.278272359421576, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgB', (6.3205156326293945, 0.0634201169013977, -5.500304698944092), 23.56535123373253, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+TEXT key=anFFTEsxNr+4vTgF id=4544 label='T1 F 34.1m H125 A0' pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) color=(0.1, 0.95, 0.25)
+TEXT key=anFFTEsxNr+4vTgO id=4545 label='T2 N 11.7m H125 A0' pos=(-28.0, 0.05000007152557373, -13.0) color=(1.0, 0.12, 0.08)
+TEXT key=anFFTEsxNr+4vTgJ id=4546 label='T3 F 44.8m H125 A0' pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) color=(0.1, 0.95, 0.25)
+TEXT key=anFFTEsxNr+4vTf9 id=4547 label='T4 M 13.3m H20 A0' pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) color=(1.0, 0.85, 0.05)
+TEXT key=anFFTEsxNr+4vTf4 id=4548 label='T5 N 9.3m H125 A0' pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) color=(1.0, 0.12, 0.08)
+TEXT key=anFFTEsxNr+4vTgB id=4549 label='T6 M 23.6m H125 A0' pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) color=(1.0, 0.85, 0.05)
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) stats={'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) stats={'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=400 total=23 players=[('anFFZUsxNr+4vT0l', (-16.968557357788086, 0.050000011920928955, -9.098176002502441))] robots=[('anFFTEsxNr+4vTgF', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 34.073773208196336, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgO', (-28.0, 0.05000007152557373, -13.0), 11.701151963625598, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgJ', (26.3205623626709, 0.06777054071426392, 2.599637508392334), 44.84180017460937, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTf9', (-3.6765191555023193, 0.05925852805376053, -9.500686645507812), 13.298134459723206, {'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTf4', (-8.783376693725586, 0.09060776978731155, -13.467101097106934), 9.278272359421576, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgB', (6.3205156326293945, 0.0634201169013977, -5.500304698944092), 23.56535123373253, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+TEXT key=anFFTEsxNr+4vTgF id=4604 label='T1 F 34.1m H125 A0' pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) color=(0.1, 0.95, 0.25)
+TEXT key=anFFTEsxNr+4vTgO id=4605 label='T2 N 11.7m H125 A0' pos=(-28.0, 0.05000007152557373, -13.0) color=(1.0, 0.12, 0.08)
+TEXT key=anFFTEsxNr+4vTgJ id=4606 label='T3 F 44.8m H125 A0' pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) color=(0.1, 0.95, 0.25)
+TEXT key=anFFTEsxNr+4vTf9 id=4607 label='T4 M 13.3m H20 A0' pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) color=(1.0, 0.85, 0.05)
+TEXT key=anFFTEsxNr+4vTf4 id=4608 label='T5 N 9.3m H125 A0' pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) color=(1.0, 0.12, 0.08)
+TEXT key=anFFTEsxNr+4vTgB id=4609 label='T6 M 23.6m H125 A0' pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) color=(1.0, 0.85, 0.05)
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) stats={'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) stats={'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+TICK n=440 total=23 players=[('anFFZUsxNr+4vT0l', (-16.968557357788086, 0.050000011920928955, -9.098176002502441))] robots=[('anFFTEsxNr+4vTgF', (16.224382400512695, 0.08436138182878494, -1.4008004665374756), 34.073773208196336, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgO', (-28.0, 0.05000007152557373, -13.0), 11.701151963625598, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgJ', (26.3205623626709, 0.06777054071426392, 2.599637508392334), 44.84180017460937, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTf9', (-3.6765191555023193, 0.05925852805376053, -9.500686645507812), 13.298134459723206, {'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTf4', (-8.783376693725586, 0.09060776978731155, -13.467101097106934), 9.278272359421576, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False}), ('anFFTEsxNr+4vTgB', (6.3205156326293945, 0.0634201169013977, -5.500304698944092), 23.56535123373253, {'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False})]
+TEXT key=anFFTEsxNr+4vTgF id=4664 label='T1 F 34.1m H125 A0' pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) color=(0.1, 0.95, 0.25)
+TEXT key=anFFTEsxNr+4vTgO id=4665 label='T2 N 11.7m H125 A0' pos=(-28.0, 0.05000007152557373, -13.0) color=(1.0, 0.12, 0.08)
+TEXT key=anFFTEsxNr+4vTgJ id=4666 label='T3 F 44.8m H125 A0' pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) color=(0.1, 0.95, 0.25)
+TEXT key=anFFTEsxNr+4vTf9 id=4667 label='T4 M 13.3m H20 A0' pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) color=(1.0, 0.85, 0.05)
+TEXT key=anFFTEsxNr+4vTf4 id=4668 label='T5 N 9.3m H125 A0' pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) color=(1.0, 0.12, 0.08)
+TEXT key=anFFTEsxNr+4vTgB id=4669 label='T6 M 23.6m H125 A0' pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) color=(1.0, 0.85, 0.05)
+ROBOT key=anFFTEsxNr+4vTgF pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgO pos=(-28.0, 0.05000007152557373, -13.0) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgJ pos=(26.3205623626709, 0.06777054071426392, 2.599637508392334) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf9 pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) stats={'hp': 20.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTf4 pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True
+ROBOT key=anFFTEsxNr+4vTgB pos=(6.3205156326293945, 0.0634201169013977, -5.500304698944092) stats={'hp': 125.0, 'maxhp': 125.0, 'armor': 0.0, 'maxarmor': 0.0, 'dead': False} ready_before=True EnsureShootingRangeToplogo=True ShowEnemyToplogo=None SetToplogoVisible=None AddToplogoVisibleTick=None EnemyTopLogoTimer=None RefreshToplogo=None RefreshEnemyHpBar=None RefreshEnemyArmorBar=None ready_after=True

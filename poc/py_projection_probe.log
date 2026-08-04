@@ -1,0 +1,87 @@
+BEGIN 1785811893.7071629
+screen=(1334, 750, <1334, 750>)
+MUI type=<class 'module'> repr=<module 'MUI'>
+MUI names=['AutoScrollAllScrollView', 'CreateScreenText', 'GetScreenHeight', 'GetScreenSize', 'GetScreenWidth', 'RemoveScreenText', 'ScreenShotOnExternalImage', 'SetGameMapCenterWorldPos', 'SetGameMapMarkerWorldPos', 'SetGameMapWorldSpaceRange', 'SetScreenSizeChangedCallback', 'SetScreenTextFontName', 'UpdateScreenText', 'UpdateUICameraFOV']
+MUI.AutoScrollAllScrollView callable=<built-in function AutoScrollAllScrollView>
+MUI.CreateScreenText callable=<built-in function CreateScreenText>
+MUI.GetScreenHeight sig=<Signature (self, /)>
+MUI.GetScreenSize sig=<Signature (self, /)>
+MUI.GetScreenWidth sig=<Signature (self, /)>
+MUI.RemoveScreenText sig=<Signature (self, object, /)>
+MUI.ScreenShotOnExternalImage callable=<built-in function ScreenShotOnExternalImage>
+MUI.SetGameMapCenterWorldPos callable=<built-in function SetGameMapCenterWorldPos>
+MUI.SetGameMapMarkerWorldPos callable=<built-in function SetGameMapMarkerWorldPos>
+MUI.SetGameMapWorldSpaceRange callable=<built-in function SetGameMapWorldSpaceRange>
+MUI.SetScreenSizeChangedCallback sig=<Signature (self, object, /)>
+MUI.SetScreenTextFontName sig=<Signature (self, object, /)>
+MUI.UpdateScreenText callable=<built-in function UpdateScreenText>
+MUI.UpdateUICameraFOV callable=<built-in function UpdateUICameraFOV>
+cc type=<class 'module'> repr=<module 'cc'>
+cc names=['ActionCamera', 'BONEPOSITIONTYPE_PT_WORLD', 'CAMERAFLAG_DEFAULT', 'CAMERAFLAG_USER1', 'CAMERAFLAG_USER2', 'CAMERAFLAG_USER3', 'CAMERAFLAG_USER4', 'CAMERAFLAG_USER5', 'CAMERAFLAG_USER6', 'CAMERAFLAG_USER7', 'CAMERAFLAG_USER8', 'DIRECTOR_PROJECTION_CUSTOM', 'DIRECTOR_PROJECTION_DEFAULT', 'DIRECTOR_PROJECTION__2D', 'DIRECTOR_PROJECTION__3D', 'GLView', 'NODE_NODECALLBACKTYPE_SCREENSIZECHANGED', 'OrbitCamera', 'QUADTYPE_IQUADTYPE_CAMERA', 'SPRITE_QUADTYPE_QUADTYPE_CAMERA']
+cc.ActionCamera callable=<class 'cc.ActionCamera'>
+cc.BONEPOSITIONTYPE_PT_WORLD=1
+cc.CAMERAFLAG_DEFAULT=1
+cc.CAMERAFLAG_USER1=2
+cc.CAMERAFLAG_USER2=4
+cc.CAMERAFLAG_USER3=8
+cc.CAMERAFLAG_USER4=16
+cc.CAMERAFLAG_USER5=32
+cc.CAMERAFLAG_USER6=64
+cc.CAMERAFLAG_USER7=128
+cc.CAMERAFLAG_USER8=256
+cc.DIRECTOR_PROJECTION_CUSTOM=2
+cc.DIRECTOR_PROJECTION_DEFAULT=1
+cc.DIRECTOR_PROJECTION__2D=0
+cc.DIRECTOR_PROJECTION__3D=1
+cc.GLView callable=<class 'cc.GLView'>
+cc.NODE_NODECALLBACKTYPE_SCREENSIZECHANGED=5
+cc.OrbitCamera callable=<class 'cc.OrbitCamera'>
+cc.QUADTYPE_IQUADTYPE_CAMERA=8192
+cc.SPRITE_QUADTYPE_QUADTYPE_CAMERA=8192
+cc.Director type=<class 'type'> repr=<class 'cc.Director'>
+cc.Director names=['convertToGL', 'convertToUI', 'getOpenGLView', 'getVisibleOrigin', 'getVisibleSize', 'setOpenGLView', 'setProjection', 'setViewport']
+cc.Director.convertToGL callable=<method 'convertToGL' of 'cc.Director' objects>
+cc.Director.convertToUI callable=<method 'convertToUI' of 'cc.Director' objects>
+cc.Director.getOpenGLView callable=<method 'getOpenGLView' of 'cc.Director' objects>
+cc.Director.getVisibleOrigin callable=<method 'getVisibleOrigin' of 'cc.Director' objects>
+cc.Director.getVisibleSize callable=<method 'getVisibleSize' of 'cc.Director' objects>
+cc.Director.setOpenGLView callable=<method 'setOpenGLView' of 'cc.Director' objects>
+cc.Director.setProjection callable=<method 'setProjection' of 'cc.Director' objects>
+cc.Director.setViewport callable=<method 'setViewport' of 'cc.Director' objects>
+cc.Camera None
+cc.Director.getInstance() => <cc.Director object at 0x00000259C9AD81D0>
+director type=<class 'cc.Director'> repr=<cc.Director object at 0x00000259C9AD81D0>
+director names=['convertToGL', 'convertToUI', 'getOpenGLView', 'getVisibleOrigin', 'getVisibleSize', 'setOpenGLView', 'setProjection', 'setViewport']
+director.convertToGL callable=<built-in method convertToGL of cc.Director object at 0x00000259C9AD81D0>
+director.convertToUI callable=<built-in method convertToUI of cc.Director object at 0x00000259C9AD81D0>
+director.getOpenGLView callable=<built-in method getOpenGLView of cc.Director object at 0x00000259C9AD81D0>
+director.getVisibleOrigin callable=<built-in method getVisibleOrigin of cc.Director object at 0x00000259C9AD81D0>
+director.getVisibleSize callable=<built-in method getVisibleSize of cc.Director object at 0x00000259C9AD81D0>
+director.setOpenGLView callable=<built-in method setOpenGLView of cc.Director object at 0x00000259C9AD81D0>
+director.setProjection callable=<built-in method setProjection of cc.Director object at 0x00000259C9AD81D0>
+director.setViewport callable=<built-in method setViewport of cc.Director object at 0x00000259C9AD81D0>
+director.getRunningScene() => <cc.Scene object at 0x00000259C9AD8230>
+scene type=<class 'cc.Scene'> repr=<cc.Scene object at 0x00000259C9AD8230>
+scene names=['convertProxyChildrenToChildren', 'convertToNodeSpace', 'convertToNodeSpaceAR', 'convertToParentSpace', 'convertToWindowSpace', 'convertToWorldSpace', 'convertToWorldSpaceAR', 'convertTouchToNodeSpace', 'convertTouchToNodeSpaceAR', 'getNodeToWorldAffineTransform', 'getNodeToWorldTransform', 'getPhysicsWorld', 'getWorldToNodeAffineTransform', 'getWorldToNodeTransform', 'isNodeToWorldTransformDirty', 'isVisible', 'setVisible']
+scene.convertProxyChildrenToChildren callable=<built-in method convertProxyChildrenToChildren of cc.Scene object at 0x00000259C9AD8230>
+scene.convertToNodeSpace callable=<built-in method convertToNodeSpace of cc.Scene object at 0x00000259C9AD8230>
+scene.convertToNodeSpaceAR callable=<built-in method convertToNodeSpaceAR of cc.Scene object at 0x00000259C9AD8230>
+scene.convertToParentSpace callable=<built-in method convertToParentSpace of cc.Scene object at 0x00000259C9AD8230>
+scene.convertToWindowSpace callable=<built-in method convertToWindowSpace of cc.Scene object at 0x00000259C9AD8230>
+scene.convertToWorldSpace callable=<built-in method convertToWorldSpace of cc.Scene object at 0x00000259C9AD8230>
+scene.convertToWorldSpaceAR callable=<built-in method convertToWorldSpaceAR of cc.Scene object at 0x00000259C9AD8230>
+scene.convertTouchToNodeSpace callable=<built-in method convertTouchToNodeSpace of cc.Scene object at 0x00000259C9AD8230>
+scene.convertTouchToNodeSpaceAR callable=<built-in method convertTouchToNodeSpaceAR of cc.Scene object at 0x00000259C9AD8230>
+scene.getNodeToWorldAffineTransform callable=<built-in method getNodeToWorldAffineTransform of cc.Scene object at 0x00000259C9AD8230>
+scene.getNodeToWorldTransform callable=<built-in method getNodeToWorldTransform of cc.Scene object at 0x00000259C9AD8230>
+scene.getPhysicsWorld callable=<built-in method getPhysicsWorld of cc.Scene object at 0x00000259C9AD8230>
+scene.getWorldToNodeAffineTransform callable=<built-in method getWorldToNodeAffineTransform of cc.Scene object at 0x00000259C9AD8230>
+scene.getWorldToNodeTransform callable=<built-in method getWorldToNodeTransform of cc.Scene object at 0x00000259C9AD8230>
+scene.isNodeToWorldTransformDirty callable=<built-in method isNodeToWorldTransformDirty of cc.Scene object at 0x00000259C9AD8230>
+scene.isVisible callable=<built-in method isVisible of cc.Scene object at 0x00000259C9AD8230>
+scene.setVisible callable=<built-in method setVisible of cc.Scene object at 0x00000259C9AD8230>
+scene.getDefaultCamera() fail=AttributeError("'cc.Scene' object has no attribute 'getDefaultCamera'")
+director.getDefaultCamera() fail=AttributeError("'cc.Director' object has no attribute 'getDefaultCamera'")
+camera None
+END
+OK {"ts": 1785814033.6168313, "screen": [1334, 750], "camera": {"position": [-16.504825592041016, 1.5435000658035278, -6.7765398025512695], "yaw": -1.6349223852157593, "pitch": 0.05345453694462776, "roll": 0.0, "fov": 75.0}, "players": [{"key": "anFbeEsxNr+4wpr6", "position": [-16.621000289916992, 0.04200005531311035, -6.783999919891357]}], "robots": [{"key": "anFbc0sxNr+4wpmC", "position": [-28.0, 0.05000007152557373, -13.0], "min": [-28.19367218017578, 0.04503822326660156, -13.558425903320312], "max": [-27.831867218017578, 1.933274745941162, -12.441553115844727], "hud0_min": [-128.79193115234375, -17.626571655273438, -104.96409606933594], "hud0_max": [-126.2354965209961, 10.713471412658691, -88.36817169189453], "hud1_min": [-27.96134376525879, -0.41239890456199646, -16.794496536254883], "hud1_max": [-27.690765380859375, 2.4782862663269043, -15.093987464904785]}, {"key": "anFbc0sxNr+4wpl+", "position": [26.323650360107422, 0.07277334481477737, 2.5989699363708496], "min": [26.12997817993164, 0.06781148910522461, 2.040543794631958], "max": [26.491783142089844, 1.9560480117797852, 3.157416582107544], "hud0_min": [441.6392822265625, -36.249454498291016, 123.42125701904297], "hud0_max": [444.99530029296875, -5.119386196136475, 141.88014221191406], "hud1_min": [26.028972625732422, -1.9651726484298706, 5.310939311981201], "hud1_max": [26.2995548248291, 0.9255139827728271, 7.011445999145508]}, {"key": "anFbc0sxNr+4wplj", "position": [-3.6765191555023193, 0.05925846844911575, -9.500686645507812], "min": [-3.8701913356781006, 0.05429661273956299, -10.059112548828125], "max": [-3.508387327194214, 1.9425331354141235, -8.942239761352539], "hud0_min": [114.55540466308594, -25.471694946289062, -62.68423080444336], "hud0_max": [117.4392318725586, 4.042011737823486, -45.35847473144531], "hud1_min": [-3.667295455932617, -1.102675199508667, -12.252775192260742], "hud1_max": [-3.3967180252075195, 1.7880109548568726, -10.552266120910645]}, {"key": "anFbc0sxNr+4wpln", "position": [6.3227458000183105, 0.06980303674936295, -5.500764846801758], "min": [6.129073619842529, 0.06484121084213257, -6.0591912269592285], "max": [6.490877628326416, 1.9530776739120483, -4.942318439483643], "hud0_min": [219.72354125976562, -28.839580535888672, -3.377190351486206], "hud0_max": [222.755615234375, 1.1938878297805786, 14.310295104980469], "hud1_min": [6.231635093688965, -1.3808040618896484, -6.449359893798828], "hud1_max": [6.502217769622803, 1.5098817348480225, -4.7488508224487305]}, {"key": "anFbc0sxNr+4wpls", "position": [16.224382400512695, 0.08436132222414017, -1.4008004665374756], "min": [16.030710220336914, 0.0793994665145874, -1.9592268466949463], "max": [16.392515182495117, 1.967635989189148, -0.842353880405426], "hud0_min": [327.5526428222656, -32.23048400878906, 59.718101501464844], "hud0_max": [330.7403259277344, -1.6634178161621094, 77.78105926513672], "hud1_min": [16.029020309448242, -1.6501449346542358, -0.48884978890419006], "hud1_max": [16.299602508544922, 1.2405414581298828, 1.2116599082946777]}, {"key": "anFbc0sxNr+4wplV", "position": [-8.783376693725586, 0.09060771018266678, -13.467101097106934], "min": [-8.977048873901367, 0.08564585447311401, -14.025527000427246], "max": [-8.615243911743164, 1.9738824367523193, -12.90865421295166], "hud0_min": [62.88454818725586, -23.18398094177246, -122.07608795166016], "hud0_max": [65.6959457397461, 6.06571626663208, -104.95994567871094], "hud1_min": [-8.657849311828613, -0.9006044268608093, -18.17293357849121], "hud1_max": [-8.38726806640625, 1.9900816679000854, -16.47242546081543]}]}

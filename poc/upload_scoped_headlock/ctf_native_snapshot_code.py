@@ -1,0 +1,584 @@
+"""State exporter for the local CTF ESP renderer.
+
+The renderer is the native C++ process in cpp_overlay.  This module only reads
+the isolated game's own entity and camera state, then writes an atomically
+replaced text snapshot for the renderer to consume.
+"""
+
+import builtins as _ctf_native_builtins
+import gc as _ctf_native_gc
+import math as _ctf_native_math
+import os as _ctf_native_os
+import time as _ctf_native_time
+import traceback as _ctf_native_traceback
+
+
+_ctf_native_state_name = "_ctf_bloodstrike_native_esp_state"
+_ctf_native_legacy_state_name = "_ctf_bloodstrike_live_esp_state"
+_ctf_native_root = _ctf_native_os.path.dirname(_ctf_native_os.path.abspath(__file__))
+_ctf_native_snapshot_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_esp_state.txt")
+_ctf_native_snapshot_temp_path = _ctf_native_snapshot_path + ".tmp"
+_ctf_native_log_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_esp.log")
+_ctf_native_config_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_esp_config.txt")
+_ctf_native_default_max_distance = 800.0
+# The host calls the timer close to 60 Hz.  A 1/60 throttle can reject callbacks
+# that arrive a fraction early and halve the effective rate, so keep this below
+# one host tick while leaving visibility checks independently cached.
+_ctf_native_snapshot_interval = 1.0 / 120.0
+
+
+def _ctf_native_log(message):
+    try:
+        with open(_ctf_native_log_path, "a", encoding="utf-8") as _ctf_native_handle:
+            _ctf_native_handle.write("{:.3f} {}\n".format(_ctf_native_time.time(), message))
+    except Exception:
+        pass
+
+
+def _ctf_native_call(obj, name, *args):
+    try:
+        return getattr(obj, name)(*args)
+    except Exception:
+        return None
+
+
+def _ctf_native_vec3(value):
+    if value is None:
+        return None
+    try:
+        return (float(value.x), float(value.y), float(value.z))
+    except Exception:
+        pass
+    try:
+        return (float(value[0]), float(value[1]), float(value[2]))
+    except Exception:
+        return None
+
+
+def _ctf_native_position(entity):
+    for _ctf_native_name in ("position", "pos", "last_position"):
+        try:
+            _ctf_native_value = getattr(entity, _ctf_native_name)
+            if callable(_ctf_native_value):
+                _ctf_native_value = _ctf_native_value()
+            _ctf_native_result = _ctf_native_vec3(_ctf_native_value)
+            if _ctf_native_result is not None:
+                return _ctf_native_result
+        except Exception:
+            pass
+    return None
+
+
+def _ctf_native_metric(entity, names, default=0.0):
+    for _ctf_native_name in names:
+        try:
+            _ctf_native_value = getattr(entity, _ctf_native_name)
+            if callable(_ctf_native_value):
+                _ctf_native_value = _ctf_native_value()
+            return float(_ctf_native_value)
+        except Exception:
+            pass
+    return float(default)
+
+
+def _ctf_native_max_target_distance(state):
+    """Refresh the overlay-controlled range without adding per-frame file I/O."""
+    _ctf_native_now = _ctf_native_time.time()
+    if _ctf_native_now < state.get("next_config_refresh", 0.0):
+        return state.get("max_target_distance", _ctf_native_default_max_distance)
+
+    state["next_config_refresh"] = _ctf_native_now + 0.5
+    _ctf_native_value = _ctf_native_default_max_distance
+    try:
+        with open(_ctf_native_config_path, "r", encoding="ascii") as _ctf_native_handle:
+            for _ctf_native_line in _ctf_native_handle:
+                if _ctf_native_line.startswith("max_distance="):
+                    _ctf_native_candidate = float(_ctf_native_line.split("=", 1)[1].strip())
+                    if _ctf_native_math.isfinite(_ctf_native_candidate):
+                        _ctf_native_value = _ctf_native_candidate
+                    break
+    except Exception:
+        pass
+
+    state["max_target_distance"] = max(25.0, min(800.0, _ctf_native_value))
+    return state["max_target_distance"]
+
+
+def _ctf_native_bounds(entity):
+    for _ctf_native_source in (getattr(entity, "model", None), entity):
+        if _ctf_native_source is None:
+            continue
+        for _ctf_native_name in ("GetWorldBound", "GetPrimWorldBound", "GetSkeletonDynamicWorldBound"):
+            _ctf_native_bound = _ctf_native_call(_ctf_native_source, _ctf_native_name)
+            if _ctf_native_bound is None:
+                continue
+            _ctf_native_low = _ctf_native_vec3(getattr(_ctf_native_bound, "min", None))
+            _ctf_native_high = _ctf_native_vec3(getattr(_ctf_native_bound, "max", None))
+            if _ctf_native_low is None or _ctf_native_high is None:
+                continue
+            if _ctf_native_high[1] > _ctf_native_low[1]:
+                return _ctf_native_low, _ctf_native_high
+    return None, None
+
+
+def _ctf_native_head_position(state, key, entity, entity_pos):
+    """Return the model's initialized head-bone point, never a bounds estimate."""
+    _ctf_native_model = getattr(entity, "model", None)
+    if _ctf_native_model is None:
+        return None
+
+    _ctf_native_head_models = state.setdefault("head_models", {})
+    _ctf_native_model_id = id(_ctf_native_model)
+    if _ctf_native_head_models.get(key) != _ctf_native_model_id:
+        _ctf_native_call(_ctf_native_model, "MakeSureBones")
+        _ctf_native_call(_ctf_native_model, "CreateSpecifyBone", "biped Head")
+        _ctf_native_head_models[key] = _ctf_native_model_id
+
+    _ctf_native_head = _ctf_native_vec3(
+        _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", "biped Head")
+    )
+    if _ctf_native_head is None or not all(_ctf_native_math.isfinite(value) for value in _ctf_native_head):
+        return None
+    if entity_pos is None or _ctf_native_head[1] <= entity_pos[1] + 0.20:
+        return None
+    return _ctf_native_head
+
+
+def _ctf_native_active_space(state):
+    _ctf_native_space = state.get("physics_space")
+    if _ctf_native_space is not None:
+        return _ctf_native_space
+    try:
+        from gclient.framework.entities.space import Space as _ctf_native_space_class
+        _ctf_native_spaces = [
+            space for space in _ctf_native_gc.get_objects()
+            if isinstance(space, _ctf_native_space_class)
+        ]
+        # The active scene is the non-disposed Space instance.  Disposed spaces
+        # retain a '(D)' suffix while the shooting-range scene remains live.
+        _ctf_native_space = next(
+            (space for space in _ctf_native_spaces if "(D)" not in repr(space)),
+            None,
+        )
+        if _ctf_native_space is not None:
+            state["physics_space"] = _ctf_native_space
+        return _ctf_native_space
+    except Exception:
+        return None
+
+
+def _ctf_native_visible(state, key, entity, camera_pos):
+    """Use the game physics scene so aim assist never selects a wall-blocked head."""
+    _ctf_native_now = _ctf_native_time.time()
+    _ctf_native_cache = state.setdefault("visibility_cache", {})
+    _ctf_native_cached = _ctf_native_cache.get(key)
+    if _ctf_native_cached is not None and _ctf_native_now - _ctf_native_cached[0] < (1.0 / 20.0):
+        return _ctf_native_cached[1]
+
+    _ctf_native_model = getattr(entity, "model", None)
+    _ctf_native_space = _ctf_native_active_space(state)
+    if _ctf_native_model is None or _ctf_native_space is None:
+        _ctf_native_cache[key] = (_ctf_native_now, False)
+        return False
+    _ctf_native_head = _ctf_native_call(
+        _ctf_native_model, "GetBoneWorldPosition", "biped Head"
+    )
+    _ctf_native_hit = _ctf_native_call(
+        _ctf_native_space, "ClosestRaycastBone", camera_pos, _ctf_native_head
+    )
+    _ctf_native_skeleton = _ctf_native_call(_ctf_native_model, "GetSkeleton")
+    _ctf_native_visible_now = bool(
+        _ctf_native_hit is not None and
+        getattr(_ctf_native_hit, "IsHit", False) and
+        getattr(_ctf_native_hit, "actor", None) == _ctf_native_skeleton
+    )
+    _ctf_native_cache[key] = (_ctf_native_now, _ctf_native_visible_now)
+    return _ctf_native_visible_now
+
+
+def _ctf_native_hide_widget(widget):
+    if widget is None:
+        return
+    for _ctf_native_attr, _ctf_native_value in (("visible", False), ("opacity", 0), ("text", "")):
+        try:
+            setattr(widget, _ctf_native_attr, _ctf_native_value)
+        except Exception:
+            pass
+    for _ctf_native_name, _ctf_native_args in (
+        ("setVisible", (False,)),
+        ("SetVisible", (False,)),
+        ("SetHiddenReason", (True, 918273,)),
+    ):
+        _ctf_native_call(widget, _ctf_native_name, *_ctf_native_args)
+
+
+def _ctf_native_suppress_legacy_widgets(robot):
+    """Remove the prior fixed UI marker so only the projected C++ box remains."""
+    _ctf_native_frame = getattr(robot, "recon_drone_frame_top_logo", None)
+    if _ctf_native_frame is not None:
+        for _ctf_native_attr in ("ui_node_top_logo", "scene_node", "panel_frame"):
+            _ctf_native_hide_widget(getattr(_ctf_native_frame, _ctf_native_attr, None))
+    _ctf_native_toplogo = getattr(robot, "toplogo", None)
+    if _ctf_native_toplogo is not None:
+        for _ctf_native_attr in (
+            "toplogo_widget",
+            "node_name_hp",
+            "text_dis_friend",
+            "text_name_enemy",
+        ):
+            _ctf_native_hide_widget(getattr(_ctf_native_toplogo, _ctf_native_attr, None))
+
+
+def _ctf_native_stop_legacy_timer():
+    _ctf_native_old = getattr(_ctf_native_builtins, _ctf_native_legacy_state_name, None)
+    if not isinstance(_ctf_native_old, dict):
+        return
+    _ctf_native_owner = _ctf_native_old.get("timer_owner")
+    _ctf_native_timer = _ctf_native_old.get("timer_id")
+    if _ctf_native_owner is not None and _ctf_native_timer is not None:
+        _ctf_native_call(_ctf_native_owner, "cancel_timer", _ctf_native_timer)
+    _ctf_native_old["timer_id"] = None
+    _ctf_native_old["timer_owner"] = None
+
+
+def _ctf_native_entities():
+    import common.EntityManager as _ctf_native_em
+
+    _ctf_native_values = getattr(_ctf_native_em.EntityManager, "_entities", {}).items()
+    _ctf_native_players = []
+    _ctf_native_robots = []
+    for _ctf_native_key, _ctf_native_entity in list(_ctf_native_values):
+        try:
+            if getattr(_ctf_native_entity, "IsPlayerCombatAvatar", False):
+                _ctf_native_players.append((str(_ctf_native_key), _ctf_native_entity))
+            elif getattr(_ctf_native_entity, "IsRobotCombatAvatar", False):
+                _ctf_native_robots.append((str(_ctf_native_key), _ctf_native_entity))
+        except Exception:
+            pass
+    return _ctf_native_players, _ctf_native_robots
+
+
+def _ctf_native_local_player(state, players):
+    """Keep the controlled player out of the target stream across entity reorderings."""
+    _ctf_native_local_key = state.get("local_key")
+    for _ctf_native_key, _ctf_native_entity in players:
+        if _ctf_native_key == _ctf_native_local_key:
+            return _ctf_native_key, _ctf_native_entity
+
+    for _ctf_native_key, _ctf_native_entity in players:
+        for _ctf_native_name in ("is_main_player", "is_local_player", "is_self", "IsMainPlayer"):
+            try:
+                _ctf_native_value = getattr(_ctf_native_entity, _ctf_native_name)
+                if callable(_ctf_native_value):
+                    _ctf_native_value = _ctf_native_value()
+                if _ctf_native_value:
+                    state["local_key"] = _ctf_native_key
+                    return _ctf_native_key, _ctf_native_entity
+            except Exception:
+                pass
+
+    if players:
+        _ctf_native_key, _ctf_native_entity = players[0]
+        state["local_key"] = _ctf_native_key
+        return _ctf_native_key, _ctf_native_entity
+    return None, None
+
+
+def _ctf_native_active_weapon_ballistics(player):
+    """Read equipped projectile data after weapon parts/modifiers are applied."""
+    if player is None:
+        return 0, 0.0, 0.0
+    weapon = _ctf_native_call(player, "GetCurHighPriorityWeapon")
+    if weapon is None:
+        return 0, 0.0, 0.0
+
+    try:
+        item_id = int(getattr(weapon, "item_id", 0) or 0)
+    except Exception:
+        item_id = 0
+
+    base_speed = 0.0
+    base_gravity = 0.0
+    try:
+        proto = getattr(weapon, "weapon_proto", None)
+        if proto is not None:
+            if hasattr(proto, "get"):
+                base_speed = float(proto.get("bullet_velocity", 0.0) or 0.0)
+                base_gravity = float(proto.get("bullet_gravity", 0.0) or 0.0)
+            else:
+                base_speed = float(getattr(proto, "bullet_velocity", 0.0) or 0.0)
+                base_gravity = float(getattr(proto, "bullet_gravity", 0.0) or 0.0)
+    except Exception:
+        pass
+
+    # This resolves the currently equipped weapon case, including compatible mods.
+    effective_speed = _ctf_native_call(
+        player,
+        "GetWeaponAttrValueWithCache",
+        "bullet_velocity",
+        base_speed,
+        0.10,
+    )
+    try:
+        speed = float(effective_speed)
+    except Exception:
+        speed = base_speed
+    effective_gravity = _ctf_native_call(
+        player,
+        "GetWeaponAttrValueWithCache",
+        "bullet_gravity",
+        base_gravity,
+        0.10,
+    )
+    try:
+        gravity = abs(float(effective_gravity))
+    except Exception:
+        gravity = abs(base_gravity)
+    # Reject multipliers and malformed values.  A confirmed gravity value is
+    # in world acceleration units; zero means this weapon has no exported drop.
+    if not _ctf_native_math.isfinite(gravity) or gravity < 0.10 or gravity > 30.0:
+        gravity = 0.0
+    return item_id, speed if speed > 0.0 else 0.0, gravity
+
+
+def _ctf_native_write_snapshot(state):
+    import MCamera as _ctf_native_camera
+    import MUI as _ctf_native_ui
+
+    _ctf_native_players, _ctf_native_robots = _ctf_native_entities()
+    _ctf_native_local_key, _ctf_native_player = _ctf_native_local_player(state, _ctf_native_players)
+    _ctf_native_player_pos = _ctf_native_position(_ctf_native_player) if _ctf_native_player is not None else (0.0, 0.0, 0.0)
+    (
+        _ctf_native_weapon_item_id,
+        _ctf_native_projectile_speed,
+        _ctf_native_projectile_gravity,
+    ) = _ctf_native_active_weapon_ballistics(_ctf_native_player)
+    _ctf_native_frame = _ctf_native_camera.CaptureFrame()
+    _ctf_native_camera_pos = _ctf_native_vec3(_ctf_native_frame.Position) or (0.0, 0.0, 0.0)
+    _ctf_native_screen = _ctf_native_ui.GetScreenSize()
+    _ctf_native_rows = []
+
+    _ctf_native_targets = [
+        (_ctf_native_key, _ctf_native_entity, False)
+        for _ctf_native_key, _ctf_native_entity in _ctf_native_players
+        if _ctf_native_key != _ctf_native_local_key
+    ] + [
+        (_ctf_native_key, _ctf_native_entity, True)
+        for _ctf_native_key, _ctf_native_entity in _ctf_native_robots
+    ]
+    state["last_player_targets"] = len(_ctf_native_targets) - len(_ctf_native_robots)
+    state["last_robot_targets"] = len(_ctf_native_robots)
+    _ctf_native_visible_count = 0
+    _ctf_native_range = _ctf_native_max_target_distance(state)
+    _ctf_native_range_sq = _ctf_native_range * _ctf_native_range
+    _ctf_native_culled_targets = 0
+    _ctf_native_detected_players = 0
+    _ctf_native_detected_robots = 0
+
+    for _ctf_native_key, _ctf_native_target, _ctf_native_is_robot in _ctf_native_targets:
+        _ctf_native_pos = _ctf_native_position(_ctf_native_target)
+        if _ctf_native_pos is None:
+            continue
+        if _ctf_native_player is not None:
+            _ctf_native_dx = _ctf_native_pos[0] - _ctf_native_player_pos[0]
+            _ctf_native_dy = _ctf_native_pos[1] - _ctf_native_player_pos[1]
+            _ctf_native_dz = _ctf_native_pos[2] - _ctf_native_player_pos[2]
+            if _ctf_native_dx * _ctf_native_dx + _ctf_native_dy * _ctf_native_dy + _ctf_native_dz * _ctf_native_dz > _ctf_native_range_sq:
+                _ctf_native_culled_targets += 1
+                continue
+        _ctf_native_suppress_legacy_widgets(_ctf_native_target)
+        _ctf_native_low, _ctf_native_high = _ctf_native_bounds(_ctf_native_target)
+        if _ctf_native_low is None or _ctf_native_high is None:
+            continue
+        _ctf_native_head = _ctf_native_head_position(
+            state, _ctf_native_key, _ctf_native_target, _ctf_native_pos
+        )
+        _ctf_native_is_visible = _ctf_native_visible(
+            state, _ctf_native_key, _ctf_native_target, _ctf_native_frame.Position
+        )
+        _ctf_native_visible_count += int(_ctf_native_is_visible)
+        _ctf_native_hp = _ctf_native_metric(_ctf_native_target, ("hp", "server_hp", "client_hp", "_hp"), 0.0)
+        _ctf_native_maxhp = _ctf_native_metric(_ctf_native_target, ("cur_maxhp", "maxhp", "base_maxhp", "server_maxhp"), max(1.0, _ctf_native_hp))
+        _ctf_native_armor = _ctf_native_metric(_ctf_native_target, ("client_armor", "armor", "_client_armor", "server_armor"), 0.0)
+        _ctf_native_maxarmor = _ctf_native_metric(_ctf_native_target, ("base_maxarmor", "maxarmor", "server_maxarmor"), max(0.0, _ctf_native_armor))
+        _ctf_native_dead = int(bool(getattr(_ctf_native_target, "is_dead_state", False) or getattr(_ctf_native_target, "dead", False)))
+        _ctf_native_rows.append((
+            _ctf_native_key,
+            _ctf_native_pos,
+            _ctf_native_low,
+            _ctf_native_high,
+            _ctf_native_hp,
+            _ctf_native_maxhp,
+            _ctf_native_armor,
+            _ctf_native_maxarmor,
+            _ctf_native_dead,
+            _ctf_native_head,
+            _ctf_native_is_visible,
+        ))
+        if _ctf_native_is_robot:
+            _ctf_native_detected_robots += 1
+        else:
+            _ctf_native_detected_players += 1
+
+    _ctf_native_header = (
+        "ESP1 {:.6f} {} {} {:.6f} {:.6f} {:.6f} {:.9f} {:.9f} {:.9f} {:.6f} "
+        "{:.6f} {:.6f} {:.6f} {}\n"
+    ).format(
+        _ctf_native_time.time(),
+        int(_ctf_native_screen.x),
+        int(_ctf_native_screen.y),
+        _ctf_native_camera_pos[0],
+        _ctf_native_camera_pos[1],
+        _ctf_native_camera_pos[2],
+        float(_ctf_native_frame.Yaw),
+        float(_ctf_native_frame.Pitch),
+        float(_ctf_native_frame.Roll),
+        float(_ctf_native_frame.Fov),
+        _ctf_native_player_pos[0],
+        _ctf_native_player_pos[1],
+        _ctf_native_player_pos[2],
+        len(_ctf_native_rows),
+    )
+    _ctf_native_lines = [_ctf_native_header]
+    for _ctf_native_row in _ctf_native_rows:
+        (
+            _ctf_native_key,
+            _ctf_native_pos,
+            _ctf_native_low,
+            _ctf_native_high,
+            _ctf_native_hp,
+            _ctf_native_maxhp,
+            _ctf_native_armor,
+            _ctf_native_maxarmor,
+            _ctf_native_dead,
+            _ctf_native_head,
+            _ctf_native_is_visible,
+        ) = _ctf_native_row
+        _ctf_native_has_head = int(_ctf_native_head is not None)
+        _ctf_native_head = _ctf_native_head or (0.0, 0.0, 0.0)
+        _ctf_native_lines.append(
+            "T {} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.3f} {:.3f} {:.3f} {:.3f} {} {} {:.6f} {:.6f} {:.6f} {}\n".format(
+                _ctf_native_key,
+                _ctf_native_pos[0], _ctf_native_pos[1], _ctf_native_pos[2],
+                _ctf_native_low[0], _ctf_native_low[1], _ctf_native_low[2],
+                _ctf_native_high[0], _ctf_native_high[1], _ctf_native_high[2],
+                _ctf_native_hp, _ctf_native_maxhp,
+                _ctf_native_armor, _ctf_native_maxarmor, _ctf_native_dead,
+                _ctf_native_has_head,
+                _ctf_native_head[0], _ctf_native_head[1], _ctf_native_head[2],
+                int(_ctf_native_is_visible),
+            )
+        )
+    _ctf_native_lines.append(
+        "W {} {:.6f} {:.6f}\n".format(
+            _ctf_native_weapon_item_id,
+            _ctf_native_projectile_speed,
+            _ctf_native_projectile_gravity,
+        )
+    )
+    _ctf_native_lines.append(
+        "C {} {} {}\n".format(
+            _ctf_native_detected_players,
+            _ctf_native_detected_robots,
+            _ctf_native_culled_targets,
+        )
+    )
+    _ctf_native_lines.append("S {}\n".format(int(bool(state.get("exporter_ready", False)))))
+
+    with open(_ctf_native_snapshot_temp_path, "w", encoding="ascii") as _ctf_native_handle:
+        _ctf_native_handle.writelines(_ctf_native_lines)
+    for _ctf_native_attempt in range(4):
+        try:
+            _ctf_native_os.replace(_ctf_native_snapshot_temp_path, _ctf_native_snapshot_path)
+            state["last_count"] = len(_ctf_native_rows)
+            state["weapon_item_id"] = _ctf_native_weapon_item_id
+            state["projectile_speed"] = _ctf_native_projectile_speed
+            state["projectile_gravity"] = _ctf_native_projectile_gravity
+            state["visible_targets"] = _ctf_native_visible_count
+            state["culled_targets"] = _ctf_native_culled_targets
+            state["detected_players"] = _ctf_native_detected_players
+            state["detected_robots"] = _ctf_native_detected_robots
+            return
+        except PermissionError:
+            # Readers use shared handles; retry around short external reads.
+            _ctf_native_time.sleep(0.0015 * (_ctf_native_attempt + 1))
+    state["dropped_snapshots"] = state.get("dropped_snapshots", 0) + 1
+
+
+def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
+    _ctf_native_state = getattr(_ctf_native_builtins, _ctf_native_state_name, None)
+    if not isinstance(_ctf_native_state, dict):
+        return
+    _ctf_native_now = _ctf_native_time.time()
+    if _ctf_native_now < _ctf_native_state.get("next_snapshot_time", 0.0):
+        return
+    _ctf_native_state["next_snapshot_time"] = _ctf_native_now + _ctf_native_snapshot_interval
+    try:
+        _ctf_native_state["tick"] += 1
+        _ctf_native_write_snapshot(_ctf_native_state)
+        if _ctf_native_state["tick"] == 1 or _ctf_native_state["tick"] % 240 == 0:
+            _ctf_native_log(
+                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} source_players={} source_robots={} weapon={} velocity={:.3f}".format(
+                    _ctf_native_state["tick"],
+                    _ctf_native_state.get("last_count", 0),
+                    _ctf_native_state.get("detected_players", 0),
+                    _ctf_native_state.get("detected_robots", 0),
+                    _ctf_native_state.get("culled_targets", 0),
+                    _ctf_native_state.get("max_target_distance", _ctf_native_default_max_distance),
+                    _ctf_native_state.get("last_player_targets", 0),
+                    _ctf_native_state.get("last_robot_targets", 0),
+                    _ctf_native_state.get("weapon_item_id", 0),
+                    _ctf_native_state.get("projectile_speed", 0.0),
+                )
+            )
+    except Exception:
+        _ctf_native_log("TICK_EXC\n" + _ctf_native_traceback.format_exc())
+
+
+def _ctf_native_install():
+    _ctf_native_stop_legacy_timer()
+    _ctf_native_old = getattr(_ctf_native_builtins, _ctf_native_state_name, None)
+    if isinstance(_ctf_native_old, dict):
+        _ctf_native_call(_ctf_native_old.get("timer_owner"), "cancel_timer", _ctf_native_old.get("timer_id"))
+
+    _ctf_native_state = {
+        "tick": 0,
+        "timer_id": None,
+        "timer_owner": None,
+        "last_count": 0,
+        "last_player_targets": 0,
+        "last_robot_targets": 0,
+        "weapon_item_id": 0,
+        "projectile_speed": 0.0,
+        "projectile_gravity": 0.0,
+        "exporter_ready": False,
+        "local_key": None,
+        "head_models": {},
+        "physics_space": None,
+        "visibility_cache": {},
+        "visible_targets": 0,
+        "detected_players": 0,
+        "detected_robots": 0,
+        "max_target_distance": _ctf_native_default_max_distance,
+        "next_config_refresh": 0.0,
+        "next_snapshot_time": 0.0,
+        "culled_targets": 0,
+    }
+    setattr(_ctf_native_builtins, _ctf_native_state_name, _ctf_native_state)
+    _ctf_native_tick()
+    _ctf_native_players, _ctf_native_robots = _ctf_native_entities()
+    _ctf_native_owner = _ctf_native_players[0][1] if _ctf_native_players else (_ctf_native_robots[0][1] if _ctf_native_robots else None)
+    if _ctf_native_owner is None or not hasattr(_ctf_native_owner, "add_repeat_timer"):
+        _ctf_native_log("INSTALL_FAILED no timer owner")
+        return
+    _ctf_native_state["timer_owner"] = _ctf_native_owner
+    _ctf_native_state["timer_id"] = _ctf_native_owner.add_repeat_timer(1.0 / 60.0, _ctf_native_tick)
+    _ctf_native_state["exporter_ready"] = True
+    _ctf_native_write_snapshot(_ctf_native_state)
+    _ctf_native_log("INSTALL_OK hz=60 timer_id={!r}".format(_ctf_native_state["timer_id"]))
+
+
+try:
+    _ctf_native_install()
+except Exception:
+    _ctf_native_log("INSTALL_EXC\n" + _ctf_native_traceback.format_exc())

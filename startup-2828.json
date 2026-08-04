@@ -1,0 +1,16 @@
+{
+  "pid": 2828,
+  "command_line": "\"C:\\Program Files (x86)\\bloodstrike\\Engine\\Binaries\\Win64\\BloodStrike.exe\" --load Python --start Python --console --python-args innerdesktop --python-debug ",
+  "startup_context": {
+    "peb": "0xe3ed8c7000",
+    "process_parameters": "0x1ff311e8b20",
+    "current_directory": null,
+    "image_path": null,
+    "command_line_from_peb": null,
+    "launcher_environment": {
+      "MessiahAppName": "hyxd",
+      "MessiahLauncherInfo": "\\Device\\HarddiskVolume2\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "PYTHONPATH": "C:\\Users\\mista\\Documents\\Bugbounty\\bloodstrike-launcher"
+    }
+  }
+}

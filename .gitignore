@@ -1,0 +1,5 @@
+entry-fileio.etl
+entry-fileio.etl.NGENPDB/
+__pycache__/
+*.pyc
+*.tmp

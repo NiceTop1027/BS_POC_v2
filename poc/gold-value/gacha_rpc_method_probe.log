@@ -1,0 +1,41 @@
+BEGIN
+SERVER type=<class 'client.AsioServerProxy.AsioServerProxy'> repr=<client.AsioServerProxy.AsioServerProxy object at 0x00000259E17C7890> module='client.AsioServerProxy'
+SERVER signature_fail=TypeError('<client.AsioServerProxy.AsioServerProxy object at 0x00000259E17C7890> is not a callable object')
+DIS SERVER.value
+  --           COPY_FREE_VARS           1
+
+  34           RESUME                   0
+
+  35           LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                1 (callserver + NULL|self)
+               LOAD_CONST               0 ('')
+               LOAD_DEREF               3 (index)
+               LOAD_FAST_BORROW_LOAD_FAST_BORROW 18 (args, kwargs)
+               CALL                     4
+               POP_TOP
+               LOAD_CONST               1 (None)
+               RETURN_VALUE
+
+DIS_FAIL SERVER.class.__call__ TypeError("don't know how to disassemble method-wrapper objects")
+SERVER dict={'stub': <gclient.gate_client.SpikeAsioGateClient object at 0x00000259D5BC9380>, 'owner': <PlayerAvatar(AjDCIrilGhEBXtfh)>, 'callserver': <built-in method call_server of area object at 0x00000259D3111080>}
+GachaRoll type=<class 'method'> repr=<bound method AsioServerProxy.__getattr__.<locals>.call_rpc of <client.AsioServerProxy.AsioServerProxy object at 0x00000259E17C7890>> module='builtins'
+GachaRoll signature=(*args, **kwargs)
+DIS GachaRoll.value
+  --           COPY_FREE_VARS           1
+
+  34           RESUME                   0
+
+  35           LOAD_FAST_BORROW         0 (self)
+               LOAD_ATTR                1 (callserver + NULL|self)
+               LOAD_CONST               0 ('')
+               LOAD_DEREF               3 (index)
+               LOAD_FAST_BORROW_LOAD_FAST_BORROW 18 (args, kwargs)
+               CALL                     4
+               POP_TOP
+               LOAD_CONST               1 (None)
+               RETURN_VALUE
+
+DIS_FAIL GachaRoll.class.__call__ TypeError("don't know how to disassemble wrapper_descriptor objects")
+GachaRoll dict={}
+SERVER_DIR=['GachaRoll', 'GoToGacha']
+END

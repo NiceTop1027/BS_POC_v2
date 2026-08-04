@@ -1,0 +1,40 @@
+{
+  "pid": 9316,
+  "tid": 26976,
+  "game_exe": "C:\\Program Files (x86)\\bloodstrike\\Engine\\Binaries\\Win64\\BloodStrike.exe",
+  "sha256": "62AF2CDD3ABECB6A77A848ACD58F3E1F680950926B164B6C42EDEF9BF791E908",
+  "staged_module": {
+    "source": "C:\\Users\\mista\\Documents\\Bugbounty\\bloodstrike-launcher\\poc\\ctf_esp.py",
+    "destinations": [
+      "C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch\\Script\\Python\\ctf_esp.py",
+      "C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch\\Script\\Python\\MLauncher.py",
+      "C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python\\ctf_esp.py",
+      "C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python\\MLauncher.py",
+      "C:\\Program Files (x86)\\bloodstrike\\ctf_esp.py",
+      "C:\\Program Files (x86)\\bloodstrike\\MLauncher.py",
+      "C:\\Program Files (x86)\\bloodstrike\\Engine\\Binaries\\Win64\\ctf_esp.py",
+      "C:\\Program Files (x86)\\bloodstrike\\Engine\\Binaries\\Win64\\MLauncher.py"
+    ]
+  },
+  "selector_rva": "0x8d5dbb8",
+  "arg_style": "equals",
+  "entry": "ctf_esp",
+  "aliases": [
+    "MLauncher"
+  ],
+  "packagefilelist": {
+    "path": "C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch\\packagefilelist",
+    "backup": "C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch\\packagefilelist.ctf_backup",
+    "added": [],
+    "present": [
+      "Script/Python/ctf_esp.py",
+      "Script/Python/MLauncher.py"
+    ],
+    "total": 184700
+  },
+  "image_base": "0x7ff744ce0000",
+  "selector_address": "0x7ff74da3dbb8",
+  "selector_before": 0,
+  "selector_after": 1,
+  "patched": true
+}

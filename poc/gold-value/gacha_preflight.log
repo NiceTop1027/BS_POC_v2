@@ -1,0 +1,9 @@
+BEGIN
+GACHA_ID=1370
+SETTING={'feature_camera_id': 45, 'model_pos_id': 41, 'first_cost_count': 1, 'cost_id': 4000000020, 'cls_name': 'mall_box_attribute_new_window.MallBoxAttributeDragonNewWindow', 'id': 1370, 'reward_model_pos_id': 26, 'level_id': 90, 'sidebar_banner': 16759, 'feature_name_bg_color': (58, 105, 147), 'first_cost_id': 4100001820, 'draw_type': 'Stash', 'cost_count': 10, 'name': 'Gold Stash', 'real_gacha': 1220}
+MONEY_DICT={5: {'money_type': 5, 'price': 1, 'off': 1.0, 'price_ori': 1, 'icon': 41000018200, 'cost_item_id': 4100001820}}
+CHECK_CAN_BUY=True
+GOLD=100000
+SERVER_RANDOM_TICKET_PRESENT=True LENGTH=16
+GACHA_STATE=CGacha({'count': 6, 'exchange_id_count': ExchangeIdCountMap({}), 'proto_id_count': ProtoIdCountMap({}), 'act_id': 1370, 'no_cycle_proto_ids': [], 'flip_cur_items': CustomMapType({}), 'baseline_count_dict': CustomMapType({3: 6}), 'back_reward_request_id': '', 'pending_baselines': [], 'discount_show_reduce': 0, 'baseline_trigger_count': CustomMapType({}), 'next_free_time': 0, 'use_discount_count': 0, 'token_roll_record': CustomMapType({}), 'sp_gacha_records': [], 'sp_gacha_extra': CustomMapType({}), 'milestone_record': CustomMapType({}), 'collect_milestone_record': CustomMapType({}), 'card_discount_count': 0, 'customize_reward_pool': CustomMapType({}), 'back_reward_pool': CustomMapType({}), 'lucky_point': 0, 'free_reward_get_time': 0.0, 'ngpush': 0})
+END

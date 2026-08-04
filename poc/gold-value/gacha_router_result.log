@@ -1,0 +1,5 @@
+BEGIN
+STATE={'gacha_id': 1392, 'times': 1, 'name': 'Warlock Valor', 'draw_type': 'Valor', 'callback_name': 'OnGachaV6Roll', 'before_gold': 99980, 'before_roll_count': 0, 'requested_at': 1785821530.523157}
+AFTER gold=99980 roll_count=0 checked_at=1785821544.4154263
+DELTA gold=0 rolls=0
+END

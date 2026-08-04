@@ -1,0 +1,4 @@
+BEGIN
+VALUES={'total': 100000, 'free': 99975, 'pay': 25, 'limit': 0, 'lookup': 100000}
+SUCCESS
+END

@@ -1,0 +1,45 @@
+BEGIN
+MImporter.REALROOT='C:\\Program Files (x86)\\bloodstrike\\Package'
+MImporter.LOGICROOT='C:\\Program Files (x86)\\bloodstrike\\Package\\Script\\Python'
+MImporter.PATCHROOT='C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch'
+MImporter.SALT=125
+MImporter.USE_CACHE=False
+MImporter.FILL_CACHE=False
+MLauncher.PKGROOT='C:\\Program Files (x86)\\bloodstrike\\Package'
+MLauncher.PATCHROOT='C:\\Program Files (x86)\\bloodstrike\\LocalData\\Patch'
+MLauncher.OpenFileData 'engine/common/EntityManager.py' => b''
+MLauncher.OpenFileDataInPackage 'engine/common/EntityManager.py' => b''
+MImporter.open_file_data_in_package 'engine/common/EntityManager.py' => None
+MLauncher.OpenFileData '28617a2e7be27926b6eeca03d847135d' => b''
+MLauncher.OpenFileDataInPackage '28617a2e7be27926b6eeca03d847135d' => b''
+MImporter.open_file_data_in_package '28617a2e7be27926b6eeca03d847135d' => None
+MLauncher.OpenFileData 'Script/Python/engine/common/EntityManager.py' => b''
+MLauncher.OpenFileDataInPackage 'Script/Python/engine/common/EntityManager.py' => b''
+MImporter.open_file_data_in_package 'Script/Python/engine/common/EntityManager.py' => None
+MLauncher.OpenFileData '3c73706c7b0bedb26f0678da1cb9cfb6' => b''
+MLauncher.OpenFileDataInPackage '3c73706c7b0bedb26f0678da1cb9cfb6' => b''
+MImporter.open_file_data_in_package '3c73706c7b0bedb26f0678da1cb9cfb6' => None
+MLauncher.OpenFileData 'Resources/Script/Python/engine/common/EntityManager.py' => b''
+MLauncher.OpenFileDataInPackage 'Resources/Script/Python/engine/common/EntityManager.py' => b''
+MImporter.open_file_data_in_package 'Resources/Script/Python/engine/common/EntityManager.py' => None
+MLauncher.OpenFileData '16d7f47c1faccfaca51dee4086f2b60a' => b''
+MLauncher.OpenFileDataInPackage '16d7f47c1faccfaca51dee4086f2b60a' => b''
+MImporter.open_file_data_in_package '16d7f47c1faccfaca51dee4086f2b60a' => None
+MLauncher.OpenFileData 'gclient/entitylist.py' => b''
+MLauncher.OpenFileDataInPackage 'gclient/entitylist.py' => b''
+MImporter.open_file_data_in_package 'gclient/entitylist.py' => None
+MLauncher.OpenFileData 'f998c537ca94796ca16d34827dc9d343' => b''
+MLauncher.OpenFileDataInPackage 'f998c537ca94796ca16d34827dc9d343' => b''
+MImporter.open_file_data_in_package 'f998c537ca94796ca16d34827dc9d343' => None
+MLauncher.OpenFileData 'Script/Python/gclient/entitylist.py' => b''
+MLauncher.OpenFileDataInPackage 'Script/Python/gclient/entitylist.py' => b''
+MImporter.open_file_data_in_package 'Script/Python/gclient/entitylist.py' => None
+MLauncher.OpenFileData '3e73dd4760a06cc7c34d2ef3b4f9c4aa' => b''
+MLauncher.OpenFileDataInPackage '3e73dd4760a06cc7c34d2ef3b4f9c4aa' => b''
+MImporter.open_file_data_in_package '3e73dd4760a06cc7c34d2ef3b4f9c4aa' => None
+loader.get_module_data(<module 'common.EntityManager' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/engine/common/EntityManager.py)...) => <code object <module> at 0x00000259D8E94030, file "engine/common/EntityManager.py", line 1>
+SAVE FAIL loader_get_module_data TypeError("cannot convert 'code' object to bytes")
+loader.get_module(<module 'common.EntityManager' (C:\Program Files (x86)\bloodstrike\Package\Script\Python/engine/common/EntityManager.py)...) FAIL TypeError('get_module() takes exactly 3 positional arguments (2 given)')
+loader.get_module_data(ModuleSpec(name='common.EntityManager', loader=<MImporter.finder object at 0x00000259EF045550>, origin='C:\\Program File...) FAIL AttributeError("'ModuleSpec' object has no attribute '__spec__'")
+loader.get_module(ModuleSpec(name='common.EntityManager', loader=<MImporter.finder object at 0x00000259EF045550>, origin='C:\\Program File...) FAIL TypeError('get_module() takes exactly 3 positional arguments (2 given)')
+END

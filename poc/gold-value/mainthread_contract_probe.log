@@ -1,0 +1,205 @@
+BEGIN
+PLAYER.ACSMHttpCallback signature=(requestId, url, headers, isPost, postBody, timeout) repr=<bound method PlayerAvatarMember.ACSMHttpCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.ChangeHeadFrame signature=(head_frame_item_id) repr=<bound method PlayerAvatarMember.ChangeHeadFrame of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.CheckPreTask signature=(task_id) repr=<bound method AvatarMember.CheckPreTask of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.ClickActivityInviteLinkCombineTask signature=(code, extra) repr=<bound method PlayerAvatarMember.ClickActivityInviteLinkCombineTask of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.GetOwnedNameFrameItem signature=() repr=<bound method PlayerAvatarMember.GetOwnedNameFrameItem of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.GetReplayFrameInfo signature=() repr=<bound method PlayerAvatarMember.GetReplayFrameInfo of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.GetSkinUnlockTaskById signature=(task_id) repr=<bound method AvatarMember.GetSkinUnlockTaskById of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.GetSkinUnlockTasks signature=(item_id) repr=<bound method AvatarMember.GetSkinUnlockTasks of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.HasHeadFrame signature=(head_frame_item_id) repr=<bound method PlayerAvatarMember.HasHeadFrame of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.HasHeadFrameRedDot signature=() repr=<bound method PlayerAvatarMember.HasHeadFrameRedDot of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.HasHeadFrameTabRedDot signature=() repr=<bound method PlayerAvatarMember.HasHeadFrameTabRedDot of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnClanIdUpdate_ClearChat signature=(*args) repr=<bound method PlayerAvatarMember.OnClanIdUpdate_ClearChat of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnClanMemberInfoUpdate signature=(memberid, data, clan_info={}) repr=<bound method PlayerAvatarMember.OnClanMemberInfoUpdate of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnGetCombatHistoryInfoCallback signature=(avatar_id, data) repr=<bound method PlayerAvatarMember.OnGetCombatHistoryInfoCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnGetFifaSchedule signature=(schedule) repr=<bound method PlayerAvatarMember.OnGetFifaSchedule of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnGetMyLbsRankDataCallback signature=(data) repr=<bound method PlayerAvatarMember.OnGetMyLbsRankDataCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnGetNGPPrimeInfoCallback signature=(result) repr=<bound method PlayerAvatarMember.OnGetNGPPrimeInfoCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnGetPlayerLBSGunInfoCallback signature=(data) repr=<bound method PlayerAvatarMember.OnGetPlayerLBSGunInfoCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnGetZoneCombatInfoCallback signature=(source, data) repr=<bound method PlayerAvatarMember.OnGetZoneCombatInfoCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnHeroAchievementTaskFinish signature=(hero_id, task_id) repr=<bound method PlayerAvatarMember.OnHeroAchievementTaskFinish of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnPlayerAchievementWallUpdated signature=(success, wall_group_slots, public_data) repr=<bound method PlayerAvatarMember.OnPlayerAchievementWallUpdated of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnQueryIngameFriendListCallback signature=(result) repr=<bound method PlayerAvatarMember.OnQueryIngameFriendListCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.OnUpdateAgeStage signature=(status, body) repr=<bound method PlayerAvatar.OnUpdateAgeStage of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.PackCombatAvatarRpcUpdated signature=(method, states) repr=<bound method PlayerAvatarMember.PackCombatAvatarRpcUpdated of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.PeakLbsRankDataCallBack signature=(pid, rank_key, item_list, best_ranking, min_score) repr=<bound method AvatarMember.PeakLbsRankDataCallBack of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.ReplayTickSpectatorRecord signature=(dt) repr=<bound method PlayerAvatarMember.ReplayTickSpectatorRecord of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.ReplayTickSpectatorRecordImpl signature=(dt) repr=<bound method PlayerAvatarMember.ReplayTickSpectatorRecordImpl of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.ReplayTickSpectatorRecordPerPackageImpl signature=(dt) repr=<bound method PlayerAvatarMember.ReplayTickSpectatorRecordPerPackageImpl of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.RewardEscClickCallback signature=(ret, *args) repr=<bound method PlayerAvatarMember.RewardEscClickCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.SearchFriendAccurateByKeyCallback signature=(key, friend_info_list) repr=<bound method PlayerAvatarMember.SearchFriendAccurateByKeyCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.SearchFriendFuzzyByKeyCallback signature=(key, friend_info_list) repr=<bound method PlayerAvatarMember.SearchFriendFuzzyByKeyCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.SetNameFrame signature=(item_id) repr=<bound method PlayerAvatarMember.SetNameFrame of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateChatLikeRecord signature=() repr=<bound method PlayerAvatarMember.UpdateChatLikeRecord of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateClientDailyRefresh signature=() repr=<bound method PlayerAvatarMember.UpdateClientDailyRefresh of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_10 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_10 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_2 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_2 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_3 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_3 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_4 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_4 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_5 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_5 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_6 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_6 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_7 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_7 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_8 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_8 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigByVersion_9 signature=() repr=<bound method PlayerAvatarMember.UpdateCloudConfigByVersion_9 of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateCloudConfigForHot signature=() repr=<bound method UpdateCloudConfigForHot of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateGPHallSettleAchievements signature=(data) repr=<bound method PlayerAvatarMember.UpdateGPHallSettleAchievements of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateGPKillAchievements signature=(info) repr=<bound method PlayerAvatarMember.UpdateGPKillAchievements of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateGPSettleAchievements signature=(settle_info) repr=<bound method PlayerAvatarMember.UpdateGPSettleAchievements of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateGPThrowBombAchievement signature=() repr=<bound method PlayerAvatarMember.UpdateGPThrowBombAchievement of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateGPTripleKillAchievement signature=() repr=<bound method PlayerAvatarMember.UpdateGPTripleKillAchievement of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateGameFeatureSettings signature=(config_name, value) repr=<bound method PlayerAvatarMember.UpdateGameFeatureSettings of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateGooglePlayArchievement signature=(achievement_id, step=0) repr=<bound method PlayerAvatarMember.UpdateGooglePlayArchievement of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdatePlayInfoTitlesReddot signature=(title) repr=<bound method PlayerAvatarMember.UpdatePlayInfoTitlesReddot of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateRPCLimit signature=(key) repr=<bound method PlayerAvatarMember.UpdateRPCLimit of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateRaceInfoCache signature=(race_id, info) repr=<bound method PlayerAvatarMember.UpdateRaceInfoCache of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateRaceInfoCacheFromServer signature=(race_id, info) repr=<bound method PlayerAvatarMember.UpdateRaceInfoCacheFromServer of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.UpdateRecentInfo signature=(delta, info_dict) repr=<bound method PlayerAvatarMember.UpdateRecentInfo of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._OnGetYearReviewCareerDataCallback signature=(avatar_id, data) repr=<bound method PlayerAvatarMember._OnGetYearReviewCareerDataCallback of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdateGachaRankData signature=(data_name, data) repr=<bound method HotfixComponent._UpdateGachaRankData of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdateMoveAuthorityDebugLocalMarker signature=() repr=<bound method PlayerAvatarMember._UpdateMoveAuthorityDebugLocalMarker of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdateOneActData signature=(data_name, act_data) repr=<bound method HotfixComponent._UpdateOneActData of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdatePlayerAchievementPublicDataCache signature=() repr=<bound method PlayerAvatarMember._UpdatePlayerAchievementPublicDataCache of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdatePlayerAchievementRecordCache signature=(changed_records) repr=<bound method PlayerAvatarMember._UpdatePlayerAchievementRecordCache of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdatePlayerCardInfo signature=(avatar_id, card_info) repr=<bound method PlayerAvatarMember._UpdatePlayerCardInfo of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdateRecruitMsg signature=(msg) repr=<bound method PlayerAvatarMember._UpdateRecruitMsg of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._UpdateUkeyLangData signature=(data) repr=<bound method HotfixComponent._UpdateUkeyLangData of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._on_set_head_frame signature=(old) repr=<bound method PlayerAvatarMember._on_set_head_frame of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._on_set_name_frame signature=(old) repr=<bound method PlayerAvatarMember._on_set_name_frame of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._orded_dispatch_rpc signature=(method, *args) repr=<bound method ClientEntity._orded_dispatch_rpc of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER._tickComponents signature=(dtime) repr=<bound method _tickComponents of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.get_gtick signature=() repr=<bound method Entity.get_gtick of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.on_update_direction signature=(stamp, yaw) repr=<bound method PlayerAvatar.on_update_direction of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.on_update_position signature=(stamp, x, y, z) repr=<bound method PlayerAvatar.on_update_position of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.on_update_position_and_direction signature=(stamp, x, y, z, yaw) repr=<bound method PlayerAvatar.on_update_position_and_direction of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.on_update_space_data signature=(data) repr=<bound method ClientAreaEntity.on_update_space_data of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.set_tick signature=(period) repr=<bound method Entity.set_tick of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.tick signature=(dtime) repr=<bound method ClientEntity.tick of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+PLAYER.update_reconnectkey signature=(reconnectkey) repr=<bound method PlayerAvatar.update_reconnectkey of <PlayerAvatar(AjDCIrilGhEBXtfh)>>
+MRO[0]=PlayerAvatar.ACSMHttpCallback signature=(self, requestId, url, headers, isPost, postBody, timeout) repr=<function PlayerAvatarMember.ACSMHttpCallback at 0x00000259CD20FB60>
+MRO[0]=PlayerAvatar.ChangeHeadFrame signature=(self, head_frame_item_id) repr=<function PlayerAvatarMember.ChangeHeadFrame at 0x00000259CDECC930>
+MRO[0]=PlayerAvatar.CheckPreTask signature=(self, task_id) repr=<function AvatarMember.CheckPreTask at 0x00000259CC352F00>
+MRO[0]=PlayerAvatar.ClickActivityInviteLinkCombineTask signature=(self, code, extra) repr=<function PlayerAvatarMember.ClickActivityInviteLinkCombineTask at 0x00000259CC337CC0>
+MRO[0]=PlayerAvatar.GetOwnedNameFrameItem signature=(self) repr=<function PlayerAvatarMember.GetOwnedNameFrameItem at 0x00000259CDBA0D50>
+MRO[0]=PlayerAvatar.GetReplayFrameInfo signature=(self) repr=<function PlayerAvatarMember.GetReplayFrameInfo at 0x00000259CDD680F0>
+MRO[0]=PlayerAvatar.GetSkinUnlockTaskById signature=(self, task_id) repr=<function AvatarMember.GetSkinUnlockTaskById at 0x00000259CC353060>
+MRO[0]=PlayerAvatar.GetSkinUnlockTasks signature=(self, item_id) repr=<function AvatarMember.GetSkinUnlockTasks at 0x00000259CC352FB0>
+MRO[0]=PlayerAvatar.HasHeadFrame signature=(self, head_frame_item_id) repr=<function PlayerAvatarMember.HasHeadFrame at 0x00000259CDECC9E0>
+MRO[0]=PlayerAvatar.HasHeadFrameRedDot signature=(self) repr=<function PlayerAvatarMember.HasHeadFrameRedDot at 0x00000259CDECDC70>
+MRO[0]=PlayerAvatar.HasHeadFrameTabRedDot signature=(self) repr=<function PlayerAvatarMember.HasHeadFrameTabRedDot at 0x00000259CDECDD20>
+MRO[0]=PlayerAvatar.OnClanIdUpdate_ClearChat signature=(self, *args) repr=<function PlayerAvatarMember.OnClanIdUpdate_ClearChat at 0x00000259F7DB4880>
+MRO[0]=PlayerAvatar.OnClanMemberInfoUpdate signature=(self, memberid, data, clan_info={}) repr=<function PlayerAvatarMember.OnClanMemberInfoUpdate at 0x00000259CE0F5FE0>
+MRO[0]=PlayerAvatar.OnGetCombatHistoryInfoCallback signature=(self, avatar_id, data) repr=<function PlayerAvatarMember.OnGetCombatHistoryInfoCallback at 0x00000259CDEC3D70>
+MRO[0]=PlayerAvatar.OnGetFifaSchedule signature=(self, schedule) repr=<function PlayerAvatarMember.OnGetFifaSchedule at 0x00000259CC2E2560>
+MRO[0]=PlayerAvatar.OnGetMyLbsRankDataCallback signature=(self, data) repr=<function PlayerAvatarMember.OnGetMyLbsRankDataCallback at 0x00000259CC383270>
+MRO[0]=PlayerAvatar.OnGetNGPPrimeInfoCallback signature=(self, result) repr=<function PlayerAvatarMember.OnGetNGPPrimeInfoCallback at 0x00000259CC38C1A0>
+MRO[0]=PlayerAvatar.OnGetPlayerLBSGunInfoCallback signature=(self, data) repr=<function PlayerAvatarMember.OnGetPlayerLBSGunInfoCallback at 0x00000259CC3828D0>
+MRO[0]=PlayerAvatar.OnGetZoneCombatInfoCallback signature=(self, source, data) repr=<function PlayerAvatarMember.OnGetZoneCombatInfoCallback at 0x00000259CDEC3B60>
+MRO[0]=PlayerAvatar.OnHeroAchievementTaskFinish signature=(self, hero_id, task_id) repr=<function PlayerAvatarMember.OnHeroAchievementTaskFinish at 0x00000259CC38F3D0>
+MRO[0]=PlayerAvatar.OnPlayerAchievementWallUpdated signature=(self, success, wall_group_slots, public_data) repr=<function PlayerAvatarMember.OnPlayerAchievementWallUpdated at 0x00000259CF84F7F0>
+MRO[0]=PlayerAvatar.OnQueryIngameFriendListCallback signature=(self, result) repr=<function PlayerAvatarMember.OnQueryIngameFriendListCallback at 0x00000259F7E48B40>
+MRO[0]=PlayerAvatar.OnUpdateAgeStage signature=(self, status, body) repr=<function PlayerAvatar.OnUpdateAgeStage at 0x00000259CF877480>
+MRO[0]=PlayerAvatar.PackCombatAvatarRpcUpdated signature=(self, method, states) repr=<function PlayerAvatarMember.PackCombatAvatarRpcUpdated at 0x00000259CDD601A0>
+MRO[0]=PlayerAvatar.PeakLbsRankDataCallBack signature=(self, pid, rank_key, item_list, best_ranking, min_score) repr=<function AvatarMember.PeakLbsRankDataCallBack at 0x00000259CF831A60>
+MRO[0]=PlayerAvatar.ReplayTickSpectatorRecord signature=(self, dt) repr=<function PlayerAvatarMember.ReplayTickSpectatorRecord at 0x00000259CDD60B40>
+MRO[0]=PlayerAvatar.ReplayTickSpectatorRecordImpl signature=(self, dt) repr=<function PlayerAvatarMember.ReplayTickSpectatorRecordImpl at 0x00000259CDD60BF0>
+MRO[0]=PlayerAvatar.ReplayTickSpectatorRecordPerPackageImpl signature=(self, dt) repr=<function PlayerAvatarMember.ReplayTickSpectatorRecordPerPackageImpl at 0x00000259CDD60CA0>
+MRO[0]=PlayerAvatar.RewardEscClickCallback signature=(self, ret, *args) repr=<function PlayerAvatarMember.RewardEscClickCallback at 0x00000259F7E04D50>
+MRO[0]=PlayerAvatar.SearchFriendAccurateByKeyCallback signature=(self, key, friend_info_list) repr=<function PlayerAvatarMember.SearchFriendAccurateByKeyCallback at 0x00000259F7E075E0>
+MRO[0]=PlayerAvatar.SearchFriendFuzzyByKeyCallback signature=(self, key, friend_info_list) repr=<function PlayerAvatarMember.SearchFriendFuzzyByKeyCallback at 0x00000259F7E07690>
+MRO[0]=PlayerAvatar.SetNameFrame signature=(self, item_id) repr=<function PlayerAvatarMember.SetNameFrame at 0x00000259CDBA0EB0>
+MRO[0]=PlayerAvatar.UpdateChatLikeRecord signature=(self) repr=<function PlayerAvatarMember.UpdateChatLikeRecord at 0x00000259F7DABC10>
+MRO[0]=PlayerAvatar.UpdateClientDailyRefresh signature=(self) repr=<function PlayerAvatarMember.UpdateClientDailyRefresh at 0x00000259CDB699B0>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion at 0x00000259CD26FCC0>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_10 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_10 at 0x00000259F7D6C3B0>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_2 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_2 at 0x00000259CD26FD70>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_3 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_3 at 0x00000259CD26FE20>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_4 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_4 at 0x00000259CD26FED0>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_5 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_5 at 0x00000259F7D6C040>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_6 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_6 at 0x00000259F7D6C0F0>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_7 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_7 at 0x00000259F7D6C1A0>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_8 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_8 at 0x00000259F7D6C250>
+MRO[0]=PlayerAvatar.UpdateCloudConfigByVersion_9 signature=(self) repr=<function PlayerAvatarMember.UpdateCloudConfigByVersion_9 at 0x00000259F7D6C300>
+MRO[0]=PlayerAvatar.UpdateCloudConfigForHot signature=(self) repr=<function UpdateCloudConfigForHot at 0x00000259E18A0510>
+MRO[0]=PlayerAvatar.UpdateGPHallSettleAchievements signature=(self, data) repr=<function PlayerAvatarMember.UpdateGPHallSettleAchievements at 0x00000259CF84E140>
+MRO[0]=PlayerAvatar.UpdateGPKillAchievements signature=(self, info) repr=<function PlayerAvatarMember.UpdateGPKillAchievements at 0x00000259CF84DF30>
+MRO[0]=PlayerAvatar.UpdateGPSettleAchievements signature=(self, settle_info) repr=<function PlayerAvatarMember.UpdateGPSettleAchievements at 0x00000259CF84E090>
+MRO[0]=PlayerAvatar.UpdateGPThrowBombAchievement signature=(self) repr=<function PlayerAvatarMember.UpdateGPThrowBombAchievement at 0x00000259CF84DFE0>
+MRO[0]=PlayerAvatar.UpdateGPTripleKillAchievement signature=(self) repr=<function PlayerAvatarMember.UpdateGPTripleKillAchievement at 0x00000259CF84DE80>
+MRO[0]=PlayerAvatar.UpdateGameFeatureSettings signature=(self, config_name, value) repr=<function PlayerAvatarMember.UpdateGameFeatureSettings at 0x00000259F7D6CBF0>
+MRO[0]=PlayerAvatar.UpdateGooglePlayArchievement signature=(self, achievement_id, step=0) repr=<function PlayerAvatarMember.UpdateGooglePlayArchievement at 0x00000259CF84DBC0>
+MRO[0]=PlayerAvatar.UpdatePlayInfoTitlesReddot signature=(self, title) repr=<function PlayerAvatarMember.UpdatePlayInfoTitlesReddot at 0x00000259CC382350>
+MRO[0]=PlayerAvatar.UpdateRPCLimit signature=(self, key) repr=<function PlayerAvatarMember.UpdateRPCLimit at 0x00000259CE0E6FB0>
+MRO[0]=PlayerAvatar.UpdateRaceInfoCache signature=(self, race_id, info) repr=<function PlayerAvatarMember.UpdateRaceInfoCache at 0x00000259CF80F1C0>
+MRO[0]=PlayerAvatar.UpdateRaceInfoCacheFromServer signature=(self, race_id, info) repr=<function PlayerAvatarMember.UpdateRaceInfoCacheFromServer at 0x00000259CF80F320>
+MRO[0]=PlayerAvatar.UpdateRecentInfo signature=(self, delta, info_dict) repr=<function PlayerAvatarMember.UpdateRecentInfo at 0x00000259CDD68B40>
+MRO[0]=PlayerAvatar._OnGetYearReviewCareerDataCallback signature=(self, avatar_id, data) repr=<function PlayerAvatarMember._OnGetYearReviewCareerDataCallback at 0x00000259CF807690>
+MRO[0]=PlayerAvatar._UpdateGachaRankData signature=(self, data_name, data) repr=<function HotfixComponent._UpdateGachaRankData at 0x00000259CD1DC9E0>
+MRO[0]=PlayerAvatar._UpdateMoveAuthorityDebugLocalMarker signature=(self) repr=<function PlayerAvatarMember._UpdateMoveAuthorityDebugLocalMarker at 0x00000259CD20DE80>
+MRO[0]=PlayerAvatar._UpdateOneActData signature=(self, data_name, act_data) repr=<function HotfixComponent._UpdateOneActData at 0x00000259CD1DCBF0>
+MRO[0]=PlayerAvatar._UpdatePlayerAchievementPublicDataCache signature=(self) repr=<function PlayerAvatarMember._UpdatePlayerAchievementPublicDataCache at 0x00000259CF84F480>
+MRO[0]=PlayerAvatar._UpdatePlayerAchievementRecordCache signature=(self, changed_records) repr=<function PlayerAvatarMember._UpdatePlayerAchievementRecordCache at 0x00000259CF84F3D0>
+MRO[0]=PlayerAvatar._UpdatePlayerCardInfo signature=(self, avatar_id, card_info) repr=<function PlayerAvatarMember._UpdatePlayerCardInfo at 0x00000259CDECD380>
+MRO[0]=PlayerAvatar._UpdateRecruitMsg signature=(self, msg) repr=<function PlayerAvatarMember._UpdateRecruitMsg at 0x00000259CC2E3950>
+MRO[0]=PlayerAvatar._UpdateUkeyLangData signature=(self, data) repr=<function HotfixComponent._UpdateUkeyLangData at 0x00000259CD1DCA90>
+MRO[0]=PlayerAvatar._on_set_head_frame signature=(self, old) repr=<function PlayerAvatarMember._on_set_head_frame at 0x00000259CDEC3320>
+MRO[0]=PlayerAvatar._on_set_name_frame signature=(self, old) repr=<function PlayerAvatarMember._on_set_name_frame at 0x00000259CDBA03B0>
+MRO[0]=PlayerAvatar._orded_dispatch_rpc signature=(self, method, *args) repr=<function ClientEntity._orded_dispatch_rpc at 0x00000259F5276FB0>
+MRO[0]=PlayerAvatar._tickComponents signature=(self, dtime) repr=<function _tickComponents at 0x00000259F18F9380>
+MRO[0]=PlayerAvatar.get_gtick signature=(self) repr=<function Entity.get_gtick at 0x00000259F79A9BC0>
+MRO[0]=PlayerAvatar.on_update_direction signature=(self, stamp, yaw) repr=<function PlayerAvatar.on_update_direction at 0x00000259CF8768D0>
+MRO[0]=PlayerAvatar.on_update_position signature=(self, stamp, x, y, z) repr=<function PlayerAvatar.on_update_position at 0x00000259CF876820>
+MRO[0]=PlayerAvatar.on_update_position_and_direction signature=(self, stamp, x, y, z, yaw) repr=<function PlayerAvatar.on_update_position_and_direction at 0x00000259CF876980>
+MRO[0]=PlayerAvatar.on_update_space_data signature=(self, data) repr=<function ClientAreaEntity.on_update_space_data at 0x00000259C73D4040>
+MRO[0]=PlayerAvatar.set_tick signature=(self, period) repr=<function Entity.set_tick at 0x00000259F79A9A60>
+MRO[0]=PlayerAvatar.tick signature=(self, dtime) repr=<function ClientEntity.tick at 0x00000259F5276B90>
+MRO[0]=PlayerAvatar.update_reconnectkey signature=(self, reconnectkey) repr=<function PlayerAvatar.update_reconnectkey at 0x00000259CF876350>
+MRO[1]=Avatar.CheckPreTask signature=(self, task_id) repr=<function AvatarMember.CheckPreTask at 0x00000259CC352F00>
+MRO[1]=Avatar.GetSkinUnlockTaskById signature=(self, task_id) repr=<function AvatarMember.GetSkinUnlockTaskById at 0x00000259CC353060>
+MRO[1]=Avatar.GetSkinUnlockTasks signature=(self, item_id) repr=<function AvatarMember.GetSkinUnlockTasks at 0x00000259CC352FB0>
+MRO[1]=Avatar.PeakLbsRankDataCallBack signature=(self, pid, rank_key, item_list, best_ranking, min_score) repr=<function AvatarMember.PeakLbsRankDataCallBack at 0x00000259CF831A60>
+MRO[1]=Avatar._orded_dispatch_rpc signature=(self, method, *args) repr=<function ClientEntity._orded_dispatch_rpc at 0x00000259F5276FB0>
+MRO[1]=Avatar._tickComponents signature=(self, dtime) repr=<function _tickComponents at 0x00000259F18F9380>
+MRO[1]=Avatar.get_gtick signature=(self) repr=<function Entity.get_gtick at 0x00000259F79A9BC0>
+MRO[1]=Avatar.on_update_direction signature=(self, stamp, yaw) repr=<function ClientAreaEntity.on_update_direction at 0x00000259F5277C10>
+MRO[1]=Avatar.on_update_position signature=(self, stamp, x, y, z) repr=<function ClientAreaEntity.on_update_position at 0x00000259F5277B60>
+MRO[1]=Avatar.on_update_position_and_direction signature=(self, stamp, x, y, z, yaw) repr=<function ClientAreaEntity.on_update_position_and_direction at 0x00000259F5277CC0>
+MRO[1]=Avatar.on_update_space_data signature=(self, data) repr=<function ClientAreaEntity.on_update_space_data at 0x00000259C73D4040>
+MRO[1]=Avatar.set_tick signature=(self, period) repr=<function Entity.set_tick at 0x00000259F79A9A60>
+MRO[1]=Avatar.tick signature=(self, dtime) repr=<function ClientEntity.tick at 0x00000259F5276B90>
+MRO[2]=AvatarEntity._orded_dispatch_rpc signature=(self, method, *args) repr=<function ClientEntity._orded_dispatch_rpc at 0x00000259F5276FB0>
+MRO[2]=AvatarEntity._tickComponents signature=(self, dtime) repr=<function _tickComponents at 0x00000259F18F9380>
+MRO[2]=AvatarEntity.get_gtick signature=(self) repr=<function Entity.get_gtick at 0x00000259F79A9BC0>
+MRO[2]=AvatarEntity.on_update_direction signature=(self, stamp, yaw) repr=<function AvatarEntity.on_update_direction at 0x00000259C73D5010>
+MRO[2]=AvatarEntity.on_update_position signature=(self, stamp, x, y, z) repr=<function AvatarEntity.on_update_position at 0x00000259C73D4F60>
+MRO[2]=AvatarEntity.on_update_position_and_direction signature=(self, stamp, x, y, z, yaw) repr=<function AvatarEntity.on_update_position_and_direction at 0x00000259C73D50C0>
+MRO[2]=AvatarEntity.on_update_space_data signature=(self, data) repr=<function ClientAreaEntity.on_update_space_data at 0x00000259C73D4040>
+MRO[2]=AvatarEntity.set_tick signature=(self, period) repr=<function Entity.set_tick at 0x00000259F79A9A60>
+MRO[2]=AvatarEntity.tick signature=(self, dtime) repr=<function ClientEntity.tick at 0x00000259F5276B90>
+MRO[2]=AvatarEntity.update_reconnectkey signature=(self, reconnectkey) repr=<function PlayerEntity.update_reconnectkey at 0x00000259C73D4670>
+MRO[3]=PlayerEntity._orded_dispatch_rpc signature=(self, method, *args) repr=<function ClientEntity._orded_dispatch_rpc at 0x00000259F5276FB0>
+MRO[3]=PlayerEntity._tickComponents signature=(self, dtime) repr=<function _tickComponents at 0x00000259F18F9380>
+MRO[3]=PlayerEntity.get_gtick signature=(self) repr=<function Entity.get_gtick at 0x00000259F79A9BC0>
+MRO[3]=PlayerEntity.set_tick signature=(self, period) repr=<function Entity.set_tick at 0x00000259F79A9A60>
+MRO[3]=PlayerEntity.tick signature=(self, dtime) repr=<function ClientEntity.tick at 0x00000259F5276B90>
+MRO[3]=PlayerEntity.update_reconnectkey signature=(self, reconnectkey) repr=<function PlayerEntity.update_reconnectkey at 0x00000259C73D4670>
+MRO[4]=ClientAreaEntity._orded_dispatch_rpc signature=(self, method, *args) repr=<function ClientEntity._orded_dispatch_rpc at 0x00000259F5276FB0>
+MRO[4]=ClientAreaEntity._tickComponents signature=(self, dtime) repr=<function _tickComponents at 0x00000259F18F9380>
+MRO[4]=ClientAreaEntity.get_gtick signature=(self) repr=<function Entity.get_gtick at 0x00000259F79A9BC0>
+MRO[4]=ClientAreaEntity.on_update_direction signature=(self, stamp, yaw) repr=<function ClientAreaEntity.on_update_direction at 0x00000259F5277C10>
+MRO[4]=ClientAreaEntity.on_update_position signature=(self, stamp, x, y, z) repr=<function ClientAreaEntity.on_update_position at 0x00000259F5277B60>
+MRO[4]=ClientAreaEntity.on_update_position_and_direction signature=(self, stamp, x, y, z, yaw) repr=<function ClientAreaEntity.on_update_position_and_direction at 0x00000259F5277CC0>
+MRO[4]=ClientAreaEntity.on_update_space_data signature=(self, data) repr=<function ClientAreaEntity.on_update_space_data at 0x00000259C73D4040>
+MRO[4]=ClientAreaEntity.set_tick signature=(self, period) repr=<function Entity.set_tick at 0x00000259F79A9A60>
+MRO[4]=ClientAreaEntity.tick signature=(self, dtime) repr=<function ClientEntity.tick at 0x00000259F5276B90>
+MRO[5]=ClientEntity._orded_dispatch_rpc signature=(self, method, *args) repr=<function ClientEntity._orded_dispatch_rpc at 0x00000259F5276FB0>
+MRO[5]=ClientEntity._tickComponents signature=(self, dtime) repr=<function _tickComponents at 0x00000259F18F9380>
+MRO[5]=ClientEntity.get_gtick signature=(self) repr=<function Entity.get_gtick at 0x00000259F79A9BC0>
+MRO[5]=ClientEntity.set_tick signature=(self, period) repr=<function Entity.set_tick at 0x00000259F79A9A60>
+MRO[5]=ClientEntity.tick signature=(self, dtime) repr=<function ClientEntity.tick at 0x00000259F5276B90>
+MRO[6]=Entity._tickComponents signature=(self, dtime) repr=<function _tickComponents at 0x00000259F18F9380>
+MRO[6]=Entity.get_gtick signature=(self) repr=<function Entity.get_gtick at 0x00000259F79A9BC0>
+MRO[6]=Entity.set_tick signature=(self, period) repr=<function Entity.set_tick at 0x00000259F79A9A60>
+MRO[6]=Entity.tick signature=(self, dtime) repr=<function Entity.tick at 0x00000259F79A9B10>
+END

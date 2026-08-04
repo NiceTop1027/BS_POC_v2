@@ -1,0 +1,10 @@
+BEGIN 1785807892.899056
+COUNT total=23 selected=7
+PLAYER key=anE9NksxNr+4uzVs class=PlayerCombatAvatarShootingRange pos=(-16.196739196777344, 0.05000006780028343, -7.852128028869629) repr=<PlayerCombatAvatarShootingRange(anE9NksxNr+4uzVs)>
+ROBOT key=anE8/EsxNr+4ux+Q class=RobotCombatAvatarShootingRange pos=(-28.0, 0.05000007152557373, -13.0) repr=<RobotCombatAvatarShootingRange(anE8/EsxNr+4ux+Q)>
+ROBOT key=anE8/EsxNr+4ux9+ class=RobotCombatAvatarShootingRange pos=(26.323650360107422, 0.07277331501245499, 2.5989699363708496) repr=<RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9+)>
+ROBOT key=anE8/EsxNr+4ux96 class=RobotCombatAvatarShootingRange pos=(16.224382400512695, 0.08436138182878494, -1.4008004665374756) repr=<RobotCombatAvatarShootingRange(anE8/EsxNr+4ux96)>
+ROBOT key=anE8/EsxNr+4ux9M class=RobotCombatAvatarShootingRange pos=(-8.783376693725586, 0.09060776978731155, -13.467101097106934) repr=<RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9M)>
+ROBOT key=anE8/EsxNr+4ux9Q class=RobotCombatAvatarShootingRange pos=(-3.6765191555023193, 0.05925852805376053, -9.500686645507812) repr=<RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9Q)>
+ROBOT key=anE8/EsxNr+4ux9o class=RobotCombatAvatarShootingRange pos=(6.3227458000183105, 0.06980297714471817, -5.500764846801758) repr=<RobotCombatAvatarShootingRange(anE8/EsxNr+4ux9o)>
+END

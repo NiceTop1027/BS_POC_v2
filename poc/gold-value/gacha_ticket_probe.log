@@ -1,0 +1,8 @@
+BEGIN
+CURRENT='anF6AksxNr+4ySXf'
+PLAYER_TICKET_NAMES=['random_music_ticket']
+REFERENCE PlayerAvatar.BuyMallItem signature=(self, money_type, mall_id, client_price, show_ui=True) names=('CallServer', 'server_random_ticket')
+REFERENCE PlayerAvatar.BuyMallItems signature=(self, money_type, mall_id, count, client_price, extra=None) names=('update', 'server_random_ticket', 'CallServer')
+REFERENCE PlayerAvatar.AutoBuyGacha signature=(self, gacha_setting_id, times, callback, is_selected_auto) names=('_CloseGachaRewardIfVisible', '_GetMoneyDictByGachaSettingData', 'gacha_setting_data', 'data', 'six2', 'values', 'PreCheckEnoughMoneyNew', 'CallServer', 'server_random_ticket')
+REFERENCE PlayerAvatar.BuyOneShot signature=(self, gacha_id) names=('cache_setting_data', 'data', 'CallServerAct', 'server_random_ticket', 'CallServer')
+END

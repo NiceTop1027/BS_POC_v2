@@ -1,0 +1,130 @@
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F bound=(-18.675304412841797, 0.04976189136505127, -6.129827499389648)..(-17.530975341796875, 1.9654080867767334, -5.681306838989258)
+anFju0sxNr+4xE8F Head -> (-18.099609375, 0.050000108778476715, -5.895303726196289) raw=<-18.0996, 0.0500, -5.8953>
+anFju0sxNr+4xE8F head -> (-18.099609375, 0.050000108778476715, -5.895303726196289) raw=<-18.0996, 0.0500, -5.8953>
+anFju0sxNr+4xE8F Bip001 Head -> (-18.099609375, 0.050000108778476715, -5.895303726196289) raw=<-18.0996, 0.0500, -5.8953>
+anFju0sxNr+4xE8F Head_top -> (-18.099609375, 0.050000108778476715, -5.895303726196289) raw=<-18.0996, 0.0500, -5.8953>
+anFjs0sxNr+4xEqk bound=(-3.873387098312378, 0.046880125999450684, -10.058670043945312)..(-3.511583089828491, 1.9351166486740112, -8.941797256469727)
+anFjs0sxNr+4xEqk Head -> (-3.6797149181365967, 0.05184197425842285, -9.500244140625) raw=<-3.6797, 0.0518, -9.5002>
+anFjs0sxNr+4xEqk head -> (-3.6797149181365967, 0.05184197425842285, -9.500244140625) raw=<-3.6797, 0.0518, -9.5002>
+anFjs0sxNr+4xEqk Bip001 Head -> (-3.6797149181365967, 0.05184197425842285, -9.500244140625) raw=<-3.6797, 0.0518, -9.5002>
+anFjs0sxNr+4xEqk Head_top -> (-3.6797149181365967, 0.05184197425842285, -9.500244140625) raw=<-3.6797, 0.0518, -9.5002>
+anFjs0sxNr+4xErR bound=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR Head -> (-28.0, 0.04265505075454712, -13.0) raw=<-28.0000, 0.0427, -13.0000>
+anFjs0sxNr+4xErR head -> (-28.0, 0.04265505075454712, -13.0) raw=<-28.0000, 0.0427, -13.0000>
+anFjs0sxNr+4xErR Bip001 Head -> (-28.0, 0.04265505075454712, -13.0) raw=<-28.0000, 0.0427, -13.0000>
+anFjs0sxNr+4xErR Head_top -> (-28.0, 0.04265505075454712, -13.0) raw=<-28.0000, 0.0427, -13.0000>
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F bound=(-18.675304412841797, 0.04976189136505127, -6.129827499389648)..(-17.530975341796875, 1.9654080867767334, -5.681306838989258)
+anFju0sxNr+4xE8F model type=<class 'gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFju0sxNr+4xE8F model.GetBoneWorldPosition('Head') -> (-18.099609375, 0.050000108778476715, -5.895303726196289) raw=<-18.0996, 0.0500, -5.8953>
+anFju0sxNr+4xE8F model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFju0sxNr+4xE8F model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFju0sxNr+4xE8F model.GetBoneWorldTransform('Head') -> None raw=<<-1.0977, 0.0000, 0.0710> <0.0000, 1.1000, 0.0000> <-0.0710, 0.0000, -1.0977> <-18.0996, 0.0500, -5.8953>>
+anFju0sxNr+4xE8F model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFju0sxNr+4xE8F model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFju0sxNr+4xE8F model.model type=<class 'IEntity'> bone_names=[]
+anFjs0sxNr+4xEqk bound=(-3.873387098312378, 0.046880125999450684, -10.058670043945312)..(-3.511583089828491, 1.9351166486740112, -8.941797256469727)
+anFjs0sxNr+4xEqk model type=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFjs0sxNr+4xEqk model.GetBoneWorldPosition('Head') -> (-3.6797149181365967, 0.05184197425842285, -9.500244140625) raw=<-3.6797, 0.0518, -9.5002>
+anFjs0sxNr+4xEqk model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xEqk model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xEqk model.GetBoneWorldTransform('Head') -> None raw=<<0.0009, 0.0000, 1.1000> <0.0000, 1.1000, 0.0000> <-1.1000, 0.0000, 0.0009> <-3.6797, 0.0518, -9.5002>>
+anFjs0sxNr+4xEqk model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xEqk model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xEqk model.model type=<class 'IEntity'> bone_names=[]
+anFjs0sxNr+4xErR bound=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR model type=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFjs0sxNr+4xErR model.GetBoneWorldPosition('Head') -> (-28.0, 0.04265505075454712, -13.0) raw=<-28.0000, 0.0427, -13.0000>
+anFjs0sxNr+4xErR model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xErR model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xErR model.GetBoneWorldTransform('Head') -> None raw=<<0.0009, 0.0000, 1.1000> <0.0000, 1.1000, 0.0000> <-1.1000, 0.0000, 0.0009> <-28.0000, 0.0427, -13.0000>>
+anFjs0sxNr+4xErR model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xErR model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xErR model.model type=<class 'IEntity'> bone_names=[]
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F bound=(-18.675304412841797, 0.04976189136505127, -6.129827499389648)..(-17.530975341796875, 1.9654080867767334, -5.681306838989258)
+anFju0sxNr+4xE8F GetSkeletonDynamicWorldBound=(-18.693490982055664, -0.06584969907999039, -6.411094665527344)..(-17.508811950683594, 2.2076094150543213, -5.33858585357666)
+anFju0sxNr+4xE8F GetPrimWorldBound=(-18.675304412841797, 0.04976189136505127, -6.129827499389648)..(-17.530975341796875, 1.9654080867767334, -5.681306838989258)
+anFju0sxNr+4xE8F GetPrimWorldBoundWithAttachments=(-18.675304412841797, 0.04976189136505127, -6.713640213012695)..(-17.530975341796875, 1.9654080867767334, -5.681306838989258)
+anFju0sxNr+4xE8F model type=<class 'gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFju0sxNr+4xE8F model.GetBoneWorldPosition('Head') -> (-18.099609375, 0.050000108778476715, -5.895303726196289) raw=<-18.0996, 0.0500, -5.8953>
+anFju0sxNr+4xE8F model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFju0sxNr+4xE8F model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFju0sxNr+4xE8F model.GetBoneWorldTransform('Head') -> None raw=<<-1.0977, 0.0000, 0.0710> <0.0000, 1.1000, 0.0000> <-0.0710, 0.0000, -1.0977> <-18.0996, 0.0500, -5.8953>>
+anFju0sxNr+4xE8F model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFju0sxNr+4xE8F model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFju0sxNr+4xE8F model.model type=<class 'IEntity'> bone_names=[]
+anFjs0sxNr+4xEqk bound=(-3.873387098312378, 0.046880125999450684, -10.058670043945312)..(-3.511583089828491, 1.9351166486740112, -8.941797256469727)
+anFjs0sxNr+4xEqk GetSkeletonDynamicWorldBound=(-4.160923004150391, -0.06400783360004425, -10.058952331542969)..(-3.157865047454834, 2.20945143699646, -8.941568374633789)
+anFjs0sxNr+4xEqk GetPrimWorldBound=(-3.873387098312378, 0.046880125999450684, -10.058670043945312)..(-3.511583089828491, 1.9351166486740112, -8.941797256469727)
+anFjs0sxNr+4xEqk GetPrimWorldBoundWithAttachments=(-3.873387098312378, 0.046880125999450684, -10.058670043945312)..(-3.511583089828491, 1.9351166486740112, -8.941797256469727)
+anFjs0sxNr+4xEqk model type=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFjs0sxNr+4xEqk model.GetBoneWorldPosition('Head') -> (-3.6797149181365967, 0.05184197425842285, -9.500244140625) raw=<-3.6797, 0.0518, -9.5002>
+anFjs0sxNr+4xEqk model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xEqk model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xEqk model.GetBoneWorldTransform('Head') -> None raw=<<0.0009, 0.0000, 1.1000> <0.0000, 1.1000, 0.0000> <-1.1000, 0.0000, 0.0009> <-3.6797, 0.0518, -9.5002>>
+anFjs0sxNr+4xEqk model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xEqk model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xEqk model.model type=<class 'IEntity'> bone_names=[]
+anFjs0sxNr+4xErR bound=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR GetSkeletonDynamicWorldBound=(-28.4812068939209, -0.07319475710391998, -13.558708190917969)..(-27.4781494140625, 2.2002644538879395, -12.441324234008789)
+anFjs0sxNr+4xErR GetPrimWorldBound=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR GetPrimWorldBoundWithAttachments=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR model type=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFjs0sxNr+4xErR model.GetBoneWorldPosition('Head') -> (-28.0, 0.04265505075454712, -13.0) raw=<-28.0000, 0.0427, -13.0000>
+anFjs0sxNr+4xErR model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xErR model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xErR model.GetBoneWorldTransform('Head') -> None raw=<<0.0009, 0.0000, 1.1000> <0.0000, 1.1000, 0.0000> <-1.1000, 0.0000, 0.0009> <-28.0000, 0.0427, -13.0000>>
+anFjs0sxNr+4xErR model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xErR model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xErR model.model type=<class 'IEntity'> bone_names=[]
+targets=['anFju0sxNr+4xE8F', 'anFjs0sxNr+4xEqk', 'anFjs0sxNr+4xErR', 'anFjs0sxNr+4xEqg', 'anFjs0sxNr+4xEq2', 'anFjs0sxNr+4xEq+', 'anFjs0sxNr+4xEq6']
+anFju0sxNr+4xE8F bound=(-19.73720359802246, 0.049761831760406494, -7.1194610595703125)..(-19.31736183166504, 1.9654080867767334, -5.983426094055176)
+anFju0sxNr+4xE8F MakeSureBones sig=() repr=<bound method SimpleModel.MakeSureBones of <gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel object at 0x00000259DA4486E0>>
+anFju0sxNr+4xE8F MakeSureBones vars=('self', 's') names=('GetSkeleton', 'GetPoseBones', 'hasattr', 'CreateFullPose') consts=('CreateFullPose', None)
+anFju0sxNr+4xE8F CreateSpecifyBone sig=(bone_name) repr=<bound method SimpleModel.CreateSpecifyBone of <gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel object at 0x00000259DA4486E0>>
+anFju0sxNr+4xE8F CreateSpecifyBone vars=('self', 'bone_name') names=('GetBoneTransform',) consts=(None,)
+anFju0sxNr+4xE8F GetSkeletonDynamicWorldBound=(-20.080385208129883, -0.06584975123405457, -7.132693290710449)..(-19.035715103149414, 2.2076094150543213, -5.9725661277771)
+anFju0sxNr+4xE8F GetPrimWorldBound=(-19.73720359802246, 0.049761831760406494, -7.1194610595703125)..(-19.31736183166504, 1.9654080867767334, -5.983426094055176)
+anFju0sxNr+4xE8F GetPrimWorldBoundWithAttachments=(-19.73720359802246, 0.049761831760406494, -7.1194610595703125)..(-18.72743034362793, 1.9654080867767334, -5.983426094055176)
+anFju0sxNr+4xE8F model type=<class 'gclient.gameplay.logic_base.models.avatar_model.PlayerAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFju0sxNr+4xE8F model.GetBoneWorldPosition('Head') -> (-19.53785514831543, 0.05000005289912224, -6.548988342285156) raw=<-19.5379, 0.0500, -6.5490>
+anFju0sxNr+4xE8F model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFju0sxNr+4xE8F model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFju0sxNr+4xE8F model.GetBoneWorldTransform('Head') -> None raw=<<0.0424, 0.0000, -1.0992> <0.0000, 1.1000, 0.0000> <1.0992, 0.0000, 0.0424> <-19.5379, 0.0500, -6.5490>>
+anFju0sxNr+4xE8F model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFju0sxNr+4xE8F model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFju0sxNr+4xE8F model.model type=<class 'IEntity'> bone_names=[]
+anFjs0sxNr+4xEqk bound=(-3.873357057571411, 0.04695749282836914, -10.058673858642578)..(-3.5115530490875244, 1.9351940155029297, -8.941801071166992)
+anFjs0sxNr+4xEqk MakeSureBones sig=() repr=<bound method SimpleModel.MakeSureBones of <gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel object at 0x00000259DD39AAD0>>
+anFjs0sxNr+4xEqk MakeSureBones vars=('self', 's') names=('GetSkeleton', 'GetPoseBones', 'hasattr', 'CreateFullPose') consts=('CreateFullPose', None)
+anFjs0sxNr+4xEqk CreateSpecifyBone sig=(bone_name) repr=<bound method SimpleModel.CreateSpecifyBone of <gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel object at 0x00000259DD39AAD0>>
+anFjs0sxNr+4xEqk CreateSpecifyBone vars=('self', 'bone_name') names=('GetBoneTransform',) consts=(None,)
+anFjs0sxNr+4xEqk GetSkeletonDynamicWorldBound=(-4.160892963409424, -0.0639304667711258, -10.058956146240234)..(-3.157835006713867, 2.209528684616089, -8.941572189331055)
+anFjs0sxNr+4xEqk GetPrimWorldBound=(-3.873357057571411, 0.04695749282836914, -10.058673858642578)..(-3.5115530490875244, 1.9351940155029297, -8.941801071166992)
+anFjs0sxNr+4xEqk GetPrimWorldBoundWithAttachments=(-3.873357057571411, 0.04695749282836914, -10.058673858642578)..(-3.5115530490875244, 1.9351940155029297, -8.941801071166992)
+anFjs0sxNr+4xEqk model type=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFjs0sxNr+4xEqk model.GetBoneWorldPosition('Head') -> (-3.67968487739563, 0.05191934108734131, -9.500247955322266) raw=<-3.6797, 0.0519, -9.5002>
+anFjs0sxNr+4xEqk model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xEqk model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xEqk model.GetBoneWorldTransform('Head') -> None raw=<<0.0009, 0.0000, 1.1000> <0.0000, 1.1000, 0.0000> <-1.1000, 0.0000, 0.0009> <-3.6797, 0.0519, -9.5002>>
+anFjs0sxNr+4xEqk model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xEqk model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xEqk model.model type=<class 'IEntity'> bone_names=[]
+anFjs0sxNr+4xErR bound=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR MakeSureBones sig=() repr=<bound method SimpleModel.MakeSureBones of <gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel object at 0x0000025A0331C550>>
+anFjs0sxNr+4xErR MakeSureBones vars=('self', 's') names=('GetSkeleton', 'GetPoseBones', 'hasattr', 'CreateFullPose') consts=('CreateFullPose', None)
+anFjs0sxNr+4xErR CreateSpecifyBone sig=(bone_name) repr=<bound method SimpleModel.CreateSpecifyBone of <gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel object at 0x0000025A0331C550>>
+anFjs0sxNr+4xErR CreateSpecifyBone vars=('self', 'bone_name') names=('GetBoneTransform',) consts=(None,)
+anFjs0sxNr+4xErR GetSkeletonDynamicWorldBound=(-28.4812068939209, -0.07319475710391998, -13.558708190917969)..(-27.4781494140625, 2.2002644538879395, -12.441324234008789)
+anFjs0sxNr+4xErR GetPrimWorldBound=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR GetPrimWorldBoundWithAttachments=(-28.19367218017578, 0.03769320249557495, -13.558425903320312)..(-27.831867218017578, 1.9259296655654907, -12.441553115844727)
+anFjs0sxNr+4xErR model type=<class 'gclient.gameplay.logic_shootingrange.shootingrange_robot_model.ShootingRangeRobotAvatarModel'> bone_names=['BindBoneColliderCallFunc', 'CreateSpecifyBone', 'GetBoneLocalPosition', 'GetBoneLocalTransform', 'GetBoneModelPosition', 'GetBoneTransform', 'GetBoneWorldPosition', 'GetBoneWorldTransform', 'MakeSureBones']
+anFjs0sxNr+4xErR model.GetBoneWorldPosition('Head') -> (-28.0, 0.04265505075454712, -13.0) raw=<-28.0000, 0.0427, -13.0000>
+anFjs0sxNr+4xErR model.GetBoneModelPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xErR model.GetBoneLocalPosition('Head') -> (0.0, 0.0, 0.0) raw=<0.0000, 0.0000, 0.0000>
+anFjs0sxNr+4xErR model.GetBoneWorldTransform('Head') -> None raw=<<0.0009, 0.0000, 1.1000> <0.0000, 1.1000, 0.0000> <-1.1000, 0.0000, 0.0009> <-28.0000, 0.0427, -13.0000>>
+anFjs0sxNr+4xErR model.GetBoneLocalTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xErR model.GetBoneTransform('Head') -> None raw=<<1.0000, 0.0000, 0.0000> <0.0000, 1.0000, 0.0000> <0.0000, 0.0000, 1.0000> <0.0000, 0.0000, 0.0000>>
+anFjs0sxNr+4xErR model.model type=<class 'IEntity'> bone_names=[]

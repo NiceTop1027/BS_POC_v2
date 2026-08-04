@@ -1,0 +1,18 @@
+BEGIN 1785808207.8292737
+add_timer: repr=<built-in function add_timer> type=<class 'builtin_function_or_method'>
+add_timer: sig FAIL ValueError('no signature found for builtin <built-in function add_timer>')
+del_timer: repr=<built-in function del_timer> type=<class 'builtin_function_or_method'>
+del_timer: sig=<Signature (object, /)>
+call_next_frame: repr=<built-in function call_next_frame> type=<class 'builtin_function_or_method'>
+call_next_frame: sig=<Signature (object, /)>
+entity 'AjDCIrilGhEBXtfh' <PlayerAvatar(AjDCIrilGhEBXtfh)> class=<class 'gclient.framework.entities.avatar.PlayerAvatar'>
+add_timer: repr=<bound method Entity.add_timer of <PlayerAvatar(AjDCIrilGhEBXtfh)>> type=<class 'method'>
+add_timer: sig=<Signature (delay, func)>
+add_timer: file='engine/common/Entity.py' first=225 argc=3 vars=('self', 'delay', 'func') defaults=None
+add_repeat_timer: repr=<bound method Entity.add_repeat_timer of <PlayerAvatar(AjDCIrilGhEBXtfh)>> type=<class 'method'>
+add_repeat_timer: sig=<Signature (delay, func)>
+add_repeat_timer: file='engine/common/Entity.py' first=240 argc=3 vars=('self', 'delay', 'func') defaults=None
+cancel_timer: repr=<bound method Entity.cancel_timer of <PlayerAvatar(AjDCIrilGhEBXtfh)>> type=<class 'method'>
+cancel_timer: sig=<Signature (timerid)>
+cancel_timer: file='engine/common/Entity.py' first=268 argc=2 vars=('self', 'timerid') defaults=None
+END
