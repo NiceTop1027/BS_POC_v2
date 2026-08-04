@@ -426,7 +426,7 @@ def _ctf_native_visible(state, key, entity, camera_pos):
     _ctf_native_now = _ctf_native_time.time()
     _ctf_native_cache = state.setdefault("visibility_cache", {})
     _ctf_native_cached = _ctf_native_cache.get(key)
-    if _ctf_native_cached is not None and _ctf_native_now - _ctf_native_cached[0] < (1.0 / 20.0):
+    if _ctf_native_cached is not None and _ctf_native_now - _ctf_native_cached[0] < (1.0 / 120.0):
         return _ctf_native_cached[1]
 
     _ctf_native_model = getattr(entity, "model", None)

@@ -50,6 +50,8 @@ constexpr double kAimCoarseGain = 1.00;
 // The exporter is sampled at 120 Hz.  One command per fresh sample prevents
 // duplicate corrections from fighting each other between camera frames.
 constexpr double kAimMinInputIntervalSeconds = 0.0085;
+constexpr double kAimSameSnapshotMinIntervalSeconds = 0.018;
+constexpr double kAimSameSnapshotMovementPixels = 1.50;
 constexpr double kAimMaxRelativeVelocity = 14.0;
 constexpr double kAimSnapshotLeadSeconds = 0.025;
 constexpr double kAimMaxSnapshotLeadSeconds = 0.085;
@@ -253,6 +255,8 @@ double g_aimResidualRawX = 0.0;
 double g_aimResidualRawY = 0.0;
 double g_lastAimInputTime = 0.0;
 double g_lastAimSnapshotTimestamp = 0.0;
+POINT g_lastAimPoint = {};
+bool g_hasLastAimPoint = false;
 double g_lastAimTargetSwitchTime = 0.0;
 double g_lastAimTriggerWriteTime = 0.0;
 bool g_lastAimTriggerState = false;
@@ -870,7 +874,7 @@ void CompleteAimCalibrationProbe(const Snapshot& current) {
         } else {
             *scale = *scale * 0.70 + sample * 0.30;
         }
-        *samples = std::max(*samples, 2);
+        *samples = std::min(*samples + 1, 32);
     };
     if (probe.rawX != 0) {
         acceptScale(WrapAngleDelta(probe.yaw, current.yaw) /
@@ -1198,6 +1202,8 @@ void ClearAimLock() {
     g_aimResidualRawY = 0.0;
     g_lastAimInputTime = 0.0;
     g_lastAimSnapshotTimestamp = 0.0;
+    g_lastAimPoint = {};
+    g_hasLastAimPoint = false;
     g_lastAimTargetSwitchTime = 0.0;
 }
 
@@ -1308,6 +1314,15 @@ Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
         // Close targets are already large on screen; keep the bone point
         // nearly current instead of leading past a crouch transition.
         compensationTime = std::min(compensationTime, 0.018);
+    }
+    if (IsScopedFov(snapshot.fov)) {
+        if (speed < kScopedMovementMinSpeedMetersPerSecond) {
+            return head;
+        }
+        // A narrow scope magnifies small lead errors.  Compensate only the
+        // input/snapshot delay, then lock the projected point to the bone.
+        compensationTime = std::min(
+            compensationTime, kScopedMovementInputLeadSeconds);
     }
 
     Vec3 compensation = ClampMagnitude(
@@ -1472,7 +1487,9 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
         const double ratio = std::abs(value / defaultRadiansPerRawMouse);
         return std::isfinite(ratio) && ratio >= 0.55 && ratio <= 1.80;
     };
-    if (learned.yawSamples >= 6 && learned.pitchSamples >= 6 &&
+    const int minimumLearnedSamples = IsScopedFov(snapshot.fov) ? 2 : 6;
+    if (learned.yawSamples >= minimumLearnedSamples &&
+        learned.pitchSamples >= minimumLearnedSamples &&
         validLearnedScale(learned.yawRadiansPerRawMouse) &&
         validLearnedScale(learned.pitchRadiansPerRawMouse)) {
         calibration.yawRadiansPerRawMouse = learned.yawRadiansPerRawMouse;
@@ -1897,17 +1914,29 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     if (now - g_lastAimInputTime < kAimMinInputIntervalSeconds) {
         return;
     }
-    // The overlay repaints faster than the exporter writes.  Reusing one
-    // snapshot can apply the same correction several times and overshoot.
-    if (snapshot.timestamp <= g_lastAimSnapshotTimestamp + 0.000001) {
-        return;
-    }
-
     POINT aimPoint = {};
     Vec3 aimWorld = {};
     if (!FindAimPoint(snapshot, client, &aimPoint, &aimWorld)) {
         return;
     }
+
+    // The exporter can be slower than the render loop.  Permit a follow-up
+    // only when the projected head actually moved; a stationary point still
+    // gets one correction, so this does not recreate the old oscillation.
+    const bool sameSnapshot =
+        snapshot.timestamp <= g_lastAimSnapshotTimestamp + 0.000001;
+    if (sameSnapshot) {
+        if (now - g_lastAimInputTime < kAimSameSnapshotMinIntervalSeconds) {
+            return;
+        }
+        if (g_hasLastAimPoint && std::hypot(
+                static_cast<double>(aimPoint.x - g_lastAimPoint.x),
+                static_cast<double>(aimPoint.y - g_lastAimPoint.y)) <
+            kAimSameSnapshotMovementPixels) {
+            return;
+        }
+    }
+    const bool freshSnapshot = !sameSnapshot;
 
     const double centerX = static_cast<double>(client.right - client.left) * 0.5;
     const double centerY = static_cast<double>(client.bottom - client.top) * 0.5;
@@ -1916,6 +1945,8 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     const double remainingDistance = std::hypot(remainingX, remainingY);
     if (remainingDistance <= kAimDeadzonePixels) {
         g_lastAimSnapshotTimestamp = snapshot.timestamp;
+        g_lastAimPoint = aimPoint;
+        g_hasLastAimPoint = true;
         g_aimResidualRawX = 0.0;
         g_aimResidualRawY = 0.0;
         return;
@@ -1935,6 +1966,8 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     }
     if (deltaX == 0 && deltaY == 0) {
         g_lastAimSnapshotTimestamp = snapshot.timestamp;
+        g_lastAimPoint = aimPoint;
+        g_hasLastAimPoint = true;
         return;
     }
 
@@ -1945,13 +1978,20 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_MOVE_NOCOALESCE;
     if (SendInput(1, &input, sizeof(input)) == 1) {
         g_lastAimSnapshotTimestamp = snapshot.timestamp;
+        g_lastAimPoint = aimPoint;
+        g_hasLastAimPoint = true;
         g_lastAimInputTime = now;
         g_rawMouseXSinceSnapshot = AddClampedRawMouse(g_rawMouseXSinceSnapshot, deltaX);
         g_rawMouseYSinceSnapshot = AddClampedRawMouse(g_rawMouseYSinceSnapshot, deltaY);
         g_aimInputAwaitingX = AddClampedRawMouse(g_aimInputAwaitingX, deltaX);
         g_aimInputAwaitingY = AddClampedRawMouse(g_aimInputAwaitingY, deltaY);
         g_aimInputAwaitingUntil = now + kAimSyntheticEchoWindowSeconds;
-        if (bootstrapCalibration && g_snapshot.valid) {
+        const MouseCalibration& calibration = CalibrationForFov(snapshot.fov);
+        const bool needsScopedCalibration = IsScopedFov(snapshot.fov) &&
+            (calibration.yawSamples < 8 || calibration.pitchSamples < 8) &&
+            std::max(std::abs(deltaX), std::abs(deltaY)) <= 96;
+        if ((bootstrapCalibration || (freshSnapshot && needsScopedCalibration)) &&
+            g_snapshot.valid && !g_aimCalibrationProbe.active) {
             g_aimCalibrationProbe = {true, deltaX, deltaY, g_snapshot.yaw,
                                      g_snapshot.pitch, g_snapshot.fov, g_snapshot.timestamp};
         }
