@@ -495,13 +495,41 @@ def _ctf_native_entities():
     _ctf_native_robots = []
     for _ctf_native_key, _ctf_native_entity in list(_ctf_native_values):
         try:
-            if getattr(_ctf_native_entity, "IsPlayerCombatAvatar", False):
-                _ctf_native_players.append((str(_ctf_native_key), _ctf_native_entity))
-            elif getattr(_ctf_native_entity, "IsRobotCombatAvatar", False):
+            _ctf_native_type_name = type(_ctf_native_entity).__name__.lower()
+            _ctf_native_is_robot = _ctf_native_flag(_ctf_native_entity, "IsRobotCombatAvatar")
+            _ctf_native_is_player = _ctf_native_flag(_ctf_native_entity, "IsPlayerCombatAvatar")
+            if _ctf_native_is_robot:
                 _ctf_native_robots.append((str(_ctf_native_key), _ctf_native_entity))
+            elif _ctf_native_is_player:
+                _ctf_native_players.append((str(_ctf_native_key), _ctf_native_entity))
+            elif _ctf_native_is_combat_avatar(_ctf_native_entity):
+                # Some real players are exposed as the base CombatAvatarMoba
+                # class while their player flag is still false.  Robots keep
+                # the robot class/flag and everything else is a player.
+                if "robot" in _ctf_native_type_name:
+                    _ctf_native_robots.append((str(_ctf_native_key), _ctf_native_entity))
+                else:
+                    _ctf_native_players.append((str(_ctf_native_key), _ctf_native_entity))
         except Exception:
             pass
     return _ctf_native_players, _ctf_native_robots
+
+
+def _ctf_native_flag(entity, name):
+    try:
+        _ctf_native_value = getattr(entity, name)
+        if callable(_ctf_native_value):
+            _ctf_native_value = _ctf_native_value()
+        return bool(_ctf_native_value)
+    except Exception:
+        return False
+
+
+def _ctf_native_is_combat_avatar(entity):
+    if _ctf_native_flag(entity, "IsCombatAvatar"):
+        return True
+    _ctf_native_type_name = type(entity).__name__.lower()
+    return _ctf_native_type_name.endswith("combatavatarmoba")
 
 
 def _ctf_native_timer_owner(players, robots):
@@ -535,6 +563,48 @@ def _ctf_native_local_player(state, players):
         if _ctf_native_key == _ctf_native_local_key:
             return _ctf_native_key, _ctf_native_entity
 
+    try:
+        import common.EntityManager as _ctf_native_em
+        _ctf_native_all_entities = list(
+            getattr(_ctf_native_em.EntityManager, "_entities", {}).values()
+        )
+    except Exception:
+        _ctf_native_all_entities = []
+
+    # GameLogicMoba keeps the authoritative reference to the controlled
+    # combat avatar.  Prefer object identity over list order.
+    for _ctf_native_manager in _ctf_native_all_entities:
+        try:
+            _ctf_native_candidate = getattr(_ctf_native_manager, "player")
+            if callable(_ctf_native_candidate):
+                _ctf_native_candidate = _ctf_native_candidate()
+            for _ctf_native_key, _ctf_native_entity in players:
+                if _ctf_native_entity is _ctf_native_candidate:
+                    state["local_key"] = _ctf_native_key
+                    return _ctf_native_key, _ctf_native_entity
+        except Exception:
+            pass
+
+    # The hall profile name is a stable fallback when the game-logic reference
+    # is temporarily unavailable during a scene transition.
+    _ctf_native_profile_names = set()
+    for _ctf_native_entity in _ctf_native_all_entities:
+        if type(_ctf_native_entity).__name__ != "PlayerAvatar":
+            continue
+        try:
+            _ctf_native_name = getattr(_ctf_native_entity, "name")
+            if isinstance(_ctf_native_name, str) and _ctf_native_name:
+                _ctf_native_profile_names.add(_ctf_native_name)
+        except Exception:
+            pass
+    for _ctf_native_key, _ctf_native_entity in players:
+        try:
+            if getattr(_ctf_native_entity, "name") in _ctf_native_profile_names:
+                state["local_key"] = _ctf_native_key
+                return _ctf_native_key, _ctf_native_entity
+        except Exception:
+            pass
+
     for _ctf_native_key, _ctf_native_entity in players:
         for _ctf_native_name in ("is_main_player", "is_local_player", "is_self", "IsMainPlayer"):
             try:
@@ -547,10 +617,11 @@ def _ctf_native_local_player(state, players):
             except Exception:
                 pass
 
-    if players:
+    if len(players) == 1:
         _ctf_native_key, _ctf_native_entity = players[0]
         state["local_key"] = _ctf_native_key
         return _ctf_native_key, _ctf_native_entity
+    # Never guess the local avatar from an unordered multi-player list.
     return None, None
 
 

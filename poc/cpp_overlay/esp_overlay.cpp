@@ -45,8 +45,8 @@ constexpr double kDefaultAimFovHeightFraction = 0.20;
 constexpr double kAimWorldHeadHeightFraction = 0.84;
 constexpr double kAimDeadzonePixels = 0.18;
 constexpr double kAimFineControlWindowPixels = 18.0;
-constexpr double kAimFineGain = 0.92;
-constexpr double kAimCoarseGain = 1.18;
+constexpr double kAimFineGain = 0.96;
+constexpr double kAimCoarseGain = 1.00;
 constexpr double kAimMinInputIntervalSeconds = 0.004;
 constexpr double kAimMaxRelativeVelocity = 14.0;
 constexpr double kAimSnapshotLeadSeconds = 0.025;
@@ -1422,44 +1422,54 @@ bool FindAimCandidate(const Snapshot& snapshot, const RECT& client, AimCandidate
 bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
                                   const Vec3& aimWorld, const POINT& aimPoint,
                                   LONG* deltaX, LONG* deltaY) {
+    (void)aimWorld;
     MouseCalibration calibration;
-    calibration.yawRadiansPerRawMouse = IsScopedFov(snapshot.fov)
+    const double defaultRadiansPerRawMouse = IsScopedFov(snapshot.fov)
         ? kDefaultScopedRadiansPerRawMouse
         : kDefaultHipRadiansPerRawMouse;
-    calibration.pitchRadiansPerRawMouse = calibration.yawRadiansPerRawMouse;
+    calibration.yawRadiansPerRawMouse = defaultRadiansPerRawMouse;
+    calibration.pitchRadiansPerRawMouse = defaultRadiansPerRawMouse;
+    // Use camera/raw-input measurements only after enough consistent samples;
+    // one recoil or synthetic-input frame must not change aim sensitivity.
+    const MouseCalibration learned = CalibrationForFov(snapshot.fov);
+    const auto validLearnedScale = [defaultRadiansPerRawMouse](double value) {
+        if (!std::isfinite(value) || value * defaultRadiansPerRawMouse <= 0.0) {
+            return false;
+        }
+        const double ratio = std::abs(value / defaultRadiansPerRawMouse);
+        return std::isfinite(ratio) && ratio >= 0.55 && ratio <= 1.80;
+    };
+    if (learned.yawSamples >= 6 && learned.pitchSamples >= 6 &&
+        validLearnedScale(learned.yawRadiansPerRawMouse) &&
+        validLearnedScale(learned.pitchRadiansPerRawMouse)) {
+        calibration.yawRadiansPerRawMouse = learned.yawRadiansPerRawMouse;
+        calibration.pitchRadiansPerRawMouse = learned.pitchRadiansPerRawMouse;
+    }
     constexpr double kPi = 3.14159265358979323846;
     const double clientHeight = static_cast<double>(client.bottom - client.top);
     const double clientWidth = static_cast<double>(client.right - client.left);
-    if (clientHeight <= 1.0 || clientWidth <= 1.0) {
+    const double gameHeight = static_cast<double>(snapshot.gameHeight);
+    const double gameWidth = static_cast<double>(snapshot.gameWidth);
+    if (clientHeight <= 1.0 || clientWidth <= 1.0 ||
+        gameHeight <= 1.0 || gameWidth <= 1.0) {
         return false;
     }
     const double fovRadians = std::clamp(snapshot.fov, 1.0, 150.0) * kPi / 180.0;
-    const double focalLength = clientHeight / (2.0 * std::tan(fovRadians * 0.5));
+    const double focalLength = gameHeight / (2.0 * std::tan(fovRadians * 0.5));
     if (!std::isfinite(focalLength) || focalLength <= 1.0 ||
         std::abs(calibration.yawRadiansPerRawMouse) < 1e-7 ||
         std::abs(calibration.pitchRadiansPerRawMouse) < 1e-7) {
         return false;
     }
 
-    double requiredYaw = 0.0;
-    double requiredPitch = 0.0;
-    const Vec3 aimVector = aimWorld - snapshot.camera;
-    const double aimDistance = Length(aimVector);
-    if (std::isfinite(aimDistance) && aimDistance > 0.001) {
-        const double targetYaw = std::atan2(-aimVector.x, -aimVector.z);
-        const double targetPitch = std::atan2(
-            aimVector.y, std::hypot(aimVector.x, aimVector.z));
-        requiredYaw = WrapAngleDelta(snapshot.yaw, targetYaw);
-        requiredPitch = targetPitch - snapshot.pitch;
-    } else {
-        const double pixelX = static_cast<double>(aimPoint.x) - clientWidth * 0.5;
-        const double pixelY = static_cast<double>(aimPoint.y) - clientHeight * 0.5;
-        // Sunshine yaw grows to the viewer's left and pitch grows upward.
-        requiredYaw = -std::atan(pixelX / focalLength);
-        requiredPitch = -std::atan(pixelY / focalLength);
-    }
     const double pixelX = static_cast<double>(aimPoint.x) - clientWidth * 0.5;
     const double pixelY = static_cast<double>(aimPoint.y) - clientHeight * 0.5;
+    const double gamePixelX = pixelX * gameWidth / clientWidth;
+    const double gamePixelY = pixelY * gameHeight / clientHeight;
+    // Derive both axes from the same projected head point.  This preserves
+    // the camera roll and window scaling used by ProjectPoint.
+    const double requiredYaw = -std::atan(gamePixelX / focalLength);
+    const double requiredPitch = -std::atan(gamePixelY / focalLength);
     const double pixelDistance = std::hypot(pixelX, pixelY);
     double gain = kAimFineGain;
     if (pixelDistance > kAimFineControlWindowPixels) {
