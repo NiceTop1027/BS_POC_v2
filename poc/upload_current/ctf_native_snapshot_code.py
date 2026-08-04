@@ -365,7 +365,7 @@ def _ctf_native_bounds(entity):
 
 
 def _ctf_native_head_position(state, key, entity, entity_pos):
-    """Return the model's initialized head-bone point, never a bounds estimate."""
+    """Return the current model head bone, never a bounds estimate."""
     _ctf_native_model = getattr(entity, "model", None)
     if _ctf_native_model is None:
         return None
@@ -373,9 +373,12 @@ def _ctf_native_head_position(state, key, entity, entity_pos):
     _ctf_native_head_models = state.setdefault("head_models", {})
     _ctf_native_model_id = id(_ctf_native_model)
     if _ctf_native_head_models.get(key) != _ctf_native_model_id:
-        _ctf_native_call(_ctf_native_model, "MakeSureBones")
         _ctf_native_call(_ctf_native_model, "CreateSpecifyBone", "biped Head")
         _ctf_native_head_models[key] = _ctf_native_model_id
+
+    # Refresh the skeleton immediately before reading the bone.  This keeps
+    # the exported point tied to the same animation frame as CameraFrame.
+    _ctf_native_call(_ctf_native_model, "MakeSureBones")
 
     _ctf_native_head = _ctf_native_vec3(
         _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", "biped Head")
@@ -499,6 +502,30 @@ def _ctf_native_entities():
         except Exception:
             pass
     return _ctf_native_players, _ctf_native_robots
+
+
+def _ctf_native_timer_owner(players, robots):
+    """Use a live game object as the timer owner, including in the lobby."""
+    _ctf_native_candidates = [
+        _ctf_native_entity
+        for _ctf_native_key, _ctf_native_entity in players + robots
+    ]
+    try:
+        import common.EntityManager as _ctf_native_em
+        _ctf_native_candidates.extend(
+            getattr(_ctf_native_em.EntityManager, "_entities", {}).values()
+        )
+    except Exception:
+        pass
+
+    _ctf_native_seen = set()
+    for _ctf_native_candidate in _ctf_native_candidates:
+        if id(_ctf_native_candidate) in _ctf_native_seen:
+            continue
+        _ctf_native_seen.add(id(_ctf_native_candidate))
+        if callable(getattr(_ctf_native_candidate, "add_repeat_timer", None)):
+            return _ctf_native_candidate
+    return None
 
 
 def _ctf_native_local_player(state, players):
@@ -829,7 +856,7 @@ def _ctf_native_install():
     setattr(_ctf_native_builtins, _ctf_native_state_name, _ctf_native_state)
     _ctf_native_tick()
     _ctf_native_players, _ctf_native_robots = _ctf_native_entities()
-    _ctf_native_owner = _ctf_native_players[0][1] if _ctf_native_players else (_ctf_native_robots[0][1] if _ctf_native_robots else None)
+    _ctf_native_owner = _ctf_native_timer_owner(_ctf_native_players, _ctf_native_robots)
     if _ctf_native_owner is None or not hasattr(_ctf_native_owner, "add_repeat_timer"):
         _ctf_native_log("INSTALL_FAILED no timer owner")
         return

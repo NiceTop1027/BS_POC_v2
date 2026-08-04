@@ -58,6 +58,9 @@ constexpr double kAimLatencyCompensationSeconds = 0.026;
 constexpr double kAimMaxLatencyCompensationSeconds = 0.052;
 constexpr double kAimMaxLatencyCompensationMeters = 0.85;
 constexpr double kAimMinLatencyCompensationSpeed = 0.35;
+// Keep the selected target stable when two projected heads overlap, but
+// switch immediately when another head is materially closer to the crosshair.
+constexpr double kAimLockSwitchHysteresisPixels = 6.0;
 constexpr LONG kAimMaxCalibratedMouseDelta = 4000;
 constexpr LONG kAimMaxHipMouseStep = 720;
 constexpr LONG kAimMaxScopedMouseStep = 520;
@@ -247,6 +250,7 @@ double g_calibrationBlockedUntil = 0.0;
 double g_aimResidualRawX = 0.0;
 double g_aimResidualRawY = 0.0;
 double g_lastAimInputTime = 0.0;
+double g_lastAimTargetSwitchTime = 0.0;
 double g_lastAimTriggerWriteTime = 0.0;
 bool g_lastAimTriggerState = false;
 std::wstring g_runtimeRootOverride;
@@ -1190,6 +1194,7 @@ void ClearAimLock() {
     g_aimResidualRawX = 0.0;
     g_aimResidualRawY = 0.0;
     g_lastAimInputTime = 0.0;
+    g_lastAimTargetSwitchTime = 0.0;
 }
 
 Vec3 TargetHeadPoint(const Target& target) {
@@ -1203,6 +1208,15 @@ Vec3 TargetHeadPoint(const Target& target) {
         target.min.y + height * kAimWorldHeadHeightFraction,
         (target.min.z + target.max.z) * 0.5,
     };
+}
+
+bool TryGetAuthoritativeHead(const Target& target, Vec3* output) {
+    if (!target.hasHead || !std::isfinite(target.head.x) ||
+        !std::isfinite(target.head.y) || !std::isfinite(target.head.z)) {
+        return false;
+    }
+    *output = target.head;
+    return true;
 }
 
 Vec3 EstimatedHeadRelativeVelocity(const Target& target) {
@@ -1265,20 +1279,10 @@ bool HeadMatchesProjectedBounds(const Snapshot& snapshot, const Target& target) 
 }
 
 Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
-    const Vec3 head = TargetHeadPoint(target);
-    const Vec3 relativeVelocity = ClampMagnitude(
-        EstimatedHeadCameraRelativeVelocity(target), kAimMaxRelativeVelocity);
-    if (Length(relativeVelocity) < kAimMinLatencyCompensationSpeed) {
-        return head;
-    }
-    const double snapshotAge = std::max(0.0, UnixNow() - snapshot.timestamp);
-    const double compensationTime = std::clamp(
-        snapshotAge + kAimLatencyCompensationSeconds,
-        0.0,
-        kAimMaxLatencyCompensationSeconds);
-    Vec3 compensation = relativeVelocity * compensationTime;
-    compensation = ClampMagnitude(compensation, kAimMaxLatencyCompensationMeters);
-    return head + compensation;
+    (void)snapshot;
+    // Aim at the bone from the captured frame.  Predicting the bone position
+    // makes small velocity/snapshot errors much more visible at long range.
+    return TargetHeadPoint(target);
 }
 
 bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT& client,
@@ -1318,7 +1322,18 @@ bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const REC
     if (target.dead || (g_visibilityEnabled && !target.visible)) {
         return false;
     }
-    const Vec3 currentHead = TargetHeadPoint(target);
+    Vec3 currentHead = {};
+    // The aim path only accepts the bone returned by the injected runtime.
+    // Bounds-derived head estimates are suitable for display fallback, not
+    // for firing decisions.
+    if (!TryGetAuthoritativeHead(target, &currentHead)) {
+        return false;
+    }
+    const double headDistance = Length(currentHead - snapshot.camera);
+    if (!std::isfinite(headDistance) || headDistance <= 0.10 ||
+        headDistance > g_maxTargetDistanceMeters + 2.0) {
+        return false;
+    }
     double headGameX = 0.0;
     double headGameY = 0.0;
     if (!ProjectPoint(snapshot, currentHead, &headGameX, &headGameY)) {
@@ -1356,42 +1371,50 @@ bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const REC
 }
 
 bool FindAimCandidate(const Snapshot& snapshot, const RECT& client, AimCandidate* output) {
-    const double centerX = static_cast<double>(client.right - client.left) * 0.5;
-    const double centerY = static_cast<double>(client.bottom - client.top) * 0.5;
     const double maxDistance = AimFovRadius(client);
-    (void)centerX;
-    (void)centerY;
-
     AimCandidate best;
-    if (!g_aimLockedKey.empty()) {
-        if (const Target* locked = FindTargetByKey(snapshot, g_aimLockedKey)) {
-            AimCandidate lockedCandidate;
-            if (BuildAimCandidate(snapshot, *locked, client, maxDistance * 1.35, &lockedCandidate)) {
-                *output = lockedCandidate;
-                return true;
-            }
-        }
-        g_aimLockedKey.clear();
-        g_aimResidualRawX = 0.0;
-        g_aimResidualRawY = 0.0;
-    }
 
+    AimCandidate lockedCandidate;
+    bool hasLockedCandidate = false;
     for (const Target& target : snapshot.targets) {
         AimCandidate candidate;
-        if (BuildAimCandidate(snapshot, target, client, maxDistance, &candidate) &&
-            candidate.distanceToCrosshair < best.distanceToCrosshair) {
+        if (!BuildAimCandidate(snapshot, target, client, maxDistance, &candidate)) {
+            continue;
+        }
+        if (candidate.target->key == g_aimLockedKey) {
+            lockedCandidate = candidate;
+            hasLockedCandidate = true;
+        }
+        // The primary ordering is always the current head's distance from the
+        // screen center.  Key order only breaks exact ties between overlaps.
+        if (candidate.distanceToCrosshair < best.distanceToCrosshair ||
+            (std::abs(candidate.distanceToCrosshair - best.distanceToCrosshair) < 0.25 &&
+             best.target && candidate.target->key < best.target->key)) {
             best = candidate;
         }
     }
 
     if (!best.target) {
+        ClearAimLock();
         return false;
     }
-    if (g_aimLockedKey != best.target->key) {
-        g_aimResidualRawX = 0.0;
-        g_aimResidualRawY = 0.0;
+
+    // Do not alternate between nearly coincident heads because of sub-pixel
+    // snapshot noise.  A clearly better head still wins immediately.
+    if (hasLockedCandidate && lockedCandidate.target->key != best.target->key &&
+        lockedCandidate.distanceToCrosshair <=
+            best.distanceToCrosshair + kAimLockSwitchHysteresisPixels) {
+        *output = lockedCandidate;
+        return true;
     }
-    g_aimLockedKey = best.target->key;
+
+    if (g_aimLockedKey != best.target->key) {
+        // A target switch invalidates residual mouse movement and synthetic
+        // input acknowledgement from the previous target.
+        ClearAimLock();
+        g_aimLockedKey = best.target->key;
+        g_lastAimTargetSwitchTime = UnixNow();
+    }
     *output = best;
     return true;
 }
