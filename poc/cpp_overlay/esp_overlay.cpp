@@ -58,6 +58,7 @@ constexpr double kAimMaxSnapshotLeadSeconds = 0.085;
 constexpr double kAimMaxLeadMeters = 1.15;
 constexpr double kAimMaxLeadScreenPixels = 72.0;
 constexpr double kAimDirectRangeMeters = 12.0;
+constexpr double kAimWorldAngleCorrectionDistanceMeters = 20.0;
 constexpr double kAimMinProjectileSpeed = 10.0;
 constexpr double kAimMaxProjectileSpeed = 10000.0;
 constexpr double kAimMaxBallisticFlightSeconds = 3.0;
@@ -1581,11 +1582,22 @@ bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT&
     return std::isfinite(*x) && std::isfinite(*y);
 }
 
+bool AimVisibilityDataUnavailable(const Snapshot& snapshot) {
+    // The isolated range can expose robot rows before it exposes the local
+    // combat avatar.  In that state a failed physics raycast is not evidence
+    // that the authoritative head is blocked; keep aim acquisition alive
+    // until the local-player count returns.
+    return snapshot.hasTargetCounts && snapshot.playerTargetCount == 0 &&
+           snapshot.robotTargetCount > 0;
+}
+
 bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const RECT& client,
                        double maximumDistance, AimCandidate* output,
                        bool lockedMode = false, bool allowInvisible = false) {
+    const bool visibilityUnavailable = AimVisibilityDataUnavailable(snapshot);
     if (target.dead ||
-        (g_visibilityEnabled && !target.visible && !allowInvisible)) {
+        (g_visibilityEnabled && !target.visible && !allowInvisible &&
+         !visibilityUnavailable)) {
         return false;
     }
     Vec3 currentHead = {};
@@ -1654,11 +1666,13 @@ bool FindAimCandidate(const Snapshot& snapshot, const RECT& client, AimCandidate
                 ClearAimLock();
                 return false;
             }
+            const bool visibilityUnavailable = AimVisibilityDataUnavailable(snapshot);
             g_aimLockLastSeenTime = now;
-            if (target.visible || !g_visibilityEnabled) {
+            if (target.visible || !g_visibilityEnabled || visibilityUnavailable) {
                 g_aimLockLastVisibleTime = now;
             }
             const bool allowInvisible = !g_visibilityEnabled || target.visible ||
+                visibilityUnavailable ||
                 now - g_aimLockLastVisibleTime <= kAimLockVisibilityGraceSeconds;
             AimCandidate locked;
             if (BuildAimCandidate(snapshot, target, client, maxDistance, &locked,
@@ -1705,7 +1719,6 @@ bool FindAimCandidate(const Snapshot& snapshot, const RECT& client, AimCandidate
 bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
                                   const Vec3& aimWorld, const POINT& aimPoint,
                                   LONG* deltaX, LONG* deltaY) {
-    (void)aimWorld;
     MouseCalibration calibration;
     const double defaultRadiansPerRawMouse = IsScopedFov(snapshot.fov)
         ? kDefaultScopedRadiansPerRawMouse
@@ -1754,10 +1767,24 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     }
     const double gamePixelX = pixelX * gameWidth / clientWidth;
     const double gamePixelY = pixelY * gameHeight / clientHeight;
-    // Derive both axes from the same projected head point.  This preserves
-    // the camera roll and window scaling used by ProjectPoint.
-    const double requiredYaw = -std::atan(gamePixelX / focalLength);
-    const double requiredPitch = -std::atan(gamePixelY / focalLength);
+    double requiredYaw = -std::atan(gamePixelX / focalLength);
+    double requiredPitch = -std::atan(gamePixelY / focalLength);
+    const Vec3 aimRelative = aimWorld - snapshot.camera;
+    const double aimDistance = Length(aimRelative);
+    const double horizontalDistance = std::hypot(aimRelative.x, aimRelative.z);
+    const bool useWorldAngles = std::isfinite(aimDistance) &&
+        aimDistance >= kAimWorldAngleCorrectionDistanceMeters &&
+        std::isfinite(horizontalDistance) && horizontalDistance > 0.01 &&
+        std::abs(snapshot.roll) < 0.15;
+    if (useWorldAngles) {
+        // At long range, derive the correction directly from the authoritative
+        // world head and camera angles.  This avoids losing sub-pixel head
+        // movement through window scaling or narrow-scope projection.
+        const double desiredYaw = std::atan2(-aimRelative.x, -aimRelative.z);
+        const double desiredPitch = std::atan2(aimRelative.y, horizontalDistance);
+        requiredYaw = WrapAngleDelta(snapshot.yaw, desiredYaw);
+        requiredPitch = desiredPitch - snapshot.pitch;
+    }
     const double pixelDistance = std::hypot(pixelX, pixelY);
     double gain = kAimFineGain;
     if (pixelDistance > kAimFineControlWindowPixels) {
