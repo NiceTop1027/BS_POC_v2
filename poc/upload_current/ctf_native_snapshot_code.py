@@ -385,8 +385,16 @@ def _ctf_native_head_position(state, key, entity, entity_pos):
     )
     if _ctf_native_head is None or not all(_ctf_native_math.isfinite(value) for value in _ctf_native_head):
         return None
-    if entity_pos is None or _ctf_native_head[1] <= entity_pos[1] + 0.20:
-        return None
+    # The head can legitimately be below the entity origin while crouching or
+    # sliding.  The model bone is authoritative; do not reject it by posture.
+    if entity_pos is not None:
+        _ctf_native_offset = (
+            _ctf_native_head[0] - entity_pos[0],
+            _ctf_native_head[1] - entity_pos[1],
+            _ctf_native_head[2] - entity_pos[2],
+        )
+        if _ctf_native_math.sqrt(_ctf_native_dot(_ctf_native_offset, _ctf_native_offset)) > 8.0:
+            return None
     return _ctf_native_head
 
 
@@ -426,6 +434,7 @@ def _ctf_native_visible(state, key, entity, camera_pos):
     if _ctf_native_model is None or _ctf_native_space is None:
         _ctf_native_cache[key] = (_ctf_native_now, False)
         return False
+    _ctf_native_call(_ctf_native_model, "MakeSureBones")
     _ctf_native_head = _ctf_native_call(
         _ctf_native_model, "GetBoneWorldPosition", "biped Head"
     )

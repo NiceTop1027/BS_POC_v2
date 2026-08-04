@@ -231,7 +231,7 @@ bool g_espEnabled = true;
 bool g_tracersEnabled = true;
 bool g_aimEnabled = true;
 bool g_visibilityEnabled = true;
-bool g_predictionEnabled = false;
+bool g_predictionEnabled = true;
 bool g_fovVisible = true;
 bool g_autoInject = true;
 bool g_controlsHotkeyRegistered = false;
@@ -1283,10 +1283,39 @@ bool HeadMatchesProjectedBounds(const Snapshot& snapshot, const Target& target) 
 }
 
 Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
-    (void)snapshot;
-    // Aim at the bone from the captured frame.  Predicting the bone position
-    // makes small velocity/snapshot errors much more visible at long range.
-    return TargetHeadPoint(target);
+    const Vec3 head = TargetHeadPoint(target);
+    if (!g_predictionEnabled || !g_snapshot.valid || !g_previousSnapshot.valid) {
+        return head;
+    }
+
+    // Compensate only the measured authoritative head motion.  This follows
+    // slide/jump animation and snapshot delay without extrapolating bounds or
+    // inventing a target position when the bone is stationary.
+    Vec3 relativeVelocity = ClampMagnitude(
+        EstimatedHeadCameraRelativeVelocity(target), kAimMaxRelativeVelocity);
+    const double speed = Length(relativeVelocity);
+    if (!std::isfinite(speed) || speed < kAimMinLatencyCompensationSpeed) {
+        return head;
+    }
+
+    const double snapshotAge = std::max(0.0, UnixNow() - snapshot.timestamp);
+    double compensationTime = std::clamp(
+        snapshotAge + kAimSnapshotLeadSeconds,
+        0.0,
+        kAimMaxSnapshotLeadSeconds);
+    const double distance = Length(head - snapshot.camera);
+    if (std::isfinite(distance) && distance <= kAimDirectRangeMeters) {
+        // Close targets are already large on screen; keep the bone point
+        // nearly current instead of leading past a crouch transition.
+        compensationTime = std::min(compensationTime, 0.018);
+    }
+
+    Vec3 compensation = ClampMagnitude(
+        relativeVelocity * compensationTime, kAimMaxLeadMeters);
+    // Pose changes can move the vertical bone sharply.  Keep vertical lead
+    // bounded while preserving horizontal compensation for fast slides.
+    compensation.y = std::clamp(compensation.y, -0.35, 0.35);
+    return head + compensation;
 }
 
 bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT& client,
