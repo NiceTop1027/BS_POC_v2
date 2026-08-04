@@ -62,12 +62,17 @@ constexpr double kAimLatencyCompensationSeconds = 0.026;
 constexpr double kAimMaxLatencyCompensationSeconds = 0.052;
 constexpr double kAimMaxLatencyCompensationMeters = 0.85;
 constexpr double kAimMinLatencyCompensationSpeed = 0.35;
-// Keep the selected target stable when two projected heads overlap, but
-// switch immediately when another head is materially closer to the crosshair.
-constexpr double kAimLockSwitchHysteresisPixels = 6.0;
+// Preserve the selected target through short entity/visibility gaps.
+constexpr double kAimLockRetentionSeconds = 0.75;
+constexpr double kAimLockVisibilityGraceSeconds = 0.18;
 constexpr LONG kAimMaxCalibratedMouseDelta = 4000;
 constexpr LONG kAimMaxHipMouseStep = 720;
 constexpr LONG kAimMaxScopedMouseStep = 520;
+constexpr double kAimVerticalGain = 0.84;
+constexpr double kAimScopedVerticalGain = 0.74;
+constexpr double kAimVerticalDeadzonePixels = 1.25;
+constexpr LONG kAimMaxHipVerticalStep = 320;
+constexpr LONG kAimMaxScopedVerticalStep = 200;
 constexpr double kDefaultHipRadiansPerRawMouse = -0.00135;
 constexpr double kDefaultScopedRadiansPerRawMouse = -0.00055;
 constexpr double kAimCalibrationCooldownSeconds = 0.06;
@@ -240,6 +245,8 @@ bool g_controlsHotkeyRegistered = false;
 double g_aimFovRadiusPixels = 0.0;
 double g_maxTargetDistanceMeters = kDefaultMaxTargetDistanceMeters;
 std::string g_aimLockedKey;
+double g_aimLockLastSeenTime = 0.0;
+double g_aimLockLastVisibleTime = 0.0;
 LONG g_aimInputAwaitingX = 0;
 LONG g_aimInputAwaitingY = 0;
 double g_aimInputAwaitingUntil = 0.0;
@@ -1194,6 +1201,8 @@ Vec3 ClampMagnitude(const Vec3& value, double maximum) {
 
 void ClearAimLock() {
     g_aimLockedKey.clear();
+    g_aimLockLastSeenTime = 0.0;
+    g_aimLockLastVisibleTime = 0.0;
     g_aimInputAwaitingX = 0;
     g_aimInputAwaitingY = 0;
     g_aimInputAwaitingUntil = 0.0;
@@ -1327,9 +1336,10 @@ Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
 
     Vec3 compensation = ClampMagnitude(
         relativeVelocity * compensationTime, kAimMaxLeadMeters);
-    // Pose changes can move the vertical bone sharply.  Keep vertical lead
-    // bounded while preserving horizontal compensation for fast slides.
-    compensation.y = std::clamp(compensation.y, -0.35, 0.35);
+    // Do not lead the vertical bone.  Jump/crouch height is read from the
+    // current authoritative frame; vertical prediction is a common source of
+    // visible up/down oscillation.
+    compensation.y = 0.0;
     return head + compensation;
 }
 
@@ -1366,8 +1376,10 @@ bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT&
 }
 
 bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const RECT& client,
-                       double maximumDistance, AimCandidate* output) {
-    if (target.dead || (g_visibilityEnabled && !target.visible)) {
+                       double maximumDistance, AimCandidate* output,
+                       bool lockedMode = false, bool allowInvisible = false) {
+    if (target.dead ||
+        (g_visibilityEnabled && !target.visible && !allowInvisible)) {
         return false;
     }
     Vec3 currentHead = {};
@@ -1393,13 +1405,14 @@ bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const REC
     const double headY = headGameY * scaleY;
     const double width = static_cast<double>(client.right - client.left);
     const double height = static_cast<double>(client.bottom - client.top);
-    if (headX < 1.0 || headY < 1.0 || headX > width - 1.0 || headY > height - 1.0) {
+    if (!lockedMode &&
+        (headX < 1.0 || headY < 1.0 || headX > width - 1.0 || headY > height - 1.0)) {
         return false;
     }
     const double selectDeltaX = headX - width * 0.5;
     const double selectDeltaY = headY - height * 0.5;
     const double selectionDistance = std::hypot(selectDeltaX, selectDeltaY);
-    if (selectionDistance > maximumDistance) {
+    if (!lockedMode && selectionDistance > maximumDistance) {
         return false;
     }
 
@@ -1420,18 +1433,47 @@ bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const REC
 
 bool FindAimCandidate(const Snapshot& snapshot, const RECT& client, AimCandidate* output) {
     const double maxDistance = AimFovRadius(client);
-    AimCandidate best;
+    const double now = UnixNow();
 
-    AimCandidate lockedCandidate;
-    bool hasLockedCandidate = false;
+    // Once a target is acquired, keep that identity until it is dead or has
+    // genuinely disappeared.  A temporary off-screen projection, crouch pose,
+    // visibility miss, or another player crossing the reticle must not switch
+    // the lock to a different target.
+    if (!g_aimLockedKey.empty()) {
+        for (const Target& target : snapshot.targets) {
+            if (target.key != g_aimLockedKey) {
+                continue;
+            }
+            if (target.dead) {
+                ClearAimLock();
+                return false;
+            }
+            g_aimLockLastSeenTime = now;
+            if (target.visible || !g_visibilityEnabled) {
+                g_aimLockLastVisibleTime = now;
+            }
+            const bool allowInvisible = !g_visibilityEnabled || target.visible ||
+                now - g_aimLockLastVisibleTime <= kAimLockVisibilityGraceSeconds;
+            AimCandidate locked;
+            if (BuildAimCandidate(snapshot, target, client, maxDistance, &locked,
+                                  true, allowInvisible)) {
+                *output = locked;
+                return true;
+            }
+            return false;
+        }
+        if (now - g_aimLockLastSeenTime <= kAimLockRetentionSeconds) {
+            return false;
+        }
+        ClearAimLock();
+        return false;
+    }
+
+    AimCandidate best;
     for (const Target& target : snapshot.targets) {
         AimCandidate candidate;
         if (!BuildAimCandidate(snapshot, target, client, maxDistance, &candidate)) {
             continue;
-        }
-        if (candidate.target->key == g_aimLockedKey) {
-            lockedCandidate = candidate;
-            hasLockedCandidate = true;
         }
         // The primary ordering is always the current head's distance from the
         // screen center.  Key order only breaks exact ties between overlaps.
@@ -1446,23 +1488,10 @@ bool FindAimCandidate(const Snapshot& snapshot, const RECT& client, AimCandidate
         ClearAimLock();
         return false;
     }
-
-    // Do not alternate between nearly coincident heads because of sub-pixel
-    // snapshot noise.  A clearly better head still wins immediately.
-    if (hasLockedCandidate && lockedCandidate.target->key != best.target->key &&
-        lockedCandidate.distanceToCrosshair <=
-            best.distanceToCrosshair + kAimLockSwitchHysteresisPixels) {
-        *output = lockedCandidate;
-        return true;
-    }
-
-    if (g_aimLockedKey != best.target->key) {
-        // A target switch invalidates residual mouse movement and synthetic
-        // input acknowledgement from the previous target.
-        ClearAimLock();
-        g_aimLockedKey = best.target->key;
-        g_lastAimTargetSwitchTime = UnixNow();
-    }
+    g_aimLockedKey = best.target->key;
+    g_aimLockLastSeenTime = now;
+    g_aimLockLastVisibleTime = now;
+    g_lastAimTargetSwitchTime = now;
     *output = best;
     return true;
 }
@@ -1513,7 +1542,10 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     }
 
     const double pixelX = static_cast<double>(aimPoint.x) - clientWidth * 0.5;
-    const double pixelY = static_cast<double>(aimPoint.y) - clientHeight * 0.5;
+    double pixelY = static_cast<double>(aimPoint.y) - clientHeight * 0.5;
+    if (std::abs(pixelY) <= kAimVerticalDeadzonePixels) {
+        pixelY = 0.0;
+    }
     const double gamePixelX = pixelX * gameWidth / clientWidth;
     const double gamePixelY = pixelY * gameHeight / clientHeight;
     // Derive both axes from the same projected head point.  This preserves
@@ -1545,18 +1577,28 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
         g_aimResidualRawY = 0.0;
     }
     const double commandRawX = rawX * gain + g_aimResidualRawX;
-    const double commandRawY = rawY * gain + g_aimResidualRawY;
-    const LONG maxStep = IsScopedFov(snapshot.fov) ? kAimMaxScopedMouseStep : kAimMaxHipMouseStep;
-    const double clampedRawX = std::clamp(commandRawX, -static_cast<double>(maxStep),
-                                          static_cast<double>(maxStep));
-    const double clampedRawY = std::clamp(commandRawY, -static_cast<double>(maxStep),
-                                          static_cast<double>(maxStep));
+    const double verticalGain = IsScopedFov(snapshot.fov)
+        ? kAimScopedVerticalGain
+        : kAimVerticalGain;
+    const double commandRawY = rawY * gain * verticalGain + g_aimResidualRawY;
+    const LONG maxHorizontalStep = IsScopedFov(snapshot.fov)
+        ? kAimMaxScopedMouseStep
+        : kAimMaxHipMouseStep;
+    const LONG maxVerticalStep = IsScopedFov(snapshot.fov)
+        ? kAimMaxScopedVerticalStep
+        : kAimMaxHipVerticalStep;
+    const double clampedRawX = std::clamp(commandRawX,
+                                          -static_cast<double>(maxHorizontalStep),
+                                          static_cast<double>(maxHorizontalStep));
+    const double clampedRawY = std::clamp(commandRawY,
+                                          -static_cast<double>(maxVerticalStep),
+                                          static_cast<double>(maxVerticalStep));
     *deltaX = static_cast<LONG>(std::lround(clampedRawX));
     *deltaY = static_cast<LONG>(std::lround(clampedRawY));
-    g_aimResidualRawX = (std::abs(commandRawX) <= static_cast<double>(maxStep))
+    g_aimResidualRawX = (std::abs(commandRawX) <= static_cast<double>(maxHorizontalStep))
         ? commandRawX - static_cast<double>(*deltaX)
         : 0.0;
-    g_aimResidualRawY = (std::abs(commandRawY) <= static_cast<double>(maxStep))
+    g_aimResidualRawY = (std::abs(commandRawY) <= static_cast<double>(maxVerticalStep))
         ? commandRawY - static_cast<double>(*deltaY)
         : 0.0;
     return true;
@@ -1898,7 +1940,17 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     // Never steer from an old camera/entity frame after the exporter pauses.
     if (!std::isfinite(snapshot.timestamp) ||
         UnixNow() - snapshot.timestamp > 0.14) {
-        ClearAimLock();
+        // Preserve the target identity across a short exporter pause; only
+        // discard motion/calibration state so stale input is never emitted.
+        g_aimInputAwaitingX = 0;
+        g_aimInputAwaitingY = 0;
+        g_aimInputAwaitingUntil = 0.0;
+        g_aimCalibrationProbe = {};
+        g_aimResidualRawX = 0.0;
+        g_aimResidualRawY = 0.0;
+        g_lastAimInputTime = 0.0;
+        g_lastAimSnapshotTimestamp = 0.0;
+        g_hasLastAimPoint = false;
         return;
     }
     // Aim input itself changes camera angles.  Exclude it (and the next few
@@ -1963,6 +2015,13 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         deltaX = remainingX >= 0.0 ? kAimBootstrapRawMouseDelta : -kAimBootstrapRawMouseDelta;
         deltaY = remainingY >= 0.0 ? kAimBootstrapRawMouseDelta : -kAimBootstrapRawMouseDelta;
         bootstrapCalibration = true;
+    }
+    // A repeated read of the same camera frame may still contain the previous
+    // synthetic pitch correction.  Never send a second vertical correction
+    // until a new authoritative frame confirms the camera response.
+    if (sameSnapshot) {
+        deltaY = 0;
+        g_aimResidualRawY = 0.0;
     }
     if (deltaX == 0 && deltaY == 0) {
         g_lastAimSnapshotTimestamp = snapshot.timestamp;
