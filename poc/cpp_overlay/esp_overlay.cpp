@@ -43,11 +43,13 @@ constexpr int kToggleControlsHotkey = 1;
 constexpr COLORREF kTransparentColor = RGB(0, 0, 0);
 constexpr double kDefaultAimFovHeightFraction = 0.20;
 constexpr double kAimWorldHeadHeightFraction = 0.84;
-constexpr double kAimDeadzonePixels = 0.18;
+constexpr double kAimDeadzonePixels = 0.80;
 constexpr double kAimFineControlWindowPixels = 18.0;
 constexpr double kAimFineGain = 0.96;
 constexpr double kAimCoarseGain = 1.00;
-constexpr double kAimMinInputIntervalSeconds = 0.004;
+// The exporter is sampled at 120 Hz.  One command per fresh sample prevents
+// duplicate corrections from fighting each other between camera frames.
+constexpr double kAimMinInputIntervalSeconds = 0.0085;
 constexpr double kAimMaxRelativeVelocity = 14.0;
 constexpr double kAimSnapshotLeadSeconds = 0.025;
 constexpr double kAimMaxSnapshotLeadSeconds = 0.085;
@@ -250,6 +252,7 @@ double g_calibrationBlockedUntil = 0.0;
 double g_aimResidualRawX = 0.0;
 double g_aimResidualRawY = 0.0;
 double g_lastAimInputTime = 0.0;
+double g_lastAimSnapshotTimestamp = 0.0;
 double g_lastAimTargetSwitchTime = 0.0;
 double g_lastAimTriggerWriteTime = 0.0;
 bool g_lastAimTriggerState = false;
@@ -1194,6 +1197,7 @@ void ClearAimLock() {
     g_aimResidualRawX = 0.0;
     g_aimResidualRawY = 0.0;
     g_lastAimInputTime = 0.0;
+    g_lastAimSnapshotTimestamp = 0.0;
     g_lastAimTargetSwitchTime = 0.0;
 }
 
@@ -1487,6 +1491,12 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
         std::abs(rawX) > kAimMaxCalibratedMouseDelta ||
         std::abs(rawY) > kAimMaxCalibratedMouseDelta) {
         return false;
+    }
+    if (rawX * g_aimResidualRawX < 0.0) {
+        g_aimResidualRawX = 0.0;
+    }
+    if (rawY * g_aimResidualRawY < 0.0) {
+        g_aimResidualRawY = 0.0;
     }
     const double commandRawX = rawX * gain + g_aimResidualRawX;
     const double commandRawY = rawY * gain + g_aimResidualRawY;
@@ -1839,6 +1849,12 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         ClearAimLock();
         return;
     }
+    // Never steer from an old camera/entity frame after the exporter pauses.
+    if (!std::isfinite(snapshot.timestamp) ||
+        UnixNow() - snapshot.timestamp > 0.14) {
+        ClearAimLock();
+        return;
+    }
     // Aim input itself changes camera angles.  Exclude it (and the next few
     // capture frames) from the passive raw-mouse calibration so vertical
     // sensitivity cannot drift into an inverted skyward correction.
@@ -1850,6 +1866,11 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         g_aimInputAwaitingUntil = 0.0;
     }
     if (now - g_lastAimInputTime < kAimMinInputIntervalSeconds) {
+        return;
+    }
+    // The overlay repaints faster than the exporter writes.  Reusing one
+    // snapshot can apply the same correction several times and overshoot.
+    if (snapshot.timestamp <= g_lastAimSnapshotTimestamp + 0.000001) {
         return;
     }
 
@@ -1865,6 +1886,7 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     const double remainingY = static_cast<double>(aimPoint.y) - centerY;
     const double remainingDistance = std::hypot(remainingX, remainingY);
     if (remainingDistance <= kAimDeadzonePixels) {
+        g_lastAimSnapshotTimestamp = snapshot.timestamp;
         g_aimResidualRawX = 0.0;
         g_aimResidualRawY = 0.0;
         return;
@@ -1883,6 +1905,7 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         bootstrapCalibration = true;
     }
     if (deltaX == 0 && deltaY == 0) {
+        g_lastAimSnapshotTimestamp = snapshot.timestamp;
         return;
     }
 
@@ -1892,6 +1915,7 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     input.mi.dy = deltaY;
     input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_MOVE_NOCOALESCE;
     if (SendInput(1, &input, sizeof(input)) == 1) {
+        g_lastAimSnapshotTimestamp = snapshot.timestamp;
         g_lastAimInputTime = now;
         g_rawMouseXSinceSnapshot = AddClampedRawMouse(g_rawMouseXSinceSnapshot, deltaX);
         g_rawMouseYSinceSnapshot = AddClampedRawMouse(g_rawMouseYSinceSnapshot, deltaY);
