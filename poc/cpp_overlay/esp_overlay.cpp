@@ -128,6 +128,8 @@ struct Target {
     Vec3 head;
     bool hasHead = false;
     bool visible = false;
+    bool isRobot = false;
+    int teamRelation = 0;
     double hp = 0.0;
     double maxHp = 1.0;
     double armor = 0.0;
@@ -648,18 +650,23 @@ bool ReadSnapshot(Snapshot* output) {
         int dead = 0;
         int hasHead = 0;
         int visible = 0;
+        int isRobot = 0;
+        int teamRelation = 0;
         if (!(input >> tag >> target.key >> target.position.x >> target.position.y >>
               target.position.z >> target.min.x >> target.min.y >> target.min.z >>
               target.max.x >> target.max.y >> target.max.z >> target.hp >> target.maxHp >>
               target.armor >> target.maxArmor >> dead >> hasHead >> target.head.x >>
-              target.head.y >> target.head.z >> visible) ||
-            tag != "T") {
+              target.head.y >> target.head.z >> visible >> isRobot >> teamRelation) ||
+            tag != "T" || (isRobot != 0 && isRobot != 1) ||
+            teamRelation < 0 || teamRelation > 2) {
             return false;
         }
         target.dead = dead != 0;
         target.hasHead = hasHead != 0 && std::isfinite(target.head.x) &&
                          std::isfinite(target.head.y) && std::isfinite(target.head.z);
         target.visible = visible != 0;
+        target.isRobot = isRobot != 0;
+        target.teamRelation = teamRelation;
         if (target.max.y <= target.min.y) {
             continue;
         }
@@ -2383,6 +2390,25 @@ void DrawTarget(HDC hdc, const Snapshot& snapshot, const Target& target, const R
     const int boxHeight = box.bottom - box.top;
     const bool showDistance = boxWidth >= 8 && boxHeight >= 18;
     const bool showHp = boxWidth >= 12 && boxHeight >= 34;
+
+    std::wstring relationLabel;
+    COLORREF relationColor = RGB(242, 242, 242);
+    if (target.teamRelation == 1) {
+        relationLabel = L"TEAM";
+        relationColor = RGB(96, 226, 126);
+    } else if (target.teamRelation == 2) {
+        relationLabel = L"ENEMY";
+        relationColor = RGB(255, 112, 112);
+    }
+    const std::wstring typeLabel = target.isRobot ? L"AI" : L"PLAYER";
+    const std::wstring roleLabel = relationLabel.empty()
+        ? typeLabel
+        : relationLabel + L" | " + typeLabel;
+    SIZE roleSize = {};
+    GetTextExtentPoint32W(hdc, roleLabel.c_str(), static_cast<int>(roleLabel.size()), &roleSize);
+    DrawTextShadow(hdc, (box.left + box.right - roleSize.cx) / 2,
+                   box.top - roleSize.cy - 3, roleLabel, relationColor);
+
     if (!showDistance) {
         return;
     }
@@ -2392,7 +2418,9 @@ void DrawTarget(HDC hdc, const Snapshot& snapshot, const Target& target, const R
 
     SIZE topSize = {};
     GetTextExtentPoint32W(hdc, topLabel.c_str(), static_cast<int>(topLabel.size()), &topSize);
-    DrawTextShadow(hdc, (box.left + box.right - topSize.cx) / 2, box.top - topSize.cy - 3, topLabel, labelColor);
+    const int roleOffset = roleSize.cy > 0 ? roleSize.cy + 3 : 0;
+    DrawTextShadow(hdc, (box.left + box.right - topSize.cx) / 2,
+                   box.top - topSize.cy - 3 - roleOffset, topLabel, labelColor);
 
     if (!showHp) {
         return;

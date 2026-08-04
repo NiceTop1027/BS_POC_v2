@@ -534,6 +534,125 @@ def _ctf_native_flag(entity, name):
         return False
 
 
+def _ctf_native_bool_probe(entity, names):
+    """Return an explicit boolean only when the game exposes one."""
+    for _ctf_native_name in names:
+        try:
+            _ctf_native_value = getattr(entity, _ctf_native_name)
+            if callable(_ctf_native_value):
+                _ctf_native_value = _ctf_native_value()
+            if isinstance(_ctf_native_value, bool):
+                return True, _ctf_native_value
+        except Exception:
+            pass
+    return False, False
+
+
+def _ctf_native_scalar_probe(entity, names):
+    for _ctf_native_name in names:
+        try:
+            _ctf_native_value = getattr(entity, _ctf_native_name)
+            if callable(_ctf_native_value):
+                _ctf_native_value = _ctf_native_value()
+            if isinstance(_ctf_native_value, bool):
+                continue
+            if isinstance(_ctf_native_value, (str, int, float)):
+                return str(_ctf_native_value)
+            for _ctf_native_child_name in (
+                "id", "guid", "key", "team_id", "teamId", "teamID", "code"
+            ):
+                _ctf_native_child = getattr(_ctf_native_value, _ctf_native_child_name, None)
+                if callable(_ctf_native_child):
+                    _ctf_native_child = _ctf_native_child()
+                if isinstance(_ctf_native_child, (str, int, float)) and not isinstance(_ctf_native_child, bool):
+                    return str(_ctf_native_child)
+        except Exception:
+            pass
+    return None
+
+
+def _ctf_native_identity_candidates(key, entity):
+    _ctf_native_candidates = [str(key)]
+    for _ctf_native_name in (
+        "id", "guid", "key", "entity_id", "player_id", "player_guid",
+        "combat_avatar_id", "avatar_id"
+    ):
+        try:
+            _ctf_native_value = getattr(entity, _ctf_native_name)
+            if callable(_ctf_native_value):
+                _ctf_native_value = _ctf_native_value()
+            if isinstance(_ctf_native_value, (str, int, float)) and not isinstance(_ctf_native_value, bool):
+                _ctf_native_text = str(_ctf_native_value)
+                if _ctf_native_text and _ctf_native_text not in _ctf_native_candidates:
+                    _ctf_native_candidates.append(_ctf_native_text)
+        except Exception:
+            pass
+    return _ctf_native_candidates
+
+
+def _ctf_native_team_relation(local_player, target_key, target, is_robot):
+    """Use explicit team APIs first; do not infer a team from screen position."""
+    _ctf_native_has_value, _ctf_native_value = _ctf_native_bool_probe(
+        target, ("is_teammate", "is_team_mate", "IsTeammate", "IsTeamMate", "is_friend", "IsFriend")
+    )
+    if _ctf_native_has_value:
+        return 1 if _ctf_native_value else 2
+
+    _ctf_native_has_value, _ctf_native_value = _ctf_native_bool_probe(
+        target, ("is_enemy", "IsEnemy", "enemy", "is_hostile", "IsHostile")
+    )
+    if _ctf_native_has_value:
+        return 2 if _ctf_native_value else 1
+
+    _ctf_native_local_team = _ctf_native_scalar_probe(
+        local_player,
+        ("team_id", "teamId", "teamID", "camp_id", "campId", "camp", "faction_id", "factionId", "faction"),
+    )
+    _ctf_native_target_team = _ctf_native_scalar_probe(
+        target,
+        ("team_id", "teamId", "teamID", "camp_id", "campId", "camp", "faction_id", "factionId", "faction"),
+    )
+    if _ctf_native_local_team is not None and _ctf_native_target_team is not None:
+        return 1 if _ctf_native_local_team == _ctf_native_target_team else 2
+
+    _ctf_native_target_ids = _ctf_native_identity_candidates(target_key, target)
+    if local_player is not None:
+        try:
+            _ctf_native_teammates = getattr(local_player, "teammate_info")
+            if isinstance(_ctf_native_teammates, dict):
+                for _ctf_native_target_id in _ctf_native_target_ids:
+                    if _ctf_native_target_id in _ctf_native_teammates:
+                        return 1
+            elif isinstance(_ctf_native_teammates, (set, list, tuple)):
+                for _ctf_native_target_id in _ctf_native_target_ids:
+                    if _ctf_native_target_id in _ctf_native_teammates:
+                        return 1
+        except Exception:
+            pass
+
+        _ctf_native_get_info = getattr(local_player, "GetTeammateInfo", None)
+        if callable(_ctf_native_get_info):
+            for _ctf_native_target_id in _ctf_native_target_ids:
+                try:
+                    _ctf_native_info = _ctf_native_get_info(_ctf_native_target_id)
+                    if _ctf_native_info not in (None, False, {}, [], ()):
+                        return 1
+                except Exception:
+                    pass
+
+    _ctf_native_has_value, _ctf_native_value = _ctf_native_bool_probe(
+        target, ("CanShowEnemyToplogo", "CanShowEnemyToplogoBar")
+    )
+    if _ctf_native_has_value and _ctf_native_value:
+        return 2
+    # Shooting-range robots have no team object, but are authoritative enemy
+    # targets in this mode.  Keep the label useful while preserving unknown
+    # for player entities whose team state is unavailable during transitions.
+    if is_robot:
+        return 2
+    return 0
+
+
 def _ctf_native_is_combat_avatar(entity):
     if _ctf_native_flag(entity, "IsCombatAvatar"):
         return True
@@ -743,6 +862,12 @@ def _ctf_native_write_snapshot(state):
         _ctf_native_head = _ctf_native_head_position(
             state, _ctf_native_key, _ctf_native_target, _ctf_native_pos
         )
+        _ctf_native_relation = _ctf_native_team_relation(
+            _ctf_native_player,
+            _ctf_native_key,
+            _ctf_native_target,
+            _ctf_native_is_robot,
+        )
         _ctf_native_is_visible = _ctf_native_visible(
             state, _ctf_native_key, _ctf_native_target, _ctf_native_frame.Position
         )
@@ -764,6 +889,8 @@ def _ctf_native_write_snapshot(state):
             _ctf_native_dead,
             _ctf_native_head,
             _ctf_native_is_visible,
+            _ctf_native_is_robot,
+            _ctf_native_relation,
         ))
         if _ctf_native_is_robot:
             _ctf_native_detected_robots += 1
@@ -803,11 +930,13 @@ def _ctf_native_write_snapshot(state):
             _ctf_native_dead,
             _ctf_native_head,
             _ctf_native_is_visible,
+            _ctf_native_is_robot,
+            _ctf_native_relation,
         ) = _ctf_native_row
         _ctf_native_has_head = int(_ctf_native_head is not None)
         _ctf_native_head = _ctf_native_head or (0.0, 0.0, 0.0)
         _ctf_native_lines.append(
-            "T {} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.3f} {:.3f} {:.3f} {:.3f} {} {} {:.6f} {:.6f} {:.6f} {}\n".format(
+            "T {} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.6f} {:.3f} {:.3f} {:.3f} {:.3f} {} {} {:.6f} {:.6f} {:.6f} {} {} {}\n".format(
                 _ctf_native_key,
                 _ctf_native_pos[0], _ctf_native_pos[1], _ctf_native_pos[2],
                 _ctf_native_low[0], _ctf_native_low[1], _ctf_native_low[2],
@@ -817,6 +946,8 @@ def _ctf_native_write_snapshot(state):
                 _ctf_native_has_head,
                 _ctf_native_head[0], _ctf_native_head[1], _ctf_native_head[2],
                 int(_ctf_native_is_visible),
+                int(_ctf_native_is_robot),
+                _ctf_native_relation,
             )
         )
     _ctf_native_lines.append(
