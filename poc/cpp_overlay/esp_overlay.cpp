@@ -58,6 +58,12 @@ constexpr double kAimMaxSnapshotLeadSeconds = 0.085;
 constexpr double kAimMaxLeadMeters = 1.15;
 constexpr double kAimMaxLeadScreenPixels = 72.0;
 constexpr double kAimDirectRangeMeters = 12.0;
+constexpr double kAimMinProjectileSpeed = 10.0;
+constexpr double kAimMaxProjectileSpeed = 10000.0;
+constexpr double kAimMaxBallisticFlightSeconds = 3.0;
+constexpr double kAimMaxBallisticHorizontalLeadMeters = 48.0;
+constexpr double kAimMaxBallisticDropMeters = 48.0;
+constexpr double kAimMaxBallisticLeadScreenPixels = 240.0;
 constexpr double kAimLatencyCompensationSeconds = 0.026;
 constexpr double kAimMaxLatencyCompensationSeconds = 0.052;
 constexpr double kAimMaxLatencyCompensationMeters = 0.85;
@@ -1199,6 +1205,192 @@ Vec3 ClampMagnitude(const Vec3& value, double maximum) {
     return {value.x * scale, value.y * scale, value.z * scale};
 }
 
+Vec3 TargetHeadPoint(const Target& target);
+Vec3 EstimatedHeadCameraRelativeVelocity(const Target& target);
+
+bool HasValidProjectileBallistics(const Snapshot& snapshot) {
+    return std::isfinite(snapshot.projectileSpeed) &&
+           snapshot.projectileSpeed >= kAimMinProjectileSpeed &&
+           snapshot.projectileSpeed <= kAimMaxProjectileSpeed &&
+           std::isfinite(snapshot.projectileGravity) &&
+           snapshot.projectileGravity >= 0.0 &&
+           snapshot.projectileGravity <= 30.0;
+}
+
+double SolveNoGravityFlightTime(const Vec3& relativePosition,
+                                const Vec3& relativeVelocity,
+                                double projectileSpeed) {
+    const double a = Dot(relativeVelocity, relativeVelocity) -
+                     projectileSpeed * projectileSpeed;
+    const double b = 2.0 * Dot(relativePosition, relativeVelocity);
+    const double c = Dot(relativePosition, relativePosition);
+    double best = std::numeric_limits<double>::infinity();
+    const auto consider = [&best](double value) {
+        if (std::isfinite(value) && value > 0.000001) {
+            best = std::min(best, value);
+        }
+    };
+
+    if (std::abs(a) < 1e-9) {
+        if (std::abs(b) >= 1e-9) {
+            consider(-c / b);
+        }
+        return best;
+    }
+
+    const double discriminant = b * b - 4.0 * a * c;
+    if (discriminant < 0.0 || !std::isfinite(discriminant)) {
+        return best;
+    }
+    const double root = std::sqrt(std::max(0.0, discriminant));
+    consider((-b - root) / (2.0 * a));
+    consider((-b + root) / (2.0 * a));
+    return best;
+}
+
+double BallisticResidual(const Vec3& relativePosition,
+                         const Vec3& relativeVelocity,
+                         double projectileSpeed,
+                         double projectileGravity,
+                         double time) {
+    // Y is world-up in the game coordinate system.  The projectile must be
+    // aimed above the future head by the amount gravity will remove in flight.
+    const Vec3 requiredDisplacement = relativePosition + relativeVelocity * time +
+        Vec3{0.0, 0.5 * projectileGravity * time * time, 0.0};
+    return Dot(requiredDisplacement, requiredDisplacement) -
+           projectileSpeed * projectileSpeed * time * time;
+}
+
+bool SolveBallisticFlightTime(const Vec3& relativePosition,
+                              const Vec3& relativeVelocity,
+                              double projectileSpeed,
+                              double projectileGravity,
+                              double* flightTime) {
+    if (!flightTime || !std::isfinite(projectileSpeed) ||
+        projectileSpeed < kAimMinProjectileSpeed ||
+        projectileSpeed > kAimMaxProjectileSpeed ||
+        !std::isfinite(projectileGravity) || projectileGravity < 0.0 ||
+        projectileGravity > 30.0) {
+        return false;
+    }
+    const double distance = Length(relativePosition);
+    if (!std::isfinite(distance) || distance <= 0.05) {
+        return false;
+    }
+    const double noGravityTime = SolveNoGravityFlightTime(
+        relativePosition, relativeVelocity, projectileSpeed);
+    const double initialTime = std::isfinite(noGravityTime)
+        ? noGravityTime
+        : distance / projectileSpeed;
+    if (!std::isfinite(initialTime) || initialTime <= 0.0) {
+        return false;
+    }
+    if (projectileGravity <= 0.001) {
+        *flightTime = initialTime;
+        return true;
+    }
+
+    const double maximumTime = std::clamp(
+        std::max(distance / projectileSpeed * 3.0 + 0.25,
+                 initialTime * 3.0 + 0.25),
+        0.05, kAimMaxBallisticFlightSeconds);
+    const double initialGuess = std::clamp(initialTime, 0.000001, maximumTime);
+    const auto residual = [relativePosition, relativeVelocity, projectileSpeed,
+                           projectileGravity](double time) {
+        return BallisticResidual(relativePosition, relativeVelocity,
+                                 projectileSpeed, projectileGravity, time);
+    };
+    const auto bisectFirstCrossing = [&residual](double low, double high) {
+        for (int iteration = 0; iteration < 48; ++iteration) {
+            const double middle = (low + high) * 0.5;
+            const double value = residual(middle);
+            if (!std::isfinite(value) || value > 0.0) {
+                low = middle;
+            } else {
+                high = middle;
+            }
+        }
+        return (low + high) * 0.5;
+    };
+
+    const double initialResidual = residual(initialGuess);
+    if (std::isfinite(initialResidual) && initialResidual <= 0.0) {
+        *flightTime = bisectFirstCrossing(0.0, initialGuess);
+        return std::isfinite(*flightTime) && *flightTime > 0.0;
+    }
+
+    // Gravity normally moves the low trajectory slightly later than the
+    // no-gravity solution.  Grow in small relative steps so a short-lived
+    // feasible interval is not skipped at close range.
+    double previousTime = initialGuess;
+    double previousResidual = initialResidual;
+    for (int iteration = 0; iteration < 256; ++iteration) {
+        const double step = std::max(0.000001, previousTime * 0.08);
+        const double nextTime = std::min(maximumTime, previousTime + step);
+        if (nextTime <= previousTime) {
+            break;
+        }
+        const double nextResidual = residual(nextTime);
+        if (std::isfinite(previousResidual) && previousResidual >= 0.0 &&
+            std::isfinite(nextResidual) && nextResidual <= 0.0) {
+            *flightTime = bisectFirstCrossing(previousTime, nextTime);
+            return std::isfinite(*flightTime) && *flightTime > 0.0;
+        }
+        previousTime = nextTime;
+        previousResidual = nextResidual;
+        if (nextTime >= maximumTime) {
+            break;
+        }
+    }
+    return false;
+}
+
+bool BuildBallisticAimPoint(const Snapshot& snapshot, const Target& target,
+                            Vec3* output) {
+    if (!output || !g_predictionEnabled ||
+        !HasValidProjectileBallistics(snapshot)) {
+        return false;
+    }
+    const Vec3 head = TargetHeadPoint(target);
+    Vec3 relativeVelocity = ClampMagnitude(
+        EstimatedHeadCameraRelativeVelocity(target), kAimMaxRelativeVelocity);
+    if (!std::isfinite(relativeVelocity.x) ||
+        !std::isfinite(relativeVelocity.y) ||
+        !std::isfinite(relativeVelocity.z)) {
+        relativeVelocity = {};
+    }
+    // Keep the vertical target component authoritative.  Only projectile drop
+    // supplies a vertical offset; this avoids reintroducing jump/crouch sway.
+    relativeVelocity.y = 0.0;
+    const double snapshotAge = std::clamp(
+        std::max(0.0, UnixNow() - snapshot.timestamp),
+        0.0, kAimMaxSnapshotLeadSeconds);
+    const Vec3 relativePosition = head - snapshot.camera +
+        relativeVelocity * snapshotAge;
+    double flightTime = 0.0;
+    if (!SolveBallisticFlightTime(relativePosition, relativeVelocity,
+                                  snapshot.projectileSpeed,
+                                  snapshot.projectileGravity, &flightTime)) {
+        return false;
+    }
+
+    const double totalLeadTime = snapshotAge + flightTime;
+    Vec3 compensation = relativeVelocity * totalLeadTime;
+    const double horizontalLead = std::hypot(compensation.x, compensation.z);
+    if (horizontalLead > kAimMaxBallisticHorizontalLeadMeters &&
+        horizontalLead > 0.0001) {
+        const double scale = kAimMaxBallisticHorizontalLeadMeters / horizontalLead;
+        compensation.x *= scale;
+        compensation.z *= scale;
+    }
+    compensation.y = std::clamp(
+        0.5 * snapshot.projectileGravity * flightTime * flightTime,
+        0.0, kAimMaxBallisticDropMeters);
+    *output = head + compensation;
+    return std::isfinite(output->x) && std::isfinite(output->y) &&
+           std::isfinite(output->z);
+}
+
 void ClearAimLock() {
     g_aimLockedKey.clear();
     g_aimLockLastSeenTime = 0.0;
@@ -1299,7 +1491,18 @@ bool HeadMatchesProjectedBounds(const Snapshot& snapshot, const Target& target) 
 
 Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
     const Vec3 head = TargetHeadPoint(target);
-    if (!g_predictionEnabled || !g_snapshot.valid || !g_previousSnapshot.valid) {
+    if (!g_predictionEnabled) {
+        return head;
+    }
+
+    // Prefer the equipped weapon's authoritative projectile data.  This uses
+    // the measured flight time for horizontal target motion and applies the
+    // exact vertical drop needed to place the projectile on the head.
+    Vec3 ballisticAimPoint = {};
+    if (BuildBallisticAimPoint(snapshot, target, &ballisticAimPoint)) {
+        return ballisticAimPoint;
+    }
+    if (!g_snapshot.valid || !g_previousSnapshot.valid) {
         return head;
     }
 
@@ -1360,7 +1563,10 @@ bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT&
         gameY = currentGameY;
     }
     const double leadScreenDistance = std::hypot(gameX - currentGameX, gameY - currentGameY);
-    if (!std::isfinite(leadScreenDistance) || leadScreenDistance > kAimMaxLeadScreenPixels) {
+    const double maxLeadScreenPixels = HasValidProjectileBallistics(snapshot)
+        ? kAimMaxBallisticLeadScreenPixels
+        : kAimMaxLeadScreenPixels;
+    if (!std::isfinite(leadScreenDistance) || leadScreenDistance > maxLeadScreenPixels) {
         leadingHead = currentHead;
         gameX = currentGameX;
         gameY = currentGameY;
