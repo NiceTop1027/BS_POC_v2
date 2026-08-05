@@ -40,4 +40,4 @@ Start-Process -WindowStyle Hidden -FilePath $overlay -WorkingDirectory (Split-Pa
     "--max-distance=$MaxDistance"
 )
 
-Write-Output "BloodStrikeCTFESP is running. It reconnects after a game or match transition; Insert opens controls, RMB tracks, F6 toggles aim, and F8 exits."
+Write-Output "BloodStrikeCTFESP is running. It reconnects after a game or match transition; Insert opens controls, RMB tracks, F6 toggles aim, F7 toggles no recoil, and F8 exits."

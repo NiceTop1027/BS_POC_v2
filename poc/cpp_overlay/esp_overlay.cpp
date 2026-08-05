@@ -28,6 +28,7 @@
 #include <limits>
 #include <sstream>
 #include <string>
+#include <utility>
 #include <vector>
 
 namespace {
@@ -110,6 +111,7 @@ constexpr int kControlFovVisible = 1006;
 constexpr int kControlFov = 1007;
 constexpr int kControlTargetRange = 1008;
 constexpr int kControlExit = 1009;
+constexpr int kControlNoRecoil = 1010;
 constexpr int kResourceRemotePyRun = 101;
 constexpr int kResourceSnapshotCode = 102;
 
@@ -211,6 +213,7 @@ HWND g_tracerCheckbox = nullptr;
 HWND g_aimCheckbox = nullptr;
 HWND g_visibilityCheckbox = nullptr;
 HWND g_leadCheckbox = nullptr;
+HWND g_noRecoilCheckbox = nullptr;
 HWND g_fovVisibleCheckbox = nullptr;
 HWND g_fovSlider = nullptr;
 HWND g_fovLabel = nullptr;
@@ -233,6 +236,7 @@ std::wstring g_titleNeedle = L"BloodStrike";
 std::wstring g_statePath;
 std::wstring g_configPath;
 std::wstring g_aimTriggerPath;
+std::wstring g_settingsPath;
 int g_durationSeconds = 0;
 DWORD g_targetPid = 0;
 DWORD g_exporterPid = 0;
@@ -247,6 +251,7 @@ bool g_tracersEnabled = true;
 bool g_aimEnabled = true;
 bool g_visibilityEnabled = true;
 bool g_predictionEnabled = true;
+bool g_noRecoilEnabled = false;
 bool g_fovVisible = true;
 bool g_autoInject = true;
 bool g_controlsHotkeyRegistered = false;
@@ -465,19 +470,14 @@ void ParseCommandLine() {
     }
     g_configPath = RuntimeRoot() + L"\\ctf_native_esp_config.txt";
     g_aimTriggerPath = RuntimeRoot() + L"\\ctf_native_aim_trigger.txt";
+    g_settingsPath = RuntimeRoot() + L"\\ctf_overlay_settings.ini";
 }
 
-bool WriteExporterConfig() {
-    if (g_configPath.empty()) {
+bool WriteTextFileAtomically(const std::wstring& path, const std::string& contents) {
+    if (path.empty() || contents.size() > 0x7fffffff) {
         return false;
     }
-    const std::wstring temporaryPath = g_configPath + L".tmp";
-    std::ostringstream stream;
-    stream << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n"
-           << "native_aim=" << (g_aimEnabled ? 1 : 0) << "\n"
-           << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
-           << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n";
-    const std::string contents = stream.str();
+    const std::wstring temporaryPath = path + L".tmp";
     HANDLE file = CreateFileW(temporaryPath.c_str(), GENERIC_WRITE, 0, nullptr,
                               CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, nullptr);
     if (file == INVALID_HANDLE_VALUE) {
@@ -487,13 +487,155 @@ bool WriteExporterConfig() {
     const BOOL wrote = WriteFile(file, contents.data(), static_cast<DWORD>(contents.size()),
                                  &written, nullptr);
     CloseHandle(file);
-    if (!wrote || written != contents.size() ||
-        !MoveFileExW(temporaryPath.c_str(), g_configPath.c_str(),
+    if (!wrote || written != static_cast<DWORD>(contents.size()) ||
+        !MoveFileExW(temporaryPath.c_str(), path.c_str(),
                      MOVEFILE_REPLACE_EXISTING | MOVEFILE_WRITE_THROUGH)) {
         DeleteFileW(temporaryPath.c_str());
         return false;
     }
     return true;
+}
+
+bool ReadSmallTextFile(const std::wstring& path, std::string* output) {
+    if (path.empty() || !output) {
+        return false;
+    }
+    HANDLE file = CreateFileW(
+        path.c_str(), GENERIC_READ,
+        FILE_SHARE_READ | FILE_SHARE_WRITE | FILE_SHARE_DELETE, nullptr,
+        OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, nullptr);
+    if (file == INVALID_HANDLE_VALUE) {
+        return false;
+    }
+    LARGE_INTEGER length = {};
+    if (!GetFileSizeEx(file, &length) || length.QuadPart < 0 || length.QuadPart > 64 * 1024) {
+        CloseHandle(file);
+        return false;
+    }
+    std::string text(static_cast<size_t>(length.QuadPart), '\0');
+    DWORD read = 0;
+    const BOOL readOk = text.empty()
+        ? TRUE
+        : ReadFile(file, text.data(), static_cast<DWORD>(text.size()), &read, nullptr);
+    CloseHandle(file);
+    if (!readOk || read != static_cast<DWORD>(text.size())) {
+        return false;
+    }
+    *output = std::move(text);
+    return true;
+}
+
+std::string TrimSettingValue(std::string value) {
+    while (!value.empty() && static_cast<unsigned char>(value.back()) <= ' ') {
+        value.pop_back();
+    }
+    size_t start = 0;
+    while (start < value.size() && static_cast<unsigned char>(value[start]) <= ' ') {
+        ++start;
+    }
+    return value.substr(start);
+}
+
+bool ParseBoolSetting(const std::string& raw, bool fallback) {
+    std::string value = TrimSettingValue(raw);
+    for (char& ch : value) {
+        if (ch >= 'A' && ch <= 'Z') {
+            ch = static_cast<char>(ch - 'A' + 'a');
+        }
+    }
+    if (value == "1" || value == "true" || value == "yes" || value == "on") {
+        return true;
+    }
+    if (value == "0" || value == "false" || value == "no" || value == "off") {
+        return false;
+    }
+    return fallback;
+}
+
+bool ParseDoubleSetting(const std::string& raw, double* output) {
+    if (!output) {
+        return false;
+    }
+    std::istringstream input(TrimSettingValue(raw));
+    double value = 0.0;
+    if (!(input >> value) || !std::isfinite(value)) {
+        return false;
+    }
+    *output = value;
+    return true;
+}
+
+bool LoadOverlaySettings() {
+    std::string text;
+    if (!ReadSmallTextFile(g_settingsPath, &text)) {
+        return false;
+    }
+    std::istringstream input(text);
+    std::string line;
+    while (std::getline(input, line)) {
+        const size_t comment = line.find('#');
+        if (comment != std::string::npos) {
+            line.resize(comment);
+        }
+        const size_t separator = line.find('=');
+        if (separator == std::string::npos) {
+            continue;
+        }
+        const std::string key = TrimSettingValue(line.substr(0, separator));
+        const std::string value = TrimSettingValue(line.substr(separator + 1));
+        double parsed = 0.0;
+        if (key == "esp") {
+            g_espEnabled = ParseBoolSetting(value, g_espEnabled);
+        } else if (key == "tracers") {
+            g_tracersEnabled = ParseBoolSetting(value, g_tracersEnabled);
+        } else if (key == "aim") {
+            g_aimEnabled = ParseBoolSetting(value, g_aimEnabled);
+        } else if (key == "visible_only") {
+            g_visibilityEnabled = ParseBoolSetting(value, g_visibilityEnabled);
+        } else if (key == "prediction") {
+            g_predictionEnabled = ParseBoolSetting(value, g_predictionEnabled);
+        } else if (key == "fov_visible") {
+            g_fovVisible = ParseBoolSetting(value, g_fovVisible);
+        } else if (key == "no_recoil") {
+            g_noRecoilEnabled = ParseBoolSetting(value, g_noRecoilEnabled);
+        } else if (key == "aim_fov_px" && ParseDoubleSetting(value, &parsed)) {
+            g_aimFovRadiusPixels = std::clamp(parsed, 70.0, 320.0);
+        } else if (key == "max_distance" && ParseDoubleSetting(value, &parsed)) {
+            g_maxTargetDistanceMeters = std::clamp(
+                parsed, kMinTargetDistanceMeters, kMaxTargetDistanceMeters);
+        }
+    }
+    return true;
+}
+
+bool SaveOverlaySettings() {
+    std::ostringstream stream;
+    stream << "# BloodStrike CTF overlay settings\n"
+           << "esp=" << (g_espEnabled ? 1 : 0) << "\n"
+           << "tracers=" << (g_tracersEnabled ? 1 : 0) << "\n"
+           << "aim=" << (g_aimEnabled ? 1 : 0) << "\n"
+           << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n"
+           << "prediction=" << (g_predictionEnabled ? 1 : 0) << "\n"
+           << "fov_visible=" << (g_fovVisible ? 1 : 0) << "\n"
+           << "no_recoil=" << (g_noRecoilEnabled ? 1 : 0) << "\n"
+           << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
+           << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n";
+    return WriteTextFileAtomically(g_settingsPath, stream.str());
+}
+
+bool WriteExporterConfig() {
+    std::ostringstream stream;
+    stream << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n"
+           << "native_aim=" << (g_aimEnabled ? 1 : 0) << "\n"
+           << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
+           << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n"
+           << "no_recoil=" << (g_noRecoilEnabled ? 1 : 0) << "\n";
+    return WriteTextFileAtomically(g_configPath, stream.str());
+}
+
+void PersistOverlaySettings() {
+    WriteExporterConfig();
+    SaveOverlaySettings();
 }
 
 bool WriteAimTriggerState(bool active, bool force = false) {
@@ -1972,6 +2114,9 @@ void SyncControlWindow() {
     if (g_leadCheckbox) {
         SendMessageW(g_leadCheckbox, BM_SETCHECK, g_predictionEnabled ? BST_CHECKED : BST_UNCHECKED, 0);
     }
+    if (g_noRecoilCheckbox) {
+        SendMessageW(g_noRecoilCheckbox, BM_SETCHECK, g_noRecoilEnabled ? BST_CHECKED : BST_UNCHECKED, 0);
+    }
     if (g_fovVisibleCheckbox) {
         SendMessageW(g_fovVisibleCheckbox, BM_SETCHECK, g_fovVisible ? BST_CHECKED : BST_UNCHECKED, 0);
     }
@@ -1993,7 +2138,7 @@ void PositionControlWindow() {
         return;
     }
     constexpr int kWidth = 306;
-    constexpr int kHeight = 468;
+    constexpr int kHeight = 496;
     RECT game = {};
     int left = 24;
     int top = 24;
@@ -2051,31 +2196,35 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_leadCheckbox = CreateWindowExW(0, L"BUTTON", L"Distance / velocity lead", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
                                                16, 160, 230, 24, hwnd,
                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlLead)), instance, nullptr);
+            g_noRecoilCheckbox = CreateWindowExW(0, L"BUTTON", L"No recoil (hold LMB)", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
+                                                  16, 184, 230, 24, hwnd,
+                                                  reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlNoRecoil)), instance, nullptr);
             g_fovVisibleCheckbox = CreateWindowExW(0, L"BUTTON", L"Show aim FOV", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-                                                     16, 184, 220, 24, hwnd,
+                                                     16, 208, 220, 24, hwnd,
                                                      reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFovVisible)), instance, nullptr);
             HWND fovCaption = CreateWindowExW(0, L"STATIC", L"Aim FOV", WS_CHILD | WS_VISIBLE,
-                                               16, 214, 100, 20, hwnd, nullptr, instance, nullptr);
+                                               16, 238, 100, 20, hwnd, nullptr, instance, nullptr);
             g_fovSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                            16, 232, 266, 28, hwnd,
+                                            16, 256, 266, 28, hwnd,
                                             reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFov)), instance, nullptr);
             g_fovLabel = CreateWindowExW(0, L"STATIC", L"FOV radius", WS_CHILD | WS_VISIBLE,
-                                          16, 266, 170, 20, hwnd, nullptr, instance, nullptr);
+                                          16, 290, 170, 20, hwnd, nullptr, instance, nullptr);
             HWND rangeCaption = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                 16, 290, 160, 20, hwnd, nullptr, instance, nullptr);
+                                                 16, 314, 160, 20, hwnd, nullptr, instance, nullptr);
             g_targetRangeSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                                    16, 308, 266, 28, hwnd,
+                                                    16, 332, 266, 28, hwnd,
                                                     reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlTargetRange)), instance, nullptr);
             g_targetRangeLabel = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                  16, 342, 190, 20, hwnd, nullptr, instance, nullptr);
+                                                  16, 366, 190, 20, hwnd, nullptr, instance, nullptr);
             g_liveDiagnosticsLabel = CreateWindowExW(0, L"STATIC", L"Live: waiting for exporter",
                                                        WS_CHILD | WS_VISIBLE,
-                                                       16, 366, 266, 36, hwnd, nullptr, instance, nullptr);
+                                                       16, 390, 266, 36, hwnd, nullptr, instance, nullptr);
             HWND exitButton = CreateWindowExW(0, L"BUTTON", L"Exit tool", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                                               190, 410, 92, 28, hwnd,
+                                               190, 438, 92, 28, hwnd,
                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlExit)), instance, nullptr);
             for (HWND control : {title, g_weaponLabel, g_espCheckbox, g_tracerCheckbox, g_aimCheckbox,
-                                  g_visibilityCheckbox, g_leadCheckbox, g_fovVisibleCheckbox,
+                                  g_visibilityCheckbox, g_leadCheckbox, g_noRecoilCheckbox,
+                                  g_fovVisibleCheckbox,
                                   fovCaption, g_fovSlider, g_fovLabel, rangeCaption, g_targetRangeSlider,
                                   g_targetRangeLabel, g_liveDiagnosticsLabel, exitButton}) {
                 ApplyControlFont(control);
@@ -2105,6 +2254,9 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
                 case kControlLead:
                     g_predictionEnabled = SendMessageW(g_leadCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
                     break;
+                case kControlNoRecoil:
+                    g_noRecoilEnabled = SendMessageW(g_noRecoilCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
+                    break;
                 case kControlFovVisible:
                     g_fovVisible = SendMessageW(g_fovVisibleCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
                     break;
@@ -2119,21 +2271,21 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             if (g_overlayWindow) {
                 InvalidateRect(g_overlayWindow, nullptr, FALSE);
             }
-            WriteExporterConfig();
+            PersistOverlaySettings();
             return 0;
         }
         case WM_HSCROLL:
             if (reinterpret_cast<HWND>(lparam) == g_fovSlider) {
                 g_aimFovRadiusPixels = static_cast<double>(SendMessageW(g_fovSlider, TBM_GETPOS, 0, 0));
                 UpdateFovLabel();
-                WriteExporterConfig();
+                PersistOverlaySettings();
                 if (g_overlayWindow) {
                     InvalidateRect(g_overlayWindow, nullptr, FALSE);
                 }
             } else if (reinterpret_cast<HWND>(lparam) == g_targetRangeSlider) {
                 g_maxTargetDistanceMeters = static_cast<double>(
                     SendMessageW(g_targetRangeSlider, TBM_GETPOS, 0, 0));
-                WriteExporterConfig();
+                PersistOverlaySettings();
                 UpdateTargetRangeLabel();
             }
             return 0;
@@ -2150,6 +2302,7 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_aimCheckbox = nullptr;
             g_visibilityCheckbox = nullptr;
             g_leadCheckbox = nullptr;
+            g_noRecoilCheckbox = nullptr;
             g_fovVisibleCheckbox = nullptr;
             g_fovSlider = nullptr;
             g_fovLabel = nullptr;
@@ -2633,7 +2786,12 @@ void TrackTarget(HWND hwnd) {
     }
     if ((GetAsyncKeyState(VK_F6) & 1) != 0) {
         g_aimEnabled = !g_aimEnabled;
-        WriteExporterConfig();
+        PersistOverlaySettings();
+        SyncControlWindow();
+    }
+    if ((GetAsyncKeyState(VK_F7) & 1) != 0) {
+        g_noRecoilEnabled = !g_noRecoilEnabled;
+        PersistOverlaySettings();
         SyncControlWindow();
     }
     if (!g_controlsHotkeyRegistered && (GetAsyncKeyState(VK_INSERT) & 1) != 0) {
@@ -2983,7 +3141,7 @@ bool CreateControlWindow(HINSTANCE instance) {
         controlClass.lpszClassName,
         L"CTF ESP controls",
         WS_POPUP | WS_CAPTION | WS_SYSMENU,
-        0, 0, 306, 360,
+        0, 0, 306, 496,
         nullptr, nullptr, instance, nullptr);
     if (!g_controlWindow) {
         return false;
@@ -3040,6 +3198,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int) {
     DebugLog(L"startup");
     TerminateSiblingOverlays();
     ParseCommandLine();
+    LoadOverlaySettings();
     DebugLog(L"parsed command line");
     WriteExporterConfig();
     g_target = EnsureTargetWindowReady();
@@ -3069,8 +3228,12 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int) {
     }
     DebugLog(L"target client rect ready");
     const RECT initialClient = {0, 0, rect.right - rect.left, rect.bottom - rect.top};
-    g_aimFovRadiusPixels = std::clamp(AimFovRadius(initialClient), 70.0, 320.0);
-    WriteExporterConfig();
+    if (g_aimFovRadiusPixels <= 0.0) {
+        g_aimFovRadiusPixels = std::clamp(AimFovRadius(initialClient), 70.0, 320.0);
+    } else {
+        g_aimFovRadiusPixels = std::clamp(g_aimFovRadiusPixels, 70.0, 320.0);
+    }
+    PersistOverlaySettings();
     WriteAimTriggerState(false, true);
     HWND overlay = CreateWindowExW(
         WS_EX_LAYERED | WS_EX_TRANSPARENT | WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE,
