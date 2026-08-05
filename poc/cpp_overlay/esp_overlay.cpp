@@ -1628,7 +1628,22 @@ bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const REC
     }
     const double selectDeltaX = headX - width * 0.5;
     const double selectDeltaY = headY - height * 0.5;
-    const double selectionDistance = std::hypot(selectDeltaX, selectDeltaY);
+    double selectionDistance = std::hypot(selectDeltaX, selectDeltaY);
+    ScreenBox bodyBounds = {};
+    if (ProjectBounds(snapshot, target, &bodyBounds)) {
+        const ScreenBox scaledBounds = {
+            bodyBounds.left * scaleX,
+            bodyBounds.top * scaleY,
+            bodyBounds.right * scaleX,
+            bodyBounds.bottom * scaleY,
+        };
+        const double bodyX = std::clamp(width * 0.5, scaledBounds.left, scaledBounds.right);
+        const double bodyY = std::clamp(height * 0.5, scaledBounds.top, scaledBounds.bottom);
+        const double bodyDistance = std::hypot(bodyX - width * 0.5, bodyY - height * 0.5);
+        if (std::isfinite(bodyDistance)) {
+            selectionDistance = std::min(selectionDistance, bodyDistance);
+        }
+    }
     if (!lockedMode && selectionDistance > maximumDistance) {
         return false;
     }

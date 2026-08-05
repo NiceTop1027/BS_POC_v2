@@ -22,6 +22,14 @@ _ctf_native_log_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_es
 _ctf_native_config_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_esp_config.txt")
 _ctf_native_aim_trigger_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_aim_trigger.txt")
 _ctf_native_default_max_distance = 800.0
+_ctf_native_aim_bones = (
+    "biped Head",
+    "biped Neck",
+    "biped Spine2",
+    "biped Spine1",
+    "biped Spine",
+    "biped Pelvis",
+)
 _ctf_native_vk_rbutton = 0x02
 _ctf_native_user32 = None
 # The host calls the timer close to 60 Hz.  A 1/60 throttle can reject callbacks
@@ -56,6 +64,74 @@ def _ctf_native_vec3(value):
         return (float(value[0]), float(value[1]), float(value[2]))
     except Exception:
         return None
+
+
+def _ctf_native_make_vec3_like(template, point):
+    try:
+        _ctf_native_value = template.clone()
+        _ctf_native_value.x = float(point[0])
+        _ctf_native_value.y = float(point[1])
+        _ctf_native_value.z = float(point[2])
+        return _ctf_native_value
+    except Exception:
+        pass
+    try:
+        import MType as _ctf_native_mtype
+        _ctf_native_value = _ctf_native_mtype.Vector3()
+        _ctf_native_value.x = float(point[0])
+        _ctf_native_value.y = float(point[1])
+        _ctf_native_value.z = float(point[2])
+        return _ctf_native_value
+    except Exception:
+        return None
+
+
+def _ctf_native_point_in_bounds(point, low, high, padding=0.45):
+    if point is None or low is None or high is None:
+        return True
+    try:
+        return (
+            low[0] - padding <= point[0] <= high[0] + padding and
+            low[1] - padding <= point[1] <= high[1] + padding and
+            low[2] - padding <= point[2] <= high[2] + padding
+        )
+    except Exception:
+        return False
+
+
+def _ctf_native_ensure_aim_bones(state, key, model):
+    _ctf_native_models = state.setdefault("aim_bone_models", {})
+    _ctf_native_model_id = id(model)
+    if _ctf_native_models.get(key) == _ctf_native_model_id:
+        return
+    for _ctf_native_bone in _ctf_native_aim_bones:
+        _ctf_native_call(model, "CreateSpecifyBone", _ctf_native_bone)
+    _ctf_native_models[key] = _ctf_native_model_id
+
+
+def _ctf_native_upper_body_fallback_points(camera_pos, low, high):
+    if low is None or high is None:
+        return ()
+    try:
+        _ctf_native_height = float(high[1] - low[1])
+        if not _ctf_native_math.isfinite(_ctf_native_height) or _ctf_native_height <= 0.25:
+            return ()
+        _ctf_native_x = (low[0] + high[0]) * 0.5
+        _ctf_native_z = (low[2] + high[2]) * 0.5
+        _ctf_native_top_margin = min(0.22, max(0.08, _ctf_native_height * 0.12))
+        _ctf_native_candidates = (
+            (_ctf_native_x, high[1] - _ctf_native_top_margin, _ctf_native_z),
+            (_ctf_native_x, low[1] + _ctf_native_height * 0.72, _ctf_native_z),
+            (_ctf_native_x, low[1] + _ctf_native_height * 0.58, _ctf_native_z),
+        )
+        _ctf_native_result = []
+        for _ctf_native_point in _ctf_native_candidates:
+            _ctf_native_vec = _ctf_native_make_vec3_like(camera_pos, _ctf_native_point)
+            if _ctf_native_vec is not None:
+                _ctf_native_result.append((_ctf_native_vec, _ctf_native_point))
+        return tuple(_ctf_native_result)
+    except Exception:
+        return ()
 
 
 def _ctf_native_position(entity):
@@ -369,7 +445,7 @@ def _ctf_native_bounds(entity):
 
 
 def _ctf_native_head_position(state, key, entity, entity_pos):
-    """Return the current model head bone, never a bounds estimate."""
+    """Return the current model head/upper-body point for posture-safe aiming."""
     _ctf_native_model = getattr(entity, "model", None)
     if _ctf_native_model is None:
         return None
@@ -377,29 +453,34 @@ def _ctf_native_head_position(state, key, entity, entity_pos):
     _ctf_native_head_models = state.setdefault("head_models", {})
     _ctf_native_model_id = id(_ctf_native_model)
     if _ctf_native_head_models.get(key) != _ctf_native_model_id:
-        _ctf_native_call(_ctf_native_model, "CreateSpecifyBone", "biped Head")
+        _ctf_native_ensure_aim_bones(state, key, _ctf_native_model)
         _ctf_native_head_models[key] = _ctf_native_model_id
 
     # Refresh the skeleton immediately before reading the bone.  This keeps
     # the exported point tied to the same animation frame as CameraFrame.
     _ctf_native_call(_ctf_native_model, "MakeSureBones")
 
-    _ctf_native_head = _ctf_native_vec3(
-        _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", "biped Head")
-    )
-    if _ctf_native_head is None or not all(_ctf_native_math.isfinite(value) for value in _ctf_native_head):
-        return None
-    # The head can legitimately be below the entity origin while crouching or
-    # sliding.  The model bone is authoritative; do not reject it by posture.
-    if entity_pos is not None:
-        _ctf_native_offset = (
-            _ctf_native_head[0] - entity_pos[0],
-            _ctf_native_head[1] - entity_pos[1],
-            _ctf_native_head[2] - entity_pos[2],
+    _ctf_native_low, _ctf_native_high = _ctf_native_bounds(entity)
+    for _ctf_native_bone in ("biped Head", "biped Neck", "biped Spine2"):
+        _ctf_native_head = _ctf_native_vec3(
+            _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", _ctf_native_bone)
         )
-        if _ctf_native_math.sqrt(_ctf_native_dot(_ctf_native_offset, _ctf_native_offset)) > 8.0:
-            return None
-    return _ctf_native_head
+        if _ctf_native_head is None or not all(_ctf_native_math.isfinite(value) for value in _ctf_native_head):
+            continue
+        if not _ctf_native_point_in_bounds(_ctf_native_head, _ctf_native_low, _ctf_native_high):
+            continue
+        # The head can legitimately be below the entity origin while crouching
+        # or sliding.  Only reject clearly detached stale bones.
+        if entity_pos is not None:
+            _ctf_native_offset = (
+                _ctf_native_head[0] - entity_pos[0],
+                _ctf_native_head[1] - entity_pos[1],
+                _ctf_native_head[2] - entity_pos[2],
+            )
+            if _ctf_native_math.sqrt(_ctf_native_dot(_ctf_native_offset, _ctf_native_offset)) > 8.0:
+                continue
+        return _ctf_native_head
+    return None
 
 
 def _ctf_native_active_space(state):
@@ -559,16 +640,12 @@ def _ctf_native_visible(state, key, entity, camera_pos):
     if _ctf_native_model is None or _ctf_native_space is None:
         _ctf_native_cache[key] = (_ctf_native_now, False)
         return False
+    _ctf_native_ensure_aim_bones(state, key, _ctf_native_model)
     _ctf_native_call(_ctf_native_model, "MakeSureBones")
     _ctf_native_skeleton = _ctf_native_call(_ctf_native_model, "GetSkeleton")
-    for _ctf_native_bone in (
-        "biped Head",
-        "biped Neck",
-        "biped Spine2",
-        "biped Spine1",
-        "biped Spine",
-        "biped Pelvis",
-    ):
+    _ctf_native_low, _ctf_native_high = _ctf_native_bounds(entity)
+    _ctf_native_posture_fallback = None
+    for _ctf_native_bone in _ctf_native_aim_bones:
         _ctf_native_point = _ctf_native_call(
             _ctf_native_model, "GetBoneWorldPosition", _ctf_native_bone
         )
@@ -578,15 +655,35 @@ def _ctf_native_visible(state, key, entity, camera_pos):
             not all(_ctf_native_math.isfinite(value) for value in _ctf_native_point_tuple)
         ):
             continue
-        if not _ctf_native_target_skeleton_hit(
-            _ctf_native_space, camera_pos, _ctf_native_point, _ctf_native_skeleton
-        ):
+        if not _ctf_native_point_in_bounds(_ctf_native_point_tuple, _ctf_native_low, _ctf_native_high):
             continue
         if _ctf_native_environment_blocked(
             state, _ctf_native_space, camera_pos, _ctf_native_point
         ):
             continue
+        if not _ctf_native_target_skeleton_hit(
+            _ctf_native_space, camera_pos, _ctf_native_point, _ctf_native_skeleton
+        ):
+            if _ctf_native_posture_fallback is None and _ctf_native_bone != "biped Pelvis":
+                _ctf_native_posture_fallback = _ctf_native_point_tuple
+            state["visibility_skeleton_miss_count"] = state.get("visibility_skeleton_miss_count", 0) + 1
+            continue
         _ctf_native_aim_points[key] = _ctf_native_point_tuple
+        _ctf_native_cache[key] = (_ctf_native_now, True)
+        return True
+    if _ctf_native_posture_fallback is None:
+        for _ctf_native_point, _ctf_native_point_tuple in _ctf_native_upper_body_fallback_points(
+            camera_pos, _ctf_native_low, _ctf_native_high
+        ):
+            if _ctf_native_environment_blocked(
+                state, _ctf_native_space, camera_pos, _ctf_native_point
+            ):
+                continue
+            _ctf_native_posture_fallback = _ctf_native_point_tuple
+            break
+    if _ctf_native_posture_fallback is not None:
+        state["visibility_posture_fallback_count"] = state.get("visibility_posture_fallback_count", 0) + 1
+        _ctf_native_aim_points[key] = _ctf_native_posture_fallback
         _ctf_native_cache[key] = (_ctf_native_now, True)
         return True
     _ctf_native_cache[key] = (_ctf_native_now, False)
@@ -1155,7 +1252,7 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
         _ctf_native_write_snapshot(_ctf_native_state)
         if _ctf_native_state["tick"] == 1 or _ctf_native_state["tick"] % 240 == 0:
             _ctf_native_log(
-                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f}".format(
+                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
                     _ctf_native_state["tick"],
                     _ctf_native_state.get("last_count", 0),
                     _ctf_native_state.get("detected_players", 0),
@@ -1174,6 +1271,8 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
                     _ctf_native_state.get("last_robot_targets", 0),
                     _ctf_native_state.get("weapon_item_id", 0),
                     _ctf_native_state.get("projectile_speed", 0.0),
+                    _ctf_native_state.get("visibility_posture_fallback_count", 0),
+                    _ctf_native_state.get("visibility_skeleton_miss_count", 0),
                 )
             )
     except Exception:
@@ -1199,9 +1298,12 @@ def _ctf_native_install():
         "exporter_ready": False,
         "local_key": None,
         "head_models": {},
+        "aim_bone_models": {},
         "physics_space": None,
         "visibility_cache": {},
         "visible_targets": 0,
+        "visibility_posture_fallback_count": 0,
+        "visibility_skeleton_miss_count": 0,
         "detected_players": 0,
         "detected_robots": 0,
         "max_target_distance": _ctf_native_default_max_distance,
