@@ -39,7 +39,7 @@ def hit_pos(hit):
 
 
 def hit_line(label, space, camera, point, filter_value):
-    hit = call(space, "ClosestRaycast", camera, point, filter_value)
+    hit = call(space, "ClosestRaycast", camera, point, filter_value, False)
     is_hit = bool(hit is not None and not isinstance(hit, str) and getattr(hit, "IsHit", False))
     pos = hit_pos(hit) if is_hit else None
     body = getattr(hit, "Body", None) if is_hit else None
@@ -90,22 +90,28 @@ try:
         "biped Spine",
         "biped Pelvis",
     ]
-    robots = []
+    targets = []
     for key, entity in entities:
         try:
             is_robot = bool(getattr(entity, "IsRobotCombatAvatar")())
         except Exception:
             is_robot = "robot" in type(entity).__name__.lower()
-        if is_robot:
-            robots.append((str(key), entity))
-    log("robots={}".format(len(robots)))
-    for key, entity in robots[:8]:
+        try:
+            is_player = bool(getattr(entity, "IsPlayerCombatAvatar")())
+        except Exception:
+            is_player = "combatavatar" in type(entity).__name__.lower() and not is_robot
+        if is_robot or is_player:
+            targets.append((str(key), entity, "robot" if is_robot else "player"))
+    log("targets={}".format(len(targets)))
+    for key, entity, kind in targets[:12]:
         model = getattr(entity, "model", None)
         if model is None:
             continue
         call(model, "MakeSureBones")
         skeleton = call(model, "GetSkeleton")
-        log("TARGET {} skeleton={}".format(key, repr(skeleton)[:140]))
+        log("TARGET {} kind={} type={} skeleton={}".format(
+            key, kind, type(entity).__name__, repr(skeleton)[:140]
+        ))
         for bone in bones:
             point = call(model, "GetBoneWorldPosition", bone)
             point_tuple = vec(point)

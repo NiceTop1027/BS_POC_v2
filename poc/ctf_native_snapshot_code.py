@@ -435,8 +435,11 @@ def _ctf_native_visibility_filter_values(state):
         _ctf_native_values = []
         for _ctf_native_name in (
             "PHYSICS_VISIBLE_OBSTACLE_QUERY",
+            "PHYSICS_OBSTACLE_QUERY",
+            "PHYSICS_SHOOT_VERIFY",
             "PHYSICS_CAMERA",
             "PHYSICS_BULLET",
+            "PHYSICS_THROWN",
         ):
             _ctf_native_value = getattr(_ctf_native_cconst, _ctf_native_name, None)
             if isinstance(_ctf_native_value, int) and _ctf_native_value not in _ctf_native_values:
@@ -462,10 +465,31 @@ def _ctf_native_distance(a, b):
 
 
 def _ctf_native_hit_position(hit):
-    for _ctf_native_name in ("Pos", "position", "point", "hit_pos"):
+    for _ctf_native_name in (
+        "Pos",
+        "HitPos",
+        "HitPosition",
+        "position",
+        "point",
+        "Point",
+        "hit_pos",
+        "hitPoint",
+        "HitPoint",
+    ):
         _ctf_native_pos = _ctf_native_vec3(getattr(hit, _ctf_native_name, None))
         if _ctf_native_pos is not None:
             return _ctf_native_pos
+    return None
+
+
+def _ctf_native_collision_distance(hit):
+    for _ctf_native_name in ("Distance", "distance", "Dist", "dist"):
+        try:
+            _ctf_native_value = float(getattr(hit, _ctf_native_name))
+            if _ctf_native_math.isfinite(_ctf_native_value) and _ctf_native_value >= 0.0:
+                return _ctf_native_value
+        except Exception:
+            pass
     return None
 
 
@@ -475,11 +499,13 @@ def _ctf_native_environment_blocked(state, space, camera_pos, point):
     _ctf_native_target_distance = _ctf_native_distance(_ctf_native_camera, _ctf_native_point)
     for _ctf_native_filter in _ctf_native_visibility_filter_values(state):
         _ctf_native_hit = _ctf_native_call(
-            space, "ClosestRaycast", camera_pos, point, _ctf_native_filter
+            space, "ClosestRaycast", camera_pos, point, _ctf_native_filter, False
         )
         if _ctf_native_hit is not None and getattr(_ctf_native_hit, "IsHit", False):
             _ctf_native_hit_pos = _ctf_native_hit_position(_ctf_native_hit)
             _ctf_native_hit_distance = _ctf_native_distance(_ctf_native_camera, _ctf_native_hit_pos)
+            if _ctf_native_hit_distance is None:
+                _ctf_native_hit_distance = _ctf_native_collision_distance(_ctf_native_hit)
             if _ctf_native_hit_distance is not None:
                 if _ctf_native_hit_distance <= 0.85:
                     state["visibility_near_hit_count"] = state.get("visibility_near_hit_count", 0) + 1
