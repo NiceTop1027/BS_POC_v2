@@ -41,13 +41,13 @@ constexpr UINT kTrackIntervalMs = 8;
 constexpr UINT kTrackMessage = WM_APP + 0x31;
 constexpr int kToggleControlsHotkey = 1;
 constexpr COLORREF kTransparentColor = RGB(0, 0, 0);
-constexpr double kDefaultAimFovHeightFraction = 0.20;
+constexpr double kDefaultAimFovHeightFraction = 0.30;
 constexpr double kAimWorldHeadHeightFraction = 0.84;
 // Stop issuing integer mouse corrections for sub-pixel bone/camera noise.
-constexpr double kAimDeadzonePixels = 2.50;
-constexpr double kAimFineControlWindowPixels = 18.0;
-constexpr double kAimFineGain = 0.58;
-constexpr double kAimCoarseGain = 0.82;
+constexpr double kAimDeadzonePixels = 1.25;
+constexpr double kAimFineControlWindowPixels = 10.0;
+constexpr double kAimFineGain = 0.92;
+constexpr double kAimCoarseGain = 1.28;
 // The exporter is sampled at 120 Hz.  One command per fresh sample prevents
 // duplicate corrections from fighting each other between camera frames.
 constexpr double kAimMinInputIntervalSeconds = 0.0085;
@@ -72,13 +72,13 @@ constexpr double kAimMinLatencyCompensationSpeed = 1.20;
 constexpr double kAimLockRetentionSeconds = 0.75;
 constexpr double kAimLockVisibilityGraceSeconds = 0.18;
 constexpr LONG kAimMaxCalibratedMouseDelta = 4000;
-constexpr LONG kAimMaxHipMouseStep = 720;
-constexpr LONG kAimMaxScopedMouseStep = 520;
-constexpr double kAimVerticalGain = 0.50;
-constexpr double kAimScopedVerticalGain = 0.42;
-constexpr double kAimVerticalDeadzonePixels = 3.00;
-constexpr LONG kAimMaxHipVerticalStep = 320;
-constexpr LONG kAimMaxScopedVerticalStep = 200;
+constexpr LONG kAimMaxHipMouseStep = 1450;
+constexpr LONG kAimMaxScopedMouseStep = 860;
+constexpr double kAimVerticalGain = 0.92;
+constexpr double kAimScopedVerticalGain = 0.72;
+constexpr double kAimVerticalDeadzonePixels = 1.25;
+constexpr LONG kAimMaxHipVerticalStep = 920;
+constexpr LONG kAimMaxScopedVerticalStep = 520;
 constexpr double kDefaultHipRadiansPerRawMouse = -0.00135;
 constexpr double kDefaultScopedRadiansPerRawMouse = -0.00055;
 constexpr double kAimCalibrationCooldownSeconds = 0.06;
@@ -474,7 +474,7 @@ bool WriteExporterConfig() {
     const std::wstring temporaryPath = g_configPath + L".tmp";
     std::ostringstream stream;
     stream << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n"
-           << "native_aim=0\n"
+           << "native_aim=" << (g_aimEnabled ? 1 : 0) << "\n"
            << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
            << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n";
     const std::string contents = stream.str();
@@ -1364,11 +1364,6 @@ bool BuildBallisticAimPoint(const Snapshot& snapshot, const Target& target,
         !std::isfinite(relativeVelocity.z)) {
         relativeVelocity = {};
     }
-    const double relativeSpeed = Length(relativeVelocity);
-    if (!std::isfinite(relativeSpeed) ||
-        relativeSpeed < kAimMinLatencyCompensationSpeed) {
-        return false;
-    }
     // Keep the vertical target component authoritative.  Only projectile drop
     // supplies a vertical offset; this avoids reintroducing jump/crouch sway.
     relativeVelocity.y = 0.0;
@@ -1600,11 +1595,8 @@ bool AimVisibilityDataUnavailable(const Snapshot& snapshot) {
 
 bool BuildAimCandidate(const Snapshot& snapshot, const Target& target, const RECT& client,
                        double maximumDistance, AimCandidate* output,
-                       bool lockedMode = false, bool allowInvisible = false) {
-    const bool visibilityUnavailable = AimVisibilityDataUnavailable(snapshot);
-    if (target.dead ||
-        (g_visibilityEnabled && !target.visible && !allowInvisible &&
-         !visibilityUnavailable)) {
+                       bool lockedMode = false) {
+    if (target.dead || !target.visible || target.teamRelation != 2) {
         return false;
     }
     Vec3 currentHead = {};
@@ -1673,17 +1665,10 @@ bool FindAimCandidate(const Snapshot& snapshot, const RECT& client, AimCandidate
                 ClearAimLock();
                 return false;
             }
-            const bool visibilityUnavailable = AimVisibilityDataUnavailable(snapshot);
             g_aimLockLastSeenTime = now;
-            if (target.visible || !g_visibilityEnabled || visibilityUnavailable) {
-                g_aimLockLastVisibleTime = now;
-            }
-            const bool allowInvisible = !g_visibilityEnabled || target.visible ||
-                visibilityUnavailable ||
-                now - g_aimLockLastVisibleTime <= kAimLockVisibilityGraceSeconds;
+            g_aimLockLastVisibleTime = now;
             AimCandidate locked;
-            if (BuildAimCandidate(snapshot, target, client, maxDistance, &locked,
-                                  true, allowInvisible)) {
+            if (BuildAimCandidate(snapshot, target, client, maxDistance, &locked, true)) {
                 *output = locked;
                 return true;
             }
@@ -1780,13 +1765,12 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     const double aimDistance = Length(aimRelative);
     const double horizontalDistance = std::hypot(aimRelative.x, aimRelative.z);
     const bool useWorldAngles = std::isfinite(aimDistance) &&
-        aimDistance >= kAimWorldAngleCorrectionDistanceMeters &&
         std::isfinite(horizontalDistance) && horizontalDistance > 0.01 &&
         std::abs(snapshot.roll) < 0.15;
     if (useWorldAngles) {
-        // At long range, derive the correction directly from the authoritative
-        // world head and camera angles.  This avoids losing sub-pixel head
-        // movement through window scaling or narrow-scope projection.
+        // Derive the correction directly from the authoritative world aim
+        // point. This keeps steep up/down shots exact; screen-space pitch is a
+        // tangent approximation and drifts when shooting from above.
         const double desiredYaw = std::atan2(-aimRelative.x, -aimRelative.z);
         const double desiredPitch = std::atan2(aimRelative.y, horizontalDistance);
         requiredYaw = WrapAngleDelta(snapshot.yaw, desiredYaw);
@@ -1803,13 +1787,17 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
         gain *= 1.08;
     }
 
-    const double rawX = requiredYaw / calibration.yawRadiansPerRawMouse;
-    const double rawY = requiredPitch / calibration.pitchRadiansPerRawMouse;
-    if (!std::isfinite(rawX) || !std::isfinite(rawY) ||
-        std::abs(rawX) > kAimMaxCalibratedMouseDelta ||
-        std::abs(rawY) > kAimMaxCalibratedMouseDelta) {
+    double rawX = requiredYaw / calibration.yawRadiansPerRawMouse;
+    double rawY = requiredPitch / calibration.pitchRadiansPerRawMouse;
+    if (!std::isfinite(rawX) || !std::isfinite(rawY)) {
         return false;
     }
+    rawX = std::clamp(rawX,
+                      -static_cast<double>(kAimMaxCalibratedMouseDelta),
+                      static_cast<double>(kAimMaxCalibratedMouseDelta));
+    rawY = std::clamp(rawY,
+                      -static_cast<double>(kAimMaxCalibratedMouseDelta),
+                      static_cast<double>(kAimMaxCalibratedMouseDelta));
     // Do not carry fractional input into the next frame.  The residual
     // integrator turns one-pixel rounding into alternating left/right or
     // up/down commands when the authoritative head moves by a fraction of a
@@ -1818,7 +1806,8 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     const double verticalGain = IsScopedFov(snapshot.fov)
         ? kAimScopedVerticalGain
         : kAimVerticalGain;
-    const double commandRawY = rawY * gain * verticalGain;
+    const double downwardBoost = aimRelative.y < -0.35 ? 1.18 : 1.0;
+    const double commandRawY = rawY * gain * verticalGain * downwardBoost;
     const LONG maxHorizontalStep = IsScopedFov(snapshot.fov)
         ? kAimMaxScopedMouseStep
         : kAimMaxHipMouseStep;

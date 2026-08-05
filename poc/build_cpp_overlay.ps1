@@ -8,23 +8,30 @@ $ErrorActionPreference = 'Stop'
 
 $pocRoot = Split-Path -Parent $PSCommandPath
 $src = Join-Path $pocRoot 'cpp_overlay\esp_overlay.cpp'
+$rc = Join-Path $pocRoot 'cpp_overlay\esp_overlay.rc'
+$res = Join-Path $pocRoot 'cpp_overlay\esp_overlay.res'
 $outDir = Join-Path $pocRoot 'cpp_overlay'
 $exe = Join-Path $outDir $OutputName
 
 if (-not (Test-Path -LiteralPath $src)) {
     throw "C++ source not found: $src"
 }
+if (-not (Test-Path -LiteralPath $rc)) {
+    throw "Resource script not found: $rc"
+}
 
 if ($Clean) {
     Remove-Item -LiteralPath $exe -Force -ErrorAction SilentlyContinue
     Remove-Item -LiteralPath (Join-Path $outDir 'esp_overlay.obj') -Force -ErrorAction SilentlyContinue
+    Remove-Item -LiteralPath $res -Force -ErrorAction SilentlyContinue
 }
 
 $vsDev = 'C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\Tools\VsDevCmd.bat'
 if (Test-Path -LiteralPath $vsDev) {
     $cmd = @(
         "`"$vsDev`" -arch=x64 -host_arch=x64 >nul",
-        "cl /nologo /EHsc /std:c++17 /O2 /DUNICODE /D_UNICODE /Fe:`"$exe`" `"$src`" user32.lib gdi32.lib shell32.lib winmm.lib comctl32.lib /link /SUBSYSTEM:WINDOWS /MANIFESTUAC:`"level='requireAdministrator' uiAccess='false'`""
+        "rc /nologo /fo `"$res`" `"$rc`"",
+        "cl /nologo /EHsc /std:c++17 /O2 /DUNICODE /D_UNICODE /Fe:`"$exe`" `"$src`" `"$res`" user32.lib gdi32.lib shell32.lib winmm.lib comctl32.lib /link /SUBSYSTEM:WINDOWS /MANIFESTUAC:`"level='requireAdministrator' uiAccess='false'`""
     ) -join ' && '
     cmd.exe /d /s /c $cmd
     if ($LASTEXITCODE -ne 0) {

@@ -265,10 +265,14 @@ def _ctf_native_find_native_aim_target(state, frame, camera_pos, screen, rows):
             _ctf_native_dead,
             _ctf_native_head,
             _ctf_native_is_visible,
+            _ctf_native_is_robot,
+            _ctf_native_relation,
         ) = _ctf_native_row
         if _ctf_native_dead or _ctf_native_head is None:
             continue
-        if state.get("visible_only", True) and not _ctf_native_is_visible:
+        if _ctf_native_relation != 2:
+            continue
+        if not _ctf_native_is_visible:
             continue
         _ctf_native_projected = _ctf_native_project_point(frame, camera_pos, screen, _ctf_native_head)
         if _ctf_native_projected is None:
@@ -421,13 +425,108 @@ def _ctf_native_active_space(state):
         return None
 
 
+def _ctf_native_visibility_filter_values(state):
+    _ctf_native_filters = state.get("visibility_filter_values")
+    if _ctf_native_filters is not None:
+        return _ctf_native_filters
+    _ctf_native_filters = ()
+    try:
+        from gclient import cconst as _ctf_native_cconst
+        _ctf_native_values = []
+        for _ctf_native_name in (
+            "PHYSICS_VISIBLE_OBSTACLE_QUERY",
+            "PHYSICS_CAMERA",
+            "PHYSICS_BULLET",
+        ):
+            _ctf_native_value = getattr(_ctf_native_cconst, _ctf_native_name, None)
+            if isinstance(_ctf_native_value, int) and _ctf_native_value not in _ctf_native_values:
+                _ctf_native_values.append(_ctf_native_value)
+        _ctf_native_filters = tuple(_ctf_native_values)
+    except Exception:
+        _ctf_native_filters = ()
+    state["visibility_filter_values"] = _ctf_native_filters
+    return _ctf_native_filters
+
+
+def _ctf_native_distance(a, b):
+    if a is None or b is None:
+        return None
+    try:
+        return _ctf_native_math.sqrt(
+            (a[0] - b[0]) * (a[0] - b[0]) +
+            (a[1] - b[1]) * (a[1] - b[1]) +
+            (a[2] - b[2]) * (a[2] - b[2])
+        )
+    except Exception:
+        return None
+
+
+def _ctf_native_hit_position(hit):
+    for _ctf_native_name in ("Pos", "position", "point", "hit_pos"):
+        _ctf_native_pos = _ctf_native_vec3(getattr(hit, _ctf_native_name, None))
+        if _ctf_native_pos is not None:
+            return _ctf_native_pos
+    return None
+
+
+def _ctf_native_environment_blocked(state, space, camera_pos, point):
+    _ctf_native_camera = _ctf_native_vec3(camera_pos)
+    _ctf_native_point = _ctf_native_vec3(point)
+    _ctf_native_target_distance = _ctf_native_distance(_ctf_native_camera, _ctf_native_point)
+    for _ctf_native_filter in _ctf_native_visibility_filter_values(state):
+        _ctf_native_hit = _ctf_native_call(
+            space, "ClosestRaycast", camera_pos, point, _ctf_native_filter
+        )
+        if _ctf_native_hit is not None and getattr(_ctf_native_hit, "IsHit", False):
+            _ctf_native_hit_pos = _ctf_native_hit_position(_ctf_native_hit)
+            _ctf_native_hit_distance = _ctf_native_distance(_ctf_native_camera, _ctf_native_hit_pos)
+            if _ctf_native_hit_distance is not None:
+                if _ctf_native_hit_distance <= 0.85:
+                    state["visibility_near_hit_count"] = state.get("visibility_near_hit_count", 0) + 1
+                    continue
+                if (
+                    _ctf_native_target_distance is not None and
+                    _ctf_native_hit_distance >= _ctf_native_target_distance - 0.30
+                ):
+                    continue
+            elif _ctf_native_hit_pos is None:
+                state["visibility_unknown_hit_count"] = state.get("visibility_unknown_hit_count", 0) + 1
+                continue
+            state["visibility_env_block_count"] = state.get("visibility_env_block_count", 0) + 1
+            state["visibility_env_last_filter"] = _ctf_native_filter
+            return True
+    return False
+
+
+def _ctf_native_target_skeleton_hit(space, camera_pos, point, skeleton):
+    _ctf_native_hits = _ctf_native_call(
+        space, "RaycastBoneWithPenetrate", camera_pos, point
+    )
+    if isinstance(_ctf_native_hits, (list, tuple)):
+        return bool(
+            len(_ctf_native_hits) == 1 and
+            getattr(_ctf_native_hits[0], "IsHit", False) and
+            getattr(_ctf_native_hits[0], "actor", None) == skeleton
+        )
+    _ctf_native_hit = _ctf_native_call(
+        space, "ClosestRaycastBone", camera_pos, point
+    )
+    return bool(
+        _ctf_native_hit is not None and
+        getattr(_ctf_native_hit, "IsHit", False) and
+        getattr(_ctf_native_hit, "actor", None) == skeleton
+    )
+
+
 def _ctf_native_visible(state, key, entity, camera_pos):
     """Use the game physics scene so aim assist never selects a wall-blocked head."""
     _ctf_native_now = _ctf_native_time.time()
     _ctf_native_cache = state.setdefault("visibility_cache", {})
+    _ctf_native_aim_points = state.setdefault("visibility_aim_points", {})
     _ctf_native_cached = _ctf_native_cache.get(key)
     if _ctf_native_cached is not None and _ctf_native_now - _ctf_native_cached[0] < (1.0 / 120.0):
         return _ctf_native_cached[1]
+    _ctf_native_aim_points.pop(key, None)
 
     _ctf_native_model = getattr(entity, "model", None)
     _ctf_native_space = _ctf_native_active_space(state)
@@ -435,20 +534,37 @@ def _ctf_native_visible(state, key, entity, camera_pos):
         _ctf_native_cache[key] = (_ctf_native_now, False)
         return False
     _ctf_native_call(_ctf_native_model, "MakeSureBones")
-    _ctf_native_head = _ctf_native_call(
-        _ctf_native_model, "GetBoneWorldPosition", "biped Head"
-    )
-    _ctf_native_hit = _ctf_native_call(
-        _ctf_native_space, "ClosestRaycastBone", camera_pos, _ctf_native_head
-    )
     _ctf_native_skeleton = _ctf_native_call(_ctf_native_model, "GetSkeleton")
-    _ctf_native_visible_now = bool(
-        _ctf_native_hit is not None and
-        getattr(_ctf_native_hit, "IsHit", False) and
-        getattr(_ctf_native_hit, "actor", None) == _ctf_native_skeleton
-    )
-    _ctf_native_cache[key] = (_ctf_native_now, _ctf_native_visible_now)
-    return _ctf_native_visible_now
+    for _ctf_native_bone in (
+        "biped Head",
+        "biped Neck",
+        "biped Spine2",
+        "biped Spine1",
+        "biped Spine",
+        "biped Pelvis",
+    ):
+        _ctf_native_point = _ctf_native_call(
+            _ctf_native_model, "GetBoneWorldPosition", _ctf_native_bone
+        )
+        _ctf_native_point_tuple = _ctf_native_vec3(_ctf_native_point)
+        if (
+            _ctf_native_point_tuple is None or
+            not all(_ctf_native_math.isfinite(value) for value in _ctf_native_point_tuple)
+        ):
+            continue
+        if not _ctf_native_target_skeleton_hit(
+            _ctf_native_space, camera_pos, _ctf_native_point, _ctf_native_skeleton
+        ):
+            continue
+        if _ctf_native_environment_blocked(
+            state, _ctf_native_space, camera_pos, _ctf_native_point
+        ):
+            continue
+        _ctf_native_aim_points[key] = _ctf_native_point_tuple
+        _ctf_native_cache[key] = (_ctf_native_now, True)
+        return True
+    _ctf_native_cache[key] = (_ctf_native_now, False)
+    return False
 
 
 def _ctf_native_hide_widget(widget):
@@ -871,6 +987,10 @@ def _ctf_native_write_snapshot(state):
         _ctf_native_is_visible = _ctf_native_visible(
             state, _ctf_native_key, _ctf_native_target, _ctf_native_frame.Position
         )
+        if _ctf_native_is_visible:
+            _ctf_native_head = state.get("visibility_aim_points", {}).get(
+                _ctf_native_key, _ctf_native_head
+            )
         _ctf_native_visible_count += int(_ctf_native_is_visible)
         _ctf_native_hp = _ctf_native_metric(_ctf_native_target, ("hp", "server_hp", "client_hp", "_hp"), 0.0)
         _ctf_native_maxhp = _ctf_native_metric(_ctf_native_target, ("cur_maxhp", "maxhp", "base_maxhp", "server_maxhp"), max(1.0, _ctf_native_hp))
@@ -966,11 +1086,17 @@ def _ctf_native_write_snapshot(state):
     )
     _ctf_native_lines.append("S {}\n".format(int(bool(state.get("exporter_ready", False)))))
 
-    with open(_ctf_native_snapshot_temp_path, "w", encoding="ascii") as _ctf_native_handle:
+    _ctf_native_local_temp_path = "{}.{}.{}.{}.tmp".format(
+        _ctf_native_snapshot_path,
+        _ctf_native_os.getpid(),
+        state.get("tick", 0),
+        int(_ctf_native_time.time() * 1000000),
+    )
+    with open(_ctf_native_local_temp_path, "w", encoding="ascii") as _ctf_native_handle:
         _ctf_native_handle.writelines(_ctf_native_lines)
     for _ctf_native_attempt in range(4):
         try:
-            _ctf_native_os.replace(_ctf_native_snapshot_temp_path, _ctf_native_snapshot_path)
+            _ctf_native_os.replace(_ctf_native_local_temp_path, _ctf_native_snapshot_path)
             state["last_count"] = len(_ctf_native_rows)
             state["weapon_item_id"] = _ctf_native_weapon_item_id
             state["projectile_speed"] = _ctf_native_projectile_speed
@@ -983,6 +1109,10 @@ def _ctf_native_write_snapshot(state):
         except PermissionError:
             # Readers use shared handles; retry around short external reads.
             _ctf_native_time.sleep(0.0015 * (_ctf_native_attempt + 1))
+    try:
+        _ctf_native_os.remove(_ctf_native_local_temp_path)
+    except Exception:
+        pass
     state["dropped_snapshots"] = state.get("dropped_snapshots", 0) + 1
 
 
