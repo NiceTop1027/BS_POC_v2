@@ -86,6 +86,10 @@ constexpr double kAimCalibrationCooldownSeconds = 0.06;
 constexpr double kAimSyntheticEchoWindowSeconds = 0.10;
 constexpr LONG kAimBootstrapRawMouseDelta = 4;
 constexpr double kAimBootstrapScaleLimitRadians = 0.020;
+constexpr double kNoRecoilDeadzoneRadians = 0.00018;
+constexpr double kNoRecoilMaxPitchCorrectionRadians = 0.18;
+constexpr LONG kNoRecoilMaxRawStep = 180;
+constexpr double kNoRecoilMinInputIntervalSeconds = 0.006;
 constexpr double kScopedFovThresholdDegrees = 50.0;
 constexpr double kScopedMovementInputLeadSeconds = 0.008;
 constexpr double kScopedMovementMinSpeedMetersPerSecond = 0.75;
@@ -236,6 +240,7 @@ std::wstring g_titleNeedle = L"BloodStrike";
 std::wstring g_statePath;
 std::wstring g_configPath;
 std::wstring g_aimTriggerPath;
+std::wstring g_fireTriggerPath;
 std::wstring g_settingsPath;
 int g_durationSeconds = 0;
 DWORD g_targetPid = 0;
@@ -278,6 +283,16 @@ double g_lastAimSnapshotTimestamp = 0.0;
 double g_lastAimTargetSwitchTime = 0.0;
 double g_lastAimTriggerWriteTime = 0.0;
 bool g_lastAimTriggerState = false;
+double g_noRecoilReadyPitch = 0.0;
+double g_noRecoilAnchorPitch = 0.0;
+double g_noRecoilLastReadyTime = 0.0;
+double g_lastNoRecoilInputTime = 0.0;
+double g_lastNoRecoilSnapshotTimestamp = 0.0;
+double g_noRecoilResidualRawY = 0.0;
+double g_lastFireTriggerWriteTime = 0.0;
+bool g_noRecoilReadyValid = false;
+bool g_noRecoilWasFiring = false;
+bool g_lastFireTriggerState = false;
 std::wstring g_runtimeRootOverride;
 std::vector<BoxSmoothing> g_boxSmoothing;
 
@@ -470,6 +485,7 @@ void ParseCommandLine() {
     }
     g_configPath = RuntimeRoot() + L"\\ctf_native_esp_config.txt";
     g_aimTriggerPath = RuntimeRoot() + L"\\ctf_native_aim_trigger.txt";
+    g_fireTriggerPath = RuntimeRoot() + L"\\ctf_native_fire_trigger.txt";
     g_settingsPath = RuntimeRoot() + L"\\ctf_overlay_settings.ini";
 }
 
@@ -664,6 +680,23 @@ bool WriteAimTriggerState(bool active, bool force = false) {
     }
     g_lastAimTriggerState = active;
     g_lastAimTriggerWriteTime = now;
+    return true;
+}
+
+bool WriteFireTriggerState(bool active, bool force = false) {
+    if (g_fireTriggerPath.empty()) {
+        return false;
+    }
+    const double now = UnixNow();
+    if (!force && active == g_lastFireTriggerState && now - g_lastFireTriggerWriteTime < 0.025) {
+        return true;
+    }
+    const std::string contents = active ? "1\n" : "0\n";
+    if (!WriteTextFileAtomically(g_fireTriggerPath, contents)) {
+        return false;
+    }
+    g_lastFireTriggerState = active;
+    g_lastFireTriggerWriteTime = now;
     return true;
 }
 
@@ -2320,6 +2353,107 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
     }
 }
 
+void ResetNoRecoilState() {
+    g_noRecoilWasFiring = false;
+    g_lastNoRecoilInputTime = 0.0;
+    g_lastNoRecoilSnapshotTimestamp = 0.0;
+    g_noRecoilResidualRawY = 0.0;
+}
+
+void RememberNoRecoilReadyPitch(const Snapshot& snapshot) {
+    if (!snapshot.valid || !std::isfinite(snapshot.timestamp) ||
+        UnixNow() - snapshot.timestamp > 0.20 || !std::isfinite(snapshot.pitch)) {
+        return;
+    }
+    g_noRecoilReadyPitch = snapshot.pitch;
+    g_noRecoilLastReadyTime = UnixNow();
+    g_noRecoilReadyValid = true;
+}
+
+void ApplyNoRecoilAssist(const Snapshot& snapshot) {
+    const bool foreground = GetForegroundWindow() == g_target;
+    const bool firing = g_noRecoilEnabled && foreground &&
+        (GetAsyncKeyState(VK_LBUTTON) & 0x8000) != 0;
+    WriteFireTriggerState(firing);
+
+    if (!g_noRecoilEnabled || !foreground || !firing) {
+        RememberNoRecoilReadyPitch(snapshot);
+        ResetNoRecoilState();
+        return;
+    }
+    if (!snapshot.valid || !std::isfinite(snapshot.timestamp) ||
+        UnixNow() - snapshot.timestamp > 0.14 || !std::isfinite(snapshot.pitch)) {
+        return;
+    }
+
+    if (!g_noRecoilWasFiring) {
+        if (g_noRecoilReadyValid && UnixNow() - g_noRecoilLastReadyTime <= 0.35) {
+            g_noRecoilAnchorPitch = g_noRecoilReadyPitch;
+        } else if (g_previousSnapshot.valid && std::isfinite(g_previousSnapshot.pitch) &&
+                   UnixNow() - g_previousSnapshot.timestamp <= 0.35) {
+            g_noRecoilAnchorPitch = g_previousSnapshot.pitch;
+        } else {
+            g_noRecoilAnchorPitch = snapshot.pitch;
+        }
+        g_noRecoilWasFiring = true;
+        g_lastNoRecoilSnapshotTimestamp = 0.0;
+        g_noRecoilResidualRawY = 0.0;
+    }
+
+    if (snapshot.timestamp <= g_lastNoRecoilSnapshotTimestamp + 0.000001 ||
+        UnixNow() - g_lastNoRecoilInputTime < kNoRecoilMinInputIntervalSeconds) {
+        return;
+    }
+
+    double pitchError = g_noRecoilAnchorPitch - snapshot.pitch;
+    if (!std::isfinite(pitchError)) {
+        return;
+    }
+    pitchError = std::clamp(
+        pitchError,
+        -kNoRecoilMaxPitchCorrectionRadians,
+        kNoRecoilMaxPitchCorrectionRadians);
+    if (std::abs(pitchError) <= kNoRecoilDeadzoneRadians) {
+        g_lastNoRecoilSnapshotTimestamp = snapshot.timestamp;
+        g_noRecoilResidualRawY = 0.0;
+        return;
+    }
+
+    const double fallbackScale = IsScopedFov(snapshot.fov)
+        ? kDefaultScopedRadiansPerRawMouse
+        : kDefaultHipRadiansPerRawMouse;
+    double pitchScale = CalibrationForFov(snapshot.fov).pitchRadiansPerRawMouse;
+    const double ratio = (std::abs(fallbackScale) > 1e-7)
+        ? std::abs(pitchScale / fallbackScale)
+        : 0.0;
+    if (!std::isfinite(pitchScale) || std::abs(pitchScale) < 1e-7 ||
+        pitchScale * fallbackScale <= 0.0 || ratio < 0.45 || ratio > 2.20) {
+        pitchScale = fallbackScale;
+    }
+
+    g_noRecoilResidualRawY += pitchError / pitchScale;
+    LONG deltaY = static_cast<LONG>(std::lround(g_noRecoilResidualRawY));
+    deltaY = std::clamp(deltaY, -kNoRecoilMaxRawStep, kNoRecoilMaxRawStep);
+    if (deltaY == 0) {
+        return;
+    }
+    g_noRecoilResidualRawY -= static_cast<double>(deltaY);
+
+    INPUT input = {};
+    input.type = INPUT_MOUSE;
+    input.mi.dy = deltaY;
+    input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_MOVE_NOCOALESCE;
+    if (SendInput(1, &input, sizeof(input)) == 1) {
+        const double now = UnixNow();
+        g_lastNoRecoilInputTime = now;
+        g_lastNoRecoilSnapshotTimestamp = snapshot.timestamp;
+        g_calibrationBlockedUntil = now + kAimCalibrationCooldownSeconds;
+        g_rawMouseYSinceSnapshot = AddClampedRawMouse(g_rawMouseYSinceSnapshot, deltaY);
+        g_aimInputAwaitingY = AddClampedRawMouse(g_aimInputAwaitingY, deltaY);
+        g_aimInputAwaitingUntil = now + kAimSyntheticEchoWindowSeconds;
+    }
+}
+
 void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
     if (!g_aimEnabled || GetForegroundWindow() != g_target) {
         return;
@@ -2769,11 +2903,13 @@ void TrackTarget(HWND hwnd) {
     RECT rect = {};
     if (!TargetClientRect(&rect)) {
         WriteAimTriggerState(false);
+        WriteFireTriggerState(false);
         ShowWindow(hwnd, SW_HIDE);
         return;
     }
     if (!IsOverlayContextActive()) {
         WriteAimTriggerState(false);
+        WriteFireTriggerState(false);
         ShowWindow(hwnd, SW_HIDE);
         return;
     }
@@ -2802,8 +2938,11 @@ void TrackTarget(HWND hwnd) {
     if (SnapshotIsFresh()) {
         RECT client = {};
         GetClientRect(hwnd, &client);
+        ApplyNoRecoilAssist(AimControlSnapshot());
         ApplyAimAssist(AimControlSnapshot(), client);
         UpdateLiveDiagnostics();
+    } else {
+        WriteFireTriggerState(false);
     }
     InvalidateRect(hwnd, nullptr, FALSE);
 
@@ -3235,6 +3374,7 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int) {
     }
     PersistOverlaySettings();
     WriteAimTriggerState(false, true);
+    WriteFireTriggerState(false, true);
     HWND overlay = CreateWindowExW(
         WS_EX_LAYERED | WS_EX_TRANSPARENT | WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE,
         windowClass.lpszClassName, L"", WS_POPUP, rect.left, rect.top,
