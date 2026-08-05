@@ -544,7 +544,7 @@ def _ctf_native_target_skeleton_hit(space, camera_pos, point, skeleton):
     )
 
 
-def _ctf_native_physics_visible(state, key, entity, camera_pos):
+def _ctf_native_visible(state, key, entity, camera_pos):
     """Use the game physics scene so aim assist never selects a wall-blocked head."""
     _ctf_native_now = _ctf_native_time.time()
     _ctf_native_cache = state.setdefault("visibility_cache", {})
@@ -590,289 +590,6 @@ def _ctf_native_physics_visible(state, key, entity, camera_pos):
         _ctf_native_cache[key] = (_ctf_native_now, True)
         return True
     _ctf_native_cache[key] = (_ctf_native_now, False)
-    return False
-
-
-def _ctf_native_iter_render_objects(entity):
-    """Yield reflected render objects when the CTF build exposes them."""
-    _ctf_native_seen = set()
-    _ctf_native_stack = [entity, getattr(entity, "model", None)]
-    for _ctf_native_limit in range(64):
-        if not _ctf_native_stack:
-            break
-        _ctf_native_obj = _ctf_native_stack.pop(0)
-        if _ctf_native_obj is None or id(_ctf_native_obj) in _ctf_native_seen:
-            continue
-        _ctf_native_seen.add(id(_ctf_native_obj))
-        yield _ctf_native_obj
-
-        for _ctf_native_name in (
-            "model",
-            "engine_model",
-            "render_model",
-            "scene_node",
-            "mobject",
-            "MObject",
-            "skeleton",
-            "Skeleton",
-        ):
-            try:
-                _ctf_native_child = getattr(_ctf_native_obj, _ctf_native_name)
-                if callable(_ctf_native_child):
-                    continue
-                if _ctf_native_child is not None and id(_ctf_native_child) not in _ctf_native_seen:
-                    _ctf_native_stack.append(_ctf_native_child)
-            except Exception:
-                pass
-
-        for _ctf_native_name in ("GetResourceModels", "GetSkeleton", "Primitives", "RigidBodies"):
-            try:
-                _ctf_native_value = getattr(_ctf_native_obj, _ctf_native_name)
-                if callable(_ctf_native_value):
-                    _ctf_native_value = _ctf_native_value()
-                if _ctf_native_value is None:
-                    continue
-                if isinstance(_ctf_native_value, dict):
-                    _ctf_native_children = list(_ctf_native_value.values())
-                elif isinstance(_ctf_native_value, (list, tuple, set)):
-                    _ctf_native_children = list(_ctf_native_value)
-                else:
-                    _ctf_native_children = [_ctf_native_value]
-                for _ctf_native_child in _ctf_native_children:
-                    if _ctf_native_child is not None and id(_ctf_native_child) not in _ctf_native_seen:
-                        _ctf_native_stack.append(_ctf_native_child)
-            except Exception:
-                pass
-
-
-def _ctf_native_call_bool(obj, name):
-    try:
-        _ctf_native_value = getattr(obj, name)
-        if callable(_ctf_native_value):
-            _ctf_native_value = _ctf_native_value()
-        if isinstance(_ctf_native_value, bool):
-            return True, _ctf_native_value
-    except Exception:
-        pass
-    return False, False
-
-
-def _ctf_native_float_attr_or_call(obj, name):
-    try:
-        _ctf_native_value = getattr(obj, name)
-        if callable(_ctf_native_value):
-            _ctf_native_value = _ctf_native_value()
-        _ctf_native_value = float(_ctf_native_value)
-        if _ctf_native_math.isfinite(_ctf_native_value):
-            return _ctf_native_value
-    except Exception:
-        pass
-    return None
-
-
-def _ctf_native_render_visible(state, key, entity):
-    """Return (known, visible) from renderer freshness instead of physics."""
-    _ctf_native_now_tick = int(state.get("tick", 0))
-    _ctf_native_cache = state.setdefault("render_visibility_cache", {})
-    _ctf_native_cached = _ctf_native_cache.get(key)
-    if _ctf_native_cached is not None and _ctf_native_now_tick - _ctf_native_cached[0] <= 1:
-        return _ctf_native_cached[1], _ctf_native_cached[2]
-
-    _ctf_native_known = False
-    _ctf_native_visible = False
-    _ctf_native_weak_visible = False
-    _ctf_native_last_times = state.setdefault("render_last_times", {})
-    _ctf_native_last_seen_ticks = state.setdefault("render_last_seen_ticks", {})
-
-    for _ctf_native_obj in _ctf_native_iter_render_objects(entity):
-        _ctf_native_has, _ctf_native_value = _ctf_native_call_bool(_ctf_native_obj, "IsLastRendered")
-        if _ctf_native_has:
-            _ctf_native_known = True
-            if _ctf_native_value:
-                _ctf_native_visible = True
-                break
-
-        _ctf_native_render_time = _ctf_native_float_attr_or_call(_ctf_native_obj, "GetLastRenderTime")
-        if _ctf_native_render_time is not None and _ctf_native_render_time > 0.0:
-            _ctf_native_known = True
-            _ctf_native_slot = "{}:{}".format(key, id(_ctf_native_obj))
-            _ctf_native_previous = _ctf_native_last_times.get(_ctf_native_slot)
-            if _ctf_native_previous is None or _ctf_native_render_time > _ctf_native_previous + 0.000001:
-                _ctf_native_last_times[_ctf_native_slot] = _ctf_native_render_time
-                _ctf_native_last_seen_ticks[_ctf_native_slot] = _ctf_native_now_tick
-            if _ctf_native_now_tick - int(_ctf_native_last_seen_ticks.get(_ctf_native_slot, -9999)) <= 4:
-                _ctf_native_visible = True
-                break
-
-        # These are render-enable flags, not occlusion signals.  Keep them as
-        # diagnostics only; stale visibility flags must not re-enable wall locks.
-        for _ctf_native_name in ("IsVisible", "IsProxyVisible"):
-            _ctf_native_has, _ctf_native_value = _ctf_native_call_bool(_ctf_native_obj, _ctf_native_name)
-            if _ctf_native_has and _ctf_native_value:
-                _ctf_native_weak_visible = True
-
-    _ctf_native_cache[key] = (_ctf_native_now_tick, _ctf_native_known, _ctf_native_visible)
-    if _ctf_native_known:
-        if _ctf_native_visible:
-            state["render_visible_hits"] = state.get("render_visible_hits", 0) + 1
-        else:
-            state["render_visible_veto"] = state.get("render_visible_veto", 0) + 1
-    elif _ctf_native_weak_visible:
-        state["render_weak_visible_hits"] = state.get("render_weak_visible_hits", 0) + 1
-    return _ctf_native_known, _ctf_native_visible
-
-
-def _ctf_native_identity_match(value, target_key, target):
-    _ctf_native_target_ids = _ctf_native_identity_candidates(target_key, target)
-    if value is target:
-        return True
-    try:
-        if str(value) in _ctf_native_target_ids:
-            return True
-    except Exception:
-        pass
-    return False
-
-
-def _ctf_native_hit_oracle_result(result, target_key, target):
-    if result is None:
-        return None
-    if isinstance(result, bool):
-        return result
-    if isinstance(result, (int, float)) and not isinstance(result, bool):
-        return bool(result)
-    if isinstance(result, (list, tuple)):
-        for _ctf_native_item in result:
-            _ctf_native_parsed = _ctf_native_hit_oracle_result(
-                _ctf_native_item, target_key, target
-            )
-            if _ctf_native_parsed is not None:
-                return _ctf_native_parsed
-        return None
-    if isinstance(result, dict):
-        for _ctf_native_name in ("hit", "is_hit", "IsHit", "success", "ok"):
-            if _ctf_native_name in result and isinstance(result[_ctf_native_name], bool):
-                return result[_ctf_native_name]
-        for _ctf_native_name in ("target", "entity", "hit_entity", "target_entity_id", "guid"):
-            if _ctf_native_name in result and _ctf_native_identity_match(result[_ctf_native_name], target_key, target):
-                return True
-        return None
-    for _ctf_native_name in ("IsHit", "is_hit", "hit", "success"):
-        try:
-            _ctf_native_value = getattr(result, _ctf_native_name)
-            if callable(_ctf_native_value):
-                _ctf_native_value = _ctf_native_value()
-            if isinstance(_ctf_native_value, bool):
-                return _ctf_native_value
-        except Exception:
-            pass
-    for _ctf_native_name in (
-        "target",
-        "Target",
-        "entity",
-        "Entity",
-        "hit_entity",
-        "HitEntity",
-        "target_entity",
-        "TargetEntity",
-        "target_entity_id",
-        "TargetEntityId",
-        "guid",
-    ):
-        try:
-            _ctf_native_value = getattr(result, _ctf_native_name)
-            if callable(_ctf_native_value):
-                _ctf_native_value = _ctf_native_value()
-            if _ctf_native_identity_match(_ctf_native_value, target_key, target):
-                return True
-        except Exception:
-            pass
-    return None
-
-
-def _ctf_native_authoritative_hit_visible(state, local_player, target_key, target, camera_pos, aim_point):
-    """Use CTF-exposed player hit checks as a veto/confirmation when available."""
-    if local_player is None:
-        return False, False
-    _ctf_native_now_tick = int(state.get("tick", 0))
-    _ctf_native_cache = state.setdefault("hit_visibility_cache", {})
-    _ctf_native_cached = _ctf_native_cache.get(target_key)
-    if _ctf_native_cached is not None and _ctf_native_now_tick - _ctf_native_cached[0] <= 1:
-        return _ctf_native_cached[1], _ctf_native_cached[2]
-
-    _ctf_native_attempts = []
-    _ctf_native_check = getattr(local_player, "CheckPlayerHitTargetEntity", None)
-    if callable(_ctf_native_check):
-        _ctf_native_attempts.extend((
-            (_ctf_native_check, (target,)),
-            (_ctf_native_check, (target_key,)),
-            (_ctf_native_check, (aim_point,)),
-            (_ctf_native_check, (camera_pos, aim_point)),
-            (_ctf_native_check, (target, aim_point)),
-        ))
-
-    _ctf_native_calc = getattr(local_player, "CalculateMagicBulletHit", None)
-    if callable(_ctf_native_calc):
-        _ctf_native_attempts.extend((
-            (_ctf_native_calc, (target,)),
-            (_ctf_native_calc, (camera_pos, aim_point)),
-            (_ctf_native_calc, (target, camera_pos, aim_point)),
-        ))
-
-    for _ctf_native_func, _ctf_native_args in _ctf_native_attempts:
-        try:
-            _ctf_native_result = _ctf_native_func(*_ctf_native_args)
-        except TypeError:
-            continue
-        except Exception as _ctf_native_exc:
-            _ctf_native_error = repr(_ctf_native_exc)[:120]
-            if state.get("hit_oracle_last_error") != _ctf_native_error:
-                state["hit_oracle_last_error"] = _ctf_native_error
-                state["hit_oracle_errors"] = state.get("hit_oracle_errors", 0) + 1
-            continue
-        _ctf_native_parsed = _ctf_native_hit_oracle_result(
-            _ctf_native_result, target_key, target
-        )
-        if _ctf_native_parsed is not None:
-            state["hit_oracle_known"] = state.get("hit_oracle_known", 0) + 1
-            if _ctf_native_parsed:
-                state["hit_oracle_positive"] = state.get("hit_oracle_positive", 0) + 1
-            else:
-                state["hit_oracle_negative"] = state.get("hit_oracle_negative", 0) + 1
-            _ctf_native_cache[target_key] = (_ctf_native_now_tick, True, bool(_ctf_native_parsed))
-            return True, bool(_ctf_native_parsed)
-
-    _ctf_native_cache[target_key] = (_ctf_native_now_tick, False, False)
-    return False, False
-
-
-def _ctf_native_visible(state, key, entity, local_player, camera_pos):
-    """Fuse engine-render, hit-oracle and physics signals for strict target selection."""
-    _ctf_native_physics = _ctf_native_physics_visible(state, key, entity, camera_pos)
-    _ctf_native_render_known, _ctf_native_render = _ctf_native_render_visible(state, key, entity)
-    _ctf_native_aim_point = state.get("visibility_aim_points", {}).get(key)
-    _ctf_native_hit_known, _ctf_native_hit = _ctf_native_authoritative_hit_visible(
-        state, local_player, key, entity, camera_pos, _ctf_native_aim_point
-    )
-
-    if _ctf_native_render_known and not _ctf_native_render:
-        state["visibility_render_veto"] = state.get("visibility_render_veto", 0) + 1
-        return False
-    if (
-        _ctf_native_hit_known and
-        not _ctf_native_hit and
-        bool(state.get("hit_oracle_negative_trusted", False))
-    ):
-        state["visibility_hit_veto"] = state.get("visibility_hit_veto", 0) + 1
-        return False
-    if _ctf_native_physics:
-        return True
-    # Accept a non-physics result only when both stronger sources agree.  This
-    # handles props whose physics mask differs from the rendered/shootable mesh
-    # without allowing a single stale render flag to re-enable wall locks.
-    if _ctf_native_render_known and _ctf_native_render and _ctf_native_hit_known and _ctf_native_hit:
-        state["visibility_strong_override"] = state.get("visibility_strong_override", 0) + 1
-        return True
     return False
 
 
@@ -1294,11 +1011,7 @@ def _ctf_native_write_snapshot(state):
             _ctf_native_is_robot,
         )
         _ctf_native_is_visible = _ctf_native_visible(
-            state,
-            _ctf_native_key,
-            _ctf_native_target,
-            _ctf_native_player,
-            _ctf_native_frame.Position,
+            state, _ctf_native_key, _ctf_native_target, _ctf_native_frame.Position
         )
         if _ctf_native_is_visible:
             _ctf_native_head = state.get("visibility_aim_points", {}).get(
@@ -1442,7 +1155,7 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
         _ctf_native_write_snapshot(_ctf_native_state)
         if _ctf_native_state["tick"] == 1 or _ctf_native_state["tick"] % 240 == 0:
             _ctf_native_log(
-                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} render_veto={} hit_veto={} strong_override={} render_hits={} hit_pos={}".format(
+                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f}".format(
                     _ctf_native_state["tick"],
                     _ctf_native_state.get("last_count", 0),
                     _ctf_native_state.get("detected_players", 0),
@@ -1461,11 +1174,6 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
                     _ctf_native_state.get("last_robot_targets", 0),
                     _ctf_native_state.get("weapon_item_id", 0),
                     _ctf_native_state.get("projectile_speed", 0.0),
-                    _ctf_native_state.get("visibility_render_veto", 0),
-                    _ctf_native_state.get("visibility_hit_veto", 0),
-                    _ctf_native_state.get("visibility_strong_override", 0),
-                    _ctf_native_state.get("render_visible_hits", 0),
-                    _ctf_native_state.get("hit_oracle_positive", 0),
                 )
             )
     except Exception:
@@ -1493,23 +1201,7 @@ def _ctf_native_install():
         "head_models": {},
         "physics_space": None,
         "visibility_cache": {},
-        "visibility_aim_points": {},
-        "render_visibility_cache": {},
-        "render_last_times": {},
-        "render_last_seen_ticks": {},
-        "hit_visibility_cache": {},
         "visible_targets": 0,
-        "visibility_render_veto": 0,
-        "visibility_hit_veto": 0,
-        "visibility_strong_override": 0,
-        "render_visible_hits": 0,
-        "render_visible_veto": 0,
-        "render_weak_visible_hits": 0,
-        "hit_oracle_known": 0,
-        "hit_oracle_positive": 0,
-        "hit_oracle_negative": 0,
-        "hit_oracle_errors": 0,
-        "hit_oracle_negative_trusted": False,
         "detected_players": 0,
         "detected_robots": 0,
         "max_target_distance": _ctf_native_default_max_distance,
