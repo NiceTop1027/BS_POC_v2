@@ -21,7 +21,6 @@ _ctf_native_snapshot_temp_path = _ctf_native_snapshot_path + ".tmp"
 _ctf_native_log_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_esp.log")
 _ctf_native_config_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_esp_config.txt")
 _ctf_native_aim_trigger_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_aim_trigger.txt")
-_ctf_native_fire_trigger_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_fire_trigger.txt")
 _ctf_native_default_max_distance = 800.0
 _ctf_native_aim_bones = (
     "biped Head",
@@ -31,7 +30,6 @@ _ctf_native_aim_bones = (
     "biped Spine",
     "biped Pelvis",
 )
-_ctf_native_vk_lbutton = 0x01
 _ctf_native_vk_rbutton = 0x02
 _ctf_native_user32 = None
 # The host calls the timer close to 60 Hz.  A 1/60 throttle can reject callbacks
@@ -173,7 +171,6 @@ def _ctf_native_max_target_distance(state):
     _ctf_native_native_aim = bool(state.get("native_aim_enabled", False))
     _ctf_native_aim_fov_px = float(state.get("aim_fov_px", 0.0))
     _ctf_native_visible_only = bool(state.get("visible_only", True))
-    _ctf_native_no_recoil = bool(state.get("no_recoil_enabled", False))
     try:
         with open(_ctf_native_config_path, "r", encoding="ascii") as _ctf_native_handle:
             for _ctf_native_line in _ctf_native_handle:
@@ -194,8 +191,6 @@ def _ctf_native_max_target_distance(state):
                             _ctf_native_aim_fov_px = _ctf_native_candidate
                     elif _ctf_native_key == "visible_only":
                         _ctf_native_visible_only = _ctf_native_raw not in ("0", "false", "False")
-                    elif _ctf_native_key == "no_recoil":
-                        _ctf_native_no_recoil = _ctf_native_raw not in ("0", "false", "False")
                 except Exception:
                     pass
     except Exception:
@@ -205,7 +200,6 @@ def _ctf_native_max_target_distance(state):
     state["native_aim_enabled"] = _ctf_native_native_aim
     state["aim_fov_px"] = max(0.0, min(1000.0, _ctf_native_aim_fov_px))
     state["visible_only"] = _ctf_native_visible_only
-    state["no_recoil_enabled"] = _ctf_native_no_recoil
     return state["max_target_distance"]
 
 
@@ -218,10 +212,6 @@ def _ctf_native_key_down(vk_code):
         return bool(_ctf_native_user32.GetAsyncKeyState(vk_code) & 0x8000)
     except Exception:
         return False
-
-
-def _ctf_native_lmb_down():
-    return _ctf_native_key_down(_ctf_native_vk_lbutton)
 
 
 def _ctf_native_rmb_down():
@@ -237,18 +227,6 @@ def _ctf_native_external_aim_down(state):
         return _ctf_native_down
     except Exception:
         state["native_aim_external_down"] = 0
-        return False
-
-
-def _ctf_native_external_fire_down(state):
-    try:
-        with open(_ctf_native_fire_trigger_path, "r", encoding="ascii") as _ctf_native_handle:
-            _ctf_native_value = _ctf_native_handle.read(1)
-        _ctf_native_down = _ctf_native_value == "1"
-        state["no_recoil_external_fire_down"] = int(_ctf_native_down)
-        return _ctf_native_down
-    except Exception:
-        state["no_recoil_external_fire_down"] = 0
         return False
 
 
@@ -438,112 +416,6 @@ def _ctf_native_apply_native_aim(state, camera, frame, camera_pos, screen, rows)
         if state.get("native_aim_last_error") != _ctf_native_error:
             state["native_aim_last_error"] = _ctf_native_error
             _ctf_native_log("NATIVE_AIM_EXC {}".format(_ctf_native_error))
-        return frame
-
-
-def _ctf_native_normalize_angle(angle):
-    try:
-        return (float(angle) + _ctf_native_math.pi) % (2.0 * _ctf_native_math.pi) - _ctf_native_math.pi
-    except Exception:
-        return 0.0
-
-
-def _ctf_native_frame_angles(frame):
-    try:
-        _ctf_native_yaw = float(frame.Yaw)
-        _ctf_native_pitch = float(frame.Pitch)
-        _ctf_native_roll = float(frame.Roll)
-        if not (
-            _ctf_native_math.isfinite(_ctf_native_yaw)
-            and _ctf_native_math.isfinite(_ctf_native_pitch)
-            and _ctf_native_math.isfinite(_ctf_native_roll)
-        ):
-            return None
-        return _ctf_native_yaw, _ctf_native_pitch, _ctf_native_roll
-    except Exception:
-        return None
-
-
-def _ctf_native_apply_no_recoil(state, camera, frame):
-    if not state.get("no_recoil_enabled", False):
-        state["no_recoil_fire_down"] = 0
-        state["no_recoil_anchor"] = None
-        state["no_recoil_last_ready_anchor"] = None
-        return frame
-
-    _ctf_native_angles = _ctf_native_frame_angles(frame)
-    if _ctf_native_angles is None:
-        state["no_recoil_anchor"] = None
-        return frame
-
-    _ctf_native_firing = _ctf_native_lmb_down() or _ctf_native_external_fire_down(state)
-    state["no_recoil_fire_down"] = int(_ctf_native_firing)
-    if not _ctf_native_firing:
-        state["no_recoil_anchor"] = _ctf_native_angles
-        state["no_recoil_last_ready_anchor"] = _ctf_native_angles
-        state["no_recoil_started"] = 0
-        return frame
-
-    _ctf_native_anchor = state.get("no_recoil_anchor") or state.get("no_recoil_last_ready_anchor")
-    if not _ctf_native_anchor or len(_ctf_native_anchor) < 3:
-        state["no_recoil_anchor"] = _ctf_native_angles
-        state["no_recoil_last_ready_anchor"] = _ctf_native_angles
-        state["no_recoil_started"] = 1
-        return frame
-
-    try:
-        _ctf_native_apply_frame = camera.CaptureFrame()
-        _ctf_native_current = _ctf_native_frame_angles(_ctf_native_apply_frame)
-        if _ctf_native_current is None:
-            return frame
-
-        _ctf_native_anchor_yaw = float(_ctf_native_anchor[0])
-        _ctf_native_anchor_pitch = float(_ctf_native_anchor[1])
-        _ctf_native_anchor_roll = float(_ctf_native_anchor[2])
-        _ctf_native_current_yaw, _ctf_native_current_pitch, _ctf_native_current_roll = _ctf_native_current
-
-        _ctf_native_yaw_delta = _ctf_native_normalize_angle(
-            _ctf_native_current_yaw - _ctf_native_anchor_yaw
-        )
-        _ctf_native_new_yaw = _ctf_native_current_yaw
-        _ctf_native_new_pitch = max(-1.55, min(1.55, _ctf_native_anchor_pitch))
-        _ctf_native_new_roll = _ctf_native_anchor_roll
-
-        # Vertical recoil can report either sign depending on the current camera
-        # transform, so hard-lock pitch during fire instead of relying on a sign
-        # heuristic.  Yaw only locks for small sway; larger movement is treated
-        # as intentional tracking and becomes the new yaw anchor.
-        if abs(_ctf_native_yaw_delta) <= 0.050:
-            _ctf_native_new_yaw = _ctf_native_anchor_yaw
-        else:
-            _ctf_native_anchor_yaw = _ctf_native_current_yaw
-
-        state["no_recoil_anchor"] = (
-            _ctf_native_anchor_yaw,
-            _ctf_native_anchor_pitch,
-            _ctf_native_anchor_roll,
-        )
-        state["no_recoil_started"] = 1
-
-        _ctf_native_apply_frame.Yaw = _ctf_native_new_yaw
-        _ctf_native_apply_frame.Pitch = _ctf_native_new_pitch
-        try:
-            _ctf_native_apply_frame.Roll = _ctf_native_new_roll
-        except Exception:
-            pass
-        for _ctf_native_attr, _ctf_native_value in (("InterpolateMode", 0), ("Time", 0.0)):
-            try:
-                setattr(_ctf_native_apply_frame, _ctf_native_attr, _ctf_native_value)
-            except Exception:
-                pass
-        camera.ApplyFrame(_ctf_native_apply_frame)
-        state["no_recoil_applied"] = state.get("no_recoil_applied", 0) + 1
-        return camera.CaptureFrame()
-    except Exception as _ctf_native_exc:
-        _ctf_native_error = repr(_ctf_native_exc)[:160]
-        if state.get("no_recoil_last_error") != _ctf_native_error:
-            state["no_recoil_last_error"] = _ctf_native_error
-            _ctf_native_log("NO_RECOIL_EXC {}".format(_ctf_native_error))
         return frame
 
 
@@ -1272,9 +1144,6 @@ def _ctf_native_write_snapshot(state):
         else:
             _ctf_native_detected_players += 1
 
-    _ctf_native_frame = _ctf_native_apply_no_recoil(state, _ctf_native_camera, _ctf_native_frame)
-    _ctf_native_camera_pos = _ctf_native_vec3(_ctf_native_frame.Position) or _ctf_native_camera_pos
-
     _ctf_native_header = (
         "ESP1 {:.6f} {} {} {:.6f} {:.6f} {:.6f} {:.9f} {:.9f} {:.9f} {:.6f} "
         "{:.6f} {:.6f} {:.6f} {}\n"
@@ -1387,7 +1256,7 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
         _ctf_native_write_snapshot(_ctf_native_state)
         if _ctf_native_state["tick"] == 1 or _ctf_native_state["tick"] % 240 == 0:
             _ctf_native_log(
-                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} trigger={} external={} seen={} miss={} applied={} lock={} no_recoil={} fire={} fire_external={} recoil_applied={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
+                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
                     _ctf_native_state["tick"],
                     _ctf_native_state.get("last_count", 0),
                     _ctf_native_state.get("detected_players", 0),
@@ -1401,10 +1270,6 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
                     _ctf_native_state.get("native_aim_candidate_miss", 0),
                     _ctf_native_state.get("native_aim_applied", 0),
                     _ctf_native_state.get("native_aim_lock_key", None),
-                    int(bool(_ctf_native_state.get("no_recoil_enabled", False))),
-                    _ctf_native_state.get("no_recoil_fire_down", 0),
-                    _ctf_native_state.get("no_recoil_external_fire_down", 0),
-                    _ctf_native_state.get("no_recoil_applied", 0),
                     int(bool(_ctf_native_state.get("native_apply_frame_ok", False))),
                     _ctf_native_state.get("last_player_targets", 0),
                     _ctf_native_state.get("last_robot_targets", 0),
@@ -1453,14 +1318,6 @@ def _ctf_native_install():
         "native_aim_trigger_seen": 0,
         "native_aim_candidate_miss": 0,
         "native_aim_lock_key": None,
-        "no_recoil_enabled": False,
-        "no_recoil_fire_down": 0,
-        "no_recoil_external_fire_down": 0,
-        "no_recoil_anchor": None,
-        "no_recoil_last_ready_anchor": None,
-        "no_recoil_started": 0,
-        "no_recoil_applied": 0,
-        "no_recoil_last_error": "",
         "aim_fov_px": 0.0,
         "visible_only": True,
         "native_apply_frame_ok": False,
@@ -1470,7 +1327,6 @@ def _ctf_native_install():
         "culled_targets": 0,
     }
     setattr(_ctf_native_builtins, _ctf_native_state_name, _ctf_native_state)
-    _ctf_native_probe_apply_frame(_ctf_native_state)
     _ctf_native_tick()
     _ctf_native_players, _ctf_native_robots = _ctf_native_entities()
     _ctf_native_owner = _ctf_native_timer_owner(_ctf_native_players, _ctf_native_robots)

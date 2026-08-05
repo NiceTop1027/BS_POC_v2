@@ -86,10 +86,6 @@ constexpr double kAimCalibrationCooldownSeconds = 0.06;
 constexpr double kAimSyntheticEchoWindowSeconds = 0.10;
 constexpr LONG kAimBootstrapRawMouseDelta = 4;
 constexpr double kAimBootstrapScaleLimitRadians = 0.020;
-constexpr double kNoRecoilDeadzoneRadians = 0.00018;
-constexpr double kNoRecoilMaxPitchCorrectionRadians = 0.18;
-constexpr LONG kNoRecoilMaxRawStep = 180;
-constexpr double kNoRecoilMinInputIntervalSeconds = 0.006;
 constexpr double kScopedFovThresholdDegrees = 50.0;
 constexpr double kScopedMovementInputLeadSeconds = 0.008;
 constexpr double kScopedMovementMinSpeedMetersPerSecond = 0.75;
@@ -115,7 +111,6 @@ constexpr int kControlFovVisible = 1006;
 constexpr int kControlFov = 1007;
 constexpr int kControlTargetRange = 1008;
 constexpr int kControlExit = 1009;
-constexpr int kControlNoRecoil = 1010;
 constexpr int kResourceRemotePyRun = 101;
 constexpr int kResourceSnapshotCode = 102;
 
@@ -217,7 +212,6 @@ HWND g_tracerCheckbox = nullptr;
 HWND g_aimCheckbox = nullptr;
 HWND g_visibilityCheckbox = nullptr;
 HWND g_leadCheckbox = nullptr;
-HWND g_noRecoilCheckbox = nullptr;
 HWND g_fovVisibleCheckbox = nullptr;
 HWND g_fovSlider = nullptr;
 HWND g_fovLabel = nullptr;
@@ -240,7 +234,6 @@ std::wstring g_titleNeedle = L"BloodStrike";
 std::wstring g_statePath;
 std::wstring g_configPath;
 std::wstring g_aimTriggerPath;
-std::wstring g_fireTriggerPath;
 std::wstring g_settingsPath;
 int g_durationSeconds = 0;
 DWORD g_targetPid = 0;
@@ -256,7 +249,6 @@ bool g_tracersEnabled = true;
 bool g_aimEnabled = true;
 bool g_visibilityEnabled = true;
 bool g_predictionEnabled = true;
-bool g_noRecoilEnabled = false;
 bool g_fovVisible = true;
 bool g_autoInject = true;
 bool g_controlsHotkeyRegistered = false;
@@ -283,16 +275,6 @@ double g_lastAimSnapshotTimestamp = 0.0;
 double g_lastAimTargetSwitchTime = 0.0;
 double g_lastAimTriggerWriteTime = 0.0;
 bool g_lastAimTriggerState = false;
-double g_noRecoilReadyPitch = 0.0;
-double g_noRecoilAnchorPitch = 0.0;
-double g_noRecoilLastReadyTime = 0.0;
-double g_lastNoRecoilInputTime = 0.0;
-double g_lastNoRecoilSnapshotTimestamp = 0.0;
-double g_noRecoilResidualRawY = 0.0;
-double g_lastFireTriggerWriteTime = 0.0;
-bool g_noRecoilReadyValid = false;
-bool g_noRecoilWasFiring = false;
-bool g_lastFireTriggerState = false;
 std::wstring g_runtimeRootOverride;
 std::vector<BoxSmoothing> g_boxSmoothing;
 
@@ -485,7 +467,6 @@ void ParseCommandLine() {
     }
     g_configPath = RuntimeRoot() + L"\\ctf_native_esp_config.txt";
     g_aimTriggerPath = RuntimeRoot() + L"\\ctf_native_aim_trigger.txt";
-    g_fireTriggerPath = RuntimeRoot() + L"\\ctf_native_fire_trigger.txt";
     g_settingsPath = RuntimeRoot() + L"\\ctf_overlay_settings.ini";
 }
 
@@ -612,8 +593,6 @@ bool LoadOverlaySettings() {
             g_predictionEnabled = ParseBoolSetting(value, g_predictionEnabled);
         } else if (key == "fov_visible") {
             g_fovVisible = ParseBoolSetting(value, g_fovVisible);
-        } else if (key == "no_recoil") {
-            g_noRecoilEnabled = ParseBoolSetting(value, g_noRecoilEnabled);
         } else if (key == "aim_fov_px" && ParseDoubleSetting(value, &parsed)) {
             g_aimFovRadiusPixels = std::clamp(parsed, 70.0, 320.0);
         } else if (key == "max_distance" && ParseDoubleSetting(value, &parsed)) {
@@ -633,7 +612,6 @@ bool SaveOverlaySettings() {
            << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n"
            << "prediction=" << (g_predictionEnabled ? 1 : 0) << "\n"
            << "fov_visible=" << (g_fovVisible ? 1 : 0) << "\n"
-           << "no_recoil=" << (g_noRecoilEnabled ? 1 : 0) << "\n"
            << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
            << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n";
     return WriteTextFileAtomically(g_settingsPath, stream.str());
@@ -644,8 +622,7 @@ bool WriteExporterConfig() {
     stream << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n"
            << "native_aim=" << (g_aimEnabled ? 1 : 0) << "\n"
            << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
-           << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n"
-           << "no_recoil=" << (g_noRecoilEnabled ? 1 : 0) << "\n";
+           << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n";
     return WriteTextFileAtomically(g_configPath, stream.str());
 }
 
@@ -680,23 +657,6 @@ bool WriteAimTriggerState(bool active, bool force = false) {
     }
     g_lastAimTriggerState = active;
     g_lastAimTriggerWriteTime = now;
-    return true;
-}
-
-bool WriteFireTriggerState(bool active, bool force = false) {
-    if (g_fireTriggerPath.empty()) {
-        return false;
-    }
-    const double now = UnixNow();
-    if (!force && active == g_lastFireTriggerState && now - g_lastFireTriggerWriteTime < 0.025) {
-        return true;
-    }
-    const std::string contents = active ? "1\n" : "0\n";
-    if (!WriteTextFileAtomically(g_fireTriggerPath, contents)) {
-        return false;
-    }
-    g_lastFireTriggerState = active;
-    g_lastFireTriggerWriteTime = now;
     return true;
 }
 
@@ -2147,9 +2107,6 @@ void SyncControlWindow() {
     if (g_leadCheckbox) {
         SendMessageW(g_leadCheckbox, BM_SETCHECK, g_predictionEnabled ? BST_CHECKED : BST_UNCHECKED, 0);
     }
-    if (g_noRecoilCheckbox) {
-        SendMessageW(g_noRecoilCheckbox, BM_SETCHECK, g_noRecoilEnabled ? BST_CHECKED : BST_UNCHECKED, 0);
-    }
     if (g_fovVisibleCheckbox) {
         SendMessageW(g_fovVisibleCheckbox, BM_SETCHECK, g_fovVisible ? BST_CHECKED : BST_UNCHECKED, 0);
     }
@@ -2171,7 +2128,7 @@ void PositionControlWindow() {
         return;
     }
     constexpr int kWidth = 306;
-    constexpr int kHeight = 496;
+    constexpr int kHeight = 468;
     RECT game = {};
     int left = 24;
     int top = 24;
@@ -2229,35 +2186,31 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_leadCheckbox = CreateWindowExW(0, L"BUTTON", L"Distance / velocity lead", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
                                                16, 160, 230, 24, hwnd,
                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlLead)), instance, nullptr);
-            g_noRecoilCheckbox = CreateWindowExW(0, L"BUTTON", L"No recoil (hold LMB)", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-                                                  16, 184, 230, 24, hwnd,
-                                                  reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlNoRecoil)), instance, nullptr);
             g_fovVisibleCheckbox = CreateWindowExW(0, L"BUTTON", L"Show aim FOV", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-                                                     16, 208, 220, 24, hwnd,
+                                                     16, 184, 220, 24, hwnd,
                                                      reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFovVisible)), instance, nullptr);
             HWND fovCaption = CreateWindowExW(0, L"STATIC", L"Aim FOV", WS_CHILD | WS_VISIBLE,
-                                               16, 238, 100, 20, hwnd, nullptr, instance, nullptr);
+                                               16, 214, 100, 20, hwnd, nullptr, instance, nullptr);
             g_fovSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                            16, 256, 266, 28, hwnd,
+                                            16, 232, 266, 28, hwnd,
                                             reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFov)), instance, nullptr);
             g_fovLabel = CreateWindowExW(0, L"STATIC", L"FOV radius", WS_CHILD | WS_VISIBLE,
-                                          16, 290, 170, 20, hwnd, nullptr, instance, nullptr);
+                                          16, 266, 170, 20, hwnd, nullptr, instance, nullptr);
             HWND rangeCaption = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                 16, 314, 160, 20, hwnd, nullptr, instance, nullptr);
+                                                 16, 290, 160, 20, hwnd, nullptr, instance, nullptr);
             g_targetRangeSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                                    16, 332, 266, 28, hwnd,
+                                                    16, 308, 266, 28, hwnd,
                                                     reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlTargetRange)), instance, nullptr);
             g_targetRangeLabel = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                  16, 366, 190, 20, hwnd, nullptr, instance, nullptr);
+                                                  16, 342, 190, 20, hwnd, nullptr, instance, nullptr);
             g_liveDiagnosticsLabel = CreateWindowExW(0, L"STATIC", L"Live: waiting for exporter",
                                                        WS_CHILD | WS_VISIBLE,
-                                                       16, 390, 266, 36, hwnd, nullptr, instance, nullptr);
+                                                       16, 366, 266, 36, hwnd, nullptr, instance, nullptr);
             HWND exitButton = CreateWindowExW(0, L"BUTTON", L"Exit tool", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                                               190, 438, 92, 28, hwnd,
+                                               190, 410, 92, 28, hwnd,
                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlExit)), instance, nullptr);
             for (HWND control : {title, g_weaponLabel, g_espCheckbox, g_tracerCheckbox, g_aimCheckbox,
-                                  g_visibilityCheckbox, g_leadCheckbox, g_noRecoilCheckbox,
-                                  g_fovVisibleCheckbox,
+                                  g_visibilityCheckbox, g_leadCheckbox, g_fovVisibleCheckbox,
                                   fovCaption, g_fovSlider, g_fovLabel, rangeCaption, g_targetRangeSlider,
                                   g_targetRangeLabel, g_liveDiagnosticsLabel, exitButton}) {
                 ApplyControlFont(control);
@@ -2286,9 +2239,6 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
                     break;
                 case kControlLead:
                     g_predictionEnabled = SendMessageW(g_leadCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
-                    break;
-                case kControlNoRecoil:
-                    g_noRecoilEnabled = SendMessageW(g_noRecoilCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
                     break;
                 case kControlFovVisible:
                     g_fovVisible = SendMessageW(g_fovVisibleCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
@@ -2335,7 +2285,6 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_aimCheckbox = nullptr;
             g_visibilityCheckbox = nullptr;
             g_leadCheckbox = nullptr;
-            g_noRecoilCheckbox = nullptr;
             g_fovVisibleCheckbox = nullptr;
             g_fovSlider = nullptr;
             g_fovLabel = nullptr;
@@ -2350,107 +2299,6 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             return 0;
         default:
             return DefWindowProcW(hwnd, message, wparam, lparam);
-    }
-}
-
-void ResetNoRecoilState() {
-    g_noRecoilWasFiring = false;
-    g_lastNoRecoilInputTime = 0.0;
-    g_lastNoRecoilSnapshotTimestamp = 0.0;
-    g_noRecoilResidualRawY = 0.0;
-}
-
-void RememberNoRecoilReadyPitch(const Snapshot& snapshot) {
-    if (!snapshot.valid || !std::isfinite(snapshot.timestamp) ||
-        UnixNow() - snapshot.timestamp > 0.20 || !std::isfinite(snapshot.pitch)) {
-        return;
-    }
-    g_noRecoilReadyPitch = snapshot.pitch;
-    g_noRecoilLastReadyTime = UnixNow();
-    g_noRecoilReadyValid = true;
-}
-
-void ApplyNoRecoilAssist(const Snapshot& snapshot) {
-    const bool foreground = GetForegroundWindow() == g_target;
-    const bool firing = g_noRecoilEnabled && foreground &&
-        (GetAsyncKeyState(VK_LBUTTON) & 0x8000) != 0;
-    WriteFireTriggerState(firing);
-
-    if (!g_noRecoilEnabled || !foreground || !firing) {
-        RememberNoRecoilReadyPitch(snapshot);
-        ResetNoRecoilState();
-        return;
-    }
-    if (!snapshot.valid || !std::isfinite(snapshot.timestamp) ||
-        UnixNow() - snapshot.timestamp > 0.14 || !std::isfinite(snapshot.pitch)) {
-        return;
-    }
-
-    if (!g_noRecoilWasFiring) {
-        if (g_noRecoilReadyValid && UnixNow() - g_noRecoilLastReadyTime <= 0.35) {
-            g_noRecoilAnchorPitch = g_noRecoilReadyPitch;
-        } else if (g_previousSnapshot.valid && std::isfinite(g_previousSnapshot.pitch) &&
-                   UnixNow() - g_previousSnapshot.timestamp <= 0.35) {
-            g_noRecoilAnchorPitch = g_previousSnapshot.pitch;
-        } else {
-            g_noRecoilAnchorPitch = snapshot.pitch;
-        }
-        g_noRecoilWasFiring = true;
-        g_lastNoRecoilSnapshotTimestamp = 0.0;
-        g_noRecoilResidualRawY = 0.0;
-    }
-
-    if (snapshot.timestamp <= g_lastNoRecoilSnapshotTimestamp + 0.000001 ||
-        UnixNow() - g_lastNoRecoilInputTime < kNoRecoilMinInputIntervalSeconds) {
-        return;
-    }
-
-    double pitchError = g_noRecoilAnchorPitch - snapshot.pitch;
-    if (!std::isfinite(pitchError)) {
-        return;
-    }
-    pitchError = std::clamp(
-        pitchError,
-        -kNoRecoilMaxPitchCorrectionRadians,
-        kNoRecoilMaxPitchCorrectionRadians);
-    if (std::abs(pitchError) <= kNoRecoilDeadzoneRadians) {
-        g_lastNoRecoilSnapshotTimestamp = snapshot.timestamp;
-        g_noRecoilResidualRawY = 0.0;
-        return;
-    }
-
-    const double fallbackScale = IsScopedFov(snapshot.fov)
-        ? kDefaultScopedRadiansPerRawMouse
-        : kDefaultHipRadiansPerRawMouse;
-    double pitchScale = CalibrationForFov(snapshot.fov).pitchRadiansPerRawMouse;
-    const double ratio = (std::abs(fallbackScale) > 1e-7)
-        ? std::abs(pitchScale / fallbackScale)
-        : 0.0;
-    if (!std::isfinite(pitchScale) || std::abs(pitchScale) < 1e-7 ||
-        pitchScale * fallbackScale <= 0.0 || ratio < 0.45 || ratio > 2.20) {
-        pitchScale = fallbackScale;
-    }
-
-    g_noRecoilResidualRawY += pitchError / pitchScale;
-    LONG deltaY = static_cast<LONG>(std::lround(g_noRecoilResidualRawY));
-    deltaY = std::clamp(deltaY, -kNoRecoilMaxRawStep, kNoRecoilMaxRawStep);
-    if (deltaY == 0) {
-        return;
-    }
-    g_noRecoilResidualRawY -= static_cast<double>(deltaY);
-
-    INPUT input = {};
-    input.type = INPUT_MOUSE;
-    input.mi.dy = deltaY;
-    input.mi.dwFlags = MOUSEEVENTF_MOVE | MOUSEEVENTF_MOVE_NOCOALESCE;
-    if (SendInput(1, &input, sizeof(input)) == 1) {
-        const double now = UnixNow();
-        g_lastNoRecoilInputTime = now;
-        g_lastNoRecoilSnapshotTimestamp = snapshot.timestamp;
-        g_calibrationBlockedUntil = now + kAimCalibrationCooldownSeconds;
-        g_rawMouseYSinceSnapshot = AddClampedRawMouse(g_rawMouseYSinceSnapshot, deltaY);
-        g_aimInputAwaitingY = AddClampedRawMouse(g_aimInputAwaitingY, deltaY);
-        g_aimInputAwaitingUntil = now + kAimSyntheticEchoWindowSeconds;
     }
 }
 
@@ -2903,13 +2751,11 @@ void TrackTarget(HWND hwnd) {
     RECT rect = {};
     if (!TargetClientRect(&rect)) {
         WriteAimTriggerState(false);
-        WriteFireTriggerState(false);
         ShowWindow(hwnd, SW_HIDE);
         return;
     }
     if (!IsOverlayContextActive()) {
         WriteAimTriggerState(false);
-        WriteFireTriggerState(false);
         ShowWindow(hwnd, SW_HIDE);
         return;
     }
@@ -2925,11 +2771,6 @@ void TrackTarget(HWND hwnd) {
         PersistOverlaySettings();
         SyncControlWindow();
     }
-    if ((GetAsyncKeyState(VK_F7) & 1) != 0) {
-        g_noRecoilEnabled = !g_noRecoilEnabled;
-        PersistOverlaySettings();
-        SyncControlWindow();
-    }
     if (!g_controlsHotkeyRegistered && (GetAsyncKeyState(VK_INSERT) & 1) != 0) {
         ToggleControlWindow();
     }
@@ -2938,11 +2779,8 @@ void TrackTarget(HWND hwnd) {
     if (SnapshotIsFresh()) {
         RECT client = {};
         GetClientRect(hwnd, &client);
-        ApplyNoRecoilAssist(AimControlSnapshot());
         ApplyAimAssist(AimControlSnapshot(), client);
         UpdateLiveDiagnostics();
-    } else {
-        WriteFireTriggerState(false);
     }
     InvalidateRect(hwnd, nullptr, FALSE);
 
@@ -3280,7 +3118,7 @@ bool CreateControlWindow(HINSTANCE instance) {
         controlClass.lpszClassName,
         L"CTF ESP controls",
         WS_POPUP | WS_CAPTION | WS_SYSMENU,
-        0, 0, 306, 496,
+        0, 0, 306, 468,
         nullptr, nullptr, instance, nullptr);
     if (!g_controlWindow) {
         return false;
@@ -3374,7 +3212,6 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int) {
     }
     PersistOverlaySettings();
     WriteAimTriggerState(false, true);
-    WriteFireTriggerState(false, true);
     HWND overlay = CreateWindowExW(
         WS_EX_LAYERED | WS_EX_TRANSPARENT | WS_EX_TOOLWINDOW | WS_EX_TOPMOST | WS_EX_NOACTIVATE,
         windowClass.lpszClassName, L"", WS_POPUP, rect.left, rect.top,
