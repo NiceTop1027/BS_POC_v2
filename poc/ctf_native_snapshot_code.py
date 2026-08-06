@@ -449,7 +449,7 @@ def _ctf_native_bounds(entity):
 
 
 def _ctf_native_head_position(state, key, entity, entity_pos):
-    """Return the current model head bone for aiming."""
+    """Return the current model head/upper-body point for posture-safe aiming."""
     _ctf_native_model = getattr(entity, "model", None)
     if _ctf_native_model is None:
         return None
@@ -465,24 +465,26 @@ def _ctf_native_head_position(state, key, entity, entity_pos):
     _ctf_native_call(_ctf_native_model, "MakeSureBones")
 
     _ctf_native_low, _ctf_native_high = _ctf_native_bounds(entity)
-    _ctf_native_head = _ctf_native_vec3(
-        _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", "biped Head")
-    )
-    if _ctf_native_head is None or not all(_ctf_native_math.isfinite(value) for value in _ctf_native_head):
-        return None
-    if not _ctf_native_point_in_bounds(_ctf_native_head, _ctf_native_low, _ctf_native_high):
-        return None
-    # The head can legitimately be below the entity origin while crouching or
-    # sliding.  Only reject clearly detached stale bones.
-    if entity_pos is not None:
-        _ctf_native_offset = (
-            _ctf_native_head[0] - entity_pos[0],
-            _ctf_native_head[1] - entity_pos[1],
-            _ctf_native_head[2] - entity_pos[2],
+    for _ctf_native_bone in ("biped Head", "biped Neck", "biped Spine2"):
+        _ctf_native_head = _ctf_native_vec3(
+            _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", _ctf_native_bone)
         )
-        if _ctf_native_math.sqrt(_ctf_native_dot(_ctf_native_offset, _ctf_native_offset)) > 8.0:
-            return None
-    return _ctf_native_head
+        if _ctf_native_head is None or not all(_ctf_native_math.isfinite(value) for value in _ctf_native_head):
+            continue
+        if not _ctf_native_point_in_bounds(_ctf_native_head, _ctf_native_low, _ctf_native_high):
+            continue
+        # The head can legitimately be below the entity origin while crouching
+        # or sliding.  Only reject clearly detached stale bones.
+        if entity_pos is not None:
+            _ctf_native_offset = (
+                _ctf_native_head[0] - entity_pos[0],
+                _ctf_native_head[1] - entity_pos[1],
+                _ctf_native_head[2] - entity_pos[2],
+            )
+            if _ctf_native_math.sqrt(_ctf_native_dot(_ctf_native_offset, _ctf_native_offset)) > 8.0:
+                continue
+        return _ctf_native_head
+    return None
 
 
 def _ctf_native_active_space(state):
@@ -1112,8 +1114,10 @@ def _ctf_native_write_snapshot(state):
         _ctf_native_is_visible = _ctf_native_visible(
             state, _ctf_native_key, _ctf_native_target, _ctf_native_frame.Position
         )
-        # Visibility may probe neck/spine/fallback points to avoid losing a
-        # crouched target, but aim export must stay on the real head bone.
+        if _ctf_native_is_visible:
+            _ctf_native_head = state.get("visibility_aim_points", {}).get(
+                _ctf_native_key, _ctf_native_head
+            )
         _ctf_native_visible_count += int(_ctf_native_is_visible)
         _ctf_native_hp = _ctf_native_metric(_ctf_native_target, ("hp", "server_hp", "client_hp", "_hp"), 0.0)
         _ctf_native_maxhp = _ctf_native_metric(_ctf_native_target, ("cur_maxhp", "maxhp", "base_maxhp", "server_maxhp"), max(1.0, _ctf_native_hp))
