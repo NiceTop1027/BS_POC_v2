@@ -29,7 +29,7 @@ if (-not $Elevated) {
     return
 }
 
-Get-Process -Name BloodStrikeCTFESP -ErrorAction SilentlyContinue |
+Get-Process -Name 'BloodStrikeCTFESP*' -ErrorAction SilentlyContinue |
     Stop-Process -Force -ErrorAction SilentlyContinue
 
 Start-Process -WindowStyle Hidden -FilePath $exe -WorkingDirectory $root -ArgumentList @(
