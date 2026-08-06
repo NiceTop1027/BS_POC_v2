@@ -45,13 +45,13 @@ constexpr COLORREF kTransparentColor = RGB(0, 0, 0);
 constexpr double kDefaultAimFovHeightFraction = 0.30;
 constexpr double kAimWorldHeadHeightFraction = 0.84;
 // Stop issuing integer mouse corrections for sub-pixel bone/camera noise.
-constexpr double kAimDeadzonePixels = 1.25;
-constexpr double kAimFineControlWindowPixels = 10.0;
-constexpr double kAimFineGain = 0.92;
-constexpr double kAimCoarseGain = 1.28;
+constexpr double kAimDeadzonePixels = 2.0;
+constexpr double kAimFineControlWindowPixels = 18.0;
+constexpr double kAimFineGain = 0.64;
+constexpr double kAimCoarseGain = 0.96;
 // The exporter is sampled at 120 Hz.  One command per fresh sample prevents
 // duplicate corrections from fighting each other between camera frames.
-constexpr double kAimMinInputIntervalSeconds = 0.0085;
+constexpr double kAimMinInputIntervalSeconds = 0.0105;
 constexpr double kAimMaxRelativeVelocity = 14.0;
 constexpr double kAimSnapshotLeadSeconds = 0.025;
 constexpr double kAimMaxSnapshotLeadSeconds = 0.085;
@@ -75,13 +75,13 @@ constexpr double kAimLockVisibilityGraceSeconds = 0.18;
 constexpr double kAimLockedMaxFovMultiplier = 1.65;
 constexpr double kAimMaxCommandFovMultiplier = 2.10;
 constexpr LONG kAimMaxCalibratedMouseDelta = 4000;
-constexpr LONG kAimMaxHipMouseStep = 1450;
-constexpr LONG kAimMaxScopedMouseStep = 860;
+constexpr LONG kAimMaxHipMouseStep = 720;
+constexpr LONG kAimMaxScopedMouseStep = 420;
 constexpr double kAimVerticalGain = 0.92;
 constexpr double kAimScopedVerticalGain = 0.72;
 constexpr double kAimVerticalDeadzonePixels = 1.25;
-constexpr LONG kAimMaxHipVerticalStep = 920;
-constexpr LONG kAimMaxScopedVerticalStep = 520;
+constexpr LONG kAimMaxHipVerticalStep = 420;
+constexpr LONG kAimMaxScopedVerticalStep = 260;
 constexpr double kDefaultHipRadiansPerRawMouse = -0.00135;
 constexpr double kDefaultScopedRadiansPerRawMouse = -0.00055;
 constexpr double kAimCalibrationCooldownSeconds = 0.12;
@@ -90,9 +90,11 @@ constexpr LONG kAimBootstrapRawMouseDelta = 4;
 constexpr double kAimBootstrapScaleLimitRadians = 0.020;
 constexpr double kAimControlMaxPredictedCameraRadians = 0.22;
 constexpr double kAimJitterFuseSeconds = 0.16;
-constexpr LONG kAimJitterFuseRawDelta = 180;
-constexpr double kAimDynamicRawPerPixel = 8.0;
-constexpr LONG kAimDynamicRawFloor = 28;
+constexpr LONG kAimJitterFuseRawDelta = 70;
+constexpr double kAimJitterRecoverySeconds = 0.18;
+constexpr LONG kAimJitterRecoveryRawStep = 34;
+constexpr double kAimDynamicRawPerPixel = 3.4;
+constexpr LONG kAimDynamicRawFloor = 16;
 constexpr double kScopedFovThresholdDegrees = 50.0;
 constexpr double kScopedMovementInputLeadSeconds = 0.008;
 constexpr double kScopedMovementMinSpeedMetersPerSecond = 0.75;
@@ -285,6 +287,7 @@ bool g_lastAimTriggerState = false;
 LONG g_lastAimCommandX = 0;
 LONG g_lastAimCommandY = 0;
 double g_lastAimCommandTime = 0.0;
+double g_aimJitterRecoveryUntil = 0.0;
 std::wstring g_runtimeRootOverride;
 std::vector<BoxSmoothing> g_boxSmoothing;
 
@@ -1557,6 +1560,7 @@ void ClearAimLock() {
     g_lastAimCommandX = 0;
     g_lastAimCommandY = 0;
     g_lastAimCommandTime = 0.0;
+    g_aimJitterRecoveryUntil = 0.0;
 }
 
 Vec3 TargetHeadPoint(const Target& target) {
@@ -2332,6 +2336,7 @@ void ResetAimTransientInput() {
     g_aimCalibrationProbe = {};
     g_aimResidualRawX = 0.0;
     g_aimResidualRawY = 0.0;
+    g_aimJitterRecoveryUntil = 0.0;
 }
 
 bool AimCommandLooksUnstable(LONG deltaX, LONG deltaY, double now) {
@@ -2444,10 +2449,13 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         return;
     }
 
-    const LONG dynamicStepLimit = static_cast<LONG>(std::lround(std::clamp(
+    LONG dynamicStepLimit = static_cast<LONG>(std::lround(std::clamp(
         remainingDistance * kAimDynamicRawPerPixel + static_cast<double>(kAimDynamicRawFloor),
         static_cast<double>(kAimDynamicRawFloor),
         static_cast<double>(std::max(kAimMaxHipMouseStep, kAimMaxHipVerticalStep)))));
+    if (now < g_aimJitterRecoveryUntil) {
+        dynamicStepLimit = std::min(dynamicStepLimit, kAimJitterRecoveryRawStep);
+    }
     deltaX = std::clamp(deltaX, -dynamicStepLimit, dynamicStepLimit);
     deltaY = std::clamp(deltaY, -dynamicStepLimit, dynamicStepLimit);
     if (deltaX == 0 && deltaY == 0) {
@@ -2456,10 +2464,14 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         return;
     }
     if (AimCommandLooksUnstable(deltaX, deltaY, now)) {
-        ResetAimTransientInput();
-        g_lastAimInputTime = now;
-        RememberAimCommand(0, 0, now);
-        return;
+        g_aimJitterRecoveryUntil = now + kAimJitterRecoverySeconds;
+        deltaX = std::clamp(deltaX, -kAimJitterRecoveryRawStep, kAimJitterRecoveryRawStep);
+        deltaY = std::clamp(deltaY, -kAimJitterRecoveryRawStep, kAimJitterRecoveryRawStep);
+        if (deltaX == 0 && deltaY == 0) {
+            g_lastAimSnapshotTimestamp = snapshot.timestamp;
+            RememberAimCommand(0, 0, now);
+            return;
+        }
     }
 
     INPUT input = {};
