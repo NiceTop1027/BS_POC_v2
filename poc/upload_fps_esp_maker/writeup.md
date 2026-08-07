@@ -10,6 +10,8 @@ CTF 인스턴스의 엔티티 snapshot에서 플레이어와 봇의 월드 body 
 
 이 hitbox PoC는 aimbot이 아니다. 조준점, 마우스, 카메라를 보정하지 않고, 현재 쏜 ray가 피부 주변의 확장 hitbox를 지나가면 봇/플레이어에 대한 material `1001` combat hit 결과를 합성한다. 따라서 피부가 아닌 가까운 영역을 쏴도 피격 판정이 생기는 방식이다.
 
+hitbox 판정은 확장 AABB 관통만 보지 않는다. 박스 모서리나 대각선에서 스치는 탄이 빠지지 않도록 ray와 head/neck/spine/pelvis 및 상체 fallback point 사이의 최단거리도 함께 검사한다. `Hitbox scale`이 커질수록 이 near-hit capsule 반경도 같이 커진다.
+
 플레이어 대상은 봇보다 검증이 엄격할 수 있으므로, 확장 AABB 교차점 자체를 damage `hit_pos`로 보내지 않는다. 확장 AABB는 “근처를 쐈는지” eligibility 판정에만 쓰고, 실제 `ShootEntityResult.raycast_bone_res.Pos`와 damage `hit_pos`는 대상의 실제 bone 좌표로 보정한다. 또한 synthetic hit 직후 `DealWeaponDamageResult` payload의 `hit_dir` / `verify_shoot_dir`도 해당 bone 방향으로 맞춰 player 검증 payload가 일관되게 보이도록 했다.
 
 추가로 player 경로에서는 synthetic hit 생성 직후 `DealWeaponDamageResult`를 직접 호출한다. 이 호출은 원본 `SpellStrikeForRobot`/gun spell 흐름과 같은 `spell_result`, `weapon_id`, `weapon_guid`, `hit_part`, `hit_pos`, `hit_dir`, `hit_back`, `hit_penetrate`, `penetrate_materials`, `verify_start_pos`, `verify_camera_pos`, `verify_shoot_dir` payload를 사용한다. 즉 player도 단순 hit 표시가 아니라 damage/kill 처리 함수까지 타도록 한다.

@@ -597,6 +597,105 @@ def _ctf_native_ray_aabb_hit(start, direction, low, high, max_distance):
     )
 
 
+def _ctf_native_ray_point_near_hit(start, direction, point, max_distance, radius):
+    try:
+        _ctf_native_to_point = (
+            float(point[0]) - float(start[0]),
+            float(point[1]) - float(start[1]),
+            float(point[2]) - float(start[2]),
+        )
+        _ctf_native_t = _ctf_native_dot(_ctf_native_to_point, direction)
+        if _ctf_native_t < 0.0 or _ctf_native_t > float(max_distance):
+            return None
+        _ctf_native_closest = (
+            float(start[0]) + float(direction[0]) * _ctf_native_t,
+            float(start[1]) + float(direction[1]) * _ctf_native_t,
+            float(start[2]) + float(direction[2]) * _ctf_native_t,
+        )
+        _ctf_native_distance_to_ray = _ctf_native_distance(_ctf_native_closest, point)
+        if _ctf_native_distance_to_ray is None or _ctf_native_distance_to_ray > float(radius):
+            return None
+        return _ctf_native_t, _ctf_native_closest, _ctf_native_distance_to_ray
+    except Exception:
+        return None
+
+
+def _ctf_native_magic_near_points(target, low, high):
+    _ctf_native_points = []
+    try:
+        _ctf_native_center = (
+            (float(low[0]) + float(high[0])) * 0.5,
+            (float(low[1]) + float(high[1])) * 0.5,
+            (float(low[2]) + float(high[2])) * 0.5,
+        )
+        _ctf_native_height = max(0.1, float(high[1]) - float(low[1]))
+        _ctf_native_points.extend((
+            _ctf_native_center,
+            (_ctf_native_center[0], float(low[1]) + _ctf_native_height * 0.72, _ctf_native_center[2]),
+            (_ctf_native_center[0], float(low[1]) + _ctf_native_height * 0.88, _ctf_native_center[2]),
+            (_ctf_native_center[0], float(low[1]) + _ctf_native_height * 0.34, _ctf_native_center[2]),
+        ))
+    except Exception:
+        pass
+    _ctf_native_model = getattr(target, "model", None)
+    if _ctf_native_model is not None:
+        _ctf_native_call(_ctf_native_model, "MakeSureBones")
+        for _ctf_native_bone in _ctf_native_aim_bones:
+            _ctf_native_point = _ctf_native_vec3(
+                _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", _ctf_native_bone)
+            )
+            if _ctf_native_point is None:
+                continue
+            if not all(_ctf_native_math.isfinite(_ctf_native_value) for _ctf_native_value in _ctf_native_point):
+                continue
+            if _ctf_native_point_in_bounds(_ctf_native_point, low, high, padding=0.75):
+                _ctf_native_points.append(_ctf_native_point)
+    return _ctf_native_points
+
+
+def _ctf_native_magic_near_radius(low, high, scale):
+    try:
+        _ctf_native_scale = max(1.0, min(6.0, float(scale)))
+        _ctf_native_width = max(
+            abs(float(high[0]) - float(low[0])),
+            abs(float(high[2]) - float(low[2])),
+        )
+        return max(0.75, min(3.25, _ctf_native_width * 0.45 * _ctf_native_scale + 0.34 * _ctf_native_scale))
+    except Exception:
+        return max(0.75, min(3.25, float(scale) * 0.5))
+
+
+def _ctf_native_magic_ray_hit(state, target, start, direction, low, high, expanded_low, expanded_high, max_distance, scale):
+    _ctf_native_hit = _ctf_native_ray_aabb_hit(
+        start,
+        direction,
+        expanded_low,
+        expanded_high,
+        max_distance,
+    )
+    if _ctf_native_hit is not None:
+        return _ctf_native_hit[0], _ctf_native_hit[1], "box"
+
+    _ctf_native_radius = _ctf_native_magic_near_radius(low, high, scale)
+    _ctf_native_best = None
+    for _ctf_native_point in _ctf_native_magic_near_points(target, low, high):
+        _ctf_native_near = _ctf_native_ray_point_near_hit(
+            start,
+            direction,
+            _ctf_native_point,
+            max_distance,
+            _ctf_native_radius,
+        )
+        if _ctf_native_near is None:
+            continue
+        if _ctf_native_best is None or _ctf_native_near[0] < _ctf_native_best[0]:
+            _ctf_native_best = _ctf_native_near
+    if _ctf_native_best is not None:
+        state["magic_hitbox_near_hits"] = state.get("magic_hitbox_near_hits", 0) + 1
+        return _ctf_native_best[0], _ctf_native_best[1], "near"
+    return None
+
+
 def _ctf_native_magic_hit_part(hit_point, low, high):
     try:
         _ctf_native_height = max(0.001, float(high[1]) - float(low[1]))
@@ -1147,12 +1246,17 @@ def _ctf_native_make_magic_result(
         _ctf_native_expanded_low, _ctf_native_expanded_high = _ctf_native_expanded_bounds(
             _ctf_native_low, _ctf_native_high, _ctf_native_scale
         )
-        _ctf_native_hit = _ctf_native_ray_aabb_hit(
+        _ctf_native_hit = _ctf_native_magic_ray_hit(
+            state,
+            _ctf_native_target,
             _ctf_native_start,
             _ctf_native_dir,
+            _ctf_native_low,
+            _ctf_native_high,
             _ctf_native_expanded_low,
             _ctf_native_expanded_high,
             _ctf_native_effective_range,
+            _ctf_native_scale,
         )
         if _ctf_native_hit is None:
             continue
@@ -1165,6 +1269,7 @@ def _ctf_native_make_magic_result(
                 _ctf_native_high,
                 _ctf_native_key,
                 _ctf_native_is_robot,
+                _ctf_native_hit[2],
             )
 
     if _ctf_native_best is None:
@@ -1261,6 +1366,7 @@ def _ctf_native_make_magic_result(
     state["magic_hitbox_last_target"] = _ctf_native_best[5]
     state["magic_hitbox_last_part"] = _ctf_native_bone_res.name
     state["magic_hitbox_last_kind"] = "bot" if _ctf_native_best[6] else "player"
+    state["magic_hitbox_last_mode"] = _ctf_native_best[7]
     state["magic_hitbox_last_intersect"] = _ctf_native_intersect_point
     return _ctf_native_result
 
@@ -2213,7 +2319,7 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
         _ctf_native_write_snapshot(_ctf_native_state)
         if _ctf_native_state["tick"] == 1 or _ctf_native_state["tick"] % 240 == 0:
             _ctf_native_log(
-                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} hitbox={} hitbox_scale={:.2f} magic_hits={} magic_misses={} damage_dir_patches={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
+                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} hitbox={} hitbox_scale={:.2f} magic_hits={} magic_misses={} near_hits={} damage_dir_patches={} direct_player_ok={} direct_player_err={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
                     _ctf_native_state["tick"],
                     _ctf_native_state.get("last_count", 0),
                     _ctf_native_state.get("detected_players", 0),
@@ -2225,7 +2331,10 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
                     _ctf_native_state.get("hitbox_scale", 3.4),
                     _ctf_native_state.get("magic_hitbox_hits", 0),
                     _ctf_native_state.get("magic_hitbox_misses", 0),
+                    _ctf_native_state.get("magic_hitbox_near_hits", 0),
                     _ctf_native_state.get("magic_hitbox_damage_dir_patches", 0),
+                    _ctf_native_state.get("magic_hitbox_direct_player_damage_success", 0),
+                    _ctf_native_state.get("magic_hitbox_direct_player_damage_errors", 0),
                     _ctf_native_state.get("native_aim_trigger_down", 0),
                     _ctf_native_state.get("native_aim_external_down", 0),
                     _ctf_native_state.get("native_aim_trigger_seen", 0),
