@@ -89,6 +89,9 @@ constexpr double kAimBootstrapScaleLimitRadians = 0.020;
 constexpr double kScopedFovThresholdDegrees = 50.0;
 constexpr double kScopedMovementInputLeadSeconds = 0.008;
 constexpr double kScopedMovementMinSpeedMetersPerSecond = 0.75;
+constexpr double kDefaultHitboxScale = 3.40;
+constexpr double kMinHitboxScale = 1.0;
+constexpr double kMaxHitboxScale = 6.0;
 // The game exporter is sampled at roughly 30 Hz.  Keep camera prediction
 // inside the current snapshot interval: predicting into the next interval
 // makes a stopped camera recoil and detaches boxes from model bounds.
@@ -111,6 +114,8 @@ constexpr int kControlFovVisible = 1006;
 constexpr int kControlFov = 1007;
 constexpr int kControlTargetRange = 1008;
 constexpr int kControlExit = 1009;
+constexpr int kControlHitbox = 1010;
+constexpr int kControlHitboxScale = 1011;
 constexpr int kResourceRemotePyRun = 101;
 constexpr int kResourceSnapshotCode = 102;
 
@@ -213,10 +218,13 @@ HWND g_aimCheckbox = nullptr;
 HWND g_visibilityCheckbox = nullptr;
 HWND g_leadCheckbox = nullptr;
 HWND g_fovVisibleCheckbox = nullptr;
+HWND g_hitboxCheckbox = nullptr;
 HWND g_fovSlider = nullptr;
 HWND g_fovLabel = nullptr;
 HWND g_targetRangeSlider = nullptr;
 HWND g_targetRangeLabel = nullptr;
+HWND g_hitboxScaleSlider = nullptr;
+HWND g_hitboxScaleLabel = nullptr;
 HWND g_weaponLabel = nullptr;
 HWND g_liveDiagnosticsLabel = nullptr;
 HFONT g_controlFont = nullptr;
@@ -250,10 +258,12 @@ bool g_aimEnabled = true;
 bool g_visibilityEnabled = true;
 bool g_predictionEnabled = true;
 bool g_fovVisible = true;
+bool g_hitboxEnabled = true;
 bool g_autoInject = true;
 bool g_controlsHotkeyRegistered = false;
 double g_aimFovRadiusPixels = 0.0;
 double g_maxTargetDistanceMeters = kDefaultMaxTargetDistanceMeters;
+double g_hitboxScale = kDefaultHitboxScale;
 std::string g_aimLockedKey;
 double g_aimLockLastSeenTime = 0.0;
 double g_aimLockLastVisibleTime = 0.0;
@@ -593,11 +603,15 @@ bool LoadOverlaySettings() {
             g_predictionEnabled = ParseBoolSetting(value, g_predictionEnabled);
         } else if (key == "fov_visible") {
             g_fovVisible = ParseBoolSetting(value, g_fovVisible);
+        } else if (key == "hitbox") {
+            g_hitboxEnabled = ParseBoolSetting(value, g_hitboxEnabled);
         } else if (key == "aim_fov_px" && ParseDoubleSetting(value, &parsed)) {
             g_aimFovRadiusPixels = std::clamp(parsed, 70.0, 320.0);
         } else if (key == "max_distance" && ParseDoubleSetting(value, &parsed)) {
             g_maxTargetDistanceMeters = std::clamp(
                 parsed, kMinTargetDistanceMeters, kMaxTargetDistanceMeters);
+        } else if (key == "hitbox_scale" && ParseDoubleSetting(value, &parsed)) {
+            g_hitboxScale = std::clamp(parsed, kMinHitboxScale, kMaxHitboxScale);
         }
     }
     return true;
@@ -612,8 +626,10 @@ bool SaveOverlaySettings() {
            << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n"
            << "prediction=" << (g_predictionEnabled ? 1 : 0) << "\n"
            << "fov_visible=" << (g_fovVisible ? 1 : 0) << "\n"
+           << "hitbox=" << (g_hitboxEnabled ? 1 : 0) << "\n"
            << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
-           << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n";
+           << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n"
+           << "hitbox_scale=" << std::fixed << std::setprecision(2) << g_hitboxScale << "\n";
     return WriteTextFileAtomically(g_settingsPath, stream.str());
 }
 
@@ -622,7 +638,9 @@ bool WriteExporterConfig() {
     stream << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n"
            << "native_aim=" << (g_aimEnabled ? 1 : 0) << "\n"
            << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
-           << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n";
+           << "visible_only=" << (g_visibilityEnabled ? 1 : 0) << "\n"
+           << "hitbox=" << (g_hitboxEnabled ? 1 : 0) << "\n"
+           << "hitbox_scale=" << std::fixed << std::setprecision(2) << g_hitboxScale << "\n";
     return WriteTextFileAtomically(g_configPath, stream.str());
 }
 
@@ -2039,6 +2057,24 @@ void UpdateTargetRangeLabel() {
     SetWindowTextW(g_targetRangeLabel, label.c_str());
 }
 
+int HitboxScaleToSlider(double value) {
+    return static_cast<int>(std::lround(std::clamp(value, kMinHitboxScale, kMaxHitboxScale) * 100.0));
+}
+
+double SliderToHitboxScale(LRESULT value) {
+    return std::clamp(static_cast<double>(value) / 100.0, kMinHitboxScale, kMaxHitboxScale);
+}
+
+void UpdateHitboxScaleLabel() {
+    if (!g_hitboxScaleLabel) {
+        return;
+    }
+    std::wostringstream label;
+    label << L"Hitbox scale: " << std::fixed << std::setprecision(2)
+          << std::clamp(g_hitboxScale, kMinHitboxScale, kMaxHitboxScale) << L"x";
+    SetWindowTextW(g_hitboxScaleLabel, label.str().c_str());
+}
+
 void UpdateWeaponLabel() {
     if (!g_weaponLabel) {
         return;
@@ -2110,6 +2146,9 @@ void SyncControlWindow() {
     if (g_fovVisibleCheckbox) {
         SendMessageW(g_fovVisibleCheckbox, BM_SETCHECK, g_fovVisible ? BST_CHECKED : BST_UNCHECKED, 0);
     }
+    if (g_hitboxCheckbox) {
+        SendMessageW(g_hitboxCheckbox, BM_SETCHECK, g_hitboxEnabled ? BST_CHECKED : BST_UNCHECKED, 0);
+    }
     if (g_fovSlider) {
         SendMessageW(g_fovSlider, TBM_SETPOS, TRUE, static_cast<LPARAM>(std::lround(g_aimFovRadiusPixels)));
     }
@@ -2117,8 +2156,13 @@ void SyncControlWindow() {
         SendMessageW(g_targetRangeSlider, TBM_SETPOS, TRUE,
                      static_cast<LPARAM>(std::lround(g_maxTargetDistanceMeters)));
     }
+    if (g_hitboxScaleSlider) {
+        SendMessageW(g_hitboxScaleSlider, TBM_SETPOS, TRUE,
+                     static_cast<LPARAM>(HitboxScaleToSlider(g_hitboxScale)));
+    }
     UpdateFovLabel();
     UpdateTargetRangeLabel();
+    UpdateHitboxScaleLabel();
     UpdateWeaponLabel();
     UpdateLiveDiagnostics();
 }
@@ -2128,7 +2172,7 @@ void PositionControlWindow() {
         return;
     }
     constexpr int kWidth = 306;
-    constexpr int kHeight = 468;
+    constexpr int kHeight = 560;
     RECT game = {};
     int left = 24;
     int top = 24;
@@ -2167,7 +2211,7 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_controlFont = CreateFontW(-15, 0, 0, 0, FW_NORMAL, FALSE, FALSE, FALSE,
                                         DEFAULT_CHARSET, OUT_DEFAULT_PRECIS, CLIP_DEFAULT_PRECIS,
                                         CLEARTYPE_QUALITY, DEFAULT_PITCH | FF_DONTCARE, L"Segoe UI");
-            HWND title = CreateWindowExW(0, L"STATIC", L"CTF ESP / AIM", WS_CHILD | WS_VISIBLE,
+            HWND title = CreateWindowExW(0, L"STATIC", L"CTF ESP / HITBOX", WS_CHILD | WS_VISIBLE,
                                           16, 12, 260, 22, hwnd, nullptr, instance, nullptr);
             g_weaponLabel = CreateWindowExW(0, L"STATIC", L"Weapon data: waiting", WS_CHILD | WS_VISIBLE,
                                               16, 37, 250, 20, hwnd, nullptr, instance, nullptr);
@@ -2189,32 +2233,47 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_fovVisibleCheckbox = CreateWindowExW(0, L"BUTTON", L"Show aim FOV", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
                                                      16, 184, 220, 24, hwnd,
                                                      reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFovVisible)), instance, nullptr);
+            g_hitboxCheckbox = CreateWindowExW(0, L"BUTTON", L"Magic hitbox", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
+                                                 16, 208, 220, 24, hwnd,
+                                                 reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlHitbox)), instance, nullptr);
+            HWND hitboxCaption = CreateWindowExW(0, L"STATIC", L"Hitbox scale", WS_CHILD | WS_VISIBLE,
+                                                  16, 238, 160, 20, hwnd, nullptr, instance, nullptr);
+            g_hitboxScaleSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
+                                                    16, 256, 266, 28, hwnd,
+                                                    reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlHitboxScale)), instance, nullptr);
+            g_hitboxScaleLabel = CreateWindowExW(0, L"STATIC", L"Hitbox scale", WS_CHILD | WS_VISIBLE,
+                                                  16, 290, 190, 20, hwnd, nullptr, instance, nullptr);
             HWND fovCaption = CreateWindowExW(0, L"STATIC", L"Aim FOV", WS_CHILD | WS_VISIBLE,
-                                               16, 214, 100, 20, hwnd, nullptr, instance, nullptr);
+                                               16, 314, 100, 20, hwnd, nullptr, instance, nullptr);
             g_fovSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                            16, 232, 266, 28, hwnd,
+                                            16, 332, 266, 28, hwnd,
                                             reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFov)), instance, nullptr);
             g_fovLabel = CreateWindowExW(0, L"STATIC", L"FOV radius", WS_CHILD | WS_VISIBLE,
-                                          16, 266, 170, 20, hwnd, nullptr, instance, nullptr);
+                                          16, 366, 170, 20, hwnd, nullptr, instance, nullptr);
             HWND rangeCaption = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                 16, 290, 160, 20, hwnd, nullptr, instance, nullptr);
+                                                 16, 390, 160, 20, hwnd, nullptr, instance, nullptr);
             g_targetRangeSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                                    16, 308, 266, 28, hwnd,
+                                                    16, 408, 266, 28, hwnd,
                                                     reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlTargetRange)), instance, nullptr);
             g_targetRangeLabel = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                  16, 342, 190, 20, hwnd, nullptr, instance, nullptr);
+                                                  16, 442, 190, 20, hwnd, nullptr, instance, nullptr);
             g_liveDiagnosticsLabel = CreateWindowExW(0, L"STATIC", L"Live: waiting for exporter",
                                                        WS_CHILD | WS_VISIBLE,
-                                                       16, 366, 266, 36, hwnd, nullptr, instance, nullptr);
+                                                       16, 466, 266, 36, hwnd, nullptr, instance, nullptr);
             HWND exitButton = CreateWindowExW(0, L"BUTTON", L"Exit tool", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                                               190, 410, 92, 28, hwnd,
+                                               190, 512, 92, 28, hwnd,
                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlExit)), instance, nullptr);
             for (HWND control : {title, g_weaponLabel, g_espCheckbox, g_tracerCheckbox, g_aimCheckbox,
-                                  g_visibilityCheckbox, g_leadCheckbox, g_fovVisibleCheckbox,
+                                  g_visibilityCheckbox, g_leadCheckbox, g_fovVisibleCheckbox, g_hitboxCheckbox,
+                                  hitboxCaption, g_hitboxScaleSlider, g_hitboxScaleLabel,
                                   fovCaption, g_fovSlider, g_fovLabel, rangeCaption, g_targetRangeSlider,
                                   g_targetRangeLabel, g_liveDiagnosticsLabel, exitButton}) {
                 ApplyControlFont(control);
             }
+            SendMessageW(g_hitboxScaleSlider, TBM_SETRANGE, TRUE,
+                         MAKELONG(HitboxScaleToSlider(kMinHitboxScale),
+                                  HitboxScaleToSlider(kMaxHitboxScale)));
+            SendMessageW(g_hitboxScaleSlider, TBM_SETTICFREQ, 50, 0);
             SendMessageW(g_fovSlider, TBM_SETRANGE, TRUE, MAKELONG(70, 320));
             SendMessageW(g_fovSlider, TBM_SETTICFREQ, 25, 0);
             SendMessageW(g_targetRangeSlider, TBM_SETRANGE, TRUE,
@@ -2243,6 +2302,9 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
                 case kControlFovVisible:
                     g_fovVisible = SendMessageW(g_fovVisibleCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
                     break;
+                case kControlHitbox:
+                    g_hitboxEnabled = SendMessageW(g_hitboxCheckbox, BM_GETCHECK, 0, 0) == BST_CHECKED;
+                    break;
                 case kControlExit:
                     if (g_overlayWindow) {
                         DestroyWindow(g_overlayWindow);
@@ -2270,6 +2332,11 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
                     SendMessageW(g_targetRangeSlider, TBM_GETPOS, 0, 0));
                 PersistOverlaySettings();
                 UpdateTargetRangeLabel();
+            } else if (reinterpret_cast<HWND>(lparam) == g_hitboxScaleSlider) {
+                g_hitboxScale = SliderToHitboxScale(
+                    SendMessageW(g_hitboxScaleSlider, TBM_GETPOS, 0, 0));
+                PersistOverlaySettings();
+                UpdateHitboxScaleLabel();
             }
             return 0;
         case WM_CLOSE:
@@ -2286,10 +2353,13 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_visibilityCheckbox = nullptr;
             g_leadCheckbox = nullptr;
             g_fovVisibleCheckbox = nullptr;
+            g_hitboxCheckbox = nullptr;
             g_fovSlider = nullptr;
             g_fovLabel = nullptr;
             g_targetRangeSlider = nullptr;
             g_targetRangeLabel = nullptr;
+            g_hitboxScaleSlider = nullptr;
+            g_hitboxScaleLabel = nullptr;
             g_weaponLabel = nullptr;
             g_liveDiagnosticsLabel = nullptr;
             if (g_controlFont) {
@@ -3174,6 +3244,13 @@ int WINAPI wWinMain(HINSTANCE instance, HINSTANCE, PWSTR, int) {
     timeBeginPeriod(1);
     DebugLog(L"startup");
     TerminateSiblingOverlays();
+    std::wstring runtimeError;
+    if (!EnsureEmbeddedRuntime(&runtimeError)) {
+        MessageBoxW(nullptr, runtimeError.c_str(), L"BloodStrike CTF ESP",
+                    MB_OK | MB_TOPMOST | MB_SETFOREGROUND | MB_ICONERROR);
+        timeEndPeriod(1);
+        return 1;
+    }
     ParseCommandLine();
     LoadOverlaySettings();
     DebugLog(L"parsed command line");
