@@ -690,6 +690,117 @@ def _ctf_native_points_close(left, right, threshold=0.35):
     return _ctf_native_distance(_ctf_native_left, _ctf_native_right) <= threshold
 
 
+def _ctf_native_setattr(obj, name, value):
+    try:
+        setattr(obj, name, value)
+        return True
+    except Exception:
+        return False
+
+
+def _ctf_native_identity_tokens(entity):
+    _ctf_native_tokens = set()
+    if entity is None:
+        return _ctf_native_tokens
+    _ctf_native_tokens.add("id:{}".format(id(entity)))
+    for _ctf_native_name in (
+        "id", "guid", "key", "entity_id", "entityId", "player_id", "playerId",
+        "player_guid", "combat_avatar_id", "avatar_id", "ownerid", "role_id",
+    ):
+        try:
+            _ctf_native_value = getattr(entity, _ctf_native_name)
+            if callable(_ctf_native_value):
+                _ctf_native_value = _ctf_native_value()
+            if isinstance(_ctf_native_value, (str, int, float)) and not isinstance(_ctf_native_value, bool):
+                _ctf_native_tokens.add("{}:{}".format(_ctf_native_name, _ctf_native_value))
+        except Exception:
+            pass
+    try:
+        _ctf_native_name_value = _ctf_native_call(entity, "GetName")
+        if isinstance(_ctf_native_name_value, str) and _ctf_native_name_value:
+            _ctf_native_tokens.add("name:{}".format(_ctf_native_name_value))
+    except Exception:
+        pass
+    return _ctf_native_tokens
+
+
+def _ctf_native_targets_match(left, right):
+    if left is right:
+        return True
+    if left is None or right is None:
+        return False
+    try:
+        return bool(_ctf_native_identity_tokens(left) & _ctf_native_identity_tokens(right))
+    except Exception:
+        return False
+
+
+def _ctf_native_collision_owner(hit):
+    try:
+        _ctf_native_body = getattr(hit, "Body", None)
+        _ctf_native_parent = getattr(_ctf_native_body, "Parent", None)
+        _ctf_native_owner = getattr(_ctf_native_parent, "owner", None)
+        if _ctf_native_owner is not None:
+            return _ctf_native_owner
+    except Exception:
+        pass
+    return None
+
+
+def _ctf_native_collision_matches_target(hit, target, skeleton):
+    try:
+        if getattr(hit, "actor", None) == skeleton:
+            return True
+    except Exception:
+        pass
+    return _ctf_native_targets_match(_ctf_native_collision_owner(hit), target)
+
+
+def _ctf_native_magic_bone_result(state, key, target, start_obj, hit_pos_obj, hit_part, hit_normal_obj, material):
+    _ctf_native_model = getattr(target, "model", None)
+    _ctf_native_skeleton = _ctf_native_call(_ctf_native_model, "GetSkeleton")
+    _ctf_native_space = _ctf_native_active_space(state)
+    _ctf_native_candidates = []
+    if _ctf_native_space is not None:
+        _ctf_native_hits = _ctf_native_call(_ctf_native_space, "RaycastBoneWithPenetrate", start_obj, hit_pos_obj)
+        if isinstance(_ctf_native_hits, (list, tuple)):
+            _ctf_native_candidates.extend(_ctf_native_hits)
+        else:
+            _ctf_native_hit = _ctf_native_call(_ctf_native_space, "ClosestRaycastBone", start_obj, hit_pos_obj)
+            if _ctf_native_hit is not None:
+                _ctf_native_candidates.append(_ctf_native_hit)
+    for _ctf_native_hit in _ctf_native_candidates:
+        if not getattr(_ctf_native_hit, "IsHit", False):
+            continue
+        if not _ctf_native_collision_matches_target(_ctf_native_hit, target, _ctf_native_skeleton):
+            continue
+        _ctf_native_patch_bone_result(_ctf_native_hit, target, _ctf_native_skeleton, hit_pos_obj, hit_part, hit_normal_obj, material)
+        state["magic_hitbox_real_bone_results"] = state.get("magic_hitbox_real_bone_results", 0) + 1
+        return _ctf_native_hit
+    _ctf_native_hit = _CtfNativeSyntheticBoneResult()
+    _ctf_native_patch_bone_result(_ctf_native_hit, target, _ctf_native_skeleton, hit_pos_obj, hit_part, hit_normal_obj, material)
+    return _ctf_native_hit
+
+
+def _ctf_native_patch_bone_result(hit, target, skeleton, hit_pos_obj, hit_part, hit_normal_obj, material):
+    _ctf_native_setattr(hit, "IsHit", True)
+    if skeleton is not None and getattr(hit, "Body", None) is None:
+        _ctf_native_setattr(hit, "Body", skeleton)
+    if skeleton is not None:
+        _ctf_native_setattr(hit, "actor", skeleton)
+    _ctf_native_setattr(hit, "owner", target)
+    _ctf_native_setattr(hit, "target", target)
+    _ctf_native_setattr(hit, "name", hit_part)
+    _ctf_native_setattr(hit, "hit_name", hit_part)
+    _ctf_native_setattr(hit, "Pos", hit_pos_obj)
+    _ctf_native_setattr(hit, "HitPos", hit_pos_obj)
+    _ctf_native_setattr(hit, "Normal", hit_normal_obj)
+    _ctf_native_setattr(hit, "MaterialTypeId", material)
+    _ctf_native_setattr(hit, "materialTypeId", material)
+    _ctf_native_setattr(hit, "can_penerate", False)
+    _ctf_native_setattr(hit, "raycastDir", True)
+
+
 def _ctf_native_material_id():
     try:
         from gclient import cconst as _ctf_native_cconst
@@ -730,12 +841,25 @@ def _ctf_native_install_damage_payload_patch(state, caster):
                     _ctf_native_target = args[3] if len(args) > 3 else None
                     _ctf_native_hit_pos = kwargs.get("hit_pos")
                     if (
-                        _ctf_native_target is _ctf_native_payload.get("target") and
-                        _ctf_native_points_close(_ctf_native_hit_pos, _ctf_native_payload.get("hit_pos_obj"))
+                        _ctf_native_targets_match(_ctf_native_target, _ctf_native_payload.get("target")) and
+                        (
+                            _ctf_native_hit_pos is None or
+                            _ctf_native_points_close(_ctf_native_hit_pos, _ctf_native_payload.get("hit_pos_obj"), 0.85)
+                        )
                     ):
                         _ctf_native_corrected_dir = _ctf_native_payload.get("shoot_dir_obj")
                         if _ctf_native_corrected_dir is not None:
+                            kwargs["hit_pos"] = _ctf_native_payload.get("hit_pos_obj")
+                            kwargs["hit_part"] = _ctf_native_payload.get("hit_part", kwargs.get("hit_part"))
                             kwargs["hit_dir"] = _ctf_native_corrected_dir
+                            if "hit_back" in kwargs:
+                                kwargs["hit_back"] = _ctf_native_payload.get("hit_back", kwargs.get("hit_back"))
+                            if "hit_penetrate" in kwargs:
+                                kwargs["hit_penetrate"] = False
+                            if "penetrate_materials" in kwargs:
+                                kwargs["penetrate_materials"] = [_ctf_native_payload.get("material", 1001)]
+                            if "penetrate_power" in kwargs and not kwargs.get("penetrate_power"):
+                                kwargs["penetrate_power"] = _ctf_native_payload.get("penetrate_power", 1000)
                             if _ctf_native_spell_result is not None:
                                 try:
                                     _ctf_native_spell_result.verify_shoot_dir = _ctf_native_corrected_dir
@@ -743,6 +867,10 @@ def _ctf_native_install_damage_payload_patch(state, caster):
                                     pass
                                 try:
                                     _ctf_native_spell_result.verify_start_pos = _ctf_native_payload.get("start_pos_obj")
+                                except Exception:
+                                    pass
+                                try:
+                                    _ctf_native_spell_result.verify_camera_pos = _ctf_native_payload.get("start_pos_tuple")
                                 except Exception:
                                     pass
                             _ctf_native_live_state["magic_hitbox_damage_dir_patches"] = (
@@ -760,6 +888,173 @@ def _ctf_native_install_damage_payload_patch(state, caster):
     except Exception:
         state["magic_hitbox_damage_patch_installed"] = False
         _ctf_native_log("MAGIC_HITBOX_DAMAGE_PATCH_EXC\n" + _ctf_native_traceback.format_exc())
+
+
+def _ctf_native_current_weapon(caster):
+    for _ctf_native_args in ((False,), ()):
+        try:
+            _ctf_native_weapon = caster.GetCurWeaponCase(*_ctf_native_args)
+            if _ctf_native_weapon is not None:
+                return _ctf_native_weapon
+        except Exception:
+            pass
+    return _ctf_native_call(caster, "GetCurHighPriorityWeapon")
+
+
+def _ctf_native_weapon_attr(weapon, name, default):
+    try:
+        _ctf_native_value = getattr(weapon, name)
+        if callable(_ctf_native_value):
+            _ctf_native_value = _ctf_native_value()
+        if _ctf_native_value is not None:
+            return _ctf_native_value
+    except Exception:
+        pass
+    return default
+
+
+def _ctf_native_new_spell_context(caster, start_obj, shoot_dir_obj):
+    _ctf_native_worker = None
+    _ctf_native_spell_result = None
+    try:
+        import gclient.gameplay.logic_base.spell.spell_core.gun_spell as _ctf_native_gun_spell
+        _ctf_native_worker = _ctf_native_gun_spell.SpellWorker(caster)
+        _ctf_native_spell_result = _ctf_native_worker.NewSpellResult()
+    except Exception:
+        _ctf_native_spell_result = _CtfNativeSyntheticShootResult()
+    try:
+        _ctf_native_spell_result.cost_ammo = False
+    except Exception:
+        pass
+    try:
+        _ctf_native_spell_result.verify_start_pos = start_obj
+    except Exception:
+        pass
+    try:
+        _ctf_native_spell_result.verify_shoot_dir = shoot_dir_obj
+    except Exception:
+        pass
+    try:
+        import MEngine as _ctf_native_engine
+        _ctf_native_transform = _ctf_native_engine.GetGameplay().Player.Camera.Transform
+        _ctf_native_spell_result.verify_camera_pos = _ctf_native_transform.translation.tuple()
+    except Exception:
+        try:
+            _ctf_native_spell_result.verify_camera_pos = start_obj.tuple()
+        except Exception:
+            pass
+    return _ctf_native_worker, _ctf_native_spell_result
+
+
+def _ctf_native_send_spell_result(worker, spell_result):
+    try:
+        if worker is not None and getattr(spell_result, "damage_result", None):
+            worker.WrapperSendSpellResult(spell_result, True)
+            return True
+    except Exception:
+        pass
+    return False
+
+
+def _ctf_native_direct_player_damage(state, caster, target):
+    _ctf_native_payload = state.get("magic_hitbox_last_payload")
+    if not _ctf_native_payload:
+        return False
+    _ctf_native_game_logic = None
+    _ctf_native_spell_id = 0
+    _ctf_native_spell_result = None
+    _ctf_native_worker = None
+    _ctf_native_weapon_id = 0
+    _ctf_native_weapon_guid = ""
+    try:
+        _ctf_native_game_logic = getattr(caster, "game_logic", None)
+        if _ctf_native_game_logic is None:
+            return False
+        _ctf_native_weapon = _ctf_native_current_weapon(caster)
+        _ctf_native_weapon_id = _ctf_native_weapon_attr(_ctf_native_weapon, "weapon_id", 0)
+        _ctf_native_weapon_guid = _ctf_native_weapon_attr(_ctf_native_weapon, "weapon_guid", "")
+        _ctf_native_worker, _ctf_native_spell_result = _ctf_native_new_spell_context(
+            caster,
+            _ctf_native_payload.get("start_pos_obj"),
+            _ctf_native_payload.get("shoot_dir_obj"),
+        )
+        if _ctf_native_weapon_guid:
+            try:
+                _ctf_native_spell_result.weapon_guid = _ctf_native_weapon_guid
+            except Exception:
+                pass
+        _ctf_native_spell_id = getattr(_ctf_native_worker, "spell_id", 0)
+        _ctf_native_kwargs = {
+            "hit_part": _ctf_native_payload.get("hit_part", "UpperTop"),
+            "hit_dir": _ctf_native_payload.get("shoot_dir_obj"),
+            "hit_back": False,
+            "hit_pos": _ctf_native_payload.get("hit_pos_obj"),
+            "hit_penetrate": False,
+            "penetrate_power": _ctf_native_payload.get("penetrate_power", 1000),
+            "penetrate_materials": [_ctf_native_payload.get("material", 1001)],
+            "is_ads": not bool(getattr(caster, "is_real_ads", False)),
+            "weapon_guid": _ctf_native_weapon_guid,
+        }
+        state["magic_hitbox_direct_player_damage_attempts"] = (
+            state.get("magic_hitbox_direct_player_damage_attempts", 0) + 1
+        )
+        _ctf_native_game_logic.DealWeaponDamageResult(
+            _ctf_native_spell_id,
+            _ctf_native_spell_result,
+            caster,
+            target,
+            _ctf_native_weapon_id,
+            True,
+            **_ctf_native_kwargs
+        )
+        _ctf_native_sent = _ctf_native_send_spell_result(_ctf_native_worker, _ctf_native_spell_result)
+        _ctf_native_damage_result = getattr(_ctf_native_spell_result, "damage_result", None)
+        if _ctf_native_damage_result:
+            state["magic_hitbox_direct_player_damage_success"] = (
+                state.get("magic_hitbox_direct_player_damage_success", 0) + 1
+            )
+            state["magic_hitbox_direct_player_damage_sent"] = (
+                state.get("magic_hitbox_direct_player_damage_sent", 0) + int(_ctf_native_sent)
+            )
+            return True
+        state["magic_hitbox_direct_player_damage_empty"] = (
+            state.get("magic_hitbox_direct_player_damage_empty", 0) + 1
+        )
+    except TypeError:
+        try:
+            _ctf_native_game_logic.DealWeaponDamageResult(
+                _ctf_native_spell_id,
+                _ctf_native_spell_result,
+                caster,
+                target,
+                _ctf_native_weapon_id,
+                True,
+                hit_dir=_ctf_native_payload.get("shoot_dir_obj"),
+                penetrate_power=_ctf_native_payload.get("penetrate_power", 1000),
+                penetrate_materials=[_ctf_native_payload.get("material", 1001)],
+                hit_pos=_ctf_native_payload.get("hit_pos_obj"),
+                weapon_guid=_ctf_native_weapon_guid,
+            )
+            _ctf_native_sent = _ctf_native_send_spell_result(_ctf_native_worker, _ctf_native_spell_result)
+            if getattr(_ctf_native_spell_result, "damage_result", None):
+                state["magic_hitbox_direct_player_damage_success"] = (
+                    state.get("magic_hitbox_direct_player_damage_success", 0) + 1
+                )
+                state["magic_hitbox_direct_player_damage_sent"] = (
+                    state.get("magic_hitbox_direct_player_damage_sent", 0) + int(_ctf_native_sent)
+                )
+                return True
+        except Exception:
+            state["magic_hitbox_direct_player_damage_errors"] = (
+                state.get("magic_hitbox_direct_player_damage_errors", 0) + 1
+            )
+            state["magic_hitbox_direct_player_damage_last_error"] = _ctf_native_traceback.format_exc()[-500:]
+    except Exception:
+        state["magic_hitbox_direct_player_damage_errors"] = (
+            state.get("magic_hitbox_direct_player_damage_errors", 0) + 1
+        )
+        state["magic_hitbox_direct_player_damage_last_error"] = _ctf_native_traceback.format_exc()[-500:]
+    return False
 
 
 def _ctf_native_magic_candidates(state, caster):
@@ -811,7 +1106,7 @@ def _ctf_native_magic_candidates(state, caster):
                         _ctf_native_dz * _ctf_native_dz
                     ) > _ctf_native_range_sq:
                         continue
-            yield _ctf_native_key, _ctf_native_target
+            yield _ctf_native_key, _ctf_native_target, _ctf_native_is_robot
         except Exception:
             continue
 
@@ -841,7 +1136,7 @@ def _ctf_native_make_magic_result(
 
     _ctf_native_best = None
     _ctf_native_scale = state.get("hitbox_scale", 3.4)
-    for _ctf_native_key, _ctf_native_target in _ctf_native_magic_candidates(state, caster):
+    for _ctf_native_key, _ctf_native_target, _ctf_native_is_robot in _ctf_native_magic_candidates(state, caster):
         _ctf_native_low, _ctf_native_high = _ctf_native_bounds(_ctf_native_target)
         if _ctf_native_low is None or _ctf_native_high is None:
             continue
@@ -869,6 +1164,7 @@ def _ctf_native_make_magic_result(
                 _ctf_native_low,
                 _ctf_native_high,
                 _ctf_native_key,
+                _ctf_native_is_robot,
             )
 
     if _ctf_native_best is None:
@@ -889,32 +1185,42 @@ def _ctf_native_make_magic_result(
     if _ctf_native_hit_pos_obj is None:
         return None
     _ctf_native_payload_dir_obj = _ctf_native_direction_object(_ctf_native_start_obj, _ctf_native_hit_point)
+    _ctf_native_payload_dir = _ctf_native_vec3(_ctf_native_payload_dir_obj) or _ctf_native_dir
     _ctf_native_normal_obj = _ctf_native_make_vec3_like(
         _ctf_native_start_obj,
-        (-_ctf_native_dir[0], -_ctf_native_dir[1], -_ctf_native_dir[2]),
+        (-_ctf_native_payload_dir[0], -_ctf_native_payload_dir[1], -_ctf_native_payload_dir[2]),
     )
     if _ctf_native_normal_obj is None:
         _ctf_native_normal_obj = _ctf_native_hit_pos_obj
 
     _ctf_native_material = _ctf_native_material_id()
-    _ctf_native_bone_res = _CtfNativeSyntheticBoneResult()
-    _ctf_native_bone_res.IsHit = True
-    _ctf_native_bone_res.Body = _ctf_native_call(getattr(_ctf_native_target, "model", None), "GetSkeleton")
-    _ctf_native_bone_res.actor = _ctf_native_bone_res.Body
-    _ctf_native_bone_res.name = _ctf_native_hit_part
-    _ctf_native_bone_res.Pos = _ctf_native_hit_pos_obj
-    _ctf_native_bone_res.HitPos = _ctf_native_hit_pos_obj
-    _ctf_native_bone_res.Normal = _ctf_native_normal_obj
-    _ctf_native_bone_res.MaterialTypeId = _ctf_native_material
-    _ctf_native_bone_res.materialTypeId = _ctf_native_material
-    _ctf_native_bone_res.can_penerate = False
-    _ctf_native_bone_res.raycastDir = True
+    _ctf_native_bone_res = _ctf_native_magic_bone_result(
+        state,
+        _ctf_native_best[5],
+        _ctf_native_target,
+        _ctf_native_start_obj,
+        _ctf_native_hit_pos_obj,
+        _ctf_native_hit_part,
+        _ctf_native_normal_obj,
+        _ctf_native_material,
+    )
 
     try:
         from gclient.gameplay.logic_base.spell.spell_core import spell_core_main as _ctf_native_spell_core_main
-        _ctf_native_result = _ctf_native_spell_core_main.ShootEntityResult()
+        _ctf_native_result = _ctf_native_spell_core_main.BuildShootEntityResult(
+            _ctf_native_bone_res,
+            caster,
+            _ctf_native_start_obj,
+            _ctf_native_payload_dir_obj or _ctf_native_dir_obj,
+            penetrate_count,
+            penetrate_power,
+        )
     except Exception:
-        _ctf_native_result = _CtfNativeSyntheticShootResult()
+        try:
+            from gclient.gameplay.logic_base.spell.spell_core import spell_core_main as _ctf_native_spell_core_main
+            _ctf_native_result = _ctf_native_spell_core_main.ShootEntityResult()
+        except Exception:
+            _ctf_native_result = _CtfNativeSyntheticShootResult()
     _ctf_native_result.start_pos = _ctf_native_start_obj
     _ctf_native_result.shoot_dir = _ctf_native_payload_dir_obj or _ctf_native_dir_obj
     _ctf_native_result.target = _ctf_native_target
@@ -929,18 +1235,32 @@ def _ctf_native_make_magic_result(
     _ctf_native_result.has_penerate = False
     _ctf_native_result.collision_info = _ctf_native_collision_info()
     _ctf_native_result.magic_hitbox = True
+    _ctf_native_result.verify_start_pos = _ctf_native_start_obj
+    _ctf_native_result.verify_shoot_dir = _ctf_native_payload_dir_obj or _ctf_native_dir_obj
 
     _ctf_native_install_damage_payload_patch(state, caster)
+    try:
+        _ctf_native_start_tuple = _ctf_native_start_obj.tuple()
+    except Exception:
+        _ctf_native_start_tuple = _ctf_native_start
     state["magic_hitbox_last_payload"] = {
         "time": _ctf_native_time.time(),
         "target": _ctf_native_target,
         "hit_pos_obj": _ctf_native_hit_pos_obj,
+        "hit_part": _ctf_native_hit_part,
+        "material": _ctf_native_material,
         "start_pos_obj": _ctf_native_start_obj,
+        "start_pos_tuple": _ctf_native_start_tuple,
         "shoot_dir_obj": _ctf_native_payload_dir_obj or _ctf_native_dir_obj,
+        "hit_back": False,
+        "penetrate_power": penetrate_power or 1000,
     }
+    if not _ctf_native_best[6]:
+        _ctf_native_direct_player_damage(state, caster, _ctf_native_target)
     state["magic_hitbox_hits"] = state.get("magic_hitbox_hits", 0) + 1
     state["magic_hitbox_last_target"] = _ctf_native_best[5]
     state["magic_hitbox_last_part"] = _ctf_native_bone_res.name
+    state["magic_hitbox_last_kind"] = "bot" if _ctf_native_best[6] else "player"
     state["magic_hitbox_last_intersect"] = _ctf_native_intersect_point
     return _ctf_native_result
 

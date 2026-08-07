@@ -12,6 +12,8 @@ CTF 인스턴스의 엔티티 snapshot에서 플레이어와 봇의 월드 body 
 
 플레이어 대상은 봇보다 검증이 엄격할 수 있으므로, 확장 AABB 교차점 자체를 damage `hit_pos`로 보내지 않는다. 확장 AABB는 “근처를 쐈는지” eligibility 판정에만 쓰고, 실제 `ShootEntityResult.raycast_bone_res.Pos`와 damage `hit_pos`는 대상의 실제 bone 좌표로 보정한다. 또한 synthetic hit 직후 `DealWeaponDamageResult` payload의 `hit_dir` / `verify_shoot_dir`도 해당 bone 방향으로 맞춰 player 검증 payload가 일관되게 보이도록 했다.
 
+추가로 player 경로에서는 synthetic hit 생성 직후 `DealWeaponDamageResult`를 직접 호출한다. 이 호출은 원본 `SpellStrikeForRobot`/gun spell 흐름과 같은 `spell_result`, `weapon_id`, `weapon_guid`, `hit_part`, `hit_pos`, `hit_dir`, `hit_back`, `hit_penetrate`, `penetrate_materials`, `verify_start_pos`, `verify_camera_pos`, `verify_shoot_dir` payload를 사용한다. 즉 player도 단순 hit 표시가 아니라 damage/kill 처리 함수까지 타도록 한다.
+
 대상 후보는 봇 전용이 아니다. local player를 제외한 player entity와 robot entity를 모두 수집한 뒤 enemy/team relation이 `2`인 대상에만 적용한다. 현재 실행 검증에서는 CTF 사격장에 `players=0`, `bots=6`만 존재해서 봇 로그만 남았다.
 
 ## PoC 구성
