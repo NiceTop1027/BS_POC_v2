@@ -610,6 +610,86 @@ def _ctf_native_magic_hit_part(hit_point, low, high):
         return "UpperTop"
 
 
+def _ctf_native_magic_bone_candidates(part):
+    if part == "Head":
+        return (
+            ("biped Head", "Head"),
+            ("biped Neck", "UpperTop"),
+            ("biped Spine2", "UpperTop"),
+        )
+    if part == "UpperTop":
+        return (
+            ("biped Spine2", "UpperTop"),
+            ("biped Spine1", "UpperTop"),
+            ("biped Neck", "UpperTop"),
+            ("biped Spine", "UpperTop"),
+        )
+    return (
+        ("biped L Thigh", "Limbs_L_Thigh"),
+        ("biped R Thigh", "Limbs_R_Thigh"),
+        ("biped L Calf", "Limbs_L_Calf"),
+        ("biped R Calf", "Limbs_R_Calf"),
+        ("biped Pelvis", "UpperTop"),
+    )
+
+
+def _ctf_native_clamped_bounds_point(point, low, high):
+    try:
+        return (
+            min(max(float(point[0]), float(low[0])), float(high[0])),
+            min(max(float(point[1]), float(low[1])), float(high[1])),
+            min(max(float(point[2]), float(low[2])), float(high[2])),
+        )
+    except Exception:
+        return point
+
+
+def _ctf_native_magic_damage_point(target, hit_point, low, high):
+    _ctf_native_part = _ctf_native_magic_hit_part(hit_point, low, high)
+    _ctf_native_model = getattr(target, "model", None)
+    if _ctf_native_model is not None:
+        _ctf_native_ensure_aim_bones(
+            getattr(_ctf_native_builtins, _ctf_native_state_name, {}),
+            "magic_payload_{}".format(id(target)),
+            _ctf_native_model,
+        )
+        _ctf_native_call(_ctf_native_model, "MakeSureBones")
+        for _ctf_native_bone, _ctf_native_name in _ctf_native_magic_bone_candidates(_ctf_native_part):
+            _ctf_native_pos = _ctf_native_vec3(
+                _ctf_native_call(_ctf_native_model, "GetBoneWorldPosition", _ctf_native_bone)
+            )
+            if _ctf_native_pos is None:
+                continue
+            if not all(_ctf_native_math.isfinite(_ctf_native_value) for _ctf_native_value in _ctf_native_pos):
+                continue
+            if not _ctf_native_point_in_bounds(_ctf_native_pos, low, high, padding=0.35):
+                continue
+            return _ctf_native_pos, _ctf_native_name
+    return _ctf_native_clamped_bounds_point(hit_point, low, high), _ctf_native_part
+
+
+def _ctf_native_direction_object(start_obj, point):
+    _ctf_native_start = _ctf_native_vec3(start_obj)
+    if _ctf_native_start is None or point is None:
+        return None
+    _ctf_native_dir = _ctf_native_normalized((
+        float(point[0]) - _ctf_native_start[0],
+        float(point[1]) - _ctf_native_start[1],
+        float(point[2]) - _ctf_native_start[2],
+    ))
+    if _ctf_native_dir is None:
+        return None
+    return _ctf_native_make_vec3_like(start_obj, _ctf_native_dir)
+
+
+def _ctf_native_points_close(left, right, threshold=0.35):
+    _ctf_native_left = _ctf_native_vec3(left)
+    _ctf_native_right = _ctf_native_vec3(right)
+    if _ctf_native_left is None or _ctf_native_right is None:
+        return False
+    return _ctf_native_distance(_ctf_native_left, _ctf_native_right) <= threshold
+
+
 def _ctf_native_material_id():
     try:
         from gclient import cconst as _ctf_native_cconst
@@ -629,6 +709,57 @@ def _ctf_native_collision_info():
         return getattr(_ctf_native_cconst, "PHYSICS_CHARCTRL", 30)
     except Exception:
         return 30
+
+
+def _ctf_native_install_damage_payload_patch(state, caster):
+    try:
+        _ctf_native_game_logic = getattr(caster, "game_logic", None)
+        if _ctf_native_game_logic is None:
+            return
+        _ctf_native_cls = _ctf_native_game_logic.__class__
+        if hasattr(_ctf_native_cls, "_ctf_native_original_DealWeaponDamageResult"):
+            return
+        _ctf_native_cls._ctf_native_original_DealWeaponDamageResult = _ctf_native_cls.DealWeaponDamageResult
+
+        def _ctf_native_wrapped_deal_weapon_damage_result(self, *args, **kwargs):
+            _ctf_native_live_state = getattr(_ctf_native_builtins, _ctf_native_state_name, state)
+            _ctf_native_payload = _ctf_native_live_state.get("magic_hitbox_last_payload")
+            if _ctf_native_payload and _ctf_native_time.time() - _ctf_native_payload.get("time", 0.0) < 0.35:
+                try:
+                    _ctf_native_spell_result = args[1] if len(args) > 1 else None
+                    _ctf_native_target = args[3] if len(args) > 3 else None
+                    _ctf_native_hit_pos = kwargs.get("hit_pos")
+                    if (
+                        _ctf_native_target is _ctf_native_payload.get("target") and
+                        _ctf_native_points_close(_ctf_native_hit_pos, _ctf_native_payload.get("hit_pos_obj"))
+                    ):
+                        _ctf_native_corrected_dir = _ctf_native_payload.get("shoot_dir_obj")
+                        if _ctf_native_corrected_dir is not None:
+                            kwargs["hit_dir"] = _ctf_native_corrected_dir
+                            if _ctf_native_spell_result is not None:
+                                try:
+                                    _ctf_native_spell_result.verify_shoot_dir = _ctf_native_corrected_dir
+                                except Exception:
+                                    pass
+                                try:
+                                    _ctf_native_spell_result.verify_start_pos = _ctf_native_payload.get("start_pos_obj")
+                                except Exception:
+                                    pass
+                            _ctf_native_live_state["magic_hitbox_damage_dir_patches"] = (
+                                _ctf_native_live_state.get("magic_hitbox_damage_dir_patches", 0) + 1
+                            )
+                except Exception:
+                    _ctf_native_live_state["magic_hitbox_damage_patch_errors"] = (
+                        _ctf_native_live_state.get("magic_hitbox_damage_patch_errors", 0) + 1
+                    )
+            return _ctf_native_cls._ctf_native_original_DealWeaponDamageResult(self, *args, **kwargs)
+
+        _ctf_native_cls.DealWeaponDamageResult = _ctf_native_wrapped_deal_weapon_damage_result
+        state["magic_hitbox_damage_patch_installed"] = True
+        _ctf_native_log("MAGIC_HITBOX_DAMAGE_PATCH installed {}".format(_ctf_native_cls))
+    except Exception:
+        state["magic_hitbox_damage_patch_installed"] = False
+        _ctf_native_log("MAGIC_HITBOX_DAMAGE_PATCH_EXC\n" + _ctf_native_traceback.format_exc())
 
 
 def _ctf_native_magic_candidates(state, caster):
@@ -744,13 +875,20 @@ def _ctf_native_make_magic_result(
         state["magic_hitbox_misses"] = state.get("magic_hitbox_misses", 0) + 1
         return None
 
-    _ctf_native_hit_point = _ctf_native_best[1]
+    _ctf_native_intersect_point = _ctf_native_best[1]
     _ctf_native_target = _ctf_native_best[2]
     _ctf_native_low = _ctf_native_best[3]
     _ctf_native_high = _ctf_native_best[4]
+    _ctf_native_hit_point, _ctf_native_hit_part = _ctf_native_magic_damage_point(
+        _ctf_native_target,
+        _ctf_native_intersect_point,
+        _ctf_native_low,
+        _ctf_native_high,
+    )
     _ctf_native_hit_pos_obj = _ctf_native_make_vec3_like(_ctf_native_start_obj, _ctf_native_hit_point)
     if _ctf_native_hit_pos_obj is None:
         return None
+    _ctf_native_payload_dir_obj = _ctf_native_direction_object(_ctf_native_start_obj, _ctf_native_hit_point)
     _ctf_native_normal_obj = _ctf_native_make_vec3_like(
         _ctf_native_start_obj,
         (-_ctf_native_dir[0], -_ctf_native_dir[1], -_ctf_native_dir[2]),
@@ -763,9 +901,7 @@ def _ctf_native_make_magic_result(
     _ctf_native_bone_res.IsHit = True
     _ctf_native_bone_res.Body = _ctf_native_call(getattr(_ctf_native_target, "model", None), "GetSkeleton")
     _ctf_native_bone_res.actor = _ctf_native_bone_res.Body
-    _ctf_native_bone_res.name = _ctf_native_magic_hit_part(
-        _ctf_native_hit_point, _ctf_native_low, _ctf_native_high
-    )
+    _ctf_native_bone_res.name = _ctf_native_hit_part
     _ctf_native_bone_res.Pos = _ctf_native_hit_pos_obj
     _ctf_native_bone_res.HitPos = _ctf_native_hit_pos_obj
     _ctf_native_bone_res.Normal = _ctf_native_normal_obj
@@ -780,7 +916,7 @@ def _ctf_native_make_magic_result(
     except Exception:
         _ctf_native_result = _CtfNativeSyntheticShootResult()
     _ctf_native_result.start_pos = _ctf_native_start_obj
-    _ctf_native_result.shoot_dir = _ctf_native_dir_obj
+    _ctf_native_result.shoot_dir = _ctf_native_payload_dir_obj or _ctf_native_dir_obj
     _ctf_native_result.target = _ctf_native_target
     _ctf_native_result.target_name = _ctf_native_call(_ctf_native_target, "GetName") or ""
     _ctf_native_result.hit_normal = _ctf_native_normal_obj
@@ -794,9 +930,18 @@ def _ctf_native_make_magic_result(
     _ctf_native_result.collision_info = _ctf_native_collision_info()
     _ctf_native_result.magic_hitbox = True
 
+    _ctf_native_install_damage_payload_patch(state, caster)
+    state["magic_hitbox_last_payload"] = {
+        "time": _ctf_native_time.time(),
+        "target": _ctf_native_target,
+        "hit_pos_obj": _ctf_native_hit_pos_obj,
+        "start_pos_obj": _ctf_native_start_obj,
+        "shoot_dir_obj": _ctf_native_payload_dir_obj or _ctf_native_dir_obj,
+    }
     state["magic_hitbox_hits"] = state.get("magic_hitbox_hits", 0) + 1
     state["magic_hitbox_last_target"] = _ctf_native_best[5]
     state["magic_hitbox_last_part"] = _ctf_native_bone_res.name
+    state["magic_hitbox_last_intersect"] = _ctf_native_intersect_point
     return _ctf_native_result
 
 
@@ -1748,7 +1893,7 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
         _ctf_native_write_snapshot(_ctf_native_state)
         if _ctf_native_state["tick"] == 1 or _ctf_native_state["tick"] % 240 == 0:
             _ctf_native_log(
-                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} hitbox={} hitbox_scale={:.2f} magic_hits={} magic_misses={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
+                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} hitbox={} hitbox_scale={:.2f} magic_hits={} magic_misses={} damage_dir_patches={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
                     _ctf_native_state["tick"],
                     _ctf_native_state.get("last_count", 0),
                     _ctf_native_state.get("detected_players", 0),
@@ -1760,6 +1905,7 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
                     _ctf_native_state.get("hitbox_scale", 3.4),
                     _ctf_native_state.get("magic_hitbox_hits", 0),
                     _ctf_native_state.get("magic_hitbox_misses", 0),
+                    _ctf_native_state.get("magic_hitbox_damage_dir_patches", 0),
                     _ctf_native_state.get("native_aim_trigger_down", 0),
                     _ctf_native_state.get("native_aim_external_down", 0),
                     _ctf_native_state.get("native_aim_trigger_seen", 0),
@@ -1819,8 +1965,10 @@ def _ctf_native_install():
         "hitbox_enabled": True,
         "hitbox_scale": 3.4,
         "magic_hitbox_patch_installed": False,
+        "magic_hitbox_damage_patch_installed": False,
         "magic_hitbox_hits": 0,
         "magic_hitbox_misses": 0,
+        "magic_hitbox_damage_dir_patches": 0,
         "native_apply_frame_ok": False,
         "native_apply_frame_error": "",
         "next_config_refresh": 0.0,
