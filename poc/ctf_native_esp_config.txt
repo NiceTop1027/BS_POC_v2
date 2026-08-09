@@ -1,4 +1,7 @@
 max_distance=800
+hitbox_range=3000
 native_aim=0
-aim_fov_px=216
-visible_only=1
+aim_fov_px=100
+visible_only=0
+hitbox=1
+hitbox_scale=1.46

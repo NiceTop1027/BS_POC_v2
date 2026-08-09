@@ -22,6 +22,11 @@ _ctf_native_log_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_es
 _ctf_native_config_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_esp_config.txt")
 _ctf_native_aim_trigger_path = _ctf_native_os.path.join(_ctf_native_root, "ctf_native_aim_trigger.txt")
 _ctf_native_default_max_distance = 800.0
+_ctf_native_hard_max_distance = 800.0
+_ctf_native_default_magic_hitbox_range = 3000.0
+_ctf_native_hard_magic_hitbox_range = 3000.0
+_ctf_native_default_hitbox_scale = 1.46
+_ctf_native_max_hitbox_scale = 12.0
 _ctf_native_aim_bones = (
     "biped Head",
     "biped Neck",
@@ -172,7 +177,10 @@ def _ctf_native_max_target_distance(state):
     _ctf_native_aim_fov_px = float(state.get("aim_fov_px", 0.0))
     _ctf_native_visible_only = bool(state.get("visible_only", True))
     _ctf_native_hitbox_enabled = bool(state.get("hitbox_enabled", True))
-    _ctf_native_hitbox_scale = float(state.get("hitbox_scale", 3.4))
+    _ctf_native_hitbox_scale = float(state.get("hitbox_scale", _ctf_native_default_hitbox_scale))
+    _ctf_native_magic_hitbox_range = float(
+        state.get("magic_hitbox_range", _ctf_native_default_magic_hitbox_range)
+    )
     try:
         with open(_ctf_native_config_path, "r", encoding="ascii") as _ctf_native_handle:
             for _ctf_native_line in _ctf_native_handle:
@@ -199,17 +207,25 @@ def _ctf_native_max_target_distance(state):
                         _ctf_native_candidate = float(_ctf_native_raw)
                         if _ctf_native_math.isfinite(_ctf_native_candidate):
                             _ctf_native_hitbox_scale = _ctf_native_candidate
+                    elif _ctf_native_key in ("hitbox_range", "magic_hitbox_range"):
+                        _ctf_native_candidate = float(_ctf_native_raw)
+                        if _ctf_native_math.isfinite(_ctf_native_candidate):
+                            _ctf_native_magic_hitbox_range = _ctf_native_candidate
                 except Exception:
                     pass
     except Exception:
         pass
 
-    state["max_target_distance"] = max(25.0, min(800.0, _ctf_native_value))
+    state["max_target_distance"] = max(25.0, min(_ctf_native_hard_max_distance, _ctf_native_value))
     state["native_aim_enabled"] = _ctf_native_native_aim
     state["aim_fov_px"] = max(0.0, min(1000.0, _ctf_native_aim_fov_px))
     state["visible_only"] = _ctf_native_visible_only
     state["hitbox_enabled"] = _ctf_native_hitbox_enabled
-    state["hitbox_scale"] = max(1.0, min(6.0, _ctf_native_hitbox_scale))
+    state["hitbox_scale"] = max(1.0, min(_ctf_native_max_hitbox_scale, _ctf_native_hitbox_scale))
+    state["magic_hitbox_range"] = max(
+        25.0,
+        min(_ctf_native_hard_magic_hitbox_range, _ctf_native_magic_hitbox_range),
+    )
     return state["max_target_distance"]
 
 
@@ -525,9 +541,26 @@ def _ctf_native_shoot_ray(caster, shoot_range, shoot_screen_pos, shoot_dir, star
         return start_pos, shoot_dir, float(shoot_range or 0.0)
 
 
-def _ctf_native_expanded_bounds(low, high, scale):
+def _ctf_native_far_hitbox_padding(start, low, high, scale):
     try:
-        _ctf_native_scale = max(1.0, min(6.0, float(scale)))
+        _ctf_native_center = (
+            (float(low[0]) + float(high[0])) * 0.5,
+            (float(low[1]) + float(high[1])) * 0.5,
+            (float(low[2]) + float(high[2])) * 0.5,
+        )
+        _ctf_native_distance_to_target = _ctf_native_distance(start, _ctf_native_center)
+        if _ctf_native_distance_to_target is None or _ctf_native_distance_to_target <= 350.0:
+            return 0.0
+        _ctf_native_scale_factor = max(0.75, min(1.75, float(scale) / 3.4))
+        return min(12.0, (_ctf_native_distance_to_target - 350.0) * 0.004 * _ctf_native_scale_factor)
+    except Exception:
+        return 0.0
+
+
+def _ctf_native_expanded_bounds(low, high, scale, extra_padding=0.0):
+    try:
+        _ctf_native_scale = max(1.0, min(_ctf_native_max_hitbox_scale, float(scale)))
+        _ctf_native_extra = max(0.0, min(12.0, float(extra_padding)))
         _ctf_native_min = (
             min(float(low[0]), float(high[0])),
             min(float(low[1]), float(high[1])),
@@ -544,9 +577,9 @@ def _ctf_native_expanded_bounds(low, high, scale):
             (_ctf_native_min[2] + _ctf_native_max[2]) * 0.5,
         )
         _ctf_native_half = (
-            max(0.85, (_ctf_native_max[0] - _ctf_native_min[0]) * 0.5 * _ctf_native_scale),
-            max(1.05, (_ctf_native_max[1] - _ctf_native_min[1]) * 0.5 * _ctf_native_scale),
-            max(0.85, (_ctf_native_max[2] - _ctf_native_min[2]) * 0.5 * _ctf_native_scale),
+            max(0.85, (_ctf_native_max[0] - _ctf_native_min[0]) * 0.5 * _ctf_native_scale + _ctf_native_extra),
+            max(1.05, (_ctf_native_max[1] - _ctf_native_min[1]) * 0.5 * _ctf_native_scale + _ctf_native_extra),
+            max(0.85, (_ctf_native_max[2] - _ctf_native_min[2]) * 0.5 * _ctf_native_scale + _ctf_native_extra),
         )
         return (
             (
@@ -653,19 +686,20 @@ def _ctf_native_magic_near_points(target, low, high):
     return _ctf_native_points
 
 
-def _ctf_native_magic_near_radius(low, high, scale):
+def _ctf_native_magic_near_radius(low, high, scale, extra_padding=0.0):
     try:
-        _ctf_native_scale = max(1.0, min(6.0, float(scale)))
+        _ctf_native_scale = max(1.0, min(_ctf_native_max_hitbox_scale, float(scale)))
+        _ctf_native_extra = max(0.0, min(12.0, float(extra_padding)))
         _ctf_native_width = max(
             abs(float(high[0]) - float(low[0])),
             abs(float(high[2]) - float(low[2])),
         )
-        return max(0.75, min(3.25, _ctf_native_width * 0.45 * _ctf_native_scale + 0.34 * _ctf_native_scale))
+        return max(0.75, min(16.0, _ctf_native_width * 0.45 * _ctf_native_scale + 0.34 * _ctf_native_scale + _ctf_native_extra))
     except Exception:
-        return max(0.75, min(3.25, float(scale) * 0.5))
+        return max(0.75, min(16.0, float(scale) * 0.5))
 
 
-def _ctf_native_magic_ray_hit(state, target, start, direction, low, high, expanded_low, expanded_high, max_distance, scale):
+def _ctf_native_magic_ray_hit(state, target, start, direction, low, high, expanded_low, expanded_high, max_distance, scale, extra_padding=0.0):
     _ctf_native_hit = _ctf_native_ray_aabb_hit(
         start,
         direction,
@@ -676,7 +710,7 @@ def _ctf_native_magic_ray_hit(state, target, start, direction, low, high, expand
     if _ctf_native_hit is not None:
         return _ctf_native_hit[0], _ctf_native_hit[1], "box"
 
-    _ctf_native_radius = _ctf_native_magic_near_radius(low, high, scale)
+    _ctf_native_radius = _ctf_native_magic_near_radius(low, high, scale, extra_padding)
     _ctf_native_best = None
     for _ctf_native_point in _ctf_native_magic_near_points(target, low, high):
         _ctf_native_near = _ctf_native_ray_point_near_hit(
@@ -927,9 +961,12 @@ def _ctf_native_install_damage_payload_patch(state, caster):
         if _ctf_native_game_logic is None:
             return
         _ctf_native_cls = _ctf_native_game_logic.__class__
-        if hasattr(_ctf_native_cls, "_ctf_native_original_DealWeaponDamageResult"):
+        _ctf_native_patch_revision = 2
+        if getattr(_ctf_native_cls, "_ctf_native_damage_patch_revision", 0) == _ctf_native_patch_revision:
+            state["magic_hitbox_damage_patch_installed"] = True
             return
-        _ctf_native_cls._ctf_native_original_DealWeaponDamageResult = _ctf_native_cls.DealWeaponDamageResult
+        if not hasattr(_ctf_native_cls, "_ctf_native_original_DealWeaponDamageResult"):
+            _ctf_native_cls._ctf_native_original_DealWeaponDamageResult = _ctf_native_cls.DealWeaponDamageResult
 
         def _ctf_native_wrapped_deal_weapon_damage_result(self, *args, **kwargs):
             _ctf_native_live_state = getattr(_ctf_native_builtins, _ctf_native_state_name, state)
@@ -982,6 +1019,7 @@ def _ctf_native_install_damage_payload_patch(state, caster):
             return _ctf_native_cls._ctf_native_original_DealWeaponDamageResult(self, *args, **kwargs)
 
         _ctf_native_cls.DealWeaponDamageResult = _ctf_native_wrapped_deal_weapon_damage_result
+        _ctf_native_cls._ctf_native_damage_patch_revision = _ctf_native_patch_revision
         state["magic_hitbox_damage_patch_installed"] = True
         _ctf_native_log("MAGIC_HITBOX_DAMAGE_PATCH installed {}".format(_ctf_native_cls))
     except Exception:
@@ -1171,7 +1209,10 @@ def _ctf_native_magic_candidates(state, caster):
         for _ctf_native_key, _ctf_native_entity in _ctf_native_robots
         if _ctf_native_entity is not caster
     ]
-    _ctf_native_range = state.get("max_target_distance", _ctf_native_default_max_distance)
+    _ctf_native_range = state.get(
+        "magic_hitbox_range",
+        _ctf_native_default_magic_hitbox_range,
+    )
     _ctf_native_range_sq = _ctf_native_range * _ctf_native_range
     _ctf_native_caster_pos = _ctf_native_position(_ctf_native_local_ref)
 
@@ -1210,6 +1251,63 @@ def _ctf_native_magic_candidates(state, caster):
             continue
 
 
+def _ctf_native_iter_shoot_results(value):
+    if value is None or isinstance(value, dict):
+        return
+    if isinstance(value, (list, tuple)):
+        for _ctf_native_item in value:
+            for _ctf_native_result in _ctf_native_iter_shoot_results(_ctf_native_item):
+                yield _ctf_native_result
+        return
+    yield value
+
+
+def _ctf_native_authoritative_recast(
+    state,
+    caster,
+    target,
+    shoot_range,
+    shoot_screen_pos,
+    corrected_dir,
+    start_pos,
+):
+    """Re-run the engine raycast toward a real bone and keep its native result."""
+    try:
+        from gclient.gameplay.logic_base.spell.spell_core import spell_core_main as _ctf_native_spell_core_main
+
+        _ctf_native_original = getattr(
+            _ctf_native_spell_core_main,
+            "_ctf_native_original_GetShootResult",
+            None,
+        )
+        if _ctf_native_original is None:
+            return None
+        _ctf_native_raw = _ctf_native_original(
+            caster,
+            shoot_range,
+            shoot_screen_pos,
+            corrected_dir,
+            start_pos,
+        )
+        for _ctf_native_result in _ctf_native_iter_shoot_results(_ctf_native_raw):
+            if not _ctf_native_result_hits_combat(_ctf_native_result):
+                continue
+            if not _ctf_native_targets_match(getattr(_ctf_native_result, "target", None), target):
+                continue
+            state["magic_hitbox_authoritative_recasts"] = (
+                state.get("magic_hitbox_authoritative_recasts", 0) + 1
+            )
+            return _ctf_native_result
+    except Exception:
+        state["magic_hitbox_authoritative_recast_errors"] = (
+            state.get("magic_hitbox_authoritative_recast_errors", 0) + 1
+        )
+        state["magic_hitbox_authoritative_recast_last_error"] = (
+            _ctf_native_traceback.format_exc()[-500:]
+        )
+    return None
+
+
 def _ctf_native_make_magic_result(
     state,
     caster,
@@ -1232,9 +1330,17 @@ def _ctf_native_make_magic_result(
     if _ctf_native_start is None or _ctf_native_dir is None:
         state["magic_hitbox_bad_ray"] = state.get("magic_hitbox_bad_ray", 0) + 1
         return None
+    try:
+        _ctf_native_effective_range = max(
+            float(_ctf_native_effective_range),
+            float(state.get("magic_hitbox_range", _ctf_native_default_magic_hitbox_range)) + 2.0,
+            _ctf_native_default_magic_hitbox_range + 2.0,
+        )
+    except Exception:
+        _ctf_native_effective_range = _ctf_native_default_magic_hitbox_range + 2.0
 
     _ctf_native_best = None
-    _ctf_native_scale = state.get("hitbox_scale", 3.4)
+    _ctf_native_scale = state.get("hitbox_scale", _ctf_native_default_hitbox_scale)
     for _ctf_native_key, _ctf_native_target, _ctf_native_is_robot in _ctf_native_magic_candidates(state, caster):
         _ctf_native_low, _ctf_native_high = _ctf_native_bounds(_ctf_native_target)
         if _ctf_native_low is None or _ctf_native_high is None:
@@ -1243,8 +1349,14 @@ def _ctf_native_make_magic_result(
             state, _ctf_native_key, _ctf_native_target, _ctf_native_start_obj
         ):
             continue
+        _ctf_native_extra_padding = _ctf_native_far_hitbox_padding(
+            _ctf_native_start,
+            _ctf_native_low,
+            _ctf_native_high,
+            _ctf_native_scale,
+        )
         _ctf_native_expanded_low, _ctf_native_expanded_high = _ctf_native_expanded_bounds(
-            _ctf_native_low, _ctf_native_high, _ctf_native_scale
+            _ctf_native_low, _ctf_native_high, _ctf_native_scale, _ctf_native_extra_padding
         )
         _ctf_native_hit = _ctf_native_magic_ray_hit(
             state,
@@ -1257,6 +1369,7 @@ def _ctf_native_make_magic_result(
             _ctf_native_expanded_high,
             _ctf_native_effective_range,
             _ctf_native_scale,
+            _ctf_native_extra_padding,
         )
         if _ctf_native_hit is None:
             continue
@@ -1326,6 +1439,52 @@ def _ctf_native_make_magic_result(
             _ctf_native_result = _ctf_native_spell_core_main.ShootEntityResult()
         except Exception:
             _ctf_native_result = _CtfNativeSyntheticShootResult()
+
+    # Prefer the game's own collision object when it can be recast toward the
+    # selected bone, but keep the synthetic result as a fallback for both player
+    # and robot targets. Long-range player targets often fail the native recast
+    # because the original weapon range is shorter than the magic hitbox range.
+    _ctf_native_recast = _ctf_native_authoritative_recast(
+        state,
+        caster,
+        _ctf_native_target,
+        _ctf_native_effective_range,
+        shoot_screen_pos,
+        _ctf_native_payload_dir_obj or _ctf_native_dir_obj,
+        _ctf_native_start_obj,
+    )
+    if _ctf_native_recast is not None:
+        _ctf_native_result = _ctf_native_recast
+        if not _ctf_native_best[6]:
+            state["magic_hitbox_player_recasts"] = (
+                state.get("magic_hitbox_player_recasts", 0) + 1
+            )
+        _ctf_native_recast_bone = getattr(_ctf_native_result, "raycast_bone_res", None)
+        if _ctf_native_recast_bone is not None:
+            _ctf_native_bone_res = _ctf_native_recast_bone
+            _ctf_native_hit_part = getattr(_ctf_native_recast_bone, "name", _ctf_native_hit_part)
+        _ctf_native_recast_pos = getattr(_ctf_native_result, "physics_hit_pos", None)
+        if _ctf_native_recast_pos is not None:
+            _ctf_native_hit_pos_obj = _ctf_native_recast_pos
+        _ctf_native_recast_normal = getattr(_ctf_native_result, "hit_normal", None)
+        if _ctf_native_recast_normal is not None:
+            _ctf_native_normal_obj = _ctf_native_recast_normal
+        _ctf_native_recast_material = getattr(_ctf_native_result, "materialTypeId", None)
+        if _ctf_native_recast_material is not None:
+            _ctf_native_material = _ctf_native_recast_material
+        _ctf_native_best = _ctf_native_best[:-1] + ("recast",)
+    else:
+        if not _ctf_native_best[6]:
+            state["magic_hitbox_player_recast_misses"] = (
+                state.get("magic_hitbox_player_recast_misses", 0) + 1
+            )
+            state["magic_hitbox_player_synthetic_fallbacks"] = (
+                state.get("magic_hitbox_player_synthetic_fallbacks", 0) + 1
+            )
+        state["magic_hitbox_synthetic_fallbacks"] = (
+            state.get("magic_hitbox_synthetic_fallbacks", 0) + 1
+        )
+
     _ctf_native_result.start_pos = _ctf_native_start_obj
     _ctf_native_result.shoot_dir = _ctf_native_payload_dir_obj or _ctf_native_dir_obj
     _ctf_native_result.target = _ctf_native_target
@@ -1337,6 +1496,14 @@ def _ctf_native_make_magic_result(
     _ctf_native_result.raycast_bone_res = _ctf_native_bone_res
     _ctf_native_result.penetrate_count = penetrate_count
     _ctf_native_result.penetrate_power = penetrate_power
+    _ctf_native_hit_distance = _ctf_native_distance(
+        _ctf_native_start,
+        _ctf_native_vec3(_ctf_native_hit_pos_obj) or _ctf_native_hit_point,
+    )
+    if _ctf_native_hit_distance is not None:
+        for _ctf_native_distance_attr in ("Distance", "distance", "Dist", "dist"):
+            _ctf_native_setattr(_ctf_native_result, _ctf_native_distance_attr, _ctf_native_hit_distance)
+        _ctf_native_setattr(_ctf_native_result, "shoot_range", _ctf_native_effective_range)
     _ctf_native_result.has_penerate = False
     _ctf_native_result.collision_info = _ctf_native_collision_info()
     _ctf_native_result.magic_hitbox = True
@@ -1360,8 +1527,9 @@ def _ctf_native_make_magic_result(
         "hit_back": False,
         "penetrate_power": penetrate_power or 1000,
     }
-    if not _ctf_native_best[6]:
-        _ctf_native_direct_player_damage(state, caster, _ctf_native_target)
+    # Do not submit a second, detached player damage result here. The caller's
+    # live SpellWorker consumes this result and invokes DealWeaponDamageResult
+    # once with the correct spell id, weapon, ammo, and send context.
     state["magic_hitbox_hits"] = state.get("magic_hitbox_hits", 0) + 1
     state["magic_hitbox_last_target"] = _ctf_native_best[5]
     state["magic_hitbox_last_part"] = _ctf_native_bone_res.name
@@ -2319,19 +2487,26 @@ def _ctf_native_tick(*_ctf_native_args, **_ctf_native_kwargs):
         _ctf_native_write_snapshot(_ctf_native_state)
         if _ctf_native_state["tick"] == 1 or _ctf_native_state["tick"] % 240 == 0:
             _ctf_native_log(
-                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} native_aim={} hitbox={} hitbox_scale={:.2f} magic_hits={} magic_misses={} near_hits={} damage_dir_patches={} direct_player_ok={} direct_player_err={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
+                "snapshot tick={} targets={} players={} bots={} culled={} range={:.0f} hitbox_range={:.0f} native_aim={} hitbox={} hitbox_scale={:.2f} magic_hits={} magic_misses={} near_hits={} recasts={} player_recasts={} player_recast_misses={} player_synthetic={} synthetic={} recast_err={} damage_dir_patches={} direct_player_ok={} direct_player_err={} trigger={} external={} seen={} miss={} applied={} lock={} apply_frame_ok={} source_players={} source_robots={} weapon={} velocity={:.3f} posture_fallback={} skeleton_miss={}".format(
                     _ctf_native_state["tick"],
                     _ctf_native_state.get("last_count", 0),
                     _ctf_native_state.get("detected_players", 0),
                     _ctf_native_state.get("detected_robots", 0),
                     _ctf_native_state.get("culled_targets", 0),
                     _ctf_native_state.get("max_target_distance", _ctf_native_default_max_distance),
+                    _ctf_native_state.get("magic_hitbox_range", _ctf_native_default_magic_hitbox_range),
                     int(bool(_ctf_native_state.get("native_aim_enabled", True))),
                     int(bool(_ctf_native_state.get("hitbox_enabled", True))),
-                    _ctf_native_state.get("hitbox_scale", 3.4),
+                    _ctf_native_state.get("hitbox_scale", _ctf_native_default_hitbox_scale),
                     _ctf_native_state.get("magic_hitbox_hits", 0),
                     _ctf_native_state.get("magic_hitbox_misses", 0),
                     _ctf_native_state.get("magic_hitbox_near_hits", 0),
+                    _ctf_native_state.get("magic_hitbox_authoritative_recasts", 0),
+                    _ctf_native_state.get("magic_hitbox_player_recasts", 0),
+                    _ctf_native_state.get("magic_hitbox_player_recast_misses", 0),
+                    _ctf_native_state.get("magic_hitbox_player_synthetic_fallbacks", 0),
+                    _ctf_native_state.get("magic_hitbox_synthetic_fallbacks", 0),
+                    _ctf_native_state.get("magic_hitbox_authoritative_recast_errors", 0),
                     _ctf_native_state.get("magic_hitbox_damage_dir_patches", 0),
                     _ctf_native_state.get("magic_hitbox_direct_player_damage_success", 0),
                     _ctf_native_state.get("magic_hitbox_direct_player_damage_errors", 0),
@@ -2382,6 +2557,7 @@ def _ctf_native_install():
         "detected_players": 0,
         "detected_robots": 0,
         "max_target_distance": _ctf_native_default_max_distance,
+        "magic_hitbox_range": _ctf_native_default_magic_hitbox_range,
         "native_aim_enabled": False,
         "native_aim_applied": 0,
         "native_aim_trigger_down": 0,
@@ -2392,11 +2568,18 @@ def _ctf_native_install():
         "aim_fov_px": 0.0,
         "visible_only": True,
         "hitbox_enabled": True,
-        "hitbox_scale": 3.4,
+        "hitbox_scale": _ctf_native_default_hitbox_scale,
         "magic_hitbox_patch_installed": False,
         "magic_hitbox_damage_patch_installed": False,
         "magic_hitbox_hits": 0,
         "magic_hitbox_misses": 0,
+        "magic_hitbox_authoritative_recasts": 0,
+        "magic_hitbox_player_recasts": 0,
+        "magic_hitbox_player_recast_rejects": 0,
+        "magic_hitbox_player_recast_misses": 0,
+        "magic_hitbox_player_synthetic_fallbacks": 0,
+        "magic_hitbox_synthetic_fallbacks": 0,
+        "magic_hitbox_authoritative_recast_errors": 0,
         "magic_hitbox_damage_dir_patches": 0,
         "native_apply_frame_ok": False,
         "native_apply_frame_error": "",

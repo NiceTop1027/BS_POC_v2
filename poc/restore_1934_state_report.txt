@@ -1,0 +1,31 @@
+﻿start 2026-08-09T15:19:47.8331448+09:00
+started_pid=8200
+after_start 2026-08-09T15:20:07.5464479+09:00
+
+   Id ProcessName       StartTime             Responding
+   -- -----------       ---------             ----------
+ 8200 BloodStrike       2026-08-09 오후 3:19:49       True
+32400 BloodStrikeCTFESP 2026-08-09 오후 3:19:55       True
+
+
+
+hashes
+
+Algorithm Hash                                                             Path                                        
+--------- ----                                                             ----                                        
+SHA256    FCAD73F946765E9E04C46B755002E037473655B7F1ACAD068F6CD1A61260EB56 C:\Users\mista\Documents\Bugbounty\bloods...
+SHA256    4C3E2414BD6FC0589B629E074F2296C567C034AA88883092124151D7D8A9D655 C:\Users\mista\Documents\Bugbounty\bloods...
+SHA256    E5C10757D1732DEBB6C6C90E609F9784283637A2E7A15ACAB5C883C91019816D C:\Users\mista\Documents\Bugbounty\bloods...
+SHA256    574A17B77437B338C5F49E1B665CD75D12F2E248201E410CFAC615F207799AC5 C:\Users\mista\Documents\Bugbounty\bloods...
+
+
+
+config
+max_distance=800
+hitbox_range=3000
+native_aim=0
+aim_fov_px=100
+visible_only=0
+hitbox=1
+hitbox_scale=1.46
+done 2026-08-09T15:20:07.6582356+09:00
