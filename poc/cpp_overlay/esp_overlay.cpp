@@ -44,6 +44,9 @@ constexpr int kToggleControlsHotkey = 1;
 constexpr COLORREF kTransparentColor = RGB(0, 0, 0);
 constexpr double kDefaultAimFovHeightFraction = 0.30;
 constexpr double kAimWorldHeadHeightFraction = 0.84;
+constexpr double kAimWorldNeckHeightFraction = 0.74;
+constexpr double kAimWorldUpperChestHeightFraction = 0.62;
+constexpr double kAimWorldCenterMassHeightFraction = 0.54;
 // Stop issuing integer mouse corrections for sub-pixel bone/camera noise.
 constexpr double kAimDeadzonePixels = 1.25;
 constexpr double kAimFineControlWindowPixels = 10.0;
@@ -596,6 +599,28 @@ double EffectiveAimSpeedScale(double value) {
         value, static_cast<double>(kAimSpeedMinPercent) / 100.0,
         static_cast<double>(kAimSpeedMaxPercent) / 100.0);
     return normalized * normalized;
+}
+
+double AimDistanceGainScale(double distance, bool scoped) {
+    if (!std::isfinite(distance) || distance <= 0.0) {
+        return 0.72;
+    }
+    if (distance < 10.0) {
+        return scoped ? 0.58 : 0.50;
+    }
+    if (distance < 25.0) {
+        const double blend = (distance - 10.0) / 15.0;
+        const double nearScale = scoped ? 0.58 : 0.50;
+        const double midScale = scoped ? 0.82 : 0.74;
+        return nearScale + (midScale - nearScale) * blend;
+    }
+    if (distance < 80.0) {
+        return scoped ? 0.86 : 0.78;
+    }
+    if (distance < 160.0) {
+        return scoped ? 0.74 : 0.64;
+    }
+    return scoped ? 0.62 : 0.52;
 }
 
 bool LoadOverlaySettings() {
@@ -1396,6 +1421,7 @@ Vec3 ClampMagnitude(const Vec3& value, double maximum) {
 
 Vec3 TargetHeadPoint(const Target& target);
 Vec3 EstimatedHeadCameraRelativeVelocity(const Target& target);
+Vec3 DynamicAimPoint(const Snapshot& snapshot, const Target& target);
 
 bool HasValidProjectileBallistics(const Snapshot& snapshot) {
     return std::isfinite(snapshot.projectileSpeed) &&
@@ -1535,12 +1561,11 @@ bool SolveBallisticFlightTime(const Vec3& relativePosition,
 }
 
 bool BuildBallisticAimPoint(const Snapshot& snapshot, const Target& target,
-                            Vec3* output) {
+                            const Vec3& aimPoint, Vec3* output) {
     if (!output || !g_predictionEnabled ||
         !HasValidProjectileBallistics(snapshot)) {
         return false;
     }
-    const Vec3 head = TargetHeadPoint(target);
     Vec3 relativeVelocity = ClampMagnitude(
         EstimatedHeadCameraRelativeVelocity(target), kAimMaxRelativeVelocity);
     if (!std::isfinite(relativeVelocity.x) ||
@@ -1554,7 +1579,7 @@ bool BuildBallisticAimPoint(const Snapshot& snapshot, const Target& target,
     const double snapshotAge = std::clamp(
         std::max(0.0, UnixNow() - snapshot.timestamp),
         0.0, kAimMaxSnapshotLeadSeconds);
-    const Vec3 relativePosition = head - snapshot.camera +
+    const Vec3 relativePosition = aimPoint - snapshot.camera +
         relativeVelocity * snapshotAge;
     double flightTime = 0.0;
     if (!SolveBallisticFlightTime(relativePosition, relativeVelocity,
@@ -1575,7 +1600,7 @@ bool BuildBallisticAimPoint(const Snapshot& snapshot, const Target& target,
     compensation.y = std::clamp(
         0.5 * snapshot.projectileGravity * flightTime * flightTime,
         0.0, kAimMaxBallisticDropMeters);
-    *output = head + compensation;
+    *output = aimPoint + compensation;
     return std::isfinite(output->x) && std::isfinite(output->y) &&
            std::isfinite(output->z);
 }
@@ -1605,6 +1630,23 @@ Vec3 TargetHeadPoint(const Target& target) {
         (target.min.x + target.max.x) * 0.5,
         target.min.y + height * kAimWorldHeadHeightFraction,
         (target.min.z + target.max.z) * 0.5,
+    };
+}
+
+Vec3 TargetBodyPoint(const Target& target, double heightFraction) {
+    const Vec3 head = TargetHeadPoint(target);
+    const double height = std::max(0.1, target.max.y - target.min.y);
+    const double fraction = std::clamp(heightFraction, 0.05, kAimWorldHeadHeightFraction);
+    const double bodyCenterX = (target.min.x + target.max.x) * 0.5;
+    const double bodyCenterZ = (target.min.z + target.max.z) * 0.5;
+    const double downBlend = std::clamp(
+        (kAimWorldHeadHeightFraction - fraction) /
+            (kAimWorldHeadHeightFraction - kAimWorldCenterMassHeightFraction),
+        0.0, 1.0);
+    return {
+        head.x + (bodyCenterX - head.x) * downBlend,
+        target.min.y + height * fraction,
+        head.z + (bodyCenterZ - head.z) * downBlend,
     };
 }
 
@@ -1657,6 +1699,76 @@ Vec3 EstimatedHeadCameraRelativeVelocity(const Target& target) {
     return headVelocity - cameraVelocity;
 }
 
+double DynamicAimHeightFraction(const Snapshot& snapshot, const Target& target) {
+    const Vec3 head = TargetHeadPoint(target);
+    const double distance = Length(head - snapshot.camera);
+    Vec3 relativeVelocity = EstimatedHeadCameraRelativeVelocity(target);
+    if (!std::isfinite(relativeVelocity.x) ||
+        !std::isfinite(relativeVelocity.y) ||
+        !std::isfinite(relativeVelocity.z)) {
+        relativeVelocity = {};
+    }
+    const double horizontalSpeed = std::hypot(relativeVelocity.x, relativeVelocity.z);
+    const bool scoped = IsScopedFov(snapshot.fov);
+    double fraction = kAimWorldHeadHeightFraction;
+
+    if (std::isfinite(distance)) {
+        if (distance > 95.0) {
+            fraction = std::min(fraction, kAimWorldNeckHeightFraction);
+        }
+        if (distance > 145.0) {
+            fraction = std::min(fraction, kAimWorldUpperChestHeightFraction);
+        }
+    }
+
+    if (std::isfinite(horizontalSpeed)) {
+        if (horizontalSpeed > 3.5) {
+            fraction = std::min(fraction, kAimWorldNeckHeightFraction);
+        }
+        if (horizontalSpeed > 6.0) {
+            fraction = std::min(fraction, kAimWorldUpperChestHeightFraction);
+        }
+    }
+
+    if (!scoped && std::isfinite(distance) && distance > 45.0 &&
+        std::isfinite(horizontalSpeed) && horizontalSpeed > 2.5) {
+        fraction = std::min(fraction, kAimWorldUpperChestHeightFraction);
+    }
+
+    if (HasValidProjectileBallistics(snapshot) && std::isfinite(distance) &&
+        snapshot.projectileSpeed > 1.0) {
+        const double flightTime = distance / snapshot.projectileSpeed;
+        if (flightTime > 0.14) {
+            fraction = std::min(fraction, kAimWorldNeckHeightFraction);
+        }
+        if (flightTime > 0.24 || snapshot.projectileGravity > 9.0) {
+            fraction = std::min(fraction, kAimWorldUpperChestHeightFraction);
+        }
+    }
+
+    double hpRatio = 1.0;
+    if (std::isfinite(target.hp) && std::isfinite(target.maxHp) && target.maxHp > 0.0) {
+        hpRatio = std::clamp(target.hp / target.maxHp, 0.0, 1.0);
+    }
+    if (hpRatio <= 0.35 && std::isfinite(distance) && distance > 10.0) {
+        fraction = std::min(fraction, kAimWorldUpperChestHeightFraction);
+    }
+
+    if (scoped && std::isfinite(distance) && distance < 85.0 &&
+        (!std::isfinite(horizontalSpeed) || horizontalSpeed < 1.2) && hpRatio > 0.35) {
+        fraction = kAimWorldHeadHeightFraction;
+    }
+    return fraction;
+}
+
+Vec3 DynamicAimPoint(const Snapshot& snapshot, const Target& target) {
+    const double fraction = DynamicAimHeightFraction(snapshot, target);
+    if (fraction >= kAimWorldHeadHeightFraction - 0.01) {
+        return TargetHeadPoint(target);
+    }
+    return TargetBodyPoint(target, fraction);
+}
+
 bool HeadMatchesProjectedBounds(const Snapshot& snapshot, const Target& target) {
     ScreenBox bounds = {};
     double headX = 0.0;
@@ -1677,30 +1789,30 @@ bool HeadMatchesProjectedBounds(const Snapshot& snapshot, const Target& target) 
 }
 
 Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
-    const Vec3 head = TargetHeadPoint(target);
+    const Vec3 aimPoint = DynamicAimPoint(snapshot, target);
     if (!g_predictionEnabled) {
-        return head;
+        return aimPoint;
     }
 
     // Prefer the equipped weapon's authoritative projectile data.  This uses
     // the measured flight time for horizontal target motion and applies the
-    // exact vertical drop needed to place the projectile on the head.
+    // exact vertical drop needed to place the projectile on the selected point.
     Vec3 ballisticAimPoint = {};
-    if (BuildBallisticAimPoint(snapshot, target, &ballisticAimPoint)) {
+    if (BuildBallisticAimPoint(snapshot, target, aimPoint, &ballisticAimPoint)) {
         return ballisticAimPoint;
     }
     if (!g_snapshot.valid || !g_previousSnapshot.valid) {
-        return head;
+        return aimPoint;
     }
 
-    // Compensate only the measured authoritative head motion.  This follows
+    // Compensate only the measured authoritative target motion.  This follows
     // slide/jump animation and snapshot delay without extrapolating bounds or
     // inventing a target position when the bone is stationary.
     Vec3 relativeVelocity = ClampMagnitude(
         EstimatedHeadCameraRelativeVelocity(target), kAimMaxRelativeVelocity);
     const double speed = Length(relativeVelocity);
     if (!std::isfinite(speed) || speed < kAimMinLatencyCompensationSpeed) {
-        return head;
+        return aimPoint;
     }
 
     const double snapshotAge = std::max(0.0, UnixNow() - snapshot.timestamp);
@@ -1708,7 +1820,7 @@ Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
         snapshotAge + kAimSnapshotLeadSeconds,
         0.0,
         kAimMaxSnapshotLeadSeconds);
-    const double distance = Length(head - snapshot.camera);
+    const double distance = Length(aimPoint - snapshot.camera);
     if (std::isfinite(distance) && distance <= kAimDirectRangeMeters) {
         // Close targets are already large on screen; keep the bone point
         // nearly current instead of leading past a crouch transition.
@@ -1716,7 +1828,7 @@ Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
     }
     if (IsScopedFov(snapshot.fov)) {
         if (speed < kScopedMovementMinSpeedMetersPerSecond) {
-            return head;
+            return aimPoint;
         }
         // A narrow scope magnifies small lead errors.  Compensate only the
         // input/snapshot delay, then lock the projected point to the bone.
@@ -1730,22 +1842,22 @@ Vec3 LeadAimPoint(const Snapshot& snapshot, const Target& target) {
     // current authoritative frame; vertical prediction is a common source of
     // visible up/down oscillation.
     compensation.y = 0.0;
-    return head + compensation;
+    return aimPoint + compensation;
 }
 
 bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT& client,
                      double* x, double* y, Vec3* world) {
-    const Vec3 currentHead = TargetHeadPoint(target);
+    const Vec3 currentAimPoint = DynamicAimPoint(snapshot, target);
     double currentGameX = 0.0;
     double currentGameY = 0.0;
-    if (!ProjectPoint(snapshot, currentHead, &currentGameX, &currentGameY)) {
+    if (!ProjectPoint(snapshot, currentAimPoint, &currentGameX, &currentGameY)) {
         return false;
     }
-    Vec3 leadingHead = LeadAimPoint(snapshot, target);
+    Vec3 leadingAimPoint = LeadAimPoint(snapshot, target);
     double gameX = 0.0;
     double gameY = 0.0;
-    if (!ProjectPoint(snapshot, leadingHead, &gameX, &gameY)) {
-        leadingHead = currentHead;
+    if (!ProjectPoint(snapshot, leadingAimPoint, &gameX, &gameY)) {
+        leadingAimPoint = currentAimPoint;
         gameX = currentGameX;
         gameY = currentGameY;
     }
@@ -1754,7 +1866,7 @@ bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT&
         ? kAimMaxBallisticLeadScreenPixels
         : kAimMaxLeadScreenPixels;
     if (!std::isfinite(leadScreenDistance) || leadScreenDistance > maxLeadScreenPixels) {
-        leadingHead = currentHead;
+        leadingAimPoint = currentAimPoint;
         gameX = currentGameX;
         gameY = currentGameY;
     }
@@ -1763,7 +1875,7 @@ bool ProjectAimPoint(const Snapshot& snapshot, const Target& target, const RECT&
     *x = gameX * scaleX;
     *y = gameY * scaleY;
     if (world) {
-        *world = leadingHead;
+        *world = leadingAimPoint;
     }
     return std::isfinite(*x) && std::isfinite(*y);
 }
@@ -1963,9 +2075,14 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     const Vec3 aimRelative = aimWorld - snapshot.camera;
     const double aimDistance = Length(aimRelative);
     const double horizontalDistance = std::hypot(aimRelative.x, aimRelative.z);
+    const bool closeWorldCorrection = std::isfinite(aimDistance) &&
+        aimDistance <= kAimWorldAngleCorrectionDistanceMeters;
+    const bool steepWorldCorrection = std::isfinite(horizontalDistance) &&
+        std::abs(aimRelative.y) > horizontalDistance * 0.35;
     const bool useWorldAngles = std::isfinite(aimDistance) &&
         std::isfinite(horizontalDistance) && horizontalDistance > 0.01 &&
-        std::abs(snapshot.roll) < 0.15;
+        std::abs(snapshot.roll) < 0.15 &&
+        (closeWorldCorrection || steepWorldCorrection);
     if (useWorldAngles) {
         // Derive the correction directly from the authoritative world aim
         // point. This keeps steep up/down shots exact; screen-space pitch is a
@@ -2001,23 +2118,26 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     // integrator turns one-pixel rounding into alternating left/right or
     // up/down commands when the authoritative head moves by a fraction of a
     // pixel.
+    const bool scoped = IsScopedFov(snapshot.fov);
     const double aimSpeedScale = EffectiveAimSpeedScale(g_aimSpeedScale);
-    const double commandRawX = rawX * gain * aimSpeedScale;
+    const double distanceGainScale = AimDistanceGainScale(aimDistance, scoped);
+    const double commandScale = aimSpeedScale * distanceGainScale;
+    const double commandRawX = rawX * gain * commandScale;
     const double verticalGain = IsScopedFov(snapshot.fov)
         ? kAimScopedVerticalGain
         : kAimVerticalGain;
     const double downwardBoost = aimRelative.y < -0.35 ? 1.18 : 1.0;
-    const double commandRawY = rawY * gain * verticalGain * downwardBoost * aimSpeedScale;
-    const LONG baseMaxHorizontalStep = IsScopedFov(snapshot.fov)
+    const double commandRawY = rawY * gain * verticalGain * downwardBoost * commandScale;
+    const LONG baseMaxHorizontalStep = scoped
         ? kAimMaxScopedMouseStep
         : kAimMaxHipMouseStep;
-    const LONG baseMaxVerticalStep = IsScopedFov(snapshot.fov)
+    const LONG baseMaxVerticalStep = scoped
         ? kAimMaxScopedVerticalStep
         : kAimMaxHipVerticalStep;
     const LONG maxHorizontalStep = std::max<LONG>(
-        1, static_cast<LONG>(std::lround(static_cast<double>(baseMaxHorizontalStep) * aimSpeedScale)));
+        1, static_cast<LONG>(std::lround(static_cast<double>(baseMaxHorizontalStep) * commandScale)));
     const LONG maxVerticalStep = std::max<LONG>(
-        1, static_cast<LONG>(std::lround(static_cast<double>(baseMaxVerticalStep) * aimSpeedScale)));
+        1, static_cast<LONG>(std::lround(static_cast<double>(baseMaxVerticalStep) * commandScale)));
     const double clampedRawX = std::clamp(commandRawX,
                                           -static_cast<double>(maxHorizontalStep),
                                           static_cast<double>(maxHorizontalStep));
