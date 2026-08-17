@@ -49,6 +49,9 @@ constexpr double kAimDeadzonePixels = 1.25;
 constexpr double kAimFineControlWindowPixels = 10.0;
 constexpr double kAimFineGain = 0.92;
 constexpr double kAimCoarseGain = 1.28;
+constexpr int kAimSpeedMinPercent = 20;
+constexpr int kAimSpeedMaxPercent = 100;
+constexpr int kAimSpeedDefaultPercent = 55;
 // The exporter is sampled at 120 Hz.  One command per fresh sample prevents
 // duplicate corrections from fighting each other between camera frames.
 constexpr double kAimMinInputIntervalSeconds = 0.0085;
@@ -116,6 +119,7 @@ constexpr int kControlTargetRange = 1008;
 constexpr int kControlExit = 1009;
 constexpr int kControlHitbox = 1010;
 constexpr int kControlHitboxScale = 1011;
+constexpr int kControlAimSpeed = 1012;
 constexpr int kResourceRemotePyRun = 101;
 constexpr int kResourceSnapshotCode = 102;
 
@@ -215,6 +219,8 @@ HWND g_controlWindow = nullptr;
 HWND g_espCheckbox = nullptr;
 HWND g_tracerCheckbox = nullptr;
 HWND g_aimCheckbox = nullptr;
+HWND g_aimSpeedSlider = nullptr;
+HWND g_aimSpeedLabel = nullptr;
 HWND g_visibilityCheckbox = nullptr;
 HWND g_leadCheckbox = nullptr;
 HWND g_fovVisibleCheckbox = nullptr;
@@ -262,6 +268,7 @@ bool g_hitboxEnabled = true;
 bool g_autoInject = true;
 bool g_controlsHotkeyRegistered = false;
 double g_aimFovRadiusPixels = 0.0;
+double g_aimSpeedScale = static_cast<double>(kAimSpeedDefaultPercent) / 100.0;
 double g_maxTargetDistanceMeters = kDefaultMaxTargetDistanceMeters;
 double g_hitboxScale = kDefaultHitboxScale;
 std::string g_aimLockedKey;
@@ -572,6 +579,18 @@ bool ParseDoubleSetting(const std::string& raw, double* output) {
     return true;
 }
 
+int AimSpeedScaleToSlider(double value) {
+    return static_cast<int>(std::lround(
+        std::clamp(value, static_cast<double>(kAimSpeedMinPercent) / 100.0,
+                   static_cast<double>(kAimSpeedMaxPercent) / 100.0) * 100.0));
+}
+
+double SliderToAimSpeedScale(LRESULT value) {
+    return std::clamp(static_cast<double>(value) / 100.0,
+                      static_cast<double>(kAimSpeedMinPercent) / 100.0,
+                      static_cast<double>(kAimSpeedMaxPercent) / 100.0);
+}
+
 bool LoadOverlaySettings() {
     std::string text;
     if (!ReadSmallTextFile(g_settingsPath, &text)) {
@@ -607,6 +626,10 @@ bool LoadOverlaySettings() {
             g_hitboxEnabled = ParseBoolSetting(value, g_hitboxEnabled);
         } else if (key == "aim_fov_px" && ParseDoubleSetting(value, &parsed)) {
             g_aimFovRadiusPixels = std::clamp(parsed, 70.0, 320.0);
+        } else if (key == "aim_speed_percent" && ParseDoubleSetting(value, &parsed)) {
+            g_aimSpeedScale = std::clamp(
+                parsed, static_cast<double>(kAimSpeedMinPercent),
+                static_cast<double>(kAimSpeedMaxPercent)) / 100.0;
         } else if (key == "max_distance" && ParseDoubleSetting(value, &parsed)) {
             g_maxTargetDistanceMeters = std::clamp(
                 parsed, kMinTargetDistanceMeters, kMaxTargetDistanceMeters);
@@ -628,6 +651,7 @@ bool SaveOverlaySettings() {
            << "fov_visible=" << (g_fovVisible ? 1 : 0) << "\n"
            << "hitbox=" << (g_hitboxEnabled ? 1 : 0) << "\n"
            << "aim_fov_px=" << static_cast<int>(std::lround(g_aimFovRadiusPixels)) << "\n"
+           << "aim_speed_percent=" << AimSpeedScaleToSlider(g_aimSpeedScale) << "\n"
            << "max_distance=" << static_cast<int>(std::lround(g_maxTargetDistanceMeters)) << "\n"
            << "hitbox_scale=" << std::fixed << std::setprecision(2) << g_hitboxScale << "\n";
     return WriteTextFileAtomically(g_settingsPath, stream.str());
@@ -1970,18 +1994,25 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     // integrator turns one-pixel rounding into alternating left/right or
     // up/down commands when the authoritative head moves by a fraction of a
     // pixel.
-    const double commandRawX = rawX * gain;
+    const double aimSpeedScale = std::clamp(
+        g_aimSpeedScale, static_cast<double>(kAimSpeedMinPercent) / 100.0,
+        static_cast<double>(kAimSpeedMaxPercent) / 100.0);
+    const double commandRawX = rawX * gain * aimSpeedScale;
     const double verticalGain = IsScopedFov(snapshot.fov)
         ? kAimScopedVerticalGain
         : kAimVerticalGain;
     const double downwardBoost = aimRelative.y < -0.35 ? 1.18 : 1.0;
-    const double commandRawY = rawY * gain * verticalGain * downwardBoost;
-    const LONG maxHorizontalStep = IsScopedFov(snapshot.fov)
+    const double commandRawY = rawY * gain * verticalGain * downwardBoost * aimSpeedScale;
+    const LONG baseMaxHorizontalStep = IsScopedFov(snapshot.fov)
         ? kAimMaxScopedMouseStep
         : kAimMaxHipMouseStep;
-    const LONG maxVerticalStep = IsScopedFov(snapshot.fov)
+    const LONG baseMaxVerticalStep = IsScopedFov(snapshot.fov)
         ? kAimMaxScopedVerticalStep
         : kAimMaxHipVerticalStep;
+    const LONG maxHorizontalStep = std::max<LONG>(
+        1, static_cast<LONG>(std::lround(static_cast<double>(baseMaxHorizontalStep) * aimSpeedScale)));
+    const LONG maxVerticalStep = std::max<LONG>(
+        1, static_cast<LONG>(std::lround(static_cast<double>(baseMaxVerticalStep) * aimSpeedScale)));
     const double clampedRawX = std::clamp(commandRawX,
                                           -static_cast<double>(maxHorizontalStep),
                                           static_cast<double>(maxHorizontalStep));
@@ -2046,6 +2077,15 @@ void UpdateFovLabel() {
     const int radius = static_cast<int>(std::lround(g_aimFovRadiusPixels));
     const std::wstring label = L"FOV radius: " + std::to_wstring(radius) + L" px";
     SetWindowTextW(g_fovLabel, label.c_str());
+}
+
+void UpdateAimSpeedLabel() {
+    if (!g_aimSpeedLabel) {
+        return;
+    }
+    const int percent = AimSpeedScaleToSlider(g_aimSpeedScale);
+    const std::wstring label = L"Aim speed: " + std::to_wstring(percent) + L"%";
+    SetWindowTextW(g_aimSpeedLabel, label.c_str());
 }
 
 void UpdateTargetRangeLabel() {
@@ -2137,6 +2177,10 @@ void SyncControlWindow() {
     if (g_aimCheckbox) {
         SendMessageW(g_aimCheckbox, BM_SETCHECK, g_aimEnabled ? BST_CHECKED : BST_UNCHECKED, 0);
     }
+    if (g_aimSpeedSlider) {
+        SendMessageW(g_aimSpeedSlider, TBM_SETPOS, TRUE,
+                     static_cast<LPARAM>(AimSpeedScaleToSlider(g_aimSpeedScale)));
+    }
     if (g_visibilityCheckbox) {
         SendMessageW(g_visibilityCheckbox, BM_SETCHECK, g_visibilityEnabled ? BST_CHECKED : BST_UNCHECKED, 0);
     }
@@ -2161,6 +2205,7 @@ void SyncControlWindow() {
                      static_cast<LPARAM>(HitboxScaleToSlider(g_hitboxScale)));
     }
     UpdateFovLabel();
+    UpdateAimSpeedLabel();
     UpdateTargetRangeLabel();
     UpdateHitboxScaleLabel();
     UpdateWeaponLabel();
@@ -2172,7 +2217,7 @@ void PositionControlWindow() {
         return;
     }
     constexpr int kWidth = 306;
-    constexpr int kHeight = 560;
+    constexpr int kHeight = 636;
     RECT game = {};
     int left = 24;
     int top = 24;
@@ -2224,52 +2269,63 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_aimCheckbox = CreateWindowExW(0, L"BUTTON", L"Aim assist (hold RMB)", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
                                               16, 112, 220, 24, hwnd,
                                               reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlAim)), instance, nullptr);
+            HWND aimSpeedCaption = CreateWindowExW(0, L"STATIC", L"Aim speed", WS_CHILD | WS_VISIBLE,
+                                                    16, 142, 160, 20, hwnd, nullptr, instance, nullptr);
+            g_aimSpeedSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
+                                                16, 160, 266, 28, hwnd,
+                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlAimSpeed)), instance, nullptr);
+            g_aimSpeedLabel = CreateWindowExW(0, L"STATIC", L"Aim speed", WS_CHILD | WS_VISIBLE,
+                                               16, 194, 170, 20, hwnd, nullptr, instance, nullptr);
             g_visibilityCheckbox = CreateWindowExW(0, L"BUTTON", L"Visible targets only", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-                                                     16, 136, 230, 24, hwnd,
+                                                     16, 220, 230, 24, hwnd,
                                                      reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlVisibility)), instance, nullptr);
             g_leadCheckbox = CreateWindowExW(0, L"BUTTON", L"Distance / velocity lead", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-                                               16, 160, 230, 24, hwnd,
+                                               16, 244, 230, 24, hwnd,
                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlLead)), instance, nullptr);
             g_fovVisibleCheckbox = CreateWindowExW(0, L"BUTTON", L"Show aim FOV", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-                                                     16, 184, 220, 24, hwnd,
+                                                     16, 268, 220, 24, hwnd,
                                                      reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFovVisible)), instance, nullptr);
             g_hitboxCheckbox = CreateWindowExW(0, L"BUTTON", L"Magic hitbox", WS_CHILD | WS_VISIBLE | BS_AUTOCHECKBOX,
-                                                 16, 208, 220, 24, hwnd,
+                                                 16, 292, 220, 24, hwnd,
                                                  reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlHitbox)), instance, nullptr);
             HWND hitboxCaption = CreateWindowExW(0, L"STATIC", L"Hitbox scale", WS_CHILD | WS_VISIBLE,
-                                                  16, 238, 160, 20, hwnd, nullptr, instance, nullptr);
+                                                  16, 322, 160, 20, hwnd, nullptr, instance, nullptr);
             g_hitboxScaleSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                                    16, 256, 266, 28, hwnd,
+                                                    16, 340, 266, 28, hwnd,
                                                     reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlHitboxScale)), instance, nullptr);
             g_hitboxScaleLabel = CreateWindowExW(0, L"STATIC", L"Hitbox scale", WS_CHILD | WS_VISIBLE,
-                                                  16, 290, 190, 20, hwnd, nullptr, instance, nullptr);
+                                                  16, 374, 190, 20, hwnd, nullptr, instance, nullptr);
             HWND fovCaption = CreateWindowExW(0, L"STATIC", L"Aim FOV", WS_CHILD | WS_VISIBLE,
-                                               16, 314, 100, 20, hwnd, nullptr, instance, nullptr);
+                                               16, 398, 100, 20, hwnd, nullptr, instance, nullptr);
             g_fovSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                            16, 332, 266, 28, hwnd,
+                                            16, 416, 266, 28, hwnd,
                                             reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlFov)), instance, nullptr);
             g_fovLabel = CreateWindowExW(0, L"STATIC", L"FOV radius", WS_CHILD | WS_VISIBLE,
-                                          16, 366, 170, 20, hwnd, nullptr, instance, nullptr);
+                                          16, 450, 170, 20, hwnd, nullptr, instance, nullptr);
             HWND rangeCaption = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                 16, 390, 160, 20, hwnd, nullptr, instance, nullptr);
+                                                 16, 474, 160, 20, hwnd, nullptr, instance, nullptr);
             g_targetRangeSlider = CreateWindowExW(0, TRACKBAR_CLASSW, L"", WS_CHILD | WS_VISIBLE | TBS_AUTOTICKS,
-                                                    16, 408, 266, 28, hwnd,
+                                                    16, 492, 266, 28, hwnd,
                                                     reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlTargetRange)), instance, nullptr);
             g_targetRangeLabel = CreateWindowExW(0, L"STATIC", L"Detection range", WS_CHILD | WS_VISIBLE,
-                                                  16, 442, 190, 20, hwnd, nullptr, instance, nullptr);
+                                                  16, 526, 190, 20, hwnd, nullptr, instance, nullptr);
             g_liveDiagnosticsLabel = CreateWindowExW(0, L"STATIC", L"Live: waiting for exporter",
                                                        WS_CHILD | WS_VISIBLE,
-                                                       16, 466, 266, 36, hwnd, nullptr, instance, nullptr);
+                                                       16, 550, 266, 36, hwnd, nullptr, instance, nullptr);
             HWND exitButton = CreateWindowExW(0, L"BUTTON", L"Exit tool", WS_CHILD | WS_VISIBLE | BS_PUSHBUTTON,
-                                               190, 512, 92, 28, hwnd,
+                                               190, 588, 92, 28, hwnd,
                                                reinterpret_cast<HMENU>(static_cast<INT_PTR>(kControlExit)), instance, nullptr);
             for (HWND control : {title, g_weaponLabel, g_espCheckbox, g_tracerCheckbox, g_aimCheckbox,
+                                  aimSpeedCaption, g_aimSpeedSlider, g_aimSpeedLabel,
                                   g_visibilityCheckbox, g_leadCheckbox, g_fovVisibleCheckbox, g_hitboxCheckbox,
                                   hitboxCaption, g_hitboxScaleSlider, g_hitboxScaleLabel,
                                   fovCaption, g_fovSlider, g_fovLabel, rangeCaption, g_targetRangeSlider,
                                   g_targetRangeLabel, g_liveDiagnosticsLabel, exitButton}) {
                 ApplyControlFont(control);
             }
+            SendMessageW(g_aimSpeedSlider, TBM_SETRANGE, TRUE,
+                         MAKELONG(kAimSpeedMinPercent, kAimSpeedMaxPercent));
+            SendMessageW(g_aimSpeedSlider, TBM_SETTICFREQ, 10, 0);
             SendMessageW(g_hitboxScaleSlider, TBM_SETRANGE, TRUE,
                          MAKELONG(HitboxScaleToSlider(kMinHitboxScale),
                                   HitboxScaleToSlider(kMaxHitboxScale)));
@@ -2327,6 +2383,11 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
                 if (g_overlayWindow) {
                     InvalidateRect(g_overlayWindow, nullptr, FALSE);
                 }
+            } else if (reinterpret_cast<HWND>(lparam) == g_aimSpeedSlider) {
+                g_aimSpeedScale = SliderToAimSpeedScale(
+                    SendMessageW(g_aimSpeedSlider, TBM_GETPOS, 0, 0));
+                PersistOverlaySettings();
+                UpdateAimSpeedLabel();
             } else if (reinterpret_cast<HWND>(lparam) == g_targetRangeSlider) {
                 g_maxTargetDistanceMeters = static_cast<double>(
                     SendMessageW(g_targetRangeSlider, TBM_GETPOS, 0, 0));
@@ -2350,6 +2411,8 @@ LRESULT CALLBACK ControlWindowProc(HWND hwnd, UINT message, WPARAM wparam, LPARA
             g_espCheckbox = nullptr;
             g_tracerCheckbox = nullptr;
             g_aimCheckbox = nullptr;
+            g_aimSpeedSlider = nullptr;
+            g_aimSpeedLabel = nullptr;
             g_visibilityCheckbox = nullptr;
             g_leadCheckbox = nullptr;
             g_fovVisibleCheckbox = nullptr;
@@ -2526,6 +2589,65 @@ void DrawTextShadow(HDC hdc, int x, int y, const std::wstring& text, COLORREF co
     TextOutW(hdc, x, y, text.c_str(), static_cast<int>(text.size()));
 }
 
+void DrawHealthBar(HDC hdc, const RECT& box, const RECT& client, const Target& target) {
+    const int boxHeight = box.bottom - box.top;
+    if (boxHeight < 18 || !std::isfinite(target.hp)) {
+        return;
+    }
+
+    double maxHp = target.maxHp;
+    if (!std::isfinite(maxHp) || maxHp <= 0.0) {
+        maxHp = 100.0;
+    }
+
+    const double healthRatio = std::clamp(target.hp / maxHp, 0.0, 1.0);
+    const int barWidth = 4;
+    const int gap = 4;
+    const int barLeft = box.left - gap - barWidth - 2 >= client.left
+        ? box.left - gap - barWidth
+        : box.right + gap;
+    const RECT outline = {
+        barLeft - 1,
+        box.top - 1,
+        barLeft + barWidth + 1,
+        box.bottom + 1,
+    };
+    const RECT background = {
+        barLeft,
+        box.top,
+        barLeft + barWidth,
+        box.bottom,
+    };
+    const int fillHeight = static_cast<int>(std::lround(boxHeight * healthRatio));
+    const RECT fill = {
+        barLeft,
+        box.bottom - fillHeight,
+        barLeft + barWidth,
+        box.bottom,
+    };
+
+    const COLORREF fillColor = healthRatio > 0.60
+        ? RGB(96, 226, 126)
+        : (healthRatio > 0.30 ? RGB(255, 206, 86) : RGB(255, 88, 88));
+    HBRUSH outlineBrush = CreateSolidBrush(RGB(8, 8, 8));
+    HBRUSH backgroundBrush = CreateSolidBrush(RGB(48, 20, 20));
+    HBRUSH fillBrush = CreateSolidBrush(fillColor);
+    if (outlineBrush) {
+        FillRect(hdc, &outline, outlineBrush);
+        DeleteObject(outlineBrush);
+    }
+    if (backgroundBrush) {
+        FillRect(hdc, &background, backgroundBrush);
+        DeleteObject(backgroundBrush);
+    }
+    if (fillBrush && fillHeight > 0) {
+        FillRect(hdc, &fill, fillBrush);
+        DeleteObject(fillBrush);
+    } else if (fillBrush) {
+        DeleteObject(fillBrush);
+    }
+}
+
 void DrawDetectionSummary(HDC hdc, const Snapshot& snapshot) {
     std::wstring text;
     if (snapshot.hasTargetCounts) {
@@ -2562,6 +2684,7 @@ void DrawTarget(HDC hdc, const Snapshot& snapshot, const Target& target, const R
         DrawTracer(hdc, box, client, RGB(242, 242, 242));
     }
     DrawCornerBox(hdc, box, boxColor);
+    DrawHealthBar(hdc, box, client, target);
 
     const int boxWidth = box.right - box.left;
     const int boxHeight = box.bottom - box.top;
