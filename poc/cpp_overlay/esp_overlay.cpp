@@ -49,9 +49,9 @@ constexpr double kAimDeadzonePixels = 1.25;
 constexpr double kAimFineControlWindowPixels = 10.0;
 constexpr double kAimFineGain = 0.92;
 constexpr double kAimCoarseGain = 1.28;
-constexpr int kAimSpeedMinPercent = 20;
+constexpr int kAimSpeedMinPercent = 1;
 constexpr int kAimSpeedMaxPercent = 100;
-constexpr int kAimSpeedDefaultPercent = 55;
+constexpr int kAimSpeedDefaultPercent = 10;
 // The exporter is sampled at 120 Hz.  One command per fresh sample prevents
 // duplicate corrections from fighting each other between camera frames.
 constexpr double kAimMinInputIntervalSeconds = 0.0085;
@@ -589,6 +589,13 @@ double SliderToAimSpeedScale(LRESULT value) {
     return std::clamp(static_cast<double>(value) / 100.0,
                       static_cast<double>(kAimSpeedMinPercent) / 100.0,
                       static_cast<double>(kAimSpeedMaxPercent) / 100.0);
+}
+
+double EffectiveAimSpeedScale(double value) {
+    const double normalized = std::clamp(
+        value, static_cast<double>(kAimSpeedMinPercent) / 100.0,
+        static_cast<double>(kAimSpeedMaxPercent) / 100.0);
+    return normalized * normalized;
 }
 
 bool LoadOverlaySettings() {
@@ -1994,9 +2001,7 @@ bool BuildCalibratedAimMouseDelta(const Snapshot& snapshot, const RECT& client,
     // integrator turns one-pixel rounding into alternating left/right or
     // up/down commands when the authoritative head moves by a fraction of a
     // pixel.
-    const double aimSpeedScale = std::clamp(
-        g_aimSpeedScale, static_cast<double>(kAimSpeedMinPercent) / 100.0,
-        static_cast<double>(kAimSpeedMaxPercent) / 100.0);
+    const double aimSpeedScale = EffectiveAimSpeedScale(g_aimSpeedScale);
     const double commandRawX = rawX * gain * aimSpeedScale;
     const double verticalGain = IsScopedFov(snapshot.fov)
         ? kAimScopedVerticalGain
