@@ -93,6 +93,8 @@ constexpr double kAimSyntheticEchoWindowSeconds = 0.10;
 constexpr LONG kAimBootstrapRawMouseDelta = 4;
 constexpr double kAimBootstrapScaleLimitRadians = 0.020;
 constexpr double kScopedFovThresholdDegrees = 50.0;
+constexpr double kAimFovTransitionThresholdDegrees = 0.25;
+constexpr double kAimFovTransitionHoldSeconds = 0.080;
 constexpr double kScopedMovementInputLeadSeconds = 0.008;
 constexpr double kScopedMovementMinSpeedMetersPerSecond = 0.75;
 constexpr double kDefaultHitboxScale = 3.40;
@@ -294,6 +296,7 @@ double g_lastAimInputTime = 0.0;
 double g_lastAimSnapshotTimestamp = 0.0;
 double g_lastAimTargetSwitchTime = 0.0;
 double g_lastAimTriggerWriteTime = 0.0;
+double g_lastAimFovTransitionTime = 0.0;
 bool g_lastAimTriggerState = false;
 std::wstring g_runtimeRootOverride;
 std::vector<BoxSmoothing> g_boxSmoothing;
@@ -1003,6 +1006,23 @@ bool IsScopedFov(double fov) {
     return std::isfinite(fov) && fov <= kScopedFovThresholdDegrees;
 }
 
+bool IsAimFovTransitionActive(const Snapshot& snapshot) {
+    const double now = UnixNow();
+    if (g_previousSnapshot.valid && std::isfinite(snapshot.fov) &&
+        std::isfinite(g_previousSnapshot.fov)) {
+        const bool scopedStateChanged = IsScopedFov(snapshot.fov) !=
+            IsScopedFov(g_previousSnapshot.fov);
+        const bool fovJumped =
+            std::abs(snapshot.fov - g_previousSnapshot.fov) >
+            kAimFovTransitionThresholdDegrees;
+        if (scopedStateChanged || fovJumped) {
+            g_lastAimFovTransitionTime = now;
+            return true;
+        }
+    }
+    return now - g_lastAimFovTransitionTime < kAimFovTransitionHoldSeconds;
+}
+
 MouseCalibration& CalibrationForFov(double fov) {
     return IsScopedFov(fov) ? g_scopedMouseCalibration : g_hipMouseCalibration;
 }
@@ -1618,6 +1638,17 @@ void ClearAimLock() {
     g_lastAimInputTime = 0.0;
     g_lastAimSnapshotTimestamp = 0.0;
     g_lastAimTargetSwitchTime = 0.0;
+}
+
+void ResetAimInputStateForCameraChange() {
+    g_aimInputAwaitingX = 0;
+    g_aimInputAwaitingY = 0;
+    g_aimInputAwaitingUntil = 0.0;
+    g_aimCalibrationProbe = {};
+    g_aimResidualRawX = 0.0;
+    g_aimResidualRawY = 0.0;
+    g_lastAimInputTime = 0.0;
+    g_lastAimSnapshotTimestamp = 0.0;
 }
 
 Vec3 TargetHeadPoint(const Target& target) {
@@ -2568,19 +2599,16 @@ void ApplyAimAssist(const Snapshot& snapshot, const RECT& client) {
         ClearAimLock();
         return;
     }
+    if (IsAimFovTransitionActive(snapshot)) {
+        ResetAimInputStateForCameraChange();
+        return;
+    }
     // Never steer from an old camera/entity frame after the exporter pauses.
     if (!std::isfinite(snapshot.timestamp) ||
         UnixNow() - snapshot.timestamp > 0.14) {
         // Preserve the target identity across a short exporter pause; only
         // discard motion/calibration state so stale input is never emitted.
-        g_aimInputAwaitingX = 0;
-        g_aimInputAwaitingY = 0;
-        g_aimInputAwaitingUntil = 0.0;
-        g_aimCalibrationProbe = {};
-        g_aimResidualRawX = 0.0;
-        g_aimResidualRawY = 0.0;
-        g_lastAimInputTime = 0.0;
-        g_lastAimSnapshotTimestamp = 0.0;
+        ResetAimInputStateForCameraChange();
         return;
     }
     // Aim input itself changes camera angles.  Exclude it (and the next few
